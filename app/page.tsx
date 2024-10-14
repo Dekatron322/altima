@@ -346,12 +346,6 @@ export default function Web() {
                 width={633}
                 height={583}
               />
-              <Image
-                src="https://github.com/Dekatron322/altima/blob/main/public/altimaCore.png?raw=true"
-                width={633}
-                height={583}
-                alt=""
-              />
             </div>
             <div className="md:hidden">
               <motion.img
