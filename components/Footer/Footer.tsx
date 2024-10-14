@@ -16,8 +16,8 @@ const Footer = () => {
   }, [])
   return (
     <>
-      <div className="paddings flex w-full flex-col items-center justify-center  bg-[#080808] ">
-        <p className=" font-semibold  text-[#ffffff]">2024 Altima, Inc. All rights reserved.</p>
+      <div className="paddings flex w-full flex-col items-center justify-center  bg-[#080808] max-sm:text-[10px]  ">
+        <p className=" text-center font-semibold  text-[#ffffff]">2024 Altima, Inc. All rights reserved.</p>
       </div>
     </>
   )

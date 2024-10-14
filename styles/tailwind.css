@@ -37,7 +37,7 @@ body {
   position: relative;
   background-image: url("/Web.1889.png");
   background-size: cover;
-  background-position: left;
+  background-position: center;
   background-repeat: no-repeat;
 }
 
@@ -264,5 +264,9 @@ body {
 }
 
 .input-field {
-  @apply flex h-12 w-[60%] items-center rounded-lg border border-[#282828]  bg-[#282828] p-3 hover:border-[#1B5EED] focus:border-[#1B5EED] active:border-[#1B5EED];
+  @apply flex h-12 items-center rounded-lg border border-[#282828] bg-[#282828]  p-3 hover:border-[#1B5EED] focus:border-[#1B5EED] active:border-[#1B5EED] max-sm:w-[100%] md:w-[60%];
+}
+
+.text-area {
+  @apply flex min-h-[200px]  rounded-lg border border-[#282828] bg-[#282828]  p-3 hover:border-[#1B5EED] focus:border-[#1B5EED] active:border-[#1B5EED] max-sm:w-[100%] md:w-[60%];
 }

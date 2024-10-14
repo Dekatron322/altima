@@ -2,18 +2,19 @@ import { Metadata } from "next"
 import "styles/tailwind.css"
 
 export const metadata: Metadata = {
-  title: "Allinonsol",
-  description: "$ALLIN or nothing his is the memecoin dream - One Token, Lives Changed! We do this FOR THE CULTURE",
+  title: "Altima",
+  description:
+    "Experience unparalleled convenience and security with the Disappearing Handle Smart Door, featuring cutting-edge technology and sleek design. Perfect for your home, office, hotel, motel, and beyond.",
   twitter: {
     card: "summary_large_image",
   },
   openGraph: {
-    url: "https://allinonsol.com/",
+    url: "https://altima.com/",
     images: [
       {
         width: 1200,
         height: 630,
-        url: "https://raw.githubusercontent.com/Dekatron322/allinonsol/main/public/venus.png",
+        url: "https://www.figma.com/design/ndBAgSCqggTC6F9yysERXZ/Altima-Door?node-id=1-33&t=LlEG3yk4M0V976XV-4",
       },
     ],
   },
