@@ -48,7 +48,7 @@ const Navbar = () => {
           <a
             href="#about"
             className={
-              activeLink === "about" ? "font-regular border-b-3 border-[#487b8f]  text-white" : " uppercase text-white"
+              activeLink === "about" ? "font-regular border-b-3 border-[#FF3B30]  text-white" : " uppercase text-white"
             }
           >
             HOME
@@ -57,41 +57,42 @@ const Navbar = () => {
             href="#how-to-buy"
             className={
               activeLink === "how-to-buy"
-                ? "font-regular border-b-3 border-[#487b8f]  text-white"
+                ? "font-regular border-b-3 border-[#FF3B30]  text-white"
                 : " uppercase text-white"
             }
           >
             Product Info
           </a>
           <a
-            href="#how-to-buy"
+            href="#specifications"
             className={
-              activeLink === "how-to-buy"
-                ? "font-regular border-b-3 border-[#487b8f]  text-white"
+              activeLink === "specifications"
+                ? "font-regular border-b-3 border-[#FF3B30]  text-white"
                 : " uppercase text-white"
             }
           >
             Specifications
           </a>
+
           <a
-            href="#how-to-buy"
+            href="#other-products"
             className={
-              activeLink === "how-to-buy"
-                ? "font-regular border-b-3 border-[#487b8f]  text-white"
-                : " uppercase text-white"
-            }
-          >
-            Contact
-          </a>
-          <a
-            href="#how-to-buy"
-            className={
-              activeLink === "how-to-buy"
-                ? "font-regular border-b-3 border-[#487b8f]  text-white"
+              activeLink === "other-products"
+                ? "font-regular border-b-3 border-[#FF3B30]  text-white"
                 : " uppercase text-white"
             }
           >
             Other Products
+          </a>
+          <a
+            href="#contact"
+            className={
+              activeLink === "contact"
+                ? "font-regular border-b-3 border-[#FF3B30]  text-white"
+                : " uppercase text-white"
+            }
+          >
+            Contact
           </a>
         </ul>
         <a className={" rounded-lg bg-[#FFFFFF1A] p-2 uppercase text-white"}>Contact Us</a>

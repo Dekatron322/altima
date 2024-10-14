@@ -9,6 +9,7 @@ import Link from "next/link"
 import Navbar from "components/Navbar/Navbar"
 import { useEffect } from "react"
 import AuthProviders from "components/ProvidersComponents/AuthProviders"
+import Accordion from "components/Accordion/Accordion"
 
 export default function Web() {
   useEffect(() => {
@@ -17,10 +18,42 @@ export default function Web() {
       once: true, // Only animate elements once
     })
   }, [])
+
+  const faqData = [
+    {
+      title: "1. When will Altima Disappearing Handle Smart Doors be available?",
+      content: "We’re targeting initial shipments to pre-order customers in Q1 2025.",
+    },
+    {
+      title: "2. How can I cancel my pre-order?",
+      content: "Your order will be shipped within 2-3 business days...",
+    },
+    {
+      title: "3. What is the pre-order process?",
+      content: "You will receive a tracking link once your order ships...",
+    },
+    {
+      title: "4. What happens if there are production delays?",
+      content: "You will receive a tracking link once your order ships...",
+    },
+    {
+      title: "5. What is the warranty on Altima Disappearing Handle Smart Doors?",
+      content: "You will receive a tracking link once your order ships...",
+    },
+    {
+      title: "6. What support do you offer for installation?",
+      content: "You will receive a tracking link once your order ships...",
+    },
+    {
+      title: "7. Do you offer financing or payment plans?",
+      content: "You will receive a tracking link once your order ships...",
+    },
+  ]
+
   return (
     <section className="bg-black">
       <Navbar />
-      <section id="about" className="about-section grid w-full py-8 max-sm:px-3  lg:h-screen lg:py-16">
+      <section id="about" className="about-section grid w-full bg-black py-8  max-sm:px-3 lg:h-screen lg:py-16">
         <div className="paddings     pb-10 max-sm:mt-20">
           <div className="flex h-full w-full items-center  max-sm:justify-center max-sm:text-center">
             <div>
@@ -169,7 +202,7 @@ export default function Web() {
         </div>
       </section>
 
-      <section id="how-to-buy" className="paddings  w-full bg-[#151515] max-sm:px-3 ">
+      <section id="specifications" className="paddings  w-full bg-[#151515] max-sm:px-3 ">
         <div className="  w-full justify-between    py-10">
           <div className="flex w-full justify-between gap-10  sm:flex">
             <div>
@@ -191,7 +224,7 @@ export default function Web() {
         </div>
       </section>
 
-      <section id="how-to-buy" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
+      <section id="specifications" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
         <div className="  w-full     py-10">
           <div className="flex flex-col items-center justify-center">
             <p className="font-regular  mb-6 flex  text-5xl  text-[#FFFFFF] max-md:text-2xl">Modern, Stylish, Unique</p>
@@ -205,7 +238,7 @@ export default function Web() {
         </div>
       </section>
 
-      <section id="how-to-buy" className="paddings  w-full bg-[#151515] max-sm:px-3 ">
+      <section id="other-products" className="paddings  w-full bg-[#151515] max-sm:px-3 ">
         <div className="  w-full justify-between    py-10">
           <div className="grid-col-2 grid w-full justify-between gap-20  sm:flex">
             <div className="w-[403]">
@@ -257,7 +290,7 @@ export default function Web() {
         </div>
       </section>
 
-      <section id="how-to-buy" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
+      <section id="other-products" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
         <div className="  w-full justify-between    py-10">
           <div className="flex w-full justify-between gap-20  sm:flex">
             <div
@@ -309,7 +342,7 @@ export default function Web() {
         </div>
       </section>
 
-      <section id="how-to-buy" className="paddings  w-full bg-[#151515] max-sm:px-3 ">
+      <section id="other-products" className="paddings  w-full bg-[#151515] max-sm:px-3 ">
         <div className="  w-full justify-between    py-10">
           <div className="grid-col-2 grid w-full justify-between gap-20  sm:flex">
             <div className="w-[403]">
@@ -354,7 +387,172 @@ export default function Web() {
         </div>
       </section>
 
-      {/* <Footer /> */}
+      <section id="other-products" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
+        <div className="  w-full     py-10">
+          <div className="flex flex-col items-center justify-center">
+            <p className=" text-[#FFFFFF99]">Pre-order Now – Limited Units Available.</p>
+            <p className="font-regular my-6 flex w-[642px] text-center  text-5xl  text-[#FFFFFF] max-md:text-2xl">
+              5,000 units available in the first pre-order batch.
+            </p>
+
+            <div className="flex w-full justify-center py-10">
+              <div className="flex items-start justify-center gap-3 border-r border-[#FFFFFF99] pr-6">
+                <Image src="/SealPercent.png" width={64} height={64} alt="" />
+                <div>
+                  <p className="text-[#FFFFFF]">20% Discount on Next Model Upgrade:</p>
+                  <p className="text-[#FFFFFF99]">
+                    Pre-order customers can enjoy a 20% discount when upgrading to the next model tier.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start justify-center gap-3 border-r border-[#FFFFFF99] pl-6 pr-6">
+                <Image src="/Upload.png" width={64} height={64} alt="" />
+                <div>
+                  <p className="text-[#FFFFFF]">Free Software Upgrade:</p>
+                  <p className="text-[#FFFFFF99]">
+                    All pre-orders come with a lifetime free software upgrade, ensuring your device remains updated with
+                    the latest smart features.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start justify-center gap-3 pl-6">
+                <Image src="/ShieldCheckered.png" width={64} height={64} alt="" />
+                <div>
+                  <p className="text-[#FFFFFF]">Free Extended Warranty Upgrade:</p>
+                  <p className="text-[#FFFFFF99]">
+                    Pre-order now and get an extended warranty upgrade for additional peace of mind, free of charge.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <Link
+              href="#"
+              className="font-regular flex  gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:hidden"
+            >
+              Pre-Order now
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="paddings  w-full bg-[#151515] max-sm:px-3 ">
+        <div className="  w-full justify-between    py-10">
+          <div className="grid  grid-cols-2 justify-between gap-20 ">
+            <div className="">
+              <p className="font-regular  flex  text-2xl  text-[#FFFFFF99] lg:text-2xl">Our Vision</p>
+              <p className=" font-regular my-6   text-xl leading-none tracking-tight text-white md:text-xl xl:text-5xl">
+                The Vision Behind Altima Disappearing Handle Smart Doors
+              </p>
+
+              <p className="text-[#FFFFFF99]">
+                Altima entryways are more than just doors—they serve as gateways to a smarter, more secure, and
+                connected lifestyle. Our disappearing handle smart doors are crafted to seamlessly blend into modern
+                spaces, offering cutting-edge technology while maintaining sleek aesthetics. With features like
+                biometric security, energy efficiency, and smart home integration, Altima Disappearing Handle Smart
+                Doors redefine secure and convenient entryways. Developed by expert engineers and designers, these doors
+                meet the highest standards of functionality and design, ensuring safety, style, and innovation for
+                every space.
+              </p>
+            </div>
+            <div
+              data-aos="fade-up" // Specify a different animation for this element
+              data-aos-duration="1000"
+              data-aos-delay="250"
+              className=""
+            >
+              <Image src="/AltimaCore.png" width={633} height={583} alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="paddings  w-full bg-[#080808] max-sm:px-3 ">
+        <div className="  w-full     py-10">
+          <div className="flex flex-col items-center justify-center">
+            <p className=" text-[#FFFFFF99]">Timeline</p>
+            <p className="font-regular my-6 flex w-[642px] text-center  text-5xl  text-[#FFFFFF] max-md:text-2xl">
+              Production Timeline
+            </p>
+
+            <Image src="/Timeline.png" width={549} height={64} alt="" className="py-10" />
+          </div>
+        </div>
+      </section>
+
+      <section className="paddings  w-full bg-[#151515] max-sm:px-3 ">
+        <div className="  w-full     py-10">
+          <div className="flex flex-col">
+            <p className=" text-[#FFFFFF99]">Faqs</p>
+            <p className="font-regular my-5 flex w-[642px] text-center  text-5xl  text-[#FFFFFF] max-md:text-2xl">
+              what people
+              <br />
+              are Asking.
+            </p>
+          </div>
+
+          <div className=" w-full max-w-[90%] rounded-md border border-[#FFFFFF1A]">
+            {faqData.map((faq, index) => (
+              <Accordion key={index} title={faq.title} content={faq.content} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="paddings  w-full bg-[#080808] max-sm:px-3 ">
+        <div className="  w-full     py-10">
+          <div className="flex flex-col  items-center justify-center">
+            <p className=" text-center text-[#FFFFFF99]">Contact us</p>
+            <p className="font-regular my-6 flex  text-center  text-5xl  text-[#FFFFFF] max-md:text-2xl">
+              Have Questions?
+            </p>
+            <div className="input-field ">
+              <input
+                type="text"
+                id="placement"
+                placeholder="Full Name"
+                className="clash-font  bg-transparent outline-none focus:outline-none"
+                style={{ width: "100%" }}
+              />
+            </div>
+
+            <div className="input-field my-7">
+              <input
+                type="text"
+                id="placement"
+                placeholder="Email"
+                className="clash-font  bg-transparent outline-none focus:outline-none"
+                style={{ width: "100%" }}
+              />
+            </div>
+
+            <textarea
+              id="username"
+              placeholder="Case Title"
+              className="clash-font h-[24px] min-h-[158px] w-[full] rounded-lg  bg-[#282828] p-2 text-base outline-none focus:outline-none"
+              style={{ width: "60%", height: "24px" }}
+            ></textarea>
+
+            <button className="font-regular mt-7 flex w-[60%] items-center justify-center  gap-2 rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4 py-4 uppercase text-[#FFFFFF] max-sm:hidden">
+              Pre-Order now
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="paddings  w-full bg-[#151515] max-sm:px-3 ">
+        <div className="  w-full">
+          <div className="flex flex-col  items-center justify-center">
+            <ul className="flex">
+              <li className="text-white">Privacy Policy , Terms of Pre-order , Refund Policy , Press Kit</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </section>
   )
 }

@@ -33,6 +33,7 @@ body {
 }
 
 .about-section {
+  background-color: #000000;
   position: relative;
   background-image: url("/Web.1889.png");
   background-size: cover;
@@ -260,4 +261,8 @@ body {
 .bg-black {
   background-color: black;
   transition: background-color 0.3s ease;
+}
+
+.input-field {
+  @apply flex h-12 w-[60%] items-center rounded-lg border border-[#282828]  bg-[#282828] p-3 hover:border-[#1B5EED] focus:border-[#1B5EED] active:border-[#1B5EED];
 }
