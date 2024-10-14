@@ -338,7 +338,7 @@ export default function Web() {
             </div>
             <div className=" max-sm:hidden">
               <motion.img
-                src="/AltimaCore.png"
+                src="https://github.com/Dekatron322/altima/blob/main/public/altimaCore.png?raw=true"
                 alt=""
                 initial={{ scale: 1.2, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
@@ -346,11 +346,16 @@ export default function Web() {
                 width={633}
                 height={583}
               />
-              <Image src="/AltimaCore.png" width={633} height={583} alt="" />
+              <Image
+                src="https://github.com/Dekatron322/altima/blob/main/public/altimaCore.png?raw=true"
+                width={633}
+                height={583}
+                alt=""
+              />
             </div>
             <div className="md:hidden">
               <motion.img
-                src="/AltimaCore.png"
+                src="https://github.com/Dekatron322/altima/blob/main/public/altimaCore.png?raw=true"
                 alt=""
                 initial={{ scale: 1.2, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
@@ -366,7 +371,7 @@ export default function Web() {
           <div className="flex w-full justify-between max-sm:grid max-sm:gap-5  md:gap-20">
             <div>
               <motion.img
-                src="/AltimaCore.png"
+                src="https://github.com/Dekatron322/altima/blob/main/public/altimaCore.png?raw=true"
                 width={633}
                 height={583}
                 alt=""
@@ -453,7 +458,7 @@ export default function Web() {
             </div>
             <div>
               <motion.img
-                src="/AltimaCore.png"
+                src="https://github.com/Dekatron322/altima/blob/main/public/altimaCore.png?raw=true"
                 width={633}
                 height={583}
                 alt=""
@@ -539,7 +544,7 @@ export default function Web() {
             </div>
             <div>
               <motion.img
-                src="/AltimaCore.png"
+                src="https://github.com/Dekatron322/altima/blob/main/public/altimaCore.png?raw=true"
                 width={633}
                 height={583}
                 alt=""
