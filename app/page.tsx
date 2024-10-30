@@ -118,25 +118,25 @@ export default function Web() {
           animate="visible"
           transition={{ duration: 0.5 }}
         >
-          <div className="grid-col-2  grid w-full justify-between  sm:flex">
-            <div className="max-sm:w-full md:w-[403]">
-              <p className="font-regular flex   text-2xl  text-[#FFFFFF99]  md:mt-16 lg:text-2xl">Benefits</p>
-              <p className=" font-regular my-6     text-xl leading-none tracking-tight text-white max-sm:my-4 md:text-xl xl:text-5xl">
+          <div className="flex w-full justify-between  sm:flex">
+            <div className="w-full items-center justify-center max-sm:w-full">
+              <p className="font-regular  text-center  text-2xl  text-[#FFFFFF99]  lg:text-2xl">Benefits</p>
+              <p className=" font-regular my-6   text-center   text-xl leading-none tracking-tight text-white max-sm:my-4 md:text-xl xl:text-5xl">
                 Why Pre-Order?
               </p>
-              <div className="grid grid-cols-2 gap-4 max-sm:gap-2">
-                <div className=" w-full rounded-lg bg-[#080808] p-5 max-sm:p-2">
-                  <Image src="/StarHalf.png" width={48} height={48} alt="" className="max-sm:hidden" />
-                  <Image src="/StarHalf.png" width={35} height={35} alt="" className="sm:hidden" />
+              <div className="grid grid-cols-4 gap-4 max-sm:grid-cols-1 max-sm:gap-2">
+                <div className=" w-full rounded-lg bg-[#080808] p-5 max-sm:p-4">
+                  <Image src="/SketchLogo.png" width={48} height={48} alt="" className="max-sm:hidden" />
+                  <Image src="/SketchLogo.png" width={35} height={35} alt="" className="sm:hidden" />
                   <p className="py-2 text-lg text-white max-md:text-sm">BE FIRST</p>
                   <p className=" text-sm text-[#FFFFFF99] max-sm:text-xs">
                     Be the first to <br className="max-sm:hidden" /> experience this <br className="max-sm:hidden" />{" "}
                     groundbreaking <br className="max-sm:hidden" /> innovation.
                   </p>
                 </div>
-                <div className=" w-full rounded-lg bg-[#080808] p-5 max-sm:p-2">
-                  <Image src="/StarHalf.png" width={48} height={48} alt="" className="max-sm:hidden" />
-                  <Image src="/StarHalf.png" width={35} height={35} alt="" className="sm:hidden" />
+                <div className=" w-full rounded-lg bg-[#080808] p-5 max-sm:p-4">
+                  <Image src="/CurrencyInr.png" width={48} height={48} alt="" className="max-sm:hidden" />
+                  <Image src="/CurrencyInr.png" width={35} height={35} alt="" className="sm:hidden" />
                   <p className="py-2 text-lg text-white max-md:text-sm">EXCLUSIVE PRICING</p>
                   <p className=" text-sm text-[#FFFFFF99] max-sm:text-xs">
                     Secure special <br className="max-sm:hidden" /> introductory pricing
@@ -145,18 +145,18 @@ export default function Web() {
                     <br className="max-sm:hidden" /> order customers..
                   </p>
                 </div>
-                <div className=" w-full rounded-lg bg-[#080808] p-5 max-sm:p-2">
-                  <Image src="/StarHalf.png" width={48} height={48} alt="" className="max-sm:hidden" />
-                  <Image src="/StarHalf.png" width={35} height={35} alt="" className="sm:hidden" />
+                <div className=" w-full rounded-lg bg-[#080808] p-5 max-sm:p-4">
+                  <Image src="/Wrench.png" width={48} height={48} alt="" className="max-sm:hidden" />
+                  <Image src="/Wrench.png" width={35} height={35} alt="" className="sm:hidden" />
                   <p className="py-2 text-lg text-white max-md:text-sm">PRIORITY INSTALLATION</p>
                   <p className=" text-sm text-[#FFFFFF99] max-md:text-xs">
                     Enjoy priority <br className="max-sm:hidden" /> installation and be <br className="max-sm:hidden" />
                     among the first to have <br className="max-sm:hidden" /> it set up.
                   </p>
                 </div>
-                <div className=" w-full rounded-lg bg-[#080808] p-5 max-sm:p-2">
-                  <Image src="/StarHalf.png" width={48} height={48} alt="" className="max-sm:hidden" />
-                  <Image src="/StarHalf.png" width={35} height={35} alt="" className="sm:hidden" />
+                <div className=" w-full rounded-lg bg-[#080808] p-5 max-sm:p-4">
+                  <Image src="/DiamondsFour.png" width={48} height={48} alt="" className="max-sm:hidden" />
+                  <Image src="/DiamondsFour.png" width={35} height={35} alt="" className="sm:hidden" />
                   <p className="py-2 text-lg text-white max-md:text-sm">LIMITED EDITION</p>
                   <p className=" text-sm text-[#FFFFFF99] max-sm:text-xs">
                     The first 100 pre-orders " <br className="max-sm:hidden" /> receive a limited-edition
@@ -165,26 +165,6 @@ export default function Web() {
                 </div>
               </div>
             </div>
-            <div className="max-md:hidden">
-              <motion.img
-                src="/Chip.png"
-                width={671}
-                height={642}
-                alt=""
-                initial={{ scale: 1.2, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1, ease: "easeOut" }}
-              />
-            </div>
-            <div className="mt-3 md:hidden">
-              <motion.img
-                src="/Chip.png"
-                alt=""
-                initial={{ scale: 1.2, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1, ease: "easeOut" }}
-              />
-            </div>
           </div>
         </motion.div>
       </section>
@@ -192,29 +172,29 @@ export default function Web() {
       <section id="how-to-buy" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
         <div className="  w-full justify-between    md:py-10">
           <div className="grid-col-2 grid w-full justify-between gap-10  sm:flex">
-            <div>
-              <p className="font-regular  flex    text-2xl  text-[#FFFFFF99] max-sm:text-lg lg:text-2xl">
-                Our Features
-              </p>
-              <p className=" font-regular my-6  text-xl tracking-tight  text-white max-sm:my-2   md:text-xl md:leading-10 xl:text-5xl">
-                COMPACT AND FUNCTIONAL
-              </p>
+            <div className="md:w-full ">
+              <div className="flex flex-col items-center">
+                <p className="font-regular  flex    text-2xl  text-[#FFFFFF99] max-sm:text-lg lg:text-2xl">
+                  Our Features
+                </p>
+                <p className=" font-regular my-6  text-xl tracking-tight  text-white max-sm:my-2   md:text-xl md:leading-10 xl:text-5xl">
+                  COMPACT AND FUNCTIONAL
+                </p>
 
-              <p className="font-regular mb-6 flex   text-base  text-[#FFFFFF99]  max-sm:text-sm lg:text-base">
-                Transform your room with Altima into a minimalist, modern space with ease and speed
-              </p>
-              <motion.button
-                className="font-regular rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-3 max-sm:text-sm"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                Pre-Order now
-              </motion.button>
-            </div>
-            <div className="md:w-[50%] ">
-              <div className="grid grid-cols-2 gap-4 max-sm:gap-2">
-                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:px-2 max-sm:py-4">
-                  <Image src="/HouseLine.png" width={60} height={60} alt="" className="max-sm:hidden" />
+                <p className="font-regular mb-6 flex   text-base  text-[#FFFFFF99]  max-sm:text-sm lg:text-base">
+                  Transform your room with Altima into a minimalist, modern space with ease and speed
+                </p>
+                {/* <motion.button
+                  className="font-regular rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-3 max-sm:text-sm"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  Pre-Order now
+                </motion.button> */}
+              </div>
+              <div className="grid grid-cols-4 gap-4 max-sm:grid-cols-1 max-sm:gap-2">
+                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:px-4 max-sm:py-4">
+                  <Image src="/HouseLine.png" width={50} height={50} alt="" className="max-sm:hidden" />
                   <Image src="/HouseLine.png" width={40} height={40} alt="" className="sm:hidden" />
                   <p className="py-4 text-lg text-white max-sm:text-sm">Smart Home Hub</p>
                   <p className=" text-sm text-[#FFFFFF99] max-sm:text-xs">
@@ -222,8 +202,8 @@ export default function Web() {
                     <br className="max-sm:hidden" /> directly from your <br className="max-sm:hidden" /> doorway.
                   </p>
                 </div>
-                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:px-2 max-sm:py-4">
-                  <Image src="/Fingerprint.png" width={60} height={60} alt="" className="max-sm:hidden" />
+                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:px-4 max-sm:py-4">
+                  <Image src="/Fingerprint.png" width={50} height={50} alt="" className="max-sm:hidden" />
                   <Image src="/Fingerprint.png" width={40} height={40} alt="" className="sm:hidden" />
                   <p className="py-4 text-lg text-white max-sm:text-sm">ADVANCED SECURITY</p>
                   <p className="text-sm text-[#FFFFFF99] max-sm:text-xs">
@@ -232,8 +212,8 @@ export default function Web() {
                     time monitoring for <br className="max-sm:hidden" /> unmatched safety.
                   </p>
                 </div>
-                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:px-2 max-sm:py-4">
-                  <Image src="/BatteryCharging.png" width={60} height={60} alt="" className="max-sm:hidden" />
+                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:px-4 max-sm:py-4">
+                  <Image src="/BatteryCharging.png" width={50} height={50} alt="" className="max-sm:hidden" />
                   <Image src="/BatteryCharging.png" width={40} height={40} alt="" className="sm:hidden" />
                   <p className="py-4 text-lg text-white max-sm:text-sm">ENERGY MANAGEMENT</p>
                   <p className="text-sm text-[#FFFFFF99] max-sm:text-xs">
@@ -241,8 +221,8 @@ export default function Web() {
                     <br className="max-sm:hidden" /> maximum efficiency.
                   </p>
                 </div>
-                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:px-2 max-sm:py-4">
-                  <Image src="/Aperture.png" width={60} height={60} alt="" className="max-sm:hidden" />
+                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:px-4 max-sm:py-4">
+                  <Image src="/Aperture.png" width={50} height={50} alt="" className="max-sm:hidden" />
                   <Image src="/Aperture.png" width={40} height={40} alt="" className="sm:hidden" />
                   <p className="py-4 text-lg text-white max-sm:text-sm">SLEEK DESIGN</p>
                   <p className="text-sm text-[#FFFFFF99] max-sm:text-xs">
@@ -559,7 +539,8 @@ export default function Web() {
               Production Timeline
             </p>
 
-            <Image src="/Timeline.png" width={549} height={64} alt="" className="py-10" />
+            <Image src="/Timeline.png" width={549} height={64} alt="" className="py-10 md:hidden" />
+            <Image src="/Frame 48095442 (1).png" width={1216} height={64} alt="" className="py-10 max-sm:hidden" />
           </div>
         </div>
       </section>
