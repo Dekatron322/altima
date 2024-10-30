@@ -37,14 +37,15 @@ export default function Web() {
         className="paddings  w-full bg-[#080808] max-sm:px-3 max-sm:py-20 lg:h-screen lg:py-32"
       >
         <div className="flex  w-full  items-center justify-between md:px-10">
-          <div className="flex w-full flex-col  items-center justify-center rounded-3xl bg-[#151515] max-sm:rounded-lg max-sm:p-2  md:p-10">
-            <motion.button
+          <div className="flex w-full flex-col items-center  justify-center rounded-3xl bg-[#151515] pt-3 max-sm:rounded-lg max-sm:p-2  md:p-10">
+            <motion.a
+              href="/address/add-address"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="font-regular mb-3  gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF80] px-4 py-2 text-xs uppercase text-[#FFFFFF] max-sm:py-2 "
+              className="font-regular my-3  gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF80] px-4 py-2 text-xs uppercase text-[#FFFFFF] max-sm:py-2 "
             >
               Add New Address
-            </motion.button>
+            </motion.a>
 
             <div className="flex h-full  rounded-lg  bg-[#FFFFFF1A]   max-sm:grid max-sm:gap-5  md:gap-10">
               <div className="">

@@ -114,13 +114,14 @@ export default function Web() {
                   <span className="text-sm">Total: </span> ₹{total.toLocaleString()}
                 </p>
 
-                <motion.button
+                <motion.a
+                  href="/address"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   className="font-regular   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm "
                 >
                   Procees To Checkout
-                </motion.button>
+                </motion.a>
               </div>
             </div>
           </div>

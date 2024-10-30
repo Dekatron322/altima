@@ -264,13 +264,14 @@ export default function Web() {
         <div className="  w-full     py-10">
           <div className="flex flex-col items-center justify-center">
             <p className="font-regular  mb-6 flex  text-5xl  text-[#FFFFFF] max-md:text-lg">Modern, Stylish, Unique</p>
-            <motion.button
+            <motion.a
+              href="/preorder"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className="font-regular flex  gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-xs "
             >
               Pre-Order now
-            </motion.button>
+            </motion.a>
           </div>
         </div>
       </section>
@@ -308,13 +309,14 @@ export default function Web() {
                 </li>
               </ul>
 
-              <motion.button
+              <motion.a
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className="font-regular   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm "
+                href="/preorder"
               >
                 Pre-Order now
-              </motion.button>
+              </motion.a>
             </div>
             <div className=" max-sm:hidden">
               <motion.img
@@ -384,13 +386,14 @@ export default function Web() {
                 </li>
               </ul>
 
-              <motion.button
+              <motion.a
+                href="/preorder"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className="font-regular   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm "
               >
                 Pre-Order now
-              </motion.button>
+              </motion.a>
             </div>
           </div>
         </div>
@@ -422,13 +425,14 @@ export default function Web() {
                 <li className="pb-2 text-[#FFFFFF99] max-sm:text-xs">Solar-powered backup battery</li>
               </ul>
 
-              <motion.button
+              <motion.a
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className="font-regular   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm "
+                href="/preorder"
               >
                 Pre-Order now
-              </motion.button>
+              </motion.a>
             </div>
             <div>
               <motion.img
@@ -486,13 +490,14 @@ export default function Web() {
               </div>
             </div>
 
-            <motion.button
+            <motion.a
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className="font-regular flex  gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm"
+              href="/preorder"
             >
               Pre-Order now
-            </motion.button>
+            </motion.a>
           </div>
         </div>
       </section>
