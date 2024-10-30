@@ -108,7 +108,7 @@ const Page: React.FC = () => {
               <p className="text-center text-4xl text-[#FFFFFF] max-sm:text-[28px] md:my-5">forgot password</p>
             </div>
 
-            <div className="flex w-full justify-center">
+            <div className="flex w-full justify-center ">
               <form onSubmit={handleSubmit}>
                 <div className="search-bg mb-2 h-[54.37px] items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2 max-sm:w-[320px] xl:w-[536px]">
                   <div className="flex">
@@ -124,7 +124,7 @@ const Page: React.FC = () => {
 
                 <div className="mt-5 flex w-full justify-center gap-6 md:px-6">
                   <button className="font-regular flex w-[60%] items-center justify-center gap-2  rounded-lg border  bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:w-full ">
-                    {loading ? "Signing Up..." : "Reset password"}
+                    {loading ? "Signing Up..." : "Save, Continue"}
                   </button>
                 </div>
               </form>

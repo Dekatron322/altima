@@ -97,37 +97,29 @@ const Page: React.FC = () => {
     <>
       <div className="flex h-screen w-full items-center justify-center bg-[#000000] max-md:bg-[#000000]">
         <motion.div
-          className=" flex  justify-center rounded-3xl bg-[#151515] max-sm:w-[95%] max-sm:rounded-lg xl:min-w-[600px]"
+          className=" flex  justify-center rounded-3xl bg-[#151515] max-sm:w-[95%] max-sm:rounded-lg xl:max-w-[600px]"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ ease: "easeOut", duration: 1 }}
         >
-          <div className="w-full justify-center   ">
-            <div className="w-full items-center py-6 max-md:px-3  md:px-6 ">
+          <div className="flex w-full   flex-col items-center justify-center">
+            <div className="flex w-full flex-col items-center py-6 max-md:px-3  md:px-6 ">
               <p className="text-center text-lg text-[#FFFFFF99] max-sm:text-sm">RESET</p>
               <p className="text-center text-4xl text-[#FFFFFF] max-sm:text-[28px] md:my-5">forgot password</p>
-            </div>
 
-            <div className="flex w-full justify-center md:mt-5">
-              <form onSubmit={handleSubmit}>
-                <div className="search-bg mb-2 h-[54.37px] items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2 max-sm:w-[320px] xl:w-[536px]">
-                  <div className="flex">
-                    <input
-                      type="text"
-                      id="vcn"
-                      placeholder="EMAIL"
-                      className="h-[24px] w-full bg-transparent text-base outline-none focus:outline-none"
-                      style={{ width: "100%", height: "24px" }}
-                    />
-                  </div>
-                </div>
-
-                <div className="mt-5 flex w-full justify-center gap-6 md:px-6">
-                  <button className="font-regular flex w-[60%] items-center justify-center gap-2  rounded-lg border  bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:w-full ">
-                    {loading ? "Signing Up..." : "Reset password"}
-                  </button>
-                </div>
-              </form>
+              <Image
+                src="/Vector1.png"
+                width={40.63}
+                height={40.63}
+                alt="profile"
+                className="self-center object-contain"
+              />
+              <div className="mt-5 flex w-full items-end justify-center rounded-md border border-[#FFFFFF1A] p-2">
+                <p className="text-center text-sm text-[#FFFFFF80]">
+                  Password reset link sent to your email <span className="text-white">(Shereefadamu001@gmail.com)</span>{" "}
+                  , please check to confirm thank you
+                </p>
+              </div>
             </div>
 
             <div className="my-4 flex justify-center gap-1 px-6">
