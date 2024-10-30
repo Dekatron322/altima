@@ -40,7 +40,7 @@ const Navbar = () => {
     <nav className={`flexBetween  navbar paddings z-50 items-center ${isScrolled ? "bg-black" : "bg-transparent"}`}>
       <div className="gap-7">
         <Link href="/">
-          <Image src="./Altima.svg" width={80} height={43} alt="dekalo" />
+          <Image src="/Altima.svg" width={80} height={43} alt="dekalo" />
         </Link>
       </div>
       <div className="flex items-center gap-14">
