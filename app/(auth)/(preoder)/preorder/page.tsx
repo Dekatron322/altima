@@ -35,9 +35,12 @@ export default function Web() {
     <section className="bg-black">
       <Navbar />
 
-      <section id="other-products" className="paddings  w-full bg-[#080808] max-sm:px-3 lg:h-screen lg:py-32">
-        <div className=" w-full  items-center justify-between px-10">
-          <div className="flex w-full flex-col  justify-center rounded-3xl bg-[#151515] p-10 ">
+      <section
+        id="other-products"
+        className="paddings  w-full bg-[#080808] max-sm:px-3 max-sm:py-20 lg:h-screen lg:py-32"
+      >
+        <div className=" w-full  items-center justify-between md:px-10">
+          <div className="flex w-full flex-col  justify-center rounded-3xl bg-[#151515] max-sm:p-2  md:p-10">
             <p className="text-center text-xl text-[#FFFFFF]">Orders</p>
             <p className="py-5 text-xs text-[#FFFFFF80]">
               ✓Estimated delivery date: 4-5 months after the preorder window closes
