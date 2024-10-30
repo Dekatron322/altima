@@ -37,7 +37,7 @@ const Page: React.FC = () => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     // Redirect to dashboard after successful login
-    router.push("/signin")
+    router.push("/")
   }
 
   //   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -103,9 +103,9 @@ const Page: React.FC = () => {
           transition={{ ease: "easeOut", duration: 1 }}
         >
           <div className="w-full justify-center   ">
-            <div className="w-full items-center py-6 max-md:px-3 md:px-6 ">
-              <p className="text-center text-lg text-[#FFFFFF99] max-sm:text-sm">CREate Account</p>
-              <p className="my-5 text-center text-4xl text-[#FFFFFF] max-sm:text-[28px]">Sign Up</p>
+            <div className="w-full items-center py-6 max-md:px-3  md:px-6 ">
+              <p className="text-center text-lg text-[#FFFFFF99] max-sm:text-sm">RESET</p>
+              <p className="text-center text-4xl text-[#FFFFFF] max-sm:text-[28px] md:my-5">forgot password</p>
             </div>
 
             <div className="flex w-full justify-center md:mt-5">
@@ -122,30 +122,18 @@ const Page: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="search-bg mt-6 h-[54.37px] items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2 xl:w-[536px]">
-                  <div className="flex">
-                    <input
-                      type="text"
-                      id="vcn"
-                      placeholder="Password"
-                      className="h-[24px] w-full bg-transparent text-base outline-none focus:outline-none"
-                      style={{ width: "100%", height: "24px" }}
-                    />
-                  </div>
-                </div>
-
                 <div className="mt-5 flex w-full justify-center gap-6 md:px-6">
                   <button className="font-regular flex w-[60%] items-center justify-center gap-2  rounded-lg border  bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:w-full ">
-                    {loading ? "Signing Up..." : "Sign Up"}
+                    {loading ? "Signing Up..." : "Reset password"}
                   </button>
                 </div>
               </form>
             </div>
 
             <div className="my-4 flex justify-center gap-1 px-6">
-              <p className="text-xs text-[#4F4F4F]">Already Have an Account?</p>
-              <Link href="/signin" className="text-xs text-[#FF3B30]">
-                Log in
+              <p className="text-xs text-[#4F4F4F]">Don't Have an Account Yet?</p>
+              <Link href="/signup" className="text-xs text-[#FF3B30]">
+                Sign Up
               </Link>
             </div>
           </div>

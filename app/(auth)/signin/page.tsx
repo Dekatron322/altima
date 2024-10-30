@@ -104,8 +104,8 @@ const Page: React.FC = () => {
         >
           <div className="w-full justify-center   ">
             <div className="w-full items-center py-6 max-md:px-3 md:px-6 ">
-              <p className="text-center text-lg text-[#FFFFFF99]">Authenticate</p>
-              <p className="my-5 text-center text-4xl text-[#FFFFFF]">LOG IN</p>
+              <p className="text-center text-lg text-[#FFFFFF99] max-sm:text-sm">Authenticate</p>
+              <p className="my-5 text-center text-4xl text-[#FFFFFF] max-sm:text-[28px]">LOG IN</p>
             </div>
 
             <div className="flex w-full justify-center md:mt-5">
