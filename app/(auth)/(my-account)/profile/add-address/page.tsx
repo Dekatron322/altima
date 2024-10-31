@@ -6,6 +6,7 @@ import "aos/dist/aos.css"
 import Navbar from "components/Navbar/Navbar"
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { HiChevronDown } from "react-icons/hi2"
 
 export default function Web() {
   const [isDefaultShipping, setIsDefaultShipping] = useState(true)
@@ -20,11 +21,38 @@ export default function Web() {
   const toggleShippingTwo = () => setIsDefaultShippingTwo(!isDefaultShippingTwo)
   const toggleBillingTwo = () => setIsDefaultBillingTwo(!isDefaultBillingTwo)
 
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+
   return (
     <section className="bg-black">
       <Navbar />
 
-      <section className="paddings flex w-full gap-5 bg-[#080808] max-sm:px-3 max-sm:py-20 lg:h-auto lg:py-32">
+      <section className="paddings w-full gap-5 bg-[#080808] max-sm:px-3 max-sm:py-10 md:flex lg:h-auto lg:py-32">
+        <div className="relative mb-5 max-sm:block md:hidden">
+          <button
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            className="flex w-[160px] items-center justify-between whitespace-nowrap border border-[#FFFFFF0D] p-2 text-sm text-[#FFFFFF80]"
+          >
+            My Account
+            <HiChevronDown className="ml-2 h-5 w-5 text-white" />
+          </button>
+          {isDropdownOpen && (
+            <div className="absolute z-10 mt-1 w-[160px] rounded-lg bg-[#262626] bg-[#FFFFFF1A] text-sm text-[#FFFFFF80]">
+              <a href="/profile" className="block bg-[#FFFFFF1A] px-4 py-2  hover:bg-[#FFFFFF1A]">
+                My Account
+              </a>
+              <a href="/my-account/order" className="block  px-4 py-2 hover:bg-[#FFFFFF1A]">
+                Orders
+              </a>
+              <a href="/my-account/installment" className="block px-4 py-2 hover:bg-[#FFFFFF1A]">
+                Installments
+              </a>
+              <a href="/logout" className="block px-4 py-2 hover:bg-[#FFFFFF1A]">
+                Log out
+              </a>
+            </div>
+          )}
+        </div>
         <div className="max-md:hidden">
           <a href="" className=" grid h-auto w-[180px]  bg-[#FFFFFF1A] ">
             <p className="whitespace-nowrap p-2 text-white">My Account</p>
