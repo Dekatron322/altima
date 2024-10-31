@@ -270,3 +270,11 @@ body {
 .text-area {
   @apply flex min-h-[200px]  rounded-lg border border-[#282828] bg-[#282828]  p-3 hover:border-[#1B5EED] focus:border-[#1B5EED] active:border-[#1B5EED] max-sm:w-[100%] md:w-[60%];
 }
+
+.custom-text::first-word {
+  color: #ff5733;
+}
+
+.first-word-color::first-line {
+  color: #ff0000; /* Replace with your desired color */
+}
