@@ -83,13 +83,14 @@ export default function Web() {
                 </p>
 
                 <div className="flex gap-4">
-                  <motion.button
+                  <motion.a
+                    href="/my-account/track-order"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     className="font-regular   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-sm uppercase text-[#FFFFFF] max-sm:py-2 "
                   >
                     Track Order
-                  </motion.button>
+                  </motion.a>
 
                   <motion.button
                     whileHover={{ scale: 1.1 }}
@@ -139,13 +140,14 @@ export default function Web() {
                 </p>
 
                 <div className="flex gap-4">
-                  <motion.button
+                  <motion.a
+                    href="/my-account/track-order"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     className="font-regular   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-sm uppercase text-[#FFFFFF] max-sm:py-2 "
                   >
                     Track Order
-                  </motion.button>
+                  </motion.a>
 
                   <motion.button
                     whileHover={{ scale: 1.1 }}
