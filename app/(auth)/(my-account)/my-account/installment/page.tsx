@@ -35,8 +35,22 @@ export default function Web() {
     <section className="bg-black">
       <Navbar />
 
-      <section className="paddings  w-full bg-[#080808] max-sm:px-3 max-sm:py-20 lg:h-auto lg:py-32">
-        <div className=" w-full  items-center justify-between md:px-10">
+      <section className="paddings  flex w-full gap-5 bg-[#080808] max-sm:px-3 max-sm:py-20 lg:h-auto lg:py-32">
+        <div className="max-md:hidden">
+          <a href="" className=" grid h-auto w-[180px]  bg-[#FFFFFF0D] ">
+            <p className="whitespace-nowrap p-2 text-white">My Account</p>
+          </a>
+          <a href="/my-account/order" className="mt-[0.5px] grid h-auto  bg-[#FFFFFF0D] ">
+            <p className="whitespace-nowrap p-2 text-white">Orders</p>
+          </a>
+          <a href="/my-account/installment" className="mt-[0.5px] grid h-auto  bg-[#FFFFFF1A] ">
+            <p className="whitespace-nowrap p-2 text-white">Installments</p>
+          </a>
+          <div className="mt-[0.5px] grid h-auto  bg-[#FFFFFF0D] ">
+            <p className="whitespace-nowrap p-2 text-white">Log out</p>
+          </div>
+        </div>
+        <div className=" w-full  items-center justify-between ">
           <div className="flex w-full flex-col  justify-center rounded-3xl bg-[#151515] max-sm:rounded-lg max-sm:p-2  md:p-10">
             <p className="text-center text-xl text-[#FFFFFF]">Installments</p>
             <p className="py-5 text-center text-xs text-[#FFFFFF80]">Manage Your Pre-Order Installment Payments</p>

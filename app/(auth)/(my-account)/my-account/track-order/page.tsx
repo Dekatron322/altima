@@ -11,6 +11,7 @@ import { useEffect, useState } from "react"
 import AuthProviders from "components/ProvidersComponents/AuthProviders"
 import Accordion from "components/Accordion/Accordion"
 import { motion, AnimatePresence } from "framer-motion"
+import { useRouter } from "next/navigation"
 
 export default function Web() {
   useEffect(() => {
@@ -31,17 +32,47 @@ export default function Web() {
   const unitPrice = 500050 // price per unit
   const total = quantity * unitPrice
 
+  const router = useRouter()
+
+  const handleGoBack = () => {
+    router.back()
+  }
+
   return (
     <section className="bg-black">
       <Navbar />
 
-      <section className="paddings  w-full bg-[#080808] max-sm:px-3 max-sm:py-20 lg:h-auto lg:py-32">
-        <div className=" w-full  items-center justify-between md:px-10">
-          <div className="flex w-full flex-col  justify-center rounded-3xl bg-[#151515] max-sm:rounded-lg max-sm:p-2  md:p-10">
-            <p className="text-center text-xl text-[#FFFFFF]">Orders</p>
-            <p className="py-5 text-center text-xs text-[#FFFFFF80]">
-              Check your order and verify your shipping for better experience
-            </p>
+      <section className="paddings flex w-full  gap-5 bg-[#080808] max-sm:px-3 max-sm:py-20 lg:h-auto lg:py-32">
+        <div className="max-md:hidden">
+          <a href="" className=" grid h-auto w-[180px]  bg-[#FFFFFF0D] ">
+            <p className="whitespace-nowrap p-2 text-white">My Account</p>
+          </a>
+          <a href="/my-account/order" className="mt-[0.5px] grid h-auto  bg-[#FFFFFF1A] ">
+            <p className="whitespace-nowrap p-2 text-white">Orders</p>
+          </a>
+          <a href="/my-account/installment" className="mt-[0.5px] grid h-auto  bg-[#FFFFFF0D] ">
+            <p className="whitespace-nowrap p-2 text-white">Installments</p>
+          </a>
+          <div className="mt-[0.5px] grid h-auto  bg-[#FFFFFF0D] ">
+            <p className="whitespace-nowrap p-2 text-white">Log out</p>
+          </div>
+        </div>
+        <div className=" w-full  items-center justify-between ">
+          <div className="flex w-full flex-col  justify-center rounded-3xl bg-[#151515] max-sm:rounded-lg max-sm:p-2  md:px-10 md:py-5">
+            <div className="mb-3 flex w-full">
+              <motion.img
+                src="/ArrowUp.png"
+                width={32}
+                height={16}
+                alt=""
+                initial={{ scale: 1.2, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 1, ease: "easeIn" }}
+                className="cursor-pointer"
+                onClick={handleGoBack}
+              />
+              <p className="w-full text-center text-xl text-[#FFFFFF]">Altima Core Model</p>
+            </div>
 
             <div className="flex h-full  rounded-lg  bg-[#FFFFFF1A]  p-5 max-sm:grid max-sm:gap-5  md:gap-10">
               <div className="">
