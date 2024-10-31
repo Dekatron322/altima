@@ -29,10 +29,7 @@ export default function Web() {
     <section className="bg-black">
       <Navbar />
 
-      <section
-        id="other-products"
-        className="paddings items-center  justify-center bg-[#080808] max-sm:px-3 max-sm:py-20 lg:h-auto lg:py-32"
-      >
+      <section className="paddings items-center  justify-center bg-[#080808] max-sm:px-3 max-sm:py-20 lg:h-auto lg:py-32">
         <div className="flex   items-center justify-center md:px-10">
           <div className="flex  flex-col    rounded-3xl bg-[#151515] max-sm:rounded-lg max-sm:p-2  md:p-5">
             <div onClick={handleGoBack} className="flex cursor-pointer items-center gap-2 py-3">

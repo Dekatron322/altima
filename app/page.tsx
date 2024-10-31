@@ -11,6 +11,7 @@ import { useEffect } from "react"
 import AuthProviders from "components/ProvidersComponents/AuthProviders"
 import Accordion from "components/Accordion/Accordion"
 import { motion, AnimatePresence } from "framer-motion"
+import MainFooter from "components/Footer/MainFooter"
 
 export default function Web() {
   useEffect(() => {
@@ -569,7 +570,7 @@ export default function Web() {
         </div>
       </section>
 
-      <section className="paddings  w-full bg-[#080808] max-sm:px-3 ">
+      <section className="paddings  w-full bg-[#080808] max-sm:px-3 " id="contact">
         <div className="  w-full     py-10">
           <div className="flex flex-col  items-center justify-center">
             <p className=" text-center text-[#FFFFFF99]">Contact us</p>
@@ -612,17 +613,7 @@ export default function Web() {
         </div>
       </section>
 
-      <section id="contact" className="paddings  w-full bg-[#151515] max-sm:px-3 ">
-        <div className="  w-full">
-          <div className="flex flex-col  items-center justify-center">
-            <ul className="flex">
-              <li className="text-center text-white max-sm:text-[8px]">
-                Privacy Policy , Terms of Pre-order , Refund Policy , Press Kit
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+      <MainFooter />
 
       <Footer />
     </section>
