@@ -6,6 +6,7 @@ import Navbar from "components/Navbar/Navbar"
 import { SetStateAction, useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { HiChevronDown } from "react-icons/hi2"
+import { LiaTimesSolid } from "react-icons/lia"
 
 export default function Web() {
   const [activeTab, setActiveTab] = useState("info")
@@ -23,6 +24,11 @@ export default function Web() {
 
   const toggleTab = (tab: SetStateAction<string>) => setActiveTab(tab)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
+
+  const opeDeletenModal = () => setIsDeleteModalOpen(true)
+  const closeDeleteModal = () => setIsDeleteModalOpen(false)
 
   return (
     <section className="bg-black">
@@ -47,9 +53,9 @@ export default function Web() {
               <a href="/my-account/installment" className="block px-4 py-2 hover:bg-[#FFFFFF1A]">
                 Installments
               </a>
-              <a href="/logout" className="block px-4 py-2 hover:bg-[#FFFFFF1A]">
+              <p onClick={opeDeletenModal} className="block px-4 py-2 hover:bg-[#FFFFFF1A]">
                 Log out
-              </a>
+              </p>
             </div>
           )}
         </div>
@@ -63,7 +69,7 @@ export default function Web() {
           <a href="/my-account/installment" className="mt-[0.5px] grid h-auto bg-[#FFFFFF0D]">
             <p className="whitespace-nowrap p-2 text-white">Installments</p>
           </a>
-          <div className="mt-[0.5px] grid h-auto bg-[#FFFFFF0D]">
+          <div onClick={opeDeletenModal} className="mt-[0.5px] grid h-auto cursor-pointer bg-[#FFFFFF0D]">
             <p className="whitespace-nowrap p-2 text-white">Log out</p>
           </div>
         </div>
@@ -322,6 +328,28 @@ export default function Web() {
           </div>
         </div>
       </section>
+      {isDeleteModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#000000] bg-opacity-95">
+          <div className="w-full max-w-sm rounded-lg bg-[#151515] p-4 text-white">
+            <div className="mb-4 flex w-full items-center">
+              <h2 className=" w-full text-center text-[#FFFFFF99]">Log Out</h2>
+              <LiaTimesSolid onClick={closeDeleteModal} className="cursor-pointer" />
+            </div>
+            <p className="w-full text-center text-2xl text-white">Are you sure you want to log out?</p>
+            <div className="mt-4 flex gap-2">
+              <button className="w-full  rounded-lg border border-[#FFFFFF99] bg-[#FF3B3B] px-4 py-2 text-[#000000]  hover:bg-[#FF3B3B]">
+                Yes, Log Out
+              </button>
+              <button
+                onClick={closeDeleteModal}
+                className="w-full rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-[#ffffff]  hover:bg-[#FF3B3B]"
+              >
+                No, Go Back
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       <Footer />
     </section>
   )

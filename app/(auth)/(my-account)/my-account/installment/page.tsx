@@ -53,9 +53,9 @@ export default function Web() {
               <a href="/my-account/installment" className="block bg-[#FFFFFF1A] px-4 py-2 hover:bg-[#FFFFFF1A]">
                 Installments
               </a>
-              <a href="/logout" className="block px-4 py-2 hover:bg-[#FFFFFF1A]">
+              <p onClick={opeDeletenModal} className="block px-4 py-2 hover:bg-[#FFFFFF1A]">
                 Log out
-              </a>
+              </p>
             </div>
           )}
         </div>
@@ -235,13 +235,13 @@ export default function Web() {
             <p className="w-full text-center text-2xl text-white">Are you sure you want to log out?</p>
             <div className="mt-4 flex gap-2">
               <button className="w-full  rounded-lg border border-[#FFFFFF99] bg-[#FF3B3B] px-4 py-2 text-[#000000]  hover:bg-[#FF3B3B]">
-                Yes, Pay Now
+                Yes, Log Out
               </button>
               <button
                 onClick={closeDeleteModal}
                 className="w-full rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-[#ffffff]  hover:bg-[#FF3B3B]"
               >
-                No, Cancel
+                No, Go Back
               </button>
             </div>
           </div>
