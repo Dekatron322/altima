@@ -1,5 +1,4 @@
 "use client"
-import { Metadata } from "next"
 import Footer from "components/Footer/Footer"
 import AOS from "aos"
 import "aos/dist/aos.css"
@@ -9,13 +8,6 @@ import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 export default function Web() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000, // Animation duration
-      once: true, // Only animate elements once
-    })
-  }, [])
-
   const [isDefaultShipping, setIsDefaultShipping] = useState(true)
   const [isDefaultBilling, setIsDefaultBilling] = useState(true)
 
@@ -201,13 +193,14 @@ export default function Web() {
               </div>
             </div>
             <div className="flex w-full flex-col  items-center justify-center rounded-3xl bg-[#151515] max-sm:rounded-lg max-sm:p-2  md:pt-10">
-              <motion.button
+              <motion.a
+                href="/summary"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className="font-regular mb-3  gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF80] px-20 py-2 text-xs uppercase text-[#FFFFFF] max-sm:py-2 "
               >
                 Save
-              </motion.button>
+              </motion.a>
             </div>
           </div>
         </div>

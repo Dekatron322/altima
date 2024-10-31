@@ -5,21 +5,21 @@ import "aos/dist/aos.css"
 import Navbar from "components/Navbar/Navbar"
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { useRouter } from "next/navigation"
 
 export default function Web() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000, // Animation duration
-      once: true, // Only animate elements once
-    })
-  }, [])
-
   const [quantity, setQuantity] = useState(1000)
 
   // Handlers for increment and decrement
   const handleIncrement = () => setQuantity(quantity + 1)
   const handleDecrement = () => {
     if (quantity > 0) setQuantity(quantity - 1) // Prevent negative quantity
+  }
+
+  const router = useRouter()
+
+  const handleGoBack = () => {
+    router.back()
   }
 
   const unitPrice = 500050 // price per unit
@@ -35,7 +35,7 @@ export default function Web() {
       >
         <div className="flex   items-center justify-center md:px-10">
           <div className="flex  flex-col    rounded-3xl bg-[#151515] max-sm:rounded-lg max-sm:p-2  md:p-5">
-            <div className="flex items-center gap-2 py-3">
+            <div onClick={handleGoBack} className="flex cursor-pointer items-center gap-2 py-3">
               <motion.img
                 src="/CaretUp.png"
                 width={16}
@@ -84,13 +84,14 @@ export default function Web() {
                   <span className="text-sm">Total: </span> ₹{total.toLocaleString()}
                 </p>
 
-                <motion.button
+                <motion.a
+                  href="/order-successful"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   className="font-regular w-full  gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm "
                 >
                   Make Payment
-                </motion.button>
+                </motion.a>
               </div>
             </div>
           </div>
