@@ -1,26 +1,12 @@
 "use client"
-import { Metadata } from "next"
 import Footer from "components/Footer/Footer"
-import AOS from "aos"
-import "aos/dist/aos.css"
-
-import Image from "next/image"
-import Link from "next/link"
 import Navbar from "components/Navbar/Navbar"
 import { useEffect, useState } from "react"
-import AuthProviders from "components/ProvidersComponents/AuthProviders"
-import Accordion from "components/Accordion/Accordion"
 import { motion, AnimatePresence } from "framer-motion"
 import { HiChevronDown } from "react-icons/hi2"
+import { LiaTimesSolid } from "react-icons/lia"
 
 export default function Web() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000, // Animation duration
-      once: true, // Only animate elements once
-    })
-  }, [])
-
   const [quantity, setQuantity] = useState(1000)
 
   // Handlers for increment and decrement
@@ -33,6 +19,10 @@ export default function Web() {
   const total = quantity * unitPrice
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const openModal = () => setIsModalOpen(true)
+  const closeModal = () => setIsModalOpen(false)
 
   return (
     <section className="bg-black">
@@ -121,6 +111,7 @@ export default function Web() {
 
                 <div className="flex gap-4">
                   <motion.button
+                    onClick={openModal}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     className="font-regular   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-sm uppercase text-[#FFFFFF] max-sm:py-2 "
@@ -193,6 +184,39 @@ export default function Web() {
           </div>
         </div>
       </section>
+
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#000000] bg-opacity-95">
+          <div className="w-full max-w-sm rounded-lg bg-[#151515] p-4 text-white">
+            <div className="mb-4 flex w-full items-center">
+              <h2 className=" w-full text-center text-[#FFFFFF99]">Enter Amount</h2>
+              <LiaTimesSolid onClick={closeModal} className="cursor-pointer" />
+            </div>
+            <div className="search-bg  h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+              <div className="flex">
+                <input
+                  type="text"
+                  id="vcn"
+                  placeholder="Amount"
+                  className="h-[24px] w-full bg-transparent text-base text-white outline-none focus:outline-none"
+                  style={{ width: "100%", height: "24px" }}
+                />
+              </div>
+            </div>
+            <div className="mt-4 flex gap-2">
+              <button className="w-full  rounded-lg border border-[#FFFFFF99] bg-[#FF3B3B] px-4 py-2 text-[#000000]  hover:bg-[#FF3B3B]">
+                Yes, Pay Now
+              </button>
+              <button
+                onClick={closeModal}
+                className="w-full rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-[#ffffff]  hover:bg-[#FF3B3B]"
+              >
+                No, Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       <Footer />
     </section>
