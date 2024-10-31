@@ -116,8 +116,8 @@ const Navbar = () => {
       </nav>
       <nav className="block border-b  px-16 py-4 max-md:px-3 md:hidden">
         <div className="flex items-center justify-between">
-          <Link href="/" className="icon-style content-center">
-            <Image src="/Altima.svg" width={150} height={43} alt="dekalo" />
+          <Link href="/" className=" content-center">
+            <Image src="/Altima.svg" width={80} height={80} alt="dekalo" />
           </Link>
           <RiMenuLine className="h-5 w-5 text-white" onClick={toggleNav} style={{ cursor: "pointer" }} />
         </div>
@@ -129,7 +129,7 @@ const Navbar = () => {
           }`}
         >
           <div className="flex items-center justify-between p-4 pt-6">
-            <Image className="" src="/altima.svg" height={80} width={80} alt="" />
+            <Image className="" src="/Altima.svg" height={80} width={80} alt="" />
             <RxCross2 className="text-white" onClick={toggleNav} style={{ cursor: "pointer" }} />
           </div>
           <div className="mt-4 flex flex-col items-start gap-5 space-y-2 p-4">
