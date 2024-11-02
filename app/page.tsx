@@ -67,9 +67,9 @@ export default function Web() {
   return (
     <section className="bg-black">
       <Navbar />
-      <section id="about" className="about-section grid w-full bg-black py-8   max-sm:px-3 lg:h-screen lg:py-16">
+      <section id="about" className="about-section grid w-full bg-black     lg:h-screen lg:py-16">
         <motion.div
-          className="paddings pb-10 "
+          className="paddings pb-10 max-sm:px-3"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
