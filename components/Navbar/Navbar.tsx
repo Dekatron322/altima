@@ -114,7 +114,7 @@ const Navbar = () => {
           </a>
         </div>
       </nav>
-      <nav className="block border-b  px-16 py-4 max-md:px-3 md:hidden">
+      <nav className="block   px-16 py-4 max-md:px-3 md:hidden">
         <div className="flex items-center justify-between">
           <Link href="/" className=" content-center">
             <Image src="/Altima.svg" width={80} height={80} alt="dekalo" />
