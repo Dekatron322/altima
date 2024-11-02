@@ -3,9 +3,44 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Azonix";
-  src: url("../styles/fonts/Azonix.ttf") format("truetype");
+  font-family: "Lufga";
+  src: url("../styles/fonts/LufgaRegular.ttf") format("truetype");
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("../styles/fonts/LufgaMedium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("../styles/fonts/LufgaSemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("../styles/fonts/LufgaBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("../styles/fonts/LufgaExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("../styles/fonts/LufgaBlack.ttf") format("truetype");
+  font-weight: 500;
   font-style: normal;
 }
 

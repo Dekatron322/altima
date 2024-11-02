@@ -32,6 +32,7 @@ module.exports = {
       },
       fontFamily: {
         body: [
+          "Lufga",
           "Azonix",
           "Courier",
           "Inter",
@@ -52,6 +53,7 @@ module.exports = {
           "Clash Display",
         ],
         sans: [
+          "Lufga",
           "Azonix",
           "Courier",
           "Inter",
