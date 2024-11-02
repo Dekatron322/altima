@@ -60,19 +60,15 @@ const Navbar = () => {
             <a
               href="#about"
               className={
-                activeLink === "about"
-                  ? "font-regular border-b-3 border-[#FF3B30]  text-white"
-                  : " uppercase text-white"
+                activeLink === "about" ? "font-regular border-b-3 border-[#FF3B30]  text-white" : "  text-white"
               }
             >
-              HOME
+              Home
             </a>
             <a
               href="#how-to-buy"
               className={
-                activeLink === "how-to-buy"
-                  ? "font-regular border-b-3 border-[#FF3B30]  text-white"
-                  : " uppercase text-white"
+                activeLink === "how-to-buy" ? "font-regular border-b-3 border-[#FF3B30]  text-white" : "  text-white"
               }
             >
               Product Info
@@ -82,7 +78,7 @@ const Navbar = () => {
               className={
                 activeLink === "specifications"
                   ? "font-regular border-b-3 border-[#FF3B30]  text-white"
-                  : " uppercase text-white"
+                  : "  text-white"
               }
             >
               Specifications
@@ -93,7 +89,7 @@ const Navbar = () => {
               className={
                 activeLink === "other-products"
                   ? "font-regular border-b-3 border-[#FF3B30]  text-white"
-                  : " uppercase text-white"
+                  : "  text-white"
               }
             >
               Other Products
@@ -101,15 +97,13 @@ const Navbar = () => {
             <a
               href="#contact"
               className={
-                activeLink === "contact"
-                  ? "font-regular border-b-3 border-[#FF3B30]  text-white"
-                  : " uppercase text-white"
+                activeLink === "contact" ? "font-regular border-b-3 border-[#FF3B30]  text-white" : "  text-white"
               }
             >
               Contact
             </a>
           </ul>
-          <a href="/my-account/order" className={" rounded-lg bg-[#FFFFFF1A] p-2 uppercase text-white"}>
+          <a href="/my-account/profile" className={" rounded-lg bg-[#FFFFFF1A] p-2 uppercase text-white"}>
             My Account
           </a>
         </div>
@@ -137,21 +131,17 @@ const Navbar = () => {
               onClick={toggleNav}
               href="#about"
               className={
-                activeLink === "about"
-                  ? "font-regular  border-b-3 border-[#FF3B30]  text-white"
-                  : " uppercase text-white"
+                activeLink === "about" ? "font-regular  border-b-3 border-[#FF3B30]  text-white" : "  text-white"
               }
             >
-              HOME
+              Home
             </a>
 
             <a
               onClick={toggleNav}
               href="#how-to-buy"
               className={
-                activeLink === "how-to-buy"
-                  ? "font-regular  border-b-3 border-[#FF3B30]  text-white"
-                  : " uppercase text-white"
+                activeLink === "how-to-buy" ? "font-regular  border-b-3 border-[#FF3B30]  text-white" : "  text-white"
               }
             >
               Product Info
@@ -162,7 +152,7 @@ const Navbar = () => {
               className={
                 activeLink === "specifications"
                   ? "font-regular  border-b-3 border-[#FF3B30]  text-white"
-                  : " uppercase text-white"
+                  : "  text-white"
               }
             >
               Specifications
@@ -183,15 +173,13 @@ const Navbar = () => {
               href="#contact"
               onClick={toggleNav}
               className={
-                activeLink === "contact"
-                  ? "font-regular  border-b-3 border-[#FF3B30]  text-white"
-                  : " uppercase text-white"
+                activeLink === "contact" ? "font-regular  border-b-3 border-[#FF3B30]  text-white" : "  text-white"
               }
             >
               Contact
             </a>
 
-            <a href="/my-account/order" className={" rounded-lg bg-[#FFFFFF1A] p-2 uppercase text-white"}>
+            <a href="/my-account/order" className={" rounded-lg bg-[#FFFFFF1A] p-2  text-white"}>
               My Account
             </a>
           </div>

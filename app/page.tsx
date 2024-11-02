@@ -79,20 +79,33 @@ export default function Web() {
             <div>
               <div className="mb-4 flex items-center justify-center gap-2 rounded-lg bg-[#FFFFFF1A] p-2 md:max-w-[519px]">
                 <Image src="/Vector.png" width={24} height={24} alt="" />
-                <p className="text-sm text-[#FFFFFF]">POWERED BY INNOVATION FROM SUSMO AND OTHER DRIVES</p>
+                <p className="text-sm text-[#FFFFFF] max-sm:text-[9px]">
+                  POWERED BY INNOVATION FROM SUSMO AND OTHER DRIVES
+                </p>
               </div>
               <p className="  flex text-7xl  font-bold text-[#FFFFFF] max-sm:text-2xl ">ALTIMA: THE SMART </p>
               <p className="  flex text-7xl  font-bold text-[#FFFFFF] max-sm:text-2xl ">DOOR & HOME HUB –</p>
               <p className="  flex text-7xl  font-bold text-[#FF3B30] max-sm:text-3xl ">PRE-ORDER NOW!</p>
 
-              <p className="mt-10 text-xl text-white max-sm:mt-3  max-sm:text-sm md:w-[600px]">
+              <p className="mt-10 text-xl text-white max-sm:mt-3  max-sm:text-base md:w-[600px]">
                 Experience the next level of convenience and security with Altima – a revolutionary smart door and home
                 hub in one. Featuring a disappearing handle and cutting-edge technology, Altima seamlessly integrates
                 security and smart home functions, perfect for any space – be it home, office, or beyond.
               </p>
-              <div className="mt-4 w-full gap-5 max-sm:mt-20 max-sm:gap-2 md:flex ">
+              <div className="max-sm:my-5 md:hidden">
+                <motion.img
+                  src="/Web.1889 (1).png"
+                  alt=""
+                  initial={{ scale: 1.2, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 1, ease: "easeOut" }}
+                  width={633}
+                  height={583}
+                />
+              </div>
+              <div className="mt-4 flex w-full gap-5 max-sm:gap-2 ">
                 <motion.button
-                  className="font-regular whitespace-nowrap rounded-lg border-[#FF3B30] bg-[#FFFFFF26] px-4 py-3 uppercase text-[#FFFFFF] max-sm:mb-3 max-sm:w-full max-sm:bg-[#000000] max-sm:py-3 max-sm:text-xs md:border "
+                  className="font-regular whitespace-nowrap rounded-lg border border-[#FF3B30] bg-[#FFFFFF26] px-4 py-3 uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -100,7 +113,7 @@ export default function Web() {
                 </motion.button>
 
                 <motion.button
-                  className="font-regular flex items-center justify-center gap-2 whitespace-nowrap rounded-lg border-[#FFFFFF99] bg-transparent px-4 py-3 uppercase text-[#FFFFFF] max-sm:mb-3 max-sm:w-full max-sm:bg-[#000000] max-sm:py-2 max-sm:text-xs md:border "
+                  className="font-regular flex items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-[#FFFFFF99] bg-transparent px-4 py-3 uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-2 max-sm:text-xs "
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -202,7 +215,7 @@ export default function Web() {
                   Pre-Order now
                 </motion.button> */}
               </div>
-              <div className="flex items-center justify-center gap-4 max-sm:grid-cols-1">
+              <div className="flex items-center justify-center gap-4 max-sm:grid max-sm:grid-cols-1">
                 <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10  max-sm:p-5 md:h-[263px] md:w-[347px]">
                   <Image src="/HouseLine.png" width={50} height={50} alt="" className="max-sm:hidden" />
                   <Image src="/HouseLine.png" width={40} height={40} alt="" className="sm:hidden" />
@@ -222,7 +235,7 @@ export default function Web() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-center justify-center gap-4 max-sm:grid-cols-1 md:my-4">
+              <div className="flex items-center justify-center gap-4 max-sm:mt-4 max-sm:grid max-sm:grid-cols-1 md:my-4">
                 <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:p-5 md:h-[263px] md:w-[347px]">
                   <Image src="/Fingerprint.png" width={50} height={50} alt="" className="max-sm:hidden" />
                   <Image src="/Fingerprint.png" width={40} height={40} alt="" className="sm:hidden" />
@@ -239,8 +252,8 @@ export default function Web() {
                   <Image src="/Aperture.png" width={40} height={40} alt="" className="sm:hidden" />
                   <p className="py-4 text-lg text-white max-sm:text-sm">SLEEK DESIGN</p>
                   <p className="text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    ELEVATE YOUR HOME'S <br className="max-sm:hidden" /> AESTHETIC WITH OUR{" "}
-                    <br className="max-sm:hidden" /> MINIMALIST, CUSTOMIZABLE <br className="max-sm:hidden" /> DESIGNS.
+                    Elevate your home <br className="max-sm:hidden" /> aesthetic, with our{" "}
+                    <br className="max-sm:hidden" /> minimalist customizable <br className="max-sm:hidden" /> design.
                   </p>
                 </div>
               </div>
