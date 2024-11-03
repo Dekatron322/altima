@@ -644,7 +644,7 @@ export default function Web() {
             </p>
           </div>
 
-          <div className=" w-full rounded-md border border-[#FFFFFF1A] md:max-w-[90%]">
+          <div className=" w-full rounded-md border border-[#FFFFFF1A] ">
             {faqData.map((faq, index) => (
               <Accordion key={index} title={faq.title} content={faq.content} />
             ))}
