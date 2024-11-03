@@ -149,7 +149,7 @@ export default function Web() {
                   <Image src="/SketchLogo.png" width={48} height={48} alt="" className="max-sm:hidden" />
                   <Image src="/SketchLogo.png" width={35} height={35} alt="" className="sm:hidden" />
                   <p className="py-2 text-lg text-white max-md:text-sm">BE FIRST</p>
-                  <p className=" text-sm text-[#FFFFFF99] max-sm:text-xs">
+                  <p className=" text-lg text-[#FFFFFF99] max-sm:text-xs">
                     Be the first to experience
                     <br className="max-sm:hidden" /> this groundbreaking
                     <br className="max-sm:hidden" /> innovation.
@@ -159,7 +159,7 @@ export default function Web() {
                   <Image src="/CurrencyInr.png" width={48} height={48} alt="" className="max-sm:hidden" />
                   <Image src="/CurrencyInr.png" width={35} height={35} alt="" className="sm:hidden" />
                   <p className="py-2 text-lg text-white max-md:text-sm">EXCLUSIVE PRICING</p>
-                  <p className=" text-sm text-[#FFFFFF99] max-sm:text-xs">
+                  <p className=" text-lg text-[#FFFFFF99] max-sm:text-xs">
                     Secure special <br className="max-sm:hidden" /> introductory pricing
                     <br className="max-sm:hidden" />
                     exclusively for pre-order
@@ -170,7 +170,7 @@ export default function Web() {
                   <Image src="/Wrench.png" width={48} height={48} alt="" className="max-sm:hidden" />
                   <Image src="/Wrench.png" width={35} height={35} alt="" className="sm:hidden" />
                   <p className="py-2 text-lg text-white max-md:text-sm">PRIORITY INSTALLATION</p>
-                  <p className=" text-sm text-[#FFFFFF99] max-md:text-xs">
+                  <p className=" text-lg text-[#FFFFFF99] max-md:text-xs">
                     Enjoy priorityinstallation <br className="max-sm:hidden" /> and be among the first to
                     <br className="max-sm:hidden" />
                     have it set up.
@@ -180,7 +180,7 @@ export default function Web() {
                   <Image src="/DiamondsFour.png" width={48} height={48} alt="" className="max-sm:hidden" />
                   <Image src="/DiamondsFour.png" width={35} height={35} alt="" className="sm:hidden" />
                   <p className="py-2 text-lg text-white max-md:text-sm">LIMITED EDITION</p>
-                  <p className=" text-sm text-[#FFFFFF99] max-sm:text-xs">
+                  <p className=" text-lg text-[#FFFFFF99] max-sm:text-xs">
                     The first 100 pre-orders " <br className="max-sm:hidden" /> receive a limited-edition
                     <br className="max-sm:hidden" /> Founder's Edition" Altima.
                   </p>
@@ -220,18 +220,19 @@ export default function Web() {
                   <Image src="/HouseLine.png" width={50} height={50} alt="" className="max-sm:hidden" />
                   <Image src="/HouseLine.png" width={40} height={40} alt="" className="sm:hidden" />
                   <p className="py-4 text-lg text-white max-sm:text-sm">Smart Home Hub</p>
-                  <p className=" text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    Control your entire <br className="max-sm:hidden" /> smart home ecosystem{" "}
-                    <br className="max-sm:hidden" /> directly from your <br className="max-sm:hidden" /> doorway.
+                  <p className=" text-lg text-[#FFFFFF99] max-sm:text-xs">
+                    Control your entire smart
+                    <br className="max-sm:hidden" /> home ecosystem directly from <br className="max-sm:hidden" /> your
+                    doorway.
                   </p>
                 </div>
                 <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:p-5 md:h-[263px] md:w-[347px]">
                   <Image src="/BatteryCharging.png" width={50} height={50} alt="" className="max-sm:hidden" />
                   <Image src="/BatteryCharging.png" width={40} height={40} alt="" className="sm:hidden" />
                   <p className="py-4 text-lg text-white max-sm:text-sm">ENERGY MANAGEMENT</p>
-                  <p className="text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    Optimize your home's <br className="max-sm:hidden" /> climate control for{" "}
-                    <br className="max-sm:hidden" /> maximum efficiency.
+                  <p className="text-lg text-[#FFFFFF99] max-sm:text-xs">
+                    Optimize your home's climate
+                    <br className="max-sm:hidden" /> control for maximum <br className="max-sm:hidden" /> efficiency.
                   </p>
                 </div>
               </div>
@@ -240,10 +241,10 @@ export default function Web() {
                   <Image src="/Fingerprint.png" width={50} height={50} alt="" className="max-sm:hidden" />
                   <Image src="/Fingerprint.png" width={40} height={40} alt="" className="sm:hidden" />
                   <p className="py-4 text-lg text-white max-sm:text-sm">ADVANCED SECURITY</p>
-                  <p className="text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    Multi-factor <br className="max-sm:hidden" /> authentication and real-
-                    <br className="max-sm:hidden" />
-                    time monitoring for <br className="max-sm:hidden" /> unmatched safety.
+                  <p className="text-lg text-[#FFFFFF99] max-sm:text-xs">
+                    Multi-factor authentication
+                    <br className="max-sm:hidden" /> and real- time monitoring for <br className="max-sm:hidden" />{" "}
+                    unmatched safety.
                   </p>
                 </div>
 
@@ -251,9 +252,10 @@ export default function Web() {
                   <Image src="/Aperture.png" width={50} height={50} alt="" className="max-sm:hidden" />
                   <Image src="/Aperture.png" width={40} height={40} alt="" className="sm:hidden" />
                   <p className="py-4 text-lg text-white max-sm:text-sm">SLEEK DESIGN</p>
-                  <p className="text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    Elevate your home <br className="max-sm:hidden" /> aesthetic, with our{" "}
-                    <br className="max-sm:hidden" /> minimalist customizable <br className="max-sm:hidden" /> design.
+                  <p className="text-lg text-[#FFFFFF99] max-sm:text-xs">
+                    Elevate your home aesthetic,
+                    <br className="max-sm:hidden" /> with our minimalist <br className="max-sm:hidden" /> customizable
+                    design.
                   </p>
                 </div>
               </div>
@@ -308,10 +310,7 @@ export default function Web() {
       <section id="other-products" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
         <div className="  w-full justify-between md:py-10">
           <div className="flex w-full flex-col items-center justify-center sm:hidden">
-            <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:text-lg lg:text-2xl">
-              our <br />
-              Models
-            </p>
+            <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:text-sm lg:text-2xl">Our Models</p>
             <p className=" font-regular mb-6 mt-3    text-xl leading-none tracking-tight text-white md:text-xl xl:text-5xl">
               ALTIMA Core
             </p>
@@ -377,10 +376,7 @@ export default function Web() {
         <div className="  w-full justify-between    md:py-10">
           <div className="grid-col-2 grid w-full justify-between max-sm:gap-5 sm:flex  md:gap-20">
             <div className="max-sm:flex max-sm:w-full max-sm:flex-col max-sm:items-center max-sm:justify-center md:w-[403] ">
-              <p className="font-regular  flex    text-2xl  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">
-                our <br className="sm:hidden" />
-                Models
-              </p>
+              <p className="font-regular  flex    text-2xl  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">Our Models</p>
               <p className=" font-regular my-6  text-xl leading-none tracking-tight text-white max-sm:my-3 md:text-xl xl:text-5xl">
                 ALTIMA Elite
               </p>
