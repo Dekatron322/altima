@@ -6,6 +6,7 @@ import "aos/dist/aos.css"
 import Navbar from "components/Navbar/Navbar"
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import MainFooter from "components/Footer/MainFooter"
 
 export default function Web() {
   const [isDefaultShipping, setIsDefaultShipping] = useState(true)
@@ -206,17 +207,7 @@ export default function Web() {
         </div>
       </section>
 
-      <section id="contact" className="paddings  w-full bg-[#151515] max-sm:px-3 ">
-        <div className="  w-full">
-          <div className="flex flex-col  items-center justify-center">
-            <ul className="flex">
-              <li className="text-center text-white max-sm:text-[8px]">
-                Privacy Policy , Terms of Pre-order , Refund Policy , Press Kit
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+      <MainFooter />
 
       <Footer />
     </section>

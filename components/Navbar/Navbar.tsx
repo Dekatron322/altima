@@ -103,7 +103,7 @@ const Navbar = () => {
               Contact
             </a>
           </ul>
-          <a href="/my-account/profile" className={" rounded-lg bg-[#FFFFFF1A] p-2 uppercase text-white"}>
+          <a href="/profile" className={" rounded-lg bg-[#FFFFFF1A] p-2 uppercase text-white"}>
             My Account
           </a>
         </div>
@@ -179,7 +179,7 @@ const Navbar = () => {
               Contact
             </a>
 
-            <a href="/my-account/order" className={" rounded-lg bg-[#FFFFFF1A] p-2  text-white"}>
+            <a href="/preorder" className={" rounded-lg bg-[#FFFFFF1A] p-2  text-white"}>
               My Account
             </a>
           </div>
