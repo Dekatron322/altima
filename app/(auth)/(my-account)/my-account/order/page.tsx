@@ -31,9 +31,13 @@ export default function Web() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
+  const [isCancelModalOpen, setIsCancelModalOpen] = useState(false)
 
   const opeDeletenModal = () => setIsDeleteModalOpen(true)
   const closeDeleteModal = () => setIsDeleteModalOpen(false)
+
+  const opeCancelModal = () => setIsCancelModalOpen(true)
+  const closeCancelModal = () => setIsCancelModalOpen(false)
 
   return (
     <section className="bg-black">
@@ -82,7 +86,7 @@ export default function Web() {
         <div className=" w-full  items-center justify-between">
           <div className="flex w-full flex-col  justify-center rounded-3xl bg-[#151515] max-sm:rounded-lg max-sm:p-2  md:p-10">
             <p className="text-center text-xl text-[#FFFFFF]">Orders</p>
-            <p className="py-5 text-center text-xs text-[#FFFFFF80]">
+            <p className="pb-5 text-center text-xs text-[#FFFFFF80]">
               Check your order and verify your shipping for better experience
             </p>
 
@@ -125,7 +129,7 @@ export default function Web() {
                 <div className="flex w-full gap-4">
                   <motion.a
                     href="/my-account/track-order"
-                    whileHover={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.01 }}
                     whileTap={{ scale: 0.9 }}
                     className="font-regular w-full gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm  text-[#FFFFFF] max-sm:py-2 "
                   >
@@ -133,9 +137,10 @@ export default function Web() {
                   </motion.a>
 
                   <motion.button
-                    whileHover={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.01 }}
                     whileTap={{ scale: 0.9 }}
                     className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
+                    onClick={opeCancelModal}
                   >
                     Cancel Order
                   </motion.button>
@@ -182,17 +187,18 @@ export default function Web() {
                 <div className="flex w-full gap-4">
                   <motion.a
                     href="/my-account/track-order"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.5 }}
                     className="font-regular w-full gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm  text-[#FFFFFF] max-sm:py-2 "
                   >
                     Track Order
                   </motion.a>
 
                   <motion.button
-                    whileHover={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.01 }}
                     whileTap={{ scale: 0.9 }}
                     className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
+                    onClick={opeDeletenModal}
                   >
                     Cancel Order
                   </motion.button>
@@ -219,6 +225,29 @@ export default function Web() {
               </button>
               <button
                 onClick={closeDeleteModal}
+                className="w-full rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-[#ffffff]  hover:bg-[#FF3B3B]"
+              >
+                No, Go Back
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {isCancelModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#000000] bg-opacity-95">
+          <div className="w-full max-w-sm rounded-lg bg-[#151515] p-4 text-white">
+            <div className="mb-4 flex w-full items-center">
+              <h2 className=" w-full text-center text-[#FFFFFF99]">Cancel Order</h2>
+              <LiaTimesSolid onClick={closeCancelModal} className="cursor-pointer" />
+            </div>
+            <p className="w-full text-center text-2xl text-white">Are you sure you want to Cancel this order?</p>
+            <div className="mt-4 flex gap-2">
+              <button className="w-full  rounded-lg border border-[#FFFFFF99] bg-[#FF3B3B] px-4 py-2 text-[#000000]  hover:bg-[#FF3B3B]">
+                Yes, Cancel
+              </button>
+              <button
+                onClick={closeCancelModal}
                 className="w-full rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-[#ffffff]  hover:bg-[#FF3B3B]"
               >
                 No, Go Back
