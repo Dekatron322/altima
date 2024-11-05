@@ -89,45 +89,45 @@ export default function Web() {
             <div className="flex h-full  rounded-lg  bg-[#FFFFFF1A]  p-5 max-sm:grid max-sm:gap-5  md:gap-10">
               <div>
                 <motion.img
-                  src="/preorder.png"
-                  width={444}
-                  height={302}
+                  src="/smallImg.png"
+                  width={253}
+                  height={164}
                   alt=""
                   initial={{ scale: 1.2, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 1, ease: "easeIn" }}
                 />
               </div>
-              <div className="">
+              <div className="w-full">
                 <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:text-lg lg:text-2xl">
                   Altima Core
                 </p>
 
-                <ul className="mt-6 list-inside ">
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
+                <ul className="mt-22 list-inside ">
+                  {/* <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
                     Specifications : Altima Core Specifications
-                  </li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Colour : Grey Colour</li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
+                  </li> */}
+                  {/* <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Colour : Grey Colour</li> */}
+                  <li className="pb-1 text-sm text-[#FFFFFF99] max-sm:text-xs">
                     Address : Sherif Adamu , Shereefadamu001@gmail.com
                   </li>
                   <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Status: In Progress</li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Quantity: 10,000</li>
+                  {/* <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Quantity: 10,000</li>
                   <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Payment: Complete</li>
                   <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Order Status : In Progress</li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Date : 26 Aug, 2024 09:40am</li>
+                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Date : 26 Aug, 2024 09:40am</li> */}
                 </ul>
 
-                <p className="font-regular flex  items-center  py-4 text-2xl text-[#FFFFFF]  max-sm:text-lg lg:text-2xl">
+                {/* <p className="font-regular flex  items-center  py-4 text-2xl text-[#FFFFFF]  max-sm:text-lg lg:text-2xl">
                   <span className="text-sm">Total: </span> ₹{total.toLocaleString()}
-                </p>
+                </p> */}
 
-                <div className="flex gap-4">
+                <div className="flex w-full gap-4">
                   <motion.a
                     href="/my-account/track-order"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    className="font-regular   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-sm uppercase text-[#FFFFFF] max-sm:py-2 "
+                    className="font-regular w-full gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm  text-[#FFFFFF] max-sm:py-2 "
                   >
                     Track Order
                   </motion.a>
@@ -135,56 +135,56 @@ export default function Web() {
                   <motion.button
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    className="font-regular   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-sm uppercase text-[#FFFFFF] max-sm:py-2 "
+                    className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
                   >
-                    Change Address
+                    Cancel Order
                   </motion.button>
                 </div>
               </div>
             </div>
 
-            <div className="mt-4 flex  h-full  rounded-lg  bg-[#FFFFFF1A] p-5 max-sm:grid max-sm:gap-5 md:gap-10">
+            <div className="mt-6 flex h-full rounded-lg  bg-[#FFFFFF1A]  p-5 max-sm:grid max-sm:gap-5  md:gap-10">
               <div>
                 <motion.img
-                  src="/preorder.png"
-                  width={444}
-                  height={302}
+                  src="/smallImg.png"
+                  width={253}
+                  height={164}
                   alt=""
                   initial={{ scale: 1.2, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 1, ease: "easeIn" }}
                 />
               </div>
-              <div className="">
+              <div className="w-full">
                 <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:text-lg lg:text-2xl">
                   Altima Core
                 </p>
 
-                <ul className="mt-6 list-inside ">
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
+                <ul className="mt-1 list-inside ">
+                  {/* <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
                     Specifications : Altima Core Specifications
-                  </li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Colour : Grey Colour</li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
+                  </li> */}
+                  {/* <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Colour : Grey Colour</li> */}
+                  <li className="pb-1 text-sm text-[#FFFFFF99] max-sm:text-xs">
                     Address : Sherif Adamu , Shereefadamu001@gmail.com
                   </li>
                   <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Status: In Progress</li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Quantity: 10,000</li>
+                  {/* <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Quantity: 10,000</li>
                   <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Payment: Complete</li>
                   <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Order Status : In Progress</li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Date : 26 Aug, 2024 09:40am</li>
+                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Date : 26 Aug, 2024 09:40am</li> */}
                 </ul>
 
-                <p className="font-regular flex  items-center  py-4 text-2xl text-[#FFFFFF]  max-sm:text-lg lg:text-2xl">
+                {/* <p className="font-regular flex  items-center  py-4 text-2xl text-[#FFFFFF]  max-sm:text-lg lg:text-2xl">
                   <span className="text-sm">Total: </span> ₹{total.toLocaleString()}
-                </p>
+                </p> */}
 
-                <div className="flex gap-4">
+                <div className="flex w-full gap-4">
                   <motion.a
                     href="/my-account/track-order"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    className="font-regular   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-sm uppercase text-[#FFFFFF] max-sm:py-2 "
+                    className="font-regular w-full gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm  text-[#FFFFFF] max-sm:py-2 "
                   >
                     Track Order
                   </motion.a>
@@ -192,9 +192,9 @@ export default function Web() {
                   <motion.button
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    className="font-regular   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-sm uppercase text-[#FFFFFF] max-sm:py-2 "
+                    className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
                   >
-                    Change Address
+                    Cancel Order
                   </motion.button>
                 </div>
               </div>
