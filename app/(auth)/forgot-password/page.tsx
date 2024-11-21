@@ -131,7 +131,7 @@ const Page: React.FC = () => {
             </div>
 
             <div className="my-4 flex justify-center gap-1 px-6">
-              <p className="text-xs text-[#4F4F4F]">Don't Have an Account Yet?</p>
+              <p className="text-xs text-[#4F4F4F]">Don&apos;t Have an Account Yet?</p>
               <Link href="/signup" className="text-xs text-[#FF3B30]">
                 Sign Up
               </Link>

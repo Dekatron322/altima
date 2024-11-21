@@ -4,7 +4,7 @@ import AOS from "aos"
 import "aos/dist/aos.css"
 import Navbar from "components/Navbar/Navbar"
 import { useEffect, useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { useRouter } from "next/navigation"
 import MainFooter from "components/Footer/MainFooter"
 

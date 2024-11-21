@@ -6,7 +6,7 @@ import "aos/dist/aos.css"
 
 import Navbar from "components/Navbar/Navbar"
 import { useEffect, useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import MainFooter from "components/Footer/MainFooter"
 
 export default function Web() {

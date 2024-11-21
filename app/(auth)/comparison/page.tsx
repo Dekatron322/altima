@@ -63,70 +63,188 @@ export default function Web() {
   return (
     <section className="bg-black">
       <Navbar />
-      <section id="about" className="about-section grid w-full bg-black     lg:h-screen lg:py-16">
-        <motion.div
-          className="paddings pb-10 max-sm:px-3"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <div className="flex h-full w-full items-center  max-sm:justify-center ">
+
+      <section id="specifications" className="paddings w-full   bg-[#151515] pt-32 max-sm:px-3 ">
+        <div className="  w-full justify-between    md:py-32">
+          <div className="flex w-full justify-between gap-10  sm:flex">
             <div>
-              <div className="mb-4 flex items-center justify-center gap-2 rounded-lg bg-[#FFFFFF1A] p-2 md:max-w-[519px]">
-                <Image src="/Vector.png" width={24} height={24} alt="" />
-                <p className="text-sm text-[#FFFFFF] max-sm:text-[9px]">
-                  POWERED BY INNOVATION FROM SUSMO AND OTHER DRIVES
-                </p>
-              </div>
-              <p className="  flex text-7xl  font-bold text-[#FFFFFF] max-sm:text-2xl ">ALTIMA: THE SMART </p>
-              <p className="  flex text-7xl  font-bold text-[#FFFFFF] max-sm:text-2xl ">DOOR & HOME HUB –</p>
-              <p className="  flex text-7xl  font-bold text-[#FF3B30] max-sm:text-3xl ">PRE-ORDER NOW!</p>
-
-              <p className="mt-10 text-xl text-white max-sm:mt-3  max-sm:text-base md:w-[600px]">
-                Experience the next level of convenience and security with Altima – a revolutionary smart door and home
-                hub in one. Featuring a disappearing handle and cutting-edge technology, Altima seamlessly integrates
-                security and smart home functions, perfect for any space – be it home, office, or beyond.
+              <p className="font-regular   text-center  text-2xl  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">
+                Resources & Policies
               </p>
-              <div className="max-sm:my-5 md:hidden">
-                <motion.img
-                  src="/Web.1889 (1).png"
-                  alt=""
-                  initial={{ scale: 1.2, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 1, ease: "easeOut" }}
-                  width={633}
-                  height={583}
-                />
-              </div>
-              <div className="mt-4 flex w-full gap-5 max-sm:gap-2 ">
+              <p className=" font-regular my-3  text-center text-lg text-white  max-sm:my-3 md:text-xl md:leading-10 xl:text-3xl">
+                Altima vs Competitors: Feature Comparison
+              </p>
+
+              <div className="mt-4 flex w-full items-center justify-center gap-5 max-sm:gap-2 ">
                 <motion.button
-                  className="font-regular whitespace-nowrap rounded-lg border border-[#FF3B30] bg-[#FFFFFF26] px-4 py-3 uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
+                  className="font-regular whitespace-nowrap rounded-lg   bg-[#FFFFFF0D] px-4 py-3 uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  Pre-Order now
+                  DOWNLOAD
                 </motion.button>
 
                 <motion.button
-                  className="font-regular flex items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-[#FFFFFF99] bg-transparent px-4 py-3 uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-2 max-sm:text-xs "
+                  className="font-regular whitespace-nowrap rounded-lg   bg-[#FFFFFF0D] px-8 py-3 uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  Watch Video
-                  <Image src="/youtube.png" width={24} height={24} alt="" />
+                  SHARE
                 </motion.button>
               </div>
-            </div>
 
-            <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="250" className="">
-              {/* You can remove the Image component as it will be used as background */}
+              <div className="my-6 flex w-full justify-center text-[#FFFFFF99]">
+                <p className="text-lg">&quot; Smarter Entries, Smartest Spaces &quot;</p>
+              </div>
+
+              <p className="font-regular mb-6 w-full text-ellipsis text-sm text-[#FFFFFF99] max-sm:leading-7 md:text-center">
+                Discover the Altima range - from Altima Core, a robust smart door ensuring top-tier security, to Altima
+                Elite, which transforms your entryway into the heart of your smart home. Altima products are uniquely
+                crafted to integrate smart lock mechanisms directly into metal, glass, or wood doors, providing a
+                complete solution that stands out from competitors offering only standalone smart locks.
+              </p>
             </div>
           </div>
-        </motion.div>
+          <div className="w-full overflow-x-auto border">
+            <table className="min-w-[1200px] table-fixed border-separate border-spacing-0 text-left text-white 2xl:w-full">
+              <thead>
+                <tr>
+                  <th className="border-b bg-[#FFFFFF1A] px-4 py-4 text-sm">Features</th>
+                  <th className="border-b border-l bg-[#151515] px-4 py-4 text-sm">Godrej</th>
+                  <th className="border-b border-l bg-[#FFFFFF1A] px-4 py-4 text-sm">Ozone Overseas</th>
+                  <th className="border-b border-l bg-[#151515]  px-4 py-4 text-sm">Yale</th>
+                  <th className="border-b border-l bg-[#FFFFFF1A] px-4 py-4 text-sm">Dormakaba</th>
+                </tr>
+              </thead>
+              <tbody className="border-b">
+                <tr>
+                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm">1. Cost Cost</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">36,199 - 61,199 INR</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">35,000 - 55,000 INR</td>
+                  <td className="border-l  bg-[#151515] px-4 py-2 text-sm">40,000 - 60,000 INR</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">50,000 - 75,000 INR</td>
+                </tr>
+                <tr>
+                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm">2. Security Level</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">High</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">High</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">High</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Very High</td>
+                </tr>
+                <tr>
+                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm">3. Smart Lock Type</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">Digital (Fingerprint, PIN)</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Digital (Touchpad, PIN)</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">Digital (Voice Guidance)</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Advanced (Custom Access)</td>
+                </tr>
+                <tr>
+                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm">4. Home Integration</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">Limited</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Limited</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">Moderate</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Moderate</td>
+                </tr>
+                <tr>
+                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm">5. User Profilest</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">Multiple</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Multiple</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">Multiple</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Customizable</td>
+                </tr>
+                <tr>
+                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm">6. Remote Access</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">No</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">No</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">Yes</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Yes</td>
+                </tr>
+                <tr>
+                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm">7. Design Options</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">Basic</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Moderate</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">Elegant</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Premium</td>
+                </tr>
+                <tr>
+                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm">8. Special Features</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">Emergency Key Override</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Auto-Locking</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">
+                    Tamper Alarm, Smartphone Remote Management
+                  </td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Auto-Locking</td>
+                </tr>
+                <tr>
+                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm">9. Target Audience</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">Residential/Commercial</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Residential/Commercial</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">Homeowners</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Commercial Buildings</td>
+                </tr>
+                <tr>
+                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm">10. Limitations</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">No advanced automation</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Limited integration</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">Basic home automation</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">High cost for residential</td>
+                </tr>
+                <tr>
+                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm">11. External Power Option</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">9V Battery</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">9V Battery</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">9V Battery</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">External Power Source</td>
+                </tr>
+                <tr>
+                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm">12. Voice Assistant Controlt</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">No</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">No</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">No</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">No</td>
+                </tr>
+                <tr>
+                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm">13. Smart Home Automation</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">No</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">No</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">Limited</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Limited</td>
+                </tr>
+                <tr>
+                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm">14. Energy Management</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">No</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">No</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">No</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">No</td>
+                </tr>
+                <tr>
+                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm">15. Security Alerts</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">Basic Alarm</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Basic Alarm</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">Tamper Alarm</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Advanced Alerts</td>
+                </tr>
+                <tr>
+                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm">16. Intercom Functionality</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">No</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">No</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">No</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">No</td>
+                </tr>
+                <tr>
+                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm">17. Embedded in Door Types</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">No</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">No</td>
+                  <td className="border-l bg-[#151515] px-4 py-2 text-sm">No</td>
+                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">No</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </section>
 
-      <section id="how-to-buy" className="paddings  w-full bg-[#151515] max-sm:px-3 ">
+      <section id="how-to-buy" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
         <motion.div
           className="  w-full justify-between py-10"
           variants={boxVariants}
@@ -140,46 +258,100 @@ export default function Web() {
               <p className=" font-regular mb-4  mt-2  text-center   text-xl leading-none tracking-tight text-white max-sm:my-4 md:text-xl xl:text-3xl">
                 Why Pre-Order?
               </p>
-              <div className="grid grid-cols-4 gap-6 max-sm:grid-cols-1 ">
-                <div className=" w-full rounded-lg bg-[#080808] p-5">
-                  <Image src="/SketchLogo.png" width={48} height={48} alt="" className="max-sm:hidden" />
-                  <Image src="/SketchLogo.png" width={35} height={35} alt="" className="sm:hidden" />
-                  <p className="py-2 text-lg text-white max-md:text-sm">BE FIRST</p>
-                  <p className=" text-lg text-[#FFFFFF99] max-sm:text-xs">
-                    Be the first to experience
-                    <br className="max-sm:hidden" /> this groundbreaking
-                    <br className="max-sm:hidden" /> innovation.
-                  </p>
+              <div className="grid grid-cols-2 gap-4 max-sm:grid-cols-1 ">
+                <div className="flex w-full gap-3 rounded-lg border border-[#FFFFFF1A] p-10">
+                  <div className="min-w-12">
+                    <Image src="/SketchLogo.png" width={48} height={48} alt="" className="min-w-12 max-sm:hidden" />
+                    <Image src="/SketchLogo.png" width={35} height={35} alt="" className="sm:hidden" />
+                  </div>
+                  <div className="pl-5">
+                    <p className="pb-2 text-lg text-white max-md:text-sm">Altima Elite</p>
+                    <p className=" text-base text-[#FFFFFF99] max-sm:text-xs">
+                      Full smart home hub capabilities, managing your lighting, heating, <br /> and security cameras
+                      seamlessly
+                    </p>
+                  </div>
                 </div>
-                <div className=" w-full rounded-lg bg-[#080808] p-5">
-                  <Image src="/CurrencyInr.png" width={48} height={48} alt="" className="max-sm:hidden" />
-                  <Image src="/CurrencyInr.png" width={35} height={35} alt="" className="sm:hidden" />
-                  <p className="py-2 text-lg text-white max-md:text-sm">EXCLUSIVE PRICING</p>
-                  <p className=" text-lg text-[#FFFFFF99] max-sm:text-xs">
-                    Secure special <br className="max-sm:hidden" /> introductory pricing
-                    <br className="max-sm:hidden" />
-                    exclusively for pre-order
-                    <br className="max-sm:hidden" /> customers..
-                  </p>
+                <div className="flex w-full gap-5 rounded-lg border border-[#FFFFFF1A] p-10">
+                  <div className="w-12">
+                    <Image src="/SketchLogo.png" width={48} height={48} alt="" className="max-sm:hidden" />
+                    <Image src="/SketchLogo.png" width={35} height={35} alt="" className="sm:hidden" />
+                  </div>
+                  <div className="pl-5">
+                    <p className="pb-2 text-lg text-white max-md:text-sm">Real-Time Security Alerts</p>
+                    <p className=" text-base text-[#FFFFFF99] max-sm:text-xs">
+                      Get instant notifications on your smartphone for any <br /> suspicious activity.
+                    </p>
+                  </div>
                 </div>
-                <div className=" w-full rounded-lg bg-[#080808] p-5 ">
-                  <Image src="/Wrench.png" width={48} height={48} alt="" className="max-sm:hidden" />
-                  <Image src="/Wrench.png" width={35} height={35} alt="" className="sm:hidden" />
-                  <p className="py-2 text-lg text-white max-md:text-sm">PRIORITY INSTALLATION</p>
-                  <p className=" text-lg text-[#FFFFFF99] max-md:text-xs">
-                    Enjoy priorityinstallation <br className="max-sm:hidden" /> and be among the first to
-                    <br className="max-sm:hidden" />
-                    have it set up.
-                  </p>
+              </div>
+              <div className="mt-4 grid grid-cols-3 gap-4 max-sm:grid-cols-1">
+                <div className="flex w-full gap-3 rounded-lg border border-[#FFFFFF1A] p-10">
+                  <div className="min-w-12">
+                    <Image
+                      src="/SketchLogo.png"
+                      width={48}
+                      height={48}
+                      alt=""
+                      className="h-12 w-12 overflow-visible object-cover max-sm:hidden"
+                    />
+                    <Image src="/SketchLogo.png" width={35} height={35} alt="" className="sm:hidden" />
+                  </div>
+                  <div className="pl-5">
+                    <p className="pb-2 text-lg text-white max-md:text-sm">Altima Core</p>
+                    <p className=" text-base text-[#FFFFFF99] max-sm:text-xs">
+                      Essential smart security with a sleek, modern design. Ideal for those who need robust protection
+                      and convenience.
+                    </p>
+                  </div>
                 </div>
-                <div className=" w-full rounded-lg bg-[#080808] p-5">
-                  <Image src="/DiamondsFour.png" width={48} height={48} alt="" className="max-sm:hidden" />
-                  <Image src="/DiamondsFour.png" width={35} height={35} alt="" className="sm:hidden" />
-                  <p className="py-2 text-lg text-white max-md:text-sm">LIMITED EDITION</p>
-                  <p className=" text-lg text-[#FFFFFF99] max-sm:text-xs">
-                    The first 100 pre-orders &ldquo; <br className="max-sm:hidden" /> receive a limited-edition
-                    <br className="max-sm:hidden" /> Founder&apos;s Edition&ldquo; Altima.
-                  </p>
+                <div className="flex w-full gap-3 rounded-lg border border-[#FFFFFF1A] p-10">
+                  <div className="min-w-12">
+                    <Image
+                      src="/SketchLogo.png"
+                      width={48}
+                      height={48}
+                      alt=""
+                      className="h-12 w-12 overflow-visible object-cover max-sm:hidden"
+                    />
+                    <Image src="/SketchLogo.png" width={35} height={35} alt="" className="sm:hidden" />
+                  </div>
+                  <div className="pl-5">
+                    <p className="pb-2 text-lg text-white max-md:text-sm">
+                      {" "}
+                      Voice Assistant Integration (Altima Elitee)
+                    </p>
+                    <p className=" text-base text-[#FFFFFF99] max-sm:text-xs">
+                      Control your home with your voice using Alexa or Google Assistant.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex w-full gap-5 rounded-lg border border-[#FFFFFF1A] p-10">
+                  <div className="w-12">
+                    {/* Fixed size for large screens */}
+                    <Image
+                      src="/SketchLogo.png"
+                      width={48}
+                      height={48}
+                      alt=""
+                      className="h-12 w-12 overflow-visible object-cover max-sm:hidden"
+                    />
+                    {/* Fixed size for small screens */}
+                    <Image
+                      src="/SketchLogo.png"
+                      width={35}
+                      height={35}
+                      alt=""
+                      className="h-8 w-8 object-cover sm:hidden"
+                    />
+                  </div>
+                  <div className="pl-5">
+                    <p className="pb-2 text-lg text-white max-md:text-sm">Smart Lock Embedded in Multiple Door Types</p>
+                    <p className="text-base text-[#FFFFFF99] max-sm:text-xs">
+                      Altima products integrate directly into metal, glass, or wood doors, providing a complete and
+                      unified security solution.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -187,72 +359,71 @@ export default function Web() {
         </motion.div>
       </section>
 
-      <section id="how-to-buy" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
+      <section id="how-to-buy" className="paddings  w-full bg-[#151515] max-sm:px-3 ">
         <div className="  w-full justify-between    md:py-10">
           <div className="grid-col-2 grid w-full justify-between gap-10  sm:flex">
             <div className="md:w-full ">
               <div className="flex flex-col items-center">
                 <p className="font-regular  flex    text-2xl  text-[#FFFFFF99] max-sm:text-lg lg:text-2xl">
-                  Our Features
+                  Testimonials & Reviews
                 </p>
-                <p className=" font-regular mb-2 mt-2  text-xl tracking-tight  text-white max-sm:my-2   md:text-xl md:leading-10 xl:text-3xl">
-                  COMPACT AND FUNCTIONAL
+                <p className=" mb-2 mt-2 text-xl  font-bold tracking-tight  text-white max-sm:my-2   md:text-xl md:leading-10 2xl:text-3xl">
+                  What People are Saying
                 </p>
-
-                <p className="font-regular mb-6 flex text-center text-base   text-[#FFFFFF99]  max-sm:text-center  max-sm:text-sm lg:text-base">
-                  Transform your room with Altima into a minimalist, <br className="max-sm:hidden" /> modern space with
-                  ease and speed
-                </p>
-                {/* <motion.button
-                  className="font-regular rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-3 max-sm:text-sm"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  Pre-Order now
-                </motion.button> */}
               </div>
-              <div className="flex items-center justify-center gap-4 max-sm:grid max-sm:grid-cols-1">
-                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10  max-sm:p-5 md:h-[263px] md:w-[347px]">
-                  <Image src="/HouseLine.png" width={50} height={50} alt="" className="max-sm:hidden" />
-                  <Image src="/HouseLine.png" width={40} height={40} alt="" className="sm:hidden" />
-                  <p className="py-4 text-lg text-white max-sm:text-sm">Smart Home Hub</p>
-                  <p className=" text-lg text-[#FFFFFF99] max-sm:text-xs">
-                    Control your entire smart
-                    <br className="max-sm:hidden" /> home ecosystem directly from <br className="max-sm:hidden" /> your
-                    doorway.
-                  </p>
-                </div>
-                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:p-5 md:h-[263px] md:w-[347px]">
-                  <Image src="/BatteryCharging.png" width={50} height={50} alt="" className="max-sm:hidden" />
-                  <Image src="/BatteryCharging.png" width={40} height={40} alt="" className="sm:hidden" />
-                  <p className="py-4 text-lg text-white max-sm:text-sm">ENERGY MANAGEMENT</p>
-                  <p className="text-lg text-[#FFFFFF99] max-sm:text-xs">
-                    Optimize your home&apos;s climate
-                    <br className="max-sm:hidden" /> control for maximum <br className="max-sm:hidden" /> efficiency.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center justify-center gap-4 max-sm:mt-4 max-sm:grid max-sm:grid-cols-1 md:my-4">
-                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:p-5 md:h-[263px] md:w-[347px]">
-                  <Image src="/Fingerprint.png" width={50} height={50} alt="" className="max-sm:hidden" />
-                  <Image src="/Fingerprint.png" width={40} height={40} alt="" className="sm:hidden" />
-                  <p className="py-4 text-lg text-white max-sm:text-sm">ADVANCED SECURITY</p>
-                  <p className="text-lg text-[#FFFFFF99] max-sm:text-xs">
-                    Multi-factor authentication
-                    <br className="max-sm:hidden" /> and real- time monitoring for <br className="max-sm:hidden" />{" "}
-                    unmatched safety.
-                  </p>
-                </div>
 
-                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:p-5 md:h-[263px] md:w-[347px]">
-                  <Image src="/Aperture.png" width={50} height={50} alt="" className="max-sm:hidden" />
-                  <Image src="/Aperture.png" width={40} height={40} alt="" className="sm:hidden" />
-                  <p className="py-4 text-lg text-white max-sm:text-sm">SLEEK DESIGN</p>
-                  <p className="text-lg text-[#FFFFFF99] max-sm:text-xs">
-                    Elevate your home aesthetic,
-                    <br className="max-sm:hidden" /> with our minimalist <br className="max-sm:hidden" /> customizable
-                    design.
-                  </p>
+              <div className="mt-4 grid w-full grid-cols-3 gap-5 max-sm:grid-cols-1">
+                <div className="flex gap-4 rounded-md bg-[#080808] p-10">
+                  <Image
+                    src="/avatar1.png"
+                    width={63}
+                    height={63}
+                    alt=""
+                    className="h-14 w-14 overflow-visible object-cover max-sm:hidden"
+                  />
+                  <div>
+                    <p className="pb-2 text-lg text-white max-md:text-sm">Preorder Customer</p>
+                    <p className="text-base text-[#FFFFFF99] max-sm:text-xs">
+                      Altima Core is exactly what we needed for home security. Looking forward to upgrading to Altima
+                      Elite for full home integration.
+                    </p>
+                  </div>
+                </div>
+                <div className="rounded-md bg-[#080808] p-2">
+                  <div className="flex gap-4 rounded-md bg-[#080808] p-10">
+                    <Image
+                      src="/avatar2.png"
+                      width={63}
+                      height={63}
+                      alt=""
+                      className="h-14 w-14 overflow-visible object-cover max-sm:hidden"
+                    />
+                    <div>
+                      <p className="pb-2 text-lg text-white max-md:text-sm">Smart Home Enthusiast</p>
+                      <p className="text-base text-[#FFFFFF99] max-sm:text-xs">
+                        Altima Elite is the perfect solution, seamlessly connecting our smart devices and making our
+                        home smarter and more secure.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="rounded-md bg-[#080808] p-2">
+                  <div className="flex gap-4 rounded-md bg-[#080808] p-10">
+                    <Image
+                      src="/avatar3.png"
+                      width={63}
+                      height={63}
+                      alt=""
+                      className="h-14 w-14 overflow-visible object-cover max-sm:hidden"
+                    />
+                    <div>
+                      <p className="pb-2 text-lg text-white max-md:text-sm">Industry Expert</p>
+                      <p className="text-base text-[#FFFFFF99] max-sm:text-xs">
+                        'Altima has taken smart doors to a new level, offering unparalleled security and home automation
+                        features.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -260,7 +431,7 @@ export default function Web() {
         </div>
       </section>
 
-      <section id="specifications" className="paddings   w-full bg-[#151515] max-sm:px-3 ">
+      {/* <section id="specifications" className="paddings   w-full bg-[#151515] max-sm:px-3 ">
         <div className="  w-full justify-between    md:py-10">
           <div className="flex w-full justify-between gap-10  sm:flex">
             <div>
@@ -285,7 +456,7 @@ export default function Web() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* <section id="specifications" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
         <div className="  w-full     py-10">
@@ -337,7 +508,9 @@ export default function Web() {
                     <li className=" text-[#FFFFFF] max-sm:text-center max-sm:text-xs">All Core features, plus:</li>
                   </ul>
 
-                  <p className="text-2xl text-[#FF4F45] max-sm:mt-3 max-sm:text-center max-sm:text-lg">₹30,000</p>
+                  <p className="text-2xl font-bold text-[#FF4F45] max-sm:mt-3 max-sm:text-center max-sm:text-lg">
+                    ₹49,500 + Taxes
+                  </p>
                 </div>
               </div>
               <ul className="mt-6 list-inside list-disc pl-2 md:mb-4">
@@ -437,7 +610,7 @@ export default function Web() {
                     <li className=" text-[#FFFFFF] max-sm:text-xs">All Pro features, plus</li>
                   </ul>
 
-                  <p className="text-2xl text-[#FF4F45] max-sm:text-lg">₹90,000 + Taxes</p>
+                  <p className="text-2xl font-bold text-[#FF4F45] max-sm:text-lg">₹99,000 + Taxes</p>
                 </div>
               </div>
               <ul className="mb-6 mt-6 list-inside list-disc pl-2 max-sm:hidden">
@@ -634,129 +807,21 @@ export default function Web() {
         </div>
       </section> */}
 
-      <section id="other-products" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
+      <section id="other-products" className="paddings  w-full bg-[#282828] max-sm:px-3 ">
         <div className="w-full     py-10">
           <div className="flex flex-col items-center justify-center">
-            <p className="text-[#FFFFFF99] max-sm:text-sm">Pre-order Now – Limited Units Available.</p>
-            <p className="font-regular custom-text first-word-color my-6 flex text-center text-5xl text-[#FFFFFF] max-md:text-2xl max-sm:text-xl md:w-[642px]">
-              5,000 units available in the first pre-order batch.
+            <p className="text-[#FFFFFF99] max-sm:text-sm">Preorder Deposit: 30% of the total cost..</p>
+            <p className="custom-text first-word-color my-6 flex text-center text-5xl font-bold text-[#FFFFFF] max-md:text-2xl max-sm:text-2xl md:w-[924px] ">
+              Preorder Now and Experience the Future of Smart Home Security!
             </p>
 
-            <div className="w-full justify-center py-10 md:flex">
-              <div className="flex items-start justify-center gap-3 border-[#FFFFFF99] max-sm:border-b max-sm:pb-3 md:border-r md:pr-6">
-                <Image src="/SealPercent.png" width={64} height={64} alt="" />
-                <div>
-                  <p className="text-[#FFFFFF] max-sm:text-sm">20% Discount on Next Model Upgrade:</p>
-                  <p className="text-[#FFFFFF99] max-sm:text-xs">
-                    Pre-order customers can enjoy a 20% discount when upgrading to the next model tier.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start justify-center gap-3 border-[#FFFFFF99] max-sm:border-b max-sm:py-3 md:border-r md:pl-6 md:pr-6">
-                <Image src="/Upload.png" width={64} height={64} alt="" />
-                <div>
-                  <p className="text-[#FFFFFF]  max-sm:text-sm">Free Software Upgrade:</p>
-                  <p className="text-[#FFFFFF99] max-sm:text-xs">
-                    All pre-orders come with a lifetime free software upgrade, ensuring your device remains updated with
-                    the latest smart features.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start justify-center gap-3 max-sm:pt-3 md:pl-6">
-                <Image src="/ShieldCheckered.png" width={64} height={64} alt="" />
-                <div>
-                  <p className="text-[#FFFFFF]  max-sm:text-sm">Free Extended Warranty Upgrade:</p>
-                  <p className="text-[#FFFFFF99] max-sm:text-xs">
-                    Pre-order now and get an extended warranty upgrade for additional peace of mind, free of charge.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <motion.a
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="font-regular flex  gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm"
-              href="/preorder"
-            >
-              Pre-Order now
-            </motion.a>
-          </div>
-        </div>
-      </section>
-
-      <section className="paddings  w-full bg-[#151515] max-sm:px-3 ">
-        <div className="  w-full justify-between    md:py-10">
-          <div className="grid grid-cols-2  justify-between gap-20 max-sm:grid-cols-1 max-sm:gap-5 ">
-            <div className="">
-              <p className="font-regular  flex  text-2xl  text-[#FFFFFF99] max-sm:text-lg  lg:text-2xl">Our Vision</p>
-              <p className=" font-regular my-6   text-xl leading-none tracking-tight text-white md:text-xl 2xl:text-3xl">
-                The Vision Behind Altima Disappearing Handle Smart Doors
-              </p>
-
-              <p className="text-base leading-9 text-[#FFFFFF99] max-sm:hidden  max-sm:text-xs 2xl:text-[18px]">
-                Altima entryways are more than just doors—they serve as gateways to a smarter, more secure, and
-                connected lifestyle. Our disappearing handle smart doors are crafted to seamlessly blend into modern
-                spaces, offering cutting-edge technology while maintaining sleek aesthetics. With features like
-                biometric security, energy efficiency, and smart home integration, Altima Disappearing Handle Smart
-                Doors redefine secure and convenient entryways. Developed by expert engineers and designers, these doors
-                meet the highest standards of functionality and design, ensuring safety, style, and innovation for
-                every space.
-              </p>
-            </div>
-            <div>
-              <motion.img
-                src="/update.png"
-                width={633}
-                height={583}
-                alt=""
-                initial={{ scale: 1.2, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1, ease: "easeIn" }}
-              />
-            </div>
-
-            <p className="leading-7  text-[#FFFFFF99] max-sm:text-[14px] sm:hidden">
-              Altima entryways are more than just doors—they serve as gateways to a smarter, more secure, and connected
-              lifestyle. Our disappearing handle smart doors are crafted to seamlessly blend into modern spaces,
-              offering cutting-edge technology while maintaining sleek aesthetics. With features like biometric
-              security, energy efficiency, and smart home integration, Altima Disappearing Handle Smart Doors redefine
-              secure and convenient entryways. Developed by expert engineers and designers, these doors meet the highest
-              standards of functionality and design, ensuring safety, style, and innovation for every space.
+            <p className="text-[#FFFFFF99] max-sm:text-sm">
+              How to Order: <span className="underline">Visit our website or contact our sales team.</span>
             </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="paddings  w-full bg-[#080808] max-sm:px-3 ">
-        <div className="  w-full     py-10">
-          <div className="flex flex-col items-center justify-center">
-            <p className=" text-[#FFFFFF99]">Timeline</p>
-            <p className="font-regular my-6 flex text-center text-5xl  text-[#FFFFFF]  max-md:text-2xl md:w-[642px]">
-              Production Timeline
+            <p className="mt-3 text-[#FFFFFF99] max-sm:text-sm">
+              {" "}
+              Limited-Time Offer: <span className="underline">Exclusive benefits for early preorders!</span>
             </p>
-
-            <Image src="/changed.png" width={549} height={64} alt="" className="py-10 md:hidden" />
-            <Image src="/Frame 48095442 (1).png" width={1216} height={64} alt="" className="py-10 max-sm:hidden" />
-          </div>
-        </div>
-      </section>
-
-      <section className="paddings  w-full bg-[#151515] max-sm:px-3 ">
-        <div className="  w-full     py-10">
-          <div className="flex flex-col">
-            <p className=" text-[#FFFFFF99]">Faqs</p>
-            <p className="my-5 flex text-center text-[32px] font-bold  text-[#FFFFFF]  max-md:text-2xl md:w-[642px]">
-              what people are Asking.
-            </p>
-          </div>
-
-          <div className=" w-full rounded-md border border-[#FFFFFF1A] ">
-            {faqData.map((faq, index) => (
-              <Accordion key={index} title={faq.title} content={faq.content} />
-            ))}
           </div>
         </div>
       </section>

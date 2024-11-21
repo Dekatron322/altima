@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link"
 import React from "react"
 
 const MainFooter = () => {
@@ -19,10 +20,17 @@ const MainFooter = () => {
               <p className="text-sm text-[#FFFFFF99] underline">Product Details</p>
               <p className="text-sm text-[#FFFFFF99] underline">How Preorders Work</p>
               <p className="text-sm text-[#FFFFFF99] underline">FAQs</p>
+              <p className="text-sm text-[#FFFFFF99] underline">Contact Us</p>
             </div>
             <div className="flex flex-col gap-3 max-sm:mb-7">
               <p className="text-[#FFFFFF]">Contact Information</p>
               <p className="text-sm text-[#FFFFFF99] underline">About Us</p>
+              <Link href="comparison" className="text-sm text-[#FFFFFF99] underline">
+                Altima Comparisons
+              </Link>
+              <p className="text-sm text-[#FFFFFF99] underline">Altima Warranty Policy</p>
+              <p className="text-sm text-[#FFFFFF99] underline">Altima Installation Policy</p>
+              <p className="text-sm text-[#FFFFFF99] underline">Altima Shipping Policy</p>
               <p className="text-sm text-[#FFFFFF99] underline">Privacy Policy</p>
               <p className="text-sm text-[#FFFFFF99] underline">Terms and Conditions</p>
               <p className="text-sm text-[#FFFFFF99] underline">Refund and Cancellation Policy</p>

@@ -1,11 +1,10 @@
 "use client"
 import Footer from "components/Footer/Footer"
-import AOS from "aos"
 import "aos/dist/aos.css"
 
 import Navbar from "components/Navbar/Navbar"
-import { useEffect, useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { useState } from "react"
+import { motion } from "framer-motion"
 import { HiChevronDown } from "react-icons/hi2"
 import { LiaTimesSolid } from "react-icons/lia"
 import MainFooter from "components/Footer/MainFooter"
@@ -44,7 +43,7 @@ export default function Web() {
             <HiChevronDown className="ml-2 h-5 w-5 text-white" />
           </button>
           {isDropdownOpen && (
-            <div className="absolute z-10 mt-1 w-[160px] rounded-lg bg-[#262626] bg-[#FFFFFF1A] text-sm text-[#FFFFFF80]">
+            <div className="absolute z-10 mt-1 w-[160px] rounded-lg bg-[#262626]  text-sm text-[#FFFFFF80]">
               <a href="/profile" className="block bg-[#FFFFFF1A] px-4 py-2  hover:bg-[#FFFFFF1A]">
                 My Account
               </a>

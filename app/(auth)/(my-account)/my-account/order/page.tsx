@@ -5,7 +5,7 @@ import "aos/dist/aos.css"
 
 import Navbar from "components/Navbar/Navbar"
 import { useEffect, useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { HiChevronDown } from "react-icons/hi2"
 import { LiaTimesSolid } from "react-icons/lia"
 import MainFooter from "components/Footer/MainFooter"

@@ -4,13 +4,10 @@ import Footer from "components/Footer/Footer"
 import AOS from "aos"
 import "aos/dist/aos.css"
 
-import Image from "next/image"
-import Link from "next/link"
 import Navbar from "components/Navbar/Navbar"
 import { useEffect, useState } from "react"
-import AuthProviders from "components/ProvidersComponents/AuthProviders"
-import Accordion from "components/Accordion/Accordion"
-import { motion, AnimatePresence } from "framer-motion"
+
+import { motion } from "framer-motion"
 import MainFooter from "components/Footer/MainFooter"
 
 export default function Web() {
