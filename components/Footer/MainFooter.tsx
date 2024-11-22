@@ -18,7 +18,9 @@ const MainFooter = () => {
               <p className="text-[#FFFFFF]">Important links</p>
               <p className="text-sm text-[#FFFFFF99] underline">Home</p>
               <p className="text-sm text-[#FFFFFF99] underline">Product Details</p>
-              <p className="text-sm text-[#FFFFFF99] underline">How Preorders Work</p>
+              <Link href="how-preorder-works" className="text-sm text-[#FFFFFF99] underline">
+                How Preorders Work
+              </Link>
               <p className="text-sm text-[#FFFFFF99] underline">FAQs</p>
               <p className="text-sm text-[#FFFFFF99] underline">Contact Us</p>
             </div>
