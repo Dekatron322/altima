@@ -25,7 +25,7 @@ export default function Web() {
           <div className="flex w-full justify-between gap-10  sm:flex">
             <div>
               <p className="font-regular   text-center  text-2xl  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">
-                Resources & Policies
+                Important Link
               </p>
               <p className=" my-3 text-center  text-lg font-semibold text-white  max-sm:my-3 md:text-xl md:leading-10 xl:text-3xl">
                 How Pre-orders Work

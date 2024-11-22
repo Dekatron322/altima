@@ -17,7 +17,9 @@ const MainFooter = () => {
             <div className="flex flex-col gap-3 max-sm:mb-7">
               <p className="text-[#FFFFFF]">Important links</p>
               <p className="text-sm text-[#FFFFFF99] underline">Home</p>
-              <p className="text-sm text-[#FFFFFF99] underline">Product Details</p>
+              <Link href="product-details" className="text-sm text-[#FFFFFF99] underline">
+                Product Details
+              </Link>
               <Link href="how-preorder-works" className="text-sm text-[#FFFFFF99] underline">
                 How Preorders Work
               </Link>
