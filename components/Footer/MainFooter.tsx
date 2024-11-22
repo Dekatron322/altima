@@ -34,7 +34,9 @@ const MainFooter = () => {
               <Link href="privacy-policy" className="text-sm text-[#FFFFFF99] underline">
                 Privacy Policy
               </Link>
-              <p className="text-sm text-[#FFFFFF99] underline">Terms and Conditions</p>
+              <Link href="terms-and-conditions" className="text-sm text-[#FFFFFF99] underline">
+                Terms and Conditions
+              </Link>
               <p className="text-sm text-[#FFFFFF99] underline">Refund and Cancellation Policy</p>
             </div>
 
