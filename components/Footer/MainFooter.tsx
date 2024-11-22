@@ -23,8 +23,12 @@ const MainFooter = () => {
               <Link href="how-preorder-works" className="text-sm text-[#FFFFFF99] underline">
                 How Preorders Work
               </Link>
-              <p className="text-sm text-[#FFFFFF99] underline">FAQs</p>
-              <p className="text-sm text-[#FFFFFF99] underline">Contact Us</p>
+              <Link href="faqs" className="text-sm text-[#FFFFFF99] underline">
+                FAQs
+              </Link>
+              <Link href="contact-us" className="text-sm text-[#FFFFFF99] underline">
+                Contact Us
+              </Link>
             </div>
             <div className="flex flex-col gap-3 max-sm:mb-7">
               <p className="text-[#FFFFFF]">Contact Information</p>
