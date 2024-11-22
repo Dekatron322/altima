@@ -31,7 +31,9 @@ const MainFooter = () => {
               <p className="text-sm text-[#FFFFFF99] underline">Altima Warranty Policy</p>
               <p className="text-sm text-[#FFFFFF99] underline">Altima Installation Policy</p>
               <p className="text-sm text-[#FFFFFF99] underline">Altima Shipping Policy</p>
-              <p className="text-sm text-[#FFFFFF99] underline">Privacy Policy</p>
+              <Link href="privacy-policy" className="text-sm text-[#FFFFFF99] underline">
+                Privacy Policy
+              </Link>
               <p className="text-sm text-[#FFFFFF99] underline">Terms and Conditions</p>
               <p className="text-sm text-[#FFFFFF99] underline">Refund and Cancellation Policy</p>
             </div>
