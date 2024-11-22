@@ -24,7 +24,9 @@ const MainFooter = () => {
             </div>
             <div className="flex flex-col gap-3 max-sm:mb-7">
               <p className="text-[#FFFFFF]">Contact Information</p>
-              <p className="text-sm text-[#FFFFFF99] underline">About Us</p>
+              <Link href="about-us" className="text-sm text-[#FFFFFF99] underline">
+                About Us
+              </Link>
               <Link href="comparison" className="text-sm text-[#FFFFFF99] underline">
                 Altima Comparisons
               </Link>
