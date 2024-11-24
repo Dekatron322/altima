@@ -7,15 +7,17 @@ import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { useRouter } from "next/navigation"
 import MainFooter from "components/Footer/MainFooter"
+import Image from "next/image"
 
 export default function Web() {
   const [quantity, setQuantity] = useState(1000)
 
+  const [isDefaultEmail, setIsDefaultEmail] = useState(true)
+  const [isDefaultPhone, setIsDefaultPhone] = useState(true)
+
   // Handlers for increment and decrement
-  const handleIncrement = () => setQuantity(quantity + 1)
-  const handleDecrement = () => {
-    if (quantity > 0) setQuantity(quantity - 1) // Prevent negative quantity
-  }
+  const togglePhone = () => setIsDefaultPhone(!isDefaultPhone)
+  const toggleEmail = () => setIsDefaultEmail(!isDefaultEmail)
 
   const router = useRouter()
 
@@ -27,71 +29,100 @@ export default function Web() {
   const total = quantity * unitPrice
 
   return (
-    <section className="bg-black">
+    <section className="bg-[#151515]">
       <Navbar />
 
-      <section className="paddings items-center  justify-center bg-[#080808] max-sm:px-3 max-sm:py-20 lg:h-auto lg:py-32">
-        <div className="flex   items-center justify-center md:px-10">
-          <div className="flex  flex-col    rounded-3xl bg-[#151515] max-sm:rounded-lg max-sm:p-2  md:p-5">
-            <div onClick={handleGoBack} className="flex cursor-pointer items-center gap-2 py-3">
-              <motion.img
-                src="/CaretUp.png"
-                width={16}
-                height={16}
-                alt=""
-                initial={{ scale: 1.2, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1, ease: "easeIn" }}
-              />
-              <p className=" text-start text-sm text-[#FFFFFF80]"> Add New Address</p>
-            </div>
-
-            <div className="grid h-full items-center  rounded-lg  bg-[#FFFFFF1A]  p-5 max-sm:grid max-sm:gap-5  md:gap-10">
-              <div>
-                <motion.img
-                  src="/preorder.png"
-                  width={444}
-                  height={302}
-                  alt=""
-                  initial={{ scale: 1.2, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 1, ease: "easeIn" }}
-                />
-              </div>
-              <div className="">
-                <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:text-lg lg:text-2xl">
-                  Altima Core
-                </p>
-
+      <section className="paddings flex w-full flex-col items-center  justify-center bg-[#080808] max-sm:px-3 max-sm:py-20 lg:h-auto lg:py-32">
+        <p className="mb-6 text-xl font-bold text-white">Order Summary</p>
+        <div className="flex w-full   items-center justify-center md:px-10">
+          <div className="flex  w-full  flex-col   rounded-md border border-[#FFFFFF0D]  max-sm:rounded-lg max-sm:p-2  md:p-5">
+            <div className="grid h-full items-center  rounded-md  bg-[#FFFFFF1A]   max-sm:grid max-sm:gap-5  md:gap-10">
+              <div className="px-5">
                 <ul className="mt-6 list-inside ">
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    Specifications : Altima Core Specifications
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Product: Altima Elite</li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Size: 96" x 43"</li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Frame Type: Reinforced</li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Finish: Glass – Frosted</li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Handle Placement: Right</li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Smart Features:</li>
+                  <li className="px-3 pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
+                    - Video Doorbell, Intercom System, Camera, Alexa Integration, Wi-Fi Connectivity, Battery Backup
                   </li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Colour : Grey Colour</li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Address : Sherif Adamu,</li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Status : In Progress</li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Quantity : 10,000</li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Payment: Complete</li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Order Status : In Progress</li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Date : 26 Aug, 2024 09:40am</li>
+                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
+                    Security Features: Reinforced Lock, Anti-theft Alarm, Motion Sensor
+                  </li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Installation Type: Residential</li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Preferred Date: December 15, 3034</li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
+                    Special Instructions: Install on the rear entrance of the property.
+                  </li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Extended Warranty: Yes</li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">On-Site Support: Yes</li>
+                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Payment Method: Razor Pay</li>
                 </ul>
+              </div>
+              <table className="table-fixed border-separate border-spacing-0  text-left text-white 2xl:w-full">
+                <thead>
+                  <tr className="border">
+                    <th className="border-b border-l border-t border-[#FFFFFF33] bg-[#282828] px-4 py-4 text-sm font-normal">
+                      Total Price
+                    </th>
+                    <th className="border-b border-l border-t border-[#FFFFFF33]  bg-[#282828] px-4 py-4 text-sm font-normal">
+                      Deposit Amount
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="border-b">
+                  <tr>
+                    <td className="border-b border-l border-[#FFFFFF33]  bg-[#282828] px-4 py-2 text-sm">₹2,33,820</td>
+                    <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">₹70,146</td>
+                  </tr>
+                </tbody>
+              </table>
 
-                <ul className="mt-6 list-inside "></ul>
+              <div className="border border-[#FFFFFF0D]"></div>
 
-                <p className="font-regular flex  items-center  py-4 text-2xl text-[#FFFFFF]  max-sm:text-lg lg:text-2xl">
-                  <span className="text-sm">Total: </span> ₹{total.toLocaleString()}
+              <div className="flex w-full flex-col justify-center">
+                <div className=" mb-3 flex w-full items-center justify-center gap-2" onClick={toggleEmail}>
+                  <motion.img
+                    src={isDefaultEmail ? "/CheckSquareEmpty.png" : "/CheckSquare.png"}
+                    width={18}
+                    height={18}
+                    alt=""
+                    initial={{ scale: 1.2, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 1, ease: "easeIn" }}
+                  />
+                  <p className="text-sm text-[#FFFFFF] max-sm:text-xs">I agree to the preorder terms and conditions)</p>
+                </div>
+
+                <p className="text-center text-white">
+                  <span className="font-medium">Note :</span> You will receive a confirmation email once your preorder
+                  is complete
                 </p>
+              </div>
 
-                <motion.a
-                  href="/order-successful"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="font-regular flex w-full items-center justify-center  gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm "
-                >
-                  Make Payment
-                </motion.a>
+              <div className="border border-[#FFFFFF0D]"></div>
+              <div className="flex w-full justify-center">
+                <button className="font-regular  mb-5 flex w-[60%] items-center justify-center gap-2  rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4 py-3 uppercase text-[#FFFFFF] max-sm:w-full ">
+                  Continue
+                </button>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="paddings  w-full bg-[#080808] max-sm:px-3 ">
+        <div className="  w-full     py-10">
+          <div className="flex flex-col items-center justify-center">
+            <p className=" text-[#FFFFFF99]">Timeline</p>
+            <p className="font-regular my-6 flex text-center text-5xl  text-[#FFFFFF]  max-md:text-2xl ">
+              Production Timeline
+            </p>
+
+            <Image src="/changed.png" width={549} height={64} alt="" className="py-10 md:hidden" />
+            <Image src="/timelinee.png" width={1216} height={64} alt="" className="py-10 max-sm:hidden" />
           </div>
         </div>
       </section>
