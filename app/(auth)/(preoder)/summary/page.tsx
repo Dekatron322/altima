@@ -32,7 +32,7 @@ export default function Web() {
     <section className="bg-[#151515]">
       <Navbar />
 
-      <section className="paddings flex w-full flex-col items-center  justify-center bg-[#080808] max-sm:px-3 max-sm:py-20 lg:h-auto lg:py-32">
+      <section className="paddings flex w-full flex-col items-center  justify-center  max-sm:px-3 max-sm:py-20 lg:h-auto lg:py-32">
         <p className="mb-6 text-xl font-bold text-white">Order Summary</p>
         <div className="flex w-full   items-center justify-center md:px-10">
           <div className="flex  w-full  flex-col   rounded-md border border-[#FFFFFF0D]  max-sm:rounded-lg max-sm:p-2  md:p-5">
