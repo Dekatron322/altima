@@ -259,9 +259,9 @@ export default function Web() {
                 Why Pre-Order?
               </p>
               <div className="grid grid-cols-2 gap-4 max-sm:grid-cols-1 ">
-                <div className="flex w-full gap-3 rounded-lg border border-[#FFFFFF1A] p-10">
-                  <div className="min-w-12">
-                    <Image src="/SketchLogo.png" width={48} height={48} alt="" className="min-w-12 max-sm:hidden" />
+                <div className="flex w-full gap-3 rounded-lg border border-[#FFFFFF1A] max-sm:p-5 sm:p-10">
+                  <div className="w-12">
+                    <Image src="/SketchLogo.png" width={48} height={48} alt="" className="max-sm:hidden" />
                     <Image src="/SketchLogo.png" width={35} height={35} alt="" className="sm:hidden" />
                   </div>
                   <div className="pl-5">
@@ -272,7 +272,7 @@ export default function Web() {
                     </p>
                   </div>
                 </div>
-                <div className="flex w-full gap-5 rounded-lg border border-[#FFFFFF1A] p-10">
+                <div className="flex w-full gap-5 rounded-lg border border-[#FFFFFF1A] max-sm:p-5 sm:p-10">
                   <div className="w-12">
                     <Image src="/SketchLogo.png" width={48} height={48} alt="" className="max-sm:hidden" />
                     <Image src="/SketchLogo.png" width={35} height={35} alt="" className="sm:hidden" />
@@ -285,28 +285,23 @@ export default function Web() {
                   </div>
                 </div>
               </div>
+
               <div className="mt-4 grid grid-cols-3 gap-4 max-sm:grid-cols-1">
-                <div className="flex w-full gap-3 rounded-lg border border-[#FFFFFF1A] p-10">
-                  <div className="min-w-12">
-                    <Image
-                      src="/SketchLogo.png"
-                      width={48}
-                      height={48}
-                      alt=""
-                      className="h-12 w-12 overflow-visible object-cover max-sm:hidden"
-                    />
+                <div className="flex w-full gap-3 rounded-lg border border-[#FFFFFF1A] max-sm:p-5 sm:p-10">
+                  <div className="w-12">
+                    <Image src="/SketchLogo.png" width={48} height={48} alt="" className="max-sm:hidden" />
                     <Image src="/SketchLogo.png" width={35} height={35} alt="" className="sm:hidden" />
                   </div>
                   <div className="pl-5">
                     <p className="pb-2 text-lg text-white max-md:text-sm">Altima Core</p>
                     <p className=" text-base text-[#FFFFFF99] max-sm:text-xs">
-                      Essential smart security with a sleek, modern design. Ideal for those who need robust protection
-                      and convenience.
+                      Essential smart security with a sleek, modern design. Ideal <br />
+                      for those who need robust protection and convenience.
                     </p>
                   </div>
                 </div>
-                <div className="flex w-full gap-3 rounded-lg border border-[#FFFFFF1A] p-10">
-                  <div className="min-w-12">
+                <div className="flex w-full gap-3 rounded-lg border border-[#FFFFFF1A] max-sm:p-5 sm:p-10">
+                  <div className="w-12">
                     <Image
                       src="/SketchLogo.png"
                       width={48}
@@ -326,7 +321,7 @@ export default function Web() {
                     </p>
                   </div>
                 </div>
-                <div className="flex w-full gap-5 rounded-lg border border-[#FFFFFF1A] p-10">
+                <div className="flex w-full gap-5 rounded-lg border border-[#FFFFFF1A] max-sm:p-5 sm:p-10">
                   <div className="w-12">
                     {/* Fixed size for large screens */}
                     <Image
@@ -348,8 +343,8 @@ export default function Web() {
                   <div className="pl-5">
                     <p className="pb-2 text-lg text-white max-md:text-sm">Smart Lock Embedded in Multiple Door Types</p>
                     <p className="text-base text-[#FFFFFF99] max-sm:text-xs">
-                      Altima products integrate directly into metal, glass, or wood doors, providing a complete and
-                      unified security solution.
+                      Altima products integrate directly into metal,
+                      <br /> glass, or wood doors, providing a complete and unified security solution.
                     </p>
                   </div>
                 </div>
@@ -373,7 +368,7 @@ export default function Web() {
               </div>
 
               <div className="mt-4 grid w-full grid-cols-3 gap-5 max-sm:grid-cols-1">
-                <div className="flex gap-4 rounded-md bg-[#080808] p-10">
+                <div className="flex gap-4 rounded-md bg-[#080808] max-sm:p-5 sm:p-10">
                   <Image
                     src="/avatar1.png"
                     width={63}
@@ -381,6 +376,7 @@ export default function Web() {
                     alt=""
                     className="h-14 w-14 overflow-visible object-cover max-sm:hidden"
                   />
+                  <Image src="/avatar1.png" width={40} height={40} alt="" className="h-8 w-8 object-cover sm:hidden" />
                   <div>
                     <p className="pb-2 text-lg text-white max-md:text-sm">Preorder Customer</p>
                     <p className="text-base text-[#FFFFFF99] max-sm:text-xs">
@@ -389,8 +385,8 @@ export default function Web() {
                     </p>
                   </div>
                 </div>
-                <div className="rounded-md bg-[#080808] p-2">
-                  <div className="flex gap-4 rounded-md bg-[#080808] p-10">
+                <div className="rounded-md bg-[#080808] ">
+                  <div className="flex gap-4 rounded-md bg-[#080808] max-sm:p-5 sm:p-10">
                     <Image
                       src="/avatar2.png"
                       width={63}
@@ -398,6 +394,14 @@ export default function Web() {
                       alt=""
                       className="h-14 w-14 overflow-visible object-cover max-sm:hidden"
                     />
+                    <Image
+                      src="/avatar2.png"
+                      width={40}
+                      height={40}
+                      alt=""
+                      className="h-8 w-8 object-cover sm:hidden"
+                    />
+
                     <div>
                       <p className="pb-2 text-lg text-white max-md:text-sm">Smart Home Enthusiast</p>
                       <p className="text-base text-[#FFFFFF99] max-sm:text-xs">
@@ -407,14 +411,21 @@ export default function Web() {
                     </div>
                   </div>
                 </div>
-                <div className="rounded-md bg-[#080808] p-2">
-                  <div className="flex gap-4 rounded-md bg-[#080808] p-10">
+                <div className="rounded-md bg-[#080808] ">
+                  <div className="flex gap-4 rounded-md bg-[#080808] max-sm:p-5 sm:p-10">
                     <Image
                       src="/avatar3.png"
                       width={63}
                       height={63}
                       alt=""
                       className="h-14 w-14 overflow-visible object-cover max-sm:hidden"
+                    />
+                    <Image
+                      src="/avatar3.png"
+                      width={40}
+                      height={40}
+                      alt=""
+                      className="h-8 w-8 object-cover sm:hidden"
                     />
                     <div>
                       <p className="pb-2 text-lg text-white max-md:text-sm">Industry Expert</p>
