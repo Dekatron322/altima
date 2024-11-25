@@ -4,10 +4,11 @@ import AOS from "aos"
 import "aos/dist/aos.css"
 import Image from "next/image"
 import Navbar from "components/Navbar/Navbar"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import Accordion from "components/Accordion/Accordion"
 import { motion } from "framer-motion"
 import MainFooter from "components/Footer/MainFooter"
+import ImageModal from "components/ImageModal/ImageModal"
 
 export default function Web() {
   useEffect(() => {
@@ -59,6 +60,18 @@ export default function Web() {
     hidden: { opacity: 0, scale: 0.8 },
     visible: { opacity: 1, scale: 1 },
   }
+
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  const images = ["/new.png", "/altimaCore.png", "/new.png"] // Array of image paths
+
+  const openModal = (index: number) => {
+    setCurrentImageIndex(index)
+    setIsModalOpen(true)
+  }
+
+  const closeModal = () => setIsModalOpen(false)
 
   return (
     <section className="bg-black">
@@ -314,7 +327,7 @@ export default function Web() {
           <div className="flex w-full justify-between max-sm:grid max-sm:gap-5  md:gap-20">
             <div>
               <motion.img
-                src="/new.png"
+                src={images[0]}
                 width={645}
                 height={555}
                 alt=""
@@ -526,13 +539,15 @@ export default function Web() {
             </div>
             <div className=" max-sm:hidden">
               <motion.img
-                src="/new.png"
+                src={images[0]}
                 width={645}
                 height={555}
                 alt=""
                 initial={{ scale: 1.2, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 1, ease: "easeIn" }}
+                onClick={() => openModal(0)}
+                className="cursor-pointer"
               />
             </div>
             <div className="md:hidden">
@@ -803,6 +818,7 @@ export default function Web() {
           </div>
         </div>
       </section>
+      <ImageModal isOpen={isModalOpen} images={images} currentIndex={currentImageIndex} onClose={closeModal} />
 
       <MainFooter />
 
