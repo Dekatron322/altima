@@ -74,7 +74,7 @@ export default function Web() {
           <div className="flex max-md:hidden">
             <a
               href="/profile"
-              className="mt-[0.5px] flex h-auto items-center gap-2 border-r border-black bg-[#FFFFFF1A]  px-4 "
+              className="mt-[0.5px] flex h-auto items-center gap-2 border-r border-black bg-[#FFFFFF0D]  px-4 "
             >
               <motion.img
                 src="/GearSix.png"
@@ -104,7 +104,7 @@ export default function Web() {
             </a>
             <a
               href="/address"
-              className="mt-[0.5px] flex h-auto items-center gap-2 border-r border-black bg-[#FFFFFF1A]  px-4 "
+              className="mt-[0.5px] flex h-auto items-center gap-2 border-r border-black bg-[#FFFFFF0D]  px-4 "
             >
               <motion.img
                 src="/GearSix.png"
@@ -119,7 +119,7 @@ export default function Web() {
             </a>
             <div
               onClick={opeDeletenModal}
-              className="mt-[0.5px] flex h-auto items-center gap-2 border-r border-black bg-[#FFFFFF1A]  px-4 "
+              className="mt-[0.5px] flex h-auto items-center gap-2 border-r border-black bg-[#FFFFFF0D]  px-4 "
             >
               <motion.img
                 src="/SignOut.png"
