@@ -13,19 +13,15 @@ interface LoginResponse {
 
 const Page: React.FC = () => {
   const [formData, setFormData] = useState<SignInPayload>({
-    username: "",
+    email: "",
     password: "",
   })
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
+
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [showSuccessNotification, setShowSuccessNotification] = useState(false)
   const [showErrorNotification, setShowErrorNotification] = useState(false)
-  const [isPasswordVisible, setIsPasswordVisible] = useState(false)
   const [successMessage, setSuccessMessage] = useState<string | null>(null)
-
-  const [showDropdown, setShowDropdown] = useState(false)
 
   const router = useRouter() // Initialize the router
 
@@ -41,10 +37,18 @@ const Page: React.FC = () => {
     setSuccessMessage(null)
 
     try {
-      const response = await signIn(formData)
+      const response: LoginResponse = await signIn(formData) // Assuming signIn returns LoginResponse
       setSuccessMessage("SignIn successful!")
       setLoading(false)
-      router.push("/")
+
+      // Log the user ID and token to the console
+      console.log("User ID:", response.id)
+      console.log("Token:", response.token)
+
+      // Store user information in localStorage
+      localStorage.setItem("user", JSON.stringify(response))
+
+      router.push("/") // Redirect to the homepage or any other page
     } catch (err: any) {
       setError(err.response?.data?.message || "Failed to sign in. Please try again.")
       setLoading(false)
@@ -81,7 +85,7 @@ const Page: React.FC = () => {
             <div className="flex w-full justify-center md:mt-5">
               <form onSubmit={handleSubmit}>
                 {Object.keys(formData).map((field) => (
-                  <div className="search-bg mb-2 h-[54.37px] items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2 max-sm:w-[320px] xl:w-[536px]">
+                  <div className="search-bg mb-2 h-[54.37px]  items-center justify-between rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3 py-4 hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2 max-sm:w-[320px] xl:w-[536px]">
                     <div className="flex">
                       <input
                         type={field === "password" ? "password" : "text"}
@@ -89,7 +93,7 @@ const Page: React.FC = () => {
                         placeholder={field.replace("_", " ").toUpperCase()}
                         value={(formData as any)[field]}
                         onChange={handleChange}
-                        className="h-[24px] w-full bg-transparent text-base outline-none focus:outline-none"
+                        className="h-[24px] w-full bg-transparent text-base text-white outline-none  focus:outline-none"
                         style={{ width: "100%", height: "24px" }}
                       />
                     </div>

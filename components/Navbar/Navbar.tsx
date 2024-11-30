@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
 import { RiMenuLine } from "react-icons/ri"
 import { RxCross2 } from "react-icons/rx"
@@ -40,6 +41,17 @@ const Navbar = () => {
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen)
+  }
+
+  const router = useRouter()
+
+  const handleAccountClick = () => {
+    const user = localStorage.getItem("user")
+    if (user) {
+      router.push("/profile")
+    } else {
+      router.push("/signin")
+    }
   }
 
   const session = null
@@ -103,7 +115,10 @@ const Navbar = () => {
               Contact
             </a>
           </ul>
-          <a href="/profile" className={" rounded-lg bg-[#FFFFFF1A] p-2 uppercase text-white"}>
+          <a
+            onClick={handleAccountClick}
+            className={" cursor-pointer rounded-lg bg-[#FFFFFF1A] p-2 uppercase text-white"}
+          >
             My Account
           </a>
         </div>
@@ -179,7 +194,7 @@ const Navbar = () => {
               Contact
             </a>
 
-            <a href="/preorder" className={" rounded-lg bg-[#FFFFFF1A] p-2  text-white"}>
+            <a onClick={handleAccountClick} className={" cursor-pointer rounded-lg bg-[#FFFFFF1A]  p-2 text-white"}>
               My Account
             </a>
           </div>

@@ -9,6 +9,7 @@ import Accordion from "components/Accordion/Accordion"
 import { motion } from "framer-motion"
 import MainFooter from "components/Footer/MainFooter"
 import ImageModal from "components/ImageModal/ImageModal"
+import { useRouter } from "next/navigation"
 
 export default function Web() {
   useEffect(() => {
@@ -71,7 +72,18 @@ export default function Web() {
     setIsModalOpen(true)
   }
 
+  const router = useRouter()
+
   const closeModal = () => setIsModalOpen(false)
+
+  const handlePreOrderClick = () => {
+    const user = localStorage.getItem("user")
+    if (user) {
+      router.push("/preorder")
+    } else {
+      router.push("/signin")
+    }
+  }
 
   return (
     <section className="bg-black">
@@ -114,6 +126,7 @@ export default function Web() {
               </div>
               <div className="mt-4 flex w-full gap-5 max-sm:gap-2 ">
                 <motion.button
+                  onClick={handlePreOrderClick}
                   className="font-regular whitespace-nowrap rounded-lg border border-[#FF3B30] bg-[#FFFFFF26] px-4 py-3 uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
@@ -421,14 +434,14 @@ export default function Web() {
                 </div>
               </div>
               <div className="mt-8 max-sm:flex  max-sm:w-full max-sm:justify-center">
-                <motion.a
-                  href="/preorder"
+                <motion.button
+                  onClick={handlePreOrderClick}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   className="font-regular   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm "
                 >
                   Pre-Order now
-                </motion.a>
+                </motion.button>
               </div>
             </div>
           </div>
@@ -527,14 +540,14 @@ export default function Web() {
                 </div>
               </div>
               <div className="mt-8 max-sm:flex  max-sm:w-full max-sm:justify-center">
-                <motion.a
+                <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   className="font-regular gap-2  rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:hidden max-sm:py-2 max-sm:text-sm "
-                  href="/preorder"
+                  onClick={handlePreOrderClick}
                 >
                   Pre-Order now
-                </motion.a>
+                </motion.button>
               </div>
             </div>
             <div className=" max-sm:hidden">
@@ -585,14 +598,14 @@ export default function Web() {
               </ul> */}
 
               <div className="max-sm:flex  max-sm:w-full max-sm:justify-center">
-                <motion.a
-                  href="/preorder"
+                <motion.button
+                  onClick={handlePreOrderClick}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   className="font-regular   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm "
                 >
                   Pre-Order now
-                </motion.a>
+                </motion.button>
               </div>
             </div>
           </div>
@@ -690,14 +703,14 @@ export default function Web() {
               </div>
             </div>
 
-            <motion.a
+            <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className="font-regular flex  gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm"
-              href="/preorder"
+              onClick={handlePreOrderClick}
             >
               Pre-Order now
-            </motion.a>
+            </motion.button>
           </div>
         </div>
       </section>

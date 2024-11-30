@@ -3,13 +3,13 @@ import apiClient from "utils/apiClient"
 export interface SignUpPayload {
   first_name: string
   last_name: string
-  username: string
+
   password: string
   email: string
 }
 
 export interface SignInPayload {
-  username: string
+  email: string
   password: string
 }
 

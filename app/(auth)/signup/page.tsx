@@ -15,7 +15,7 @@ const Page: React.FC = () => {
   const [formData, setFormData] = useState<SignUpPayload>({
     first_name: "",
     last_name: "",
-    username: "",
+
     email: "",
     password: "",
   })
@@ -81,7 +81,10 @@ const Page: React.FC = () => {
             <div className="flex w-full justify-center md:mt-5">
               <form onSubmit={handleSubmit}>
                 {Object.keys(formData).map((field) => (
-                  <div className="search-bg key={field} mb-2 h-[54.37px] items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2 max-sm:w-[320px] xl:w-[536px]">
+                  <div
+                    key={field}
+                    className="search-bg mb-2  h-[54.37px] items-center justify-between rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3 py-4 hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2 max-sm:w-[320px] xl:w-[536px]"
+                  >
                     <div className="flex">
                       <input
                         type={field === "password" ? "password" : "text"}
