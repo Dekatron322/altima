@@ -15,7 +15,6 @@ const Page: React.FC = () => {
   const [formData, setFormData] = useState<SignUpPayload>({
     first_name: "",
     last_name: "",
-
     email: "",
     password: "",
   })
@@ -24,7 +23,6 @@ const Page: React.FC = () => {
   const [error, setError] = useState<string | null>(null)
   const [showSuccessNotification, setShowSuccessNotification] = useState(false)
   const [showErrorNotification, setShowErrorNotification] = useState(false)
-  const [isPasswordVisible, setIsPasswordVisible] = useState(false)
   const [successMessage, setSuccessMessage] = useState<string | null>(null)
 
   const router = useRouter()

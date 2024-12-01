@@ -13,6 +13,10 @@ export interface SignInPayload {
   password: string
 }
 
+export interface ForgotPasswordPayload {
+  email: string
+}
+
 export const signUp = async (payload: SignUpPayload) => {
   const response = await apiClient.post("/custom-user/sign-up/", payload)
   return response.data
@@ -20,5 +24,10 @@ export const signUp = async (payload: SignUpPayload) => {
 
 export const signIn = async (payload: SignInPayload) => {
   const response = await apiClient.post("/custom-user/sign-in/", payload)
+  return response.data
+}
+
+export const forgotPassword = async (payload: ForgotPasswordPayload) => {
+  const response = await apiClient.post("/custom-user/forgot-password/", payload)
   return response.data
 }
