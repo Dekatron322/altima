@@ -9,14 +9,16 @@ import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import MainFooter from "components/Footer/MainFooter"
 import { HiChevronDown } from "react-icons/hi2"
+import { getAddressInformation, UserInformationPayload } from "services/addressService"
+
+interface User {
+  id: string
+  token: string
+  // Add other fields as needed
+}
 
 export default function Web() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000, // Animation duration
-      once: true, // Only animate elements once
-    })
-  }, [])
+  const [addressData, setAddressData] = useState<UserInformationPayload["address"][] | null>(null)
 
   const [isDefaultShipping, setIsDefaultShipping] = useState(true)
   const [isDefaultBilling, setIsDefaultBilling] = useState(true)
@@ -50,6 +52,39 @@ export default function Web() {
 
   const opeCancelModal = () => setIsCancelModalOpen(true)
   const closeCancelModal = () => setIsCancelModalOpen(false)
+
+  // Fetch the logged-in user's address
+  useEffect(() => {
+    const fetchAddresses = async () => {
+      try {
+        const userString = localStorage.getItem("user")
+        if (!userString) {
+          console.error("No user data found in localStorage.")
+          return
+        }
+
+        const parsedUser = JSON.parse(userString) as User
+        const userId = parsedUser?.id
+        if (!userId) {
+          console.error("User ID is not present in the stored user data.")
+          return
+        }
+
+        const userDetails = await getAddressInformation(userId)
+        console.log("Fetched Address Details:", userDetails)
+
+        if (Array.isArray(userDetails.addresss)) {
+          setAddressData(userDetails.addresss)
+        } else {
+          console.error("Address data is not in the expected format.")
+        }
+      } catch (error) {
+        console.error("Error fetching address information:", error)
+      }
+    }
+
+    fetchAddresses()
+  }, [])
 
   return (
     <section className="bg-black">
@@ -145,160 +180,96 @@ export default function Web() {
             </div>
           </div>
           <div className="flex w-full flex-col items-center  justify-center  bg-[#151515] pt-3 max-sm:rounded-lg max-sm:p-2  md:p-10">
+            <p className="font-regular gap-2     text-3xl uppercase text-[#FFFFFF] max-sm:py-2 ">My Address</p>
+            <div className="my-3 w-full border-b border-[#FFFFFF1A]"></div>
+
+            <div className=" flex h-full w-full  flex-col   rounded-lg   max-sm:grid max-sm:gap-5  md:gap-6">
+              {addressData ? (
+                addressData.map((address, index) => (
+                  <div className="flex w-full flex-col bg-[#FFFFFF1A] ">
+                    <ul className=" list-inside p-5">
+                      <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
+                        <span className="text-[#FFFFFF80]">Name:</span> {address.full_name}
+                      </li>
+                      <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
+                        <span className="text-[#FFFFFF80]">Email:</span> {address.email_address}
+                      </li>
+                      <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
+                        <span className="text-[#FFFFFF80]">Address:</span>{" "}
+                        {`${address.street}, ${address.city}, ${address.state}, ${address.country}`}
+                      </li>
+                    </ul>
+                    <div className="flex flex-col gap-2 px-5 pb-3">
+                      <div className="flex items-center gap-2" onClick={toggleShipping}>
+                        <motion.img
+                          src={isDefaultShipping ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
+                          width={18}
+                          height={18}
+                          alt=""
+                          initial={{ scale: 1.2, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          transition={{ duration: 1, ease: "easeIn" }}
+                        />
+                        <p className="text-sm text-[#FFFFFF99] max-sm:text-xs">Set as default Shipping Address</p>
+                      </div>
+                      <div className="flex items-center gap-2" onClick={toggleBilling}>
+                        <motion.img
+                          src={isDefaultBilling ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
+                          width={18}
+                          height={18}
+                          alt=""
+                          initial={{ scale: 1.2, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          transition={{ duration: 1, ease: "easeIn" }}
+                        />
+                        <p className="text-sm text-[#FFFFFF99] max-sm:text-xs">Set as default Billing Address</p>
+                      </div>
+                    </div>
+
+                    <div className="flex border-b border-[#FFFFFF1A]"></div>
+                    <div className="flex flex-col gap-2 px-5 py-3">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <p className="text-sm text-[#FFFFFF80]">Edit</p>
+                          <motion.img
+                            src="/PencilSimple.png"
+                            width={18}
+                            height={18}
+                            alt=""
+                            initial={{ scale: 1.2, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ duration: 1, ease: "easeIn" }}
+                          />
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <p className="text-sm text-[#FFFFFF80]">Delete</p>
+                          <motion.img
+                            src="/TrashNew.png"
+                            width={18}
+                            height={18}
+                            alt=""
+                            initial={{ scale: 1.2, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ duration: 1, ease: "easeIn" }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <p className="text-sm text-[#FFFFFF80]">Loading address information...</p>
+              )}
+            </div>
+
             <motion.a
               href="/address/add-address"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="font-regular my-3  gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF80] px-4 py-2 text-xs uppercase text-[#FFFFFF] max-sm:py-2 "
+              className="font-regular mt-7 gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF80] px-4 py-2 text-xs uppercase text-[#FFFFFF] max-sm:py-2 "
             >
               Add New Address
             </motion.a>
-
-            <div className="flex h-full  w-full   rounded-lg bg-[#FFFFFF1A]   max-sm:grid max-sm:gap-5  md:gap-10">
-              <div className="flex w-full flex-col">
-                <ul className=" list-inside p-5">
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    <span className="text-[#FFFFFF80]">Name:</span> Sherif Adamu
-                  </li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    <span className="text-[#FFFFFF80]">Email:</span> Shereefadamu001@gmail.com
-                  </li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    <span className="text-[#FFFFFF80]">Address:</span> No5 ajika street, Sabo road, Unguwan Rimi,
-                    Kaduna, Nigeria
-                  </li>
-                </ul>
-                <div className="flex flex-col gap-2 px-5 pb-3">
-                  <div className="flex items-center gap-2" onClick={toggleShipping}>
-                    <motion.img
-                      src={isDefaultShipping ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
-                      alt=""
-                      initial={{ scale: 1.2, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ duration: 1, ease: "easeIn" }}
-                    />
-                    <p className="text-sm text-[#FFFFFF99] max-sm:text-xs">Set as default Shipping Address</p>
-                  </div>
-                  <div className="flex items-center gap-2" onClick={toggleBilling}>
-                    <motion.img
-                      src={isDefaultBilling ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
-                      alt=""
-                      initial={{ scale: 1.2, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ duration: 1, ease: "easeIn" }}
-                    />
-                    <p className="text-sm text-[#FFFFFF99] max-sm:text-xs">Set as default Billing Address</p>
-                  </div>
-                </div>
-
-                <div className="flex border-b border-[#FFFFFF1A]"></div>
-                <div className="flex flex-col gap-2 px-5 py-3">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <p className="text-sm text-[#FFFFFF80]">Edit</p>
-                      <motion.img
-                        src="/PencilSimple.png"
-                        width={18}
-                        height={18}
-                        alt=""
-                        initial={{ scale: 1.2, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ duration: 1, ease: "easeIn" }}
-                      />
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <p className="text-sm text-[#FFFFFF80]">Delete</p>
-                      <motion.img
-                        src="/TrashNew.png"
-                        width={18}
-                        height={18}
-                        alt=""
-                        initial={{ scale: 1.2, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ duration: 1, ease: "easeIn" }}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-3 flex h-full w-full rounded-lg  bg-[#FFFFFF1A]   max-sm:grid max-sm:gap-5  md:gap-10">
-              <div className="flex w-full flex-col">
-                <ul className=" list-inside p-5">
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    <span className="text-[#FFFFFF80]">Name:</span> Sherif Adamu
-                  </li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    <span className="text-[#FFFFFF80]">Email:</span> Shereefadamu001@gmail.com
-                  </li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    <span className="text-[#FFFFFF80]">Address:</span> No5 ajika street, Sabo road, Unguwan Rimi,
-                    Kaduna, Nigeria
-                  </li>
-                </ul>
-                <div className="flex flex-col gap-2 px-5 pb-3">
-                  <div className="flex items-center gap-2" onClick={toggleShippingTwo}>
-                    <motion.img
-                      src={isDefaultShippingTwo ? "/CheckSquareEmpty.png" : "/CheckSquare.png"}
-                      width={18}
-                      height={18}
-                      alt=""
-                      initial={{ scale: 1.2, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ duration: 1, ease: "easeIn" }}
-                    />
-                    <p className="text-sm text-[#FFFFFF99] max-sm:text-xs">Set as default Shipping Address</p>
-                  </div>
-                  <div className="flex items-center gap-2" onClick={toggleBillingTwo}>
-                    <motion.img
-                      src={isDefaultBillingTwo ? "/CheckSquareEmpty.png" : "/CheckSquare.png"}
-                      width={18}
-                      height={18}
-                      alt=""
-                      initial={{ scale: 1.2, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ duration: 1, ease: "easeIn" }}
-                    />
-                    <p className="text-sm text-[#FFFFFF99] max-sm:text-xs">Set as default Billing Address</p>
-                  </div>
-                </div>
-
-                <div className="flex w-full border-b border-[#FFFFFF1A]"></div>
-                <div className="flex flex-col gap-2 px-5 py-3">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <p className="text-sm text-[#FFFFFF80]">Edit</p>
-                      <motion.img
-                        src="/PencilSimple.png"
-                        width={18}
-                        height={18}
-                        alt=""
-                        initial={{ scale: 1.2, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ duration: 1, ease: "easeIn" }}
-                      />
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <p className="text-sm text-[#FFFFFF80]">Delete</p>
-                      <motion.img
-                        src="/TrashNew.png"
-                        width={18}
-                        height={18}
-                        alt=""
-                        initial={{ scale: 1.2, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ duration: 1, ease: "easeIn" }}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
