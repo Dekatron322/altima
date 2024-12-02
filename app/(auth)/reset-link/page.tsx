@@ -1,5 +1,5 @@
 "use client"
-import React from "react"
+import React, { Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
@@ -10,7 +10,7 @@ const Page: React.FC = () => {
   const email = searchParams.get("email")
 
   return (
-    <>
+    <Suspense>
       <div className="flex h-screen w-full items-center justify-center bg-[#000000] max-md:bg-[#000000]">
         <motion.div
           className="flex justify-center rounded-3xl bg-[#151515] max-sm:w-[95%] max-sm:rounded-lg xl:max-w-[600px]"
@@ -47,7 +47,7 @@ const Page: React.FC = () => {
           </div>
         </motion.div>
       </div>
-    </>
+    </Suspense>
   )
 }
 
