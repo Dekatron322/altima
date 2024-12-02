@@ -47,3 +47,20 @@ export const addAddressToUser = async (userId: string, payload: AddressPayload) 
   const response = await apiClient.post(`/custom-user/add-address-to-custom-user/${userId}/`, payload)
   return response.data
 }
+
+// New Function: Delete Address Service
+export const deleteAddress = async (addressId: string) => {
+  const response = await apiClient.delete(`/address/address/${addressId}/`)
+  return response.data
+}
+
+export const getAddress = async (userId: string) => {
+  const response = await apiClient.get(`/address/address/${userId}/`)
+  return response.data
+}
+
+// Edit (Update) Address Service
+export const editAddress = async (addressId: string, payload: AddressPayload) => {
+  const response = await apiClient.put(`/address/address/${addressId}/`, payload)
+  return response.data
+}
