@@ -77,7 +77,7 @@ export default function Web() {
 
               <div className="mt-4 flex w-full items-center justify-center gap-5 max-sm:gap-2 ">
                 <motion.a
-                  href="./Altima_vs_Competitors_2024Nov6.png"
+                  href="/Altima_vs_Competitors_2024Nov6.pdf"
                   className="font-regular whitespace-nowrap rounded-lg   bg-[#FFFFFF0D] px-4 py-3 uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
