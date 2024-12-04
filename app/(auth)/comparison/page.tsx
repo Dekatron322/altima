@@ -92,6 +92,22 @@ export default function Web() {
                   className="font-regular whitespace-nowrap rounded-lg   bg-[#FFFFFF0D] px-8 py-3 uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
+                  onClick={() => {
+                    const fileUrl = "/Altima_vs_Competitors_2024Nov6.pdf" // Replace with the actual path
+                    const fullUrl = `${window.location.origin}${fileUrl}`
+
+                    if (navigator.share) {
+                      navigator
+                        .share({
+                          title: "Altima Feature Comparison",
+                          text: "Check out the Altima vs Competitors: Feature Comparison PDF.",
+                          url: fullUrl,
+                        })
+                        .catch((error) => console.error("Error sharing:", error))
+                    } else {
+                      alert("Sharing is not supported in this browser.")
+                    }
+                  }}
                 >
                   SHARE
                 </motion.button>
