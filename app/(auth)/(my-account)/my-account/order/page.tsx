@@ -146,16 +146,15 @@ export default function Web() {
                 <div>
                   <motion.img
                     src="/renew.png"
-                    width={253}
-                    height={209}
+                    className="max-sm:w-full  sm:w-[253px]"
                     alt=""
                     initial={{ scale: 1.2, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 1, ease: "easeIn" }}
                   />
                 </div>
-                <div className="w-full">
-                  <div className="mb-5 flex items-center gap-2">
+                <div className="w-full ">
+                  <div className="mb-5 flex gap-2 max-sm:w-full max-sm:flex-col max-sm:items-center max-sm:justify-center">
                     <motion.img
                       src="/SpinnerGap.png"
                       width={32}
@@ -165,8 +164,9 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className=" text-center text-lg text-[#FFFFFF]">Preparing for Shipping</p>
-                    <p className="text-sm text-[#FFFFFF99]">Estimated delivery: Sat, August 26</p>
+                    <p className=" text-lg text-[#FFFFFF] max-sm:text-center">Preparing for Shipping</p>
+
+                    <p className="text-center text-sm text-[#FFFFFF99]">Estimated delivery: Sat, August 26</p>
                   </div>
                   <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:text-lg lg:text-2xl">
                     Altima Core
@@ -191,7 +191,7 @@ export default function Web() {
                   <span className="text-sm">Total: </span> ₹{total.toLocaleString()}
                 </p> */}
 
-                  <div className="flex w-full gap-4">
+                  <div className="flex w-full gap-4 max-sm:flex-col">
                     <motion.a
                       href="/my-account/track-order"
                       whileHover={{ scale: 1.01 }}
@@ -243,8 +243,7 @@ export default function Web() {
                 <div>
                   <motion.img
                     src="/renew.png"
-                    width={253}
-                    height={209}
+                    className="max-sm:w-full  sm:w-[253px]"
                     alt=""
                     initial={{ scale: 1.2, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
@@ -252,7 +251,7 @@ export default function Web() {
                   />
                 </div>
                 <div className="w-full">
-                  <div className="mb-5 flex items-center gap-2">
+                  <div className="mb-5 flex items-center gap-2 max-sm:justify-center">
                     <motion.img
                       src="/Prohibit.png"
                       width={32}
@@ -275,7 +274,7 @@ export default function Web() {
                     <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Status: In Progress</li>
                   </ul>
 
-                  <div className="flex w-full gap-4">
+                  <div className="flex w-full gap-4 max-sm:flex-col">
                     <motion.a
                       href="/my-account/track-order"
                       whileHover={{ scale: 1.01 }}
@@ -311,8 +310,7 @@ export default function Web() {
                 <div>
                   <motion.img
                     src="/renew.png"
-                    width={253}
-                    height={209}
+                    className="max-sm:w-full  sm:w-[253px]"
                     alt=""
                     initial={{ scale: 1.2, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
@@ -320,7 +318,7 @@ export default function Web() {
                   />
                 </div>
                 <div className="w-full">
-                  <div className="mb-5 flex items-center gap-2">
+                  <div className="mb-5 flex items-center gap-2 max-sm:justify-center">
                     <motion.img
                       src="/CheckCircle8.png"
                       width={32}
