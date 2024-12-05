@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 interface AccordionProps {
   title: string
@@ -7,7 +7,13 @@ interface AccordionProps {
 }
 
 const Accordion: React.FC<AccordionProps> = ({ title, content, defaultOpen = false }) => {
-  const [isOpen, setIsOpen] = useState(defaultOpen) // Initialize with `defaultOpen`
+  const [isOpen, setIsOpen] = useState(false) // Initialize as closed by default
+
+  useEffect(() => {
+    if (defaultOpen) {
+      setIsOpen(true) // Set open only on the first render
+    }
+  }, [defaultOpen])
 
   const toggleAccordion = () => {
     setIsOpen(!isOpen)

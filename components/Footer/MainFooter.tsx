@@ -10,8 +10,12 @@ const MainFooter = () => {
           <div className="grid grid-cols-4 justify-center gap-5 max-md:grid-cols-2  max-sm:grid-cols-1">
             <div className="flex flex-col gap-3 max-sm:mb-7">
               <p className="text-[#FFFFFF]">Contact Us</p>
-              <p className="text-sm text-[#FFFFFF99]">Email: mail@altimaaccess.com</p>
-              <p className="text-sm text-[#FFFFFF99]">Phone: 02269718365</p>
+              <Link href="mailto:mail@altimaaccess.com" className="text-sm text-[#FFFFFF99]">
+                Email: mail@altimaaccess.com
+              </Link>
+              <Link href="tel:02269718365" className="text-sm text-[#FFFFFF99]">
+                Phone: 02269718365
+              </Link>
               <p className="text-sm text-[#FFFFFF99]">Address: Seawoods, Navi Mumbai 400706, India</p>
             </div>
             <div className="flex flex-col gap-3 max-sm:mb-7">
@@ -38,16 +42,24 @@ const MainFooter = () => {
               <Link href="comparison" className="text-sm text-[#FFFFFF99] underline">
                 Altima Comparisons
               </Link>
-              <p className="text-sm text-[#FFFFFF99] underline">Altima Warranty Policy</p>
-              <p className="text-sm text-[#FFFFFF99] underline">Altima Installation Policy</p>
-              <p className="text-sm text-[#FFFFFF99] underline">Altima Shipping Policy</p>
+              <Link href="warranty-policy" className="text-sm text-[#FFFFFF99] underline">
+                Altima Warranty Policy
+              </Link>
+              <Link href="installation-policy" className="text-sm text-[#FFFFFF99] underline">
+                Altima Installation Policy
+              </Link>
+              <Link href="shipping-policy" className="text-sm text-[#FFFFFF99] underline">
+                Altima Shipping Policy
+              </Link>
               <Link href="privacy-policy" className="text-sm text-[#FFFFFF99] underline">
                 Privacy Policy
               </Link>
               <Link href="terms-and-conditions" className="text-sm text-[#FFFFFF99] underline">
                 Terms and Conditions
               </Link>
-              <p className="text-sm text-[#FFFFFF99] underline">Refund and Cancellation Policy</p>
+              <Link href="/refund-and-cancellation" className="text-sm text-[#FFFFFF99] underline">
+                Refund and Cancellation Policy
+              </Link>
             </div>
 
             <div className="flex flex-col gap-3 max-sm:mb-7">

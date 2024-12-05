@@ -163,9 +163,44 @@ export default function Web() {
         <div className="w-full py-20">
           <div className="flex w-full flex-col items-center">
             <p className="text-center text-[#FFFFFF99]">Resources & Policies</p>
-            <p className="my-6 text-center text-[32px] font-bold text-[#FFFFFF] max-md:text-2xl">
-              Altima Warranty Policy
-            </p>
+            <p className=" text-center text-[32px] font-bold text-[#FFFFFF] max-md:text-2xl">Altima Warranty Policy</p>
+            <div className="my-4 flex w-full items-center justify-center gap-5 max-sm:gap-2 ">
+              <motion.a
+                href="/Altima Warranty_ Ext. Warranty _ Claim form .pdf"
+                className="font-regular whitespace-nowrap rounded-lg   bg-[#FFFFFF0D] px-4 py-3 uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                target="_blank"
+                rel="noopener noreferrer"
+                download
+              >
+                DOWNLOAD
+              </motion.a>
+
+              <motion.button
+                className="font-regular whitespace-nowrap rounded-lg   bg-[#FFFFFF0D] px-8 py-3 uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => {
+                  const fileUrl = "/Altima Warranty_ Ext. Warranty _ Claim form .pdf" // Replace with the actual path
+                  const fullUrl = `${window.location.origin}${fileUrl}`
+
+                  if (navigator.share) {
+                    navigator
+                      .share({
+                        title: "Altima Feature Comparison",
+                        text: "Check out the Altima vs Competitors: Feature Comparison PDF.",
+                        url: fullUrl,
+                      })
+                      .catch((error) => console.error("Error sharing:", error))
+                  } else {
+                    alert("Sharing is not supported in this browser.")
+                  }
+                }}
+              >
+                SHARE
+              </motion.button>
+            </div>
           </div>
 
           {/* Tabs for accordion selection */}

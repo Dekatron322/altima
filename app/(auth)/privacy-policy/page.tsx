@@ -85,18 +85,38 @@ export default function Web() {
               </p>
 
               <div className="mt-4 flex w-full items-center justify-center gap-5 max-sm:gap-2 ">
-                <motion.button
+                <motion.a
+                  href="/Privacy Policy_Altima.pdf"
                   className="font-regular whitespace-nowrap rounded-lg   bg-[#FFFFFF0D] px-4 py-3 uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
                 >
                   DOWNLOAD
-                </motion.button>
+                </motion.a>
 
                 <motion.button
                   className="font-regular whitespace-nowrap rounded-lg   bg-[#FFFFFF0D] px-8 py-3 uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
+                  onClick={() => {
+                    const fileUrl = "/Privacy Policy_Altima.pdf" // Replace with the actual path
+                    const fullUrl = `${window.location.origin}${fileUrl}`
+
+                    if (navigator.share) {
+                      navigator
+                        .share({
+                          title: "Altima Feature Comparison",
+                          text: "Check out the Altima vs Competitors: Feature Comparison PDF.",
+                          url: fullUrl,
+                        })
+                        .catch((error) => console.error("Error sharing:", error))
+                    } else {
+                      alert("Sharing is not supported in this browser.")
+                    }
+                  }}
                 >
                   SHARE
                 </motion.button>
@@ -118,78 +138,12 @@ export default function Web() {
 
             <div className=" w-full rounded-md border border-[#FFFFFF1A] ">
               {faqData.map((faq, index) => (
-                <Accordion key={index} title={faq.title} content={faq.content} />
+                <Accordion key={index} title={faq.title} content={faq.content} defaultOpen={index === 0} />
               ))}
             </div>
           </div>
         </div>
       </section>
-
-      {/* <section id="specifications" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
-        <div className="  w-full     py-10">
-          <div className="flex flex-col items-center justify-center">
-            <p className="font-regular  mb-6 flex  text-5xl  text-[#FFFFFF] max-md:text-lg">Modern, Stylish, Unique</p>
-            <motion.a
-              href="/preorder"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="font-regular flex  gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-xs "
-            >
-              Pre-Order now
-            </motion.a>
-          </div>
-        </div>
-      </section> */}
-
-      {/* <section id="other-products" className="paddings  w-full bg-[#151515] max-sm:px-3 ">
-        <div className="  w-full justify-between md:py-10">
-          <div className="grid-col-2 grid w-full justify-between gap-20 max-sm:gap-5 sm:flex">
-            <div className="w-[403]">
-              <p className="font-regular flex text-2xl  text-[#FFFFFF99] max-sm:text-lg lg:text-2xl">our Models</p>
-              <p className=" font-regular my-6 text-xl leading-none tracking-tight text-white max-sm:my-3 md:text-xl xl:text-5xl">
-                ALTIMA Elite
-              </p>
-              <div>
-                <div className="flex items-center justify-between bg-[#000000] px-4 py-2 text-black md:max-w-[522px]">
-                  <ul className="list-inside list-disc">
-                    <li className="py-2 text-[#FFFFFF] max-sm:text-xs">Ultimate Smart Home Hub </li>
-                    <li className=" text-[#FFFFFF] max-sm:text-xs">All Pro features, plus:</li>
-                  </ul>
-
-                  <p className="text-2xl text-[#FF4F45] max-sm:text-lg">₹80,000</p>
-                </div>
-              </div>
-              <ul className="mt-6 list-inside list-disc md:mb-10">
-                <li className="pb-2 text-[#FFFFFF99] max-sm:text-xs">15" 4K touchscreen with haptic feedback</li>
-                <li className="pb-2 text-[#FFFFFF99] max-sm:text-xs">Comprehensive smart home ecosystem control</li>
-                <li className="pb-2 text-[#FFFFFF99] max-sm:text-xs">Facial recognition and NFC access</li>
-                <li className="pb-2 text-[#FFFFFF99] max-sm:text-xs">4K camera with AI-powered motion detection</li>
-                <li className="pb-2 text-[#FFFFFF99] max-sm:text-xs">Solar-powered backup battery</li>
-              </ul>
-
-              <motion.a
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="font-regular   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm "
-                href="/preorder"
-              >
-                Pre-Order now
-              </motion.a>
-            </div>
-            <div>
-              <motion.img
-                src="https://github.com/Dekatron322/altima/blob/main/public/altimaCore.png?raw=true"
-                width={633}
-                height={583}
-                alt=""
-                initial={{ scale: 1.2, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1, ease: "easeIn" }}
-              />
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       <section className="paddings  w-full bg-[#080808] max-sm:px-3 " id="contact">
         <div className="  w-full     py-10">
