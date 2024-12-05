@@ -54,9 +54,9 @@ export default function Web() {
     <section className="bg-[#151515]">
       <Navbar />
 
-      <section className="paddings  w-full  max-sm:px-3 max-sm:py-20 lg:h-auto lg:py-32">
+      <section className="paddings  w-full  max-sm:px-3 max-sm:py-10 lg:h-auto lg:py-32">
         <div className=" w-auto  items-center justify-between  md:px-10">
-          <div className="flex w-full flex-col items-center  justify-center rounded-3xl  max-sm:rounded-lg max-sm:p-2  md:p-10">
+          <div className="ms:p-10 flex w-full flex-col  items-center justify-center  rounded-3xl max-sm:rounded-lg  max-sm:p-2">
             <p className="text-center text-xl text-[#FFFFFF]">Pre-Order form</p>
             <p className="py-5 text-center text-xs text-[#FFFFFF80]">
               ✓Estimated delivery date: 4-5 months after the preorder window closes
@@ -98,7 +98,7 @@ export default function Web() {
                   <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Use Default Address</p>
                 </div>
               </div>
-              <div className="border border-[#FFFFFF0D]"></div>
+              <div className="flex w-full border-b border-[#FFFFFF0D]"></div>
               <div className="grid gap-5 px-5 pt-5">
                 <p className="py-2 text-xl font-medium text-white">
                   User Information <span className="text-[#FF3B30]">*</span>
@@ -358,7 +358,7 @@ export default function Web() {
                 <div className="mt-1 flex  items-center gap-3 rounded-md ">
                   <button
                     onClick={handleDecrement}
-                    className="flex h-[48px] w-[107px] items-center justify-center rounded-md bg-[#282828]"
+                    className="flex h-[48px] w-[107px] items-center justify-center rounded-md bg-[#282828] max-sm:w-full"
                   >
                     <motion.img
                       src="/-.png"
@@ -377,7 +377,7 @@ export default function Web() {
 
                   <button
                     onClick={handleIncrement}
-                    className="flex h-[48px] w-[107px] items-center justify-center rounded-md bg-[#282828]"
+                    className="flex h-[48px] w-[107px] items-center justify-center rounded-md bg-[#282828] max-sm:w-full"
                   >
                     <motion.img
                       src="/+.png"
@@ -787,7 +787,7 @@ export default function Web() {
               <p className="px-5 py-2 text-lg font-medium text-white">Payment Information</p>
               <p className="px-5 text-sm text-white">Total Cost Calculation:</p>
 
-              <table className="table-fixed border-separate border-spacing-0  px-5 text-left text-white 2xl:w-full">
+              <table className="table-fixed border-separate border-spacing-0 px-5  text-left text-white max-sm:hidden 2xl:w-full">
                 <thead>
                   <tr className="border">
                     <th className="border-b border-l border-t border-[#FFFFFF33] bg-[#282828] px-4 py-4 text-sm font-normal">
@@ -834,7 +834,7 @@ export default function Web() {
                 </p>
               </div>
               <div className="border border-[#FFFFFF0D]"></div>
-              <div className="flex w-full justify-center">
+              <div className="flex w-full justify-center max-sm:px-3">
                 <button className="font-regular  mb-5 flex w-[60%] items-center justify-center gap-2  rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4 py-3 uppercase text-[#FFFFFF] max-sm:w-full ">
                   Continue
                 </button>
