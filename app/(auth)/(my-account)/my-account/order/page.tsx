@@ -142,7 +142,8 @@ export default function Web() {
 
             <div className="flex h-full flex-col  rounded-lg  bg-[#FFFFFF1A]  p-5">
               <p className="mb-2 text-lg text-white">Date Placed: October 26, 2023 | Smartheaven Order #1234567890</p>
-              <div className="flex h-full   max-sm:grid max-sm:gap-5  md:gap-10">
+              <div className="border-b border-[#FFFFFF1A]"></div>
+              <div className="flex h-full pt-4  max-sm:grid max-sm:gap-5  md:gap-10">
                 <div>
                   <motion.img
                     src="/renew.png"
@@ -238,7 +239,7 @@ export default function Web() {
 
             <div className="mt-5 flex h-full  flex-col  rounded-lg  bg-[#FFFFFF1A] p-5">
               <p className="mb-2 text-lg text-white">Date Placed: October 26, 2023 | Smartheaven Order #1234567890</p>
-              <div className="border-b "></div>
+              <div className="border-b border-[#FFFFFF1A]"></div>
               <div className="flex h-full   pt-4 max-sm:grid  max-sm:gap-5 md:gap-10">
                 <div>
                   <motion.img
