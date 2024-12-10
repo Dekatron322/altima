@@ -1,6 +1,5 @@
 "use client"
 import Footer from "components/Footer/Footer"
-import AOS from "aos"
 import "aos/dist/aos.css"
 import Navbar from "components/Navbar/Navbar"
 import { useEffect, useState } from "react"
@@ -8,12 +7,15 @@ import { motion } from "framer-motion"
 import { useRouter } from "next/navigation"
 import MainFooter from "components/Footer/MainFooter"
 import Image from "next/image"
+import { OrderPayload } from "services/orderService"
+import Link from "next/link"
 
 export default function Web() {
   const [quantity, setQuantity] = useState(1000)
 
   const [isDefaultEmail, setIsDefaultEmail] = useState(true)
   const [isDefaultPhone, setIsDefaultPhone] = useState(true)
+  const [orderData, setOrderData] = useState<OrderPayload | null>(null);
 
   // Handlers for increment and decrement
   const togglePhone = () => setIsDefaultPhone(!isDefaultPhone)
@@ -28,6 +30,21 @@ export default function Web() {
   const unitPrice = 500050 // price per unit
   const total = quantity * unitPrice
 
+  
+
+
+
+  useEffect(() => {
+      // Fetch order data from local storage
+      const storedData = localStorage.getItem("order_summary");
+      if (storedData) {
+        setOrderData(JSON.parse(storedData) as OrderPayload);
+      } else {
+          // Redirect back if no data is found
+          router.push("/order-successfull");
+      }
+  }, [router]);
+
   return (
     <section className="bg-[#151515]">
       <Navbar />
@@ -39,11 +56,13 @@ export default function Web() {
             <div className="grid h-full items-center  rounded-md  bg-[#FFFFFF1A]   max-sm:grid max-sm:gap-5  md:gap-10">
               <div className="px-5">
                 <ul className="mt-6 list-inside ">
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Product: Altima Elite</li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Size: 96" x 43"</li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Frame Type: Reinforced</li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Finish: Glass – Frosted</li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Handle Placement: Right</li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Product: {orderData?.product_selection_altima_elite
+                ? "Altima Elite"
+                : "Altima Core"}</li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Size: {orderData?.door_spec_default_size}</li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Frame Type: {orderData?.door_spec_frame_type}</li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Finish: {orderData?.door_spec_finish_type}</li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Handle Placement: {orderData?.handle_placement}</li>
                   <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Smart Features:</li>
                   <li className="px-3 pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
                     - Video Doorbell, Intercom System, Camera, Alexa Integration, Wi-Fi Connectivity, Battery Backup
@@ -51,14 +70,20 @@ export default function Web() {
                   <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
                     Security Features: Reinforced Lock, Anti-theft Alarm, Motion Sensor
                   </li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Installation Type: Residential</li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Preferred Date: December 15, 3034</li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Installation Type: {orderData?.type_installation}</li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Preferred Date: {orderData?.prefered_installation}</li>
                   <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    Special Instructions: Install on the rear entrance of the property.
+                    Special Instructions: {orderData?.special_installation_instruction}
                   </li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Extended Warranty: Yes</li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">On-Site Support: Yes</li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Payment Method: Razor Pay</li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Extended Warranty: {orderData?.extended_warranty
+                ? "Yes"
+                : "No"}</li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">On-Site Support: {orderData?.installation_support
+                ? "Yes"
+                : "No"}</li>
+                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Payment Method: Razor {orderData?.payment_confirmation
+                ? "Yes"
+                : "No"}</li>
                 </ul>
               </div>
               <table className="table-fixed border-separate border-spacing-0  text-left text-white 2xl:w-full">
@@ -74,8 +99,8 @@ export default function Web() {
                 </thead>
                 <tbody className="border-b">
                   <tr>
-                    <td className="border-b border-l border-[#FFFFFF33]  bg-[#282828] px-4 py-2 text-sm">₹2,33,820</td>
-                    <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">₹70,146</td>
+                    <td className="border-b border-l border-[#FFFFFF33]  bg-[#282828] px-4 py-2 text-sm">₹{orderData?.total}</td>
+                    <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">₹{orderData?.deposit_amount}</td>
                   </tr>
                 </tbody>
               </table>
@@ -93,7 +118,7 @@ export default function Web() {
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 1, ease: "easeIn" }}
                   />
-                  <p className="text-sm text-[#FFFFFF] max-sm:text-xs">I agree to the preorder terms and conditions)</p>
+                  <p className="text-sm text-[#FFFFFF] max-sm:text-xs">I agree to the preorder terms and conditions</p>
                 </div>
 
                 <p className="text-center text-white">
@@ -104,9 +129,9 @@ export default function Web() {
 
               <div className="border border-[#FFFFFF0D]"></div>
               <div className="flex w-full justify-center">
-                <button className="font-regular  mb-5 flex w-[60%] items-center justify-center gap-2  rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4 py-3 uppercase text-[#FFFFFF] max-sm:w-full ">
+                <Link href="/order-successful" className="font-regular  mb-5 flex w-[60%] items-center justify-center gap-2  rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4 py-3 uppercase text-[#FFFFFF] max-sm:w-full ">
                   Continue
-                </button>
+                </Link>
               </div>
             </div>
           </div>

@@ -1,7 +1,6 @@
 "use client"
 import Footer from "components/Footer/Footer"
-import AOS from "aos"
-import "aos/dist/aos.css"
+
 
 import Navbar from "components/Navbar/Navbar"
 import { useEffect, useState } from "react"
@@ -9,15 +8,17 @@ import { motion } from "framer-motion"
 import { HiChevronDown } from "react-icons/hi2"
 import { LiaTimesSolid } from "react-icons/lia"
 import MainFooter from "components/Footer/MainFooter"
+import { getOrderInformation, UserInformationPayload } from "services/orderService"
+
+interface User {
+  id: string
+  token: string
+  // Add other fields as needed
+}
+
 
 export default function Web() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000, // Animation duration
-      once: true, // Only animate elements once
-    })
-  }, [])
-
+  const [addressData, setAddressData] = useState<UserInformationPayload["preorder"][] | null>(null)
   const [quantity, setQuantity] = useState(1000)
 
   // Handlers for increment and decrement
@@ -38,6 +39,39 @@ export default function Web() {
 
   const opeCancelModal = () => setIsCancelModalOpen(true)
   const closeCancelModal = () => setIsCancelModalOpen(false)
+
+  // Fetch the logged-in user's address
+  useEffect(() => {
+    const fetchOrders = async () => {
+      try {
+        const userString = localStorage.getItem("user")
+        if (!userString) {
+          console.error("No user data found in localStorage.")
+          return
+        }
+
+        const parsedUser = JSON.parse(userString) as User
+        const userId = parsedUser?.id
+        if (!userId) {
+          console.error("User ID is not present in the stored user data.")
+          return
+        }
+
+        const userDetails = await getOrderInformation(userId)
+        console.log("Fetched Address Details:", userDetails)
+
+        if (Array.isArray(userDetails.preorders)) {
+          setAddressData(userDetails.preorders)
+        } else {
+          console.error("Address data is not in the expected format.")
+        }
+      } catch (error) {
+        console.error("Error fetching address information:", error)
+      }
+    }
+
+    fetchOrders()
+  }, [])
 
   return (
     <section className="bg-black">
@@ -140,8 +174,15 @@ export default function Web() {
             </p>
             <div className="mb-5 border-b border-[#FFFFFF1A]"></div>
 
-            <div className="flex h-full flex-col  rounded-lg  bg-[#FFFFFF1A]  p-5">
-              <p className="mb-2 text-lg text-white">Date Placed: October 26, 2023 | Smartheaven Order #1234567890</p>
+
+            {addressData ? (
+                addressData.map((preorder, index) => (
+            <div className="flex mb-5 h-full flex-col  rounded-lg  bg-[#FFFFFF1A]  p-5">
+              <p className="mb-2 text-lg text-white"> Date Placed: {new Date(preorder.pub_date).toLocaleDateString('en-US', { 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  })} | Smartheaven Order #1234567890</p>
               <div className="border-b border-[#FFFFFF1A]"></div>
               <div className="flex h-full pt-4  max-sm:grid max-sm:gap-5  md:gap-10">
                 <div>
@@ -156,22 +197,56 @@ export default function Web() {
                 </div>
                 <div className="w-full ">
                   <div className="mb-5 flex gap-2 max-sm:w-full max-sm:flex-col max-sm:items-center max-sm:justify-center">
-                    <motion.img
-                      src="/SpinnerGap.png"
-                      width={32}
-                      height={32}
-                      alt=""
-                      initial={{ scale: 1.2, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ duration: 1, ease: "easeIn" }}
-                    />
-                    <p className=" text-lg text-[#FFFFFF] max-sm:text-center">Preparing for Shipping</p>
+                  {preorder.status === 'pending' && (
+  <motion.img
+    src="/SpinnerGap.png"
+    width={32}
+    height={32}
+    alt="Loading spinner"
+    initial={{ scale: 1.2, opacity: 0 }}
+    animate={{ scale: 1, opacity: 1 }}
+    transition={{ duration: 1, ease: "easeIn" }}
+  />
+)}
+
+{preorder.status === 'completed' && (
+  <motion.img
+    src="/CheckCircle8.png"
+    width={32}
+    height={32}
+    alt="Completed"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 1 }}
+  />
+)}
+
+{preorder.status === 'cancelled' && (
+  <motion.img
+    src="/Prohibit.png"
+    width={32}
+    height={32}
+    alt="Completed"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 1 }}
+  />
+)}
+                    <p className=" text-lg text-[#FFFFFF] max-sm:text-center capitalize">{preorder.status}</p>
 
                     <p className="text-center text-sm text-[#FFFFFF99]">Estimated delivery: Sat, August 26</p>
                   </div>
+                  {preorder.product_selection_altima_elite === true && (
+                  <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:text-lg lg:text-2xl">
+                    Altima Elite
+                  </p>
+                )}
+
+{preorder.product_selection_altima_elite === false && (
                   <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:text-lg lg:text-2xl">
                     Altima Core
                   </p>
+                )}
 
                   <ul className="mt-22 list-inside ">
                     {/* <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
@@ -179,19 +254,14 @@ export default function Web() {
                   </li> */}
                     {/* <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Colour : Grey Colour</li> */}
                     <li className="pb-1 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                      Address : Sherif Adamu , Shereefadamu001@gmail.com
+                      Address : {preorder.shipping_address_street} , {preorder.email_address}
                     </li>
-                    <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Status: In Progress</li>
-                    {/* <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Quantity: 10,000</li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Payment: Complete</li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Order Status : In Progress</li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Date : 26 Aug, 2024 09:40am</li> */}
+                    <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs capitalize">Status: {preorder.status}</li>
+                    
                   </ul>
 
-                  {/* <p className="font-regular flex  items-center  py-4 text-2xl text-[#FFFFFF]  max-sm:text-lg lg:text-2xl">
-                  <span className="text-sm">Total: </span> ₹{total.toLocaleString()}
-                </p> */}
-
+                  
+                  {preorder.status === 'pending' && (
                   <div className="flex w-full gap-4 max-sm:flex-col">
                     <motion.a
                       href="/my-account/track-order"
@@ -227,55 +297,9 @@ export default function Web() {
                       View Details
                     </motion.button>
                   </div>
-                  <div className="my-3 border-b border-[#FFFFFF1A]"></div>
-                  <div className="flex items-center gap-3">
-                    <p className="text-white">
-                      Total Price ( 10,000 Item ) :<span className="font-bold"> ₹2,33,820</span>| Download Receipt
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-5 flex h-full  flex-col  rounded-lg  bg-[#FFFFFF1A] p-5">
-              <p className="mb-2 text-lg text-white">Date Placed: October 26, 2023 | Smartheaven Order #1234567890</p>
-              <div className="border-b border-[#FFFFFF1A]"></div>
-              <div className="flex h-full   pt-4 max-sm:grid  max-sm:gap-5 md:gap-10">
-                <div>
-                  <motion.img
-                    src="/renew.png"
-                    className="max-sm:w-full  sm:w-[253px]"
-                    alt=""
-                    initial={{ scale: 1.2, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 1, ease: "easeIn" }}
-                  />
-                </div>
-                <div className="w-full">
-                  <div className="mb-5 flex items-center gap-2 max-sm:justify-center">
-                    <motion.img
-                      src="/Prohibit.png"
-                      width={32}
-                      height={32}
-                      alt=""
-                      initial={{ scale: 1.2, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ duration: 1, ease: "easeIn" }}
-                    />
-                    <p className=" text-center text-lg text-[#FFFFFF]">Cancelled</p>
-                  </div>
-                  <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:text-lg lg:text-2xl">
-                    Altima Core
-                  </p>
-
-                  <ul className="mt-22 list-inside ">
-                    <li className="pb-1 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                      Address : Sherif Adamu , Shereefadamu001@gmail.com
-                    </li>
-                    <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Status: In Progress</li>
-                  </ul>
-
-                  <div className="flex w-full gap-4 max-sm:flex-col">
+                    )}
+{preorder.status === 'cancelled' && (
+<div className="flex w-full gap-4 max-sm:flex-col">
                     <motion.a
                       href="/my-account/track-order"
                       whileHover={{ scale: 1.01 }}
@@ -294,55 +318,9 @@ export default function Web() {
                       View Details
                     </motion.button>
                   </div>
-                  <div className="my-3 border-b border-[#FFFFFF1A]"></div>
-                  <div className="flex items-center gap-3">
-                    <p className="text-white">
-                      Total Price ( 10,000 Item ) :<span className="font-bold"> ₹2,33,820</span>| Download Receipt
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-5 flex h-full  flex-col  rounded-lg  bg-[#FFFFFF1A] p-5">
-              <p className="mb-2 text-lg text-white">Date Placed: October 26, 2023 | Smartheaven Order #1234567890</p>
-              <div className="border-b border-[#FFFFFF1A]"></div>
-              <div className="flex h-full   pt-4 max-sm:grid  max-sm:gap-5 md:gap-10">
-                <div>
-                  <motion.img
-                    src="/renew.png"
-                    className="max-sm:w-full  sm:w-[253px]"
-                    alt=""
-                    initial={{ scale: 1.2, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 1, ease: "easeIn" }}
-                  />
-                </div>
-                <div className="w-full">
-                  <div className="mb-5 flex items-center gap-2 max-sm:justify-center">
-                    <motion.img
-                      src="/CheckCircle8.png"
-                      width={32}
-                      height={32}
-                      alt=""
-                      initial={{ scale: 1.2, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ duration: 1, ease: "easeIn" }}
-                    />
-                    <p className=" text-center text-lg text-[#FFFFFF]">Delivered</p>
-                  </div>
-                  <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:text-lg lg:text-2xl">
-                    Altima Core
-                  </p>
-
-                  <ul className="mt-22 list-inside ">
-                    <li className="pb-1 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                      Address : Sherif Adamu , Shereefadamu001@gmail.com
-                    </li>
-                    <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Status: In Progress</li>
-                  </ul>
-
-                  <div className="flex w-full gap-4">
+)}
+{preorder.status === 'completed' && (
+<div className="flex w-full gap-4">
                     <motion.button
                       whileHover={{ scale: 1.01 }}
                       whileTap={{ scale: 0.9 }}
@@ -352,15 +330,20 @@ export default function Web() {
                       View Details
                     </motion.button>
                   </div>
+)}
                   <div className="my-3 border-b border-[#FFFFFF1A]"></div>
                   <div className="flex items-center gap-3">
                     <p className="text-white">
-                      Total Price ( 10,000 Item ) :<span className="font-bold"> ₹2,33,820</span>| Download Receipt
+                      Total Price ( {preorder.quantity} Item ) :<span className="font-bold"> ₹{preorder.total}</span>| Download Receipt
                     </p>
                   </div>
                 </div>
               </div>
             </div>
+            ))
+          ) : (
+            <p className="text-sm text-[#FFFFFF80]">Loading order information...</p>
+          )}
           </div>
         </div>
       </section>

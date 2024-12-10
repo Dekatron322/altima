@@ -1,7 +1,7 @@
 "use client"
 import { Metadata } from "next"
 import Footer from "components/Footer/Footer"
-import AOS from "aos"
+
 import "aos/dist/aos.css"
 
 import Navbar from "components/Navbar/Navbar"

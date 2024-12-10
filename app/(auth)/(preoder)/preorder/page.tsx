@@ -1,7 +1,6 @@
 "use client"
 import Footer from "components/Footer/Footer"
-import AOS from "aos"
-import "aos/dist/aos.css"
+
 
 import Navbar from "components/Navbar/Navbar"
 import { useEffect, useState } from "react"
@@ -11,68 +10,39 @@ import Image from "next/image"
 import { addOrderToUser, OrderPayload } from "services/orderService"
 import { useRouter } from "next/navigation"
 
+interface User {
+  id: string
+  token: string
+}
+
+
 export default function Web() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    })
-  }, [])
 
-  interface User {
-    id: string
-    token: string
-  }
 
+  
   const [quantity, setQuantity] = useState(1000)
-  const [isDefaultBillingTwo, setIsDefaultBillingTwo] = useState(true)
-  const [isEnforcedLock, setIsEnforcedLock] = useState(true)
-  const [isIntercom, setIsIntercom] = useState(true)
-  const [isAntiTheft, setIsAntiTheft] = useState(true)
-  const [isAlarm, setIsAlarm] = useState(true)
-  const [isMotionSensor, setIsMotionSensor] = useState(true)
-  const [isVideoDoorBell, setIsVideoDoorBell] = useState(true)
-  const [isCamera, setIsCamera] = useState(true)
-  const [isVoiceAssistant, setIsVoiceAssistant] = useState(true)
-  const [isDefaultEmail, setIsDefaultEmail] = useState(true)
-  const [isDefaultPhone, setIsDefaultPhone] = useState(true)
-  const [isDefaultWhatsapp, setIsDefaultWhatsapp] = useState(true)
+  const [isDefaultBillingTwo, setIsDefaultBillingTwo] = useState(false)
+  const [isEnforcedLock, setIsEnforcedLock] = useState(false)
+  const [isIntercom, setIsIntercom] = useState(false)
+  const [isAntiTheft, setIsAntiTheft] = useState(false)
+  const [isAlarm, setIsAlarm] = useState(false)
+  const [isMotionSensor, setIsMotionSensor] = useState(false)
+  const [isVideoDoorBell, setIsVideoDoorBell] = useState(false)
+  const [isCamera, setIsCamera] = useState(false)
+  const [isVoiceAssistant, setIsVoiceAssistant] = useState(false)
+  const [isDefaultEmail, setIsDefaultEmail] = useState(false)
+  const [isDefaultPhone, setIsDefaultPhone] = useState(false)
+  const [isDefaultWhatsapp, setIsDefaultWhatsapp] = useState(false)
   const [selectedRadio, setSelectedRadio] = useState("Altima Core")
   const [selectedAddress, setSelectedAddress] = useState("Use New Address")
   const [selectedContact, setSelectedContact] = useState("")
   const [selectedDoorSpec, setSelectedDoorSpec] = useState("")
+  
 
   // Define unit prices for each option
   const unitPrices: { [key: string]: number } = {
     "Altima Core": 500050,
     "Altima Elite": 750075,
-  }
-
-  const handleIncrement = () => {
-    setQuantity((prevQuantity) => {
-      const newQuantity = prevQuantity + 1
-      setFormData((prevFormData) => ({
-        ...prevFormData,
-        quantity: newQuantity.toString(), // Update quantity in formData
-      }))
-      return newQuantity
-    })
-  }
-
-  // Update the handleDecrement function
-  const handleDecrement = () => {
-    setQuantity((prevQuantity) => {
-      const newQuantity = Math.max(prevQuantity - 1, 0) // Prevent negative quantity
-      setFormData((prevFormData) => ({
-        ...prevFormData,
-        quantity: newQuantity.toString(), // Update quantity in formData
-      }))
-      return newQuantity
-    })
-  }
-
-  const toggleRadio = (option: string) => {
-    setSelectedRadio(option)
   }
 
   const toggleAddress = (option: string) => {
@@ -87,7 +57,7 @@ export default function Web() {
     setSelectedDoorSpec(option)
   }
 
-  const total = quantity * (unitPrices[selectedRadio] ?? 0)
+  const grossPrice = quantity * (unitPrices[selectedRadio] ?? 0)
   const toggleBillingTwo = () => setIsDefaultBillingTwo(!isDefaultBillingTwo)
 
   const toggleEmail = () => {
@@ -125,14 +95,20 @@ export default function Web() {
 
   const toggleEnforced = () => {
     setIsEnforcedLock((prev) => {
-      const newValue = !prev
+      const newValue = !prev;
+      console.log("isEnforcedLock:", newValue);
       setFormData((prevFormData) => ({
         ...prevFormData,
-        re_enforced_lock: newValue, // Update formData with the new value
-      }))
-      return newValue
-    })
-  }
+        re_enforced_lock: newValue,
+      }));
+      console.log("formData.re_enforced_lock:", newValue);
+      return newValue;
+    });
+  };
+  
+  
+  
+  
   const toggleAntiTheft = () => {
     setIsAntiTheft((prev) => {
       const newValue = !prev
@@ -210,6 +186,7 @@ export default function Web() {
   }
 
   const unitPrice = unitPrices[selectedRadio] ?? 0
+  
   const router = useRouter() // Initialize the router
 
   const [formData, setFormData] = useState<OrderPayload>({
@@ -230,7 +207,7 @@ export default function Web() {
     email: false,
     phone: false,
     whatsapp: false,
-    product_selection_altima_core: false,
+    product_selection_altima_core: true,
     product_selection_altima_elite: false,
     quantity: quantity.toString(),
     door_spec_default_size: "",
@@ -259,12 +236,45 @@ export default function Web() {
     extended_warranty: false,
     installation_support: false,
     payment_confirmation: false,
-    addition_comment: "pending",
+    total: "",
+    status: "pending",
+    email_address: "",
+    deposit_amount: "",
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [message, setMessage] = useState("")
   const [userId, setUserId] = useState<string>("")
+
+  
+
+  // Calculate and update total whenever quantity or selectedRadio changes
+  useEffect(() => {
+    const unitPrice = unitPrices[selectedRadio] ?? 0;
+    const subtotal = unitPrice + 17820;
+    const total = quantity * (unitPrice + 17820);
+    const deposit_amount = total * 0.3
+    
+
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      quantity: quantity.toString(),
+
+      total: total.toString(),
+      deposit_amount: deposit_amount.toString(),
+      
+    }));
+  }, [quantity, selectedRadio]);
+
+  
+const additionalCharges = 17820; // Add your additional charges here
+const subtotal = unitPrice + additionalCharges;
+
+  
+
+  const handleIncrement = () => setQuantity((prev) => prev + 1);
+  const handleDecrement = () => setQuantity((prev) => Math.max(prev - 1, 0));
+  const toggleRadio = (option: string) => setSelectedRadio(option);
 
   useEffect(() => {
     const storedUserId = localStorage.getItem("user_id")
@@ -281,33 +291,48 @@ export default function Web() {
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    // Retrieve the user from localStorage
-    const user = localStorage.getItem("user")
-    const parsedUser: User | null = user ? (JSON.parse(user) as User) : null
+    const user = localStorage.getItem("user");
+    const parsedUser: User | null = user ? (JSON.parse(user) as User) : null;
 
-    const userId = parsedUser?.id
+    const userId = parsedUser?.id;
 
     if (!userId) {
-      setMessage("Unable to add address. User ID is missing.")
-      return
+        setMessage("Unable to add address. User ID is missing.");
+        return;
     }
 
-    setIsSubmitting(true)
-    setMessage("")
+    if (!formData.full_name || !formData.contact_number) {
+        setMessage("Please fill in all required fields.");
+        return;
+    }
+
+    setIsSubmitting(true);
+    setMessage("");
 
     try {
-      const response = await addOrderToUser(userId, formData)
-      setMessage("Address added successfully!")
-      router.push("/address")
-    } catch (error) {
-      console.error(error)
-      setMessage("Failed to add address. Please try again.")
+        const response = await addOrderToUser(userId, formData);
+        setMessage("Order placed successfully!");
+
+        // Save order details in local storage
+        localStorage.setItem("order_summary", JSON.stringify(formData));
+
+        // Navigate to the summary page
+        router.push("/summary");
+    } catch (error: any) {
+        console.error("Error:", error);
+        setMessage(
+            error.response?.data?.message || 
+            "Failed to place order. Please check your input and try again."
+        );
     } finally {
-      setIsSubmitting(false)
+        setIsSubmitting(false);
     }
-  }
+};
+
+
+
 
   return (
     <section className="bg-[#151515]">
@@ -361,9 +386,9 @@ export default function Web() {
                     <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Use Default Address</p>
                   </div>
                 </div>
-                <div className="flex w-full border-b border-[#FFFFFF0D]"></div>
-                <div className="grid gap-5 px-5 pt-5">
-                  <p className="py-2 text-xl font-medium text-white">
+                <div className="flex w-full my-5 border-b border-[#FFFFFF0D]"></div>
+                <div className="grid gap-5 px-5 ">
+                  <p className=" text-xl font-medium text-white">
                     User Information <span className="text-[#FF3B30]">*</span>
                   </p>
 
@@ -384,7 +409,7 @@ export default function Web() {
                   <div className=" w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
                     <div className="flex h-[46px] items-center">
                       <input
-                        type="text"
+                        type="tel"
                         name="contact_number"
                         placeholder="Contact Number"
                         value={formData.contact_number}
@@ -395,17 +420,21 @@ export default function Web() {
                     </div>
                   </div>
 
-                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className=" w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
                     <div className="flex h-[46px] items-center">
                       <input
-                        type="text"
+                        type="email"
                         name="email_address"
                         placeholder="Email Address"
+                        value={formData.email_address}
+                        onChange={handleChange}
                         className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
                         style={{ width: "100%", height: "24px" }}
                       />
                     </div>
                   </div>
+
+                  
 
                   <p className="py-2 text-lg font-medium text-white">
                     Billing Address<span className="text-[#FF3B30]">*</span>
@@ -414,7 +443,7 @@ export default function Web() {
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
-                        name="street"
+                        name="billing_address_street"
                         value={formData.billing_address_street}
                         onChange={handleChange}
                         placeholder="Street/Apartment/Office Name"
@@ -428,7 +457,7 @@ export default function Web() {
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
-                        name="city"
+                        name="billing_address_city"
                         value={formData.billing_address_city}
                         onChange={handleChange}
                         placeholder="City"
@@ -442,7 +471,7 @@ export default function Web() {
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
-                        name="state"
+                        name="billing_address_state"
                         value={formData.billing_address_state}
                         onChange={handleChange}
                         placeholder="State/Province:"
@@ -455,7 +484,7 @@ export default function Web() {
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
-                        name="postal_code"
+                        name="billing_address_postal_code"
                         value={formData.billing_address_postal_code}
                         onChange={handleChange}
                         placeholder="Postal/ZIP Code:"
@@ -468,7 +497,7 @@ export default function Web() {
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
-                        name="country"
+                        name="billing_address_country"
                         value={formData.billing_address_country}
                         onChange={handleChange}
                         placeholder="Country"
@@ -560,7 +589,7 @@ export default function Web() {
                     </div>
                   </div>
                 </div>
-                <div className="border border-[#FFFFFF0D]"></div>
+                <div className="border-b my-5 border-[#FFFFFF0D]"></div>
                 <div className="grid gap-5 px-5">
                   <p className="py-2 text-lg font-medium text-white">
                     Preferred Contact Info<span className="text-[#FF3B30]">*</span>
@@ -632,63 +661,74 @@ export default function Web() {
                     <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Whatsapp</p>
                   </div>
                 </div>
-                <div className="border border-[#FFFFFF0D]"></div>
+                <div className="border-b my-5 border-[#FFFFFF0D]"></div>
 
                 <div className="px-5">
                   <p className="pb-5 text-lg font-medium text-white">
                     Product Selection<span className="text-[#FF3B30]">*</span>
                   </p>
 
-                  {/* Altima Core Radio */}
                   <div
-                    className="flex w-full items-center gap-2"
-                    onClick={() => {
-                      toggleRadio("Altima Core")
-                      setFormData((prevData) => ({
-                        ...prevData,
-                        product_selection_altima_core: !prevData.product_selection_altima_core,
-                      }))
-                    }}
-                  >
-                    <motion.img
-                      src={selectedRadio === "Altima Core" ? "/fluent_radio-button-24-filled.png" : "/radio.png"}
-                      width={18}
-                      height={18}
-                      alt="Altima Core"
-                      initial={{ scale: 1.2, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ duration: 1, ease: "easeIn" }}
-                    />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Altima Core</p>
-                  </div>
+  className="flex w-full items-center gap-2"
+  onClick={() => {
+    toggleRadio("Altima Core");
+    setFormData((prevData) => {
+      const updatedData = {
+        ...prevData,
+        product_selection_altima_core: true,
+        product_selection_altima_elite: false, // Ensure the other is false
+      };
+      console.log("Updated State (Core Selected):", updatedData);
+      return updatedData;
+    });
+  }}
+>
+  <motion.img
+    src={selectedRadio === "Altima Core" ? "/fluent_radio-button-24-filled.png" : "/radio.png"}
+    width={18}
+    height={18}
+    alt="Altima Core"
+    initial={{ scale: 1.2, opacity: 0 }}
+    animate={{ scale: 1, opacity: 1 }}
+    transition={{ duration: 1, ease: "easeIn" }}
+  />
+  <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Altima Core</p>
+</div>
 
-                  {/* Altima Elite Radio */}
-                  <div
-                    className="my-4 flex w-full items-center gap-2"
-                    onClick={() => {
-                      toggleRadio("Altima Elite")
-                      setFormData((prevData) => ({
-                        ...prevData,
-                        product_selection_altima_elite: !prevData.product_selection_altima_elite,
-                      }))
-                    }}
-                  >
-                    <motion.img
-                      src={selectedRadio === "Altima Elite" ? "/fluent_radio-button-24-filled.png" : "/radio.png"}
-                      width={18}
-                      height={18}
-                      alt="Altima Elite"
-                      initial={{ scale: 1.2, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ duration: 1, ease: "easeIn" }}
-                    />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Altima Elite</p>
-                  </div>
+<div
+  className="my-4 flex w-full items-center gap-2"
+  onClick={() => {
+    toggleRadio("Altima Elite");
+    setFormData((prevData) => {
+      const updatedData = {
+        ...prevData,
+        product_selection_altima_elite: true,
+        product_selection_altima_core: false, // Ensure the other is false
+      };
+      console.log("Updated State (Elite Selected):", updatedData);
+      return updatedData;
+    });
+  }}
+>
+  <motion.img
+    src={selectedRadio === "Altima Elite" ? "/fluent_radio-button-24-filled.png" : "/radio.png"}
+    width={18}
+    height={18}
+    alt="Altima Elite"
+    initial={{ scale: 1.2, opacity: 0 }}
+    animate={{ scale: 1, opacity: 1 }}
+    transition={{ duration: 1, ease: "easeIn" }}
+  />
+  <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Altima Elite</p>
+</div>
+
+
 
                   <p className="mt-6 text-sm text-[#FFFFFF]">Quantity</p>
 
                   <div className="mt-1 flex  items-center gap-3 rounded-md ">
                     <button
+                    type="button"
                       onClick={handleDecrement}
                       className="flex h-[48px] w-[107px] items-center justify-center rounded-md bg-[#282828] max-sm:w-full"
                     >
@@ -708,6 +748,7 @@ export default function Web() {
                     </p>
 
                     <button
+                    type="button"
                       onClick={handleIncrement}
                       className="flex h-[48px] w-[107px] items-center justify-center rounded-md bg-[#282828] max-sm:w-full"
                     >
@@ -723,12 +764,12 @@ export default function Web() {
                     </button>
                   </div>
 
-                  <p className="font-regular flex  items-center  py-4 text-2xl text-[#FFFFFF]  max-sm:text-lg lg:text-2xl">
-                    <span className="text-sm">Total: </span> ₹{total.toLocaleString()}
+                  <p className="font-regular flex  items-center  pt-4 text-2xl text-[#FFFFFF]  max-sm:text-lg lg:text-2xl">
+                    <span className="text-sm">Total: </span> ₹{grossPrice.toLocaleString()}
                   </p>
                 </div>
 
-                <div className="border border-[#FFFFFF0D]"></div>
+                <div className="border-b my-5 border-[#FFFFFF0D]"></div>
 
                 <div className="px-5">
                   <p className="pb-5 text-lg font-medium text-white">
@@ -797,6 +838,7 @@ export default function Web() {
                           placeholder="Width"
                           className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
                           style={{ width: "100%", height: "24px" }}
+                          disabled={selectedRadio === "Altima Core"}
                         />
                       </div>
                     </div>{" "}
@@ -810,6 +852,7 @@ export default function Web() {
                           placeholder="Hight"
                           className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
                           style={{ width: "100%", height: "24px" }}
+                          disabled={selectedRadio === "Altima Core"}
                         />
                       </div>
                     </div>{" "}
@@ -823,6 +866,7 @@ export default function Web() {
                           placeholder="Cm"
                           className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
                           style={{ width: "100%", height: "24px" }}
+                          disabled={selectedRadio === "Altima Core"}
                         />
                       </div>
                     </div>
@@ -839,6 +883,7 @@ export default function Web() {
                         placeholder="Wood"
                         className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
                         style={{ width: "100%", height: "24px" }}
+                        disabled={selectedRadio === "Altima Core"}
                       />
                     </div>
                   </div>
@@ -854,6 +899,7 @@ export default function Web() {
                           placeholder="Wood"
                           className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
                           style={{ width: "100%", height: "24px" }}
+                          disabled={selectedRadio === "Altima Core"}
                         />
                       </div>
                     </div>
@@ -870,6 +916,7 @@ export default function Web() {
                           onChange={handleChange}
                           className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
                           style={{ width: "100%", height: "24px" }}
+                          disabled={selectedRadio === "Altima Core"}
                         />
                       </div>
                     </div>
@@ -886,21 +933,29 @@ export default function Web() {
                           placeholder="Left"
                           className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
                           style={{ width: "100%", height: "24px" }}
+                          disabled={selectedRadio === "Altima Core"}
                         />
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="border border-[#FFFFFF0D]"></div>
+                <div className="border-b my-5 border-[#FFFFFF0D]"></div>
                 <div className="grid gap-5 px-5">
-                  <p className="py-2 text-lg font-medium text-white">
+                  <p className="ext-lg font-medium text-white">
                     Additional Security<span className="text-[#FF3B30]">*</span>
                   </p>
 
-                  <div className=" flex w-full items-center gap-2 " onClick={toggleEnforced}>
+                  <div className={`flex w-full items-center gap-2 ${
+    selectedRadio === "Altima Core" ? "cursor-not-allowed opacity-50" : "cursor-pointer"
+  }`}
+  onClick={() => {
+    if (selectedRadio !== "Altima Core") {
+      toggleEnforced(); // Only call the function if not disabled
+    }
+  }}>
                     <motion.img
-                      src={isEnforcedLock ? "/CheckSquareEmpty.png" : "/CheckSquare.png"}
+                      src={isEnforcedLock ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
                       width={18}
                       height={18}
                       alt=""
@@ -911,22 +966,38 @@ export default function Web() {
                     <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Re enforced lock</p>
                   </div>
 
-                  <div className=" flex w-full items-center gap-2 " onClick={toggleAntiTheft}>
-                    <motion.img
-                      src={isAntiTheft ? "/CheckSquareEmpty.png" : "/CheckSquare.png"}
-                      width={18}
-                      height={18}
-                      alt=""
-                      initial={{ scale: 1.2, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ duration: 1, ease: "easeIn" }}
-                    />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Anti Theft</p>
-                  </div>
+                  <div
+  className={`flex w-full items-center gap-2 ${
+    selectedRadio === "Altima Core" ? "cursor-not-allowed opacity-50" : "cursor-pointer"
+  }`}
+  onClick={() => {
+    if (selectedRadio !== "Altima Core") {
+      toggleAntiTheft(); // Only call the function if not disabled
+    }
+  }}
+>
+  <motion.img
+    src={isAntiTheft ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
+    width={18}
+    height={18}
+    alt="Anti Theft"
+    initial={{ scale: 1.2, opacity: 0 }}
+    animate={{ scale: 1, opacity: 1 }}
+    transition={{ duration: 1, ease: "easeIn" }}
+  />
+  <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Anti Theft</p>
+</div>
 
-                  <div className=" flex w-full items-center gap-2 " onClick={toggleAlarm}>
+
+                  <div className={`flex w-full items-center gap-2 ${
+    selectedRadio === "Altima Core" ? "cursor-not-allowed opacity-50" : "cursor-pointer"
+  }`} onClick={() => {
+    if (selectedRadio !== "Altima Core") {
+      toggleAlarm(); // Only call the function if not disabled
+    }
+  }}>
                     <motion.img
-                      src={isAlarm ? "/CheckSquareEmpty.png" : "/CheckSquare.png"}
+                      src={isAlarm ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
                       width={18}
                       height={18}
                       alt=""
@@ -937,9 +1008,15 @@ export default function Web() {
                     <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Alarm</p>
                   </div>
 
-                  <div className=" flex w-full items-center gap-2 " onClick={toggleMotionSensor}>
+                  <div className={`flex w-full items-center gap-2 ${
+    selectedRadio === "Altima Core" ? "cursor-not-allowed opacity-50" : "cursor-pointer"
+  }`} onClick={() => {
+    if (selectedRadio !== "Altima Core") {
+      toggleMotionSensor(); // Only call the function if not disabled
+    }
+  }} >
                     <motion.img
-                      src={isMotionSensor ? "/CheckSquareEmpty.png" : "/CheckSquare.png"}
+                      src={isMotionSensor ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
                       width={18}
                       height={18}
                       alt=""
@@ -947,19 +1024,25 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Motion sensor</p>
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs ">Motion sensor</p>
                   </div>
                 </div>
 
-                <div className="border border-[#FFFFFF0D]"></div>
+                <div className="border-b border-[#FFFFFF0D] my-5"></div>
                 <div className="grid gap-5 px-5">
-                  <p className="py-2 text-lg font-medium text-white">
+                  <p className=" text-lg font-medium text-white">
                     Smart Hub feature (integrated Devices)<span className="text-[#FF3B30]">*</span>
                   </p>
 
-                  <div className=" flex w-full items-center gap-2 " onClick={toggleVideoDoorBell}>
+                  <div className={`flex w-full items-center gap-2 ${
+    selectedRadio === "Altima Core" ? "cursor-not-allowed opacity-50" : "cursor-pointer"
+  }`} onClick={() => {
+    if (selectedRadio !== "Altima Core") {
+      toggleVideoDoorBell(); // Only call the function if not disabled
+    }
+  }}>
                     <motion.img
-                      src={isVideoDoorBell ? "/CheckSquareEmpty.png" : "/CheckSquare.png"}
+                      src={isVideoDoorBell ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
                       width={18}
                       height={18}
                       alt=""
@@ -970,9 +1053,15 @@ export default function Web() {
                     <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Video door Bell</p>
                   </div>
 
-                  <div className=" flex w-full items-center gap-2 " onClick={toggleIntercom}>
+                  <div className={`flex w-full items-center gap-2 ${
+    selectedRadio === "Altima Core" ? "cursor-not-allowed opacity-50" : "cursor-pointer"
+  }`} onClick={() => {
+    if (selectedRadio !== "Altima Core") {
+      toggleIntercom(); // Only call the function if not disabled
+    }
+  }}>
                     <motion.img
-                      src={isIntercom ? "/CheckSquareEmpty.png" : "/CheckSquare.png"}
+                      src={isIntercom ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
                       width={18}
                       height={18}
                       alt=""
@@ -983,9 +1072,15 @@ export default function Web() {
                     <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Intercom System</p>
                   </div>
 
-                  <div className=" flex w-full items-center gap-2 " onClick={toggleCamera}>
+                  <div className={`flex w-full items-center gap-2 ${
+    selectedRadio === "Altima Core" ? "cursor-not-allowed opacity-50" : "cursor-pointer"
+  }`} onClick={() => {
+    if (selectedRadio !== "Altima Core") {
+      toggleCamera(); // Only call the function if not disabled
+    }
+  }}>
                     <motion.img
-                      src={isCamera ? "/CheckSquareEmpty.png" : "/CheckSquare.png"}
+                      src={isCamera ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
                       width={18}
                       height={18}
                       alt=""
@@ -996,9 +1091,15 @@ export default function Web() {
                     <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Camera</p>
                   </div>
 
-                  <div className=" flex w-full items-center gap-2 " onClick={toggleVoiceAssistant}>
+                  <div className={`flex w-full items-center gap-2 ${
+    selectedRadio === "Altima Core" ? "cursor-not-allowed opacity-50" : "cursor-pointer"
+  }`} onClick={() => {
+    if (selectedRadio !== "Altima Core") {
+      toggleVoiceAssistant(); // Only call the function if not disabled
+    }
+  }}>
                     <motion.img
-                      src={isVoiceAssistant ? "/CheckSquareEmpty.png" : "/CheckSquare.png"}
+                      src={isVoiceAssistant ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
                       width={18}
                       height={18}
                       alt=""
@@ -1009,7 +1110,7 @@ export default function Web() {
                     <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Voice assistant integration</p>
                   </div>
                 </div>
-                <div className="border border-[#FFFFFF0D]"></div>
+                <div className="border-b mt-5 border-[#FFFFFF0D]"></div>
                 <div className="p-5">
                   <label className=" text-sm text-white">Connectivity</label>
                   <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
@@ -1022,11 +1123,12 @@ export default function Web() {
                         placeholder="Wifi"
                         className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
                         style={{ width: "100%", height: "24px" }}
+                        disabled={selectedRadio === "Altima Core"}
                       />
                     </div>
                   </div>
                 </div>
-                <div className="border border-[#FFFFFF0D]"></div>
+                <div className="border-b border-[#FFFFFF0D]"></div>
                 <div className="p-5">
                   <label className=" text-sm text-white">Power Source</label>
                   <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
@@ -1039,27 +1141,30 @@ export default function Web() {
                         placeholder="Wifi"
                         className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
                         style={{ width: "100%", height: "24px" }}
+                        disabled={selectedRadio === "Altima Core"}
                       />
                     </div>
                   </div>
                 </div>
-                <div className="border border-[#FFFFFF0D]"></div>
+                <div className="border-b border-[#FFFFFF0D]"></div>
                 <div className="p-5">
                   <label className=" text-sm text-white">Type of Installation</label>
                   <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
+                        name="type_installation"
                         value={formData.type_installation}
                         onChange={handleChange}
                         placeholder="Wifi"
                         className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
                         style={{ width: "100%", height: "24px" }}
+                        disabled={selectedRadio === "Altima Core"}
                       />
                     </div>
                   </div>
                 </div>
-                <div className="border border-[#FFFFFF0D]"></div>
+                <div className="border-b border-[#FFFFFF0D]"></div>
                 <div className="p-5">
                   <label className=" text-sm text-white">Preferred Installation Date</label>
                   <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
@@ -1072,11 +1177,12 @@ export default function Web() {
                         placeholder="Left"
                         className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
                         style={{ width: "100%", height: "24px" }}
+                        disabled={selectedRadio === "Altima Core"}
                       />
                     </div>
                   </div>
                 </div>
-                <div className="border border-[#FFFFFF0D]"></div>
+                <div className="border-b border-[#FFFFFF0D]"></div>
                 <div className="p-5">
                   <label className=" text-sm text-white">Special Installation Instructions</label>
                   <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
@@ -1089,17 +1195,24 @@ export default function Web() {
                         placeholder="Enter Text"
                         className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
                         style={{ width: "100%", height: "24px" }}
+                        disabled={selectedRadio === "Altima Core"}
                       />
                     </div>
                   </div>
                 </div>
-                <div className="border border-[#FFFFFF0D]"></div>
+                <div className="border-b my-5 border-[#FFFFFF0D]"></div>
                 <div className="grid gap-5 px-5">
-                  <p className="py-2 text-lg font-medium text-white">Extended Warranty:</p>
+                  <p className="text-lg font-medium text-white">Extended Warranty:</p>
 
-                  <div className=" flex w-full items-center gap-2 " onClick={toggleEmail}>
+                  <div className={`flex w-full items-center gap-2 ${
+    selectedRadio === "Altima Core" ? "cursor-not-allowed opacity-50" : "cursor-pointer"
+  }`} onClick={() => {
+    if (selectedRadio !== "Altima Core") {
+      toggleEmail(); // Only call the function if not disabled
+    }
+  }}>
                     <motion.img
-                      src={isDefaultEmail ? "/CheckSquareEmpty.png" : "/CheckSquare.png"}
+                      src={isDefaultEmail ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
                       width={18}
                       height={18}
                       alt=""
@@ -1112,13 +1225,19 @@ export default function Web() {
                     </p>
                   </div>
                 </div>
-                <div className="border border-[#FFFFFF0D]"></div>
+                <div className="border-b my-5 border-[#FFFFFF0D]"></div>
                 <div className="grid gap-5 px-5">
-                  <p className="py-2 text-lg font-medium text-white">Installation Support:</p>
+                  <p className="text-lg font-medium text-white">Installation Support:</p>
 
-                  <div className=" flex w-full items-center gap-2 " onClick={toggleWhatsapp}>
+                  <div className={`flex w-full items-center gap-2 ${
+    selectedRadio === "Altima Core" ? "cursor-not-allowed opacity-50" : "cursor-pointer"
+  }`} onClick={() => {
+    if (selectedRadio !== "Altima Core") {
+      togglePhone(); // Only call the function if not disabled
+    }
+  }}>
                     <motion.img
-                      src={isDefaultWhatsapp ? "/CheckSquareEmpty.png" : "/CheckSquare.png"}
+                      src={isDefaultPhone ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
                       width={18}
                       height={18}
                       alt=""
@@ -1131,13 +1250,19 @@ export default function Web() {
                     </p>
                   </div>
                 </div>
-                <div className="border border-[#FFFFFF0D]"></div>
+                <div className="border-b my-5 border-[#FFFFFF0D]"></div>
                 <div className="grid gap-5 px-5">
-                  <p className="py-2 text-lg font-medium text-white">Payment and Confirmation:</p>
+                  <p className="text-lg font-medium text-white">Payment and Confirmation:</p>
 
-                  <div className=" flex w-full items-center gap-2 " onClick={togglePhone}>
+                  <div className={`flex w-full items-center gap-2 ${
+    selectedRadio === "Altima Core" ? "cursor-not-allowed opacity-50" : "cursor-pointer"
+  }`} onClick={() => {
+    if (selectedRadio !== "Altima Core") {
+      toggleWhatsapp(); // Only call the function if not disabled
+    }
+  }} >
                     <motion.img
-                      src={isDefaultPhone ? "/CheckSquareEmpty.png" : "/CheckSquare.png"}
+                      src={isDefaultWhatsapp ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
                       width={18}
                       height={18}
                       alt=""
@@ -1150,9 +1275,9 @@ export default function Web() {
                     </p>
                   </div>
                 </div>
-                <div className="border border-[#FFFFFF0D]"></div>
+                <div className="border-b border-[#FFFFFF0D] my-5"></div>
 
-                <p className="px-5 py-2 text-lg font-medium text-white">Payment Information</p>
+                <p className="px-5  text-lg font-medium text-white">Payment Information</p>
                 <p className="px-5 text-sm text-white">Total Cost Calculation:</p>
 
                 <table className="table-fixed border-separate border-spacing-0 px-5  text-left text-white max-sm:hidden 2xl:w-full">
@@ -1184,15 +1309,15 @@ export default function Web() {
                         {unitPrice.toLocaleString()}
                       </td>
                       <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">₹17,820</td>
-                      <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">₹1,16,820</td>
+                      <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">₹₹{subtotal.toLocaleString()}</td>
                       <td className="border-b border-l border-[#FFFFFF33]  bg-[#282828] px-4 py-2 text-sm">
                         {quantity}
                       </td>
                       <td className="border-b border-l border-r border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">
-                        {total}
+                        {formData.total}
                       </td>
                       <td className="border-b border-l border-r border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">
-                        ₹70,146
+                        ₹{formData.deposit_amount}
                       </td>
                     </tr>
                   </tbody>
@@ -1203,8 +1328,8 @@ export default function Web() {
                     hundred and forty six <br /> Rupees Only/-)
                   </p>
                 </div>
-                <div className="border border-[#FFFFFF0D]"></div>
-                <div className="flex w-full justify-center max-sm:px-3">
+                <div className="border-b border-[#FFFFFF0D]"></div>
+                <div className="flex w-full justify-center max-sm:px-3 mt-5">
                   <button
                     type="submit"
                     className="font-regular  mb-5 flex w-[60%] items-center justify-center gap-2  rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4 py-3 uppercase text-[#FFFFFF] max-sm:w-full "
