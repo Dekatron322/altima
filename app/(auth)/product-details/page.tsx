@@ -27,7 +27,7 @@ export default function Web() {
               <p className="font-regular md:text-cente w-full text-ellipsis text-center text-lg text-[#FFFFFF99] max-sm:leading-7 ">
                 Welcome to Altima, where innovation meets security in a smarter, more connected way. We are passionate
                 about crafting intelligent solutions for modern living, blending advanced technology with elegant design
-                to transform how you experience safety and convenience. Altima is more than just a product—it's a step
+                to transform how you experience safety and convenience. Altima is more than just a product—it&lsquo;s a step
                 forward in redefining how homes and businesses safeguard their spaces.
               </p>
             </div>

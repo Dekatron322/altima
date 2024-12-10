@@ -177,7 +177,7 @@ export default function Web() {
 
             {addressData ? (
                 addressData.map((preorder, index) => (
-            <div className="flex mb-5 h-full flex-col  rounded-lg  bg-[#FFFFFF1A]  p-5">
+            <div key={preorder.id} className="flex mb-5 h-full flex-col  rounded-lg  bg-[#FFFFFF1A]  p-5">
               <p className="mb-2 text-lg text-white"> Date Placed: {new Date(preorder.pub_date).toLocaleDateString('en-US', { 
     year: 'numeric', 
     month: 'long', 

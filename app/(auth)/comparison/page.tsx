@@ -442,7 +442,7 @@ export default function Web() {
                     <div>
                       <p className="pb-2 text-lg text-white max-md:text-sm">Industry Expert</p>
                       <p className="text-base text-[#FFFFFF99] max-sm:text-xs">
-                        'Altima has taken smart doors to a new level, offering unparalleled security and home automation
+                      &lsquo;Altima has taken smart doors to a new level, offering unparalleled security and home automation
                         features.
                       </p>
                     </div>
