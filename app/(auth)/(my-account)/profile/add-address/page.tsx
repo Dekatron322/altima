@@ -1,6 +1,6 @@
 "use client"
 import Footer from "components/Footer/Footer"
-import "aos/dist/aos.css"
+
 
 import Navbar from "components/Navbar/Navbar"
 import { useState } from "react"

@@ -1,9 +1,6 @@
 "use client"
 import { Metadata } from "next"
 import Footer from "components/Footer/Footer"
-
-import "aos/dist/aos.css"
-
 import Navbar from "components/Navbar/Navbar"
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"

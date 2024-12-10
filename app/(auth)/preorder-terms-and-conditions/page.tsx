@@ -1,7 +1,5 @@
 "use client"
 import Footer from "components/Footer/Footer"
-import AOS from "aos"
-import "aos/dist/aos.css"
 import Image from "next/image"
 import Navbar from "components/Navbar/Navbar"
 import { useEffect } from "react"
@@ -10,12 +8,7 @@ import { motion } from "framer-motion"
 import MainFooter from "components/Footer/MainFooter"
 
 export default function Web() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000, // Animation duration
-      once: true, // Only animate elements once
-    })
-  }, [])
+
 
   const faqData = [
     {

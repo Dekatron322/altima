@@ -139,7 +139,7 @@ export default function Web() {
               </div>
             </div>
 
-            <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="250" className="">
+            <div className="">
               {/* You can remove the Image component as it will be used as background */}
             </div>
           </div>

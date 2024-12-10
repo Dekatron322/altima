@@ -1,8 +1,7 @@
 "use client"
 import { Metadata } from "next"
 import Footer from "components/Footer/Footer"
-import AOS from "aos"
-import "aos/dist/aos.css"
+
 
 import Image from "next/image"
 
@@ -15,12 +14,7 @@ import { LiaTimesSolid } from "react-icons/lia"
 import MainFooter from "components/Footer/MainFooter"
 
 export default function Web() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000, // Animation duration
-      once: true, // Only animate elements once
-    })
-  }, [])
+  
 
   const [quantity, setQuantity] = useState(1000)
   const [isCancelModalOpen, setIsCancelModalOpen] = useState(false)
