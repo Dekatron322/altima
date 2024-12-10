@@ -205,7 +205,7 @@ export default function Web() {
                 <div className="w-full">
                   <div className="mb-3 flex w-full flex-col gap-4 px-5 pt-5">
                     <p className="text-[#FFFFFF99]">Product: Altima Elite</p>
-                    <p className="text-[#FFFFFF99]">Size: 96" x 42"</p>
+                    <p className="text-[#FFFFFF99]">Size: 96&quot;` x 42&quot;`</p>
                     <p className="text-[#FFFFFF99]">Frame Type: Reinforced</p>
                     <p className="text-[#FFFFFF99]">Finish: Glass – Frosted</p>
                     <p className="text-[#FFFFFF99]">Handle Placement: Right</p>
