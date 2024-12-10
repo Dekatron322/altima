@@ -6,36 +6,31 @@ import { useRouter } from "next/navigation"
 import MainFooter from "components/Footer/MainFooter"
 import Link from "next/link"
 
-export default function Web() {
-  const [quantity, setQuantity] = useState(1000)
 
-  const [isDefaultEmail, setIsDefaultEmail] = useState(true)
-  const [isDefaultPhone, setIsDefaultPhone] = useState(true)
-
-  // Handlers for increment and decrement
-  const togglePhone = () => setIsDefaultPhone(!isDefaultPhone)
-  const toggleEmail = () => setIsDefaultEmail(!isDefaultEmail)
-
-  const router = useRouter()
-
-  const handleGoBack = () => {
-    router.back()
-  }
-
-  const unitPrice = 500050 // price per unit
-  const total = quantity * unitPrice
-
-  const getOrderId = (): string | null => {
-    return localStorage.getItem("orderId");
-};
-
-// Usage example
-const orderId = getOrderId();
-if (orderId) {
-    console.log("Fetched Order ID:", orderId);
-} else {
-    console.log("No order ID found in localStorage.");
-}
+  export default function Web() {
+    const [quantity, setQuantity] = useState(1000);
+    const [isDefaultEmail, setIsDefaultEmail] = useState(true);
+    const [isDefaultPhone, setIsDefaultPhone] = useState(true);
+    const [orderId, setOrderId] = useState<string | null>(null);
+  
+    const router = useRouter();
+  
+    const unitPrice = 500050; // price per unit
+    const total = quantity * unitPrice;
+  
+    // Handlers for toggling
+    const togglePhone = () => setIsDefaultPhone(!isDefaultPhone);
+    const toggleEmail = () => setIsDefaultEmail(!isDefaultEmail);
+  
+    // Fetch orderId from localStorage on the client side
+    useEffect(() => {
+      const storedOrderId = localStorage.getItem("orderId");
+      setOrderId(storedOrderId);
+    }, []);
+  
+    const handleGoBack = () => {
+      router.back();
+    };
 
   return (
     <section className="bg-[#080808]">
