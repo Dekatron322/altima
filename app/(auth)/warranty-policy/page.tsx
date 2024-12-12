@@ -38,53 +38,202 @@ export default function Web() {
     [
       {
         title: "1. Warranty Coverage",
-        content:
-          "Smart Haven Systems Private Limited (&quot;Company&quot;) offers a limited warranty (&quot;Warranty&quot;) for Altima Core and Altima Elite products (&quot;Product&quot;) purchased directly from authorized sellers. This Warranty covers defects in materials and workmanship under normal use. 1.1 Standard Warranty Duration Domestic Purchases: 24 months from the date of delivery. International Purchases: 18 months from the date of delivery. For both domestic and international buyers, the Warranty may be extended through an Extended Warranty Plan purchased separately. 1.2 Extended Warranty Available for up to an additional 36 months. Extended Warranty coverage is subject to terms and conditions outlined in the Extended Warranty Agreement.",
+        content: (
+          <div>
+            <p>
+            Smart Haven Systems Private Limited ("Company") offers a limited warranty ("Warranty") for Altima Core and Altima Elite products ("Product") purchased directly from authorized sellers. This Warranty covers defects in materials and workmanship under normal use.
+            </p>
+            <ul className="">
+              <p className="font-bold my-3">1.1 Standard Warranty Duration
+              </p>
+              <li><strong>Domestic Purchases:</strong> 24 months from the date of delivery.</li>
+              <li className="my-3"><strong>DInternational Purchases:</strong>D 18 months from the date of delivery.</li>
+            </ul>
+            <p>For both domestic and international buyers, the Warranty may be extended through an <strong>Extended Warranty Plan </strong>purchased separately.</p>
+            <ul className="mt-4">
+              <p className="font-bold my-3">1.2 Extended Warranty
+              </p>
+              <li>Available for up to an additional 36 months.
+              </li>
+              <li className="my-3">Extended Warranty coverage is subject to terms and conditions outlined in the Extended Warranty Agreement.
+              </li>
+            </ul>
+          </div>
+        ),
       },
       {
         title: "2. Coverage Details",
-        content:
-          "To cancel your pre-order, please reach out to our support team at [ *support email* ] or call us at [ *support phone number* ]. Alternatively, you can log in to your account and follow the instructions under the My Orders section to cancel.",
+        content: (
+          <div>
+            <p>
+            The Company warrants that the Product will be free from defects in materials and workmanship under the following conditions:
+            </p>
+            <ul className="">
+              
+              <li className="my-3">◾ The Product must be used in accordance with the operating instructions provided by the Company.
+              .</li>
+              <li >◾ All repairs or replacements under this Warranty will be performed using new or refurbished components that meet the Company’s standards for quality and performance.
+              </li>
+            </ul>
+            
+          </div>
+        ),
       },
       {
         title: "3. Exclusions from Warranty",
-        content:
-          "To cancel your pre-order, please reach out to our support team at [ *support email* ] or call us at [ *support phone number* ]. Alternatively, you can log in to your account and follow the instructions under the My Orders section to cancel.",
-      },
+        content: (
+          <div>
+            <p>
+            This Warranty does <strong>not</strong> cover:
+            </p>
+            <ul className="grid gap-3">
+              
+              <li className="mt-3">1. Normal wear and tear, cosmetic damage, or ageing of components.
+              </li>
+              <li >2. Damage resulting from accident, misuse, abuse, neglect, or unauthorized modification of the Product.
+              </li>
+              <li >3. Damage caused by natural disasters, such as earthquakes, floods, or lightning.
+
+              </li>
+              <li >4. Installation errors or damage caused by improper installation by a non-certified installer.
+
+              </li>
+              <li >5. Any third-party accessories or components not supplied by the Company.
+
+              </li>
+
+            </ul>
+            
+          </div>
+        ),},
       {
         title: "4.  Warranty Claim Process",
-        content:
-          "To cancel your pre-order, please reach out to our support team at [ *support email* ] or call us at [ *support phone number* ]. Alternatively, you can log in to your account and follow the instructions under the My Orders section to cancel.",
+        content: (
+          <div>
+            
+            <ul className="">
+              <p className="font-bold my-3">4.1 Submitting a Claim
+
+              </p>
+              <p className="mb-3">To make a Warranty claim, the buyer must:
+              </p>
+              <li>1. Notify the Company by submitting the claim form or emailing your concerns to [warranty@smarthavensystems.com] within the warranty period.
+              </li>
+              <li className="my-3">2. Provide proof of purchase, such as a receipt or invoice, and the Product’s serial number.
+              </li>
+              <li>3. Describe the defect or issue with the Product in detail and, if requested, provide photographs or videos for assessment.
+              </li>
+            </ul>
+             <ul className="mt-4">
+              <p className="font-bold my-3">4.2 Inspection and Assessment
+              </p>
+              <li>◾ Upon receiving a warranty claim, an automated confirmation email will be sent. Follow-up emails will provide updates, and, if the claim is approved, an approval email will request the buyer to ship the product to a designated service center for inspection.
+
+              </li>
+              <li className="my-3">◾ The buyer shall bear the shipping costs for sending the Product for inspection. If the Warranty claim is validated, the Company will reimburse reasonable shipping expenses.
+
+              </li>
+            </ul>
+          </div>
+        ),
       },
       {
         title: "5. Remedies Under Warranty",
-        content:
-          "To cancel your pre-order, please reach out to our support team at [ *support email* ] or call us at [ *support phone number* ]. Alternatively, you can log in to your account and follow the instructions under the My Orders section to cancel.",
+        content: (
+          <div>
+            
+            <ul className="">
+              
+              <p className="mb-3">If a valid claim is made under this Warranty, the Company will, at its discretion:
+              </p>
+              <li><strong>1. Repair:</strong> Repair the defective Product or components.
+
+              </li>
+              <li className="my-3"><strong>2. Replace:</strong> Provide a new or refurbished replacement Product or component.
+              </li>
+              <li><strong>3. Refund:</strong> If repair or replacement is not feasible, offer a partial or full refund of the purchase price.
+              </li>
+              <p className="mt-3">Note: Any repaired or replaced component will be covered under the original Warranty period or for 90 days from the date of repair/replacement, whichever is longer.
+              </p>
+            </ul>
+             
+          </div>
+        ),
       },
       {
         title: "6. Limitations and Liability",
-        content:
-          "To cancel your pre-order, please reach out to our support team at [ *support email* ] or call us at [ *support phone number* ]. Alternatively, you can log in to your account and follow the instructions under the My Orders section to cancel.",
+        content: (
+          <div>
+            
+            <ul className="">
+              
+              <p className="mb-3">6.1 Limitation of Liability
+              </p>
+              <li>The Company’s total liability under this Warranty shall be limited to the original purchase price of the Product. In no event will the Company be liable for indirect, incidental, or consequential damages, even if advised of the possibility of such damages.
+              </li>
+              
+            </ul>
+            <ul className="mt-3">
+              
+              <p className="mb-3">6.2 Force Majeure
+              </p>
+              <li>The Company shall not be liable for any delays or failure in performance resulting from acts beyond its reasonable control, including but not limited to acts of God, government regulations, war, terrorism, labor disputes, or supply chain disruptions.
+              </li> 
+            </ul>
+             
+          </div>
+        ),
       },
       {
         title: "7. Transferability",
         content:
-          "To cancel your pre-order, please reach out to our support team at [ *support email* ] or call us at [ *support phone number* ]. Alternatively, you can log in to your account and follow the instructions under the My Orders section to cancel.",
+          "This Warranty is valid only for the original purchaser and is non-transferable, except where applicable under national or international laws.",
       },
       {
         title: "8. Governing Law and Jurisdiction",
         content:
-          "To cancel your pre-order, please reach out to our support team at [ *support email* ] or call us at [ *support phone number* ]. Alternatively, you can log in to your account and follow the instructions under the My Orders section to cancel.",
+          "This Warranty shall be governed by and construed in accordance with the laws of [India]. Any disputes arising from or related to this Warranty shall be subject to the exclusive jurisdiction of the courts of [Navi Mumbai, India].",
       },
       {
         title: "9. International Buyers",
         content:
-          "To cancel your pre-order, please reach out to our support team at [ *support email* ] or call us at [ *support phone number* ]. Alternatively, you can log in to your account and follow the instructions under the My Orders section to cancel.",
+          "For international buyers, the Company complies with international warranty regulations, and additional terms may apply depending on local laws and customs requirements. The buyer is responsible for any customs duties, taxes, or fees incurred during the warranty service.",
       },
       {
         title: "10. Contact Information",
+        content: (
+          <div>
+            
+            <ul className="">
+              
+              <p className="mb-3">For Warranty claims, inquiries, or support, please contact:
+              </p>
+              <li><strong>Email:</strong> warranty@smarthavensystems.com
+
+
+              </li>
+              <li className="my-3"><strong>Phone:</strong> +91-XXXX-XXXXXX
+
+              </li>
+              <li><strong>Address:</strong>  Smart Haven Systems Private Limited, [Address]
+
+              </li>
+              <p className="mt-3">This Warranty does not affect the statutory rights of consumers under applicable consumer protection laws.
+              </p>
+            </ul>
+             
+          </div>
+        ),
+      },
+      {
+        title: "11. Disclaimer",
         content:
-          "To cancel your pre-order, please reach out to our support team at [ *support email* ] or call us at [ *support phone number* ]. Alternatively, you can log in to your account and follow the instructions under the My Orders section to cancel.",
+          "The Company disclaims all other warranties, express or implied, including but not limited to implied warranties of merchantability and fitness for a particular purpose, to the fullest extent permitted by applicable law. The Company makes no representation or warranty that the Product will meet the buyer’s specific requirements or operate uninterrupted or error-free.",
+      },
+      {
+        title: "12. Consumer Rights",
+        content:
+          "This Warranty does not exclude or limit the statutory rights of consumers as provided by applicable consumer protection laws. In the event of a conflict between this Warranty and local consumer protection laws, the provisions that are more favorable to the consumer shall prevail.",
       },
     ],
     [

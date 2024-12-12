@@ -332,17 +332,19 @@ export default function Web() {
             </p>
           </div>
           <div className="flex w-full justify-between max-sm:grid max-sm:gap-5  md:gap-20">
-            <div>
-              <motion.img
-                src="/Frame 48095435 (2).png"
-                width={645}
-                height={555}
-                alt=""
-                initial={{ scale: 1.2, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1, ease: "easeIn" }}
-              />
-            </div>
+          <div className="rounded-md overflow-hidden">
+  <motion.video
+    src="/WhatsApp Video 2024-12-12 at 15.04.29.mp4"
+    width={645}
+    height={555}
+    autoPlay
+    loop
+    muted
+    initial={{ scale: 1.2, opacity: 0 }}
+    animate={{ scale: 1, opacity: 1 }}
+    transition={{ duration: 1, ease: "easeIn" }}
+  />
+</div>
             <div className="">
               <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:hidden max-sm:text-lg lg:text-2xl">
                 Our Models
@@ -448,7 +450,7 @@ export default function Web() {
             <div className="max-sm:flex max-sm:w-full max-sm:flex-col max-sm:items-center max-sm:justify-center md:w-[403] ">
               <p className="font-regular  flex    text-2xl  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">Our Models</p>
               <p className=" font-regular text-xl  leading-none tracking-tight text-white max-sm:mt-3 sm:my-6 md:text-xl xl:text-5xl">
-                ALTIMA Elite
+                ALTIMA Elites
               </p>
               <div>
                 <div className="flex max-w-[522px] items-center justify-between gap-6 bg-[#000000] px-4 py-2 text-black max-sm:hidden">

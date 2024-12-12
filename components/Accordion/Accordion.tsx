@@ -2,8 +2,8 @@ import { useEffect, useState } from "react"
 
 interface AccordionProps {
   title: string
-  content: string
-  defaultOpen?: boolean // New optional prop
+  content: string | JSX.Element // Allow content to be a string or JSX
+  defaultOpen?: boolean // Optional prop
 }
 
 const Accordion: React.FC<AccordionProps> = ({ title, content, defaultOpen = false }) => {
@@ -29,7 +29,8 @@ const Accordion: React.FC<AccordionProps> = ({ title, content, defaultOpen = fal
       </button>
       {isOpen && (
         <div className="bg-[#282828] py-2 text-[#FFFFFF99]">
-          <p className="p-4 max-sm:text-xs">{content}</p>
+          {/* Render content as JSX to allow formatting */}
+          <div className="p-4 max-sm:text-xs">{content}</div>
         </div>
       )}
     </div>
