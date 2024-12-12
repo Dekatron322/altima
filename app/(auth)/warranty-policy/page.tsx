@@ -186,9 +186,28 @@ export default function Web() {
       },
       {
         title: "7. Transferability",
-        content:
-          "This Warranty is valid only for the original purchaser and is non-transferable, except where applicable under national or international laws.",
-      },
+        content: (
+          <div>
+            <p>
+            Smart Haven Systems Private Limited (&quot;Company&quot;) offers a limited warranty (&quot;Warranty&quot;) for Altima Core and Altima Elite products (&quot;Product&quot;) purchased directly from authorized sellers. This Warranty covers defects in materials and workmanship under normal use.
+            </p>
+            <ul className="">
+              <p className="font-bold my-3">1.1 Standard Warranty Duration
+              </p>
+              <li><strong>Domestic Purchases:</strong> 24 months from the date of delivery.</li>
+              <li className="my-3"><strong>DInternational Purchases:</strong>D 18 months from the date of delivery.</li>
+            </ul>
+            <p>For both domestic and international buyers, the Warranty may be extended through an <strong>Extended Warranty Plan </strong>purchased separately.</p>
+            <ul className="mt-4">
+              <p className="font-bold my-3">1.2 Extended Warranty
+              </p>
+              <li>Available for up to an additional 36 months.
+              </li>
+              <li className="my-3">Extended Warranty coverage is subject to terms and conditions outlined in the Extended Warranty Agreement.
+              </li>
+            </ul>
+          </div>
+        ),},
       {
         title: "8. Governing Law and Jurisdiction",
         content:
@@ -239,59 +258,217 @@ export default function Web() {
     [
       {
         title: "1. Overview",
-        content:
-          "The Extended Warranty (' Extended Warranty') extends the coverage of the Standard Warranty for an additional period as purchased by the customer (&quot;Buyer&quot;). This Extended Warranty is provided by Smart Haven Systems Private Limited (&quot;Company&quot;) and is subject to the terms and conditions outlined herein.",
-      },
+        content: (
+          <div> 
+            <p>The Extended Warranty (&quot;Extended Warranty&quot;) extends the coverage of the Standard Warranty for an additional period as purchased by the customer (&quot;Buyer&quot;). This Extended Warranty is provided by Smart Haven Systems Private Limited (&quot;Company&quot;) and is subject to the terms and conditions outlined herein.</p> 
+          </div>
+        ),},
       {
         title: "2. Extended Warranty Coverage",
-        content:
-          "If there are any production delays, we will notify you promptly and provide an updated timeline. You can choose to wait for your order or request a full refund of your deposit if the delay is inconvenient.",
+        content:(
+          <div>
+            
+            <ul className="">
+              
+              <p className="mb-3">2.1 Duration</p>
+              <li>Buyers may purchase an Extended Warranty for an additional period of <strong>12, 24, or 36 months.</strong>
+              </li>
+              
+              <li>The Extended Warranty coverage begins immediately after the expiration of the Standard Warranty.
+              </li>
+              
+            </ul>
+            <ul className="mt-4">
+              
+              <p className="mb-3">2.2 Coverage Details</p>
+              <p>The Extended Warranty covers:</p>
+              <li className="my-3"><strong>Defects in Materials and Workmanship:</strong> Coverage for defects that prevent the Product from functioning as intended.
+              </li>
+              
+              <li><strong>Component Failures:</strong> Replacement or repair of critical components, including smart lock mechanisms and biometric sensors.
+              </li>
+              
+            </ul>
+            <p className="mt-3">Note: The coverage terms mirror the Standard Warranty, with the exclusions listed in Section 3.
+            </p>  
+          </div>
+        ),
       },
       {
         title: "3. Exclusions from Extended Warranty",
-        content:
-          "If there are any production delays, we will notify you promptly and provide an updated timeline. You can choose to wait for your order or request a full refund of your deposit if the delay is inconvenient.",
-      },
+        content:(
+          <div>
+            <ul className="grid gap-3">
+              
+              <p className="mb-3">The Extended Warranty does <strong>not</strong> cover:</p>
+              <li>1. Normal wear and tear, cosmetic damage, or aging of components.</li>
+              
+              <li>2. Damage resulting from accidents, misuse, abuse, neglect, unauthorized modification, or installation by non-certified personnel.</li>
+              <li>3. Environmental damage, such as corrosion, rust, or discoloration caused by harsh environmental conditions.</li>
+              <li>4. Damage caused by power surges, lightning strikes, or other electrical disruptions.</li>
+              <li>5. Third-party accessories or components not provided by the Company.</li>
+            </ul> 
+          </div>
+        ),},
       {
         title: "4. Purchasing and Activation",
-        content:
-          "If there are any production delays, we will notify you promptly and provide an updated timeline. You can choose to wait for your order or request a full refund of your deposit if the delay is inconvenient.",
+        content:(
+          <div>
+            
+            <ul className="">
+              
+              <p className="mb-3">4.1 Eligibility</p>
+              <li>◾ The Extended Warranty must be purchased within <strong>30 days</strong> of the original Product purchase date or within the Standard Warranty period.
+              </li>
+              
+              <li>◾ Proof of purchase for the Product is required for activation.
+              </li>
+              
+            </ul>
+            <ul className="mt-4">
+              
+              <p className="mb-3">4.2 Activation</p>
+              
+              <li className="my-3">The Extended Warranty is activated upon successful payment and registration of the Product on the Company’s warranty portal at [www.smarthavensystems.com/warranty].
+              </li> 
+            </ul>
+            
+          </div>
+        ),
       },
       {
         title: "5. Extended Warranty Claim Process",
-        content:
-          "If there are any production delays, we will notify you promptly and provide an updated timeline. You can choose to wait for your order or request a full refund of your deposit if the delay is inconvenient.",
+        content:(
+          <div>
+            
+            <ul className="grid gap-3">
+              
+              <p className="mb-3">5.1 Filing a Claim</p>
+              <li>◾To file an Extended Warranty claim, the Buyer must:
+              </li>             
+              <li>1. Contact the Company at [warranty@smarthavensystems.com] or call +91-XXXX-XXXXXX.
+              </li>
+              <li>2. Provide the Product’s serial number, proof of Extended Warranty purchase, and a detailed description of the issue.
+              </li>
+              
+            </ul>
+            <p className="my-3">The Company may request additional documentation, such as photos or videos, to evaluate the claim.
+            </p>
+            <ul className="grid mt-6 gap-3">
+              
+              <p className="mb-3">5.2 Inspection and Resolution</p>
+              <p>The Company reserves the right to inspect the Product to determine the validity of the claim.
+              </p>
+              <p>Upon approval, the Company will choose to:</p>
+              <li><strong>Repair: </strong>Repair the defective component(s) at no additional cost.
+              </li>             
+              <li><strong>Replace:</strong> Provide a new or refurbished replacement unit.
+              </li>
+              <li><strong>Reimburse: </strong>If repair or replacement is not possible, issue a prorated refund based on the remaining warranty coverage.
+              </li>
+              
+            </ul>
+            <p className="mt-3">TShipping Costs: The Buyer may be responsible for shipping costs to the designated service center. If the claim is approved, the Company may reimburse reasonable shipping expenses.
+            </p>
+            
+          </div>
+        ),
       },
       {
         title: "6. Transferability",
-        content:
-          "If there are any production delays, we will notify you promptly and provide an updated timeline. You can choose to wait for your order or request a full refund of your deposit if the delay is inconvenient.",
+        content:(
+          <div>
+            <p>The Extended Warranty is <strong>non-transferable</strong> and applies only to the original Buyer, except where applicable under local laws.
+            </p>
+            
+            <p className="mt-3">The Extended Warranty is void if the Product is sold, gifted, or transferred to a third party.
+            </p>
+            
+          </div>
+        ),
       },
       {
         title: "7. Limitations and Liability",
-        content:
-          "If there are any production delays, we will notify you promptly and provide an updated timeline. You can choose to wait for your order or request a full refund of your deposit if the delay is inconvenient.",
+        content:(
+          <div>
+            
+            <ul className="">
+              
+              <p className="mb-3">7.1 Limitation of Liability</p>
+              <li>The Company's total liability under this Extended Warranty is limited to the original purchase price of the Product. The Company shall not be liable for indirect, incidental, or consequential damages.</li>
+            </ul>
+            <ul className="mt-4">
+              
+              <p className="mb-3">7.2 No Implied Warranties</p>
+              
+              <li className="my-3">Except as expressly stated in this document, the Company disclaims all implied warranties, including merchantability and fitness for a particular purpose, to the extent permitted by law.
+              </li> 
+            </ul>
+            
+          </div>
+        ),
       },
       {
         title: "8. Governing Law and Dispute Resolution",
-        content:
-          "If there are any production delays, we will notify you promptly and provide an updated timeline. You can choose to wait for your order or request a full refund of your deposit if the delay is inconvenient.",
+        content:(
+          <div>
+            
+            
+              
+              <p className="mb-3">◾This Extended Warranty is governed by the laws of [India].
+              </p>
+              <p >◾Any disputes arising under this Extended Warranty shall be subject to the exclusive jurisdiction of the courts in [Navi Mumbai, India].</p> 
+          </div>
+        ),
       },
       {
         title: "9. Consumer Rights",
         content:
-          "If there are any production delays, we will notify you promptly and provide an updated timeline. You can choose to wait for your order or request a full refund of your deposit if the delay is inconvenient.",
+          "This Extended Warranty does not affect the statutory rights of consumers under applicable consumer protection laws. If a provision of this Extended Warranty conflicts with local consumer laws, the more favorable provision to the consumer shall apply.",
       },
       {
         title: "10. Contact Information",
-        content:
-          "If there are any production delays, we will notify you promptly and provide an updated timeline. You can choose to wait for your order or request a full refund of your deposit if the delay is inconvenient.",
-      },
+        content: (
+          <div>
+            
+            <ul className="">
+              
+              <p className="mb-3">For Warranty claims, inquiries, or support, please contact:
+              </p>
+              <li><strong>Email:</strong> warranty@smarthavensystems.com
+
+
+              </li>
+              <li className="my-3"><strong>Phone:</strong> +91-XXXX-XXXXXX
+
+              </li>
+              <li><strong>Address:</strong>  Smart Haven Systems Private Limited, [Address]
+
+              </li>
+              <p className="mt-3">This Warranty does not affect the statutory rights of consumers under applicable consumer protection laws.
+              </p>
+            </ul>
+             
+          </div>
+        ),},
       {
         title: "11. Important Notes",
-        content:
-          "If there are any production delays, we will notify you promptly and provide an updated timeline. You can choose to wait for your order or request a full refund of your deposit if the delay is inconvenient.",
-      },
+        content: (
+          <div>
+            
+            <ul className="grid gap-3">
+              
+              
+              <li><strong>1. Extended Warranty fees</strong>  are non-refundable.
+              </li>
+              <li >2. Buyers are advised to keep all original receipts and documents for verification purposes.
+              </li>
+              <li>3. The Company recommends professional installation to maintain Warranty validity.
+              </li>
+            </ul>
+             
+          </div>
+        ),},
     ],
   ]
 
