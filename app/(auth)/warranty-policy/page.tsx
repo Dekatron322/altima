@@ -41,7 +41,7 @@ export default function Web() {
         content: (
           <div>
             <p>
-            Smart Haven Systems Private Limited ("Company") offers a limited warranty ("Warranty") for Altima Core and Altima Elite products ("Product") purchased directly from authorized sellers. This Warranty covers defects in materials and workmanship under normal use.
+            Smart Haven Systems Private Limited (&quot;Company&quot;) offers a limited warranty (&quot;Warranty&quot;) for Altima Core and Altima Elite products (&quot;Product&quot;) purchased directly from authorized sellers. This Warranty covers defects in materials and workmanship under normal use.
             </p>
             <ul className="">
               <p className="font-bold my-3">1.1 Standard Warranty Duration
