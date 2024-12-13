@@ -9,6 +9,7 @@ import MainFooter from "components/Footer/MainFooter"
 import Image from "next/image"
 import { addOrderToUser, OrderPayload } from "services/orderService"
 import { useRouter } from "next/navigation"
+import Dropdown from "components/CustomDropdown"
 
 interface User {
   id: string
@@ -248,6 +249,86 @@ export default function Web() {
 
   
 
+  const frameTypeOptions = ["Slim", "Standard", "Reinforced",];
+  const MaterialOptions  = ["Wood", "Glass", "Metal",];
+  const connectivityOptions = ["Wi-Fi", "BlueTooth", "Zigbee", "None"];
+  const powerOptions = ["AC Connection", "Battery Backup,", "Solar Ready"];
+  const installationOptions = ["Residential", "Commercial,", "Hotel", "Office", "Other"];
+  const unitOptions = ["Cm", "Inches"];
+  const materialToFinishMap: Record<string, string[]> = {
+    Wood: ["Mahogany", "Maple", "Teak", "Oak"],
+    Glass: ["Frosted", "Tinted", "Transparent"],
+    Metal: ["Brushed", "Polished", "Matte"],
+  };
+  const handlePlacementOptions = ["Left", "Right", "Center"];
+
+  const handleFrameTypeSelect = (option: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      door_spec_frame_type: option,
+    }));
+    setOpenDropdown(null);
+  };
+
+  const handleMaterialSelect = (option: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      door_spec_material_type: option,
+      door_spec_finish_type: "", // Reset finish when material changes
+    }));
+    setOpenDropdown(null);
+  };
+
+  const handleConnectivitySelect = (option: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      connectivity: option,
+    }));
+    setOpenDropdown(null);
+  };
+  
+  const handleFinishSelect = (option: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      door_spec_finish_type: option,
+    }));
+    setOpenDropdown(null);
+  };
+
+  const handleUnitSelect = (option: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      door_spec_manual_size_unit: option,
+    }));
+    setOpenDropdown(null);
+  };
+
+  const handlePlacementSelect = (option: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      handle_placement: option,
+    }));
+    setOpenDropdown(null);
+  };
+
+  const handlePowerSelect = (option: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      power_source: option,
+    }));
+    setOpenDropdown(null);
+  };
+
+  const handleInstallationSelect = (option: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      type_installation: option,
+    }));
+    setOpenDropdown(null);
+  };
+
+
+
   // Calculate and update total whenever quantity or selectedRadio changes
   useEffect(() => {
     const unitPrice = unitPrices[selectedRadio] ?? 0;
@@ -354,6 +435,13 @@ const subtotal = unitPrice + additionalCharges;
     setIsSubmitting(false);
   }
 };
+
+const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
+const toggleDropdown = (dropdown: string) => {
+  setOpenDropdown((prev) => (prev === dropdown ? null : dropdown));
+};
+
 
   
 
@@ -832,7 +920,7 @@ const subtotal = unitPrice + additionalCharges;
 
                   {/* Altima Elite Radio */}
                   <div
-                    className="my-4 flex w-full items-center gap-2"
+                    className="mt-4 flex w-full items-center gap-2"
                     onClick={() => {
                       toggleDoorSpec("Input Dimension")
                       setFormData((prevData) => ({
@@ -854,6 +942,8 @@ const subtotal = unitPrice + additionalCharges;
                   </div>
 
                   <div className="mb-4 grid gap-3 lg:grid-cols-3">
+                  <div className="mt-3">
+                  <label className=" text-sm text-white">Width</label>
                     <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
                       <div className="flex h-[46px] items-center">
                         <input
@@ -868,101 +958,77 @@ const subtotal = unitPrice + additionalCharges;
                         />
                       </div>
                     </div>{" "}
+                    </div>
+                    <div className="mt-3">
+                    <label className=" text-sm text-white">Height</label>
                     <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                      
                       <div className="flex h-[46px] items-center">
                         <input
                           type="text"
                           name="door_spec_manual_size_height"
                           value={formData.door_spec_manual_size_height}
                           onChange={handleChange}
-                          placeholder="Hight"
-                          className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
-                          style={{ width: "100%", height: "24px" }}
-                          disabled={selectedRadio === "Altima Core"}
-                        />
-                      </div>
-                    </div>{" "}
-                    <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
-                      <div className="flex h-[46px] items-center">
-                        <input
-                          type="text"
-                          name="door_spec_manual_size_unit"
-                          value={formData.door_spec_manual_size_unit}
-                          onChange={handleChange}
-                          placeholder="Cm"
+                          placeholder="Height"
                           className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
                           style={{ width: "100%", height: "24px" }}
                           disabled={selectedRadio === "Altima Core"}
                         />
                       </div>
                     </div>
+                    </div>{" "}
+                    <Dropdown
+                    label="Unit"
+                    options={unitOptions}
+                    value={formData.door_spec_manual_size_unit || ''} 
+                    onSelect={handleUnitSelect}
+                    isOpen={openDropdown === 'unit'}
+                    toggleDropdown={() => toggleDropdown('unit')}
+                  />
                   </div>
 
-                  <label className="text-sm text-white">Frame Type</label>
-                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
-                    <div className="flex h-[46px] items-center">
-                      <input
-                        type="text"
-                        name="door_spec_frame_type"
-                        value={formData.door_spec_frame_type}
-                        onChange={handleChange}
-                        placeholder="Wood"
-                        className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
-                        style={{ width: "100%", height: "24px" }}
-                        disabled={selectedRadio === "Altima Core"}
-                      />
-                    </div>
+                  <Dropdown
+                    label="Frame Type"
+                    options={frameTypeOptions}
+                    value={formData.door_spec_frame_type || ''}
+                    onSelect={handleFrameTypeSelect}
+                    isOpen={openDropdown === 'frame'}
+                    toggleDropdown={() => toggleDropdown('frame')}
+                  />
+                  <div className="mt-3">
+                  <Dropdown
+        label="Material"
+        options={MaterialOptions}
+        value={formData.door_spec_material_type || ''}
+        onSelect={handleMaterialSelect}
+        isOpen={openDropdown === 'material'}
+        toggleDropdown={() => toggleDropdown('material')}
+      />
+
                   </div>
                   <div className="mt-3">
-                    <label className=" text-sm text-white">Material</label>
-                    <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
-                      <div className="flex h-[46px] items-center">
-                        <input
-                          type="text"
-                          name="door_spec_material_type"
-                          value={formData.door_spec_material_type}
-                          onChange={handleChange}
-                          placeholder="Wood"
-                          className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
-                          style={{ width: "100%", height: "24px" }}
-                          disabled={selectedRadio === "Altima Core"}
-                        />
-                      </div>
-                    </div>
+                  <Dropdown
+  label="Finish"
+  options={
+    materialToFinishMap[formData.door_spec_material_type ?? ""] || [] // Default to an empty string
+  }
+  value={formData.door_spec_finish_type || ""}
+  onSelect={handleFinishSelect}
+  isOpen={openDropdown === "finish"}
+  toggleDropdown={() => toggleDropdown("finish")}
+  disabled={!formData.door_spec_material_type} // Disable if no material is selected
+/>
+
                   </div>
                   <div className="mt-3">
-                    <label className=" text-sm text-white">Finish</label>
-                    <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
-                      <div className="flex h-[46px] items-center">
-                        <input
-                          type="text"
-                          name="door_spec_finish_type"
-                          placeholder="Wood"
-                          value={formData.door_spec_finish_type}
-                          onChange={handleChange}
-                          className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
-                          style={{ width: "100%", height: "24px" }}
-                          disabled={selectedRadio === "Altima Core"}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mt-3">
-                    <label className=" text-sm text-white">Handle Placement</label>
-                    <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
-                      <div className="flex h-[46px] items-center">
-                        <input
-                          type="text"
-                          name="handle_placement"
-                          value={formData.handle_placement}
-                          onChange={handleChange}
-                          placeholder="Left"
-                          className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
-                          style={{ width: "100%", height: "24px" }}
-                          disabled={selectedRadio === "Altima Core"}
-                        />
-                      </div>
-                    </div>
+                  <Dropdown
+                    label="Handle Placement"
+                    options={handlePlacementOptions}
+                    value={formData.handle_placement || ''} 
+                    onSelect={handlePlacementSelect}
+                    isOpen={openDropdown === 'handle'}
+                    toggleDropdown={() => toggleDropdown('handle')}
+                  />
                   </div>
                 </div>
 
@@ -1138,57 +1204,36 @@ const subtotal = unitPrice + additionalCharges;
                 </div>
                 <div className="border-b mt-5 border-[#FFFFFF0D]"></div>
                 <div className="p-5">
-                  <label className=" text-sm text-white">Connectivity</label>
-                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
-                    <div className="flex h-[46px] items-center">
-                      <input
-                        type="text"
-                        name="connectivity"
-                        value={formData.connectivity}
-                        onChange={handleChange}
-                        placeholder="Wifi"
-                        className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
-                        style={{ width: "100%", height: "24px" }}
-                        disabled={selectedRadio === "Altima Core"}
-                      />
-                    </div>
-                  </div>
+                <Dropdown
+                    label="Connectivity"
+                    options={connectivityOptions}
+                    value={formData.connectivity || ''} 
+                    onSelect={handleConnectivitySelect}
+                    isOpen={openDropdown === 'connectivity'}
+                    toggleDropdown={() => toggleDropdown('connectivity')}
+                  />
                 </div>
                 <div className="border-b border-[#FFFFFF0D]"></div>
                 <div className="p-5">
-                  <label className=" text-sm text-white">Power Source</label>
-                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
-                    <div className="flex h-[46px] items-center">
-                      <input
-                        type="text"
-                        name="power_source"
-                        value={formData.power_source}
-                        onChange={handleChange}
-                        placeholder="Wifi"
-                        className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
-                        style={{ width: "100%", height: "24px" }}
-                        disabled={selectedRadio === "Altima Core"}
-                      />
-                    </div>
-                  </div>
+                <Dropdown
+                    label="Power Source"
+                    options={powerOptions}
+                    value={formData.power_source || ''} 
+                    onSelect={handlePowerSelect}
+                    isOpen={openDropdown === 'power'}
+                    toggleDropdown={() => toggleDropdown('power')}
+                  />
                 </div>
                 <div className="border-b border-[#FFFFFF0D]"></div>
                 <div className="p-5">
-                  <label className=" text-sm text-white">Type of Installation</label>
-                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
-                    <div className="flex h-[46px] items-center">
-                      <input
-                        type="text"
-                        name="type_installation"
-                        value={formData.type_installation}
-                        onChange={handleChange}
-                        placeholder="Wifi"
-                        className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
-                        style={{ width: "100%", height: "24px" }}
-                        disabled={selectedRadio === "Altima Core"}
-                      />
-                    </div>
-                  </div>
+                <Dropdown
+                    label="Type of Installation"
+                    options={installationOptions}
+                    value={formData.type_installation || ''} 
+                    onSelect={handleInstallationSelect}
+                    isOpen={openDropdown === 'installation'}
+                    toggleDropdown={() => toggleDropdown('installation')}
+                  />
                 </div>
                 <div className="border-b border-[#FFFFFF0D]"></div>
                 <div className="p-5">
