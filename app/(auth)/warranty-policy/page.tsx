@@ -402,7 +402,7 @@ export default function Web() {
             <ul className="">
               
               <p className="mb-3">7.1 Limitation of Liability</p>
-              <li>The Company's total liability under this Extended Warranty is limited to the original purchase price of the Product. The Company shall not be liable for indirect, incidental, or consequential damages.</li>
+              <li>The Company&apos;s total liability under this Extended Warranty is limited to the original purchase price of the Product. The Company shall not be liable for indirect, incidental, or consequential damages.</li>
             </ul>
             <ul className="mt-4">
               

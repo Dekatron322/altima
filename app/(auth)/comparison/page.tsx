@@ -144,7 +144,8 @@ export default function Web() {
             </div>
           </div>
           <div className="w-full overflow-x-auto border">
-            <table className="min-w-[1200px] table-fixed border-separate border-spacing-0 text-left text-white 2xl:w-full">
+          <table className="min-w-[1200px] table-fixed border-separate border-spacing-0 text-left text-white 2xl:w-full">
+          
               <thead>
                 <tr>
                   <th className="border-b bg-[#FFFFFF1A] px-4 py-4 text-sm">Features</th>
