@@ -117,7 +117,7 @@ export default function Web() {
     <section className="bg-black">
       <Navbar />
 
-      <section className="paddings  w-full bg-[#080808] max-sm:px-3 max-sm:py-20 lg:h-screen lg:py-32">
+      <section className="paddings  w-full bg-[#080808] max-sm:px-3 max-sm:py-20 lg:min-h-screen lg:py-32">
         <div className="relative mb-5 max-sm:block md:hidden">
           <button
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}

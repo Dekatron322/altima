@@ -25,7 +25,26 @@ export default function Web() {
   const [isDefaultBillingTwo, setIsDefaultBillingTwo] = useState(true)
 
   const toggleShippingTwo = () => setIsDefaultShippingTwo(!isDefaultShippingTwo)
-  const toggleBillingTwo = () => setIsDefaultBillingTwo(!isDefaultBillingTwo)
+  const toggleBillingTwo = () => {
+    setIsDefaultBillingTwo((prev) => {
+      const newValue = !prev;
+  
+      if (!newValue) {
+        // Copy billing address to shipping address
+        setFormData((prevData) => ({
+          ...prevData,
+          shipping_street: prevData.street,
+          shipping_city: prevData.city,
+          shipping_state: prevData.state,
+          shipping_postal: prevData.zip_code,
+          shipping_country: prevData.country,
+        }));
+      }
+  
+      return newValue;
+    });
+  };
+  
 
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
   const [isCancelModalOpen, setIsCancelModalOpen] = useState(false)
@@ -61,7 +80,7 @@ export default function Web() {
     if (storedUserId) {
       setUserId(storedUserId)
     } else {
-      setMessage("User ID not found. Please log in.")
+      console.log("User ID not found. Please log in.")
     }
   }, [])
 
@@ -112,6 +131,7 @@ export default function Web() {
   }
 
   return (
+    <>
     <section className="bg-black">
       <Navbar />
 
@@ -399,17 +419,21 @@ export default function Web() {
           </div>
         </div>
 
-        {message && (
-          <div className="animation-fade-in absolute bottom-16 m-5 flex h-[50px] w-[339px] transform items-center justify-center gap-2 rounded-md border border-[#000000] bg-[#92E3A9] text-[#000000] shadow-[#05420514] md:right-16">
-            <span className="clash-font text-sm text-[#000000]">{message}</span>
-            <Image src="/AuthImages/Star2.svg" width={28.26} height={28.26} alt="dekalo" />
-          </div>
-        )}
+        
       </section>
 
+      
       <MainFooter />
 
       <Footer />
     </section>
+    {message && (
+      <div className="animation-fade-in fixed bottom-16 m-5 flex h-[50px] w-[339px] transform items-center justify-center gap-2 rounded-md border border-[#000000] bg-[#92E3A9] text-[#000000] shadow-[#05420514] md:right-16">
+        <span className="clash-font text-sm text-[#000000]">{message}</span>
+        <Image src="/AuthImages/Star2.svg" width={28.26} height={28.26} alt="dekalo" />
+      </div>
+    )}
+    </>
+
   )
 }
