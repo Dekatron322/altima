@@ -20,7 +20,7 @@ export default function Web() {
 
 
   
-  const [quantity, setQuantity] = useState(1000)
+  const [quantity, setQuantity] = useState(1)
   const [isDefaultBillingTwo, setIsDefaultBillingTwo] = useState(false)
   const [isEnforcedLock, setIsEnforcedLock] = useState(false)
   const [isIntercom, setIsIntercom] = useState(false)
@@ -281,7 +281,7 @@ const subtotal = unitPrice + additionalCharges;
     if (storedUserId) {
       setUserId(storedUserId)
     } else {
-      setMessage("User ID not found. Please log in.")
+      console.log("User ID not found. Please log in.")
     }
   }, [])
 
@@ -291,45 +291,71 @@ const subtotal = unitPrice + additionalCharges;
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const user = localStorage.getItem("user");
-    const parsedUser: User | null = user ? (JSON.parse(user) as User) : null;
+  const user = localStorage.getItem("user");
+  const parsedUser: User | null = user ? (JSON.parse(user) as User) : null;
 
-    const userId = parsedUser?.id;
+  const userId = parsedUser?.id;
 
-    if (!userId) {
-        setMessage("Unable to add address. User ID is missing.");
-        return;
+  if (!userId) {
+    setMessage("Unable to add address. User ID is missing.");
+    return;
+  }
+
+  if (!formData.full_name || !formData.contact_number) {
+    setMessage("Please fill in all required fields.");
+    return;
+  }
+
+  setIsSubmitting(true);
+  setMessage("");
+
+  // Log order details including the userId and formData
+  console.log("Order Information:", {
+    userId,
+    ...formData,
+  });
+
+  try {
+    const response = await addOrderToUser(userId, formData);
+  
+    // Log the full response for debugging
+    console.log("API Response:", response);
+  
+    // Ensure response has the expected structure
+    const orderId = response?.id; // Adjust path if structure is different
+  
+    if (orderId) {
+      console.log("Order ID:", orderId);
+  
+      // Save API Response to local storage
+      localStorage.setItem("order_response", JSON.stringify(response));
+  
+      // Save form data as order summary
+      localStorage.setItem("order_summary", JSON.stringify(formData));
+  
+      setMessage("Order placed successfully!");
+  
+      // Navigate to the summary page
+      router.push("/summary");
+    } else {
+      console.log("No order ID returned in the response.");
+      setMessage("Failed to retrieve order ID. Please try again.");
     }
-
-    if (!formData.full_name || !formData.contact_number) {
-        setMessage("Please fill in all required fields.");
-        return;
-    }
-
-    setIsSubmitting(true);
-    setMessage("");
-
-    try {
-        const response = await addOrderToUser(userId, formData);
-        setMessage("Order placed successfully!");
-
-        // Save order details in local storage
-        localStorage.setItem("order_summary", JSON.stringify(formData));
-
-        // Navigate to the summary page
-        router.push("/summary");
-    } catch (error: any) {
-        console.error("Error:", error);
-        setMessage(
-            error.response?.data?.message || 
-            "Failed to place order. Please check your input and try again."
-        );
-    } finally {
-        setIsSubmitting(false);
-    }
+  } catch (error: any) {
+    console.error("Error:", error);
+  
+    setMessage(
+      error.response?.data?.message ||
+        "Failed to place order. Please check your input and try again."
+    );
+  } finally {
+    setIsSubmitting(false);
+  }
 };
+
+  
 
 
 
@@ -1356,7 +1382,7 @@ const subtotal = unitPrice + additionalCharges;
           </div>
         </div>
         {message && (
-          <div className="animation-fade-in absolute bottom-16 m-5 flex h-[50px] w-[339px] transform items-center justify-center gap-2 rounded-md border border-[#000000] bg-[#92E3A9] text-[#000000] shadow-[#05420514] md:right-16">
+          <div className="animation-fade-in fixed bottom-16 m-5 flex h-[50px] w-[339px] transform items-center justify-center gap-2 rounded-md border border-[#000000] bg-[#92E3A9] text-[#000000] shadow-[#05420514] md:right-16">
             <span className="clash-font text-sm text-[#000000]">{message}</span>
             <Image src="/AuthImages/Star2.svg" width={28.26} height={28.26} alt="dekalo" />
           </div>

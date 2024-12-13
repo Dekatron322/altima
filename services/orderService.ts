@@ -1,6 +1,7 @@
 import apiClient from "utils/apiClient"
 
 export interface OrderPayload {
+  id?: string
   full_name?: string
   contact_number?: string
   billing_address_same_shipping_address?: boolean

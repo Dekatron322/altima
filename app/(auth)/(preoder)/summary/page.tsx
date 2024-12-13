@@ -15,6 +15,7 @@ export default function Web() {
   const [isDefaultEmail, setIsDefaultEmail] = useState(true)
   const [isDefaultPhone, setIsDefaultPhone] = useState(true)
   const [orderData, setOrderData] = useState<OrderPayload | null>(null);
+  const [loading, setLoading] = useState(false)  // Loading state
 
   // Handlers for increment and decrement
   const togglePhone = () => setIsDefaultPhone(!isDefaultPhone)
@@ -29,10 +30,16 @@ export default function Web() {
   const unitPrice = 500050 // price per unit
   const total = quantity * unitPrice
 
+  interface StripeResponse {
+    checkout_url: string;
+  }
+
+  interface User {
+    id: string
+    token: string
+  }
+
   
-
-
-
   useEffect(() => {
       // Fetch order data from local storage
       const storedData = localStorage.getItem("order_summary");
@@ -43,6 +50,86 @@ export default function Web() {
           router.push("/order-successfull");
       }
   }, [router]);
+
+  // Type guard to check if the response is of type StripeResponse
+function isStripeResponse(data: any): data is StripeResponse {
+  return typeof data.checkout_url === 'string';
+}
+
+const handleSubmit = async () => {
+  setLoading(true)  // Set loading to true when the process starts
+
+  const user = localStorage.getItem("user")
+  const parsedUser: User | null = user ? JSON.parse(user) as User : null
+
+  const userId = parsedUser?.id
+
+  if (!userId) {
+    alert("Unable to proceed. User ID is missing.")
+    setLoading(false)  // Reset loading state in case of failure
+    return
+  }
+
+  // Ensure that orderData and orderData.full_name are valid
+  if (!orderData || !orderData.full_name) {
+    alert("Order data or full name is missing.")
+    setLoading(false)  // Reset loading state in case of failure
+    return
+  }
+
+  try {
+    // Use '1' as a default if quantity is undefined
+    const quantity = orderData.quantity ? parseInt(orderData.quantity, 10) : 1
+
+    // Create Stripe Checkout session payload
+    const stripePayload = {
+      name: orderData.full_name.trim(),
+      amount: Math.round(parseFloat(orderData.deposit_amount ?? "0") / 100),
+      quantity: quantity,
+    }
+
+    console.log("Stripe Payload:", stripePayload)
+
+    const stripeResponse = await fetch("https://altima.fyber.site/order/api/create-checkout-session/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(stripePayload),
+    })
+
+    console.log("Stripe Response Status:", stripeResponse.status)
+    const responseText = await stripeResponse.text()
+    console.log("Stripe Response Body:", responseText)
+
+    if (!stripeResponse.ok) {
+      throw new Error(`Failed to create Stripe checkout session: ${responseText}`)
+    }
+
+    // Parse the response and check if it matches StripeResponse type
+    const stripeData = JSON.parse(responseText)
+
+    if (isStripeResponse(stripeData)) {
+      if (stripeData.checkout_url) {
+        localStorage.setItem('session_id', (stripeData as any).session_id)
+        window.location.href = stripeData.checkout_url
+      } else {
+        throw new Error("Stripe session URL not found.")
+      }
+    } else {
+      throw new Error("Invalid response format from Stripe.")
+    }
+  } catch (error: any) {
+    console.error("Error:", error)
+    alert(error.message || "Failed to proceed with checkout. Please try again.")
+  } finally {
+    setLoading(false)  // Reset loading state after the process ends
+  }
+}
+
+
+
+  
 
   return (
     <section className="bg-[#151515]">
@@ -58,7 +145,7 @@ export default function Web() {
                   <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Product: {orderData?.product_selection_altima_elite
                 ? "Altima Elite"
                 : "Altima Core"}</li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Size: {orderData?.door_spec_default_size}</li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Size: {orderData?.id}</li>
                   <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Frame Type: {orderData?.door_spec_frame_type}</li>
                   <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Finish: {orderData?.door_spec_finish_type}</li>
                   <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Handle Placement: {orderData?.handle_placement}</li>
@@ -69,7 +156,7 @@ export default function Web() {
                   <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
                     Security Features: Reinforced Lock, Anti-theft Alarm, Motion Sensor
                   </li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Installation Type: {orderData?.type_installation}</li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Installation Type: {orderData?.status}</li>
                   <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Preferred Date: {orderData?.prefered_installation}</li>
                   <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
                     Special Instructions: {orderData?.special_installation_instruction}
@@ -128,9 +215,13 @@ export default function Web() {
 
               <div className="border border-[#FFFFFF0D]"></div>
               <div className="flex w-full justify-center">
-                <Link href="/order-successful" className="font-regular  mb-5 flex w-[60%] items-center justify-center gap-2  rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4 py-3 uppercase text-[#FFFFFF] max-sm:w-full ">
-                  Continue
-                </Link>
+              <button
+                  onClick={handleSubmit}
+                  className="font-regular mb-5 flex w-[60%] items-center justify-center gap-2 rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4 py-3 uppercase text-[#FFFFFF] max-sm:w-full"
+                >
+                  {loading ? "Processing Payment..." : "Pay Now"}
+                </button>
+
               </div>
             </div>
           </div>

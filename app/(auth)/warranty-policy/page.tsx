@@ -33,6 +33,13 @@ export default function Web() {
     setSelectedReplacement(option)
   }
 
+  const [activeIndex, setActiveIndex] = useState<number | null>(null)
+
+
+  const handleAccordionToggle = (index: number) => {
+    setActiveIndex((prevIndex) => (prevIndex === index ? null : index))
+  }
+
   // Accordion data for each tab
   const accordionData = [
     [
@@ -548,7 +555,9 @@ export default function Web() {
           <div className="w-full rounded-md border border-[#FFFFFF1A] ">
             {activeTab === 0 || activeTab === 1 ? (
               accordionData[activeTab]?.map((item, index) => (
-                <Accordion key={index} title={item.title} content={item.content} defaultOpen={index === 0} />
+                accordionData[activeTab]?.map((item, index) => (
+                  <Accordion key={index} title={item.title} content={item.content} defaultOpen={index === 0} />
+                ))
               ))
             ) : (
               <form className="space-y-4  text-white">

@@ -37,4 +37,4 @@ const Accordion: React.FC<AccordionProps> = ({ title, content, defaultOpen = fal
   )
 }
 
-export default Accordion
+export default Accordion 
