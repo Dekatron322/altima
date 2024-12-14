@@ -1248,7 +1248,7 @@ const toggleDropdown = (dropdown: string) => {
                         placeholder="Left"
                         className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
                         style={{ width: "100%", height: "24px" }}
-                        disabled={selectedRadio === "Altima Core"}
+                        // disabled={selectedRadio === "Altima Core"}
                       />
                     </div>
                   </div>
@@ -1263,10 +1263,10 @@ const toggleDropdown = (dropdown: string) => {
                         name="special_installation_instruction"
                         value={formData.special_installation_instruction}
                         onChange={handleChange}
-                        placeholder="Enter Text"
+                        placeholder="Enter Instruction"
                         className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
                         style={{ width: "100%", height: "24px" }}
-                        disabled={selectedRadio === "Altima Core"}
+                        // disabled={selectedRadio === "Altima Core"}
                       />
                     </div>
                   </div>
@@ -1275,13 +1275,9 @@ const toggleDropdown = (dropdown: string) => {
                 <div className="grid gap-5 px-5">
                   <p className="text-lg font-medium text-white">Extended Warranty:</p>
 
-                  <div className={`flex w-full items-center gap-2 ${
-    selectedRadio === "Altima Core" ? "cursor-not-allowed opacity-50" : "cursor-pointer"
-  }`} onClick={() => {
-    if (selectedRadio !== "Altima Core") {
-      toggleEmail(); // Only call the function if not disabled
-    }
-  }}>
+                  <div className="flex w-full items-center gap-2  cursor-pointer"
+                      onClick={() => { toggleEmail(); // Only call the function if not disabled
+                        }}>
                     <motion.img
                       src={isDefaultEmail ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
                       width={18}
@@ -1300,13 +1296,8 @@ const toggleDropdown = (dropdown: string) => {
                 <div className="grid gap-5 px-5">
                   <p className="text-lg font-medium text-white">Installation Support:</p>
 
-                  <div className={`flex w-full items-center gap-2 ${
-    selectedRadio === "Altima Core" ? "cursor-not-allowed opacity-50" : "cursor-pointer"
-  }`} onClick={() => {
-    if (selectedRadio !== "Altima Core") {
-      togglePhone(); // Only call the function if not disabled
-    }
-  }}>
+                  <div className="flex w-full items-center gap-2 cursor-pointer"
+                    onClick={() => {togglePhone(); }}>
                     <motion.img
                       src={isDefaultPhone ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
                       width={18}
@@ -1325,13 +1316,9 @@ const toggleDropdown = (dropdown: string) => {
                 <div className="grid gap-5 px-5">
                   <p className="text-lg font-medium text-white">Payment and Confirmation:</p>
 
-                  <div className={`flex w-full items-center gap-2 ${
-    selectedRadio === "Altima Core" ? "cursor-not-allowed opacity-50" : "cursor-pointer"
-  }`} onClick={() => {
-    if (selectedRadio !== "Altima Core") {
-      toggleWhatsapp(); // Only call the function if not disabled
-    }
-  }} >
+                  <div className="flex w-full items-center gap-2  cursor-pointer"
+                      onClick={() => { toggleWhatsapp(); // Only call the function if not disabled
+                        }} >
                     <motion.img
                       src={isDefaultWhatsapp ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
                       width={18}
@@ -1349,7 +1336,7 @@ const toggleDropdown = (dropdown: string) => {
                 <div className="border-b border-[#FFFFFF0D] my-5"></div>
 
                 <p className="px-5  text-lg font-medium text-white">Payment Information</p>
-                <p className="px-5 text-sm text-white">Total Cost Calculation:</p>
+                <p className="px-5  pb-3 text-sm text-white">Total Cost Calculation:</p>
 
                 <table className="table-fixed border-separate border-spacing-0 px-5  text-left text-white max-sm:hidden 2xl:w-full">
                   <thead>
@@ -1380,7 +1367,7 @@ const toggleDropdown = (dropdown: string) => {
                         {unitPrice.toLocaleString()}
                       </td>
                       <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">₹17,820</td>
-                      <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">₹₹{subtotal.toLocaleString()}</td>
+                      <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">₹{subtotal.toLocaleString()}</td>
                       <td className="border-b border-l border-[#FFFFFF33]  bg-[#282828] px-4 py-2 text-sm">
                         {quantity}
                       </td>
@@ -1394,7 +1381,7 @@ const toggleDropdown = (dropdown: string) => {
                   </tbody>
                 </table>
                 <div>
-                  <p className="flex w-full justify-end px-5  text-end text-sm text-[#FFFFFF]">
+                  <p className="flex w-full justify-end px-5  py-3 text-end text-sm text-[#FFFFFF]">
                     (Seventy thousand one <br />
                     hundred and forty six <br /> Rupees Only/-)
                   </p>
