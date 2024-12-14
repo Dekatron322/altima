@@ -151,12 +151,36 @@ const handleSubmit = async () => {
                   <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Handle Placement: {orderData?.handle_placement}</li>
                   <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Smart Features:</li>
                   <li className="px-3 pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    - Video Doorbell, Intercom System, Camera, Alexa Integration, Wi-Fi Connectivity, Battery Backup
+                    - {orderData?.video_door_bell
+                      ? "Video Doorbell, "
+                      : ""} 
+                    {orderData?.intercom_sys
+                      ? "Intercom System, "
+                      : ""}
+                    {orderData?.camera
+                      ? "Camera, "
+                      : ""}
+                    {orderData?.voice_assisted
+                      ? "Alexa Integration, "
+                      : ""}
+                    {orderData?.connectivity}, {orderData?.power_source}
                   </li>
                   <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    Security Features: Reinforced Lock, Anti-theft Alarm, Motion Sensor
+                    Security Features: 
+                    {orderData?.re_enforced_lock
+                      ? " Reinforced Lock, "
+                      : ""} 
+                    {orderData?.anti_theft
+                      ? "Anti-theft, "
+                      : ""}
+                    {orderData?.alarm
+                      ? "Alarm, "
+                      : ""}
+                    {orderData?.motion_sensor
+                      ? "Motion Sensor"
+                      : ""}   
                   </li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Installation Type: {orderData?.status}</li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Installation Type: {orderData?.type_installation}</li>
                   <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Preferred Date: {orderData?.prefered_installation}</li>
                   <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
                     Special Instructions: {orderData?.special_installation_instruction}
