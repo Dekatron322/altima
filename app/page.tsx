@@ -829,6 +829,7 @@ export default function Web() {
           </div>
         </div>
       </section>
+     
       <ImageModal isOpen={isModalOpen} images={images} currentIndex={currentImageIndex} onClose={closeModal} />
 
       <MainFooter />
