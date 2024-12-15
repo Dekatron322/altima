@@ -13,12 +13,9 @@ interface VerifyPaymentResponse {
   success: boolean; 
   [key: string]: any; 
 }
-
 interface OrderResponse {
   id: string;
-  
 }
-
 
 export default function Web() {
   const [quantity, setQuantity] = useState(1000);
