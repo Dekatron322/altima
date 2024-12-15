@@ -54,8 +54,6 @@ export default function Web() {
     setOpenIndex(openIndex === index ? -1 : index) // Close if the same index is clicked
   }
 
-
-
   return (
     <section className="bg-black">
       <Navbar />
