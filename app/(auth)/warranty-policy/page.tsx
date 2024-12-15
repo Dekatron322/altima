@@ -54,7 +54,7 @@ export default function Web() {
               <p className="font-bold my-3">1.1 Standard Warranty Duration
               </p>
               <li><strong>Domestic Purchases:</strong> 24 months from the date of delivery.</li>
-              <li className="my-3"><strong>DInternational Purchases:</strong>D 18 months from the date of delivery.</li>
+              <li className="my-3"><strong>International Purchases:</strong>18 months from the date of delivery.</li>
             </ul>
             <p>For both domestic and international buyers, the Warranty may be extended through an <strong>Extended Warranty Plan </strong>purchased separately.</p>
             <ul className="mt-4">
@@ -457,7 +457,8 @@ export default function Web() {
             </ul>
              
           </div>
-        ),},
+        ),
+      },
       {
         title: "11. Important Notes",
         content: (
@@ -554,11 +555,11 @@ export default function Web() {
           {/* Accordions */}
           <div className="w-full rounded-md border border-[#FFFFFF1A] ">
             {activeTab === 0 || activeTab === 1 ? (
-              accordionData[activeTab]?.map((item, index) => (
+              
                 accordionData[activeTab]?.map((item, index) => (
                   <Accordion key={index} title={item.title} content={item.content} defaultOpen={index === 0} />
                 ))
-              ))
+              
             ) : (
               <form className="space-y-4  text-white">
                 <div className="grid gap-5 p-6">

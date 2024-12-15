@@ -6,10 +6,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { signUp, SignUpPayload } from "services/authService"
 
-interface LoginResponse {
-  id: string
-  token: string
-}
+
 
 const Page: React.FC = () => {
   const [formData, setFormData] = useState<SignUpPayload>({

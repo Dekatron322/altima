@@ -12,33 +12,142 @@ export default function Web() {
   const faqData = [
     {
       title: "1. Overview",
-      content:
-        "We may collect the following types of information ▪️Personal Information: Name, email address, phone number, shipping address, and payment details necessary for processing your preorder. ▪️Device Information: IP address, browser type, operating system, and other technical data to enhance user experience and improve website performance.▪️Usage Data: Information on how you use our website, such as page views and navigation patterns.",
+      content: (
+        <div>
+          <p>
+          The proper installation of Altima Core and Altima Elite products (&quot;Product&quot;) is crucial to ensure optimal performance and functionality. This Installation Guide & Policy outlines the installation options, recommendations, and terms to assist buyers (&quot;Customers&quot;) with setting up their Altima product.
+          </p>
+        </div>
+      ),
     },
     {
       title: "2. Installation Options",
-      content:
-        "To cancel your pre-order, please reach out to our support team at [ *support email* ] or call us at [ *support phone number* ]. Alternatively, you can log in to your account and follow the instructions under the My Orders section to cancel.",
+      content: (
+        <div>
+          
+          <ul className="grid gap-3">
+            <p className="font-bold my-3">2.1 Professional Installation (Recommended)
+            </p>
+            <li><strong>◾ Certified Installers:</strong>  We highly recommend using one of our certified installers to ensure your Altima product is set up correctly and integrated seamlessly with your existing home systems.</li>
+            <li><strong>◾ Benefits:</strong></li>
+            <li className="px-2"><strong>▪️ Expert Setup:</strong> Proper installation of the smart lock mechanism and any integration with smart home systems.</li>
+            <li className="px-2"><strong>▪️ Warranty Protection:</strong> Ensures your Warranty remains valid and reduces the risk of damage or malfunctions.</li>
+            <li><strong>◾ Cost:</strong>  Installation fees vary by location and will be communicated at the time of booking.
+            </li>
+          </ul>
+          
+          <ul className="mt-4 grid gap-3">
+            <p className="font-bold">2.2 Self-Installation</p>
+            <p>For tech-savvy customers, we provide a detailed self-installation guide and support.</p>
+            <li><strong>Requirements:</strong> Basic tools, a stable Wi-Fi connection (for Altima Elite), and adherence to safety precautions outlined in the guide.</li>
+            <li><strong>Warranty Note:</strong> Incorrect self-installation may void certain Warranty provisions.</li>
+          </ul>
+        </div>
+      ),
     },
     {
       title: "3. Installation Process",
-      content:
-        "The pre-order process is simple. Select your preferred Altima model (Core or Elite), customize your door with the options you need, review the details, and place a 30% deposit to secure your order. We’ll keep you informed as your order progresses toward delivery.",
+      content: (
+        <div>
+          
+          <ul className="grid gap-3">
+            <p className="font-bold my-3">3.1 Preparation Steps
+            </p>
+            <li><strong>1. Unpack the Product:</strong> Carefully unpack all components and ensure you have all items listed in the included inventory sheet.
+            </li>
+            <li className="px-2"><strong>2. Read the Manual:</strong> Review the user manual thoroughly to familiarize yourself with the components and installation steps.
+            </li>
+            <li className="px-2"><strong>3. Check Requirements:</strong> Ensure the door frame and surrounding structure are compatible with the Product's specifications.
+            </li>
+          </ul>
+          
+          
+          <ul className="mt-4 grid gap-3">
+            <p className="font-bold">3.2 Installation Steps for Altima Core</p>
+            
+            <li><strong>1. Mounting the Metal Door:</strong> Follow the instructions for securely mounting the door to the frame.
+            </li>
+            <li><strong>2. Smart Lock Installation:</strong>  Align the lock mechanism and attach it to the door as per the guide.</li>
+            <li><strong>3. Testing:</strong>   Test the lock to ensure it operates smoothly, and check for proper alignment.</li>
+          </ul>
+          <ul className="mt-4 grid gap-3">
+            <p className="font-bold">3.3 Installation Steps for Altima Elite</p>
+            
+            <li><strong>1. Follow Core Steps:</strong> Complete the steps listed for Altima Core.
+            </li>
+            <li><strong>2. Smart Home Integration:</strong> Connect the Altima Elite to your home Wi-Fi network and integrate it with your smart home system (e.g., Alexa or Google Assistant).
+            </li>
+            <li><strong>3. Software Setup:</strong> Use the Altima mobile app to customize settings and enable features such as voice control and energy management.
+            </li>
+            <li><strong>4. Final Testing:</strong> Conduct a full functionality test, including biometric lock access, remote control, and smart home features.
+            </li>
+          </ul>
+        </div>
+      ),    
     },
     {
       title: "4. Installation Policy",
-      content:
-        "If there are any production delays, we will notify you promptly and provide an updated timeline. You can choose to wait for your order or request a full refund of your deposit if the delay is inconvenient.",
-    },
+      content: (
+        <div>
+          
+          <ul className="grid gap-3">
+            <p className="font-bold my-3">4.1 Booking a Professional Installer
+            </p>
+            <li>◾ To schedule a professional installation, contact our support team or book through our website. A certified technician will be assigned to you based on your location.
+            </li>
+            <li className="px-2"><strong>◾ Rescheduling & Cancellation:</strong>  Notify us at least 24 hours in advance to reschedule or cancel your installation appointment.
+            </li>
+            
+          </ul>
+          
+          
+          <ul className="mt-4 grid gap-3">
+            <p className="font-bold">4.2 Self-Installation Support</p>
+            
+            <li><strong>◾ Support Channels:</strong>  Access our support team via email at [support@smarthavensystems.com] or call +91-XXXX-XXXXXX for guidance.
+            </li>
+            <li><strong>◾ Video Tutorials:</strong> Visit our website for step-by-step video tutorials that simplify the installation process.
+            </li>
+            
+          </ul>
+          
+        </div>
+      ), 
+     },
     {
       title: "5. Important Notes",
-      content:
-        "Our smart doors come with a 1-year standard warranty covering any manufacturing defects. We also offer an optional extended warranty for an additional 2 years, providing a total of 3 years of coverage for extra peace of mind.",
+      content: (
+        <div>
+          
+          <ul className="grid gap-3">
+            <p className="font-bold my-3">4.1 Booking a Professional Installer
+            </p>
+            <li><strong>◾ Warranty Impact:</strong> Improper installation, particularly for self-installed products, may void specific Warranty coverage. We strongly advise using professional installation services to maintain Warranty protection.
+            </li>
+            <li className="px-2"><strong>◾ Safety Precautions:</strong> Always use appropriate tools and follow safety measures when installing the Product. Avoid modifying or altering the components.
+            </li> 
+            <li className="px-2"><strong>◾Compatibility Check:</strong>  Ensure your door frame and home automation system (for Altima Elite) are compatible before starting the installation.
+            </li>
+          </ul>
+        </div>
+      ), 
     },
     {
       title: "6. Customer Support",
-      content:
-        "We provide professional installation support in select areas to ensure your Altima smart door is installed seamlessly. Contact our support team to *discuss installation options in your location and any associated costs.",
+      content: (
+        <div>
+          
+          <ul className="">
+            
+            <p className="mb-3">Our team is here to assist you with any installation-related questions or issues. For assistance, please contact:
+            </p>
+            <li><strong>Email:</strong> warranty@smarthavensystems.com</li>
+            <li className="my-3"><strong>Phone:</strong> +91-XXXX-XXXXXX</li>
+            <li><strong>Hours of Operation:</strong> Monday to Friday, 9:00 AM to 6:00 PM (Local Time)</li>
+          </ul>
+           
+        </div>
+      ),
     },
   ]
 

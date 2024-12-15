@@ -36,25 +36,25 @@ const MainFooter = () => {
             </div>
             <div className="flex flex-col gap-3 max-sm:mb-7">
               <p className="text-[#FFFFFF]">Contact Information</p>
-              <Link href="about-us" className="text-sm text-[#FFFFFF99] underline">
+              <Link href="/about-us" className="text-sm text-[#FFFFFF99] underline">
                 About Us
               </Link>
-              <Link href="comparison" className="text-sm text-[#FFFFFF99] underline">
+              <Link href="/comparison" className="text-sm text-[#FFFFFF99] underline">
                 Altima Comparisons
               </Link>
-              <Link href="warranty-policy" className="text-sm text-[#FFFFFF99] underline">
+              <Link href="/warranty-policy" className="text-sm text-[#FFFFFF99] underline">
                 Altima Warranty Policy
               </Link>
-              <Link href="installation-policy" className="text-sm text-[#FFFFFF99] underline">
+              <Link href="/installation-policy" className="text-sm text-[#FFFFFF99] underline">
                 Altima Installation Policy
               </Link>
-              <Link href="shipping-policy" className="text-sm text-[#FFFFFF99] underline">
+              <Link href="/shipping-policy" className="text-sm text-[#FFFFFF99] underline">
                 Altima Shipping Policy
               </Link>
-              <Link href="privacy-policy" className="text-sm text-[#FFFFFF99] underline">
+              <Link href="/privacy-policy" className="text-sm text-[#FFFFFF99] underline">
                 Privacy Policy
               </Link>
-              <Link href="terms-and-conditions" className="text-sm text-[#FFFFFF99] underline">
+              <Link href="/terms-and-conditions" className="text-sm text-[#FFFFFF99] underline">
                 Terms and Conditions
               </Link>
               <Link href="/refund-and-cancellation" className="text-sm text-[#FFFFFF99] underline">

@@ -1,10 +1,6 @@
 "use client"
-import { Metadata } from "next"
 import Footer from "components/Footer/Footer"
-
-
 import Image from "next/image"
-
 import Navbar from "components/Navbar/Navbar"
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
@@ -15,7 +11,6 @@ import MainFooter from "components/Footer/MainFooter"
 
 export default function Web() {
   
-
   const [quantity, setQuantity] = useState(1000)
   const [isCancelModalOpen, setIsCancelModalOpen] = useState(false)
 
@@ -35,14 +30,59 @@ export default function Web() {
   }
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
-
   const opeDeletenModal = () => setIsDeleteModalOpen(true)
   const closeDeleteModal = () => setIsDeleteModalOpen(false)
-
   const opeCancelModal = () => setIsCancelModalOpen(true)
   const closeCancelModal = () => setIsCancelModalOpen(false)
+  const [orderId, setOrderId] = useState<string | null>(null);
+  const [orderInfo, setOrderInfo] = useState<any>(null); // To store order data
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  // Fetch order details
+  useEffect(() => {
+    const fetchOrderInfo = async (id: string) => {
+      try {
+        const response = await fetch(`https://altima.fyber.site/preorder/preorder/${id}/`);
+        if (!response.ok) {
+          throw new Error("Failed to fetch order details");
+        }
+        const data = await response.json();
+        setOrderInfo(data);
+      } catch (err: any) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    const storedOrderId = localStorage.getItem("orderId");
+    setOrderId(storedOrderId);
+
+    if (storedOrderId) {
+      fetchOrderInfo(storedOrderId);
+    } else {
+      setLoading(false);
+      setError("Order ID not found in localStorage");
+    }
+  }, []);
+
+  const formatDate = (isoDate: string | null | undefined) => {
+    if (!isoDate) return "Invalid date"; // Handle null or undefined
+    const date = new Date(isoDate);
+  
+    if (isNaN(date.getTime())) return "Invalid date"; // Handle invalid date strings
+  
+    return new Intl.DateTimeFormat("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    }).format(date);
+  };
 
   return (
     <section className="bg-black">
@@ -154,7 +194,7 @@ export default function Web() {
                 <p className="  text-xl text-[#FFFFFF]">ORDER DETAILS</p>
               </div>
               <div className="mb-3 flex w-full justify-center">
-                <p className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">ORDER ID: 234567890</p>
+                <p className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">ORDER ID: {orderId}</p>
               </div>
 
               <div className="flex w-full items-center justify-center    bg-[#FFFFFF1A]  p-5 max-sm:grid max-sm:gap-5  md:gap-10">
@@ -183,8 +223,8 @@ export default function Web() {
                   <div className="  w-full    ">
                     <div className="flex flex-col items-center justify-center">
                       <Image src="/Truck.png" width={32} height={32} alt="" />
-                      <p className="pb-8 pt-1 text-sm text-[#FFFFFF99] max-sm:text-xs">Delivered in</p>
-                      <p className="text-lg text-[#FFFFFF] opacity-80 max-sm:text-sm">9th July, 2024</p>
+                      <p className="pb-8 pt-1 text-sm text-[#FFFFFF99] max-sm:text-xs">Ordered in</p>
+                      <p className="text-lg text-[#FFFFFF] opacity-80 max-sm:text-sm">{formatDate(orderInfo?.pub_date)}</p>
                     </div>
                   </div>
                 </div>
@@ -199,55 +239,98 @@ export default function Web() {
                 </div>
               </div>
 
-              <p className="mb-4 text-[#FFFFFF99] max-sm:hidden">Product Details</p>
+              <p className="mb-4 text-[#FFFFFF99] ">Product Details</p>
 
-              <div className="flex h-full flex-col  items-center  bg-[#FFFFFF1A]   max-sm:hidden  max-sm:gap-5 md:gap-10">
+              <div className="flex h-full flex-col  items-center  bg-[#FFFFFF1A]     max-sm:gap-5 md:gap-10">
                 <div className="w-full">
                   <div className="mb-3 flex w-full flex-col gap-4 px-5 pt-5">
-                    <p className="text-[#FFFFFF99]">Product: Altima Elite</p>
-                    <p className="text-[#FFFFFF99]">Size: 96&quot;` x 42&quot;`</p>
-                    <p className="text-[#FFFFFF99]">Frame Type: Reinforced</p>
-                    <p className="text-[#FFFFFF99]">Finish: Glass – Frosted</p>
-                    <p className="text-[#FFFFFF99]">Handle Placement: Right</p>
+                    <p className="text-[#FFFFFF99]">Product: {orderInfo?.product_selection_altima_elite
+                ? "Altima Elite"
+                : "Altima Core"}</p>
+                    <p className="text-[#FFFFFF99]">Size: {orderInfo?.door_spec_manual_size_height}&quot;` x {orderInfo?.door_spec_manual_size_width}&quot;` {orderInfo?.door_spec_manual_size_unit}</p>
+                    <p className="text-[#FFFFFF99]">Frame Type: {orderInfo?.door_spec_frame_type}</p>
+                    <p className="text-[#FFFFFF99]">Finish: Glass – {orderInfo?.door_spec_finish_type}</p>
+                    <p className="text-[#FFFFFF99]">Handle Placement: {orderInfo?.handle_placement}</p>
                     <p className="text-[#FFFFFF99]">Smart Features:</p>
                     <p className="px-3 text-[#FFFFFF99]">
-                      <span className="h-1 w-1 rounded-full"></span>Video Doorbell, Intercom System, Camera, Alexa
-                      Integration, Wi-Fi Connectivity, Battery Backup
+                      <span className="h-1 w-1 rounded-full"></span>{orderInfo?.video_door_bell
+                      ? "Video Doorbell, "
+                      : ""} 
+                    {orderInfo?.intercom_sys
+                      ? "Intercom System, "
+                      : ""}
+                    {orderInfo?.camera
+                      ? "Camera, "
+                      : ""}
+                    {orderInfo?.voice_assisted
+                      ? "Alexa Integration, "
+                      : ""}
+                    {orderInfo?.connectivity}, {orderInfo?.power_source}
                     </p>
                     <p className="text-[#FFFFFF99]">
-                      Security Features: Reinforced Lock, Anti-theft Alarm, Motion Sensor
+                      Security Features: {orderInfo?.re_enforced_lock
+                      ? " Reinforced Lock, "
+                      : ""} 
+                    {orderInfo?.anti_theft
+                      ? "Anti-theft, "
+                      : ""}
+                    {orderInfo?.alarm
+                      ? "Alarm, "
+                      : ""}
+                    {orderInfo?.motion_sensor
+                      ? "Motion Sensor"
+                      : ""}  
                     </p>
-                    <p className="text-[#FFFFFF99]">Installation Type: Residential</p>
-                    <p className="text-[#FFFFFF99]">Preferred Date: December 15, 2024</p>
+                    <p className="text-[#FFFFFF99]">Installation Type: {orderInfo?.type_installation}</p>
+                    <p className="text-[#FFFFFF99]">Preferred Date: {orderInfo?.prefered_installation}</p>
                     <p className="text-[#FFFFFF99]">
-                      Special Instructions: Install on the rear entrance of the property.
+                      Special Instructions: {orderInfo?.special_installation_instruction}
                     </p>
-                    <p className="text-[#FFFFFF99]">Extended Warranty: Yes</p>
-                    <p className="text-[#FFFFFF99]">On-Site Support: Yes</p>
-                    <p className="text-[#FFFFFF99]">Payment Method: Razor Pay</p>
+                    <p className="text-[#FFFFFF99]">Extended Warranty: {orderInfo?.extended_warranty
+                ? "Yes"
+                : "No"}</p>
+                    <p className="text-[#FFFFFF99]">On-Site Support: {orderInfo?.installation_support
+                ? "Yes"
+                : "No"}</p>
+                    <p className="text-[#FFFFFF99]">Payment Method: Stripe Payment</p>
                   </div>
                 </div>
-                <table className="table-fixed border-separate border-spacing-0   text-left text-white 2xl:w-full">
+                <table className="table-fixed border-separate border-spacing-0 sm:hidden text-left text-white w-full">
                   <thead>
-                    <tr className="border">
-                      <th className="border-b border-l border-t border-[#FFFFFF33] bg-[#282828] px-4 py-4 text-sm font-normal opacity-40">
-                        Base Price per Door:
-                      </th>
-                      <th className="border-b border-l border-t border-[#FFFFFF33]  bg-[#282828] px-4 py-4 text-sm font-normal opacity-40">
-                        Tax
-                      </th>
-                    </tr>
+                    
                   </thead>
-                  <tbody className="border-b">
+                  <tbody className="border-b border-t">
                     <tr>
-                      <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">₹17,820</td>
-                      <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">₹1,16,820</td>
+                      <td className="border-b border-t border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm"><span className="opacity-40">Base Price per Door:</span></td>
+                      <td className="border-b border-t border-l border-r border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">{orderInfo?.product_selection_altima_elite
+                ? "₹99,000 "
+                : "₹49,500"}</td>
+                    </tr>
+                    <tr>
+                      <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm"><span className="opacity-40">Tax</span></td>
+                      <td className="border-b  border-l border-r border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">₹17,820</td>
+                    </tr>
+                    <tr>
+                      <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm"><span className="opacity-40">Subtotal</span></td>
+                      <td className="border-b  border-l border-r border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">₹17,820</td>
+                    </tr>
+                    <tr>
+                      <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm"><span className="opacity-40">Quantity</span></td>
+                      <td className="border-b  border-l border-r border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">{orderInfo?.quantity}</td>
+                    </tr>
+                    <tr>
+                      <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm"><span className="opacity-40">Total</span></td>
+                      <td className="border-b  border-l border-r border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">₹{orderInfo?.total.toLocaleString()}</td>
+                    </tr>
+                    <tr>
+                      <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm"><span className="opacity-40">Subtotal</span></td>
+                      <td className="border-b  border-l border-r border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">₹{orderInfo?.deposit_amount.toLocaleString()}</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
 
-              <div className="my-5 flex w-full gap-4">
+              <div className="my-5 max-sm:grid flex w-full gap-4">
                 <motion.a
                   href="/my-account/track-order"
                   whileHover={{ scale: 1.01 }}
@@ -284,7 +367,7 @@ export default function Web() {
 
               <p className="my-4 text-[#FFFFFF99]">Order Summary</p>
 
-              <table className="table-fixed border-separate border-spacing-0   text-left text-white 2xl:w-full">
+              <table className="table-fixed border-separate border-spacing-0 max-sm:hidden   text-left text-white 2xl:w-full">
                 <thead>
                   <tr className="border">
                     <th className="border-b border-l border-t border-[#FFFFFF33] bg-[#282828] px-4 py-4 text-sm font-normal opacity-40">
@@ -310,16 +393,18 @@ export default function Web() {
                 <tbody className="border-b">
                   <tr>
                     <td className="border-b border-l border-[#FFFFFF33]  bg-[#282828] px-4 py-2 text-sm">
-                      {unitPrice.toLocaleString()}
+                    {orderInfo?.product_selection_altima_elite
+                ? "₹99,000 "
+                : "₹49,500"}
                     </td>
                     <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">₹17,820</td>
                     <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">₹1,16,820</td>
-                    <td className="border-b border-l border-[#FFFFFF33]  bg-[#282828] px-4 py-2 text-sm">{quantity}</td>
+                    <td className="border-b border-l border-[#FFFFFF33]  bg-[#282828] px-4 py-2 text-sm">{orderInfo?.quantity}</td>
                     <td className="border-b border-l border-r border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">
-                      {total}
+                    ₹{orderInfo?.total.toLocaleString()}
                     </td>
                     <td className="border-b border-l border-r border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">
-                      ₹70,146
+                      ₹{orderInfo?.deposit_amount.toLocaleString()}
                     </td>
                   </tr>
                 </tbody>

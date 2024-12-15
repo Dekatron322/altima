@@ -9,42 +9,33 @@ import { LiaTimesSolid } from "react-icons/lia"
 import MainFooter from "components/Footer/MainFooter"
 import { getOrderInformation, UserInformationPayload } from "services/orderService"
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface User {
   id: string
   token: string
 }
-
-
 export default function Web() {
   const [addressData, setAddressData] = useState<UserInformationPayload["preorder"][] | null>(null)
-  const [quantity, setQuantity] = useState(1000)
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedOrderId, setSelectedOrderId] = useState<string | null>(null);
   const [status, setStatus] = useState<string>("");
-
-  
-
-  const unitPrice = 500050 // price per unit
-  const total = quantity * unitPrice
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [successMessage, setSuccessMessage] = useState<string | null>(null)
-
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
   const [isCancelModalOpen, setIsCancelModalOpen] = useState(false)
-
   const opeDeletenModal = () => setIsDeleteModalOpen(true)
   const closeDeleteModal = () => setIsDeleteModalOpen(false)
-
   const opeCancelModal = () => setIsCancelModalOpen(true)
   const closeCancelModal = () => setIsCancelModalOpen(false)
-
   const handleOpenModal = (orderId: string) => {
     setSelectedOrderId(orderId);
     setIsModalOpen(true);
   };
+
+  const router = useRouter()
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
@@ -52,7 +43,6 @@ export default function Web() {
     setStatus("");
   };
 
-  // Move the fetchOrders function outside the handleCancelOrder function
   const fetchOrders = async () => {
     try {
       const userString = localStorage.getItem("user");
@@ -95,17 +85,15 @@ export default function Web() {
       // Make the API call to cancel the order
       const response = await axios.put(
         `https://altima.fyber.site/preorder/preorder/${selectedOrderId}/update-status/`,
-        { status: "cancelled" }, // Hardcoded status as "cancelled"
+        { status: "cancelled" }, 
         { headers: { "Content-Type": "application/json" } }
       );
       setSuccessMessage("Order cancelled successfully");
       setLoading(false);
       console.log("Order canceled successfully:", response.data);
   
-      // Close the cancel modal
       handleCloseModal();
   
-      // Refresh the order list to reflect the canceled order
       fetchOrders();
     } catch (error: any) {
       console.error("Error canceling the order:", error);
@@ -128,6 +116,11 @@ export default function Web() {
       return () => clearTimeout(timer) 
     }
   }, [successMessage, error])
+
+  const handleTrackOrder = (selectedOrderId: string) => {
+    localStorage.setItem("orderId", selectedOrderId);
+    router.push(`/my-account/track-order`);
+  };
 
   return (
     <section className="bg-black">
@@ -343,14 +336,14 @@ export default function Web() {
                     >
                       Cancel Order
                     </motion.button>
-                    <motion.a
-                      href="/my-account/track-order"
+                    <motion.button
+                      onClick={() => handleTrackOrder(preorder.id)}
                       whileHover={{ scale: 1.01 }}
                       whileTap={{ scale: 0.9 }}
                       className="font-regular w-full gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm  text-[#FFFFFF] max-sm:py-2 "
                     >
                       Track Order
-                    </motion.a>
+                    </motion.button>
 
                     <motion.button
                       whileHover={{ scale: 1.01 }}
@@ -403,14 +396,14 @@ export default function Web() {
                     )}
 {preorder.status === 'cancelled' && (
 <div className="flex w-full gap-4 max-sm:flex-col">
-                    <motion.a
-                      href="/my-account/track-order"
+                    <motion.button
+                      onClick={() => handleTrackOrder(preorder.id)}
                       whileHover={{ scale: 1.01 }}
                       whileTap={{ scale: 0.9 }}
                       className="font-regular w-full gap-2   rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-center text-sm  text-[#FFFFFF] max-sm:py-2 "
                     >
                       Track Order
-                    </motion.a>
+                    </motion.button>
 
                     <motion.button
                       whileHover={{ scale: 1.01 }}

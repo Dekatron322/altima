@@ -191,7 +191,7 @@ const handleSubmit = async () => {
                   <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">On-Site Support: {orderData?.installation_support
                 ? "Yes"
                 : "No"}</li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Payment Method: Razor {orderData?.payment_confirmation
+                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Payment Method: Stripe {orderData?.payment_confirmation
                 ? "Yes"
                 : "No"}</li>
                 </ul>
