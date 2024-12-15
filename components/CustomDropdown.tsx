@@ -21,15 +21,25 @@ const Dropdown: React.FC<DropdownProps> = ({
 }) => {
   return (
     <div className="mt-3">
-      <label className="text-sm text-white">{label}</label>
+      <label className={`text-sm ${disabled ? 'text-gray-500' : 'text-white'}`}>{label}</label>
       <div
-        className="relative h-[46px] w-full rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3 hover:border-[#1B5EED4D] focus-within:border-[#1B5EED4D] focus-within:bg-[#FBFAFC] max-sm:mb-2 cursor-pointer"
-        onClick={toggleDropdown}
+        className={`relative h-[46px] w-full rounded-lg border-[#FFFFFF1A] border px-3 max-sm:mb-2 cursor-pointer ${
+          disabled
+            ? 'bg-[#282828] opacity-45 cursor-not-allowed' // Disabled styles
+            : ' bg-[#282828] hover:border-[#1B5EED4D] focus-within:border-[#1B5EED4D] focus-within:bg-[#FBFAFC]'
+        }`}
+        onClick={() => {
+          if (!disabled) toggleDropdown();
+        }}
       >
         <div className="flex h-[46px] items-center justify-between">
-          <span className="text-sm text-white">{value || `Select ${label}`}</span>
+          <span className={`text-sm ${disabled ? 'text-gray-500' : 'text-white'}`}>
+            {value || `Select ${label}`}
+          </span>
           <svg
-            className={`w-4 h-4 text-white transition-transform ${isOpen ? 'rotate-180' : ''}`}
+            className={`w-4 h-4 transition-transform ${
+              isOpen ? 'rotate-180' : ''
+            } ${disabled ? 'text-gray-500' : 'text-white'}`}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
@@ -55,7 +65,6 @@ const Dropdown: React.FC<DropdownProps> = ({
                 }}
               >
                 {option}
-                
               </div>
             ))}
           </div>

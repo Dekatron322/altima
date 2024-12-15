@@ -250,6 +250,7 @@ export default function Web() {
   
 
   const frameTypeOptions = ["Slim", "Standard", "Reinforced",];
+  const standardSizeOptions = ["15 x 40", "60 x 90", "45 x 100",];
   const MaterialOptions  = ["Wood", "Glass", "Metal",];
   const connectivityOptions = ["Wi-Fi", "BlueTooth", "Zigbee", "None"];
   const powerOptions = ["AC Connection", "Battery Backup,", "Solar Ready"];
@@ -266,6 +267,14 @@ export default function Web() {
     setFormData((prev) => ({
       ...prev,
       door_spec_frame_type: option,
+    }));
+    setOpenDropdown(null);
+  };
+
+  const handleStandardSizeSelect = (option: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      door_spec_default_size: option,
     }));
     setOpenDropdown(null);
   };
@@ -891,9 +900,9 @@ const toggleDropdown = (dropdown: string) => {
                   </p>
 
                   {/* Altima Core Radio */}
-                  <div className="flex w-full items-center gap-2 pb-5" onClick={() => toggleDoorSpec("Standard Size")}>
+                  <div className="flex w-full items-center gap-2 " onClick={() => toggleDoorSpec("Standard Size")}>
                     <motion.img
-                      src={selectedRadio === "Standard Size" ? "/fluent_radio-button-24-filled.png" : "/radio.png"}
+                      src={selectedDoorSpec === "Standard Size" ? "/fluent_radio-button-24-filled.png" : "/radio.png"}
                       width={18}
                       height={18}
                       alt="Standard Size"
@@ -904,19 +913,15 @@ const toggleDropdown = (dropdown: string) => {
                     <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Standard Size</p>
                   </div>
 
-                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
-                    <div className="flex h-[46px] items-center">
-                      <input
-                        type="text"
-                        name="door_spec_default_size"
-                        value={formData.door_spec_default_size}
-                        onChange={handleChange}
-                        placeholder="Default Size"
-                        className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
-                        style={{ width: "100%", height: "24px" }}
-                      />
-                    </div>
-                  </div>
+                  <Dropdown
+        label="Size"
+        options={standardSizeOptions}
+        value={formData.door_spec_default_size || ''}
+        onSelect={handleStandardSizeSelect}
+        isOpen={openDropdown === 'sizes'}
+        toggleDropdown={() => toggleDropdown('sizes')}
+        disabled={selectedDoorSpec === "Input Dimension"}
+      />
 
                   {/* Altima Elite Radio */}
                   <div
@@ -944,7 +949,11 @@ const toggleDropdown = (dropdown: string) => {
                   <div className="mb-4 grid gap-3 lg:grid-cols-3">
                   <div className="mt-3">
                   <label className=" text-sm text-white">Width</label>
-                    <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                    <div className={`h-[46px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 max-sm:mb-2 ${
+    selectedDoorSpec === "Standard Size"
+      ? "bg-[#282828] opacity-45 cursor-not-allowed" // Background color for disabled state
+      : "bg-[#282828] hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC]"
+  }`}>
                       <div className="flex h-[46px] items-center">
                         <input
                           type="text"
@@ -954,14 +963,18 @@ const toggleDropdown = (dropdown: string) => {
                           placeholder="Width"
                           className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
                           style={{ width: "100%", height: "24px" }}
-                          disabled={selectedRadio === "Altima Core"}
+                          disabled={selectedDoorSpec === "Standard Size"}
                         />
                       </div>
                     </div>{" "}
                     </div>
                     <div className="mt-3">
                     <label className=" text-sm text-white">Height</label>
-                    <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                    <div className={`h-[46px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 max-sm:mb-2 ${
+    selectedDoorSpec === "Standard Size"
+      ? "bg-[#282828] opacity-45 cursor-not-allowed" // Background color for disabled state
+      : "bg-[#282828] hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC]"
+  }`}>
                       
                       <div className="flex h-[46px] items-center">
                         <input
@@ -972,7 +985,7 @@ const toggleDropdown = (dropdown: string) => {
                           placeholder="Height"
                           className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
                           style={{ width: "100%", height: "24px" }}
-                          disabled={selectedRadio === "Altima Core"}
+                          disabled={selectedDoorSpec === "Standard Size"}
                         />
                       </div>
                     </div>
@@ -984,6 +997,7 @@ const toggleDropdown = (dropdown: string) => {
                     onSelect={handleUnitSelect}
                     isOpen={openDropdown === 'unit'}
                     toggleDropdown={() => toggleDropdown('unit')}
+                    disabled={selectedDoorSpec === "Standard Size"}
                   />
                   </div>
 
