@@ -229,13 +229,7 @@ export default function Web() {
                   Transform your room with Altima into a minimalist, <br className="max-sm:hidden" /> modern space with
                   ease and speed
                 </p>
-                {/* <motion.button
-                  className="font-regular rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-3 max-sm:text-sm"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  Pre-Order now
-                </motion.button> */}
+                
               </div>
               <div className="flex items-center justify-center gap-4 max-sm:grid max-sm:grid-cols-1">
                 <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10  max-sm:p-5 md:h-[263px] md:w-[347px]">
@@ -286,10 +280,10 @@ export default function Web() {
         </div>
       </section>
 
-      <section id="specifications" className="paddings   w-full bg-[#151515] max-sm:px-3 ">
+      <section id="specifications" className="paddings items-center justify-center flex  w-full bg-[#151515] max-sm:px-3 ">
         <div className="  w-full justify-between    md:py-10">
           <div className="flex w-full justify-between gap-10  sm:flex">
-            <div>
+            <div className="flex flex-col w-full justify-center"> 
               <p className="font-regular   text-center  text-2xl  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">
                 Specifications
               </p>
@@ -304,30 +298,16 @@ export default function Web() {
                 <br className="max-sm:hidden" />
                 hub, offering unmatched control, security, and energy management capabilities.
               </p>
-              <div className="grid w-full rounded-2xl bg-[#080808] p-3 max-sm:p-1">
+              {/* <div className="grid w-full rounded-2xl bg-[#080808] p-3 max-sm:p-1">
                 <Image src="/video.png" width={1312} height={60} alt="" className="p-2 max-sm:hidden" />
                 <Image src="/doorVid.png" width={1312} height={60} alt="" className="p-1 md:hidden" />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
       </section>
 
-      {/* <section id="specifications" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
-        <div className="  w-full     py-10">
-          <div className="flex flex-col items-center justify-center">
-            <p className="font-regular  mb-6 flex  text-5xl  text-[#FFFFFF] max-md:text-lg">Modern, Stylish, Unique</p>
-            <motion.a
-              href="/preorder"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="font-regular flex  gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-xs "
-            >
-              Pre-Order now
-            </motion.a>
-          </div>
-        </div>
-      </section> */}
+      
 
       <section id="other-products" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
         <div className="  w-full justify-between md:py-10">
