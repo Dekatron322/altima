@@ -79,6 +79,12 @@ export default function Web() {
     }
   }
 
+  const [openIndex, setOpenIndex] = useState<number>(0)
+
+  const handleToggle = (index: number) => {
+    setOpenIndex(openIndex === index ? -1 : index) // Close if the same index is clicked
+  }
+
   return (
     <section className="bg-black">
       <Navbar />
@@ -672,55 +678,7 @@ export default function Web() {
         </div>
       </section>
 
-      {/* <section id="other-products" className="paddings  w-full bg-[#151515] max-sm:px-3 ">
-        <div className="  w-full justify-between md:py-10">
-          <div className="grid-col-2 grid w-full justify-between gap-20 max-sm:gap-5 sm:flex">
-            <div className="w-[403]">
-              <p className="font-regular flex text-2xl  text-[#FFFFFF99] max-sm:text-lg lg:text-2xl">our Models</p>
-              <p className=" font-regular my-6 text-xl leading-none tracking-tight text-white max-sm:my-3 md:text-xl xl:text-5xl">
-                ALTIMA Elite
-              </p>
-              <div>
-                <div className="flex items-center justify-between bg-[#000000] px-4 py-2 text-black md:max-w-[522px]">
-                  <ul className="list-inside list-disc">
-                    <li className="py-2 text-[#FFFFFF] max-sm:text-xs">Ultimate Smart Home Hub </li>
-                    <li className=" text-[#FFFFFF] max-sm:text-xs">All Pro features, plus:</li>
-                  </ul>
-
-                  <p className="text-2xl text-[#FF4F45] max-sm:text-lg">₹80,000</p>
-                </div>
-              </div>
-              <ul className="mt-6 list-inside list-disc md:mb-10">
-                <li className="pb-2 text-[#FFFFFF99] max-sm:text-xs">15" 4K touchscreen with haptic feedback</li>
-                <li className="pb-2 text-[#FFFFFF99] max-sm:text-xs">Comprehensive smart home ecosystem control</li>
-                <li className="pb-2 text-[#FFFFFF99] max-sm:text-xs">Facial recognition and NFC access</li>
-                <li className="pb-2 text-[#FFFFFF99] max-sm:text-xs">4K camera with AI-powered motion detection</li>
-                <li className="pb-2 text-[#FFFFFF99] max-sm:text-xs">Solar-powered backup battery</li>
-              </ul>
-
-              <motion.a
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="font-regular   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm "
-                href="/preorder"
-              >
-                Pre-Order now
-              </motion.a>
-            </div>
-            <div>
-              <motion.img
-                src="https://github.com/Dekatron322/altima/blob/main/public/altimaCore.png?raw=true"
-                width={633}
-                height={583}
-                alt=""
-                initial={{ scale: 1.2, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1, ease: "easeIn" }}
-              />
-            </div>
-          </div>
-        </div>
-      </section> */}
+      
 
       <section id="other-products" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
         <div className="w-full     py-10">
@@ -843,7 +801,7 @@ export default function Web() {
 
           <div className=" w-full rounded-md border border-[#FFFFFF1A] ">
             {faqData.map((faq, index) => (
-              <Accordion key={index} title={faq.title} content={faq.content} />
+              <Accordion key={index} title={faq.title} content={faq.content} isOpen={openIndex === index} onToggle={() => handleToggle(index)}/>
             ))}
           </div>
         </div>
