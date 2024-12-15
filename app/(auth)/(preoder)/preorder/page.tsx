@@ -1338,6 +1338,38 @@ const toggleDropdown = (dropdown: string) => {
                 <p className="px-5  text-lg font-medium text-white">Payment Information</p>
                 <p className="px-5  pb-3 text-sm text-white">Total Cost Calculation:</p>
 
+                <table className="table-fixed border-separate border-spacing-0 sm:hidden text-left text-white w-full">
+                  <thead>
+                    
+                  </thead>
+                  <tbody className="border-b border-t">
+                    <tr>
+                      <td className="border-b border-t border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm"><span className="opacity-40">Base Price per Door:</span></td>
+                      <td className="border-b border-t border-l border-r border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">{unitPrice.toLocaleString()}</td>
+                    </tr>
+                    <tr>
+                      <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm"><span className="opacity-40">Tax</span></td>
+                      <td className="border-b  border-l border-r border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">₹17,820</td>
+                    </tr>
+                    <tr>
+                      <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm"><span className="opacity-40">Subtotal</span></td>
+                      <td className="border-b  border-l border-r border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">₹{subtotal.toLocaleString()}</td>
+                    </tr>
+                    <tr>
+                      <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm"><span className="opacity-40">Quantity</span></td>
+                      <td className="border-b  border-l border-r border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">{quantity}</td>
+                    </tr>
+                    <tr>
+                      <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm"><span className="opacity-40">Total</span></td>
+                      <td className="border-b  border-l border-r border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">{formData.total}</td>
+                    </tr>
+                    <tr>
+                      <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm"><span className="opacity-40">30% Advance</span></td>
+                      <td className="border-b  border-l border-r border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm"> ₹{formData.deposit_amount}</td>
+                    </tr>
+                  </tbody>
+                </table>
+
                 <table className="table-fixed border-separate border-spacing-0 px-5  text-left text-white max-sm:hidden 2xl:w-full">
                   <thead>
                     <tr className="border">
