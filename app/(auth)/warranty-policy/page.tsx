@@ -40,6 +40,7 @@ export default function Web() {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index))
   }
 
+
   // Accordion data for each tab
   const accordionData = [
     [
@@ -483,6 +484,12 @@ export default function Web() {
   // Tab labels
   const tabs = ["Warranty", "Extended Warranty", "Warranty Claim Form"]
 
+  const [openIndex, setOpenIndex] = useState<number>(0)
+
+  const handleToggle = (index: number) => {
+    setOpenIndex(openIndex === index ? -1 : index) // Close if the same index is clicked
+  }
+
   return (
     <section className="bg-black">
       <Navbar />
@@ -557,7 +564,7 @@ export default function Web() {
             {activeTab === 0 || activeTab === 1 ? (
               
                 accordionData[activeTab]?.map((item, index) => (
-                  <Accordion key={index} title={item.title} content={item.content} defaultOpen={index === 0} />
+                  <Accordion key={index} title={item.title} content={item.content} isOpen={openIndex === index} onToggle={() => handleToggle(index)} />
                 ))
               
             ) : (

@@ -1,7 +1,7 @@
 "use client"
 import Footer from "components/Footer/Footer"
 import Navbar from "components/Navbar/Navbar"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import Accordion from "components/Accordion/Accordion"
 import { motion } from "framer-motion"
 import MainFooter from "components/Footer/MainFooter"
@@ -116,9 +116,10 @@ export default function Web() {
     },
   ]
 
-  const boxVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1 },
+  const [openIndex, setOpenIndex] = useState<number>(0)
+
+  const handleToggle = (index: number) => {
+    setOpenIndex(openIndex === index ? -1 : index) // Close if the same index is clicked
   }
 
   return (
@@ -189,7 +190,8 @@ export default function Web() {
 
             <div className=" w-full rounded-md border border-[#FFFFFF1A] ">
               {faqData.map((faq, index) => (
-                <Accordion key={index} title={faq.title} content={faq.content} defaultOpen={index === 0} />
+                <Accordion key={index} title={faq.title} content={faq.content} isOpen={openIndex === index}
+                onToggle={() => handleToggle(index)}/>
               ))}
             </div>
           </div>
