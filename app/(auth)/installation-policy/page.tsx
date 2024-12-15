@@ -57,7 +57,7 @@ export default function Web() {
             </li>
             <li className="px-2"><strong>2. Read the Manual:</strong> Review the user manual thoroughly to familiarize yourself with the components and installation steps.
             </li>
-            <li className="px-2"><strong>3. Check Requirements:</strong> Ensure the door frame and surrounding structure are compatible with the Product's specifications.
+            <li className="px-2"><strong>3. Check Requirements:</strong> Ensure the door frame and surrounding structure are compatible with the Product&apos;s specifications.
             </li>
           </ul>
           
