@@ -250,7 +250,7 @@ export default function Web() {
   
 
   const frameTypeOptions = ["Slim", "Standard", "Reinforced",];
-  const standardSizeOptions = ["15 x 40", "60 x 90", "45 x 100",];
+  const standardSizeOptions = ["80 x 36", "84 x 36 ", "80 x 42", "96 x 36", "96 x 42"];
   const MaterialOptions  = ["Wood", "Glass", "Metal",];
   const connectivityOptions = ["Wi-Fi", "BlueTooth", "Zigbee", "None"];
   const powerOptions = ["AC Connection", "Battery Backup,", "Solar Ready"];
