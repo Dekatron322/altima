@@ -12,48 +12,107 @@ export default function Web() {
   const faqData = [
     {
       title: "1. Information We Collect",
-      content:
-        "We may collect the following types of information ▪️Personal Information: Name, email address, phone number, shipping address, and payment details necessary for processing your preorder. ▪️Device Information: IP address, browser type, operating system, and other technical data to enhance user experience and improve website performance.▪️Usage Data: Information on how you use our website, such as page views and navigation patterns.",
+      content: (
+        <div>
+          <ul className="grid gap-3">
+            <li><strong>▪️ Personal Information:</strong>  Name, email address, phone number, shipping address, and payment details necessary for processing your preorder.
+            </li>
+            <li className="px-2"><strong>▪️ Device Information:</strong> IP address, browser type, operating system, and other technical data to enhance user experience and improve website performance.
+            </li> 
+            <li className="px-2"><strong>▪️ Usage Data:</strong> Information on how you use our website, such as page views and navigation patterns.
+            </li>
+          </ul>
+        </div>
+      ), 
     },
     {
       title: "2. How We Use Your Information",
-      content:
-        "To cancel your pre-order, please reach out to our support team at [ *support email* ] or call us at [ *support phone number* ]. Alternatively, you can log in to your account and follow the instructions under the My Orders section to cancel.",
+      content: (
+        <div>
+          <ul className="grid gap-3">
+            <li><strong>▪️ Process Preorders:</strong> Manage your preorder, confirm your purchase, and handle payment transactions.
+            </li>
+            <li className="px-2"><strong>▪️ Customer Support:</strong> Respond to your inquiries, provide updates, and offer support for your order.
+            </li> 
+            <li className="px-2"><strong>▪️ Communication:</strong>  Send you order-related updates, marketing offers (if opted in), and any necessary information about your preorder.
+            </li>
+            <li className="px-2"><strong>▪️ Improvement:</strong>  Analyze usage data to improve website functionality and enhance the overall user experience.
+            </li>
+          </ul>
+        </div>
+      ),
     },
     {
       title: "3. Sharing Your Information",
-      content:
-        "The pre-order process is simple. Select your preferred Altima model (Core or Elite), customize your door with the options you need, review the details, and place a 30% deposit to secure your order. We’ll keep you informed as your order progresses toward delivery.",
+      content: (
+        <div>
+          <ul className="grid gap-3">
+            <p>We do not sell or rent your personal information. We may share information:
+            </p>
+            <li><strong>▪️ With Service Providers:</strong> Third-party companies assisting with payment processing, shipping, and data hosting, who adhere to strict confidentiality agreements.
+            </li>
+            <li className="px-2"><strong>▪️ Customer Support:</strong> Respond to your inquiries, provide updates, and offer support for your order.
+            </li> 
+            <li className="px-2"><strong>▪️ For Legal Requirements:</strong> When required by law or in response to valid legal processes, such as a court order, subpoena, or government request.
+            </li>
+          </ul>
+        </div>
+      ),
     },
     {
       title: "4. Data Security",
       content:
-        "If there are any production delays, we will notify you promptly and provide an updated timeline. You can choose to wait for your order or request a full refund of your deposit if the delay is inconvenient.",
+        "We implement reasonable security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. These measures include secure data encryption, restricted access controls, and regular security audits.",
     },
     {
       title: "5. Cookies and Tracking Technologies",
       content:
-        "Our smart doors come with a 1-year standard warranty covering any manufacturing defects. We also offer an optional extended warranty for an additional 2 years, providing a total of 3 years of coverage for extra peace of mind.",
+        "Our website uses cookies to enhance your experience, monitor website traffic, and personalize content. You can adjust your browser settings to refuse cookies; however, this may limit certain website functionalities.",
     },
     {
       title: "6. Your Rights",
-      content:
-        "We provide professional installation support in select areas to ensure your Altima smart door is installed seamlessly. Contact our support team to *discuss installation options in your location and any associated costs.",
+      content: (
+        <div>
+          <ul className="grid gap-3">
+            <p>You have the right to:</p>
+            <li><strong>▪️ Access</strong> your personal information.
+            </li>
+            <li className="px-2"><strong>▪️ Correct</strong>  any inaccurate or incomplete information.
+            </li> 
+            <li className="px-2"><strong>▪️ Request Deletion</strong>  of your data, where applicable and in compliance with legal requirements.
+            </li>
+            <li className="px-2"><strong>▪️ Withdraw Consent</strong>   for marketing communications at any time by contacting us.
+            </li>
+          </ul>
+        </div>
+      ),
     },
     {
       title: "7. Third-Party Links",
       content:
-        "Yes, we offer flexible financing and payment plans to make your purchase more manageable. Reach out to our finance department at [ *finance contact email/phone* ] for more details and to find a plan that suits your needs.",
+        "Our website may contain links to third-party sites. This Privacy Policy does not apply to these sites, and we encourage you to review their policies regarding data collection and privacy.",
     },
     {
       title: "8. Policy Updates",
       content:
-        "Yes, we offer flexible financing and payment plans to make your purchase more manageable. Reach out to our finance department at [ *finance contact email/phone* ] for more details and to find a plan that suits your needs.",
+        "We may update this Privacy Policy occasionally. Any changes will be posted on this page, and significant updates will be communicated via email or a prominent notice on our website.",
     },
     {
       title: "9. Contact Us",
-      content:
-        "Yes, we offer flexible financing and payment plans to make your purchase more manageable. Reach out to our finance department at [ *finance contact email/phone* ] for more details and to find a plan that suits your needs.",
+      content: (
+        <div>
+          
+          <ul className="">
+            
+            <p className="mb-3">Our team is here to assist you with any installation-related questions or issues. For assistance, please contact:
+            </p>
+            <li><strong>Email:</strong> warranty@smarthavensystems.com</li>
+            <li className="my-3"><strong>Phone:</strong> 022-6971-8365</li>
+            <li><strong>Address:</strong> Seawoods, Navi Mumbai 400706, India</li>
+          </ul>
+           
+        </div>
+      ),
     },
   ]
 

@@ -142,7 +142,7 @@ export default function Web() {
             <p className="mb-3">Our team is here to assist you with any installation-related questions or issues. For assistance, please contact:
             </p>
             <li><strong>Email:</strong> warranty@smarthavensystems.com</li>
-            <li className="my-3"><strong>Phone:</strong> +91-XXXX-XXXXXX</li>
+            <li className="my-3"><strong>Phone:</strong> 022-6971-8365</li>
             <li><strong>Hours of Operation:</strong> Monday to Friday, 9:00 AM to 6:00 PM (Local Time)</li>
           </ul>
            
