@@ -19,8 +19,6 @@ const Page: React.FC = () => {
 
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [showSuccessNotification, setShowSuccessNotification] = useState(false)
-  const [showErrorNotification, setShowErrorNotification] = useState(false)
   const [successMessage, setSuccessMessage] = useState<string | null>(null)
 
   const router = useRouter() // Initialize the router
@@ -57,15 +55,15 @@ const Page: React.FC = () => {
 
   // UseEffect to automatically hide notifications after a timeout
   useEffect(() => {
-    if (showSuccessNotification || showErrorNotification) {
+    if (successMessage || error) {
       const timer = setTimeout(() => {
-        setShowSuccessNotification(false)
-        setShowErrorNotification(false)
-      }, 5000) // Notifications will disappear after 5 seconds
+        setSuccessMessage(null)
+        setError(null)
+      }, 3000) // Notifications will disappear after 5 seconds
 
       return () => clearTimeout(timer) // Clean up the timeout if component unmounts
     }
-  }, [showSuccessNotification, showErrorNotification])
+  }, [successMessage, error])
 
   return (
     <>

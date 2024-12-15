@@ -51,6 +51,7 @@ export interface OrderPayload {
   total?: string
   email_address?: string
   deposit_amount?: string
+  pub_date?: string
 }
 
 export interface UserInformationPayload {
@@ -122,7 +123,7 @@ export const addOrderToUser = async (userId: string, payload: OrderPayload) => {
   return response.data
 }
 
-// New Function: Delete Address Service
+
 export const deleteAddress = async (addressId: string) => {
   const response = await apiClient.delete(`/address/address/${addressId}/`)
   return response.data
@@ -133,8 +134,8 @@ export const getAddress = async (userId: string) => {
   return response.data
 }
 
-// // Edit (Update) Address Service
-// export const editAddress = async (addressId: string, payload: AddressPayload) => {
-//   const response = await apiClient.put(`/address/address/${addressId}/`, payload)
-//   return response.data
-// }
+export const updateOrderStatus = async (orderId: string, status: string) => {
+  const response = await apiClient.put(`/preorder/preorder/${orderId}/update-status/`, { status })
+  return response.data
+}
+

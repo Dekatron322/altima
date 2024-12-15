@@ -1,7 +1,6 @@
 "use client"
 import Footer from "components/Footer/Footer"
-
-
+import axios from "axios";
 import Navbar from "components/Navbar/Navbar"
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
@@ -9,27 +8,29 @@ import { HiChevronDown } from "react-icons/hi2"
 import { LiaTimesSolid } from "react-icons/lia"
 import MainFooter from "components/Footer/MainFooter"
 import { getOrderInformation, UserInformationPayload } from "services/orderService"
+import Image from "next/image";
 
 interface User {
   id: string
   token: string
-  // Add other fields as needed
 }
 
 
 export default function Web() {
   const [addressData, setAddressData] = useState<UserInformationPayload["preorder"][] | null>(null)
   const [quantity, setQuantity] = useState(1000)
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedOrderId, setSelectedOrderId] = useState<string | null>(null);
+  const [status, setStatus] = useState<string>("");
 
-  // Handlers for increment and decrement
-  const handleIncrement = () => setQuantity(quantity + 1)
-  const handleDecrement = () => {
-    if (quantity > 0) setQuantity(quantity - 1) // Prevent negative quantity
-  }
+  
 
   const unitPrice = 500050 // price per unit
   const total = quantity * unitPrice
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const [successMessage, setSuccessMessage] = useState<string | null>(null)
 
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
   const [isCancelModalOpen, setIsCancelModalOpen] = useState(false)
@@ -40,38 +41,93 @@ export default function Web() {
   const opeCancelModal = () => setIsCancelModalOpen(true)
   const closeCancelModal = () => setIsCancelModalOpen(false)
 
-  // Fetch the logged-in user's address
-  useEffect(() => {
-    const fetchOrders = async () => {
-      try {
-        const userString = localStorage.getItem("user")
-        if (!userString) {
-          console.error("No user data found in localStorage.")
-          return
-        }
+  const handleOpenModal = (orderId: string) => {
+    setSelectedOrderId(orderId);
+    setIsModalOpen(true);
+  };
 
-        const parsedUser = JSON.parse(userString) as User
-        const userId = parsedUser?.id
-        if (!userId) {
-          console.error("User ID is not present in the stored user data.")
-          return
-        }
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedOrderId(null);
+    setStatus("");
+  };
 
-        const userDetails = await getOrderInformation(userId)
-        console.log("Fetched Address Details:", userDetails)
-
-        if (Array.isArray(userDetails.preorders)) {
-          setAddressData(userDetails.preorders)
-        } else {
-          console.error("Address data is not in the expected format.")
-        }
-      } catch (error) {
-        console.error("Error fetching address information:", error)
+  // Move the fetchOrders function outside the handleCancelOrder function
+  const fetchOrders = async () => {
+    try {
+      const userString = localStorage.getItem("user");
+      if (!userString) {
+        console.error("No user data found in localStorage.");
+        return;
       }
-    }
 
-    fetchOrders()
-  }, [])
+      const parsedUser = JSON.parse(userString) as User;
+      const userId = parsedUser?.id;
+      if (!userId) {
+        console.error("User ID is not present in the stored user data.");
+        return;
+      }
+
+      const userDetails = await getOrderInformation(userId);
+      console.log("Fetched Order Details:", userDetails);
+
+      if (Array.isArray(userDetails.preorders)) {
+        setAddressData(userDetails.preorders);
+      } else {
+        console.error("Order data is not in the expected format.");
+      }
+    } catch (error) {
+      console.error("Error fetching order information:", error);
+    }
+  };
+
+  const handleCancelOrder = async () => {
+    setLoading(true)
+    setError(null)
+    setSuccessMessage(null)
+  
+    if (!selectedOrderId) {
+      console.error("Order ID is missing.");
+      return;
+    }
+  
+    try {
+      // Make the API call to cancel the order
+      const response = await axios.put(
+        `https://altima.fyber.site/preorder/preorder/${selectedOrderId}/update-status/`,
+        { status: "cancelled" }, // Hardcoded status as "cancelled"
+        { headers: { "Content-Type": "application/json" } }
+      );
+      setSuccessMessage("Order cancelled successfully");
+      setLoading(false);
+      console.log("Order canceled successfully:", response.data);
+  
+      // Close the cancel modal
+      handleCloseModal();
+  
+      // Refresh the order list to reflect the canceled order
+      fetchOrders();
+    } catch (error: any) {
+      console.error("Error canceling the order:", error);
+      setError(error.response?.data?.message || "Error canceling the order");
+      setLoading(false);
+    }
+  };
+  
+  useEffect(() => {
+    fetchOrders();
+  }, []);
+
+  useEffect(() => {
+    if (successMessage || error) {
+      const timer = setTimeout(() => {
+        setSuccessMessage(null)
+        setError(null)
+      }, 3000) 
+
+      return () => clearTimeout(timer) 
+    }
+  }, [successMessage, error])
 
   return (
     <section className="bg-black">
@@ -197,7 +253,19 @@ export default function Web() {
                 </div>
                 <div className="w-full ">
                   <div className="mb-5 flex gap-2 max-sm:w-full max-sm:flex-col max-sm:items-center max-sm:justify-center">
-                  {preorder.status === 'pending' && (
+                  {preorder.status === 'processing order' && (
+  <motion.img
+    src="/SpinnerGap.png"
+    width={32}
+    height={32}
+    alt="Loading spinner"
+    initial={{ scale: 1.2, opacity: 0 }}
+    animate={{ scale: 1, opacity: 1 }}
+    transition={{ duration: 1, ease: "easeIn" }}
+  />
+)}
+
+{preorder.status === 'pending' && (
   <motion.img
     src="/SpinnerGap.png"
     width={32}
@@ -233,8 +301,9 @@ export default function Web() {
   />
 )}
                     <p className=" text-lg text-[#FFFFFF] max-sm:text-center capitalize">{preorder.status}</p>
-
+                    {preorder.status === 'processing order' && (
                     <p className="text-center text-sm text-[#FFFFFF99]">Estimated delivery: Sat, August 26</p>
+                    )}
                   </div>
                   {preorder.product_selection_altima_elite === true && (
                   <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:text-lg lg:text-2xl">
@@ -249,10 +318,6 @@ export default function Web() {
                 )}
 
                   <ul className="mt-22 list-inside ">
-                    {/* <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    Specifications : Altima Core Specifications
-                  </li> */}
-                    {/* <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Colour : Grey Colour</li> */}
                     <li className="pb-1 text-sm text-[#FFFFFF99] max-sm:text-xs">
                       Address : {preorder.shipping_address_street} , {preorder.email_address}
                     </li>
@@ -260,8 +325,7 @@ export default function Web() {
                     
                   </ul>
 
-                  
-                  {preorder.status === 'pending' && (
+                  {preorder.status === 'processing order' &&  (
                   <div className="flex w-full gap-4 max-sm:flex-col">
                     <motion.a
                       href="/my-account/track-order"
@@ -275,7 +339,46 @@ export default function Web() {
                       whileHover={{ scale: 1.01 }}
                       whileTap={{ scale: 0.9 }}
                       className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
+                      onClick={() => handleOpenModal(preorder.id)}
+                    >
+                      Cancel Order
+                    </motion.button>
+                    <motion.a
+                      href="/my-account/track-order"
+                      whileHover={{ scale: 1.01 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="font-regular w-full gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm  text-[#FFFFFF] max-sm:py-2 "
+                    >
+                      Track Order
+                    </motion.a>
+
+                    <motion.button
+                      whileHover={{ scale: 1.01 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
                       onClick={opeCancelModal}
+                    >
+                      View Details
+                    </motion.button>
+                  </div>
+                    )}
+
+                  
+                  {preorder.status === 'pending' &&  (
+                  <div className="flex w-full gap-4 max-sm:flex-col">
+                    <motion.a
+                      href="/my-account/track-order"
+                      whileHover={{ scale: 1.01 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="font-regular w-full gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm  text-[#FFFFFF] max-sm:py-2 "
+                    >
+                      Change Address
+                    </motion.a>
+                    <motion.button
+                      whileHover={{ scale: 1.01 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
+                      onClick={() => handleOpenModal(preorder.id)}
                     >
                       Cancel Order
                     </motion.button>
@@ -360,7 +463,7 @@ export default function Web() {
             <p className="w-full text-center text-2xl text-white">Are you sure you want to log out?</p>
             <div className="mt-4 flex gap-2">
               <button className="w-full  rounded-lg border border-[#FFFFFF99] bg-[#FF3B3B] px-4 py-2 text-[#000000]  hover:bg-[#FF3B3B]">
-                Yes, Log Out
+              Yes, Log Out
               </button>
               <button
                 onClick={closeDeleteModal}
@@ -373,20 +476,20 @@ export default function Web() {
         </div>
       )}
 
-      {isCancelModalOpen && (
+{isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#000000] bg-opacity-95">
           <div className="w-full max-w-sm rounded-lg bg-[#151515] p-4 text-white">
             <div className="mb-4 flex w-full items-center">
               <h2 className=" w-full text-center text-[#FFFFFF99]">Cancel Order</h2>
-              <LiaTimesSolid onClick={closeCancelModal} className="cursor-pointer" />
+              <LiaTimesSolid onClick={handleCloseModal} className="cursor-pointer" />
             </div>
             <p className="w-full text-center text-2xl text-white">Are you sure you want to Cancel this order?</p>
             <div className="mt-4 flex gap-2">
-              <button className="w-full  rounded-lg border border-[#FFFFFF99] bg-[#FF3B3B] px-4 py-2 text-[#000000]  hover:bg-[#FF3B3B]">
-                Yes, Cancel
+              <button onClick={handleCancelOrder} className="w-full  rounded-lg border border-[#FFFFFF99] bg-[#FF3B3B] px-4 py-2 text-[#000000]  hover:bg-[#FF3B3B]">
+              {loading ? "Cancelling Order" : "Yes, Cancel" }
               </button>
               <button
-                onClick={closeCancelModal}
+                onClick={handleCloseModal}
                 className="w-full rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-[#ffffff]  hover:bg-[#FF3B3B]"
               >
                 No, Go Back
@@ -397,6 +500,18 @@ export default function Web() {
       )}
 
       <Footer />
+      {successMessage && (
+        <div className="animation-fade-in fixed bottom-16 m-5 flex h-[50px] w-[339px] transform items-center justify-center gap-2 rounded-md border border-[#000000] bg-[#92E3A9] text-[#000000] shadow-[#05420514] md:right-16">
+          <span className="clash-font text-sm text-[#000000]">{successMessage}</span>
+          <Image src="/AuthImages/Star2.svg" width={28.26} height={28.26} alt="dekalo" />
+        </div>
+      )}
+      {error && (
+        <div className="animation-fade-in fixed bottom-16 m-5 flex h-[50px] w-[339px] transform items-center justify-center gap-2 rounded-md border border-[#D14343] bg-[#FEE5E5] text-[#D14343] shadow-[#05420514] md:right-16">
+          <span className="clash-font text-sm text-[#D14343]">{error}</span>
+          <Image src="/AuthImages/failed.png" width={28.26} height={28.26} alt="dekalo" />
+        </div>
+      )}
     </section>
   )
 }

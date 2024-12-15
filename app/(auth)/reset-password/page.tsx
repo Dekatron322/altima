@@ -21,12 +21,6 @@ const Page: React.FC = () => {
   const [otpCode, setOtpCode] = useState<string | null>(null) // State for otpCode
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [showSuccessNotification, setShowSuccessNotification] = useState(false)
-  const [showErrorNotification, setShowErrorNotification] = useState(false)
-  const [isPasswordVisible, setIsPasswordVisible] = useState(false)
-
-  const [showDropdown, setShowDropdown] = useState(false)
-
   const router = useRouter() // Initialize the router
 
   // Fetch otpCode from localStorage when the component mounts
@@ -89,7 +83,7 @@ const Page: React.FC = () => {
       const timer = setTimeout(() => {
         setSuccessMessage(null)
         setError(null)
-      }, 5000)
+      }, 3000)
 
       return () => clearTimeout(timer) // Clean up
     }

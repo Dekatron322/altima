@@ -50,6 +50,7 @@
     "aos": "^2.3.4",
     "class-variance-authority": "^0.7.0",
     "framer-motion": "^11.13.1",
+    "html2pdf.js": "^0.10.2",
     "lodash": "^4.17.21",
     "next": "^14.2.3",
     "next-compose-plugins": "^2.2.1",
