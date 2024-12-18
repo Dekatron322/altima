@@ -7,6 +7,7 @@ import MainFooter from "components/Footer/MainFooter"
 import { addAddressToUser, AddressPayload } from "services/addressService"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
+import NewNav from "components/Navbar/NewNav"
 
 interface User {
   id: string
@@ -133,7 +134,7 @@ export default function Web() {
   return (
     <>
     <section className="bg-black">
-      <Navbar />
+      <NewNav />
 
       <section
         id="other-products"

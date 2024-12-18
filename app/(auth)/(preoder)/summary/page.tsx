@@ -8,6 +8,7 @@ import MainFooter from "components/Footer/MainFooter"
 import Image from "next/image"
 import { OrderPayload } from "services/orderService"
 import Link from "next/link"
+import NewNav from "components/Navbar/NewNav"
 
 export default function Web() {
   const [quantity, setQuantity] = useState(1000)
@@ -133,7 +134,7 @@ const handleSubmit = async () => {
 
   return (
     <section className="bg-[#151515]">
-      <Navbar />
+      <NewNav />
 
       <section className="paddings flex w-full flex-col items-center  justify-center  max-sm:px-3 max-sm:py-20 lg:h-auto lg:py-32">
         <p className="mb-6 text-xl font-bold text-white">Order Summary</p>

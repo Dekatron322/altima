@@ -9,6 +9,7 @@ import { HiChevronDown } from "react-icons/hi2"
 import { deleteAddress, getAddressInformation, UserInformationPayload } from "services/addressService"
 import { LiaTimesSolid } from "react-icons/lia"
 import { useRouter } from "next/navigation"
+import NewNav from "components/Navbar/NewNav"
 
 interface User {
   id: string
@@ -113,7 +114,7 @@ export default function Web() {
 
   return (
     <section className="bg-black">
-      <Navbar />
+      <NewNav />
 
       <section className="paddings  w-full bg-[#080808] max-sm:px-3 max-sm:py-20 lg:min-h-screen lg:py-32">
         <div className="relative mb-5 max-sm:block md:hidden">

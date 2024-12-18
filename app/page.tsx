@@ -10,6 +10,7 @@ import { motion } from "framer-motion"
 import MainFooter from "components/Footer/MainFooter"
 import ImageModal from "components/ImageModal/ImageModal"
 import { useRouter } from "next/navigation"
+import { LiaTimesSolid } from "react-icons/lia"
 
 export default function Web() {
   
@@ -85,6 +86,16 @@ export default function Web() {
     setOpenIndex(openIndex === index ? -1 : index) // Close if the same index is clicked
   }
 
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false)
+
+  const openVideoModal = () => {
+    setIsVideoModalOpen(true)
+  }
+
+  const closeVideoModal = () => {
+    setIsVideoModalOpen(false)
+  }
+
   return (
     <section className="bg-black">
       <Navbar />
@@ -138,6 +149,7 @@ export default function Web() {
                   className="font-regular flex items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-[#FFFFFF99] bg-transparent px-4 py-3 uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-2 max-sm:text-xs "
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
+                  onClick={openVideoModal} // Open modal
                 >
                   Watch Video
                   <Image src="/youtube.png" width={24} height={24} alt="" />
@@ -832,6 +844,41 @@ export default function Web() {
       </section>
      
       <ImageModal isOpen={isModalOpen} images={images} currentIndex={currentImageIndex} onClose={closeModal} />
+      {isVideoModalOpen && (
+        <motion.div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#151515] bg-opacity-90"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={closeVideoModal}
+        >
+          <motion.div
+            className="relative bg-[#151515] bg-opacity-90 rounded-lg shadow-lg p-6 max-w-xl w-full"
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0.8 }}
+            onClick={(e) => e.stopPropagation()} // Prevent modal close on inner click
+          >
+            <button
+              className="absolute top-2 right-2 text-white bg-[#FF3B30] rounded-full p-3"
+              onClick={closeVideoModal}
+            >
+              <LiaTimesSolid onClick={closeVideoModal} className="cursor-pointer" />
+            </button>
+            <motion.video
+    src="/WhatsApp Video 2024-12-12 at 15.04.29.mp4"
+    width={645}
+    height={555}
+    autoPlay
+    loop
+    muted
+    initial={{ scale: 1.2, opacity: 0 }}
+    animate={{ scale: 1, opacity: 1 }}
+    transition={{ duration: 1, ease: "easeIn" }}
+  />
+          </motion.div>
+        </motion.div>
+      )}
 
       <MainFooter />
 

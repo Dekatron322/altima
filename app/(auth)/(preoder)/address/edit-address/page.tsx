@@ -7,6 +7,7 @@ import MainFooter from "components/Footer/MainFooter"
 import Footer from "components/Footer/Footer"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import NewNav from "components/Navbar/NewNav"
 
 const EditAddress = () => {
   const [addressId, setAddressId] = useState<string | null>(null)
@@ -90,7 +91,7 @@ const EditAddress = () => {
 
   return (
     <section className="bg-black">
-      <Navbar />
+      <NewNav />
 
       <section className="paddings  w-full bg-[#080808] max-sm:px-3 max-sm:py-20 lg:h-auto lg:py-32">
         <div className="flex max-md:hidden">

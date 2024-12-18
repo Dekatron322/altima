@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { HiChevronDown } from "react-icons/hi2"
 import { LiaTimesSolid } from "react-icons/lia"
 import MainFooter from "components/Footer/MainFooter"
+import NewNav from "components/Navbar/NewNav"
 
 export default function Web() {
   const [activeTab, setActiveTab] = useState("info")
@@ -31,7 +32,7 @@ export default function Web() {
 
   return (
     <section className="bg-black">
-      <Navbar />
+      <NewNav />
       <section className="paddings w-full gap-5 bg-[#080808] max-sm:px-3 max-sm:py-10 md:flex lg:min-h-screen lg:py-32">
         <div className="relative mb-5 max-sm:block md:hidden">
           <button

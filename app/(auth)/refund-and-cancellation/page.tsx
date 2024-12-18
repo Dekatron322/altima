@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 import Accordion from "components/Accordion/Accordion"
 import { motion } from "framer-motion"
 import MainFooter from "components/Footer/MainFooter"
+import NewNav from "components/Navbar/NewNav"
 
 export default function Web() {
 
@@ -66,7 +67,7 @@ export default function Web() {
 
   return (
     <section className="bg-black">
-      <Navbar />
+      <NewNav />
       <section id="specifications" className="paddings w-full   bg-[#151515] pt-32 max-sm:px-3 ">
         <div className="  w-full justify-between    md:py-32">
           <div className="flex w-full justify-between gap-10  sm:flex">

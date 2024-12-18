@@ -10,6 +10,7 @@ import Image from "next/image"
 import { addOrderToUser, OrderPayload } from "services/orderService"
 import { useRouter } from "next/navigation"
 import Dropdown from "components/CustomDropdown"
+import NewNav from "components/Navbar/NewNav"
 
 interface User {
   id: string
@@ -459,7 +460,7 @@ const toggleDropdown = (dropdown: string) => {
 
   return (
     <section className="bg-[#151515]">
-      <Navbar />
+      <NewNav />
 
       <section className="paddings  w-full  max-sm:px-3 max-sm:py-10 lg:h-auto lg:py-32">
         <div className=" w-auto  items-center justify-between  md:px-10">

@@ -8,6 +8,7 @@ import { motion } from "framer-motion"
 import MainFooter from "components/Footer/MainFooter"
 import { useRouter } from "next/navigation"
 import ImageModal from "components/ImageModal/ImageModal"
+import NewNav from "components/Navbar/NewNav"
 
 export default function Web() {
 
@@ -80,7 +81,7 @@ export default function Web() {
   
   return (
     <section className="bg-black">
-      <Navbar />
+      <NewNav />
 
       <section id="specifications" className="paddings w-full   bg-[#151515] pt-32 max-sm:px-3 ">
         <div className="  w-full justify-between    md:py-32">
