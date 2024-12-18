@@ -144,7 +144,7 @@ const NewNav = () => {
           <div className="mt-4 flex flex-col items-start gap-5 space-y-2 p-4">
             <a
               onClick={toggleNav}
-              href="#about"
+              href="/"
               className={
                 activeLink === "about" ? "font-regular  border-b-3 border-[#FF3B30]  text-white" : "  text-white"
               }
@@ -163,7 +163,7 @@ const NewNav = () => {
             </a>
             <Link
               onClick={toggleNav}
-              href="#specifications"
+              href="/"
               className={
                 activeLink === "specifications"
                   ? "font-regular  border-b-3 border-[#FF3B30]  text-white"
@@ -175,7 +175,7 @@ const NewNav = () => {
 
             <Link
               onClick={toggleNav}
-              href="#other-products"
+              href="/"
               className={
                 activeLink === "other-products"
                   ? "font-regular  border-b-3 border-[#FF3B30]  text-white"
@@ -185,7 +185,7 @@ const NewNav = () => {
               Other Products
             </Link>
             <a
-              href="#contact"
+              href="/"
               onClick={toggleNav}
               className={
                 activeLink === "contact" ? "font-regular  border-b-3 border-[#FF3B30]  text-white" : "  text-white"
