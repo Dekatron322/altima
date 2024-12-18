@@ -592,7 +592,7 @@ export default function Web() {
                 <div className="max-w-[522px] items-center justify-between bg-[#151515] px-4 py-2 text-black max-sm:w-full max-sm:justify-center md:flex">
                   <ul className="list-inside list-disc">
                     <li className="py-2 text-[#FFFFFF] max-sm:text-center max-sm:text-xs">Advanced Home Control </li>
-                    <li className=" text-[#FFFFFF] max-sm:text-center max-sm:text-xs">All Core features, plus:</li>
+                    
                   </ul>
 
                   <p className="text-2xl font-bold text-[#FF4F45] max-sm:mt-3 max-sm:text-center max-sm:text-lg">
@@ -688,7 +688,7 @@ export default function Web() {
             <div className="max-sm:flex max-sm:w-full max-sm:flex-col max-sm:items-center max-sm:justify-center md:w-[403] ">
               <p className="font-regular  flex    text-2xl  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">Our Models</p>
               <p className=" font-regular text-xl  leading-none tracking-tight text-white max-sm:mt-3 sm:my-6 md:text-xl xl:text-5xl">
-                ALTIMA Elites
+                ALTIMA Elite
               </p>
               <div>
                 <div className="flex max-w-[522px] items-center justify-between gap-6 bg-[#000000] px-4 py-2 text-black max-sm:hidden">
@@ -1009,7 +1009,7 @@ export default function Web() {
             <div className="text-area ">
               <textarea
                 id="username"
-                placeholder="Case Title"
+                placeholder="Enter Message"
                 className="min-h-[200px] bg-transparent text-xs text-white outline-none focus:outline-none"
                 style={{ width: "100%", height: "24px" }}
               ></textarea>

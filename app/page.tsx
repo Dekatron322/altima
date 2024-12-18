@@ -110,7 +110,7 @@ export default function Web() {
 
               <p className="mt-10 text-xl text-white max-sm:mt-3  max-sm:text-base md:w-[600px]">
                 Experience the next level of convenience and security with Altima – a revolutionary smart door and home
-                hub in one. Featuring a disappearing handle and cutting-edge technology, Altima seamlessly integrates
+                hub in one. Featuring a <b className="text-[#FF3B30] cursor-pointer">disappearing handle</b> and cutting-edge technology, Altima seamlessly integrates
                 security and smart home functions, perfect for any space – be it home, office, or beyond.
               </p>
               <div className="max-sm:my-5 md:hidden">
@@ -185,7 +185,7 @@ export default function Web() {
                     Secure special <br className="max-sm:hidden" /> introductory pricing
                     <br className="max-sm:hidden" />
                     exclusively for pre-order
-                    <br className="max-sm:hidden" /> customers..
+                    <br className="max-sm:hidden" /> customers.
                   </p>
                 </div>
                 <div className=" w-full rounded-lg bg-[#080808] p-5 ">
@@ -227,7 +227,7 @@ export default function Web() {
 
                 <p className="font-regular mb-6 flex text-center text-base   text-[#FFFFFF99]  max-sm:text-center  max-sm:text-sm lg:text-base">
                   Transform your room with Altima into a minimalist, <br className="max-sm:hidden" /> modern space with
-                  ease and speed
+                  ease and speed.
                 </p>
                 
               </div>
@@ -342,10 +342,11 @@ export default function Web() {
                 <div className="max-w-[522px] items-center justify-between bg-[#151515] px-4 py-2 text-black max-sm:w-full max-sm:justify-center md:flex">
                   <ul className="list-inside list-disc">
                     <li className="py-2 text-[#FFFFFF] max-sm:text-center max-sm:text-xs">Advanced Home Control </li>
-                    <li className=" text-[#FFFFFF] max-sm:text-center max-sm:text-xs">All Core features, plus:</li>
+                    <li className=" text-[#FFFFFF] max-sm:text-center max-sm:text-xs">All Pro features, plus:</li>
+                    
                   </ul>
 
-                  <p className="text-2xl text-[#FF4F45] max-sm:mt-3 max-sm:text-center max-sm:text-lg">₹30,000</p>
+                  <p className="text-2xl text-[#FF4F45] max-sm:mt-3 max-sm:text-center max-sm:text-lg">₹49,500 + Taxes</p>
                 </div>
               </div>
               <ul className="mt-6 list-inside list-disc pl-2 md:mb-4">
@@ -436,7 +437,7 @@ export default function Web() {
             <div className="max-sm:flex max-sm:w-full max-sm:flex-col max-sm:items-center max-sm:justify-center md:w-[403] ">
               <p className="font-regular  flex    text-2xl  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">Our Models</p>
               <p className=" font-regular text-xl  leading-none tracking-tight text-white max-sm:mt-3 sm:my-6 md:text-xl xl:text-5xl">
-                ALTIMA Elites
+                ALTIMA Elite
               </p>
               <div>
                 <div className="flex max-w-[522px] items-center justify-between gap-6 bg-[#000000] px-4 py-2 text-black max-sm:hidden">
@@ -817,7 +818,7 @@ export default function Web() {
             <div className="text-area ">
               <textarea
                 id="username"
-                placeholder="Case Title"
+                placeholder="Enter Message"
                 className="min-h-[200px] bg-transparent text-xs text-white outline-none focus:outline-none"
                 style={{ width: "100%", height: "24px" }}
               ></textarea>

@@ -207,7 +207,7 @@ export default function Web() {
             <div className="text-area ">
               <textarea
                 id="username"
-                placeholder="Case Title"
+                placeholder="Enter Message"
                 className="min-h-[200px] bg-transparent text-xs text-white outline-none focus:outline-none"
                 style={{ width: "100%", height: "24px" }}
               ></textarea>

@@ -82,10 +82,10 @@ export default function Web() {
                 <div className="max-w-[522px] items-center justify-between bg-[#151515] px-4 py-2 text-black max-sm:w-full max-sm:justify-center md:flex">
                   <ul className="list-inside list-disc">
                     <li className="py-2 text-[#FFFFFF] max-sm:text-center max-sm:text-xs">Advanced Home Control </li>
-                    <li className=" text-[#FFFFFF] max-sm:text-center max-sm:text-xs">All Core features, plus:</li>
+                    <li className=" text-[#FFFFFF] max-sm:text-center max-sm:text-xs">All Pro features, plus:</li>
                   </ul>
 
-                  <p className="text-2xl text-[#FF4F45] max-sm:mt-3 max-sm:text-center max-sm:text-lg">₹30,000</p>
+                  <p className="text-2xl text-[#FF4F45] max-sm:mt-3 max-sm:text-center max-sm:text-lg">₹49,500 + Taxes</p>
                 </div>
               </div>
               <ul className="mt-6 list-inside list-disc pl-2 md:mb-4">
@@ -412,7 +412,7 @@ export default function Web() {
             <div className="text-area ">
               <textarea
                 id="username"
-                placeholder="Case Title"
+                placeholder="Enter Message"
                 className="min-h-[200px] bg-transparent text-xs text-white outline-none focus:outline-none"
                 style={{ width: "100%", height: "24px" }}
               ></textarea>
