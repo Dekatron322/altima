@@ -818,7 +818,7 @@ export default function Web() {
                     <li className=" mt-2 text-center text-[#FFFFFF] max-sm:text-xs">All Pro features, plus</li>
                   </ul>
 
-                  <p className="mt-3 text-center text-2xl text-[#FF4F45] max-sm:text-lg">₹80,000</p>
+                  <p className="mt-3 text-center text-2xl text-[#FF4F45] max-sm:text-lg">₹90,000 + Taxes</p>
                 </div>
               </div>
               <ul className="mb-6 mt-6 list-inside list-disc pl-2">

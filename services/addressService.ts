@@ -48,7 +48,6 @@ export const addAddressToUser = async (userId: string, payload: AddressPayload) 
   return response.data
 }
 
-// New Function: Delete Address Service
 export const deleteAddress = async (addressId: string) => {
   const response = await apiClient.delete(`/address/address/${addressId}/`)
   return response.data
@@ -59,8 +58,12 @@ export const getAddress = async (userId: string) => {
   return response.data
 }
 
-// Edit (Update) Address Service
 export const editAddress = async (addressId: string, payload: AddressPayload) => {
   const response = await apiClient.put(`/address/address/${addressId}/`, payload)
+  return response.data
+}
+
+export const setDefaultAddress = async (addressId: string, userId: string, payload: AddressPayload) => {
+  const response = await apiClient.put(`/address/address/${addressId}/set-default/${userId}/`, payload)
   return response.data
 }

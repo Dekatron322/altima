@@ -13,7 +13,6 @@ import { useRouter } from "next/navigation"
 interface User {
   id: string
   token: string
-  // Add other fields as needed
 }
 
 export default function Web() {
@@ -27,7 +26,7 @@ export default function Web() {
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
-  const [addressToDelete, setAddressToDelete] = useState<string | null>(null) // Track the address to delete
+  const [addressToDelete, setAddressToDelete] = useState<string | null>(null)
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
   const [isCancelModalOpen, setIsCancelModalOpen] = useState(false)
   const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false)
@@ -35,19 +34,19 @@ export default function Web() {
   const router = useRouter()
 
   const opeDeletenModal = (addressId: string) => {
-    setAddressToDelete(addressId) // Set the address ID to delete
-    setIsDeleteModalOpen(true) // Open the modal
+    setAddressToDelete(addressId)
+    setIsDeleteModalOpen(true)
   }
   const closeDeleteModal = () => {
-    setAddressToDelete(null) // Clear the address ID
-    setIsDeleteModalOpen(false) // Close the modal
+    setAddressToDelete(null)
+    setIsDeleteModalOpen(false)
   }
 
   const confirmDeleteAddress = async () => {
     if (!addressToDelete) return
     try {
       await handleDeleteAddress(addressToDelete)
-      closeDeleteModal() // Close modal on successful deletion
+      closeDeleteModal()
     } catch (error) {
       console.error("Failed to delete address:", error)
     }
@@ -56,13 +55,12 @@ export default function Web() {
   const [selectedRadio, setSelectedRadio] = useState("")
 
   const toggleRadio = (id: string) => {
-    setSelectedRadio(id) // Update the selected address ID
+    setSelectedRadio(id)
   }
 
   const openLogoutModal = () => setIsLogoutModalOpen(true)
   const closeLogoutModal = () => setIsLogoutModalOpen(false)
 
-  // Fetch the logged-in user's address
   useEffect(() => {
     const fetchAddresses = async () => {
       try {
@@ -100,7 +98,6 @@ export default function Web() {
       const result = await deleteAddress(addressId)
       console.log("Address deleted successfully:", result)
 
-      // Optionally, remove the deleted address from the state
       setAddressData((prevAddresses) => prevAddresses?.filter((address) => address.id !== addressId) || null)
     } catch (error) {
       console.error("Failed to delete address:", error)
@@ -112,6 +109,7 @@ export default function Web() {
     localStorage.setItem("selectedAddress", addressId)
     router.push(`/address/edit-address/`)
   }
+
 
   return (
     <section className="bg-black">

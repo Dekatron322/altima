@@ -234,7 +234,7 @@ export default function Web() {
         <section className="bg-[#FFFFFF] hidden w-full p-6 mt-10" ref={invoiceRef}>
         <div className="flex-row flex justify-between items-start">
           <p className="text-lg font-semibold">Smart Haven GST Invoice <br/>for Advance Payment</p>
-          <img className="object-contain" src="/ALTIMA.png" width={76} height={20} alt="dekalo" />
+          <img className="object-contain" src="/ALTIMA.png" width={76} height={20} alt="" />
         </div>
 
         <div className="grid grid-cols-2 justify-between mt-6">
@@ -353,7 +353,7 @@ export default function Web() {
 <br/>Website: [Company Website]
 </p>
 <div className="w-full flex justify-center items-center">
-<img src="/WhatsApp Image 2022-06-01 at 8.33 1 (Traced).png" width={76} height={20} alt="dekalo" />
+<img src="/WhatsApp Image 2022-06-01 at 8.33 1 (Traced).png" width={76} height={20} alt="" />
 </div>
 <p className="text-center text-[#0000004D] my-5 text-[8px]">This invoice is digitally signed for authenticity. Verification is available at: [Verification URL]
 </p>
