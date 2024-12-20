@@ -7,8 +7,8 @@ import { useRouter } from "next/navigation"
 import MainFooter from "components/Footer/MainFooter"
 import Image from "next/image"
 import { OrderPayload } from "services/orderService"
-import Link from "next/link"
 import NewNav from "components/Navbar/NewNav"
+import { LiaTimesSolid } from "react-icons/lia"
 
 export default function Web() {
   const [quantity, setQuantity] = useState(1000)
@@ -16,9 +16,9 @@ export default function Web() {
   const [isDefaultEmail, setIsDefaultEmail] = useState(true)
   const [isDefaultPhone, setIsDefaultPhone] = useState(true)
   const [orderData, setOrderData] = useState<OrderPayload | null>(null);
-  const [loading, setLoading] = useState(false)  // Loading state
+  const [loading, setLoading] = useState(false)
+  const [showModal, setShowModal] = useState(true);
 
-  // Handlers for increment and decrement
   const togglePhone = () => setIsDefaultPhone(!isDefaultPhone)
   const toggleEmail = () => setIsDefaultEmail(!isDefaultEmail)
 
@@ -40,9 +40,12 @@ export default function Web() {
     token: string
   }
 
+  const handleAcceptPrivacyPolicy = () => {
+    setShowModal(false); // Close the modal when the user accepts
+  };
+
   
   useEffect(() => {
-      // Fetch order data from local storage
       const storedData = localStorage.getItem("order_summary");
       if (storedData) {
         setOrderData(JSON.parse(storedData) as OrderPayload);
@@ -135,6 +138,42 @@ const handleSubmit = async () => {
   return (
     <section className="bg-[#151515]">
       <NewNav />
+
+      {showModal && (
+       <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#D9D9D94D]">
+      <div className="w-full m-4 max-w-4xl rounded-lg bg-[#151515]  text-white px-8 py-8">
+      <div className="mb-4 flex w-full justify-end items-center"> 
+          <LiaTimesSolid onClick={handleAcceptPrivacyPolicy} className="cursor-pointer" />
+        </div>
+            <h2 className="text-lg text-[#FFFFFF] font-bold mb-4 text-center">Important Notice</h2>
+            <p className="text-sm max-sm:text-xs text-[#FFFFFF99] mb-4 text-center">
+            Thank you for preordering with Smart Haven Systems Private Limited!
+            </p>
+            <p className="text-sm text-[#FFFFFF99] max-sm:text-xs mb-4 text-center">
+            Kindly Note:
+            </p>
+            
+
+            <p className="text-sm text-[#FFFFFF99] max-sm:text-xs mb-4 text-center">Your preorder payment is being collected temporarily by csPILLAI Ventures Private Limited, the parent company of Smart Haven Systems Private Limited, as our official company account is in the process of being set up.</p>
+
+            <p className="text-sm text-[#FFFFFF99] mb-4 max-sm:text-xs text-center">All preorder funds will be securely transferred to Smart Haven Systems Private Limited once its account becomes operational.</p>
+
+            <p className="text-sm text-[#FFFFFF99] mb-4 max-sm:text-xs text-center">This arrangement ensures you can preorder without delay, and your payment is handled by a trusted entity within the group.</p>
+
+
+            <p className="text-sm text-[#FFFFFF99] mb-4 max-sm:text-xs text-center">For any queries, feel free to contact us at customercare@smarthavensystems.com.</p>
+            <p className="text-sm text-[#FFFFFF99] mb-8 max-sm:text-xs text-center">Thank you for your understanding and support!</p>
+            <div className=" flex justify-center">
+            <button
+              onClick={handleAcceptPrivacyPolicy}
+              className="w-full bg-[#FF3B30]  text-white py-3 rounded-md max-w-[682px]"
+            >
+              Accept and Continue
+            </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       <section className="paddings flex w-full flex-col items-center  justify-center  max-sm:px-3 max-sm:py-20 lg:h-auto lg:py-32">
         <p className="mb-6 text-xl font-bold text-white">Order Summary</p>
