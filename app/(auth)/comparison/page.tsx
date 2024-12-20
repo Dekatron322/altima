@@ -573,15 +573,17 @@ export default function Web() {
             </p>
           </div>
           <div className="flex w-full justify-between max-sm:grid max-sm:gap-5  md:gap-20">
-            <div>
-              <motion.img
-                src="/new.png"
-                width={645}
-                height={555}
-                alt=""
-                initial={{ scale: 1.2, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1, ease: "easeIn" }}
+            <div className="rounded-md overflow-hidden h-[620px]">
+            <motion.video
+              src="/WhatsApp Video 2024-12-12 at 15.04.29.mp4"
+              width={645}
+              height={555}
+              autoPlay
+              loop
+              muted
+              initial={{ scale: 1.2, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1, ease: "easeIn" }}
               />
             </div>
             <div className="">

@@ -143,7 +143,7 @@ export default function Web() {
 
               <p className="mt-10 text-xl text-white max-sm:mt-3  max-sm:text-base md:w-[600px]">
                 Experience the next level of convenience and security with Altima – a revolutionary smart door and home
-                hub in one. Featuring a <b className="text-[#FF3B30] cursor-pointer">disappearing handle</b> and cutting-edge technology, Altima seamlessly integrates
+                hub in one. Featuring a <b onClick={openVideoModal} className="text-[#FF3B30] cursor-pointer">disappearing handle</b> and cutting-edge technology, Altima seamlessly integrates
                 security and smart home functions, perfect for any space – be it home, office, or beyond.
               </p>
               <div className="max-sm:my-5 md:hidden">
@@ -352,7 +352,7 @@ export default function Web() {
             </p>
           </div>
           <div className="flex w-full justify-between max-sm:grid max-sm:gap-5  md:gap-20">
-          <div className="rounded-md overflow-hidden">
+          <div className="rounded-md overflow-hidden h-[620px]">
   <motion.video
     src="/WhatsApp Video 2024-12-12 at 15.04.29.mp4"
     width={645}
@@ -844,7 +844,7 @@ export default function Web() {
               className="absolute top-2 right-2 text-white bg-[#FF3B30] rounded-full p-3"
               onClick={closeVideoModal}
             >
-              <LiaTimesSolid onClick={closeVideoModal} className="cursor-pointer" />
+              <LiaTimesSolid onClick={closeVideoModal} className="cursor-pointer z-50" />
             </button>
             <motion.video
     src="/WhatsApp Video 2024-12-12 at 15.04.29.mp4"
