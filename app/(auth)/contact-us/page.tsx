@@ -1,64 +1,69 @@
-"use client"
-import Footer from "components/Footer/Footer"
-import Navbar from "components/Navbar/Navbar"
-import { useEffect } from "react"
-import Accordion from "components/Accordion/Accordion"
-import { motion } from "framer-motion"
-import MainFooter from "components/Footer/MainFooter"
-import NewNav from "components/Navbar/NewNav"
+"use client";
 
-export default function Web() {
+import ContactUs from "components/ContactUs/Contact";
+import Footer from "components/Footer/Footer";
+import MainFooter from "components/Footer/MainFooter";
+import NewNav from "components/Navbar/NewNav";
+import Image from "next/image";
+import { useState } from "react";
+
+export default function Contact() {
+  const [formData, setFormData] = useState({
+    full_name: "",
+    email: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [responseMessage, setResponseMessage] = useState("");
+  
+
+  const handleChange = (e: { target: { id: any; value: any; }; }) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+
+  const handleSubmit = async () => {
+    setLoading(true);
+    setResponseMessage("");
+  
+    try {
+      const response = await fetch("https://altima.fyber.site/contact/contact/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        setResponseMessage("Message sent successfully!");
+        setFormData({ full_name: "", email: "", message: "" });
+      } else {
+        // Define the shape of the error response
+        type ErrorResponse = {
+          message?: string;
+        };
+  
+        const errorData = (await response.json()) as ErrorResponse;
+        setResponseMessage(`Error: ${errorData.message || "Failed to send message."}`);
+      }
+    } catch (error) {
+      setResponseMessage("An error occurred. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
+  
 
   return (
     <section className="bg-black">
       <NewNav />
 
-      <section className="paddings  w-full bg-[#080808] max-sm:px-3 " id="contact">
-        <div className="  w-full     py-20">
-          <div className="flex flex-col  items-center justify-center">
-            <p className=" text-center text-[#FFFFFF99]">Contact us</p>
-            <p className="my-6 flex text-center  text-[32px]  font-bold  text-[#FFFFFF] max-md:text-2xl">
-              Have Questions?
-            </p>
-            <div className="input-field ">
-              <input
-                type="text"
-                id="placement"
-                placeholder="Full Name"
-                className="bg-transparent  text-xs text-white outline-none focus:outline-none"
-                style={{ width: "100%" }}
-              />
-            </div>
-
-            <div className="input-field my-7">
-              <input
-                type="text"
-                id="placement"
-                placeholder="Email"
-                className="bg-transparent text-xs  text-white outline-none focus:outline-none"
-                style={{ width: "100%" }}
-              />
-            </div>
-
-            <div className="text-area ">
-              <textarea
-                id="username"
-                placeholder="Enter Message"
-                className="min-h-[200px] bg-transparent text-xs text-white outline-none focus:outline-none"
-                style={{ width: "100%", height: "24px" }}
-              ></textarea>
-            </div>
-
-            <button className="font-regular mt-7 flex w-[60%] items-center justify-center gap-2  rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4 py-4 uppercase text-[#FFFFFF] max-sm:w-full ">
-              Submit
-            </button>
-          </div>
-        </div>
-      </section>
+      <ContactUs />
 
       <MainFooter />
-
       <Footer />
     </section>
-  )
+  );
 }
