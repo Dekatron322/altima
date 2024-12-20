@@ -185,7 +185,16 @@ const handleSubmit = async () => {
                   <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Product: {orderData?.product_selection_altima_elite
                 ? "Altima Elite"
                 : "Altima Core"}</li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Size: {orderData?.id}</li>
+                  {orderData?.door_spec_default_size ? (
+  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
+    Size: {orderData.door_spec_default_size}
+  </li>
+) : (
+  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
+    {orderData?.door_spec_manual_size_height} x {orderData?.door_spec_manual_size_width}
+  </li>
+)}
+
                   <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Frame Type: {orderData?.door_spec_frame_type}</li>
                   <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Finish: {orderData?.door_spec_finish_type}</li>
                   <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Handle Placement: {orderData?.handle_placement}</li>
@@ -278,7 +287,7 @@ const handleSubmit = async () => {
               </div>
 
               <div className="border border-[#FFFFFF0D]"></div>
-              <div className="flex w-full justify-center">
+              <div className="flex  mx-4 justify-center">
               <button
                   onClick={handleSubmit}
                   className="font-regular mb-5 flex w-[60%] items-center justify-center gap-2 rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4 py-3 uppercase text-[#FFFFFF] max-sm:w-full"
