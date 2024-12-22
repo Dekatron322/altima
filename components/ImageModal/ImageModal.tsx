@@ -1,44 +1,74 @@
-import React, { useState } from "react"
+import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 
-import { Swiper, SwiperSlide } from "swiper/react"
-import "swiper/css"
-import "swiper/css/navigation"
-import "swiper/css/pagination"
-import { LiaTimesSolid } from "react-icons/lia"
 
-interface ImageModalProps {
-  isOpen: boolean
-  images: string[]
-  currentIndex: number
-  onClose: () => void
-}
+const ImageCarousel = () => {
+  const images = [
+    '/Frame 48095435.png',
+    '/4.png',
+    '/3.png',
+    '/2.png',
+    '/1.png', // Add more image paths here
+  ];
 
-const ImageModal: React.FC<ImageModalProps> = ({ isOpen, images, currentIndex, onClose }) => {
-  if (!isOpen) return null // Render nothing if isOpen is false
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000); // Change slides every 3 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, [images.length]);
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      (prevIndex + 1) % images.length
+    );
+  };
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#000000] bg-opacity-95">
-      <div className="w-full max-w-xl rounded-lg bg-[#151515] p-4 text-white">
-        <div className="mb-4 flex w-full items-center">
-          <h2 className=" w-full text-center text-[#FFFFFF99]">Altima Elite</h2>
-          <LiaTimesSolid onClick={onClose} className="cursor-pointer" />
-        </div>
-        <Swiper
-          initialSlide={currentIndex}
-          spaceBetween={50}
-          slidesPerView={1}
-          navigation
-          pagination={{ clickable: true }}
-        >
-          {images.map((src, index) => (
-            <SwiperSlide key={index}>
-              <img src={src} alt={`Image ${index + 1}`} className="h-auto w-full" />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <h2 className=" w-full text-center text-[#FFFFFF99]">Swipe to show more image</h2>
+    <div className="relative w-full max-w-xl overflow-hidden">
+      <div className="flex w-full transition-transform duration-500" style={{
+        transform: `translateX(-${currentIndex * 100}%)`,
+      }}>
+        {images.map((image, index) => (
+          <motion.img
+            key={index}
+            src={image}
+            width={732}
+            height={555}
+            alt={`Image ${index + 1}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="w-full flex-shrink-0"
+          />
+        ))}
       </div>
-    </div>
-  )
-}
+      <button
+        onClick={prevSlide}
+        className="absolute left-2  top-1/2 transform -translate-y-1/2 bg-[#FF3B30] text-white p-2 rounded-full"
+      >
+        <GoChevronLeft className='text-xl'/>
 
-export default ImageModal
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#FF3B30] text-white p-2 rounded-full"
+      >
+        <GoChevronRight className='text-xl'/>
+
+      </button>
+    </div>
+  );
+};
+
+export default ImageCarousel;
