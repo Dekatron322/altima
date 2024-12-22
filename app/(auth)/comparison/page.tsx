@@ -11,6 +11,7 @@ import ImageModal from "components/ImageModal/ImageModal"
 import NewNav from "components/Navbar/NewNav"
 import Contact from "../contact-us/page"
 import ContactUs from "components/ContactUs/Contact"
+import ImageCarousel from "components/ImageModal/ImageModal"
 
 export default function Web() {
 
@@ -790,30 +791,10 @@ export default function Web() {
               </div>
             </div>
             <div className=" max-sm:hidden">
-              <motion.img
-                src="/Frame 48095435 (1).png"
-                width={645}
-                height={555}
-                alt=""
-                initial={{ scale: 1.2, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1, ease: "easeIn" }}
-                onClick={() => openModal(0)}
-                className="cursor-pointer"
-              />
+            <ImageCarousel />
             </div>
             <div className="md:hidden">
-              <motion.img
-                src="/Frame 48095435 (1).png"
-                width={645}
-                height={555}
-                alt=""
-                initial={{ scale: 1.2, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1, ease: "easeIn" }}
-                onClick={() => openModal(0)}
-                className="cursor-pointer"
-              />
+            <ImageCarousel />
             </div>
             <div className="md:hidden md:w-[403]">
               <div>
@@ -985,7 +966,7 @@ export default function Web() {
       </section>
 
       <ContactUs />
-      <ImageModal isOpen={isModalOpen} images={images} currentIndex={currentImageIndex} onClose={closeModal} />
+      
 
       <MainFooter />
 
