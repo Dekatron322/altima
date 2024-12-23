@@ -574,7 +574,7 @@ export default function Web() {
             </p>
           </div>
           <div className="flex w-full justify-between max-sm:grid max-sm:gap-5  md:gap-20">
-            <div className="rounded-md overflow-hidden h-[620px]">
+            <div className="rounded-md overflow-hidden sm:h-[620px]">
             <motion.video
               src="/WhatsApp Video 2024-12-12 at 15.04.29.mp4"
               width={645}
