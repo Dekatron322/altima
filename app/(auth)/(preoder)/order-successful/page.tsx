@@ -147,11 +147,14 @@ export default function Web() {
 
   const downloadPDF = async () => {
     if (!invoiceRef.current) return;
-
+  
     try {
+      // Temporarily make the invoice visible
+      invoiceRef.current.style.display = "block";
+  
       // Dynamically import html2pdf.js only on the client side
       const html2pdf = (await import("html2pdf.js")).default;
-
+  
       const element = invoiceRef.current;
       const opt = {
         margin: 0.5,
@@ -160,10 +163,13 @@ export default function Web() {
         html2canvas: { scale: 2 },
         jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
       };
-
-      html2pdf().set(opt).from(element).save();
+  
+      await html2pdf().set(opt).from(element).save();
     } catch (error) {
       console.error("Error generating PDF:", error);
+    } finally {
+      // Re-hide the invoice after PDF generation
+      invoiceRef.current.style.display = "none";
     }
   };
 
@@ -230,7 +236,7 @@ export default function Web() {
           
         </div>
 
-        <section className="bg-[#FFFFFF] hidden w-full p-6 mt-10" ref={invoiceRef}>
+        <section className="bg-[#FFFFFF] print:block hidden w-full p-6 mt-10" ref={invoiceRef}>
         <div className="flex-row flex justify-between items-start">
           <p className="text-lg font-semibold">Smart Haven GST Invoice <br/>for Advance Payment</p>
           <img className="object-contain" src="/ALTIMA.png" width={76} height={20} alt="" />
