@@ -32,7 +32,7 @@ export default function Web() {
   const total = quantity * unitPrice
 
   interface StripeResponse {
-    checkout_url: string;
+    payment_link: string;
   }
 
   interface User {
@@ -60,77 +60,77 @@ function isStripeResponse(data: any): data is StripeResponse {
   return typeof data.checkout_url === 'string';
 }
 
-const handleSubmit = async () => {
-  setLoading(true)  // Set loading to true when the process starts
-
-  const user = localStorage.getItem("user")
-  const parsedUser: User | null = user ? JSON.parse(user) as User : null
-
-  const userId = parsedUser?.id
-
-  if (!userId) {
-    alert("Unable to proceed. User ID is missing.")
-    setLoading(false)  // Reset loading state in case of failure
-    return
-  }
-
-  // Ensure that orderData and orderData.full_name are valid
-  if (!orderData || !orderData.full_name) {
-    alert("Order data or full name is missing.")
-    setLoading(false)  // Reset loading state in case of failure
-    return
-  }
-
-  try {
-    // Use '1' as a default if quantity is undefined
-    const quantity = orderData.quantity ? parseInt(orderData.quantity, 10) : 1
-
-    // Create Stripe Checkout session payload
-    const stripePayload = {
-      name: orderData.full_name.trim(),
-      amount: Math.round(parseFloat(orderData.deposit_amount ?? "0") / 100),
-      quantity: quantity,
-    }
-
-    console.log("Stripe Payload:", stripePayload)
-
-    const stripeResponse = await fetch("https://altima.fyber.site/order/api/create-checkout-session/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(stripePayload),
-    })
-
-    console.log("Stripe Response Status:", stripeResponse.status)
-    const responseText = await stripeResponse.text()
-    console.log("Stripe Response Body:", responseText)
-
-    if (!stripeResponse.ok) {
-      throw new Error(`Failed to create Stripe checkout session: ${responseText}`)
-    }
-
-    // Parse the response and check if it matches StripeResponse type
-    const stripeData = JSON.parse(responseText)
-
-    if (isStripeResponse(stripeData)) {
-      if (stripeData.checkout_url) {
-        localStorage.setItem('session_id', (stripeData as any).session_id)
-        window.location.href = stripeData.checkout_url
-      } else {
-        throw new Error("Stripe session URL not found.")
-      }
-    } else {
-      throw new Error("Invalid response format from Stripe.")
-    }
-  } catch (error: any) {
-    console.error("Error:", error)
-    alert(error.message || "Failed to proceed with checkout. Please try again.")
-  } finally {
-    setLoading(false)  // Reset loading state after the process ends
-  }
+const isRazorpayResponse = (data: any): data is { payment_link: string, payment_link_id: string } => {
+  return data && data.payment_link && data.payment_link_id
 }
 
+const handleSubmit = async () => {
+  setLoading(true); // Start loading indicator
+
+  try {
+    const user = localStorage.getItem("user");
+    const parsedUser: User | null = user ? JSON.parse(user) as User : null;
+
+    if (!parsedUser?.id) {
+      alert("Unable to proceed. User ID is missing.");
+      return;
+    }
+
+    if (!orderData || !orderData.full_name) {
+      alert("Order data or full name is missing.");
+      return;
+    }
+
+    const quantity = orderData.quantity ? parseInt(orderData.quantity, 10) : 1;
+
+    // Create Razorpay payload
+    const razorpayPayload = {
+      email: orderData.email_address,
+      contact: orderData.contact_number,
+      name: orderData.full_name.trim(),
+      amount: Math.round(parseFloat(orderData.deposit_amount ?? "0") * 100), // Amount in paisa
+      quantity,
+    };
+
+    console.log("Razorpay Payload:", razorpayPayload);
+
+    const response = await fetch(
+      "https://altima.fyber.site/order/api/create-checkout-session/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(razorpayPayload),
+      }
+    );
+
+    const responseText = await response.text();
+    console.log("Razorpay Response Body:", responseText);
+
+    if (!response.ok) {
+      throw new Error(`Failed to create Razorpay checkout session: ${responseText}`);
+    }
+
+    const razorpayData = JSON.parse(responseText);
+
+    if (isRazorpayResponse(razorpayData)) {
+      const { payment_link, payment_link_id } = razorpayData;
+      localStorage.setItem("payment_link", payment_link);
+      localStorage.setItem("payment_link_id", payment_link_id);
+
+      // Redirect to the Razorpay payment link
+      window.location.href = payment_link;
+    } else {
+      throw new Error("Invalid response format from Razorpay.");
+    }
+  } catch (error: any) {
+    console.error("Error:", error);
+    alert(error.message || "Failed to proceed with checkout. Please try again.");
+  } finally {
+    setLoading(false); // End loading indicator
+  }
+};
 
 
   
@@ -191,7 +191,7 @@ const handleSubmit = async () => {
   </li>
 ) : (
   <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
-    {orderData?.door_spec_manual_size_height} x {orderData?.door_spec_manual_size_width}
+    Size: {orderData?.door_spec_manual_size_height} x {orderData?.door_spec_manual_size_width} {orderData?.door_spec_manual_size_unit}
   </li>
 )}
 

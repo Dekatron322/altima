@@ -49,7 +49,7 @@ export default function Web() {
       }
     }
   
-    const storedSessionId = localStorage.getItem("session_id");
+    const storedSessionId = localStorage.getItem("payment_link_id");
     setSessionId(storedSessionId);
   }, []);
 
@@ -176,7 +176,7 @@ export default function Web() {
         <p className="mb-6 text-xl font-bold text-white">Order Successful</p>
 
         <div className="flex w-full items-center justify-center md:px-10">
-          {paymentStatus === "Payment Status: true" && (
+          
             <div className="flex w-full flex-col rounded-md border border-[#FFFFFF0D] max-sm:rounded-lg max-sm:p-2">
               <div className="flex w-full flex-col rounded-md border border-[#FFFFFF0D] p-5 max-sm:rounded-lg max-sm:p-2">
                 <div className="grid h-full items-center rounded-md max-sm:grid max-sm:gap-5 md:gap-10">
@@ -192,9 +192,7 @@ export default function Web() {
                       models and get inspired by our unique products. Head over to Altima.com
                     </p>
                     
-                    {paymentStatus && (
-                      <p className="text-center text-sm text-white mt-4">{paymentStatus}</p>
-                    )}
+                    
                     {orderId ? (
                       <p className="text-center hidden text-lg text-white mt-4">
                         Your Order ID: <strong>{orderId}</strong>
@@ -229,7 +227,7 @@ export default function Web() {
                 </p>
               </div>
             </div>
-          )}
+          
         </div>
 
         <section className="bg-[#FFFFFF] hidden w-full p-6 mt-10" ref={invoiceRef}>
