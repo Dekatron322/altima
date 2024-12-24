@@ -22,7 +22,7 @@ export default function Web() {
 
 
   
-  const [quantity, setQuantity] = useState(1)
+  
   const [isDefaultBillingTwo, setIsDefaultBillingTwo] = useState(false)
   const [isEnforcedLock, setIsEnforcedLock] = useState(false)
   const [isIntercom, setIsIntercom] = useState(false)
@@ -38,7 +38,9 @@ export default function Web() {
   const [selectedRadio, setSelectedRadio] = useState("Altima Core")
   const [selectedAddress, setSelectedAddress] = useState("Use New Address")
   const [selectedContact, setSelectedContact] = useState("")
-  const [selectedDoorSpec, setSelectedDoorSpec] = useState("")
+  const [selectedDoorSpec, setSelectedDoorSpec] = useState("Standard Size")
+  const [quantity, setQuantity] = useState<number>(1);
+  const [isDefaultShipping, setIsDefaultShipping] = useState(true)
   
 
   // Define unit prices for each option
@@ -59,8 +61,32 @@ export default function Web() {
     setSelectedDoorSpec(option)
   }
 
+  const toggleShipping= () => setIsDefaultShipping(!isDefaultShipping)
+
   const grossPrice = quantity * (unitPrices[selectedRadio] ?? 0)
-  const toggleBillingTwo = () => setIsDefaultBillingTwo(!isDefaultBillingTwo)
+  const toggleBillingTwo = () => {
+    setIsDefaultBillingTwo(!isDefaultBillingTwo);
+
+    if (!isDefaultBillingTwo) {
+      setFormData((prev) => ({
+        ...prev,
+        shipping_address_street: prev.billing_address_street,
+        shipping_address_city: prev.billing_address_city,
+        shipping_address_state: prev.billing_address_state,
+        shipping_address_postal_code: prev.billing_address_postal_code,
+        shipping_address_country: prev.billing_address_country,
+      }));
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        shipping_address_street: "",
+        shipping_address_city: "",
+        shipping_address_state: "",
+        shipping_address_postal_code: "",
+        shipping_address_country: "",
+      }));
+    }
+  };
 
   const toggleEmail = () => {
     setIsDefaultEmail((prev) => {
@@ -363,8 +389,22 @@ const subtotal = unitPrice + additionalCharges;
 
   
 
-  const handleIncrement = () => setQuantity((prev) => prev + 1);
-  const handleDecrement = () => setQuantity((prev) => Math.max(prev - 1, 0));
+const handleDecrement = () => {
+  setQuantity((prev) => Math.max(prev - 1, 0)); // Ensure quantity doesn't go below 0
+};
+
+const handleIncrement = () => {
+  setQuantity((prev) => prev + 1);
+};
+
+const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const { name, value } = e.target;
+  setFormData((prev) => ({
+    ...prev,
+    [name]: value,
+  }));
+};
+
   const toggleRadio = (option: string) => setSelectedRadio(option);
 
   useEffect(() => {
@@ -375,11 +415,6 @@ const subtotal = unitPrice + additionalCharges;
       console.log("User ID not found. Please log in.")
     }
   }, [])
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
-    setFormData({ ...formData, [name]: value })
-  }
 
   const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
@@ -632,7 +667,7 @@ const toggleDropdown = (dropdown: string) => {
                   </div>
                   <div className=" flex w-full items-center gap-2 " onClick={toggleBillingTwo}>
                     <motion.img
-                      src={isDefaultBillingTwo ? "/CheckSquareEmpty.png" : "/CheckSquare.png"}
+                      src={isDefaultBillingTwo ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
                       width={18}
                       height={18}
                       alt=""
@@ -640,8 +675,23 @@ const toggleDropdown = (dropdown: string) => {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Set as default Billing Address</p>
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Billing Address Same as Shipping Address</p>
                   </div>
+
+                  <div className=" flex w-full items-center gap-2 "  onClick={toggleShipping}>
+              <motion.img
+                src={isDefaultShipping ? "/CheckSquareEmpty.png" : "/CheckSquare.png"}
+                width={18}
+                height={18}
+                alt=""
+                initial={{ scale: 1.2, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 1, ease: "easeIn" }}
+              />
+              <p className="text-sm text-[#FFFFFF99] max-sm:text-xs">Set as default Billing Address</p>
+            </div>
+
+                  
 
                   <p className="py-2 text-lg font-medium text-white">
                     Shipping Address<span className="text-[#FF3B30]">*</span>
@@ -849,48 +899,54 @@ const toggleDropdown = (dropdown: string) => {
 
 
                   <p className="mt-6 text-sm text-[#FFFFFF]">Quantity</p>
+<div className="flex justify-between">
+<div className="mt-1 flex items-center gap-3 rounded-md">
+  <button
+    type="button"
+    onClick={handleDecrement}
+    className="flex h-[48px] w-[107px] items-center justify-center rounded-md bg-[#282828] max-sm:w-full"
+  >
+    <motion.img
+      src="/-.png"
+      width={13}
+      height={48}
+      alt="Decrease quantity"
+      initial={{ scale: 1.2, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 1, ease: "easeIn" }}
+    />
+  </button>
 
-                  <div className="mt-1 flex  items-center gap-3 rounded-md ">
-                    <button
-                    type="button"
-                      onClick={handleDecrement}
-                      className="flex h-[48px] w-[107px] items-center justify-center rounded-md bg-[#282828] max-sm:w-full"
-                    >
-                      <motion.img
-                        src="/-.png"
-                        width={13}
-                        height={48}
-                        alt=""
-                        initial={{ scale: 1.2, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ duration: 1, ease: "easeIn" }}
-                      />
-                    </button>
+  <input
+    type="number"
+    value={quantity}
+    onChange={handleChange}
+    className="flex h-[48px] w-[107px] items-center justify-center rounded-md border bg-[#282828] px-2 py-1 text-center text-[#FFFFFF] max-sm:w-full"
+    min="0"
+  />
 
-                    <p className=" flex h-[48px] w-[107px] items-center justify-center rounded-md border bg-[#282828] px-2 py-1 text-[#FFFFFF]">
-                      {quantity}
-                    </p>
+  <button
+    type="button"
+    onClick={handleIncrement}
+    className="flex h-[48px] w-[107px] items-center justify-center rounded-md bg-[#282828] max-sm:w-full"
+  >
+    <motion.img
+      src="/+.png"
+      width={16}
+      height={48}
+      alt="Increase quantity"
+      initial={{ scale: 1.2, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 1, ease: "easeIn" }}
+    />
+  </button>
+</div>
 
-                    <button
-                    type="button"
-                      onClick={handleIncrement}
-                      className="flex h-[48px] w-[107px] items-center justify-center rounded-md bg-[#282828] max-sm:w-full"
-                    >
-                      <motion.img
-                        src="/+.png"
-                        width={16}
-                        height={48}
-                        alt=""
-                        initial={{ scale: 1.2, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ duration: 1, ease: "easeIn" }}
-                      />
-                    </button>
-                  </div>
 
                   <p className="font-regular flex  items-center  pt-4 text-2xl text-[#FFFFFF]  max-sm:text-lg lg:text-2xl">
-                    <span className="text-sm">Total: </span> ₹{grossPrice.toLocaleString()}
+                    <span className="text-sm">Total : </span> ₹{grossPrice.toLocaleString()}
                   </p>
+                  </div>
                 </div>
 
                 <div className="border-b my-5 border-[#FFFFFF0D]"></div>
