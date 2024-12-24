@@ -8,20 +8,20 @@ import { LiaTimesSolid } from "react-icons/lia"
 import MainFooter from "components/Footer/MainFooter"
 import NewNav from "components/Navbar/NewNav"
 
+interface UserDetails {
+  id: string,
+  username: string;
+  first_name: string;
+  last_name: string;
+  email: string;
+}
+
+
 export default function Web() {
   const [activeTab, setActiveTab] = useState("info")
-  const [isDefaultShipping, setIsDefaultShipping] = useState(true)
-  const [isDefaultBilling, setIsDefaultBilling] = useState(true)
-
-  const toggleShipping = () => setIsDefaultShipping(!isDefaultShipping)
-  const toggleBilling = () => setIsDefaultBilling(!isDefaultBilling)
-
-  const [isDefaultShippingTwo, setIsDefaultShippingTwo] = useState(true)
-  const [isDefaultBillingTwo, setIsDefaultBillingTwo] = useState(true)
-
-  const toggleShippingTwo = () => setIsDefaultShippingTwo(!isDefaultShippingTwo)
-  const toggleBillingTwo = () => setIsDefaultBillingTwo(!isDefaultBillingTwo)
-
+  const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const toggleTab = (tab: SetStateAction<string>) => setActiveTab(tab)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
@@ -29,6 +29,40 @@ export default function Web() {
 
   const opeDeletenModal = () => setIsDeleteModalOpen(true)
   const closeDeleteModal = () => setIsDeleteModalOpen(false)
+
+  const fetchUserDetails = async () => {
+    try {
+      // Retrieve user data from localStorage
+      const userData = localStorage.getItem("user");
+      if (!userData) {
+        throw new Error("User is not logged in.");
+      }
+
+      const parsedData = JSON.parse(userData) as { id: string };
+    const { id } = parsedData;
+
+      const response = await fetch(`https://altima.fyber.site/custom-user/get-user-detail/${id}/`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch user details.");
+      }
+
+      const data = await response.json() as UserDetails;
+      setUserDetails(data);
+    } catch (err: any) {
+      setError(err.message || "An error occurred.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchUserDetails();
+  }, []);
 
   return (
     <section className="bg-black">
@@ -131,6 +165,7 @@ export default function Web() {
                 <div className="search-bg h-[54.37px] w-full rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3 py-4">
                   <input
                     type="text"
+                    value={userDetails?.first_name}
                     placeholder="First Name (Required)"
                     className="w-full bg-transparent text-base text-white outline-none"
                   />
@@ -138,6 +173,7 @@ export default function Web() {
                 <div className="search-bg h-[54.37px] w-full rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3 py-4">
                   <input
                     type="text"
+                    value={userDetails?.last_name}
                     placeholder="Last Name (Required)"
                     className="w-full bg-transparent text-base text-white outline-none"
                   />
@@ -146,21 +182,22 @@ export default function Web() {
               <div className="search-bg mt-2 h-[54.37px] w-full rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3 py-4">
                 <input
                   type="text"
+                  value={userDetails?.email}
                   placeholder="Email Address (Required)"
                   className="w-full bg-transparent text-base text-white outline-none"
                 />
               </div>
-              <div className="search-bg mt-2 h-[54.37px] w-full rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3 py-4">
+              {/* <div className="search-bg mt-2 h-[54.37px] w-full rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3 py-4">
                 <input
                   type="text"
                   placeholder="Street Address"
                   className="w-full bg-transparent text-base text-white outline-none"
                 />
-              </div>
+              </div> */}
 
               <div className="mt-8 flex w-full items-center justify-center">
                 <motion.a
-                  href="/summary"
+                  href="#"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   className="font-regular rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF80] px-20 py-2 text-xs uppercase text-[#FFFFFF] max-sm:py-2"
