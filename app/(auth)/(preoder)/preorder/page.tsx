@@ -45,8 +45,8 @@ export default function Web() {
 
   // Define unit prices for each option
   const unitPrices: { [key: string]: number } = {
-    "Altima Core": 500050,
-    "Altima Elite": 750075,
+    "Altima Core": 49500,
+    "Altima Elite": 90000,
   }
 
   const toggleAddress = (option: string) => {
@@ -899,7 +899,7 @@ const toggleDropdown = (dropdown: string) => {
 
 
                   <p className="mt-6 text-sm text-[#FFFFFF]">Quantity</p>
-<div className="flex justify-between">
+<div className="sm:flex sm:justify-between">
 <div className="mt-1 flex items-center gap-3 rounded-md">
   <button
     type="button"

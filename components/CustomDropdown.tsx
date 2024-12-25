@@ -37,19 +37,20 @@ const Dropdown: React.FC<DropdownProps> = ({
             {value || `Select ${label}`}
           </span>
           <svg
-            className={`w-4 h-4 transition-transform ${
-              isOpen ? 'rotate-180' : ''
-            } ${disabled ? 'text-gray-500' : 'text-white'}`}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fillRule="evenodd"
-              d="M10 3a1 1 0 01.707.293l6 6a1 1 0 01-1.414 1.414L10 5.414l-5.293 5.293A1 1 0 013.293 9.293l6-6A1 1 0 0110 3z"
-              clipRule="evenodd"
-            />
-          </svg>
+  className={`w-4 h-4 transition-transform ${
+    isOpen ? 'rotate-180' : ''
+  } ${disabled ? 'text-gray-500' : 'text-white'}`}
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+>
+  <path
+    fillRule="evenodd"
+    d="M10 12a1 1 0 01-.707-.293l-6-6a1 1 0 011.414-1.414L10 9.586l5.293-5.293A1 1 0 0117.707 5.293l-6 6A1 1 0 0110 12z"
+    clipRule="evenodd"
+  />
+</svg>
+
         </div>
         {isOpen && !disabled && (
           <div className="absolute top-[50px] left-0 w-full z-10 rounded-lg bg-[#1B1B1B] border border-[#FFFFFF1A] shadow-lg">
