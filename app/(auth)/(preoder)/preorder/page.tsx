@@ -1313,15 +1313,11 @@ const toggleDropdown = (dropdown: string) => {
   
     <input
       type="date"
-      placeholder="Select date"
+      placeholder="click to input"
       name="prefered_installation"
       value={formData.prefered_installation}
       onChange={handleChange}
       className="rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3 py-3  h-full w-full  text-sm text-white outline-none cursor-pointer date-input "
-      style={{
-        appearance: 'auto', // Resets custom styling for native UI
-        backgroundColor: "transparent", // Temporary for testing
-      }}
     />
     
   
