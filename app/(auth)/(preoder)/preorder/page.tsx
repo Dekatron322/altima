@@ -1313,6 +1313,7 @@ const toggleDropdown = (dropdown: string) => {
   
     <input
       type="date"
+      placeholder="Select date"
       name="prefered_installation"
       value={formData.prefered_installation}
       onChange={handleChange}
