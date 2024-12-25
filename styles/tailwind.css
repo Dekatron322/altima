@@ -318,10 +318,27 @@ body {
   @apply flex min-h-[200px]  rounded-lg border border-[#282828] bg-[#282828]  p-3 hover:border-[#1B5EED] focus:border-[#1B5EED] active:border-[#1B5EED] max-sm:w-[100%] md:w-[60%];
 }
 
-.custom-text::first-word {
-  color: #ff5733;
+
+
+.date-input::-webkit-calendar-picker-indicator {
+  position: absolute;
+  right: 1rem; /* Adjust as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  filter: invert(1); /* Makes the icon white */
+  cursor: pointer;
+  pointer-events: auto;
 }
 
-.first-word-color::first-line {
-  color: #ff0000; /* Replace with your desired color */
+
+/* For Firefox */
+.date-input::-moz-calendar-picker-indicator {
+  filter: invert(1); /* Changes the color to white */
+  cursor: pointer;
 }
+
+/* For Edge and other modern browsers */
+.date-input {
+  color-scheme: light; /* Ensures consistent styling for dark mode */
+}
+

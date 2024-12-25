@@ -280,8 +280,8 @@ const handleSubmit = async () => {
                   <p className="text-sm text-[#FFFFFF] max-sm:text-xs">I agree to the preorder terms and conditions</p>
                 </div>
 
-                <p className="text-center text-white">
-                  <span className="font-medium">Note :</span> You will receive a confirmation email once your preorder
+                <p className="text-center text-white max-sm:text-xs">
+                  <span className="font-medium ">Note :</span> You will receive a confirmation email once your preorder
                   is complete
                 </p>
               </div>
