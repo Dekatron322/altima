@@ -1310,16 +1310,16 @@ const toggleDropdown = (dropdown: string) => {
                
   <div className="p-5">
   <label className="text-sm text-white">Preferred Installation Date</label>
-  <div className="relative h-[46px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3">
+  
     <input
       type="date"
       name="prefered_installation"
       value={formData.prefered_installation}
       onChange={handleChange}
-      className="absolute  h-full w-full bg-transparent text-sm text-white outline-none pr-10 cursor-pointer date-input"
+      className="rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3 py-3  h-full w-full  text-sm text-white outline-none cursor-pointer date-input "
     />
     
-  </div>
+  
 </div>
 
 

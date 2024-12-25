@@ -320,16 +320,11 @@ body {
 
 
 
+/* Hide the default icon */
 .date-input::-webkit-calendar-picker-indicator {
-  position: absolute;
-  right: 1rem; /* Adjust as needed */
-  top: 50%;
-  transform: translateY(-50%);
-  filter: invert(1); /* Makes the icon white */
+  filter: invert(1); /* Changes the color to white */
   cursor: pointer;
-  pointer-events: auto;
 }
-
 
 /* For Firefox */
 .date-input::-moz-calendar-picker-indicator {
