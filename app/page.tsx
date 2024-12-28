@@ -4,11 +4,10 @@ import Footer from "components/Footer/Footer"
 
 import Image from "next/image"
 import Navbar from "components/Navbar/Navbar"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Accordion from "components/Accordion/Accordion"
 import { motion } from "framer-motion"
 import MainFooter from "components/Footer/MainFooter"
-import ImageModal from "components/ImageModal/ImageModal"
 import { useRouter } from "next/navigation"
 import { LiaTimesSolid } from "react-icons/lia"
 import ContactUs from "components/ContactUs/Contact"
@@ -135,12 +134,12 @@ export default function Web() {
               <div className="mb-4 flex items-center justify-center gap-2 rounded-lg bg-[#FFFFFF1A] p-2 md:max-w-[519px]">
                 <Image src="/Vector.png" width={24} height={24} alt="" />
                 <p className="text-sm text-[#FFFFFF] max-sm:text-[9px]">
-                  POWERED BY INNOVATION FROM SUSMO AND OTHER DRIVES
+                  POWERED BY INNOVATION FROM csPILLAI®
                 </p>
               </div>
               <p className="  flex text-7xl  font-bold text-[#FFFFFF] max-sm:text-2xl ">ALTIMA: THE SMART </p>
               <p className="  flex text-7xl  font-bold text-[#FFFFFF] max-sm:text-2xl ">DOOR & HOME HUB –</p>
-              <p className="  flex text-7xl  font-bold text-[#FF3B30] max-sm:text-3xl ">PRE-ORDER NOW!</p>
+              <p className="  flex text-7xl  font-bold text-[#FF3B30] max-sm:text-3xl cursor-pointer" onClick={handlePreOrderClick}>PRE-ORDER NOW!</p>
 
               <p className="mt-10 text-xl text-white max-sm:mt-3  max-sm:text-base md:w-[600px]">
                 Experience the next level of convenience and security with Altima – a revolutionary smart door and home
