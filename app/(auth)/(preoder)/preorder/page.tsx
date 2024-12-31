@@ -35,7 +35,7 @@ export default function Web() {
   const [selectedDoorSpec, setSelectedDoorSpec] = useState("Standard Size")
   const [quantity, setQuantity] = useState<number>(1)
   const [isDefaultShipping, setIsDefaultShipping] = useState(true)
-  const [selectedFrameType, setSelectedFrameType] = useState("Slim")
+  const [subtotal, setSubtotal] = useState(0)
   const [adjustedUnitPrice, setAdjustedUnitPrice] = useState(0)
 
   // Define unit prices for each option
@@ -296,7 +296,7 @@ export default function Web() {
   const [userId, setUserId] = useState<string>("")
 
   const frameTypeOptions = ["Slim", "Standard", "Reinforced"]
-  const standardSizeOptions = ["80 x 36", "84 x 36 ", "80 x 42", "96 x 36", "96 x 42"]
+  const standardSizeOptions = ["80 x 36", "84 x 36", "80 x 42", "96 x 36", "96 x 42"]
   const MaterialOptions = ["Wood", "Glass", "Metal"]
   const connectivityOptions = ["Wi-Fi", "BlueTooth", "Zigbee", "None"]
   const powerOptions = ["AC Connection", "Battery Backup,", "Solar Ready"]
@@ -396,14 +396,50 @@ export default function Web() {
       materialMultiplier = 1.4 // 40% increase
     }
 
+    // Size adjustment (for standard sizes)
+    let sizeMultiplier = 1.0
+    switch (formData.door_spec_default_size) {
+      case "84 x 36":
+        sizeMultiplier = 1.0507 // 5.07% increase
+        break
+      case "80 x 42":
+        sizeMultiplier = 1.1667 // 16.67% increase
+        break
+      case "96 x 36":
+        sizeMultiplier = 1.4 // 40% increase
+        break
+      case "96 x 42":
+        sizeMultiplier = 1.4 // 40% increase
+        break
+      default:
+        sizeMultiplier = 1.0 // No adjustment
+    }
+
+    // Manual size adjustment
+    let areaMultiplier = 1.0
+    if (selectedDoorSpec === "Input Dimension") {
+      const width = parseFloat(formData.door_spec_manual_size_width ?? "") || 0
+      const height = parseFloat(formData.door_spec_manual_size_height ?? "") || 0
+
+      // Calculate new area and adjust price
+      const newArea = width * height
+      const baseArea = 2880 // Base area
+
+      if (newArea > 0) {
+        areaMultiplier = newArea / baseArea
+      }
+    }
+
     // Calculate adjusted unit price
-    const newAdjustedUnitPrice = baseUnitPrice * frameMultiplier * materialMultiplier
+    const newAdjustedUnitPrice = baseUnitPrice * frameMultiplier * materialMultiplier * sizeMultiplier * areaMultiplier
 
     // Update the adjusted unit price state
     setAdjustedUnitPrice(newAdjustedUnitPrice)
 
     // Subtotal and total calculations
-    const subtotal = newAdjustedUnitPrice + 17820
+    const additionalCharges = 17820
+    const calculatedSubtotal = newAdjustedUnitPrice + additionalCharges
+    setSubtotal(calculatedSubtotal)
     const total = quantity * (newAdjustedUnitPrice + 17820)
     const deposit_amount = total * 0.3
 
@@ -413,10 +449,16 @@ export default function Web() {
       total: total.toString(),
       deposit_amount: deposit_amount.toString(),
     }))
-  }, [quantity, selectedRadio, formData.door_spec_frame_type, formData.door_spec_material_type]) // Dependencies
-
-  const additionalCharges = 17820
-  const subtotal = unitPrice + additionalCharges
+  }, [
+    quantity,
+    selectedRadio,
+    formData.door_spec_frame_type,
+    formData.door_spec_material_type,
+    formData.door_spec_default_size,
+    formData.door_spec_manual_size_width,
+    formData.door_spec_manual_size_height,
+    selectedDoorSpec,
+  ]) // Dependencies
 
   const handleDecrement = () => {
     setQuantity((prev) => Math.max(prev - 1, 0)) // Ensure quantity doesn't go below 0
