@@ -1,7 +1,5 @@
 "use client"
 import Footer from "components/Footer/Footer"
-import Image from "next/image"
-import Navbar from "components/Navbar/Navbar"
 import { useEffect, useState } from "react"
 import Accordion from "components/Accordion/Accordion"
 import { motion } from "framer-motion"
@@ -10,8 +8,6 @@ import NewNav from "components/Navbar/NewNav"
 import ContactUs from "components/ContactUs/Contact"
 
 export default function Web() {
-
-
   const faqData = [
     {
       title: "1. Introduction",
@@ -150,8 +146,13 @@ export default function Web() {
 
             <div className=" w-full rounded-md border border-[#FFFFFF1A] ">
               {faqData.map((faq, index) => (
-                <Accordion key={index} title={faq.title} content={faq.content} isOpen={openIndex === index}
-                onToggle={() => handleToggle(index)} />
+                <Accordion
+                  key={index}
+                  title={faq.title}
+                  content={faq.content}
+                  isOpen={openIndex === index}
+                  onToggle={() => handleToggle(index)}
+                />
               ))}
             </div>
             <p className="mt-4 text-center text-sm text-[#FFFFFF99]">

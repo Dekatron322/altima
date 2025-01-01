@@ -1,6 +1,6 @@
 "use client"
 import Footer from "components/Footer/Footer"
-import axios from "axios";
+import axios from "axios"
 import Navbar from "components/Navbar/Navbar"
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
@@ -8,26 +8,26 @@ import { HiChevronDown } from "react-icons/hi2"
 import { LiaTimesSolid } from "react-icons/lia"
 import MainFooter from "components/Footer/MainFooter"
 import { getOrderInformation, UserInformationPayload } from "services/orderService"
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import NewNav from "components/Navbar/NewNav";
+import Image from "next/image"
+import { useRouter } from "next/navigation"
+import NewNav from "components/Navbar/NewNav"
 
 interface User {
   id: string
   token: string
 }
 interface UserDetails {
-  id: string,
-  username: string;
-  first_name: string;
-  last_name: string;
-  email: string;
+  id: string
+  username: string
+  first_name: string
+  last_name: string
+  email: string
 }
 export default function Web() {
   const [addressData, setAddressData] = useState<UserInformationPayload["preorder"][] | null>(null)
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedOrderId, setSelectedOrderId] = useState<string | null>(null);
-  const [status, setStatus] = useState<string>("");
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selectedOrderId, setSelectedOrderId] = useState<string | null>(null)
+  const [status, setStatus] = useState<string>("")
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -38,137 +38,135 @@ export default function Web() {
   const closeDeleteModal = () => setIsDeleteModalOpen(false)
   const opeCancelModal = () => setIsCancelModalOpen(true)
   const closeCancelModal = () => setIsCancelModalOpen(false)
-  const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
+  const [userDetails, setUserDetails] = useState<UserDetails | null>(null)
   const handleOpenModal = (orderId: string) => {
-    setSelectedOrderId(orderId);
-    setIsModalOpen(true);
-  };
+    setSelectedOrderId(orderId)
+    setIsModalOpen(true)
+  }
 
   const router = useRouter()
 
   const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setSelectedOrderId(null);
-    setStatus("");
-  };
+    setIsModalOpen(false)
+    setSelectedOrderId(null)
+    setStatus("")
+  }
 
   const fetchOrders = async () => {
     try {
-      const userString = localStorage.getItem("user");
+      const userString = localStorage.getItem("user")
       if (!userString) {
-        console.error("No user data found in localStorage.");
-        return;
+        console.error("No user data found in localStorage.")
+        return
       }
 
-      const parsedUser = JSON.parse(userString) as User;
-      const userId = parsedUser?.id;
+      const parsedUser = JSON.parse(userString) as User
+      const userId = parsedUser?.id
       if (!userId) {
-        console.error("User ID is not present in the stored user data.");
-        return;
+        console.error("User ID is not present in the stored user data.")
+        return
       }
 
-      const userDetails = await getOrderInformation(userId);
-      console.log("Fetched Order Details:", userDetails);
+      const userDetails = await getOrderInformation(userId)
+      console.log("Fetched Order Details:", userDetails)
 
       if (Array.isArray(userDetails.preorders)) {
-        setAddressData(userDetails.preorders);
+        setAddressData(userDetails.preorders)
       } else {
-        console.error("Order data is not in the expected format.");
+        console.error("Order data is not in the expected format.")
       }
     } catch (error) {
-      console.error("Error fetching order information:", error);
+      console.error("Error fetching order information:", error)
     }
-  };
+  }
 
   const handleCancelOrder = async () => {
     setLoading(true)
     setError(null)
     setSuccessMessage(null)
-  
+
     if (!selectedOrderId) {
-      console.error("Order ID is missing.");
-      return;
+      console.error("Order ID is missing.")
+      return
     }
-  
+
     try {
       // Make the API call to cancel the order
       const response = await axios.put(
         `https://altima.fyber.site/preorder/preorder/${selectedOrderId}/update-status/`,
-        { status: "cancelled" }, 
+        { status: "cancelled" },
         { headers: { "Content-Type": "application/json" } }
-      );
-      setSuccessMessage("Order cancelled successfully");
-      setLoading(false);
-      console.log("Order canceled successfully:", response.data);
-  
-      handleCloseModal();
-  
-      fetchOrders();
-    } catch (error: any) {
-      console.error("Error canceling the order:", error);
-      setError(error.response?.data?.message || "Error canceling the order");
-      setLoading(false);
-    }
-  };
+      )
+      setSuccessMessage("Order cancelled successfully")
+      setLoading(false)
+      console.log("Order canceled successfully:", response.data)
 
-  
-  
+      handleCloseModal()
+
+      fetchOrders()
+    } catch (error: any) {
+      console.error("Error canceling the order:", error)
+      setError(error.response?.data?.message || "Error canceling the order")
+      setLoading(false)
+    }
+  }
+
   useEffect(() => {
-    fetchOrders();
-  }, []);
+    fetchOrders()
+  }, [])
 
   useEffect(() => {
     if (successMessage || error) {
       const timer = setTimeout(() => {
         setSuccessMessage(null)
         setError(null)
-      }, 3000) 
+      }, 3000)
 
-      return () => clearTimeout(timer) 
+      return () => clearTimeout(timer)
     }
   }, [successMessage, error])
 
   const handleTrackOrder = (selectedOrderId: string) => {
-    localStorage.setItem("orderId", selectedOrderId);
-    router.push(`/my-account/track-order`);
-  };
+    localStorage.setItem("orderId", selectedOrderId)
+    router.push(`/my-account/track-order`)
+  }
 
   const fetchUserDetails = async () => {
     try {
       // Retrieve user data from localStorage
-      const userData = localStorage.getItem("user");
+      const userData = localStorage.getItem("user")
       if (!userData) {
-        throw new Error("User is not logged in.");
+        throw new Error("User is not logged in.")
       }
 
-      const parsedData = JSON.parse(userData) as { id: string };
-    const { id } = parsedData;
+      const parsedData = JSON.parse(userData) as { id: string }
+      const { id } = parsedData
 
       const response = await fetch(`https://altima.fyber.site/custom-user/get-user-detail/${id}/`, {
         headers: {
           "Content-Type": "application/json",
         },
-      });
+      })
 
       if (!response.ok) {
-        throw new Error("Failed to fetch user details.");
+        throw new Error("Failed to fetch user details.")
       }
 
-      const data = await response.json() as UserDetails;
-      setUserDetails(data);
+      const data = (await response.json()) as UserDetails
+      setUserDetails(data)
     } catch (err: any) {
-      setError(err.message || "An error occurred.");
+      setError(err.message || "An error occurred.")
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   const handleLogout = async () => {
     if (!userDetails?.email) {
-      alert("User email is missing.");
-      return;
+      alert("User email is missing.")
+      return
     }
-  
+
     try {
       const response = await fetch("https://altima.fyber.site/custom-user/sign-out/", {
         method: "POST",
@@ -176,26 +174,26 @@ export default function Web() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ email: userDetails.email }),
-      });
-  
+      })
+
       if (!response.ok) {
-        throw new Error("Failed to log out. Please try again.");
+        throw new Error("Failed to log out. Please try again.")
       }
-  
+
       // Clear user data from localStorage
-      localStorage.removeItem("user");
-  
+      localStorage.removeItem("user")
+
       // Redirect to login or home page
-      window.location.href = "/";
+      window.location.href = "/"
     } catch (error) {
-      console.error("Error during logout:", error);
-      alert(error instanceof Error ? error.message : "An error occurred.");
+      console.error("Error during logout:", error)
+      alert(error instanceof Error ? error.message : "An error occurred.")
     }
-  };
+  }
 
   useEffect(() => {
-    fetchUserDetails();
-  }, []);
+    fetchUserDetails()
+  }, [])
 
   return (
     <section className="bg-black">
@@ -298,223 +296,228 @@ export default function Web() {
             </p>
             <div className="mb-5 border-b border-[#FFFFFF1A]"></div>
 
-
             {addressData ? (
-                addressData.map((preorder, index) => (
-            <div key={preorder.id} className="flex mb-5 h-full flex-col  rounded-lg  bg-[#FFFFFF1A]  p-5">
-              <p className="mb-2 text-lg text-white"> Date Placed: {new Date(preorder.pub_date).toLocaleDateString('en-US', { 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
-  })} | Smartheaven Order #1234567890</p>
-              <div className="border-b border-[#FFFFFF1A]"></div>
-              <div className="flex h-full pt-4  max-sm:grid max-sm:gap-5  md:gap-10">
-                <div>
-                  <motion.img
-                    src="/renew.png"
-                    className="max-sm:w-full  sm:w-[253px]"
-                    alt=""
-                    initial={{ scale: 1.2, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 1, ease: "easeIn" }}
-                  />
-                </div>
-                <div className="w-full ">
-                  <div className="mb-5 flex gap-2 max-sm:w-full max-sm:flex-col max-sm:items-center max-sm:justify-center">
-                  {preorder.status === 'processing order' && (
-  <motion.img
-    src="/SpinnerGap.png"
-    width={32}
-    height={32}
-    alt="Loading spinner"
-    initial={{ scale: 1.2, opacity: 0 }}
-    animate={{ scale: 1, opacity: 1 }}
-    transition={{ duration: 1, ease: "easeIn" }}
-  />
-)}
-
-{preorder.status === 'pending' && (
-  <motion.img
-    src="/SpinnerGap.png"
-    width={32}
-    height={32}
-    alt="Loading spinner"
-    initial={{ scale: 1.2, opacity: 0 }}
-    animate={{ scale: 1, opacity: 1 }}
-    transition={{ duration: 1, ease: "easeIn" }}
-  />
-)}
-
-{preorder.status === 'completed' && (
-  <motion.img
-    src="/CheckCircle8.png"
-    width={32}
-    height={32}
-    alt="Completed"
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ duration: 1 }}
-  />
-)}
-
-{preorder.status === 'cancelled' && (
-  <motion.img
-    src="/Prohibit.png"
-    width={32}
-    height={32}
-    alt="Completed"
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ duration: 1 }}
-  />
-)}
-                    <p className=" text-lg text-[#FFFFFF] max-sm:text-center capitalize">{preorder.status}</p>
-                    {preorder.status === 'processing order' && (
-                    <p className="text-center text-sm text-[#FFFFFF99]">Estimated delivery: Sat, August 26</p>
-                    )}
-                  </div>
-                  {preorder.product_selection_altima_elite === true && (
-                  <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:text-lg lg:text-2xl">
-                    Altima Elite
+              addressData.map((preorder, index) => (
+                <div key={preorder.id} className="mb-5 flex h-full flex-col  rounded-lg  bg-[#FFFFFF1A]  p-5">
+                  <p className="mb-2 text-lg text-white">
+                    {" "}
+                    Date Placed:{" "}
+                    {new Date(preorder.pub_date).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}{" "}
+                    | Smartheaven Order #1234567890
                   </p>
-                )}
+                  <div className="border-b border-[#FFFFFF1A]"></div>
+                  <div className="flex h-full pt-4  max-sm:grid max-sm:gap-5  md:gap-10">
+                    <div>
+                      <motion.img
+                        src="/renew.png"
+                        className="max-sm:w-full  sm:w-[253px]"
+                        alt=""
+                        initial={{ scale: 1.2, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 1, ease: "easeIn" }}
+                      />
+                    </div>
+                    <div className="w-full ">
+                      <div className="mb-5 flex gap-2 max-sm:w-full max-sm:flex-col max-sm:items-center max-sm:justify-center">
+                        {preorder.status === "processing order" && (
+                          <motion.img
+                            src="/SpinnerGap.png"
+                            width={32}
+                            height={32}
+                            alt="Loading spinner"
+                            initial={{ scale: 1.2, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ duration: 1, ease: "easeIn" }}
+                          />
+                        )}
 
-{preorder.product_selection_altima_elite === false && (
-                  <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:text-lg lg:text-2xl">
-                    Altima Core
-                  </p>
-                )}
+                        {preorder.status === "pending" && (
+                          <motion.img
+                            src="/SpinnerGap.png"
+                            width={32}
+                            height={32}
+                            alt="Loading spinner"
+                            initial={{ scale: 1.2, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ duration: 1, ease: "easeIn" }}
+                          />
+                        )}
 
-                  <ul className="mt-22 list-inside ">
-                    <li className="pb-1 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                      Address : {preorder.shipping_address_street} , {preorder.email_address}
-                    </li>
-                    <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs capitalize">Status: {preorder.status}</li>
-                    
-                  </ul>
+                        {preorder.status === "completed" && (
+                          <motion.img
+                            src="/CheckCircle8.png"
+                            width={32}
+                            height={32}
+                            alt="Completed"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 1 }}
+                          />
+                        )}
 
-                  {preorder.status === 'processing order' &&  (
-                  <div className="flex w-full gap-4 max-sm:flex-col">
-                    <motion.a
-                      href="/my-account/track-order"
-                      whileHover={{ scale: 1.01 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="font-regular w-full gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm  text-[#FFFFFF] max-sm:py-2 "
-                    >
-                      Change Address
-                    </motion.a>
-                    <motion.button
-                      whileHover={{ scale: 1.01 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
-                      onClick={() => handleOpenModal(preorder.id)}
-                    >
-                      Cancel Order
-                    </motion.button>
-                    <motion.button
-                      onClick={() => handleTrackOrder(preorder.id)}
-                      whileHover={{ scale: 1.01 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="font-regular w-full gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm  text-[#FFFFFF] max-sm:py-2 "
-                    >
-                      Track Order
-                    </motion.button>
+                        {preorder.status === "cancelled" && (
+                          <motion.img
+                            src="/Prohibit.png"
+                            width={32}
+                            height={32}
+                            alt="Completed"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 1 }}
+                          />
+                        )}
+                        <p className=" text-lg capitalize text-[#FFFFFF] max-sm:text-center">{preorder.status}</p>
+                        {preorder.status === "processing order" && (
+                          <p className="text-center text-sm text-[#FFFFFF99]">Estimated delivery: Sat, August 26</p>
+                        )}
+                      </div>
+                      {preorder.product_selection_altima_elite === true && (
+                        <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:text-lg lg:text-2xl">
+                          Altima Elite
+                        </p>
+                      )}
 
-                    <motion.button
-                      whileHover={{ scale: 1.01 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
-                      onClick={opeCancelModal}
-                    >
-                      View Details
-                    </motion.button>
-                  </div>
-                    )}
+                      {preorder.product_selection_altima_elite === false && (
+                        <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:text-lg lg:text-2xl">
+                          Altima Core
+                        </p>
+                      )}
 
-                  
-                  {preorder.status === 'pending' &&  (
-                  <div className="flex w-full gap-4 max-sm:flex-col">
-                    <motion.a
-                      href="/my-account/track-order"
-                      whileHover={{ scale: 1.01 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="font-regular w-full gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm  text-[#FFFFFF] max-sm:py-2 "
-                    >
-                      Change Address
-                    </motion.a>
-                    <motion.button
-                      whileHover={{ scale: 1.01 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
-                      onClick={() => handleOpenModal(preorder.id)}
-                    >
-                      Cancel Order
-                    </motion.button>
-                    <motion.a
-                      href="/my-account/track-order"
-                      whileHover={{ scale: 1.01 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="font-regular w-full gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm  text-[#FFFFFF] max-sm:py-2 "
-                    >
-                      Track Order
-                    </motion.a>
+                      <ul className="mt-22 list-inside ">
+                        <li className="pb-1 text-sm text-[#FFFFFF99] max-sm:text-xs">
+                          Address : {preorder.shipping_address_street} , {preorder.email_address}
+                        </li>
+                        <li className="pb-2 text-sm capitalize text-[#FFFFFF99] max-sm:text-xs">
+                          Status: {preorder.status}
+                        </li>
+                      </ul>
 
-                    <motion.button
-                      whileHover={{ scale: 1.01 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
-                      onClick={opeCancelModal}
-                    >
-                      View Details
-                    </motion.button>
-                  </div>
-                    )}
-{preorder.status === 'cancelled' && (
-<div className="flex w-full gap-4 max-sm:flex-col">
-                    <motion.button
-                      onClick={() => handleTrackOrder(preorder.id)}
-                      whileHover={{ scale: 1.01 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="font-regular w-full gap-2   rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-center text-sm  text-[#FFFFFF] max-sm:py-2 "
-                    >
-                      Track Order
-                    </motion.button>
+                      {preorder.status === "processing order" && (
+                        <div className="flex w-full gap-4 max-sm:flex-col">
+                          <motion.a
+                            href="/my-account/track-order"
+                            whileHover={{ scale: 1.01 }}
+                            whileTap={{ scale: 0.9 }}
+                            className="font-regular w-full gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm  text-[#FFFFFF] max-sm:py-2 "
+                          >
+                            Change Address
+                          </motion.a>
+                          <motion.button
+                            whileHover={{ scale: 1.01 }}
+                            whileTap={{ scale: 0.9 }}
+                            className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
+                            onClick={() => handleOpenModal(preorder.id)}
+                          >
+                            Cancel Order
+                          </motion.button>
+                          <motion.button
+                            onClick={() => handleTrackOrder(preorder.id)}
+                            whileHover={{ scale: 1.01 }}
+                            whileTap={{ scale: 0.9 }}
+                            className="font-regular w-full gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm  text-[#FFFFFF] max-sm:py-2 "
+                          >
+                            Track Order
+                          </motion.button>
 
-                    <motion.button
-                      whileHover={{ scale: 1.01 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
-                      onClick={opeCancelModal}
-                    >
-                      View Details
-                    </motion.button>
-                  </div>
-)}
-{preorder.status === 'completed' && (
-<div className="flex w-full gap-4">
-                    <motion.button
-                      whileHover={{ scale: 1.01 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
-                      onClick={opeCancelModal}
-                    >
-                      View Details
-                    </motion.button>
-                  </div>
-)}
-                  <div className="my-3 border-b border-[#FFFFFF1A]"></div>
-                  <div className="flex items-center gap-3">
-                    <p className="text-white">
-                      Total Price ( {preorder.quantity} Item ) :<span className="font-bold"> ₹{preorder.total}</span>| Download Receipt
-                    </p>
+                          <motion.button
+                            whileHover={{ scale: 1.01 }}
+                            whileTap={{ scale: 0.9 }}
+                            className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
+                            onClick={opeCancelModal}
+                          >
+                            View Details
+                          </motion.button>
+                        </div>
+                      )}
+
+                      {preorder.status === "pending" && (
+                        <div className="flex w-full gap-4 max-sm:flex-col">
+                          <motion.a
+                            href="/my-account/track-order"
+                            whileHover={{ scale: 1.01 }}
+                            whileTap={{ scale: 0.9 }}
+                            className="font-regular w-full gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm  text-[#FFFFFF] max-sm:py-2 "
+                          >
+                            Change Address
+                          </motion.a>
+                          <motion.button
+                            whileHover={{ scale: 1.01 }}
+                            whileTap={{ scale: 0.9 }}
+                            className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
+                            onClick={() => handleOpenModal(preorder.id)}
+                          >
+                            Cancel Order
+                          </motion.button>
+                          <motion.a
+                            href="/my-account/track-order"
+                            whileHover={{ scale: 1.01 }}
+                            whileTap={{ scale: 0.9 }}
+                            className="font-regular w-full gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm  text-[#FFFFFF] max-sm:py-2 "
+                          >
+                            Track Order
+                          </motion.a>
+
+                          <motion.button
+                            whileHover={{ scale: 1.01 }}
+                            whileTap={{ scale: 0.9 }}
+                            className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
+                            onClick={opeCancelModal}
+                          >
+                            View Details
+                          </motion.button>
+                        </div>
+                      )}
+                      {preorder.status === "cancelled" && (
+                        <div className="flex w-full gap-4 max-sm:flex-col">
+                          <motion.button
+                            onClick={() => handleTrackOrder(preorder.id)}
+                            whileHover={{ scale: 1.01 }}
+                            whileTap={{ scale: 0.9 }}
+                            className="font-regular w-full gap-2   rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-center text-sm  text-[#FFFFFF] max-sm:py-2 "
+                          >
+                            Track Order
+                          </motion.button>
+
+                          <motion.button
+                            whileHover={{ scale: 1.01 }}
+                            whileTap={{ scale: 0.9 }}
+                            className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
+                            onClick={opeCancelModal}
+                          >
+                            View Details
+                          </motion.button>
+                        </div>
+                      )}
+                      {preorder.status === "completed" && (
+                        <div className="flex w-full gap-4">
+                          <motion.button
+                            whileHover={{ scale: 1.01 }}
+                            whileTap={{ scale: 0.9 }}
+                            className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
+                            onClick={opeCancelModal}
+                          >
+                            View Details
+                          </motion.button>
+                        </div>
+                      )}
+                      <div className="my-3 border-b border-[#FFFFFF1A]"></div>
+                      <div className="flex items-center gap-3">
+                        <p className="text-white">
+                          Total Price ( {preorder.quantity} Item ) :
+                          <span className="font-bold"> ₹{preorder.total}</span>| Download Receipt
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            ))
-          ) : (
-            <p className="text-sm text-[#FFFFFF80]">Loading order information...</p>
-          )}
+              ))
+            ) : (
+              <p className="text-sm text-[#FFFFFF80]">Loading order information...</p>
+            )}
           </div>
         </div>
       </section>
@@ -530,8 +533,11 @@ export default function Web() {
             </div>
             <p className="w-full text-center text-2xl text-white">Are you sure you want to log out?</p>
             <div className="mt-4 flex gap-2">
-              <button onClick={handleLogout} className="w-full  rounded-lg border border-[#FFFFFF99] bg-[#FF3B3B] px-4 py-2 text-[#000000]  hover:bg-[#FF3B3B]">
-              Yes, Log Out
+              <button
+                onClick={handleLogout}
+                className="w-full  rounded-lg border border-[#FFFFFF99] bg-[#FF3B3B] px-4 py-2 text-[#000000]  hover:bg-[#FF3B3B]"
+              >
+                Yes, Log Out
               </button>
               <button
                 onClick={closeDeleteModal}
@@ -544,7 +550,7 @@ export default function Web() {
         </div>
       )}
 
-{isModalOpen && (
+      {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#000000] bg-opacity-95">
           <div className="w-full max-w-sm rounded-lg bg-[#151515] p-4 text-white">
             <div className="mb-4 flex w-full items-center">
@@ -553,8 +559,11 @@ export default function Web() {
             </div>
             <p className="w-full text-center text-2xl text-white">Are you sure you want to Cancel this order?</p>
             <div className="mt-4 flex gap-2">
-              <button onClick={handleCancelOrder} className="w-full  rounded-lg border border-[#FFFFFF99] bg-[#FF3B3B] px-4 py-2 text-[#000000]  hover:bg-[#FF3B3B]">
-              {loading ? "Cancelling Order" : "Yes, Cancel" }
+              <button
+                onClick={handleCancelOrder}
+                className="w-full  rounded-lg border border-[#FFFFFF99] bg-[#FF3B3B] px-4 py-2 text-[#000000]  hover:bg-[#FF3B3B]"
+              >
+                {loading ? "Cancelling Order" : "Yes, Cancel"}
               </button>
               <button
                 onClick={handleCloseModal}

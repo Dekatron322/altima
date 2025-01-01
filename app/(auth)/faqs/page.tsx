@@ -8,10 +8,9 @@ import Accordion from "components/Accordion/Accordion"
 import { motion } from "framer-motion"
 import MainFooter from "components/Footer/MainFooter"
 import NewNav from "components/Navbar/NewNav"
-import ContactUs from '../../../components/ContactUs/Contact';
+import ContactUs from "../../../components/ContactUs/Contact"
 
 export default function Web() {
-
   const faqData = [
     {
       title: "1. When will Altima Disappearing Handle Smart Doors be available?",
@@ -48,22 +47,28 @@ export default function Web() {
       content: (
         <div>
           <p>
-          This Warranty does <strong>not</strong> cover:
+            This Warranty does <strong>not</strong> cover:
           </p>
           <ul className="grid gap-3">
-            
-            <li className="mt-3">Preorder payments are securely processed through our parent company, csPILLAI Ventures Private Limited, ensuring a reliable and seamless experience.
+            <li className="mt-3">
+              Preorder payments are securely processed through our parent company, csPILLAI Ventures Private Limited,
+              ensuring a reliable and seamless experience.
             </li>
-            <li >Your trust is our priority, and we adhere to the highest standards of security and professionalism in handling payments.
+            <li>
+              Your trust is our priority, and we adhere to the highest standards of security and professionalism in
+              handling payments.
             </li>
-            <li >For any assistance, feel free to contact us at <a href="mailto:customercare@smarthavensystems.com" className="text-[#FF3B30]">customercare@smarthavensystems.com</a>.
+            <li>
+              For any assistance, feel free to contact us at{" "}
+              <a href="mailto:customercare@smarthavensystems.com" className="text-[#FF3B30]">
+                customercare@smarthavensystems.com
+              </a>
+              .
             </li>
-            
-
           </ul>
-          
         </div>
-      ),},
+      ),
+    },
     {
       title: "8. Do you offer financing or payment plans?",
       content:
@@ -92,14 +97,19 @@ export default function Web() {
 
           <div className=" w-full rounded-md border border-[#FFFFFF1A] ">
             {faqData.map((faq, index) => (
-              <Accordion key={index} title={faq.title} content={faq.content} isOpen={openIndex === index}
-              onToggle={() => handleToggle(index)}/>
+              <Accordion
+                key={index}
+                title={faq.title}
+                content={faq.content}
+                isOpen={openIndex === index}
+                onToggle={() => handleToggle(index)}
+              />
             ))}
           </div>
         </div>
       </section>
 
-     <ContactUs />
+      <ContactUs />
 
       <MainFooter />
 

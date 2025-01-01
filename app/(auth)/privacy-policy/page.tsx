@@ -9,36 +9,48 @@ import NewNav from "components/Navbar/NewNav"
 import ContactUs from "components/ContactUs/Contact"
 
 export default function Web() {
-
-
   const faqData = [
     {
       title: "1. Information We Collect",
       content: (
         <div>
           <ul className="grid gap-3">
-            <li><strong>▪️ Personal Information:</strong>  Name, email address, phone number, shipping address, and payment details necessary for processing your preorder.
+            <li>
+              <strong>▪️ Personal Information:</strong> Name, email address, phone number, shipping address, and payment
+              details necessary for processing your preorder.
             </li>
-            <li className="px-2"><strong>▪️ Device Information:</strong> IP address, browser type, operating system, and other technical data to enhance user experience and improve website performance.
-            </li> 
-            <li className="px-2"><strong>▪️ Usage Data:</strong> Information on how you use our website, such as page views and navigation patterns.
+            <li className="px-2">
+              <strong>▪️ Device Information:</strong> IP address, browser type, operating system, and other technical
+              data to enhance user experience and improve website performance.
+            </li>
+            <li className="px-2">
+              <strong>▪️ Usage Data:</strong> Information on how you use our website, such as page views and navigation
+              patterns.
             </li>
           </ul>
         </div>
-      ), 
+      ),
     },
     {
       title: "2. How We Use Your Information",
       content: (
         <div>
           <ul className="grid gap-3">
-            <li><strong>▪️ Process Preorders:</strong> Manage your preorder, confirm your purchase, and handle payment transactions.
+            <li>
+              <strong>▪️ Process Preorders:</strong> Manage your preorder, confirm your purchase, and handle payment
+              transactions.
             </li>
-            <li className="px-2"><strong>▪️ Customer Support:</strong> Respond to your inquiries, provide updates, and offer support for your order.
-            </li> 
-            <li className="px-2"><strong>▪️ Communication:</strong>  Send you order-related updates, marketing offers (if opted in), and any necessary information about your preorder.
+            <li className="px-2">
+              <strong>▪️ Customer Support:</strong> Respond to your inquiries, provide updates, and offer support for
+              your order.
             </li>
-            <li className="px-2"><strong>▪️ Improvement:</strong>  Analyze usage data to improve website functionality and enhance the overall user experience.
+            <li className="px-2">
+              <strong>▪️ Communication:</strong> Send you order-related updates, marketing offers (if opted in), and any
+              necessary information about your preorder.
+            </li>
+            <li className="px-2">
+              <strong>▪️ Improvement:</strong> Analyze usage data to improve website functionality and enhance the
+              overall user experience.
             </li>
           </ul>
         </div>
@@ -49,13 +61,18 @@ export default function Web() {
       content: (
         <div>
           <ul className="grid gap-3">
-            <p>We do not sell or rent your personal information. We may share information:
-            </p>
-            <li><strong>▪️ With Service Providers:</strong> Third-party companies assisting with payment processing, shipping, and data hosting, who adhere to strict confidentiality agreements.
+            <p>We do not sell or rent your personal information. We may share information:</p>
+            <li>
+              <strong>▪️ With Service Providers:</strong> Third-party companies assisting with payment processing,
+              shipping, and data hosting, who adhere to strict confidentiality agreements.
             </li>
-            <li className="px-2"><strong>▪️ Customer Support:</strong> Respond to your inquiries, provide updates, and offer support for your order.
-            </li> 
-            <li className="px-2"><strong>▪️ For Legal Requirements:</strong> When required by law or in response to valid legal processes, such as a court order, subpoena, or government request.
+            <li className="px-2">
+              <strong>▪️ Customer Support:</strong> Respond to your inquiries, provide updates, and offer support for
+              your order.
+            </li>
+            <li className="px-2">
+              <strong>▪️ For Legal Requirements:</strong> When required by law or in response to valid legal processes,
+              such as a court order, subpoena, or government request.
             </li>
           </ul>
         </div>
@@ -77,13 +94,18 @@ export default function Web() {
         <div>
           <ul className="grid gap-3">
             <p>You have the right to:</p>
-            <li><strong>▪️ Access</strong> your personal information.
+            <li>
+              <strong>▪️ Access</strong> your personal information.
             </li>
-            <li className="px-2"><strong>▪️ Correct</strong>  any inaccurate or incomplete information.
-            </li> 
-            <li className="px-2"><strong>▪️ Request Deletion</strong>  of your data, where applicable and in compliance with legal requirements.
+            <li className="px-2">
+              <strong>▪️ Correct</strong> any inaccurate or incomplete information.
             </li>
-            <li className="px-2"><strong>▪️ Withdraw Consent</strong>   for marketing communications at any time by contacting us.
+            <li className="px-2">
+              <strong>▪️ Request Deletion</strong> of your data, where applicable and in compliance with legal
+              requirements.
+            </li>
+            <li className="px-2">
+              <strong>▪️ Withdraw Consent</strong> for marketing communications at any time by contacting us.
             </li>
           </ul>
         </div>
@@ -103,16 +125,21 @@ export default function Web() {
       title: "9. Contact Us",
       content: (
         <div>
-          
           <ul className="">
-            
-            <p className="mb-3">Our team is here to assist you with any installation-related questions or issues. For assistance, please contact:
+            <p className="mb-3">
+              Our team is here to assist you with any installation-related questions or issues. For assistance, please
+              contact:
             </p>
-            <li><strong>Email:</strong> warranty@smarthavensystems.com</li>
-            <li className="my-3"><strong>Phone:</strong> 022-6971-8365</li>
-            <li><strong>Address:</strong> Seawoods, Navi Mumbai 400706, India</li>
+            <li>
+              <strong>Email:</strong> warranty@smarthavensystems.com
+            </li>
+            <li className="my-3">
+              <strong>Phone:</strong> 022-6971-8365
+            </li>
+            <li>
+              <strong>Address:</strong> Seawoods, Navi Mumbai 400706, India
+            </li>
           </ul>
-           
         </div>
       ),
     },
@@ -192,8 +219,13 @@ export default function Web() {
 
             <div className=" w-full rounded-md border border-[#FFFFFF1A] ">
               {faqData.map((faq, index) => (
-                <Accordion key={index} title={faq.title} content={faq.content} isOpen={openIndex === index}
-                onToggle={() => handleToggle(index)}/>
+                <Accordion
+                  key={index}
+                  title={faq.title}
+                  content={faq.content}
+                  isOpen={openIndex === index}
+                  onToggle={() => handleToggle(index)}
+                />
               ))}
             </div>
           </div>

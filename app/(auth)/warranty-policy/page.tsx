@@ -8,11 +8,9 @@ import Accordion from "components/Accordion/Accordion"
 import { motion } from "framer-motion"
 import MainFooter from "components/Footer/MainFooter"
 import NewNav from "components/Navbar/NewNav"
-import ContactUs from '../../../components/ContactUs/Contact';
+import ContactUs from "../../../components/ContactUs/Contact"
 
 export default function Web() {
-
-
   // Tabs state
   const [activeTab, setActiveTab] = useState(0)
   const [selectedRadio, setSelectedRadio] = useState("")
@@ -37,11 +35,9 @@ export default function Web() {
 
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
-
   const handleAccordionToggle = (index: number) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index))
   }
-
 
   // Accordion data for each tab
   const accordionData = [
@@ -51,21 +47,29 @@ export default function Web() {
         content: (
           <div>
             <p>
-            Smart Haven Systems Private Limited (&quot;Company&quot;) offers a limited warranty (&quot;Warranty&quot;) for Altima Core and Altima Elite products (&quot;Product&quot;) purchased directly from authorized sellers. This Warranty covers defects in materials and workmanship under normal use.
+              Smart Haven Systems Private Limited (&quot;Company&quot;) offers a limited warranty (&quot;Warranty&quot;)
+              for Altima Core and Altima Elite products (&quot;Product&quot;) purchased directly from authorized
+              sellers. This Warranty covers defects in materials and workmanship under normal use.
             </p>
             <ul className="">
-              <p className="font-bold my-3">1.1 Standard Warranty Duration
-              </p>
-              <li><strong>Domestic Purchases:</strong> 24 months from the date of delivery.</li>
-              <li className="my-3"><strong>International Purchases:</strong>18 months from the date of delivery.</li>
-            </ul>
-            <p>For both domestic and international buyers, the Warranty may be extended through an <strong>Extended Warranty Plan </strong>purchased separately.</p>
-            <ul className="mt-4">
-              <p className="font-bold my-3">1.2 Extended Warranty
-              </p>
-              <li>Available for up to an additional 36 months.
+              <p className="my-3 font-bold">1.1 Standard Warranty Duration</p>
+              <li>
+                <strong>Domestic Purchases:</strong> 24 months from the date of delivery.
               </li>
-              <li className="my-3">Extended Warranty coverage is subject to terms and conditions outlined in the Extended Warranty Agreement.
+              <li className="my-3">
+                <strong>International Purchases:</strong>18 months from the date of delivery.
+              </li>
+            </ul>
+            <p>
+              For both domestic and international buyers, the Warranty may be extended through an{" "}
+              <strong>Extended Warranty Plan </strong>purchased separately.
+            </p>
+            <ul className="mt-4">
+              <p className="my-3 font-bold">1.2 Extended Warranty</p>
+              <li>Available for up to an additional 36 months.</li>
+              <li className="my-3">
+                Extended Warranty coverage is subject to terms and conditions outlined in the Extended Warranty
+                Agreement.
               </li>
             </ul>
           </div>
@@ -76,16 +80,18 @@ export default function Web() {
         content: (
           <div>
             <p>
-            The Company warrants that the Product will be free from defects in materials and workmanship under the following conditions:
+              The Company warrants that the Product will be free from defects in materials and workmanship under the
+              following conditions:
             </p>
             <ul className="">
-              
-              <li className="my-3">◾ The Product must be used in accordance with the operating instructions provided by the Company.
-              .</li>
-              <li >◾ All repairs or replacements under this Warranty will be performed using new or refurbished components that meet the Company’s standards for quality and performance.
+              <li className="my-3">
+                ◾ The Product must be used in accordance with the operating instructions provided by the Company. .
+              </li>
+              <li>
+                ◾ All repairs or replacements under this Warranty will be performed using new or refurbished components
+                that meet the Company’s standards for quality and performance.
               </li>
             </ul>
-            
           </div>
         ),
       },
@@ -94,54 +100,49 @@ export default function Web() {
         content: (
           <div>
             <p>
-            This Warranty does <strong>not</strong> cover:
+              This Warranty does <strong>not</strong> cover:
             </p>
             <ul className="grid gap-3">
-              
-              <li className="mt-3">1. Normal wear and tear, cosmetic damage, or ageing of components.
+              <li className="mt-3">1. Normal wear and tear, cosmetic damage, or ageing of components.</li>
+              <li>
+                2. Damage resulting from accident, misuse, abuse, neglect, or unauthorized modification of the Product.
               </li>
-              <li >2. Damage resulting from accident, misuse, abuse, neglect, or unauthorized modification of the Product.
-              </li>
-              <li >3. Damage caused by natural disasters, such as earthquakes, floods, or lightning.
-
-              </li>
-              <li >4. Installation errors or damage caused by improper installation by a non-certified installer.
-
-              </li>
-              <li >5. Any third-party accessories or components not supplied by the Company.
-
-              </li>
-
+              <li>3. Damage caused by natural disasters, such as earthquakes, floods, or lightning.</li>
+              <li>4. Installation errors or damage caused by improper installation by a non-certified installer.</li>
+              <li>5. Any third-party accessories or components not supplied by the Company.</li>
             </ul>
-            
           </div>
-        ),},
+        ),
+      },
       {
         title: "4.  Warranty Claim Process",
         content: (
           <div>
-            
             <ul className="">
-              <p className="font-bold my-3">4.1 Submitting a Claim
-
-              </p>
-              <p className="mb-3">To make a Warranty claim, the buyer must:
-              </p>
-              <li>1. Notify the Company by submitting the claim form or emailing your concerns to [warranty@smarthavensystems.com] within the warranty period.
+              <p className="my-3 font-bold">4.1 Submitting a Claim</p>
+              <p className="mb-3">To make a Warranty claim, the buyer must:</p>
+              <li>
+                1. Notify the Company by submitting the claim form or emailing your concerns to
+                [warranty@smarthavensystems.com] within the warranty period.
               </li>
-              <li className="my-3">2. Provide proof of purchase, such as a receipt or invoice, and the Product’s serial number.
+              <li className="my-3">
+                2. Provide proof of purchase, such as a receipt or invoice, and the Product’s serial number.
               </li>
-              <li>3. Describe the defect or issue with the Product in detail and, if requested, provide photographs or videos for assessment.
+              <li>
+                3. Describe the defect or issue with the Product in detail and, if requested, provide photographs or
+                videos for assessment.
               </li>
             </ul>
-             <ul className="mt-4">
-              <p className="font-bold my-3">4.2 Inspection and Assessment
-              </p>
-              <li>◾ Upon receiving a warranty claim, an automated confirmation email will be sent. Follow-up emails will provide updates, and, if the claim is approved, an approval email will request the buyer to ship the product to a designated service center for inspection.
-
+            <ul className="mt-4">
+              <p className="my-3 font-bold">4.2 Inspection and Assessment</p>
+              <li>
+                ◾ Upon receiving a warranty claim, an automated confirmation email will be sent. Follow-up emails will
+                provide updates, and, if the claim is approved, an approval email will request the buyer to ship the
+                product to a designated service center for inspection.
               </li>
-              <li className="my-3">◾ The buyer shall bear the shipping costs for sending the Product for inspection. If the Warranty claim is validated, the Company will reimburse reasonable shipping expenses.
-
+              <li className="my-3">
+                ◾ The buyer shall bear the shipping costs for sending the Product for inspection. If the Warranty claim
+                is validated, the Company will reimburse reasonable shipping expenses.
               </li>
             </ul>
           </div>
@@ -151,22 +152,23 @@ export default function Web() {
         title: "5. Remedies Under Warranty",
         content: (
           <div>
-            
             <ul className="">
-              
-              <p className="mb-3">If a valid claim is made under this Warranty, the Company will, at its discretion:
-              </p>
-              <li><strong>1. Repair:</strong> Repair the defective Product or components.
-
+              <p className="mb-3">If a valid claim is made under this Warranty, the Company will, at its discretion:</p>
+              <li>
+                <strong>1. Repair:</strong> Repair the defective Product or components.
               </li>
-              <li className="my-3"><strong>2. Replace:</strong> Provide a new or refurbished replacement Product or component.
+              <li className="my-3">
+                <strong>2. Replace:</strong> Provide a new or refurbished replacement Product or component.
               </li>
-              <li><strong>3. Refund:</strong> If repair or replacement is not feasible, offer a partial or full refund of the purchase price.
+              <li>
+                <strong>3. Refund:</strong> If repair or replacement is not feasible, offer a partial or full refund of
+                the purchase price.
               </li>
-              <p className="mt-3">Note: Any repaired or replaced component will be covered under the original Warranty period or for 90 days from the date of repair/replacement, whichever is longer.
+              <p className="mt-3">
+                Note: Any repaired or replaced component will be covered under the original Warranty period or for 90
+                days from the date of repair/replacement, whichever is longer.
               </p>
             </ul>
-             
           </div>
         ),
       },
@@ -174,23 +176,22 @@ export default function Web() {
         title: "6. Limitations and Liability",
         content: (
           <div>
-            
             <ul className="">
-              
-              <p className="mb-3">6.1 Limitation of Liability
-              </p>
-              <li>The Company’s total liability under this Warranty shall be limited to the original purchase price of the Product. In no event will the Company be liable for indirect, incidental, or consequential damages, even if advised of the possibility of such damages.
+              <p className="mb-3">6.1 Limitation of Liability</p>
+              <li>
+                The Company’s total liability under this Warranty shall be limited to the original purchase price of the
+                Product. In no event will the Company be liable for indirect, incidental, or consequential damages, even
+                if advised of the possibility of such damages.
               </li>
-              
             </ul>
             <ul className="mt-3">
-              
-              <p className="mb-3">6.2 Force Majeure
-              </p>
-              <li>The Company shall not be liable for any delays or failure in performance resulting from acts beyond its reasonable control, including but not limited to acts of God, government regulations, war, terrorism, labor disputes, or supply chain disruptions.
-              </li> 
+              <p className="mb-3">6.2 Force Majeure</p>
+              <li>
+                The Company shall not be liable for any delays or failure in performance resulting from acts beyond its
+                reasonable control, including but not limited to acts of God, government regulations, war, terrorism,
+                labor disputes, or supply chain disruptions.
+              </li>
             </ul>
-             
           </div>
         ),
       },
@@ -199,25 +200,34 @@ export default function Web() {
         content: (
           <div>
             <p>
-            Smart Haven Systems Private Limited (&quot;Company&quot;) offers a limited warranty (&quot;Warranty&quot;) for Altima Core and Altima Elite products (&quot;Product&quot;) purchased directly from authorized sellers. This Warranty covers defects in materials and workmanship under normal use.
+              Smart Haven Systems Private Limited (&quot;Company&quot;) offers a limited warranty (&quot;Warranty&quot;)
+              for Altima Core and Altima Elite products (&quot;Product&quot;) purchased directly from authorized
+              sellers. This Warranty covers defects in materials and workmanship under normal use.
             </p>
             <ul className="">
-              <p className="font-bold my-3">1.1 Standard Warranty Duration
-              </p>
-              <li><strong>Domestic Purchases:</strong> 24 months from the date of delivery.</li>
-              <li className="my-3"><strong>DInternational Purchases:</strong>D 18 months from the date of delivery.</li>
-            </ul>
-            <p>For both domestic and international buyers, the Warranty may be extended through an <strong>Extended Warranty Plan </strong>purchased separately.</p>
-            <ul className="mt-4">
-              <p className="font-bold my-3">1.2 Extended Warranty
-              </p>
-              <li>Available for up to an additional 36 months.
+              <p className="my-3 font-bold">1.1 Standard Warranty Duration</p>
+              <li>
+                <strong>Domestic Purchases:</strong> 24 months from the date of delivery.
               </li>
-              <li className="my-3">Extended Warranty coverage is subject to terms and conditions outlined in the Extended Warranty Agreement.
+              <li className="my-3">
+                <strong>DInternational Purchases:</strong>D 18 months from the date of delivery.
+              </li>
+            </ul>
+            <p>
+              For both domestic and international buyers, the Warranty may be extended through an{" "}
+              <strong>Extended Warranty Plan </strong>purchased separately.
+            </p>
+            <ul className="mt-4">
+              <p className="my-3 font-bold">1.2 Extended Warranty</p>
+              <li>Available for up to an additional 36 months.</li>
+              <li className="my-3">
+                Extended Warranty coverage is subject to terms and conditions outlined in the Extended Warranty
+                Agreement.
               </li>
             </ul>
           </div>
-        ),},
+        ),
+      },
       {
         title: "8. Governing Law and Jurisdiction",
         content:
@@ -232,25 +242,22 @@ export default function Web() {
         title: "10. Contact Information",
         content: (
           <div>
-            
             <ul className="">
-              
-              <p className="mb-3">For Warranty claims, inquiries, or support, please contact:
-              </p>
-              <li><strong>Email:</strong> warranty@smarthavensystems.com
-
-
+              <p className="mb-3">For Warranty claims, inquiries, or support, please contact:</p>
+              <li>
+                <strong>Email:</strong> warranty@smarthavensystems.com
               </li>
-              <li className="my-3"><strong>Phone:</strong> +91-XXXX-XXXXXX
-
+              <li className="my-3">
+                <strong>Phone:</strong> +91-XXXX-XXXXXX
               </li>
-              <li><strong>Address:</strong>  Smart Haven Systems Private Limited, [Address]
-
+              <li>
+                <strong>Address:</strong> Smart Haven Systems Private Limited, [Address]
               </li>
-              <p className="mt-3">This Warranty does not affect the statutory rights of consumers under applicable consumer protection laws.
+              <p className="mt-3">
+                This Warranty does not affect the statutory rights of consumers under applicable consumer protection
+                laws.
               </p>
             </ul>
-             
           </div>
         ),
       },
@@ -269,165 +276,181 @@ export default function Web() {
       {
         title: "1. Overview",
         content: (
-          <div> 
-            <p>The Extended Warranty (&quot;Extended Warranty&quot;) extends the coverage of the Standard Warranty for an additional period as purchased by the customer (&quot;Buyer&quot;). This Extended Warranty is provided by Smart Haven Systems Private Limited (&quot;Company&quot;) and is subject to the terms and conditions outlined herein.</p> 
+          <div>
+            <p>
+              The Extended Warranty (&quot;Extended Warranty&quot;) extends the coverage of the Standard Warranty for an
+              additional period as purchased by the customer (&quot;Buyer&quot;). This Extended Warranty is provided by
+              Smart Haven Systems Private Limited (&quot;Company&quot;) and is subject to the terms and conditions
+              outlined herein.
+            </p>
           </div>
-        ),},
+        ),
+      },
       {
         title: "2. Extended Warranty Coverage",
-        content:(
+        content: (
           <div>
-            
             <ul className="">
-              
               <p className="mb-3">2.1 Duration</p>
-              <li>Buyers may purchase an Extended Warranty for an additional period of <strong>12, 24, or 36 months.</strong>
+              <li>
+                Buyers may purchase an Extended Warranty for an additional period of{" "}
+                <strong>12, 24, or 36 months.</strong>
               </li>
-              
-              <li>The Extended Warranty coverage begins immediately after the expiration of the Standard Warranty.
-              </li>
-              
+
+              <li>The Extended Warranty coverage begins immediately after the expiration of the Standard Warranty.</li>
             </ul>
             <ul className="mt-4">
-              
               <p className="mb-3">2.2 Coverage Details</p>
               <p>The Extended Warranty covers:</p>
-              <li className="my-3"><strong>Defects in Materials and Workmanship:</strong> Coverage for defects that prevent the Product from functioning as intended.
+              <li className="my-3">
+                <strong>Defects in Materials and Workmanship:</strong> Coverage for defects that prevent the Product
+                from functioning as intended.
               </li>
-              
-              <li><strong>Component Failures:</strong> Replacement or repair of critical components, including smart lock mechanisms and biometric sensors.
+
+              <li>
+                <strong>Component Failures:</strong> Replacement or repair of critical components, including smart lock
+                mechanisms and biometric sensors.
               </li>
-              
             </ul>
-            <p className="mt-3">Note: The coverage terms mirror the Standard Warranty, with the exclusions listed in Section 3.
-            </p>  
+            <p className="mt-3">
+              Note: The coverage terms mirror the Standard Warranty, with the exclusions listed in Section 3.
+            </p>
           </div>
         ),
       },
       {
         title: "3. Exclusions from Extended Warranty",
-        content:(
+        content: (
           <div>
             <ul className="grid gap-3">
-              
-              <p className="mb-3">The Extended Warranty does <strong>not</strong> cover:</p>
+              <p className="mb-3">
+                The Extended Warranty does <strong>not</strong> cover:
+              </p>
               <li>1. Normal wear and tear, cosmetic damage, or aging of components.</li>
-              
-              <li>2. Damage resulting from accidents, misuse, abuse, neglect, unauthorized modification, or installation by non-certified personnel.</li>
-              <li>3. Environmental damage, such as corrosion, rust, or discoloration caused by harsh environmental conditions.</li>
+
+              <li>
+                2. Damage resulting from accidents, misuse, abuse, neglect, unauthorized modification, or installation
+                by non-certified personnel.
+              </li>
+              <li>
+                3. Environmental damage, such as corrosion, rust, or discoloration caused by harsh environmental
+                conditions.
+              </li>
               <li>4. Damage caused by power surges, lightning strikes, or other electrical disruptions.</li>
               <li>5. Third-party accessories or components not provided by the Company.</li>
-            </ul> 
+            </ul>
           </div>
-        ),},
+        ),
+      },
       {
         title: "4. Purchasing and Activation",
-        content:(
+        content: (
           <div>
-            
             <ul className="">
-              
               <p className="mb-3">4.1 Eligibility</p>
-              <li>◾ The Extended Warranty must be purchased within <strong>30 days</strong> of the original Product purchase date or within the Standard Warranty period.
+              <li>
+                ◾ The Extended Warranty must be purchased within <strong>30 days</strong> of the original Product
+                purchase date or within the Standard Warranty period.
               </li>
-              
-              <li>◾ Proof of purchase for the Product is required for activation.
-              </li>
-              
+
+              <li>◾ Proof of purchase for the Product is required for activation.</li>
             </ul>
             <ul className="mt-4">
-              
               <p className="mb-3">4.2 Activation</p>
-              
-              <li className="my-3">The Extended Warranty is activated upon successful payment and registration of the Product on the Company’s warranty portal at [www.smarthavensystems.com/warranty].
-              </li> 
+
+              <li className="my-3">
+                The Extended Warranty is activated upon successful payment and registration of the Product on the
+                Company’s warranty portal at [www.smarthavensystems.com/warranty].
+              </li>
             </ul>
-            
           </div>
         ),
       },
       {
         title: "5. Extended Warranty Claim Process",
-        content:(
+        content: (
           <div>
-            
             <ul className="grid gap-3">
-              
               <p className="mb-3">5.1 Filing a Claim</p>
-              <li>◾To file an Extended Warranty claim, the Buyer must:
-              </li>             
-              <li>1. Contact the Company at [warranty@smarthavensystems.com] or call +91-XXXX-XXXXXX.
+              <li>◾To file an Extended Warranty claim, the Buyer must:</li>
+              <li>1. Contact the Company at [warranty@smarthavensystems.com] or call +91-XXXX-XXXXXX.</li>
+              <li>
+                2. Provide the Product’s serial number, proof of Extended Warranty purchase, and a detailed description
+                of the issue.
               </li>
-              <li>2. Provide the Product’s serial number, proof of Extended Warranty purchase, and a detailed description of the issue.
-              </li>
-              
             </ul>
-            <p className="my-3">The Company may request additional documentation, such as photos or videos, to evaluate the claim.
+            <p className="my-3">
+              The Company may request additional documentation, such as photos or videos, to evaluate the claim.
             </p>
-            <ul className="grid mt-6 gap-3">
-              
+            <ul className="mt-6 grid gap-3">
               <p className="mb-3">5.2 Inspection and Resolution</p>
-              <p>The Company reserves the right to inspect the Product to determine the validity of the claim.
-              </p>
+              <p>The Company reserves the right to inspect the Product to determine the validity of the claim.</p>
               <p>Upon approval, the Company will choose to:</p>
-              <li><strong>Repair: </strong>Repair the defective component(s) at no additional cost.
-              </li>             
-              <li><strong>Replace:</strong> Provide a new or refurbished replacement unit.
+              <li>
+                <strong>Repair: </strong>Repair the defective component(s) at no additional cost.
               </li>
-              <li><strong>Reimburse: </strong>If repair or replacement is not possible, issue a prorated refund based on the remaining warranty coverage.
+              <li>
+                <strong>Replace:</strong> Provide a new or refurbished replacement unit.
               </li>
-              
+              <li>
+                <strong>Reimburse: </strong>If repair or replacement is not possible, issue a prorated refund based on
+                the remaining warranty coverage.
+              </li>
             </ul>
-            <p className="mt-3">TShipping Costs: The Buyer may be responsible for shipping costs to the designated service center. If the claim is approved, the Company may reimburse reasonable shipping expenses.
+            <p className="mt-3">
+              TShipping Costs: The Buyer may be responsible for shipping costs to the designated service center. If the
+              claim is approved, the Company may reimburse reasonable shipping expenses.
             </p>
-            
           </div>
         ),
       },
       {
         title: "6. Transferability",
-        content:(
+        content: (
           <div>
-            <p>The Extended Warranty is <strong>non-transferable</strong> and applies only to the original Buyer, except where applicable under local laws.
+            <p>
+              The Extended Warranty is <strong>non-transferable</strong> and applies only to the original Buyer, except
+              where applicable under local laws.
             </p>
-            
-            <p className="mt-3">The Extended Warranty is void if the Product is sold, gifted, or transferred to a third party.
+
+            <p className="mt-3">
+              The Extended Warranty is void if the Product is sold, gifted, or transferred to a third party.
             </p>
-            
           </div>
         ),
       },
       {
         title: "7. Limitations and Liability",
-        content:(
+        content: (
           <div>
-            
             <ul className="">
-              
               <p className="mb-3">7.1 Limitation of Liability</p>
-              <li>The Company&apos;s total liability under this Extended Warranty is limited to the original purchase price of the Product. The Company shall not be liable for indirect, incidental, or consequential damages.</li>
+              <li>
+                The Company&apos;s total liability under this Extended Warranty is limited to the original purchase
+                price of the Product. The Company shall not be liable for indirect, incidental, or consequential
+                damages.
+              </li>
             </ul>
             <ul className="mt-4">
-              
               <p className="mb-3">7.2 No Implied Warranties</p>
-              
-              <li className="my-3">Except as expressly stated in this document, the Company disclaims all implied warranties, including merchantability and fitness for a particular purpose, to the extent permitted by law.
-              </li> 
+
+              <li className="my-3">
+                Except as expressly stated in this document, the Company disclaims all implied warranties, including
+                merchantability and fitness for a particular purpose, to the extent permitted by law.
+              </li>
             </ul>
-            
           </div>
         ),
       },
       {
         title: "8. Governing Law and Dispute Resolution",
-        content:(
+        content: (
           <div>
-            
-            
-              
-              <p className="mb-3">◾This Extended Warranty is governed by the laws of [India].
-              </p>
-              <p >◾Any disputes arising under this Extended Warranty shall be subject to the exclusive jurisdiction of the courts in [Navi Mumbai, India].</p> 
+            <p className="mb-3">◾This Extended Warranty is governed by the laws of [India].</p>
+            <p>
+              ◾Any disputes arising under this Extended Warranty shall be subject to the exclusive jurisdiction of the
+              courts in [Navi Mumbai, India].
+            </p>
           </div>
         ),
       },
@@ -440,25 +463,22 @@ export default function Web() {
         title: "10. Contact Information",
         content: (
           <div>
-            
             <ul className="">
-              
-              <p className="mb-3">For Warranty claims, inquiries, or support, please contact:
-              </p>
-              <li><strong>Email:</strong> warranty@smarthavensystems.com
-
-
+              <p className="mb-3">For Warranty claims, inquiries, or support, please contact:</p>
+              <li>
+                <strong>Email:</strong> warranty@smarthavensystems.com
               </li>
-              <li className="my-3"><strong>Phone:</strong> +91-XXXX-XXXXXX
-
+              <li className="my-3">
+                <strong>Phone:</strong> +91-XXXX-XXXXXX
               </li>
-              <li><strong>Address:</strong>  Smart Haven Systems Private Limited, [Address]
-
+              <li>
+                <strong>Address:</strong> Smart Haven Systems Private Limited, [Address]
               </li>
-              <p className="mt-3">This Warranty does not affect the statutory rights of consumers under applicable consumer protection laws.
+              <p className="mt-3">
+                This Warranty does not affect the statutory rights of consumers under applicable consumer protection
+                laws.
               </p>
             </ul>
-             
           </div>
         ),
       },
@@ -466,20 +486,16 @@ export default function Web() {
         title: "11. Important Notes",
         content: (
           <div>
-            
             <ul className="grid gap-3">
-              
-              
-              <li><strong>1. Extended Warranty fees</strong>  are non-refundable.
+              <li>
+                <strong>1. Extended Warranty fees</strong> are non-refundable.
               </li>
-              <li >2. Buyers are advised to keep all original receipts and documents for verification purposes.
-              </li>
-              <li>3. The Company recommends professional installation to maintain Warranty validity.
-              </li>
+              <li>2. Buyers are advised to keep all original receipts and documents for verification purposes.</li>
+              <li>3. The Company recommends professional installation to maintain Warranty validity.</li>
             </ul>
-             
           </div>
-        ),},
+        ),
+      },
     ],
   ]
 
@@ -564,11 +580,15 @@ export default function Web() {
           {/* Accordions */}
           <div className="w-full rounded-md border border-[#FFFFFF1A] ">
             {activeTab === 0 || activeTab === 1 ? (
-              
-                accordionData[activeTab]?.map((item, index) => (
-                  <Accordion key={index} title={item.title} content={item.content} isOpen={openIndex === index} onToggle={() => handleToggle(index)} />
-                ))
-              
+              accordionData[activeTab]?.map((item, index) => (
+                <Accordion
+                  key={index}
+                  title={item.title}
+                  content={item.content}
+                  isOpen={openIndex === index}
+                  onToggle={() => handleToggle(index)}
+                />
+              ))
             ) : (
               <form className="space-y-4  text-white">
                 <div className="grid gap-5 p-6">

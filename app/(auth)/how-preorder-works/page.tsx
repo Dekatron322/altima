@@ -6,7 +6,6 @@ import NewNav from "components/Navbar/NewNav"
 import ContactUs from "components/ContactUs/Contact"
 
 export default function Web() {
-
   return (
     <section className="bg-black">
       <NewNav />
@@ -108,8 +107,6 @@ export default function Web() {
           </div>
         </div>
       </section>
-
-      
 
       <ContactUs />
 

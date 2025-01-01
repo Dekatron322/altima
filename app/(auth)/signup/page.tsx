@@ -6,8 +6,6 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { signUp, SignUpPayload } from "services/authService"
 
-
-
 const Page: React.FC = () => {
   const [formData, setFormData] = useState<SignUpPayload>({
     first_name: "",

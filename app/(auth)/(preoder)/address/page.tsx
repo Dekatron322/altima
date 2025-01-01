@@ -17,13 +17,12 @@ interface User {
 }
 
 interface UserDetails {
-  id: string,
-  username: string;
-  first_name: string;
-  last_name: string;
-  email: string;
+  id: string
+  username: string
+  first_name: string
+  last_name: string
+  email: string
 }
-
 
 export default function Web() {
   const [addressData, setAddressData] = useState<UserInformationPayload["address"][] | null>(null)
@@ -35,14 +34,14 @@ export default function Web() {
   const toggleBilling = () => setIsDefaultBilling(!isDefaultBilling)
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-  const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
+  const [userDetails, setUserDetails] = useState<UserDetails | null>(null)
 
   const [addressToDelete, setAddressToDelete] = useState<string | null>(null)
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
   const [isCancelModalOpen, setIsCancelModalOpen] = useState(false)
   const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false)
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   const router = useRouter()
 
@@ -109,39 +108,39 @@ export default function Web() {
   const fetchUserDetails = async () => {
     try {
       // Retrieve user data from localStorage
-      const userData = localStorage.getItem("user");
+      const userData = localStorage.getItem("user")
       if (!userData) {
-        throw new Error("User is not logged in.");
+        throw new Error("User is not logged in.")
       }
 
-      const parsedData = JSON.parse(userData) as { id: string };
-    const { id } = parsedData;
+      const parsedData = JSON.parse(userData) as { id: string }
+      const { id } = parsedData
 
       const response = await fetch(`https://altima.fyber.site/custom-user/get-user-detail/${id}/`, {
         headers: {
           "Content-Type": "application/json",
         },
-      });
+      })
 
       if (!response.ok) {
-        throw new Error("Failed to fetch user details.");
+        throw new Error("Failed to fetch user details.")
       }
 
-      const data = await response.json() as UserDetails;
-      setUserDetails(data);
+      const data = (await response.json()) as UserDetails
+      setUserDetails(data)
     } catch (err: any) {
-      setError(err.message || "An error occurred.");
+      setError(err.message || "An error occurred.")
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   const handleLogout = async () => {
     if (!userDetails?.email) {
-      alert("User email is missing.");
-      return;
+      alert("User email is missing.")
+      return
     }
-  
+
     try {
       const response = await fetch("https://altima.fyber.site/custom-user/sign-out/", {
         method: "POST",
@@ -149,26 +148,26 @@ export default function Web() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ email: userDetails.email }),
-      });
-  
+      })
+
       if (!response.ok) {
-        throw new Error("Failed to log out. Please try again.");
+        throw new Error("Failed to log out. Please try again.")
       }
-  
+
       // Clear user data from localStorage
-      localStorage.removeItem("user");
-  
+      localStorage.removeItem("user")
+
       // Redirect to login or home page
-      window.location.href = "/";
+      window.location.href = "/"
     } catch (error) {
-      console.error("Error during logout:", error);
-      alert(error instanceof Error ? error.message : "An error occurred.");
+      console.error("Error during logout:", error)
+      alert(error instanceof Error ? error.message : "An error occurred.")
     }
-  };
+  }
 
   useEffect(() => {
-    fetchUserDetails();
-  }, []);
+    fetchUserDetails()
+  }, [])
 
   const handleDeleteAddress = async (addressId: string) => {
     try {
@@ -186,7 +185,6 @@ export default function Web() {
     localStorage.setItem("selectedAddress", addressId)
     router.push(`/address/edit-address/`)
   }
-
 
   return (
     <section className="bg-black">
@@ -423,7 +421,10 @@ export default function Web() {
             </div>
             <p className="w-full text-center text-2xl text-white">Are you sure you want to log out?</p>
             <div className="mt-4 flex gap-2">
-              <button onClick={handleLogout} className="w-full  rounded-lg border border-[#FFFFFF99] bg-[#FF3B3B] px-4 py-2 text-[#000000]  hover:bg-[#FF3B3B]">
+              <button
+                onClick={handleLogout}
+                className="w-full  rounded-lg border border-[#FFFFFF99] bg-[#FF3B3B] px-4 py-2 text-[#000000]  hover:bg-[#FF3B3B]"
+              >
                 Yes, Log Out
               </button>
               <button

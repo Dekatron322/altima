@@ -1,17 +1,11 @@
 "use client"
 import Footer from "components/Footer/Footer"
-import Image from "next/image"
-import Navbar from "components/Navbar/Navbar"
-import { useEffect } from "react"
-import Accordion from "components/Accordion/Accordion"
 import { motion } from "framer-motion"
 import MainFooter from "components/Footer/MainFooter"
 import NewNav from "components/Navbar/NewNav"
 import ContactUs from "components/ContactUs/Contact"
 
 export default function Web() {
-
-
   return (
     <section className="bg-black">
       <NewNav />
@@ -29,8 +23,8 @@ export default function Web() {
               <p className="font-regular md:text-cente w-full text-ellipsis text-center text-lg text-[#FFFFFF99] max-sm:leading-7 ">
                 Welcome to Altima, where innovation meets security in a smarter, more connected way. We are passionate
                 about crafting intelligent solutions for modern living, blending advanced technology with elegant design
-                to transform how you experience safety and convenience. Altima is more than just a product—it&lsquo;s a step
-                forward in redefining how homes and businesses safeguard their spaces.
+                to transform how you experience safety and convenience. Altima is more than just a product—it&lsquo;s a
+                step forward in redefining how homes and businesses safeguard their spaces.
               </p>
             </div>
           </div>
@@ -87,7 +81,9 @@ export default function Web() {
                     <li className=" text-[#FFFFFF] max-sm:text-center max-sm:text-xs">All Pro features, plus:</li>
                   </ul>
 
-                  <p className="text-2xl text-[#FF4F45] max-sm:mt-3 max-sm:text-center max-sm:text-lg">₹49,500 + Taxes</p>
+                  <p className="text-2xl text-[#FF4F45] max-sm:mt-3 max-sm:text-center max-sm:text-lg">
+                    ₹49,500 + Taxes
+                  </p>
                 </div>
               </div>
               <ul className="mt-6 list-inside list-disc pl-2 md:mb-4">

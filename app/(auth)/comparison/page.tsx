@@ -1,20 +1,15 @@
 "use client"
 import Footer from "components/Footer/Footer"
 import Image from "next/image"
-import Navbar from "components/Navbar/Navbar"
 import { useEffect, useState } from "react"
-import Accordion from "components/Accordion/Accordion"
 import { motion } from "framer-motion"
 import MainFooter from "components/Footer/MainFooter"
 import { useRouter } from "next/navigation"
-import ImageModal from "components/ImageModal/ImageModal"
 import NewNav from "components/Navbar/NewNav"
-import Contact from "../contact-us/page"
 import ContactUs from "components/ContactUs/Contact"
 import ImageCarousel from "components/ImageModal/ImageModal"
 
 export default function Web() {
-
   const faqData = [
     {
       title: "1. When will Altima Disappearing Handle Smart Doors be available?",
@@ -71,7 +66,6 @@ export default function Web() {
     setIsModalOpen(true)
   }
 
-
   const handlePreOrderClick = () => {
     const user = localStorage.getItem("user")
     if (user) {
@@ -81,7 +75,6 @@ export default function Web() {
     }
   }
 
-  
   return (
     <section className="bg-black">
       <NewNav />
@@ -148,175 +141,209 @@ export default function Web() {
             </div>
           </div>
           <div className="w-full overflow-x-auto border">
-  <table className="min-w-[800px] w-full border-separate border-spacing-0 text-left text-white">
+            <table className="w-full min-w-[800px] border-separate border-spacing-0 text-left text-white">
               <thead>
                 <tr>
-                  <th className="border-b bg-[#FFFFFF1A] px-4 py-4 text-sm whitespace-nowrap">Features</th>
-                  <th className="border-b border-l bg-[#151515] px-4 py-4 text-sm whitespace-nowrap">Godrej</th>
-                  <th className="border-b border-l bg-[#FFFFFF1A] px-4 py-4 text-sm whitespace-nowrap">Ozone Overseas</th>
-                  <th className="border-b border-l bg-[#151515]  px-4 py-4 text-sm whitespace-nowrap">Yale</th>
-                  <th className="border-b border-l bg-[#FFFFFF1A] px-4 py-4 text-sm whitespace-nowrap" >Dormakaba</th>
-                  <th className="border-b border-l bg-[#151515]  px-4 py-4 text-sm whitespace-nowrap">Altima Core</th>
-                  <th className="border-b border-l bg-[#FFFFFF1A] px-4 py-4 text-sm whitespace-nowrap" >Altima Elite</th>
+                  <th className="whitespace-nowrap border-b bg-[#FFFFFF1A] px-4 py-4 text-sm">Features</th>
+                  <th className="whitespace-nowrap border-b border-l bg-[#151515] px-4 py-4 text-sm">Godrej</th>
+                  <th className="whitespace-nowrap border-b border-l bg-[#FFFFFF1A] px-4 py-4 text-sm">
+                    Ozone Overseas
+                  </th>
+                  <th className="whitespace-nowrap border-b border-l  bg-[#151515] px-4 py-4 text-sm">Yale</th>
+                  <th className="whitespace-nowrap border-b border-l bg-[#FFFFFF1A] px-4 py-4 text-sm">Dormakaba</th>
+                  <th className="whitespace-nowrap border-b border-l  bg-[#151515] px-4 py-4 text-sm">Altima Core</th>
+                  <th className="whitespace-nowrap border-b border-l bg-[#FFFFFF1A] px-4 py-4 text-sm">Altima Elite</th>
                 </tr>
               </thead>
               <tbody className="border-b">
                 <tr>
-                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">1. Cost Cost</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">36,199 - 61,199 INR</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">35,000 - 55,000 INR</td>
-                  <td className="border-l  bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">40,000 - 60,000 INR</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">50,000 - 75,000 INR</td>
-                  <td className="border-l  bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">45,000 INR</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">99,000 INR</td>
+                  <td className=" whitespace-nowrap bg-[#FFFFFF1A] px-4 py-2 text-sm">1. Cost Cost</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">36,199 - 61,199 INR</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">35,000 - 55,000 INR</td>
+                  <td className="whitespace-nowrap  border-l bg-[#151515] px-4 py-2 text-sm">40,000 - 60,000 INR</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">50,000 - 75,000 INR</td>
+                  <td className="whitespace-nowrap  border-l bg-[#151515] px-4 py-2 text-sm">45,000 INR</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">99,000 INR</td>
                 </tr>
                 <tr>
-                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">2. Security Level</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">High</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">High</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">High</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Very High</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Very High</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Very High</td>
+                  <td className=" whitespace-nowrap bg-[#FFFFFF1A] px-4 py-2 text-sm">2. Security Level</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">High</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">High</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">High</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Very High</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">Very High</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Very High</td>
                 </tr>
                 <tr>
-                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">3. Smart Lock Type</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Digital (Fingerprint, PIN)</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Digital (Touchpad, PIN)</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Digital (Voice Guidance)</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Advanced (Custom Access)</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Biometric Lock</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Biometric Lock, Smart Hub</td>
+                  <td className=" whitespace-nowrap bg-[#FFFFFF1A] px-4 py-2 text-sm">3. Smart Lock Type</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">
+                    Digital (Fingerprint, PIN)
+                  </td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">
+                    Digital (Touchpad, PIN)
+                  </td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">
+                    Digital (Voice Guidance)
+                  </td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">
+                    Advanced (Custom Access)
+                  </td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">Biometric Lock</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">
+                    Biometric Lock, Smart Hub
+                  </td>
                 </tr>
                 <tr>
-                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">4. Home Integration</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Limited</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Limited</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Moderate</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Moderate</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Limited</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Extensive</td>
+                  <td className=" whitespace-nowrap bg-[#FFFFFF1A] px-4 py-2 text-sm">4. Home Integration</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">Limited</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Limited</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">Moderate</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Moderate</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">Limited</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Extensive</td>
                 </tr>
                 <tr>
-                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">5. User Profilest</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Multiple</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Multiple</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Multiple</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Customizable</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Multiple</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Extensive Customizable</td>
+                  <td className=" whitespace-nowrap bg-[#FFFFFF1A] px-4 py-2 text-sm">5. User Profilest</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">Multiple</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Multiple</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">Multiple</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Customizable</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">Multiple</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">
+                    Extensive Customizable
+                  </td>
                 </tr>
                 <tr>
-                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">6. Remote Access</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">No</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">No</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Yes</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Yes</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Yes</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Yes</td>
+                  <td className=" whitespace-nowrap bg-[#FFFFFF1A] px-4 py-2 text-sm">6. Remote Access</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">No</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">No</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">Yes</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Yes</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">Yes</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Yes</td>
                 </tr>
                 <tr>
-                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">7. Design Options</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Basic</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Moderate</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Elegant</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Premium</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Sleek and Modern</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Sleek and Modern</td>
+                  <td className=" whitespace-nowrap bg-[#FFFFFF1A] px-4 py-2 text-sm">7. Design Options</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">Basic</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Moderate</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">Elegant</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Premium</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">Sleek and Modern</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Sleek and Modern</td>
                 </tr>
                 <tr>
-                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">8. Special Features</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Emergency Key Override</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Auto-Locking</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">
+                  <td className=" whitespace-nowrap bg-[#FFFFFF1A] px-4 py-2 text-sm">8. Special Features</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">Emergency Key Override</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Auto-Locking</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">
                     Tamper Alarm, Smartphone Remote Management
                   </td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Auto-Locking</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Auto-Locking</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">
                     Emergency Key Override, Auto-Locking
                   </td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Smart Home Hub, Analytics</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">
+                    Smart Home Hub, Analytics
+                  </td>
                 </tr>
                 <tr>
-                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">9. Target Audience</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Residential/Commercial</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Residential/Commercial</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Homeowners</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Commercial Buildings</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Homeowners</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Smart Home Enthusiasts</td>
+                  <td className=" whitespace-nowrap bg-[#FFFFFF1A] px-4 py-2 text-sm">9. Target Audience</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">Residential/Commercial</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">
+                    Residential/Commercial
+                  </td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">Homeowners</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Commercial Buildings</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">Homeowners</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">
+                    Smart Home Enthusiasts
+                  </td>
                 </tr>
                 <tr>
-                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">10. Limitations</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">No advanced automation</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Limited integration</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Basic home automation</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">High cost for residential</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">No Hub Features</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">High Cost, But Advanced</td>
+                  <td className=" whitespace-nowrap bg-[#FFFFFF1A] px-4 py-2 text-sm">10. Limitations</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">No advanced automation</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Limited integration</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">Basic home automation</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">
+                    High cost for residential
+                  </td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">No Hub Features</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">
+                    High Cost, But Advanced
+                  </td>
                 </tr>
                 <tr>
-                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">11. External Power Option</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">9V Battery</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">9V Battery</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">9V Battery</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">External Power Source</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Backup Battery</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Smart Home Backup Integration</td>
+                  <td className=" whitespace-nowrap bg-[#FFFFFF1A] px-4 py-2 text-sm">11. External Power Option</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">9V Battery</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">9V Battery</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">9V Battery</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">External Power Source</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">Backup Battery</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">
+                    Smart Home Backup Integration
+                  </td>
                 </tr>
                 <tr>
-                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">12. Voice Assistant Controlt</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">No</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">No</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">No</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">No</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">No</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Yes, Alexa & Google Assistant</td>
+                  <td className=" whitespace-nowrap bg-[#FFFFFF1A] px-4 py-2 text-sm">12. Voice Assistant Controlt</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">No</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">No</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">No</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">No</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">No</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">
+                    Yes, Alexa & Google Assistant
+                  </td>
                 </tr>
                 <tr>
-                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">13. Smart Home Automation</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">No</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">No</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Limited</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Limited</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">No</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Full Integration</td>
+                  <td className=" whitespace-nowrap bg-[#FFFFFF1A] px-4 py-2 text-sm">13. Smart Home Automation</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">No</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">No</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">Limited</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Limited</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">No</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Full Integration</td>
                 </tr>
                 <tr>
-                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">14. Energy Management</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">No</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">No</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">No</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">No</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">No</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Yes, Smart Energy Monitoring</td>
+                  <td className=" whitespace-nowrap bg-[#FFFFFF1A] px-4 py-2 text-sm">14. Energy Management</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">No</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">No</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">No</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">No</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">No</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">
+                    Yes, Smart Energy Monitoring
+                  </td>
                 </tr>
                 <tr>
-                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">15. Security Alerts</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Basic Alarm</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Basic Alarm</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Tamper Alarm</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Advanced Alerts</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Basic Alerts</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Real-Time Mobile Alerts</td>
+                  <td className=" whitespace-nowrap bg-[#FFFFFF1A] px-4 py-2 text-sm">15. Security Alerts</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">Basic Alarm</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Basic Alarm</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">Tamper Alarm</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Advanced Alerts</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">Basic Alerts</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">
+                    Real-Time Mobile Alerts
+                  </td>
                 </tr>
                 <tr>
-                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">16. Intercom Functionality</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">No</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">No</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">No</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">No</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">No</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Built-in Intercom System</td>
+                  <td className=" whitespace-nowrap bg-[#FFFFFF1A] px-4 py-2 text-sm">16. Intercom Functionality</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">No</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">No</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">No</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">No</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">No</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">
+                    Built-in Intercom System
+                  </td>
                 </tr>
                 <tr>
-                  <td className=" bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">17. Embedded in Door Types</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">No</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">No</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">No</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">No</td>
-                  <td className="border-l bg-[#151515] px-4 py-2 text-sm whitespace-nowrap">Metal Only</td>
-                  <td className="border-l bg-[#FFFFFF1A] px-4 py-2 text-sm whitespace-nowrap">Metal, Glass, Wood</td>
+                  <td className=" whitespace-nowrap bg-[#FFFFFF1A] px-4 py-2 text-sm">17. Embedded in Door Types</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">No</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">No</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">No</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">No</td>
+                  <td className="whitespace-nowrap border-l bg-[#151515] px-4 py-2 text-sm">Metal Only</td>
+                  <td className="whitespace-nowrap border-l bg-[#FFFFFF1A] px-4 py-2 text-sm">Metal, Glass, Wood</td>
                 </tr>
               </tbody>
             </table>
@@ -510,8 +537,8 @@ export default function Web() {
                     <div>
                       <p className="pb-2 text-lg text-white max-md:text-sm">Industry Expert</p>
                       <p className="text-base text-[#FFFFFF99] max-sm:text-xs">
-                      &lsquo;Altima has taken smart doors to a new level, offering unparalleled security and home automation
-                        features.
+                        &lsquo;Altima has taken smart doors to a new level, offering unparalleled security and home
+                        automation features.
                       </p>
                     </div>
                   </div>
@@ -574,17 +601,17 @@ export default function Web() {
             </p>
           </div>
           <div className="flex w-full justify-between max-sm:grid max-sm:gap-5  md:gap-20">
-            <div className="rounded-md overflow-hidden sm:h-[620px]">
-            <motion.video
-              src="/WhatsApp Video 2024-12-12 at 15.04.29.mp4"
-              width={645}
-              height={555}
-              autoPlay
-              loop
-              muted
-              initial={{ scale: 1.2, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1, ease: "easeIn" }}
+            <div className="overflow-hidden rounded-md sm:h-[620px]">
+              <motion.video
+                src="/WhatsApp Video 2024-12-12 at 15.04.29.mp4"
+                width={645}
+                height={555}
+                autoPlay
+                loop
+                muted
+                initial={{ scale: 1.2, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 1, ease: "easeIn" }}
               />
             </div>
             <div className="">
@@ -598,7 +625,6 @@ export default function Web() {
                 <div className="max-w-[522px] items-center justify-between bg-[#151515] px-4 py-2 text-black max-sm:w-full max-sm:justify-center md:flex">
                   <ul className="list-inside list-disc">
                     <li className="py-2 text-[#FFFFFF] max-sm:text-center max-sm:text-xs">Advanced Home Control </li>
-                    
                   </ul>
 
                   <p className="text-2xl font-bold text-[#FF4F45] max-sm:mt-3 max-sm:text-center max-sm:text-lg">
@@ -791,10 +817,10 @@ export default function Web() {
               </div>
             </div>
             <div className=" max-sm:hidden">
-            <ImageCarousel />
+              <ImageCarousel />
             </div>
             <div className="md:hidden">
-            <ImageCarousel />
+              <ImageCarousel />
             </div>
             <div className="md:hidden md:w-[403]">
               <div>
@@ -966,7 +992,6 @@ export default function Web() {
       </section>
 
       <ContactUs />
-      
 
       <MainFooter />
 

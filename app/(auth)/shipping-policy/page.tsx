@@ -10,8 +10,6 @@ import NewNav from "components/Navbar/NewNav"
 import ContactUs from "components/ContactUs/Contact"
 
 export default function Web() {
-
-
   const faqData = [
     {
       title: "1. General Overview",
@@ -23,7 +21,9 @@ export default function Web() {
       content: (
         <div>
           <p>
-          To show our appreciation to early adopters, we are offering <strong>free shipping for all Altima Core and Altima Elite preorders</strong>. This offer is valid for deliveries to major metropolitan areas within [India].
+            To show our appreciation to early adopters, we are offering{" "}
+            <strong>free shipping for all Altima Core and Altima Elite preorders</strong>. This offer is valid for
+            deliveries to major metropolitan areas within [India].
           </p>
         </div>
       ),
@@ -32,32 +32,42 @@ export default function Web() {
       title: "3. Standard Shipping Fees",
       content: (
         <div>
-          
           <ul className="grid gap-3">
-            <p className="font-bold my-3">3.1 Local Deliveries (within 50 km)
-            </p>
-            <li>◾For addresses within a 50 km radius of our assembly and distribution centers, a minimal delivery fee may be charged after the preorder phase.</li>
-            
-            <li className="px-2">◾Local deliveries benefit from quicker and more affordable logistics, making it a cost-effective option for nearby customers.</li>
-            
+            <p className="my-3 font-bold">3.1 Local Deliveries (within 50 km)</p>
+            <li>
+              ◾For addresses within a 50 km radius of our assembly and distribution centers, a minimal delivery fee may
+              be charged after the preorder phase.
+            </li>
+
+            <li className="px-2">
+              ◾Local deliveries benefit from quicker and more affordable logistics, making it a cost-effective option
+              for nearby customers.
+            </li>
           </ul>
-          
+
           <ul className="mt-4 grid gap-3">
             <p className="font-bold">3.2 Nationwide Deliveries (beyond 50 km)</p>
-            
-            <li>◾ For deliveries beyond 50 km from our assembly centers, including all regions outside major metropolitan areas, a standard shipping fee will apply.</li>
-            <li><strong>◾ Fee Calculation:</strong> The shipping fee is based on distance and logistical considerations, ensuring an efficient and cost-effective delivery service nationwide.
+
+            <li>
+              ◾ For deliveries beyond 50 km from our assembly centers, including all regions outside major metropolitan
+              areas, a standard shipping fee will apply.
+            </li>
+            <li>
+              <strong>◾ Fee Calculation:</strong> The shipping fee is based on distance and logistical considerations,
+              ensuring an efficient and cost-effective delivery service nationwide.
             </li>
           </ul>
         </div>
       ),
-     },
+    },
     {
       title: "4. Shipping Insurance",
       content: (
         <div>
           <p>
-          While we ensure that all Altima products are securely packaged, unforeseen incidents may occur during transit. We offer <b>optional shipping insurance</b> to provide added protection against damage or loss. This option is especially recommended for international orders or high-value shipments.
+            While we ensure that all Altima products are securely packaged, unforeseen incidents may occur during
+            transit. We offer <b>optional shipping insurance</b> to provide added protection against damage or loss.
+            This option is especially recommended for international orders or high-value shipments.
           </p>
         </div>
       ),
@@ -66,16 +76,18 @@ export default function Web() {
       title: "5. Delivery Timeframes",
       content: (
         <div>
-          
           <ul className="grid gap-3">
-            
-            <li><b>◾ Domestic Deliveries:</b> Estimated to arrive within <b>[5-7] business days</b> after dispatch. Actual delivery times may vary based on location and the logistics provider.</li>
-            
-            <li className="px-2"><b>◾ International Deliveries:</b> Estimated to arrive within <b>[2-4] weeks,</b> subject to customs processing and the chosen shipping method.
+            <li>
+              <b>◾ Domestic Deliveries:</b> Estimated to arrive within <b>[5-7] business days</b> after dispatch.
+              Actual delivery times may vary based on location and the logistics provider.
             </li>
-            
+
+            <li className="px-2">
+              <b>◾ International Deliveries:</b> Estimated to arrive within <b>[2-4] weeks,</b> subject to customs
+              processing and the chosen shipping method.
+            </li>
           </ul>
-          
+
           <p>Delivery estimates are provided at the time of checkout and may vary due to factors beyond our control.</p>
         </div>
       ),
@@ -85,7 +97,9 @@ export default function Web() {
       content: (
         <div>
           <p>
-          Once your order is dispatched, you will receive a confirmation email with a tracking number and a link to monitor your shipment in real time. You can also track your order status on our website under the <b>&quot;Track My Order&quot;</b> section.
+            Once your order is dispatched, you will receive a confirmation email with a tracking number and a link to
+            monitor your shipment in real time. You can also track your order status on our website under the{" "}
+            <b>&quot;Track My Order&quot;</b> section.
           </p>
         </div>
       ),
@@ -95,7 +109,9 @@ export default function Web() {
       content: (
         <div>
           <p>
-          Orders are typically processed and dispatched within <b>[3-5] business days</b>. During peak periods, such as holidays or preorder launches, processing times may be longer. We appreciate your patience and understanding.
+            Orders are typically processed and dispatched within <b>[3-5] business days</b>. During peak periods, such
+            as holidays or preorder launches, processing times may be longer. We appreciate your patience and
+            understanding.
           </p>
         </div>
       ),
@@ -106,14 +122,21 @@ export default function Web() {
         <div>
           <ul className="grid gap-3">
             <p>If your Altima product arrives damaged or defective, please follow these steps:</p>
-            
-            <li><b>1. Contact Us:</b>  Notify our support team at <b>[support@smarthavensystems.com]</b> within 7 days of receiving your product.
-            </li>
-            
-            <li className="px-2"><b>2. Provide Details:</b> Include your order number, a description of the issue, and any supporting evidence (photos or videos).</li>
 
-           <li className="px-2"><b>3. Return and Replacement Process:</b>  We will guide you through the return process. If your claim is approved, we will offer a repair, replacement, or refund in accordance with our Warranty Terms.
-           </li> 
+            <li>
+              <b>1. Contact Us:</b> Notify our support team at <b>[support@smarthavensystems.com]</b> within 7 days of
+              receiving your product.
+            </li>
+
+            <li className="px-2">
+              <b>2. Provide Details:</b> Include your order number, a description of the issue, and any supporting
+              evidence (photos or videos).
+            </li>
+
+            <li className="px-2">
+              <b>3. Return and Replacement Process:</b> We will guide you through the return process. If your claim is
+              approved, we will offer a repair, replacement, or refund in accordance with our Warranty Terms.
+            </li>
           </ul>
         </div>
       ),
@@ -123,12 +146,20 @@ export default function Web() {
       content: (
         <div>
           <ul className="grid gap-3">
-            <li><b>◾ Customs Regulations:</b>   International shipments may be subject to customs inspections, which can cause delays beyond our estimated delivery times.</li>
-            
-            <li className="px-2"><b>◾ Duties and Taxes:</b> The recipient is responsible for any applicable import duties, taxes, or fees imposed by the destination country.</li>
+            <li>
+              <b>◾ Customs Regulations:</b> International shipments may be subject to customs inspections, which can
+              cause delays beyond our estimated delivery times.
+            </li>
 
-           <li className="px-2">We advise international customers to consult their local customs office for information on potential charges and import regulations.
-           </li> 
+            <li className="px-2">
+              <b>◾ Duties and Taxes:</b> The recipient is responsible for any applicable import duties, taxes, or fees
+              imposed by the destination country.
+            </li>
+
+            <li className="px-2">
+              We advise international customers to consult their local customs office for information on potential
+              charges and import regulations.
+            </li>
           </ul>
         </div>
       ),
@@ -137,25 +168,30 @@ export default function Web() {
       title: "10. Customer Support",
       content: (
         <div>
-          
           <ul className="">
-            
-            <p className="mb-3">Our team is here to assist you with any installation-related questions or issues. For assistance, please contact:
+            <p className="mb-3">
+              Our team is here to assist you with any installation-related questions or issues. For assistance, please
+              contact:
             </p>
-            <li><strong>Email:</strong> warranty@smarthavensystems.com</li>
-            <li className="my-3"><strong>Phone:</strong> +91-XXXX-XXXXXX</li>
-            <li><strong>Hours of Operation:</strong> Monday to Friday, 9:00 AM to 6:00 PM (Local Time)</li>
+            <li>
+              <strong>Email:</strong> warranty@smarthavensystems.com
+            </li>
+            <li className="my-3">
+              <strong>Phone:</strong> +91-XXXX-XXXXXX
+            </li>
+            <li>
+              <strong>Hours of Operation:</strong> Monday to Friday, 9:00 AM to 6:00 PM (Local Time)
+            </li>
           </ul>
-           
         </div>
-      ),},
+      ),
+    },
     {
       title: "11. Disclaimer",
       content:
         "Smart Haven Systems Private Limited is not liable for delays caused by external factors, including but not limited to natural disasters, customs processing delays, or strikes by logistics providers.",
     },
   ]
-
 
   const [openIndex, setOpenIndex] = useState<number>(0)
 
@@ -227,8 +263,13 @@ export default function Web() {
 
             <div className=" w-full rounded-md border border-[#FFFFFF1A] ">
               {faqData.map((faq, index) => (
-                <Accordion key={index} title={faq.title} content={faq.content} isOpen={openIndex === index}
-                onToggle={() => handleToggle(index)}/>
+                <Accordion
+                  key={index}
+                  title={faq.title}
+                  content={faq.content}
+                  isOpen={openIndex === index}
+                  onToggle={() => handleToggle(index)}
+                />
               ))}
             </div>
             <p className="mt-4 text-center text-sm text-[#FFFFFF99]">

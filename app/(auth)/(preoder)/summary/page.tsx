@@ -15,9 +15,9 @@ export default function Web() {
 
   const [isDefaultEmail, setIsDefaultEmail] = useState(true)
   const [isDefaultPhone, setIsDefaultPhone] = useState(true)
-  const [orderData, setOrderData] = useState<OrderPayload | null>(null);
+  const [orderData, setOrderData] = useState<OrderPayload | null>(null)
   const [loading, setLoading] = useState(false)
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(true)
 
   const togglePhone = () => setIsDefaultPhone(!isDefaultPhone)
   const toggleEmail = () => setIsDefaultEmail(!isDefaultEmail)
@@ -32,7 +32,7 @@ export default function Web() {
   const total = quantity * unitPrice
 
   interface StripeResponse {
-    payment_link: string;
+    payment_link: string
   }
 
   interface User {
@@ -41,135 +41,138 @@ export default function Web() {
   }
 
   const handleAcceptPrivacyPolicy = () => {
-    setShowModal(false); // Close the modal when the user accepts
-  };
+    setShowModal(false) // Close the modal when the user accepts
+  }
 
-  
   useEffect(() => {
-      const storedData = localStorage.getItem("order_summary");
-      if (storedData) {
-        setOrderData(JSON.parse(storedData) as OrderPayload);
-      } else {
-          // Redirect back if no data is found
-          router.push("/order-successfull");
-      }
-  }, [router]);
+    const storedData = localStorage.getItem("order_summary")
+    if (storedData) {
+      setOrderData(JSON.parse(storedData) as OrderPayload)
+    } else {
+      // Redirect back if no data is found
+      router.push("/order-successfull")
+    }
+  }, [router])
 
   // Type guard to check if the response is of type StripeResponse
-function isStripeResponse(data: any): data is StripeResponse {
-  return typeof data.checkout_url === 'string';
-}
+  function isStripeResponse(data: any): data is StripeResponse {
+    return typeof data.checkout_url === "string"
+  }
 
-const isRazorpayResponse = (data: any): data is { payment_link: string, payment_link_id: string } => {
-  return data && data.payment_link && data.payment_link_id
-}
+  const isRazorpayResponse = (data: any): data is { payment_link: string; payment_link_id: string } => {
+    return data && data.payment_link && data.payment_link_id
+  }
 
-const handleSubmit = async () => {
-  setLoading(true); // Start loading indicator
+  const handleSubmit = async () => {
+    setLoading(true) // Start loading indicator
 
-  try {
-    const user = localStorage.getItem("user");
-    const parsedUser: User | null = user ? JSON.parse(user) as User : null;
+    try {
+      const user = localStorage.getItem("user")
+      const parsedUser: User | null = user ? (JSON.parse(user) as User) : null
 
-    if (!parsedUser?.id) {
-      alert("Unable to proceed. User ID is missing.");
-      return;
-    }
+      if (!parsedUser?.id) {
+        alert("Unable to proceed. User ID is missing.")
+        return
+      }
 
-    if (!orderData || !orderData.full_name) {
-      alert("Order data or full name is missing.");
-      return;
-    }
+      if (!orderData || !orderData.full_name) {
+        alert("Order data or full name is missing.")
+        return
+      }
 
-    const quantity = orderData.quantity ? parseInt(orderData.quantity, 10) : 1;
+      const quantity = orderData.quantity ? parseInt(orderData.quantity, 10) : 1
 
-    // Create Razorpay payload
-    const razorpayPayload = {
-      email: orderData.email_address,
-      contact: orderData.contact_number,
-      name: orderData.full_name.trim(),
-      amount: Math.round(parseFloat(orderData.deposit_amount ?? "0") * 100), // Amount in paisa
-      quantity,
-    };
+      // Create Razorpay payload
+      const razorpayPayload = {
+        email: orderData.email_address,
+        contact: orderData.contact_number,
+        name: orderData.full_name.trim(),
+        amount: Math.round(parseFloat(orderData.deposit_amount ?? "0") * 100), // Amount in paisa
+        quantity,
+      }
 
-    console.log("Razorpay Payload:", razorpayPayload);
+      console.log("Razorpay Payload:", razorpayPayload)
 
-    const response = await fetch(
-      "https://altima.fyber.site/order/api/create-checkout-session/",
-      {
+      const response = await fetch("https://altima.fyber.site/order/api/create-checkout-session/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(razorpayPayload),
+      })
+
+      const responseText = await response.text()
+      console.log("Razorpay Response Body:", responseText)
+
+      if (!response.ok) {
+        throw new Error(`Failed to create Razorpay checkout session: ${responseText}`)
       }
-    );
 
-    const responseText = await response.text();
-    console.log("Razorpay Response Body:", responseText);
+      const razorpayData = JSON.parse(responseText)
 
-    if (!response.ok) {
-      throw new Error(`Failed to create Razorpay checkout session: ${responseText}`);
+      if (isRazorpayResponse(razorpayData)) {
+        const { payment_link, payment_link_id } = razorpayData
+        localStorage.setItem("payment_link", payment_link)
+        localStorage.setItem("payment_link_id", payment_link_id)
+
+        // Redirect to the Razorpay payment link
+        window.location.href = payment_link
+      } else {
+        throw new Error("Invalid response format from Razorpay.")
+      }
+    } catch (error: any) {
+      console.error("Error:", error)
+      alert(error.message || "Failed to proceed with checkout. Please try again.")
+    } finally {
+      setLoading(false) // End loading indicator
     }
-
-    const razorpayData = JSON.parse(responseText);
-
-    if (isRazorpayResponse(razorpayData)) {
-      const { payment_link, payment_link_id } = razorpayData;
-      localStorage.setItem("payment_link", payment_link);
-      localStorage.setItem("payment_link_id", payment_link_id);
-
-      // Redirect to the Razorpay payment link
-      window.location.href = payment_link;
-    } else {
-      throw new Error("Invalid response format from Razorpay.");
-    }
-  } catch (error: any) {
-    console.error("Error:", error);
-    alert(error.message || "Failed to proceed with checkout. Please try again.");
-  } finally {
-    setLoading(false); // End loading indicator
   }
-};
-
-
-  
 
   return (
     <section className="bg-[#151515]">
       <NewNav />
 
       {showModal && (
-       <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#D9D9D94D]">
-      <div className="w-full m-4 max-w-4xl rounded-lg bg-[#151515]  text-white px-8 py-8">
-      <div className="mb-4 flex w-full justify-end items-center"> 
-          <LiaTimesSolid onClick={handleAcceptPrivacyPolicy} className="cursor-pointer" />
-        </div>
-            <h2 className="text-lg text-[#FFFFFF] font-bold mb-4 text-center">Important Notice</h2>
-            <p className="text-sm max-sm:text-xs text-[#FFFFFF99] mb-4 text-center">
-            Thank you for preordering with Smart Haven Systems Private Limited!
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#D9D9D94D]">
+          <div className="m-4 w-full max-w-4xl rounded-lg bg-[#151515]  px-8 py-8 text-white">
+            <div className="mb-4 flex w-full items-center justify-end">
+              <LiaTimesSolid onClick={handleAcceptPrivacyPolicy} className="cursor-pointer" />
+            </div>
+            <h2 className="mb-4 text-center text-lg font-bold text-[#FFFFFF]">Important Notice</h2>
+            <p className="mb-4 text-center text-sm text-[#FFFFFF99] max-sm:text-xs">
+              Thank you for preordering with Smart Haven Systems Private Limited!
             </p>
-            <p className="text-sm text-[#FFFFFF99] max-sm:text-xs mb-4 text-center">
-            Kindly Note:
+            <p className="mb-4 text-center text-sm text-[#FFFFFF99] max-sm:text-xs">Kindly Note:</p>
+
+            <p className="mb-4 text-center text-sm text-[#FFFFFF99] max-sm:text-xs">
+              Your preorder payment is being collected temporarily by csPILLAI Ventures Private Limited, the parent
+              company of Smart Haven Systems Private Limited, as our official company account is in the process of being
+              set up.
             </p>
-            
 
-            <p className="text-sm text-[#FFFFFF99] max-sm:text-xs mb-4 text-center">Your preorder payment is being collected temporarily by csPILLAI Ventures Private Limited, the parent company of Smart Haven Systems Private Limited, as our official company account is in the process of being set up.</p>
+            <p className="mb-4 text-center text-sm text-[#FFFFFF99] max-sm:text-xs">
+              All preorder funds will be securely transferred to Smart Haven Systems Private Limited once its account
+              becomes operational.
+            </p>
 
-            <p className="text-sm text-[#FFFFFF99] mb-4 max-sm:text-xs text-center">All preorder funds will be securely transferred to Smart Haven Systems Private Limited once its account becomes operational.</p>
+            <p className="mb-4 text-center text-sm text-[#FFFFFF99] max-sm:text-xs">
+              This arrangement ensures you can preorder without delay, and your payment is handled by a trusted entity
+              within the group.
+            </p>
 
-            <p className="text-sm text-[#FFFFFF99] mb-4 max-sm:text-xs text-center">This arrangement ensures you can preorder without delay, and your payment is handled by a trusted entity within the group.</p>
-
-
-            <p className="text-sm text-[#FFFFFF99] mb-4 max-sm:text-xs text-center">For any queries, feel free to contact us at customercare@smarthavensystems.com.</p>
-            <p className="text-sm text-[#FFFFFF99] mb-8 max-sm:text-xs text-center">Thank you for your understanding and support!</p>
+            <p className="mb-4 text-center text-sm text-[#FFFFFF99] max-sm:text-xs">
+              For any queries, feel free to contact us at customercare@smarthavensystems.com.
+            </p>
+            <p className="mb-8 text-center text-sm text-[#FFFFFF99] max-sm:text-xs">
+              Thank you for your understanding and support!
+            </p>
             <div className=" flex justify-center">
-            <button
-              onClick={handleAcceptPrivacyPolicy}
-              className="w-full bg-[#FF3B30]  text-white py-3 rounded-md max-w-[682px]"
-            >
-              Accept and Continue
-            </button>
+              <button
+                onClick={handleAcceptPrivacyPolicy}
+                className="w-full max-w-[682px]  rounded-md bg-[#FF3B30] py-3 text-white"
+              >
+                Accept and Continue
+              </button>
             </div>
           </div>
         </div>
@@ -182,67 +185,62 @@ const handleSubmit = async () => {
             <div className="grid h-full items-center  rounded-md  bg-[#FFFFFF1A]   max-sm:grid max-sm:gap-5  md:gap-10">
               <div className="px-5">
                 <ul className="mt-6 list-inside ">
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Product: {orderData?.product_selection_altima_elite
-                ? "Altima Elite"
-                : "Altima Core"}</li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
+                    Product: {orderData?.product_selection_altima_elite ? "Altima Elite" : "Altima Core"}
+                  </li>
                   {orderData?.door_spec_default_size ? (
-  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
-    Size: {orderData.door_spec_default_size}
-  </li>
-) : (
-  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
-    Size: {orderData?.door_spec_manual_size_height} x {orderData?.door_spec_manual_size_width} {orderData?.door_spec_manual_size_unit}
-  </li>
-)}
+                    <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
+                      Size: {orderData.door_spec_default_size}
+                    </li>
+                  ) : (
+                    <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
+                      Size: {orderData?.door_spec_manual_size_height} x {orderData?.door_spec_manual_size_width}{" "}
+                      {orderData?.door_spec_manual_size_unit}
+                    </li>
+                  )}
 
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Frame Type: {orderData?.door_spec_frame_type}</li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Finish: {orderData?.door_spec_finish_type}</li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Handle Placement: {orderData?.handle_placement}</li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
+                    Frame Type: {orderData?.door_spec_frame_type}
+                  </li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
+                    Finish: {orderData?.door_spec_finish_type}
+                  </li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
+                    Handle Placement: {orderData?.handle_placement}
+                  </li>
                   <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Smart Features:</li>
                   <li className="px-3 pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    - {orderData?.video_door_bell
-                      ? "Video Doorbell, "
-                      : ""} 
-                    {orderData?.intercom_sys
-                      ? "Intercom System, "
-                      : ""}
-                    {orderData?.camera
-                      ? "Camera, "
-                      : ""}
-                    {orderData?.voice_assisted
-                      ? "Alexa Integration, "
-                      : ""}
+                    - {orderData?.video_door_bell ? "Video Doorbell, " : ""}
+                    {orderData?.intercom_sys ? "Intercom System, " : ""}
+                    {orderData?.camera ? "Camera, " : ""}
+                    {orderData?.voice_assisted ? "Alexa Integration, " : ""}
                     {orderData?.connectivity}, {orderData?.power_source}
                   </li>
                   <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    Security Features: 
-                    {orderData?.re_enforced_lock
-                      ? " Reinforced Lock, "
-                      : ""} 
-                    {orderData?.anti_theft
-                      ? "Anti-theft, "
-                      : ""}
-                    {orderData?.alarm
-                      ? "Alarm, "
-                      : ""}
-                    {orderData?.motion_sensor
-                      ? "Motion Sensor"
-                      : ""}   
+                    Security Features:
+                    {orderData?.re_enforced_lock ? " Reinforced Lock, " : ""}
+                    {orderData?.anti_theft ? "Anti-theft, " : ""}
+                    {orderData?.alarm ? "Alarm, " : ""}
+                    {orderData?.motion_sensor ? "Motion Sensor" : ""}
                   </li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Installation Type: {orderData?.type_installation}</li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Preferred Date: {orderData?.prefered_installation}</li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
+                    Installation Type: {orderData?.type_installation}
+                  </li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
+                    Preferred Date: {orderData?.prefered_installation}
+                  </li>
                   <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
                     Special Instructions: {orderData?.special_installation_instruction}
                   </li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Extended Warranty: {orderData?.extended_warranty
-                ? "Yes"
-                : "No"}</li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">On-Site Support: {orderData?.installation_support
-                ? "Yes"
-                : "No"}</li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Payment Method: Stripe {orderData?.payment_confirmation
-                ? "Yes"
-                : "No"}</li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
+                    Extended Warranty: {orderData?.extended_warranty ? "Yes" : "No"}
+                  </li>
+                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
+                    On-Site Support: {orderData?.installation_support ? "Yes" : "No"}
+                  </li>
+                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
+                    Payment Method: Stripe {orderData?.payment_confirmation ? "Yes" : "No"}
+                  </li>
                 </ul>
               </div>
               <table className="table-fixed border-separate border-spacing-0  text-left text-white 2xl:w-full">
@@ -258,8 +256,12 @@ const handleSubmit = async () => {
                 </thead>
                 <tbody className="border-b">
                   <tr>
-                    <td className="border-b border-l border-[#FFFFFF33]  bg-[#282828] px-4 py-2 text-sm">₹{orderData?.total}</td>
-                    <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">₹{orderData?.deposit_amount}</td>
+                    <td className="border-b border-l border-[#FFFFFF33]  bg-[#282828] px-4 py-2 text-sm">
+                      ₹{orderData?.total}
+                    </td>
+                    <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">
+                      ₹{orderData?.deposit_amount}
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -287,14 +289,13 @@ const handleSubmit = async () => {
               </div>
 
               <div className="border border-[#FFFFFF0D]"></div>
-              <div className="flex  mx-4 justify-center">
-              <button
+              <div className="mx-4  flex justify-center">
+                <button
                   onClick={handleSubmit}
                   className="font-regular mb-5 flex w-[60%] items-center justify-center gap-2 rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4 py-3 uppercase text-[#FFFFFF] max-sm:w-full"
                 >
                   {loading ? "Processing Payment..." : "Pay Now"}
                 </button>
-
               </div>
             </div>
           </div>
