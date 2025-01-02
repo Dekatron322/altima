@@ -1248,7 +1248,7 @@ export default function Web() {
                 <div className="my-5 border-b border-[#FFFFFF0D]"></div>
                 <div className="grid gap-5 px-5">
                   <p className=" text-lg font-medium text-white">
-                    Smart Hub feature (integrated Devices)<span className="text-[#FF3B30]">*</span>
+                    Integrated Smart Hub<span className="text-[#FF3B30]">*</span>
                   </p>
 
                   <div

@@ -366,49 +366,49 @@ export default function Web() {
                 Why Pre-Order?
               </p>
               <div className="grid grid-cols-2 gap-4 max-sm:grid-cols-1 ">
-                <div className="flex w-full gap-3 rounded-lg border border-[#FFFFFF1A] max-sm:p-5 sm:p-10">
-                  <div className="w-12">
+                <div className="w-full items-start gap-5 rounded-lg border border-[#FFFFFF1A] max-sm:p-4 sm:p-8">
+                  <div className=" flex">
                     <Image src="/SketchLogo.png" width={48} height={48} alt="" className="max-sm:hidden" />
                     <Image src="/SketchLogo.png" width={35} height={35} alt="" className="sm:hidden" />
                   </div>
-                  <div className="pl-5">
+                  <div className="mt-2 flex flex-col">
                     <p className="pb-2 text-lg text-white max-md:text-sm">Altima Elite</p>
                     <p className=" text-base text-[#FFFFFF99] max-sm:text-xs">
-                      Full smart home hub capabilities, managing your lighting, heating, <br /> and security cameras
-                      seamlessly
+                      Full smart home hub capabilities, managing your lighting, heating, and security cameras seamlessly
                     </p>
                   </div>
                 </div>
-                <div className="flex w-full gap-5 rounded-lg border border-[#FFFFFF1A] max-sm:p-5 sm:p-10">
-                  <div className="w-12">
+                <div className=" w-full items-start gap-5 rounded-lg border border-[#FFFFFF1A] max-sm:p-4 sm:p-8">
+                  <div className="flex ">
                     <Image src="/SketchLogo.png" width={48} height={48} alt="" className="max-sm:hidden" />
                     <Image src="/SketchLogo.png" width={35} height={35} alt="" className="sm:hidden" />
                   </div>
-                  <div className="pl-5">
+                  <div className="mt-2 flex flex-col">
                     <p className="pb-2 text-lg text-white max-md:text-sm">Real-Time Security Alerts</p>
                     <p className=" text-base text-[#FFFFFF99] max-sm:text-xs">
-                      Get instant notifications on your smartphone for any <br /> suspicious activity.
+                      Get instant notifications on your smartphone for any, suspicious activity.
                     </p>
                   </div>
                 </div>
               </div>
 
               <div className="mt-4 grid grid-cols-3 gap-4 max-sm:grid-cols-1">
-                <div className="flex w-full gap-3 rounded-lg border border-[#FFFFFF1A] max-sm:p-5 sm:p-10">
-                  <div className="w-12">
+                <div className=" w-full items-start gap-5 rounded-lg border border-[#FFFFFF1A] max-sm:p-4 sm:p-8">
+                  <div className="flex ">
                     <Image src="/SketchLogo.png" width={48} height={48} alt="" className="max-sm:hidden" />
                     <Image src="/SketchLogo.png" width={35} height={35} alt="" className="sm:hidden" />
                   </div>
-                  <div className="pl-5">
+                  <div className="mt-2 flex flex-col">
                     <p className="pb-2 text-lg text-white max-md:text-sm">Altima Core</p>
                     <p className=" text-base text-[#FFFFFF99] max-sm:text-xs">
-                      Essential smart security with a sleek, modern design. Ideal <br />
-                      for those who need robust protection and convenience.
+                      Essential smart security with a sleek, modern design. Ideal <br /> for those who need robust
+                      protection and convenience.
                     </p>
                   </div>
                 </div>
-                <div className="flex w-full gap-3 rounded-lg border border-[#FFFFFF1A] max-sm:p-5 sm:p-10">
-                  <div className="w-12">
+
+                <div className=" w-full gap-3 rounded-lg border border-[#FFFFFF1A] max-sm:p-5 sm:p-8">
+                  <div className="">
                     <Image
                       src="/SketchLogo.png"
                       width={48}
@@ -418,7 +418,7 @@ export default function Web() {
                     />
                     <Image src="/SketchLogo.png" width={35} height={35} alt="" className="sm:hidden" />
                   </div>
-                  <div className="pl-5">
+                  <div className="mt-2">
                     <p className="pb-2 text-lg text-white max-md:text-sm">
                       {" "}
                       Voice Assistant Integration (Altima Elitee)
@@ -428,8 +428,8 @@ export default function Web() {
                     </p>
                   </div>
                 </div>
-                <div className="flex w-full gap-5 rounded-lg border border-[#FFFFFF1A] max-sm:p-5 sm:p-10">
-                  <div className="w-12">
+                <div className=" w-full gap-5 rounded-lg border border-[#FFFFFF1A] max-sm:p-5 sm:p-8">
+                  <div className="">
                     {/* Fixed size for large screens */}
                     <Image
                       src="/SketchLogo.png"
@@ -447,7 +447,7 @@ export default function Web() {
                       className="h-8 w-8 object-cover sm:hidden"
                     />
                   </div>
-                  <div className="pl-5">
+                  <div className="mt-2">
                     <p className="pb-2 text-lg text-white max-md:text-sm">Smart Lock Embedded in Multiple Door Types</p>
                     <p className="text-base text-[#FFFFFF99] max-sm:text-xs">
                       Altima products integrate directly into metal,
