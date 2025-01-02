@@ -406,8 +406,6 @@ export default function Web() {
         sizeMultiplier = 1.1667 // 16.67% increase
         break
       case "96 x 36":
-        sizeMultiplier = 1.4 // 40% increase
-        break
       case "96 x 42":
         sizeMultiplier = 1.4 // 40% increase
         break
@@ -417,37 +415,42 @@ export default function Web() {
 
     // Manual size adjustment
     let areaMultiplier = 1.0
-    if (selectedDoorSpec === "Input Dimension") {
+    if (formData.door_spec_default_size === "Input Dimension") {
       const width = parseFloat(formData.door_spec_manual_size_width ?? "") || 0
       const height = parseFloat(formData.door_spec_manual_size_height ?? "") || 0
-
-      // Calculate new area and adjust price
       const newArea = width * height
       const baseArea = 2880 // Base area
-
       if (newArea > 0) {
         areaMultiplier = newArea / baseArea
       }
     }
 
+    // Warranty charge
+    const warrantyCharge =
+      isExtendedWarranty && selectedRadio === "Altima Core"
+        ? 5000
+        : isExtendedWarranty && selectedRadio === "Altima Elite"
+        ? 8000
+        : 0
+
     // Calculate adjusted unit price
     const newAdjustedUnitPrice = baseUnitPrice * frameMultiplier * materialMultiplier * sizeMultiplier * areaMultiplier
 
-    // Update the adjusted unit price state
     setAdjustedUnitPrice(newAdjustedUnitPrice)
 
     // Subtotal and total calculations
-    const additionalCharges = 17820
+    const additionalCharges = 17820 + warrantyCharge
     const calculatedSubtotal = newAdjustedUnitPrice + additionalCharges
     setSubtotal(calculatedSubtotal)
-    const total = quantity * (newAdjustedUnitPrice + 17820)
-    const deposit_amount = total * 0.3
+
+    const total = quantity * calculatedSubtotal
+    const depositAmount = total * 0.3
 
     setFormData((prevFormData) => ({
       ...prevFormData,
       quantity: quantity.toString(),
       total: total.toString(),
-      deposit_amount: deposit_amount.toString(),
+      deposit_amount: depositAmount.toString(),
     }))
   }, [
     quantity,
@@ -457,8 +460,8 @@ export default function Web() {
     formData.door_spec_default_size,
     formData.door_spec_manual_size_width,
     formData.door_spec_manual_size_height,
-    selectedDoorSpec,
-  ]) // Dependencies
+    isExtendedWarranty,
+  ])
 
   const handleDecrement = () => {
     setQuantity((prev) => Math.max(prev - 1, 0)) // Ensure quantity doesn't go below 0
