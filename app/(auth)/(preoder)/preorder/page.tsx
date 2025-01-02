@@ -16,11 +16,15 @@ interface User {
 
 export default function Web() {
   const [isDefaultBillingTwo, setIsDefaultBillingTwo] = useState(false)
-  const [isEnforcedLock, setIsEnforcedLock] = useState(false)
+  const [isEnforcedLock, setIsEnforcedLock] = useState(true)
+  const [isSmartKeypadAccess, setIsSmartKeypadAccess] = useState(false)
+  const [isBatteryBackUp, setIsBatteryBackUp] = useState(false)
+  const [isFireDetection, setIsFireDetection] = useState(false)
+  const [isRemoteLockUnlock, setIsRemoteLockUnlock] = useState(false)
   const [isIntercom, setIsIntercom] = useState(false)
-  const [isAntiTheft, setIsAntiTheft] = useState(false)
+  const [isAntiTheft, setIsAntiTheft] = useState(true)
   const [isAlarm, setIsAlarm] = useState(false)
-  const [isMotionSensor, setIsMotionSensor] = useState(false)
+  const [isMotionSensor, setIsMotionSensor] = useState(true)
   const [isVideoDoorBell, setIsVideoDoorBell] = useState(false)
   const [isCamera, setIsCamera] = useState(false)
   const [isVoiceAssistant, setIsVoiceAssistant] = useState(false)
@@ -158,6 +162,45 @@ export default function Web() {
     })
   }
 
+  const toggleSmartKeypadAccess = () => {
+    setIsSmartKeypadAccess((prev) => {
+      const newValue = !prev
+      console.log("isSmartKeypadAccess", newValue)
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        smart_keypad_access: newValue,
+      }))
+      console.log("formData.smart_keypad_access:", newValue)
+      return newValue
+    })
+  }
+
+  const toggleFireDetection = () => {
+    setIsFireDetection((prev) => {
+      const newValue = !prev
+      console.log("isFireDetection", newValue)
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        fire_detection: newValue,
+      }))
+      console.log("formData.fire_detection:", newValue)
+      return newValue
+    })
+  }
+
+  const toggleBatteryBackUp = () => {
+    setIsBatteryBackUp((prev) => {
+      const newValue = !prev
+      console.log("isBatteryBackUp", newValue)
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        battery_backup: newValue,
+      }))
+      console.log("formData.battery_backup:", newValue)
+      return newValue
+    })
+  }
+
   const toggleAntiTheft = () => {
     setIsAntiTheft((prev) => {
       const newValue = !prev
@@ -168,12 +211,12 @@ export default function Web() {
       return newValue
     })
   }
-  const toggleAlarm = () => {
-    setIsAlarm((prev) => {
+  const toggleLock = () => {
+    setIsRemoteLockUnlock((prev) => {
       const newValue = !prev
       setFormData((prevFormData) => ({
         ...prevFormData,
-        alarm: newValue, // Update formData with the new value
+        remote_lock_unlock: newValue, // Update formData with the new value
       }))
       return newValue
     })
@@ -269,10 +312,16 @@ export default function Web() {
 
     door_spec_finish_type: "",
     handle_placement: "",
-    re_enforced_lock: false,
-    anti_theft: false,
+    re_enforced_lock: true,
+    anti_theft: true,
+
+    smart_keypad_access: false,
+    battery_backup: false,
+    fire_detection: false,
+    remote_lock_unlock: false,
+
     alarm: false,
-    motion_sensor: false,
+    motion_sensor: true,
     video_door_bell: false,
     intercom_sys: false,
     camera: false,
@@ -433,13 +482,20 @@ export default function Web() {
         ? 8000
         : 0
 
+    // Smart Keypad Access charge
+    const smartKeypadAccessCharge = isSmartKeypadAccess ? 3000 : 0
+    const batteryBackup = isBatteryBackUp ? 2500 : 0
+    const fireDetection = isFireDetection ? 5000 : 0
+    const remoteLock = isRemoteLockUnlock ? 3500 : 0
+
     // Calculate adjusted unit price
     const newAdjustedUnitPrice = baseUnitPrice * frameMultiplier * materialMultiplier * sizeMultiplier * areaMultiplier
 
     setAdjustedUnitPrice(newAdjustedUnitPrice)
 
     // Subtotal and total calculations
-    const additionalCharges = 17820 + warrantyCharge
+    const additionalCharges =
+      17820 + warrantyCharge + smartKeypadAccessCharge + batteryBackup + fireDetection + remoteLock
     const calculatedSubtotal = newAdjustedUnitPrice + additionalCharges
     setSubtotal(calculatedSubtotal)
 
@@ -461,6 +517,10 @@ export default function Web() {
     formData.door_spec_manual_size_width,
     formData.door_spec_manual_size_height,
     isExtendedWarranty,
+    isSmartKeypadAccess,
+    isBatteryBackUp,
+    isFireDetection,
+    isRemoteLockUnlock,
   ])
 
   const handleDecrement = () => {
@@ -1153,18 +1213,12 @@ export default function Web() {
                 <div className="my-5 border-b border-[#FFFFFF0D]"></div>
                 <div className="grid gap-5 px-5">
                   <p className="ext-lg font-medium text-white">
-                    Additional Security<span className="text-[#FF3B30]">*</span>
+                    Core Security<span className="text-[#FF3B30]">*</span>
                   </p>
 
                   <div
-                    className={`flex w-full items-center gap-2 ${
-                      selectedRadio === "Altima Core" ? "cursor-not-allowed opacity-50" : "cursor-pointer"
-                    }`}
-                    onClick={() => {
-                      if (selectedRadio !== "Altima Core") {
-                        toggleEnforced() // Only call the function if not disabled
-                      }
-                    }}
+                    className={`} flex w-full cursor-not-allowed items-center
+                    gap-2`}
                   >
                     <motion.img
                       src={isEnforcedLock ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
@@ -1179,14 +1233,8 @@ export default function Web() {
                   </div>
 
                   <div
-                    className={`flex w-full items-center gap-2 ${
-                      selectedRadio === "Altima Core" ? "cursor-not-allowed opacity-50" : "cursor-pointer"
-                    }`}
-                    onClick={() => {
-                      if (selectedRadio !== "Altima Core") {
-                        toggleAntiTheft() // Only call the function if not disabled
-                      }
-                    }}
+                    className={`} flex w-full cursor-not-allowed items-center 
+                    gap-2`}
                   >
                     <motion.img
                       src={isAntiTheft ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
@@ -1201,36 +1249,8 @@ export default function Web() {
                   </div>
 
                   <div
-                    className={`flex w-full items-center gap-2 ${
-                      selectedRadio === "Altima Core" ? "cursor-not-allowed opacity-50" : "cursor-pointer"
-                    }`}
-                    onClick={() => {
-                      if (selectedRadio !== "Altima Core") {
-                        toggleAlarm() // Only call the function if not disabled
-                      }
-                    }}
-                  >
-                    <motion.img
-                      src={isAlarm ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
-                      alt=""
-                      initial={{ scale: 1.2, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ duration: 1, ease: "easeIn" }}
-                    />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Alarm</p>
-                  </div>
-
-                  <div
-                    className={`flex w-full items-center gap-2 ${
-                      selectedRadio === "Altima Core" ? "cursor-not-allowed opacity-50" : "cursor-pointer"
-                    }`}
-                    onClick={() => {
-                      if (selectedRadio !== "Altima Core") {
-                        toggleMotionSensor() // Only call the function if not disabled
-                      }
-                    }}
+                    className={`} flex w-full cursor-not-allowed items-center gap-2
+                    `}
                   >
                     <motion.img
                       src={isMotionSensor ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
@@ -1242,6 +1262,85 @@ export default function Web() {
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
                     <p className="text-sm text-[#FFFFFF] max-sm:text-xs ">Motion sensor</p>
+                  </div>
+                </div>
+
+                <div className="my-5 border-b border-[#FFFFFF0D]"></div>
+                <div className="grid gap-5 px-5">
+                  <p className="ext-lg font-medium text-white">
+                    Additional Security<span className="text-[#FF3B30]">*</span>
+                  </p>
+
+                  <div
+                    className="flex w-full cursor-pointer items-center gap-2"
+                    onClick={() => {
+                      toggleSmartKeypadAccess() // Only call the function if not disabled
+                    }}
+                  >
+                    <motion.img
+                      src={isSmartKeypadAccess ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
+                      width={18}
+                      height={18}
+                      alt=""
+                      initial={{ scale: 1.2, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 1, ease: "easeIn" }}
+                    />
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Smart Keypad Access (₹3,000)</p>
+                  </div>
+
+                  <div
+                    className="flex w-full cursor-pointer items-center gap-2"
+                    onClick={() => {
+                      toggleBatteryBackUp() // Only call the function if not disabled
+                    }}
+                  >
+                    <motion.img
+                      src={isBatteryBackUp ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
+                      width={18}
+                      height={18}
+                      alt="Battery Backup"
+                      initial={{ scale: 1.2, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 1, ease: "easeIn" }}
+                    />
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Battery Backup(₹2,500)</p>
+                  </div>
+
+                  <div
+                    className="flex w-full cursor-pointer items-center gap-2"
+                    onClick={() => {
+                      toggleFireDetection() // Only call the function if not disabled
+                    }}
+                  >
+                    <motion.img
+                      src={isFireDetection ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
+                      width={18}
+                      height={18}
+                      alt=""
+                      initial={{ scale: 1.2, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 1, ease: "easeIn" }}
+                    />
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Fire Detection(₹5,000)</p>
+                  </div>
+
+                  <div
+                    className="flex w-full cursor-pointer items-center gap-2"
+                    onClick={() => {
+                      toggleLock() // Only call the function if not disabled
+                    }}
+                  >
+                    <motion.img
+                      src={isRemoteLockUnlock ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
+                      width={18}
+                      height={18}
+                      alt=""
+                      initial={{ scale: 1.2, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 1, ease: "easeIn" }}
+                    />
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs ">Remote Lock/Unlock(₹3,500)</p>
                   </div>
                 </div>
 
