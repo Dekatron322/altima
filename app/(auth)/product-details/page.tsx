@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import MainFooter from "components/Footer/MainFooter"
 import NewNav from "components/Navbar/NewNav"
 import ContactUs from "components/ContactUs/Contact"
+import ImageCarousel from "components/ImageModal/ImageModal"
 
 export default function Web() {
   return (
@@ -13,9 +14,6 @@ export default function Web() {
         <div className="  w-full justify-between    pb-10 md:pt-32">
           <div className="flex w-full justify-between gap-10  sm:flex">
             <div>
-              <p className="font-regular   text-center  text-2xl  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">
-                Important Link
-              </p>
               <p className=" my-3 text-center  text-lg font-semibold text-white  max-sm:my-3 md:text-xl md:leading-10 xl:text-3xl">
                 Our Model
               </p>
@@ -57,11 +55,12 @@ export default function Web() {
           </div>
           <div className="flex w-full justify-between max-sm:grid max-sm:gap-5  md:gap-20">
             <div>
-              <motion.img
-                src="/new.png"
+              <motion.video
+                src="/WhatsApp Video 2024-12-12 at 15.04.29.mp4"
                 width={645}
-                height={555}
-                alt=""
+                autoPlay
+                loop
+                muted
                 initial={{ scale: 1.2, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 1, ease: "easeIn" }}
@@ -270,26 +269,10 @@ export default function Web() {
                 </motion.a>
               </div>
             </div>
-            <div className=" max-sm:hidden">
-              <motion.img
-                src="/new.png"
-                width={645}
-                height={555}
-                alt=""
-                initial={{ scale: 1.2, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1, ease: "easeIn" }}
-              />
+            <div className="">
+              <ImageCarousel />
             </div>
-            <div className="md:hidden">
-              <motion.img
-                src="https://github.com/Dekatron322/altima/blob/main/public/altimaCore.png?raw=true"
-                alt=""
-                initial={{ scale: 1.2, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1, ease: "easeOut" }}
-              />
-            </div>
+
             <div className="md:hidden md:w-[403]">
               <div>
                 <div className=" w-full items-center justify-center bg-[#000000] px-4 py-4 text-black">

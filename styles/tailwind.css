@@ -157,7 +157,7 @@ body {
 }
 
 .paddings {
-  @apply px-5 py-6 lg:px-20 xl:px-28 3xl:px-80;
+  @apply px-5 py-6 lg:px-20 xl:px-24 3xl:px-72;
 }
 
 .navbar {
@@ -318,8 +318,6 @@ body {
   @apply flex min-h-[200px]  rounded-lg border border-[#282828] bg-[#282828]  p-3 hover:border-[#1B5EED] focus:border-[#1B5EED] active:border-[#1B5EED] max-sm:w-[100%] md:w-[60%];
 }
 
-
-
 /* Hide the default icon */
 .date-input::-webkit-calendar-picker-indicator {
   filter: invert(1); /* Changes the color to white */
@@ -336,7 +334,6 @@ body {
 .date-input {
   color-scheme: light; /* Ensures consistent styling for dark mode */
 }
-
 
 input[type="date"] {
   -webkit-appearance: none;
