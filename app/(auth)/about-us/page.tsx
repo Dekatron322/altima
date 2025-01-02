@@ -67,10 +67,6 @@ export default function Web() {
                 About Us
               </p>
 
-              {/* <div className="my-6 flex w-full justify-center text-[#FFFFFF99]">
-                <p className="text-lg">&quot; Smarter Entries, Smartest Spaces &quot;</p>
-              </div> */}
-
               <p className="font-regular mb-6 w-full text-ellipsis text-lg text-[#FFFFFF99] max-sm:leading-7 md:text-center">
                 Welcome to Altima, where innovation meets security in a smarter, more connected way. We are passionate
                 about crafting intelligent solutions for modern living, blending advanced technology with elegant design
@@ -100,7 +96,7 @@ export default function Web() {
             </div>
             <div>
               <motion.img
-                src="/about.png"
+                src="/Frame 48095432 (5).png"
                 width={633}
                 height={583}
                 alt=""
@@ -118,7 +114,7 @@ export default function Web() {
           <div className="grid grid-cols-2  justify-between gap-20 max-sm:grid-cols-1 max-sm:gap-5 ">
             <div>
               <motion.img
-                src="/about.png"
+                src="/Frame 48095432 (3).png"
                 width={633}
                 height={583}
                 alt=""
@@ -163,7 +159,7 @@ export default function Web() {
             </div>
             <div>
               <motion.img
-                src="/about.png"
+                src="/Frame 48095432 (4).png"
                 width={633}
                 height={583}
                 alt=""
