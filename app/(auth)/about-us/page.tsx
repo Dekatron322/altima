@@ -14,7 +14,7 @@ export default function Web() {
     {
       title: "1. When will Altima Disappearing Handle Smart Doors be available?",
       content:
-        "We’re targeting initial shipments to pre-order customers in Q1 2025. Please note that this date may be subject to change due to manufacturing and logistics. We’ll keep you updated every step of the way.",
+        "We’re targeting initial shipments to pre-order customers in the first quarter of 2025. Please note that this date may be subject to change due to manufacturing and logistics. We’ll keep you updated every step of the way.",
     },
     {
       title: "2. How can I cancel my pre-order?",

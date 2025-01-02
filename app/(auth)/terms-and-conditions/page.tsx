@@ -17,7 +17,7 @@ export default function Web() {
         <div>
           <ul className="grid gap-3">
             <li>
-              <strong>▪️ Acceptance of Terms:</strong> By accessing this website or placing a preorder, you agree to
+              <strong>▪️ Acceptance of Terms:</strong> By accessing this website or placing a pre-order, you agree to
               these Terms and Conditions. If you do not agree, please refrain from using our services.
             </li>
             <li className="px-2">
@@ -30,23 +30,24 @@ export default function Web() {
       ),
     },
     {
-      title: "2. Preorder Terms",
+      title: "2. Pre-order Terms",
       content: (
         <div>
           <ul className="grid gap-3">
             <li>
-              <strong>▪️ Preorder Process:</strong> By placing a preorder, you are reserving an Altima product in
-              advance. Preordering requires a deposit payment, which secures your place in our production queue.
+              <strong>▪️ Pre-order Process:</strong> By placing a pre-order, you are reserving an Altima product in
+              advance. Pre-ordering requires a deposit payment, which secures your place in our production queue.
             </li>
             <li className="px-2">
-              <strong>▪️ Availability:</strong> Preordering does not guarantee immediate availability. Estimated
+              <strong>▪️ Availability:</strong> Pre-ordering does not guarantee immediate availability. Estimated
               production and delivery timelines are provided, but actual delivery dates may vary based on production
               schedules and supply chain factors.
             </li>
             <li className="px-2">
-              <strong>▪️ Non-Binding Agreement:</strong> Placing a preorder does not constitute a binding purchase
-              contract. Smart Haven Systems Private Limited reserves the right to cancel or refund preorders in specific
-              cases, including but not limited to production delays, technical issues, or unforeseen circumstances.
+              <strong>▪️ Non-Binding Agreement:</strong> Placing a pre-order does not constitute a binding purchase
+              contract. Smart Haven Systems Private Limited reserves the right to cancel or refund pre-orders in
+              specific cases, including but not limited to production delays, technical issues, or unforeseen
+              circumstances.
             </li>
           </ul>
         </div>
@@ -58,20 +59,20 @@ export default function Web() {
         <div>
           <ul className="grid gap-3">
             <li>
-              <strong>▪️ Deposit:</strong> Preorders require a 30% non-refundable deposit at the time of booking. This
+              <strong>▪️ Deposit:</strong> Pre-orders require a 30% non-refundable deposit at the time of booking. This
               deposit is applied toward the total product price.
             </li>
             <li className="px-2">
               <strong>▪️ Final Payment:</strong> The remaining balance is due prior to delivery. A final payment notice
-              will be sent to the email address provided at the time of preorder, with a specified payment deadline.
+              will be sent to the email address provided at the time of pre-order, with a specified payment deadline.
             </li>
             <li className="px-2">
               <strong>▪️ Accepted Payment Methods:</strong> We accept various payment methods, including credit cards,
-              debit cards, and bank transfers. Specific payment instructions will be provided during the preorder
+              debit cards, and bank transfers. Specific payment instructions will be provided during the pre-order
               process.
             </li>
             <li className="px-2">
-              <strong>▪️ Non-Refundable Deposit:</strong> Please note that the preorder deposit is non-refundable.
+              <strong>▪️ Non-Refundable Deposit:</strong> Please note that the pre-order deposit is non-refundable.
               However, in cases where Smart Haven Systems Private Limited initiates a cancellation, the deposit will be
               refunded in full.
             </li>
@@ -90,7 +91,7 @@ export default function Web() {
             </li>
             <li className="px-2">
               <strong>▪️ Price Adjustments:</strong> Prices are subject to change at the discretion of Smart Haven
-              Systems Private Limited. However, preorder prices at the time of booking will be honored for confirmed
+              Systems Private Limited. However, pre-order prices at the time of booking will be honored for confirmed
               orders.
             </li>
           </ul>
@@ -104,7 +105,7 @@ export default function Web() {
           <ul className="grid gap-3">
             <li>
               <strong>▪️ Estimated Delivery:</strong> Altima products are estimated to ship within 4-5 months after the
-              preorder window closes. We will make every effort to meet this timeline; however, delivery dates may vary
+              pre-order window closes. We will make every effort to meet this timeline; however, delivery dates may vary
               due to production schedules and external factors.
             </li>
             <li className="px-2">
@@ -130,12 +131,12 @@ export default function Web() {
         <div>
           <ul className="grid gap-3">
             <li>
-              <strong>▪️ Customer-Initiated Cancellations:</strong> Preorder deposits are non-refundable, and
+              <strong>▪️ Customer-Initiated Cancellations:</strong> Pre-order deposits are non-refundable, and
               customer-initiated cancellations will forfeit the deposit.
             </li>
             <li className="px-2">
               <strong>▪️ Company-Initiated Cancellations:</strong> In cases where Smart Haven Systems Private Limited
-              initiates the cancellation of a preorder due to unforeseen circumstances, we will issue a full refund of
+              initiates the cancellation of a pre-order due to unforeseen circumstances, we will issue a full refund of
               the deposit.
             </li>
             <li className="px-2">
@@ -161,7 +162,7 @@ export default function Web() {
               accidents.
             </li>
             <li className="px-2">
-              <strong>▪️ Refunds:</strong> ▪️ Returns: Returns are not accepted on preorder products except in cases
+              <strong>▪️ Refunds:</strong> ▪️ Returns: Returns are not accepted on pre-order products except in cases
               covered under the warranty for manufacturing defects.
             </li>
           </ul>
@@ -311,9 +312,9 @@ export default function Web() {
               </div>
 
               <p className="font-regular mb-6 w-full text-ellipsis text-sm text-[#FFFFFF99] max-sm:leading-7 md:px-64 md:text-center">
-                Welcome to the Altima Preorder Website, operated by Smart Haven Systems Private Limited. By accessing or
-                using this website, you agree to be bound by these Terms and Conditions. Please read them carefully
-                before placing a preorder or making any transactions on our website.
+                Welcome to the Altima Pre-order Website, operated by Smart Haven Systems Private Limited. By accessing
+                or using this website, you agree to be bound by these Terms and Conditions. Please read them carefully
+                before placing a pre-order or making any transactions on our website.
               </p>
             </div>
           </div>

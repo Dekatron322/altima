@@ -25,7 +25,7 @@ const MainFooter = () => {
                 Product Details
               </Link>
               <Link href="how-preorder-works" className="text-sm text-[#FFFFFF99] underline">
-                How Preorders Work
+                How Pre-orders Work
               </Link>
               <Link href="faqs" className="text-sm text-[#FFFFFF99] underline">
                 FAQs
@@ -79,10 +79,10 @@ const MainFooter = () => {
                 </button>
               </div>
               <p className="text-sm text-[#FFFFFF99]">
-                ✓Estimated delivery date: 4-5 months after the preorder window closes
+                ✓Estimated delivery date: 4-5 months after the pre-order window closes
               </p>
               <p className="text-sm text-[#FFFFFF99]">
-                ✓A note: Preorders require a 30% deposit at the time of booking. The remaining balance is due before
+                ✓A note: Pre-orders require a 30% deposit at the time of booking. The remaining balance is due before
                 shipment, with a final payment notice sent prior to delivery. Deposits are non-refundable but can be
                 adjusted against the final payment.
               </p>

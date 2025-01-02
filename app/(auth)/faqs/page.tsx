@@ -15,7 +15,7 @@ export default function Web() {
     {
       title: "1. When will Altima Disappearing Handle Smart Doors be available?",
       content:
-        "We’re targeting initial shipments to pre-order customers in Q1 2025. Please note that this date may be subject to change due to manufacturing and logistics. We’ll keep you updated every step of the way.",
+        "We’re targeting initial shipments to pre-order customers in the first quarter of 2025. Please note that this date may be subject to change due to manufacturing and logistics. We’ll keep you updated every step of the way.",
     },
     {
       title: "2. How can I cancel my pre-order?",
@@ -43,7 +43,7 @@ export default function Web() {
         "We provide professional installation support in select areas to ensure your Altima smart door is installed seamlessly. Contact our support team to *discuss installation options in your location and any associated costs.",
     },
     {
-      title: "7. How are preorder payments handled?",
+      title: "7. How are pre-order payments handled?",
       content: (
         <div>
           <p>
@@ -51,7 +51,7 @@ export default function Web() {
           </p>
           <ul className="grid gap-3">
             <li className="mt-3">
-              Preorder payments are securely processed through our parent company, csPILLAI Ventures Private Limited,
+              Pre-order payments are securely processed through our parent company, csPILLAI Ventures Private Limited,
               ensuring a reliable and seamless experience.
             </li>
             <li>

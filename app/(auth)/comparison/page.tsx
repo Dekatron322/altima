@@ -485,7 +485,7 @@ export default function Web() {
                   />
                   <Image src="/avatar1.png" width={40} height={40} alt="" className="h-8 w-8 object-cover sm:hidden" />
                   <div>
-                    <p className="pb-2 text-lg text-white max-md:text-sm">Preorder Customer</p>
+                    <p className="pb-2 text-lg text-white max-md:text-sm">Pre-order Customer</p>
                     <p className="text-base text-[#FFFFFF99] max-sm:text-xs">
                       Altima Core is exactly what we needed for home security. Looking forward to upgrading to Altima
                       Elite for full home integration.
@@ -975,9 +975,9 @@ export default function Web() {
       <section id="other-products" className="paddings  w-full bg-[#282828] max-sm:px-3 ">
         <div className="w-full     py-10">
           <div className="flex flex-col items-center justify-center">
-            <p className="text-[#FFFFFF99] max-sm:text-sm">Preorder Deposit: 30% of the total cost..</p>
+            <p className="text-[#FFFFFF99] max-sm:text-sm">Pre-order Deposit: 30% of the total cost..</p>
             <p className="custom-text first-word-color my-6 flex text-center text-5xl font-bold text-[#FFFFFF] max-md:text-2xl max-sm:text-2xl md:w-[924px] ">
-              Preorder Now and Experience the Future of Smart Home Security!
+              Pre-order Now and Experience the Future of Smart Home Security!
             </p>
 
             <p className="text-[#FFFFFF99] max-sm:text-sm">
@@ -985,7 +985,7 @@ export default function Web() {
             </p>
             <p className="mt-3 text-[#FFFFFF99] max-sm:text-sm">
               {" "}
-              Limited-Time Offer: <span className="underline">Exclusive benefits for early preorders!</span>
+              Limited-Time Offer: <span className="underline">Exclusive benefits for early pre-orders!</span>
             </p>
           </div>
         </div>

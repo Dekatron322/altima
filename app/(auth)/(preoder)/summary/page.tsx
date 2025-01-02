@@ -140,23 +140,23 @@ export default function Web() {
             </div>
             <h2 className="mb-4 text-center text-lg font-bold text-[#FFFFFF]">Important Notice</h2>
             <p className="mb-4 text-center text-sm text-[#FFFFFF99] max-sm:text-xs">
-              Thank you for preordering with Smart Haven Systems Private Limited!
+              Thank you for pre-ordering with Smart Haven Systems Private Limited!
             </p>
             <p className="mb-4 text-center text-sm text-[#FFFFFF99] max-sm:text-xs">Kindly Note:</p>
 
             <p className="mb-4 text-center text-sm text-[#FFFFFF99] max-sm:text-xs">
-              Your preorder payment is being collected temporarily by csPILLAI Ventures Private Limited, the parent
+              Your pre-order payment is being collected temporarily by csPILLAI Ventures Private Limited, the parent
               company of Smart Haven Systems Private Limited, as our official company account is in the process of being
               set up.
             </p>
 
             <p className="mb-4 text-center text-sm text-[#FFFFFF99] max-sm:text-xs">
-              All preorder funds will be securely transferred to Smart Haven Systems Private Limited once its account
+              All pre-order funds will be securely transferred to Smart Haven Systems Private Limited once its account
               becomes operational.
             </p>
 
             <p className="mb-4 text-center text-sm text-[#FFFFFF99] max-sm:text-xs">
-              This arrangement ensures you can preorder without delay, and your payment is handled by a trusted entity
+              This arrangement ensures you can pre-order without delay, and your payment is handled by a trusted entity
               within the group.
             </p>
 
@@ -279,11 +279,11 @@ export default function Web() {
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 1, ease: "easeIn" }}
                   />
-                  <p className="text-sm text-[#FFFFFF] max-sm:text-xs">I agree to the preorder terms and conditions</p>
+                  <p className="text-sm text-[#FFFFFF] max-sm:text-xs">I agree to the pre-order terms and conditions</p>
                 </div>
 
                 <p className="text-center text-white max-sm:text-xs">
-                  <span className="font-medium ">Note :</span> You will receive a confirmation email once your preorder
+                  <span className="font-medium ">Note :</span> You will receive a confirmation email once your pre-order
                   is complete
                 </p>
               </div>

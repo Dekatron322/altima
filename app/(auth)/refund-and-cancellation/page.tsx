@@ -12,7 +12,7 @@ export default function Web() {
     {
       title: "1. Information We Collect",
       content:
-        "We may collect the following types of information ▪️Personal Information: Name, email address, phone number, shipping address, and payment details necessary for processing your preorder. ▪️Device Information: IP address, browser type, operating system, and other technical data to enhance user experience and improve website performance.▪️Usage Data: Information on how you use our website, such as page views and navigation patterns.",
+        "We may collect the following types of information ▪️Personal Information: Name, email address, phone number, shipping address, and payment details necessary for processing your pre-order. ▪️Device Information: IP address, browser type, operating system, and other technical data to enhance user experience and improve website performance.▪️Usage Data: Information on how you use our website, such as page views and navigation patterns.",
     },
     {
       title: "2. How We Use Your Information",
@@ -100,8 +100,8 @@ export default function Web() {
 
               <p className="font-regular mb-6 w-full text-ellipsis text-sm text-[#FFFFFF99] max-sm:leading-7 md:px-64 md:text-center">
                 Thank you for choosing Altima. We understand that situations may arise that require changes to your
-                preorder, and we strive to be transparent with our policies regarding refunds and cancellations. This
-                Refund and Cancellation Policy outlines our guidelines and provides clarity on preorder deposits,
+                pre-order, and we strive to be transparent with our policies regarding refunds and cancellations. This
+                Refund and Cancellation Policy outlines our guidelines and provides clarity on pre-order deposits,
                 adjustments, and other specific conditions.
               </p>
             </div>

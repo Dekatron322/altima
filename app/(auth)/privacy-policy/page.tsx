@@ -17,7 +17,7 @@ export default function Web() {
           <ul className="grid gap-3">
             <li>
               <strong>▪️ Personal Information:</strong> Name, email address, phone number, shipping address, and payment
-              details necessary for processing your preorder.
+              details necessary for processing your pre-order.
             </li>
             <li className="px-2">
               <strong>▪️ Device Information:</strong> IP address, browser type, operating system, and other technical
@@ -37,7 +37,7 @@ export default function Web() {
         <div>
           <ul className="grid gap-3">
             <li>
-              <strong>▪️ Process Preorders:</strong> Manage your preorder, confirm your purchase, and handle payment
+              <strong>▪️ Process Pre-orders:</strong> Manage your pre-order, confirm your purchase, and handle payment
               transactions.
             </li>
             <li className="px-2">
@@ -46,7 +46,7 @@ export default function Web() {
             </li>
             <li className="px-2">
               <strong>▪️ Communication:</strong> Send you order-related updates, marketing offers (if opted in), and any
-              necessary information about your preorder.
+              necessary information about your pre-order.
             </li>
             <li className="px-2">
               <strong>▪️ Improvement:</strong> Analyze usage data to improve website functionality and enhance the
@@ -210,7 +210,7 @@ export default function Web() {
               <p className="font-regular mb-6 w-full text-ellipsis text-sm text-[#FFFFFF99] max-sm:leading-7 md:px-64 md:text-center">
                 At Smart Haven Systems Private Limited, we value your privacy and are committed to safeguarding your
                 personal information. This Privacy Policy outlines how we collect, use, store, and protect your data
-                when you visit our website and place preorders for Altima products.
+                when you visit our website and place pre-orders for Altima products.
               </p>
             </div>
           </div>

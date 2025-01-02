@@ -17,12 +17,12 @@ export default function Web() {
         "At Smart Haven Systems Private Limited, we are dedicated to ensuring that your Altima product is delivered securely and on time. This Shipping Policy outlines our strategies and options to guarantee a seamless delivery experience for our customers.",
     },
     {
-      title: "2. Complimentary Shipping for Preorders",
+      title: "2. Complimentary Shipping for Pre-orders",
       content: (
         <div>
           <p>
             To show our appreciation to early adopters, we are offering{" "}
-            <strong>free shipping for all Altima Core and Altima Elite preorders</strong>. This offer is valid for
+            <strong>free shipping for all Altima Core and Altima Elite pre-orders</strong>. This offer is valid for
             deliveries to major metropolitan areas within [India].
           </p>
         </div>
@@ -36,7 +36,7 @@ export default function Web() {
             <p className="my-3 font-bold">3.1 Local Deliveries (within 50 km)</p>
             <li>
               ◾For addresses within a 50 km radius of our assembly and distribution centers, a minimal delivery fee may
-              be charged after the preorder phase.
+              be charged after the pre-order phase.
             </li>
 
             <li className="px-2">
@@ -110,7 +110,7 @@ export default function Web() {
         <div>
           <p>
             Orders are typically processed and dispatched within <b>[3-5] business days</b>. During peak periods, such
-            as holidays or preorder launches, processing times may be longer. We appreciate your patience and
+            as holidays or pre-order launches, processing times may be longer. We appreciate your patience and
             understanding.
           </p>
         </div>

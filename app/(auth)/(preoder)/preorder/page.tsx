@@ -298,9 +298,9 @@ export default function Web() {
   const frameTypeOptions = ["Slim", "Standard", "Reinforced"]
   const standardSizeOptions = ["80 x 36", "84 x 36", "80 x 42", "96 x 36", "96 x 42"]
   const MaterialOptions = ["Wood", "Glass", "Metal"]
-  const connectivityOptions = ["Wi-Fi", "BlueTooth", "Zigbee", "None"]
+  const connectivityOptions = ["Wi-Fi", "Bluetooth", "Zigbee"]
   const powerOptions = ["AC Connection", "Battery Backup,", "Solar Ready"]
-  const installationOptions = ["Residential", "Commercial,", "Hotel", "Office", "Other"]
+  const installationOptions = ["Residential", "Commercial,", "Other"]
   const unitOptions = ["Centimeters", "Inches"]
   const materialToFinishMap: Record<string, string[]> = {
     Wood: ["Mahogany", "Maple", "Teak", "Oak"],
@@ -564,10 +564,10 @@ export default function Web() {
           <div className="ms:p-10 flex w-full flex-col  items-center justify-center  rounded-3xl max-sm:rounded-lg  max-sm:p-2">
             <p className="text-center text-xl text-[#FFFFFF]">Pre-Order form</p>
             <p className="py-5 text-center text-xs text-[#FFFFFF80]">
-              ✓Estimated delivery date: 4-5 months after the preorder window closes
+              ✓Estimated delivery date: 4-5 months after the pre-order window closes
             </p>
             <p className="pb-5 text-center text-xs text-[#FFFFFF80] 2xl:w-[580px]">
-              ✓A note: Preorders require a 30% deposit at the time of booking. The remaining balance is due before
+              ✓A note: Pre-orders require a 30% deposit at the time of booking. The remaining balance is due before
               shipment, with a final payment notice sent prior to delivery. Deposits are non-refundable but can be
               adjusted against the final payment.
             </p>
@@ -1470,7 +1470,7 @@ export default function Web() {
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
                     <p className="text-sm text-[#FFFFFF] max-sm:text-xs">
-                      Preorder Deposit:* (30% of product price to be collected upfront)
+                      Pre-order Deposit:* (30% of product price to be collected upfront)
                     </p>
                   </div>
                 </div>

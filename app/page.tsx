@@ -1,7 +1,6 @@
 "use client"
 import Footer from "components/Footer/Footer"
 
-
 import Image from "next/image"
 import Navbar from "components/Navbar/Navbar"
 import { useState } from "react"
@@ -14,12 +13,11 @@ import ContactUs from "components/ContactUs/Contact"
 import ImageCarousel from "components/ImageModal/ImageModal"
 
 export default function Web() {
-  
   const faqData = [
     {
       title: "1. When will Altima Disappearing Handle Smart Doors be available?",
       content:
-        "We’re targeting initial shipments to pre-order customers in Q1 2025. Please note that this date may be subject to change due to manufacturing and logistics. We’ll keep you updated every step of the way.",
+        "We’re targeting initial shipments to pre-order customers in the first quarter of 2025. Please note that this date may be subject to change due to manufacturing and logistics. We’ll keep you updated every step of the way.",
     },
     {
       title: "2. How can I cancel my pre-order?",
@@ -47,26 +45,32 @@ export default function Web() {
         "We provide professional installation support in select areas to ensure your Altima smart door is installed seamlessly. Contact our support team to *discuss installation options in your location and any associated costs.",
     },
     {
-      title: "7. How are preorder payments handled?",
+      title: "7. How are pre-order payments handled?",
       content: (
         <div>
           <p>
-          This Warranty does <strong>not</strong> cover:
+            This Warranty does <strong>not</strong> cover:
           </p>
           <ul className="grid gap-3">
-            
-            <li className="mt-3">Preorder payments are securely processed through our parent company, csPILLAI Ventures Private Limited, ensuring a reliable and seamless experience.
+            <li className="mt-3">
+              Pre-order payments are securely processed through our parent company, csPILLAI Ventures Private Limited,
+              ensuring a reliable and seamless experience.
             </li>
-            <li >Your trust is our priority, and we adhere to the highest standards of security and professionalism in handling payments.
+            <li>
+              Your trust is our priority, and we adhere to the highest standards of security and professionalism in
+              handling payments.
             </li>
-            <li >For any assistance, feel free to contact us at <a href="mailto:customercare@smarthavensystems.com" className="text-[#FF3B30]">customercare@smarthavensystems.com</a>.
+            <li>
+              For any assistance, feel free to contact us at{" "}
+              <a href="mailto:customercare@smarthavensystems.com" className="text-[#FF3B30]">
+                customercare@smarthavensystems.com
+              </a>
+              .
             </li>
-            
-
           </ul>
-          
         </div>
-      ),},
+      ),
+    },
     {
       title: "8. Do you offer financing or payment plans?",
       content:
@@ -133,18 +137,25 @@ export default function Web() {
             <div>
               <div className="mb-4 flex items-center justify-center gap-2 rounded-lg bg-[#FFFFFF1A] p-2 md:max-w-[519px]">
                 <Image src="/Vector.png" width={24} height={24} alt="" />
-                <p className="text-sm text-[#FFFFFF] max-sm:text-[9px]">
-                  POWERED BY INNOVATION FROM csPILLAI®
-                </p>
+                <p className="text-sm text-[#FFFFFF] max-sm:text-[9px]">POWERED BY INNOVATION FROM csPILLAI®</p>
               </div>
               <p className="  flex text-7xl  font-bold text-[#FFFFFF] max-sm:text-2xl ">ALTIMA: THE SMART </p>
               <p className="  flex text-7xl  font-bold text-[#FFFFFF] max-sm:text-2xl ">DOOR & HOME HUB –</p>
-              <p className="  flex text-7xl  font-bold text-[#FF3B30] max-sm:text-3xl cursor-pointer" onClick={handlePreOrderClick}>PRE-ORDER NOW!</p>
+              <p
+                className="  flex cursor-pointer  text-7xl font-bold text-[#FF3B30] max-sm:text-3xl"
+                onClick={handlePreOrderClick}
+              >
+                PRE-ORDER NOW!
+              </p>
 
               <p className="mt-10 text-xl text-white max-sm:mt-3  max-sm:text-base md:w-[600px]">
                 Experience the next level of convenience and security with Altima – a revolutionary smart door and home
-                hub in one. Featuring a <b onClick={openVideoModal} className="text-[#FF3B30] cursor-pointer">disappearing handle</b> and cutting-edge technology, Altima seamlessly integrates
-                security and smart home functions, perfect for any space – be it home, office, or beyond.
+                hub in one. Featuring a{" "}
+                <b onClick={openVideoModal} className="cursor-pointer text-[#FF3B30]">
+                  disappearing handle
+                </b>{" "}
+                and cutting-edge technology, Altima seamlessly integrates security and smart home functions, perfect for
+                any space – be it home, office, or beyond.
               </p>
               <div className="max-sm:my-5 md:hidden">
                 <motion.img
@@ -179,9 +190,7 @@ export default function Web() {
               </div>
             </div>
 
-            <div className="">
-              {/* You can remove the Image component as it will be used as background */}
-            </div>
+            <div className="">{/* You can remove the Image component as it will be used as background */}</div>
           </div>
         </motion.div>
       </section>
@@ -227,7 +236,7 @@ export default function Web() {
                   <Image src="/Wrench.png" width={35} height={35} alt="" className="sm:hidden" />
                   <p className="py-2 text-lg text-white max-md:text-sm">PRIORITY INSTALLATION</p>
                   <p className=" text-lg text-[#FFFFFF99] max-md:text-xs">
-                    Enjoy priorityinstallation <br className="max-sm:hidden" /> and be among the first to
+                    Enjoy priority installation <br className="max-sm:hidden" /> and be among the first to
                     <br className="max-sm:hidden" />
                     have it set up.
                   </p>
@@ -263,7 +272,6 @@ export default function Web() {
                   Transform your room with Altima into a minimalist, <br className="max-sm:hidden" /> modern space with
                   ease and speed.
                 </p>
-                
               </div>
               <div className="flex items-center justify-center gap-4 max-sm:grid max-sm:grid-cols-1">
                 <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10  max-sm:p-5 md:h-[263px] md:w-[347px]">
@@ -293,7 +301,7 @@ export default function Web() {
                   <p className="py-4 text-lg text-white max-sm:text-sm">ADVANCED SECURITY</p>
                   <p className="text-lg text-[#FFFFFF99] max-sm:text-xs">
                     Multi-factor authentication
-                    <br className="max-sm:hidden" /> and real- time monitoring for <br className="max-sm:hidden" />{" "}
+                    <br className="max-sm:hidden" /> and real-time monitoring for <br className="max-sm:hidden" />{" "}
                     unmatched safety.
                   </p>
                 </div>
@@ -314,10 +322,13 @@ export default function Web() {
         </div>
       </section>
 
-      <section id="specifications" className="paddings items-center justify-center flex  w-full bg-[#151515] max-sm:px-3 ">
+      <section
+        id="specifications"
+        className="paddings flex w-full items-center  justify-center bg-[#151515] max-sm:px-3 "
+      >
         <div className="  w-full justify-between    md:py-10">
           <div className="flex w-full justify-between gap-10  sm:flex">
-            <div className="flex flex-col w-full justify-center"> 
+            <div className="flex w-full flex-col justify-center">
               <p className="font-regular   text-center  text-2xl  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">
                 Specifications
               </p>
@@ -341,8 +352,6 @@ export default function Web() {
         </div>
       </section>
 
-      
-
       <section id="other-products" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
         <div className="  w-full justify-between md:py-10">
           <div className="flex w-full flex-col items-center justify-center sm:hidden">
@@ -352,19 +361,18 @@ export default function Web() {
             </p>
           </div>
           <div className="flex w-full justify-between max-sm:grid max-sm:gap-5  md:gap-20">
-          <div className="rounded-md overflow-hidden sm:h-[620px]">
-  <motion.video
-    src="/WhatsApp Video 2024-12-12 at 15.04.29.mp4"
-    width={645}
-    
-    autoPlay
-    loop
-    muted
-    initial={{ scale: 1.2, opacity: 0 }}
-    animate={{ scale: 1, opacity: 1 }}
-    transition={{ duration: 1, ease: "easeIn" }}
-  />
-</div>
+            <div className="overflow-hidden rounded-md sm:h-[620px]">
+              <motion.video
+                src="/WhatsApp Video 2024-12-12 at 15.04.29.mp4"
+                width={645}
+                autoPlay
+                loop
+                muted
+                initial={{ scale: 1.2, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 1, ease: "easeIn" }}
+              />
+            </div>
             <div className="">
               <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:hidden max-sm:text-lg lg:text-2xl">
                 Our Models
@@ -377,10 +385,11 @@ export default function Web() {
                   <ul className="list-inside list-disc">
                     <li className="py-2 text-[#FFFFFF] max-sm:text-center max-sm:text-xs">Advanced Home Control </li>
                     <li className=" text-[#FFFFFF] max-sm:text-center max-sm:text-xs">All Pro features, plus:</li>
-                    
                   </ul>
 
-                  <p className="text-2xl text-[#FF4F45] max-sm:mt-3 max-sm:text-center max-sm:text-lg">₹49,500 + Taxes</p>
+                  <p className="text-2xl text-[#FF4F45] max-sm:mt-3 max-sm:text-center max-sm:text-lg">
+                    ₹49,500 + Taxes
+                  </p>
                 </div>
               </div>
               <ul className="mt-6 list-inside list-disc pl-2 md:mb-4">
@@ -571,7 +580,7 @@ export default function Web() {
               <ImageCarousel />
             </div>
             <div className="md:hidden">
-            <ImageCarousel />
+              <ImageCarousel />
             </div>
             <div className="md:hidden md:w-[403]">
               <div>
@@ -673,8 +682,6 @@ export default function Web() {
         </div>
       </section>
 
-      
-
       <section id="other-products" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
         <div className="w-full     py-10">
           <div className="flex flex-col items-center justify-center">
@@ -699,8 +706,8 @@ export default function Web() {
                 <div>
                   <p className="text-[#FFFFFF]  max-sm:text-sm">Free Software Upgrade:</p>
                   <p className="text-[#FFFFFF99] max-sm:text-xs">
-                    All pre-orders come with a lifetime free software upgrade, ensuring your device remains updated with
-                    the latest smart features.
+                    All pre-orders include lifetime free software upgrades, ensuring your device stays updated with the
+                    latest smart features.
                   </p>
                 </div>
               </div>
@@ -796,15 +803,20 @@ export default function Web() {
 
           <div className=" w-full rounded-md border border-[#FFFFFF1A] ">
             {faqData.map((faq, index) => (
-              <Accordion key={index} title={faq.title} content={faq.content} isOpen={openIndex === index} onToggle={() => handleToggle(index)}/>
+              <Accordion
+                key={index}
+                title={faq.title}
+                content={faq.content}
+                isOpen={openIndex === index}
+                onToggle={() => handleToggle(index)}
+              />
             ))}
           </div>
         </div>
       </section>
 
       <ContactUs />
-     
-      
+
       {isVideoModalOpen && (
         <motion.div
           className="fixed inset-0 z-50 flex items-center justify-center bg-[#151515] bg-opacity-90"
@@ -814,29 +826,29 @@ export default function Web() {
           onClick={closeVideoModal}
         >
           <motion.div
-            className="relative bg-[#151515] bg-opacity-90 rounded-lg shadow-lg p-6 max-w-xl w-full"
+            className="relative w-full max-w-xl rounded-lg bg-[#151515] bg-opacity-90 p-6 shadow-lg"
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0.8 }}
             onClick={(e) => e.stopPropagation()} // Prevent modal close on inner click
           >
             <button
-              className="absolute top-2 right-2 text-white bg-[#FF3B30] rounded-full p-3"
+              className="absolute right-2 top-2 rounded-full bg-[#FF3B30] p-3 text-white"
               onClick={closeVideoModal}
             >
-              <LiaTimesSolid onClick={closeVideoModal} className="cursor-pointer z-50" />
+              <LiaTimesSolid onClick={closeVideoModal} className="z-50 cursor-pointer" />
             </button>
             <motion.video
-    src="/WhatsApp Video 2024-12-12 at 15.04.29.mp4"
-    width={645}
-    height={555}
-    autoPlay
-    loop
-    muted
-    initial={{ scale: 1.2, opacity: 0 }}
-    animate={{ scale: 1, opacity: 1 }}
-    transition={{ duration: 1, ease: "easeIn" }}
-  />
+              src="/WhatsApp Video 2024-12-12 at 15.04.29.mp4"
+              width={645}
+              height={555}
+              autoPlay
+              loop
+              muted
+              initial={{ scale: 1.2, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1, ease: "easeIn" }}
+            />
           </motion.div>
         </motion.div>
       )}

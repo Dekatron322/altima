@@ -15,12 +15,12 @@ export default function Web() {
         "At Smart Haven Systems Private Limited, we are dedicated to ensuring that your Altima product is delivered securely and on time. This Shipping Policy outlines our strategies and options to guarantee a seamless delivery experience for our customers.",
     },
     {
-      title: "2. Preorder Requirements",
+      title: "2. Pre-order Requirements",
       content:
         "To cancel your pre-order, please reach out to our support team at [ *support email* ] or call us at [ *support phone number* ]. Alternatively, you can log in to your account and follow the instructions under the My Orders section to cancel.",
     },
     {
-      title: "3. Preorder Deposit",
+      title: "3. Pre-order Deposit",
       content:
         "The pre-order process is simple. Select your preferred Altima model (Core or Elite), customize your door with the options you need, review the details, and place a 30% deposit to secure your order. We’ll keep you informed as your order progresses toward delivery.",
     },
@@ -93,7 +93,7 @@ export default function Web() {
                 Resources & Policies
               </p>
               <p className=" font-regular my-3  text-center text-lg text-white  max-sm:my-3 md:text-xl md:leading-10 xl:text-3xl">
-                Altima Preorder Terms and Conditions
+                Altima Pre-order Terms and Conditions
               </p>
 
               <div className="mt-4 flex w-full items-center justify-center gap-5 max-sm:gap-2 ">
