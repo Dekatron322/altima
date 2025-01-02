@@ -51,6 +51,9 @@ export interface OrderPayload {
   battery_backup?: boolean
   fire_detection?: boolean
   remote_lock_unlock?: boolean
+  smart_lighting_integration?: boolean
+  home_automation_integration?: boolean
+  advance_motion_detection?: boolean
   status?: string
   total?: string
   email_address?: string

@@ -18,15 +18,18 @@ export default function Web() {
   const [isDefaultBillingTwo, setIsDefaultBillingTwo] = useState(false)
   const [isEnforcedLock, setIsEnforcedLock] = useState(true)
   const [isSmartKeypadAccess, setIsSmartKeypadAccess] = useState(false)
+  const [isSmartLightingIntegration, setIsSmartLightingIntegration] = useState(false)
+  const [isHomeAutomation, setIsHomeAutomation] = useState(false)
+  const [isAdvanceMotionDetection, setIsAdvanceMotionDetection] = useState(false)
   const [isBatteryBackUp, setIsBatteryBackUp] = useState(false)
   const [isFireDetection, setIsFireDetection] = useState(false)
   const [isRemoteLockUnlock, setIsRemoteLockUnlock] = useState(false)
-  const [isIntercom, setIsIntercom] = useState(false)
+  const [isIntercom, setIsIntercom] = useState(true)
   const [isAntiTheft, setIsAntiTheft] = useState(true)
   const [isAlarm, setIsAlarm] = useState(false)
   const [isMotionSensor, setIsMotionSensor] = useState(true)
-  const [isVideoDoorBell, setIsVideoDoorBell] = useState(false)
-  const [isCamera, setIsCamera] = useState(false)
+  const [isVideoDoorBell, setIsVideoDoorBell] = useState(true)
+  const [isCamera, setIsCamera] = useState(true)
   const [isVoiceAssistant, setIsVoiceAssistant] = useState(false)
   const [isDefaultEmail, setIsDefaultEmail] = useState(false)
   const [isDefaultPhone, setIsDefaultPhone] = useState(false)
@@ -175,6 +178,45 @@ export default function Web() {
     })
   }
 
+  const toggleSmartLightingIntegration = () => {
+    setIsSmartLightingIntegration((prev) => {
+      const newValue = !prev
+      console.log("isSmartLightingIntegration", newValue)
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        smart_lighting_integration: newValue,
+      }))
+      console.log("formData.smart_lighting_integration:", newValue)
+      return newValue
+    })
+  }
+
+  const toggleHomeAutomation = () => {
+    setIsHomeAutomation((prev) => {
+      const newValue = !prev
+      console.log("isHomeAutomation", newValue)
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        home_automation_integration: newValue,
+      }))
+      console.log("formData.home_automation_integration:", newValue)
+      return newValue
+    })
+  }
+
+  const toggleAdvanceMotionDetection = () => {
+    setIsAdvanceMotionDetection((prev) => {
+      const newValue = !prev
+      console.log("isAdvanceMotionDetection", newValue)
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        advance_motion_detection: newValue,
+      }))
+      console.log("formData.advance_motion_detection:", newValue)
+      return newValue
+    })
+  }
+
   const toggleFireDetection = () => {
     setIsFireDetection((prev) => {
       const newValue = !prev
@@ -319,12 +361,15 @@ export default function Web() {
     battery_backup: false,
     fire_detection: false,
     remote_lock_unlock: false,
+    smart_lighting_integration: false,
+    home_automation_integration: false,
+    advance_motion_detection: false,
 
     alarm: false,
     motion_sensor: true,
-    video_door_bell: false,
-    intercom_sys: false,
-    camera: false,
+    video_door_bell: true,
+    intercom_sys: true,
+    camera: true,
     voice_assisted: false,
     connectivity: "",
     power_source: "",
@@ -487,6 +532,10 @@ export default function Web() {
     const batteryBackup = isBatteryBackUp ? 2500 : 0
     const fireDetection = isFireDetection ? 5000 : 0
     const remoteLock = isRemoteLockUnlock ? 3500 : 0
+    const smartLightingIntegration = isSmartLightingIntegration ? 2000 : 0
+    const homeAutomation = isHomeAutomation ? 3500 : 0
+    const motionDetection = isAdvanceMotionDetection ? 4000 : 0
+    const voiceAssistant = isVoiceAssistant ? 2000 : 0
 
     // Calculate adjusted unit price
     const newAdjustedUnitPrice = baseUnitPrice * frameMultiplier * materialMultiplier * sizeMultiplier * areaMultiplier
@@ -495,7 +544,16 @@ export default function Web() {
 
     // Subtotal and total calculations
     const additionalCharges =
-      17820 + warrantyCharge + smartKeypadAccessCharge + batteryBackup + fireDetection + remoteLock
+      17820 +
+      warrantyCharge +
+      smartKeypadAccessCharge +
+      batteryBackup +
+      fireDetection +
+      remoteLock +
+      smartLightingIntegration +
+      homeAutomation +
+      motionDetection +
+      voiceAssistant
     const calculatedSubtotal = newAdjustedUnitPrice + additionalCharges
     setSubtotal(calculatedSubtotal)
 
@@ -521,6 +579,10 @@ export default function Web() {
     isBatteryBackUp,
     isFireDetection,
     isRemoteLockUnlock,
+    isSmartLightingIntegration,
+    isHomeAutomation,
+    isAdvanceMotionDetection,
+    isVoiceAssistant,
   ])
 
   const handleDecrement = () => {
@@ -1414,6 +1476,79 @@ export default function Web() {
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
                     <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Camera</p>
+                  </div>
+                </div>
+                <div className="my-5 border-b border-[#FFFFFF0D]"></div>
+
+                <div className="grid gap-5 px-5">
+                  <p className=" text-lg font-medium text-white">
+                    Additional Integrated Smart Hub<span className="text-[#FF3B30]">*</span>
+                  </p>
+
+                  <div
+                    className={`flex w-full items-center gap-2 ${
+                      selectedRadio === "Altima Core" ? "cursor-not-allowed opacity-50" : "cursor-pointer"
+                    }`}
+                    onClick={() => {
+                      if (selectedRadio !== "Altima Core") {
+                        toggleSmartLightingIntegration() // Only call the function if not disabled
+                      }
+                    }}
+                  >
+                    <motion.img
+                      src={isSmartLightingIntegration ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
+                      width={18}
+                      height={18}
+                      alt=""
+                      initial={{ scale: 1.2, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 1, ease: "easeIn" }}
+                    />
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Smart Lighting Integration (₹2,000)</p>
+                  </div>
+
+                  <div
+                    className={`flex w-full items-center gap-2 ${
+                      selectedRadio === "Altima Core" ? "cursor-not-allowed opacity-50" : "cursor-pointer"
+                    }`}
+                    onClick={() => {
+                      if (selectedRadio !== "Altima Core") {
+                        toggleHomeAutomation() // Only call the function if not disabled
+                      }
+                    }}
+                  >
+                    <motion.img
+                      src={isHomeAutomation ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
+                      width={18}
+                      height={18}
+                      alt=""
+                      initial={{ scale: 1.2, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 1, ease: "easeIn" }}
+                    />
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Home Automation Integration (₹3,500)</p>
+                  </div>
+
+                  <div
+                    className={`flex w-full items-center gap-2 ${
+                      selectedRadio === "Altima Core" ? "cursor-not-allowed opacity-50" : "cursor-pointer"
+                    }`}
+                    onClick={() => {
+                      if (selectedRadio !== "Altima Core") {
+                        toggleAdvanceMotionDetection() // Only call the function if not disabled
+                      }
+                    }}
+                  >
+                    <motion.img
+                      src={isAdvanceMotionDetection ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
+                      width={18}
+                      height={18}
+                      alt=""
+                      initial={{ scale: 1.2, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 1, ease: "easeIn" }}
+                    />
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Advanced Motion Detection(₹4,000)</p>
                   </div>
 
                   <div
