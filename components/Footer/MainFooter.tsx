@@ -19,7 +19,7 @@ const MainFooter = () => {
               <p className="text-sm text-[#FFFFFF99]">Address: Seawoods, Navi Mumbai 400706, India</p>
             </div>
             <div className="flex flex-col gap-3 max-sm:mb-7">
-              <p className="text-[#FFFFFF]">Important links</p>
+              <p className="text-[#FFFFFF]">Altima</p>
               <p className="text-sm text-[#FFFFFF99] underline">Home</p>
               <Link href="product-details" className="text-sm text-[#FFFFFF99] underline">
                 Product Details
@@ -35,7 +35,7 @@ const MainFooter = () => {
               </Link>
             </div>
             <div className="flex flex-col gap-3 max-sm:mb-7">
-              <p className="text-[#FFFFFF]">Contact Information</p>
+              <p className="text-[#FFFFFF]">Resources and Policies</p>
               <Link href="/about-us" className="text-sm text-[#FFFFFF99] underline">
                 About Us
               </Link>
