@@ -393,8 +393,8 @@ export default function Web() {
   const standardSizeOptions = ["80 x 36", "84 x 36", "80 x 42", "96 x 36", "96 x 42"]
   const MaterialOptions = ["Wood", "Glass", "Metal"]
   const connectivityOptions = ["Wi-Fi", "Bluetooth", "Zigbee"]
-  const powerOptions = ["AC Connection", "Battery Backup,", "Solar Ready"]
-  const installationOptions = ["Residential", "Commercial,", "Other"]
+  const powerOptions = ["AC Connection", "Battery Backup", "Solar Ready"]
+  const installationOptions = ["Residential", "Commercial", "Other"]
   const unitOptions = ["Centimeters", "Inches"]
   const materialToFinishMap: Record<string, string[]> = {
     Wood: ["Mahogany", "Maple", "Teak", "Oak"],
@@ -595,10 +595,15 @@ export default function Web() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }))
+    const numericValue = parseInt(value, 10)
+
+    if (!isNaN(numericValue) && numericValue > 0) {
+      setQuantity(numericValue) // Update quantity state
+      setFormData((prev) => ({
+        ...prev,
+        [name]: numericValue.toString(), // Update formData state
+      }))
+    }
   }
 
   const toggleRadio = (option: string) => setSelectedRadio(option)
@@ -1091,7 +1096,7 @@ export default function Web() {
                         value={quantity}
                         onChange={handleChange}
                         className="flex h-[48px] w-[107px] items-center justify-center rounded-md border bg-[#282828] px-2 py-1 text-center text-[#FFFFFF] max-sm:w-full"
-                        min="0"
+                        min="1"
                       />
 
                       <button
@@ -1112,7 +1117,13 @@ export default function Web() {
                     </div>
 
                     <p className="font-regular flex  items-center  pt-4 text-2xl text-[#FFFFFF]  max-sm:text-lg lg:text-2xl">
-                      <span className="text-sm">Unit Price : </span> ₹{grossPrice.toLocaleString()}
+                      {quantity === 1 ? (
+                        <>
+                          <span className="text-sm">Unit Price : </span> ₹{grossPrice.toLocaleString()}
+                        </>
+                      ) : (
+                        <>Price: ₹{grossPrice.toLocaleString()}</>
+                      )}
                     </p>
                   </div>
                 </div>
@@ -1168,7 +1179,7 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Input Dimension</p>
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Custom Size</p>
                   </div>
 
                   <div className="mb-4 grid gap-3 lg:grid-cols-3">
