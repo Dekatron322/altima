@@ -1186,7 +1186,7 @@ export default function Web() {
 
                   <div className="mb-4 grid gap-3 lg:grid-cols-3">
                     <div className="mt-3">
-                      <label className=" text-sm text-white">Width</label>
+                      <label className=" text-sm text-white">Width in Inches</label>
                       <div
                         className={`h-[46px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 max-sm:mb-2 ${
                           selectedDoorSpec === "Standard Size"
@@ -1209,7 +1209,7 @@ export default function Web() {
                       </div>{" "}
                     </div>
                     <div className="mt-3">
-                      <label className=" text-sm text-white">Height</label>
+                      <label className=" text-sm text-white">Height in Inches</label>
                       <div
                         className={`h-[46px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 max-sm:mb-2 ${
                           selectedDoorSpec === "Standard Size"
