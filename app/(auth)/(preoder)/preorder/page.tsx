@@ -8,6 +8,7 @@ import { addOrderToUser, OrderPayload } from "services/orderService"
 import { useRouter } from "next/navigation"
 import Dropdown from "components/CustomDropdown"
 import NewNav from "components/Navbar/NewNav"
+import { toWords } from "number-to-words"
 
 interface User {
   id: string
@@ -388,6 +389,7 @@ export default function Web() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [message, setMessage] = useState("")
   const [userId, setUserId] = useState<string>("")
+  const depositAmountInWords = `${toWords(Number(formData.deposit_amount))} Rupees Only/-`
 
   const frameTypeOptions = ["Slim", "Standard", "Reinforced"]
   const standardSizeOptions = ["80 x 36", "84 x 36", "80 x 42", "96 x 36", "96 x 42"]
@@ -1767,7 +1769,7 @@ export default function Web() {
                         <span className="opacity-40">Total</span>
                       </td>
                       <td className="border-b  border-l border-r border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">
-                        ₹{formData.total}
+                        ₹{Number(formData.total).toLocaleString()}
                       </td>
                     </tr>
                     <tr>
@@ -1776,7 +1778,7 @@ export default function Web() {
                       </td>
                       <td className="border-b  border-l border-r border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">
                         {" "}
-                        ₹{formData.deposit_amount}
+                        ₹{Number(formData.deposit_amount).toLocaleString()}
                       </td>
                     </tr>
                   </tbody>
@@ -1818,18 +1820,17 @@ export default function Web() {
                         {quantity}
                       </td>
                       <td className="border-b border-l border-r border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">
-                        ₹{formData.total}
+                        ₹{Number(formData.total).toLocaleString()}
                       </td>
                       <td className="border-b border-l border-r border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">
-                        ₹{formData.deposit_amount}
+                        ₹{Number(formData.deposit_amount).toLocaleString()}
                       </td>
                     </tr>
                   </tbody>
                 </table>
-                <div>
-                  <p className="flex w-full justify-end px-5  py-3 text-end text-sm text-[#FFFFFF]">
-                    (Seventy thousand one <br />
-                    hundred and forty six <br /> Rupees Only/-)
+                <div className="flex w-full justify-end">
+                  <p className="flex  w-72 justify-end px-5 py-3 text-end text-sm capitalize text-[#FFFFFF]">
+                    {`(${depositAmountInWords.replace(/,/g, "")})`}
                   </p>
                 </div>
                 <div className="border-b border-[#FFFFFF0D]"></div>
