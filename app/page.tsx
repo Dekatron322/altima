@@ -239,7 +239,7 @@ export default function Web() {
                   <Image src="/Wrench.png" width={48} height={48} alt="" className="max-sm:hidden" />
                   <Image src="/Wrench.png" width={35} height={35} alt="" className="sm:hidden" />
                   <p className="py-2 text-lg text-white max-md:text-sm">PRIORITY INSTALLATION</p>
-                  <p className=" text-lg text-[#FFFFFF99] max-md:text-xs">
+                  <p className=" text-lg text-[#FFFFFF99] max-sm:text-xs">
                     Enjoy priority installation <br className="max-sm:hidden" /> and be among the first to
                     <br className="max-sm:hidden" />
                     have it set up.
