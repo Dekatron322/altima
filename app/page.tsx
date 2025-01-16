@@ -133,20 +133,20 @@ export default function Web() {
           exit={{ opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className=" flex h-full w-full max-2xl:mt-10 max-2xl:justify-center max-2xl:text-center max-sm:justify-center lg:mt-0   lg:items-center ">
+          <div className=" flex h-full w-full max-xl:mt-10 max-xl:justify-center max-xl:text-center max-sm:justify-center lg:mt-0   lg:items-center ">
             <div>
-              <div className="mb-4 flex items-center justify-center gap-2 rounded-lg bg-[#FFFFFF1A] p-2 max-2xl:w-full 2xl:max-w-[519px]">
+              <div className="mb-4 flex items-center justify-center gap-2 rounded-lg bg-[#FFFFFF1A] p-2 max-2xl:w-full xl:max-w-[519px]">
                 <Image src="/Vector.png" width={24} height={24} alt="" />
                 <p className="text-sm text-[#FFFFFF] max-sm:text-[9px]">POWERED BY INNOVATION FROM csPILLAI®</p>
               </div>
-              <p className="   text-7xl font-bold text-[#FFFFFF] max-2xl:text-center max-lg:mt-10 max-lg:text-4xl max-sm:text-2xl">
+              <p className="   text-7xl font-bold text-[#FFFFFF] max-xl:text-center max-lg:mt-10 max-lg:text-4xl max-sm:text-2xl">
                 ALTIMA: THE SMART{" "}
               </p>
-              <p className="  gap-1  text-7xl font-bold text-[#FFFFFF] max-2xl:py-4 max-2xl:text-4xl max-sm:text-2xl">
+              <p className="  gap-1  text-7xl font-bold text-[#FFFFFF] max-xl:py-4 max-xl:text-4xl max-sm:text-2xl">
                 DOOR & HOME HUB –{" "}
               </p>
               <p
-                className="   cursor-pointer text-7xl font-bold text-[#FF3B30]   max-2xl:block max-2xl:text-4xl lg:block"
+                className="   cursor-pointer text-7xl font-bold text-[#FF3B30]   max-xl:block max-xl:text-4xl lg:block"
                 onClick={handlePreOrderClick}
               >
                 PRE-ORDER NOW!
@@ -161,7 +161,7 @@ export default function Web() {
                 and cutting-edge technology, Altima seamlessly integrates security and smart home functions, perfect for
                 any space – be it home, office, or beyond.
               </p>
-              <div className="max-2xl:my-5 2xl:hidden">
+              <div className="max-2xl:my-5 xl:hidden">
                 <motion.img
                   src="/Web.1889 (1).png"
                   alt=""
@@ -172,7 +172,7 @@ export default function Web() {
                   height={583}
                 />
               </div>
-              <div className="mt-4 flex w-full gap-5 max-2xl:items-center max-2xl:justify-center max-sm:gap-2 ">
+              <div className="mt-4 flex w-full gap-5 max-xl:items-center max-xl:justify-center max-sm:gap-2 ">
                 <motion.button
                   onClick={handlePreOrderClick}
                   className="font-regular whitespace-nowrap rounded-lg border border-[#FF3B30] bg-[#FFFFFF26] px-4 py-3 uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
