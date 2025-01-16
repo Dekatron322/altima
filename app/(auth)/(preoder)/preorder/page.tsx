@@ -597,15 +597,28 @@ export default function Web() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
-    const numericValue = parseInt(value, 10)
 
-    if (!isNaN(numericValue) && numericValue > 0) {
-      setQuantity(numericValue) // Update quantity state
-      setFormData((prev) => ({
-        ...prev,
-        [name]: numericValue.toString(), // Update formData state
-      }))
-    }
+    setFormData((prev) => {
+      // Handle numeric fields
+      if (name === "quantity") {
+        const numericValue = parseInt(value, 10)
+        if (!isNaN(numericValue) && numericValue > 0) {
+          setQuantity(numericValue) // Update quantity state
+          return {
+            ...prev,
+            [name]: numericValue.toString(), // Update numeric field in formData
+          }
+        }
+      } else {
+        // Handle text fields
+        return {
+          ...prev,
+          [name]: value, // Update text field in formData
+        }
+      }
+
+      return prev // Return previous state if no updates are made
+    })
   }
 
   const toggleRadio = (option: string) => setSelectedRadio(option)

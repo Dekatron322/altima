@@ -1,44 +1,42 @@
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import { GoChevronLeft, GoChevronRight } from "react-icons/go";
-
+import { motion } from "framer-motion"
+import { useEffect, useState } from "react"
+import { GoChevronLeft, GoChevronRight } from "react-icons/go"
 
 const ImageCarousel = () => {
   const images = [
-    '/Frame 48095435.png',
-    '/4.png',
-    '/3.png',
-    '/2.png',
-    '/1.png', // Add more image paths here
-  ];
+    "/Frame 48095435.png",
+    "/4.png",
+    "/3.png",
+    "/2.png",
+    "/1.png", // Add more image paths here
+  ]
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // Change slides every 3 seconds
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
+    }, 3000) // Change slides every 3 seconds
 
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, [images.length]);
+    return () => clearInterval(interval) // Cleanup on unmount
+  }, [images.length])
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1))
+  }
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      (prevIndex + 1) % images.length
-    );
-  };
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
+  }
 
   return (
-    <div className="relative w-full max-w-xl overflow-hidden">
-      <div className="flex w-full transition-transform duration-500" style={{
-        transform: `translateX(-${currentIndex * 100}%)`,
-      }}>
+    <div className="relative w-full overflow-hidden xl:max-w-xl">
+      <div
+        className="flex w-full transition-transform duration-500"
+        style={{
+          transform: `translateX(-${currentIndex * 100}%)`,
+        }}
+      >
         {images.map((image, index) => (
           <motion.img
             key={index}
@@ -55,20 +53,18 @@ const ImageCarousel = () => {
       </div>
       <button
         onClick={prevSlide}
-        className="absolute left-2  top-1/2 transform -translate-y-1/2 bg-[#FF3B30] text-white p-2 rounded-full"
+        className="absolute left-2  top-1/2 -translate-y-1/2 transform rounded-full bg-[#FF3B30] p-2 text-white"
       >
-        <GoChevronLeft className='text-xl'/>
-
+        <GoChevronLeft className="text-xl" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#FF3B30] text-white p-2 rounded-full"
+        className="absolute right-2 top-1/2 -translate-y-1/2 transform rounded-full bg-[#FF3B30] p-2 text-white"
       >
-        <GoChevronRight className='text-xl'/>
-
+        <GoChevronRight className="text-xl" />
       </button>
     </div>
-  );
-};
+  )
+}
 
-export default ImageCarousel;
+export default ImageCarousel

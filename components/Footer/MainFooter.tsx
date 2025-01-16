@@ -7,7 +7,7 @@ const MainFooter = () => {
     <>
       <section id="contact" className="paddings w-full  bg-[#151515]  max-sm:px-3 ">
         <div className="w-full  pt-8">
-          <div className="grid grid-cols-4 justify-center gap-5 max-md:grid-cols-2  max-sm:grid-cols-1">
+          <div className="grid grid-cols-4 justify-center gap-5 max-xl:grid-cols-2  max-sm:grid-cols-1">
             <div className="flex flex-col gap-3 max-sm:mb-7">
               <p className="text-[#FFFFFF]">Contact Us</p>
               <Link href="mailto:mail@altimaaccess.com" className="text-sm text-[#FFFFFF99]">

@@ -19,7 +19,7 @@ const Page: React.FC = () => {
   return (
     <div className="flex h-screen w-full items-center justify-center bg-[#000000] max-md:bg-[#000000]">
       <motion.div
-        className="flex justify-center rounded-3xl bg-[#151515] max-sm:w-[95%] max-sm:rounded-lg xl:max-w-[600px]"
+        className=" flex  justify-center rounded-3xl bg-[#151515] max-xl:w-[70%] max-sm:w-[95%] max-sm:rounded-lg xl:min-w-[600px]"
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ ease: "easeOut", duration: 1 }}

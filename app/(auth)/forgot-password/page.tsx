@@ -63,7 +63,7 @@ const Page: React.FC = () => {
     <>
       <div className="flex h-screen w-full items-center justify-center bg-[#000000] max-md:bg-[#000000]">
         <motion.div
-          className=" flex  justify-center rounded-3xl bg-[#151515] max-sm:w-[95%] max-sm:rounded-lg xl:min-w-[600px]"
+          className=" flex  justify-center rounded-3xl bg-[#151515] max-xl:w-[70%] max-sm:w-[95%] max-sm:rounded-lg xl:min-w-[600px]"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ ease: "easeOut", duration: 1 }}
@@ -79,7 +79,7 @@ const Page: React.FC = () => {
                 {Object.keys(formData).map((field) => (
                   <div
                     key={field}
-                    className="search-bg mb-2 h-[54.37px] items-center justify-between rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3 py-4 hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2 max-sm:w-[320px] xl:w-[536px]"
+                    className="search-bg mb-2 h-[54.37px]  items-center justify-between rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3 py-4 hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-xl:mb-3 max-xl:w-[430px] max-sm:w-[320px] xl:w-[536px]"
                   >
                     <div className="flex">
                       <input

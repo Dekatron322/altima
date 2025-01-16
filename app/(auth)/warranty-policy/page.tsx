@@ -512,8 +512,8 @@ export default function Web() {
     <section className="bg-black">
       <NewNav />
 
-      <section className="paddings w-full bg-[#151515] max-sm:px-3 ">
-        <div className="w-full py-20">
+      <section className="paddings w-full bg-[#151515] max-xl:px-3 ">
+        <div className="w-full xl:py-20">
           <div className="flex w-full flex-col items-center">
             <p className="text-center text-[#FFFFFF99]">Resources & Policies</p>
             <p className=" text-center text-[32px] font-bold text-[#FFFFFF] max-md:text-2xl">Altima Warranty Policy</p>

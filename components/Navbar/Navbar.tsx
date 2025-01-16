@@ -58,7 +58,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`flexBetween navbar paddings  z-50 items-center  max-md:hidden ${
+        className={`flexBetween navbar paddings  z-50 items-center  max-xl:hidden ${
           isScrolled ? "bg-black" : "bg-transparent"
         }`}
       >
@@ -123,7 +123,7 @@ const Navbar = () => {
           </a>
         </div>
       </nav>
-      <nav className="block   px-16 py-4 max-md:px-3 md:hidden">
+      <nav className="block   px-16 py-4 max-xl:px-3 xl:hidden">
         <div className="flex items-center justify-between">
           <Link href="/" className=" content-center">
             <Image src="/Altima.svg" width={80} height={80} alt="dekalo" />
@@ -133,7 +133,7 @@ const Navbar = () => {
 
         <div
           ref={navRef}
-          className={`fixed left-0 top-0 z-50 h-full w-[250px] bg-[#151515] transition-transform duration-300 ${
+          className={`fixed left-0 top-0 z-50 h-full w-1/2  bg-[#151515] transition-transform duration-300 ${
             isNavOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >

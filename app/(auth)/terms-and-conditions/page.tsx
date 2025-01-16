@@ -258,8 +258,8 @@ export default function Web() {
   return (
     <section className="bg-black">
       <NewNav />
-      <section id="specifications" className="paddings w-full   bg-[#151515] pt-32 max-sm:px-3 ">
-        <div className="  w-full justify-between    md:py-32">
+      <section id="specifications" className="paddings w-full   bg-[#151515] max-sm:px-3 xl:pt-32 ">
+        <div className="  w-full justify-between    xl:py-32">
           <div className="flex w-full justify-between gap-10  sm:flex">
             <div>
               <p className="font-regular   text-center  text-2xl  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">
@@ -311,7 +311,7 @@ export default function Web() {
                 <p className="text-lg">Last Updated: [Insert Date]</p>
               </div>
 
-              <p className="font-regular mb-6 w-full text-ellipsis text-sm text-[#FFFFFF99] max-sm:leading-7 md:px-64 md:text-center">
+              <p className="font-regular mb-6 w-full text-ellipsis text-sm text-[#FFFFFF99] max-sm:leading-7 md:text-center xl:px-64">
                 Welcome to the Altima Pre-order Website, operated by Smart Haven Systems Private Limited. By accessing
                 or using this website, you agree to be bound by these Terms and Conditions. Please read them carefully
                 before placing a pre-order or making any transactions on our website.

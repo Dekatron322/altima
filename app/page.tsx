@@ -125,7 +125,7 @@ export default function Web() {
   return (
     <section className="bg-black">
       <Navbar />
-      <section id="about" className="about-section grid w-full bg-black     lg:h-screen lg:py-16">
+      <section id="about" className="about-section  grid w-full  bg-black   lg:h-screen lg:py-16">
         <motion.div
           className="paddings pb-10 max-sm:px-3"
           initial={{ opacity: 0, scale: 0.8 }}
@@ -133,16 +133,24 @@ export default function Web() {
           exit={{ opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="flex h-full w-full items-center  max-sm:justify-center ">
+          <div className=" flex h-full w-full max-lg:mt-20 max-sm:justify-center lg:mt-0   lg:items-center ">
             <div>
-              <div className="mb-4 flex items-center justify-center gap-2 rounded-lg bg-[#FFFFFF1A] p-2 md:max-w-[519px]">
+              <div className="mb-4 flex items-center justify-center gap-2 rounded-lg bg-[#FFFFFF1A] p-2 sm:max-w-[519px]">
                 <Image src="/Vector.png" width={24} height={24} alt="" />
                 <p className="text-sm text-[#FFFFFF] max-sm:text-[9px]">POWERED BY INNOVATION FROM csPILLAI®</p>
               </div>
-              <p className="  flex text-7xl  font-bold text-[#FFFFFF] max-sm:text-2xl ">ALTIMA: THE SMART </p>
-              <p className="  flex text-7xl  font-bold text-[#FFFFFF] max-sm:text-2xl ">DOOR & HOME HUB –</p>
+              <p className="  flex text-7xl font-bold text-[#FFFFFF] max-lg:mt-10 max-lg:text-4xl max-sm:text-2xl">
+                ALTIMA: THE SMART{" "}
+              </p>
+              <p className="  flex gap-1  text-7xl font-bold text-[#FFFFFF] max-lg:text-4xl max-sm:text-2xl">
+                DOOR & HOME HUB –{" "}
+                <span className="ursor-pointer text-[#FF3B30] max-sm:hidden lg:hidden" onClick={handlePreOrderClick}>
+                  {" "}
+                  PRE-ORDER NOW!
+                </span>
+              </p>
               <p
-                className="  flex cursor-pointer  text-7xl font-bold text-[#FF3B30] max-sm:text-3xl"
+                className="  flex cursor-pointer text-7xl font-bold text-[#FF3B30]  max-lg:hidden max-sm:block max-sm:text-3xl lg:block"
                 onClick={handlePreOrderClick}
               >
                 PRE-ORDER NOW!
@@ -209,7 +217,7 @@ export default function Web() {
               <p className=" font-regular mb-4  mt-2  text-center   text-xl leading-none tracking-tight text-white max-sm:my-4 md:text-xl xl:text-3xl">
                 Why Pre-Order?
               </p>
-              <div className="grid grid-cols-4 gap-6 max-sm:grid-cols-1 ">
+              <div className="grid grid-cols-4 gap-6 max-xl:grid-cols-2 max-xl:gap-4 max-sm:grid-cols-1">
                 <div className=" w-full rounded-lg bg-[#080808] p-5">
                   <Image src="/SketchLogo.png" width={48} height={48} alt="" className="max-sm:hidden" />
                   <Image src="/SketchLogo.png" width={35} height={35} alt="" className="sm:hidden" />
@@ -360,11 +368,11 @@ export default function Web() {
               ALTIMA Core
             </p>
           </div>
-          <div className="flex w-full justify-between max-sm:grid max-sm:gap-5  md:gap-20">
+          <div className="flex w-full justify-between max-xl:grid max-sm:grid max-sm:gap-5  md:gap-20">
             <div className="overflow-hidden rounded-md sm:h-[620px]">
               <motion.video
                 src="/WhatsApp Video 2024-12-12 at 15.04.29.mp4"
-                width={645}
+                className="w-[645px] max-xl:w-full"
                 autoPlay
                 loop
                 muted
@@ -374,20 +382,20 @@ export default function Web() {
               />
             </div>
             <div className="">
-              <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:hidden max-sm:text-lg lg:text-2xl">
+              <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-xl:hidden max-sm:text-lg xl:text-2xl">
                 Our Models
               </p>
-              <p className=" font-regular my-6    text-xl leading-none tracking-tight text-white max-sm:hidden md:text-xl xl:text-5xl">
+              <p className=" font-regular my-6    text-xl leading-none tracking-tight text-white max-xl:hidden md:text-xl xl:text-5xl">
                 ALTIMA Core
               </p>
               <div>
-                <div className="max-w-[522px] items-center justify-between bg-[#151515] px-4 py-2 text-black max-sm:w-full max-sm:justify-center md:flex">
+                <div className="items-center justify-between bg-[#151515] px-4 py-2 text-black max-xl:w-full max-xl:justify-center xl:flex xl:max-w-[522px]">
                   <ul className="list-inside list-disc">
-                    <li className="py-2 text-[#FFFFFF] max-sm:text-center max-sm:text-xs">Advanced Home Control </li>
-                    <li className=" text-[#FFFFFF] max-sm:text-center max-sm:text-xs">All Pro features, plus:</li>
+                    <li className="py-2 text-[#FFFFFF] max-xl:text-center max-sm:text-xs">Advanced Home Control </li>
+                    <li className=" text-[#FFFFFF] max-xl:text-center max-sm:text-xs">All Pro features, plus:</li>
                   </ul>
 
-                  <p className="text-2xl text-[#FF4F45] max-sm:mt-3 max-sm:text-center max-sm:text-lg">
+                  <p className="text-2xl text-[#FF4F45] max-xl:mt-3 max-xl:text-center max-xl:text-lg">
                     ₹49,500 + Taxes
                   </p>
                 </div>
@@ -475,15 +483,15 @@ export default function Web() {
       </section>
 
       <section id="other-products" className="paddings  w-full bg-[#151515] max-sm:px-3 ">
-        <div className="  w-full justify-between    md:py-10">
-          <div className="grid-col-2 grid w-full justify-between max-sm:gap-5 sm:flex  sm:gap-20">
-            <div className="max-sm:flex max-sm:w-full max-sm:flex-col max-sm:items-center max-sm:justify-center md:w-[403] ">
+        <div className="  w-full justify-between    xl:py-10">
+          <div className="grid-col-2 grid w-full justify-between  max-xl:gap-5 xl:flex xl:gap-20">
+            <div className="max-xl:flex max-xl:w-full max-xl:flex-col max-xl:items-center max-xl:justify-center  ">
               <p className="font-regular  flex    text-2xl  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">Our Models</p>
-              <p className=" font-regular text-xl  leading-none tracking-tight text-white max-sm:mt-3 sm:my-6 md:text-xl xl:text-5xl">
+              <p className=" font-regular text-xl  leading-none tracking-tight text-white max-xl:mt-3 md:text-xl xl:my-6 xl:text-5xl">
                 ALTIMA Elite
               </p>
               <div>
-                <div className="flex max-w-[522px] items-center justify-between gap-6 bg-[#000000] px-4 py-2 text-black max-sm:hidden">
+                <div className="flex items-center justify-between gap-6 bg-[#000000] px-4 py-2 text-black max-xl:hidden xl:max-w-[522px]">
                   <ul className="list-inside list-disc">
                     <li className=" text-[#FFFFFF] max-sm:text-xs">Ultimate Smart Home Hub </li>
                     <li className=" text-[#FFFFFF] max-sm:text-xs">All Pro features, plus</li>
@@ -492,7 +500,7 @@ export default function Web() {
                   <p className="text-2xl text-[#FF4F45] max-sm:text-lg">₹90,000 + Taxes</p>
                 </div>
               </div>
-              <ul className="mb-6 mt-6 list-inside list-disc pl-2 max-sm:hidden">
+              <ul className="mb-6 mt-6 list-inside list-disc pl-2 max-xl:hidden">
                 <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Security Level: </span> Very High
                 </li>
@@ -546,7 +554,7 @@ export default function Web() {
                 </li>
               </ul> */}
 
-              <div className="flex items-center justify-between bg-[#FFFFFF0D] px-7 py-3 max-sm:hidden">
+              <div className="flex items-center justify-between bg-[#FFFFFF0D] px-7 py-3 max-xl:hidden">
                 <ul className=" list-inside list-disc pl-2">
                   <li className=" text-[#FFFFFF] max-sm:text-xs">Feature Comparison</li>
                 </ul>
@@ -565,24 +573,24 @@ export default function Web() {
                   </ul>
                 </div>
               </div>
-              <div className="mt-8 max-sm:flex  max-sm:w-full max-sm:justify-center">
+              <div className="mt-8 max-xl:hidden  max-xl:w-full max-xl:justify-center">
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="font-regular gap-2  rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:hidden max-sm:py-2 max-sm:text-sm "
+                  className="font-regular gap-2  rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-xl:hidden max-xl:py-2 max-xl:text-sm "
                   onClick={handlePreOrderClick}
                 >
                   Pre-Order now
                 </motion.button>
               </div>
             </div>
-            <div className=" max-sm:hidden">
+            <div className=" max-xl:hidden">
               <ImageCarousel />
             </div>
-            <div className="md:hidden">
+            <div className="xl:hidden">
               <ImageCarousel />
             </div>
-            <div className="md:hidden md:w-[403]">
+            <div className="xl:hidden xl:w-[403]">
               <div>
                 <div className=" w-full items-center justify-center bg-[#000000] px-4 py-4 text-black">
                   <ul className="list-inside list-disc">
@@ -667,7 +675,7 @@ export default function Web() {
                 </li>
               </ul> */}
 
-              <div className="max-sm:flex  max-sm:w-full max-sm:justify-center">
+              <div className="max-xl:flex  max-xl:w-full max-sm:justify-center">
                 <motion.button
                   onClick={handlePreOrderClick}
                   whileHover={{ scale: 1.1 }}
@@ -682,7 +690,7 @@ export default function Web() {
         </div>
       </section>
 
-      <section id="other-products" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
+      <section id="other-products" className="paddings  w-full bg-[#282828] max-sm:px-3 ">
         <div className="w-full     py-10">
           <div className="flex flex-col items-center justify-center">
             <p className="text-[#FFFFFF99] max-sm:text-sm">Pre-order Now – Limited Units Available.</p>
@@ -690,7 +698,7 @@ export default function Web() {
               5,000 units available in the first pre-order batch.
             </p>
 
-            <div className="w-full justify-center py-10 md:flex">
+            <div className=" w-full justify-between py-10 md:flex">
               <div className="flex items-start justify-center gap-3 border-[#FFFFFF99] max-sm:border-b max-sm:pb-3 md:border-r md:pr-6">
                 <Image src="/SealPercent.png" width={64} height={64} alt="" />
                 <div>
@@ -737,7 +745,7 @@ export default function Web() {
 
       <section className="paddings  w-full bg-[#151515] max-sm:px-3 ">
         <div className="  w-full justify-between    md:py-10">
-          <div className="grid grid-cols-2  justify-between gap-20 max-sm:grid-cols-1 max-sm:gap-5 ">
+          <div className="grid grid-cols-2  justify-between gap-20 max-xl:grid-cols-1 max-xl:gap-5 ">
             <div className="">
               <p className="font-regular  flex  text-2xl  text-[#FFFFFF99] max-sm:text-lg  lg:text-2xl">Our Vision</p>
               <p className=" font-regular my-6   text-xl leading-none tracking-tight text-white md:text-xl 2xl:text-3xl">
@@ -757,8 +765,7 @@ export default function Web() {
             <div>
               <motion.img
                 src="/update.png"
-                width={633}
-                height={583}
+                className="h-[555px] w-[732px] max-xl:h-full max-xl:w-full"
                 alt=""
                 initial={{ scale: 1.2, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}

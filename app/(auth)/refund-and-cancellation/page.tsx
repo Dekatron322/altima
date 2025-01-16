@@ -65,9 +65,9 @@ export default function Web() {
   return (
     <section className="bg-black">
       <NewNav />
-      <section id="specifications" className="paddings w-full   bg-[#151515] pt-32 max-sm:px-3 ">
-        <div className="  w-full justify-between    md:py-32">
-          <div className="flex w-full justify-between gap-10  sm:flex">
+      <section id="specifications" className="paddings w-full   bg-[#151515] max-sm:px-3 xl:pt-32 ">
+        <div className="  w-full justify-between    xl:py-32">
+          <div className="flex w-full justify-between gap-10  xl:flex">
             <div>
               <p className="font-regular   text-center  text-2xl  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">
                 Resources & Policies
@@ -98,7 +98,7 @@ export default function Web() {
                 <p className="text-lg">Last Updated: [Insert Date]</p>
               </div>
 
-              <p className="font-regular mb-6 w-full text-ellipsis text-sm text-[#FFFFFF99] max-sm:leading-7 md:px-64 md:text-center">
+              <p className="font-regular mb-6 w-full text-ellipsis text-sm text-[#FFFFFF99] max-sm:leading-7 md:text-center xl:px-64">
                 Thank you for choosing Altima. We understand that situations may arise that require changes to your
                 pre-order, and we strive to be transparent with our policies regarding refunds and cancellations. This
                 Refund and Cancellation Policy outlines our guidelines and provides clarity on pre-order deposits,

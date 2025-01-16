@@ -199,7 +199,7 @@ export default function Web() {
     <section className="bg-black">
       <NewNav />
 
-      <section className="paddings w-full gap-5 bg-[#080808] max-sm:px-3 max-sm:py-10 md:flex lg:h-auto lg:py-32">
+      <section className="paddings  w-full gap-5 bg-[#080808] max-sm:px-3 max-sm:py-10 md:flex lg:h-auto lg:py-32">
         <div className="relative mb-5 max-sm:block md:hidden">
           <button
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -397,7 +397,7 @@ export default function Web() {
                       </ul>
 
                       {preorder.status === "processing order" && (
-                        <div className="flex w-full gap-4 max-sm:flex-col">
+                        <div className="flex w-full gap-4 max-xl:flex-col">
                           <motion.a
                             href="/my-account/track-order"
                             whileHover={{ scale: 1.01 }}
@@ -435,7 +435,7 @@ export default function Web() {
                       )}
 
                       {preorder.status === "pending" && (
-                        <div className="flex w-full gap-4 max-sm:flex-col">
+                        <div className="flex w-full gap-4 max-xl:flex-col">
                           <motion.a
                             href="/my-account/track-order"
                             whileHover={{ scale: 1.01 }}
@@ -472,7 +472,7 @@ export default function Web() {
                         </div>
                       )}
                       {preorder.status === "cancelled" && (
-                        <div className="flex w-full gap-4 max-sm:flex-col">
+                        <div className="flex w-full gap-4 max-xl:flex-col">
                           <motion.button
                             onClick={() => handleTrackOrder(preorder.id)}
                             whileHover={{ scale: 1.01 }}

@@ -95,7 +95,7 @@ export default function Web() {
   return (
     <section className="bg-black">
       <NewNav />
-      <section className="paddings w-full gap-5 bg-[#080808] max-sm:px-3 max-sm:py-10 md:flex lg:min-h-screen lg:py-32">
+      <section className="paddings w-full gap-5 bg-[#080808] max-xl:min-h-[500px] max-sm:px-3 max-sm:py-10 md:flex lg:py-32 xl:min-h-screen">
         <div className="relative mb-5 max-sm:block md:hidden">
           <button
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}

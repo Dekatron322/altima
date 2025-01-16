@@ -154,8 +154,8 @@ export default function Web() {
   return (
     <section className="bg-black">
       <NewNav />
-      <section id="specifications" className="paddings w-full   bg-[#151515] pt-32 max-sm:px-3 ">
-        <div className="  w-full justify-between    md:py-32">
+      <section id="specifications" className="paddings w-full   bg-[#151515] max-sm:px-3 xl:pt-32 ">
+        <div className="  xl::py-32 w-full    justify-between">
           <div className="flex w-full justify-between gap-10  sm:flex">
             <div>
               <p className="font-regular   text-center  text-2xl  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">
@@ -207,7 +207,7 @@ export default function Web() {
                 <p className="text-lg">Last Updated: [Insert Date]</p>
               </div>
 
-              <p className="font-regular mb-6 w-full text-ellipsis text-sm text-[#FFFFFF99] max-sm:leading-7 md:px-64 md:text-center">
+              <p className="font-regular mb-6 w-full text-ellipsis text-sm text-[#FFFFFF99] max-sm:leading-7 md:text-center xl:px-64">
                 At Smart Haven Systems Private Limited, we value your privacy and are committed to safeguarding your
                 personal information. This Privacy Policy outlines how we collect, use, store, and protect your data
                 when you visit our website and place pre-orders for Altima products.

@@ -76,11 +76,11 @@ export default function Web() {
   }
 
   return (
-    <section className="bg-black">
+    <section className="bg-[#000000]">
       <NewNav />
 
-      <section id="specifications" className="paddings w-full   bg-[#151515] pt-32 max-sm:px-3 ">
-        <div className="  w-full justify-between    md:py-32">
+      <section id="specifications" className=" paddings max-sm:py-10 lg:h-auto ">
+        <div className="  w-full justify-between    xl:py-32">
           <div className="flex w-full justify-between gap-10  sm:flex">
             <div>
               <p className="font-regular   text-center  text-2xl  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">
@@ -474,7 +474,7 @@ export default function Web() {
                 </p>
               </div>
 
-              <div className="mt-4 grid w-full grid-cols-3 gap-5 max-sm:grid-cols-1">
+              <div className="mt-4 grid w-full grid-cols-3 gap-5 max-xl:grid-cols-2 max-sm:grid-cols-1">
                 <div className="flex gap-4 rounded-md bg-[#080808] max-sm:p-5 sm:p-10">
                   <Image
                     src="/avatar1.png"
@@ -594,18 +594,17 @@ export default function Web() {
 
       <section id="other-products" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
         <div className="  w-full justify-between md:py-10">
-          <div className="flex w-full flex-col items-center justify-center sm:hidden">
+          <div className="flex w-full flex-col items-center justify-center xl:hidden">
             <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:text-sm lg:text-2xl">Our Models</p>
             <p className=" font-regular mb-6 mt-3    text-xl leading-none tracking-tight text-white md:text-xl xl:text-5xl">
               ALTIMA Core
             </p>
           </div>
-          <div className="flex w-full justify-between max-sm:grid max-sm:gap-5  md:gap-20">
-            <div className="overflow-hidden rounded-md sm:h-[620px]">
+          <div className="flex w-full justify-between max-xl:grid max-sm:gap-5  md:gap-20">
+            <div className="overflow-hidden rounded-md xl:h-[620px]">
               <motion.video
                 src="/WhatsApp Video 2024-12-12 at 15.04.29.mp4"
-                width={645}
-                height={555}
+                className="h-[555px] w-[645px] max-xl:h-full max-xl:w-full"
                 autoPlay
                 loop
                 muted
@@ -615,19 +614,19 @@ export default function Web() {
               />
             </div>
             <div className="">
-              <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:hidden max-sm:text-lg lg:text-2xl">
+              <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-xl:hidden max-sm:text-lg lg:text-2xl">
                 Our Models
               </p>
-              <p className=" font-regular my-6    text-xl leading-none tracking-tight text-white max-sm:hidden md:text-xl xl:text-5xl">
+              <p className=" font-regular my-6    text-xl leading-none tracking-tight text-white max-xl:hidden md:text-xl xl:text-5xl">
                 ALTIMA Core
               </p>
               <div>
-                <div className="max-w-[522px] items-center justify-between bg-[#151515] px-4 py-2 text-black max-sm:w-full max-sm:justify-center md:flex">
+                <div className="w-[522px] items-center justify-between bg-[#151515] px-4 py-2 text-black max-xl:w-full max-xl:justify-center xl:flex">
                   <ul className="list-inside list-disc">
-                    <li className="py-2 text-[#FFFFFF] max-sm:text-center max-sm:text-xs">Advanced Home Control </li>
+                    <li className="py-2 text-[#FFFFFF] max-xl:text-center max-sm:text-xs">Advanced Home Control </li>
                   </ul>
 
-                  <p className="text-2xl font-bold text-[#FF4F45] max-sm:mt-3 max-sm:text-center max-sm:text-lg">
+                  <p className="text-2xl font-bold text-[#FF4F45] max-xl:text-center max-sm:mt-3 max-sm:text-lg">
                     ₹49,500 + Taxes
                   </p>
                 </div>
@@ -716,14 +715,14 @@ export default function Web() {
 
       <section id="other-products" className="paddings  w-full bg-[#151515] max-sm:px-3 ">
         <div className="  w-full justify-between    md:py-10">
-          <div className="grid-col-2 grid w-full justify-between max-sm:gap-5 sm:flex  sm:gap-20">
-            <div className="max-sm:flex max-sm:w-full max-sm:flex-col max-sm:items-center max-sm:justify-center md:w-[403] ">
+          <div className="grid-col-2 grid w-full justify-between max-xl:gap-5 xl:flex  xl:gap-20">
+            <div className="max-xl:flex max-xl:flex-col max-xl:items-center max-xl:justify-center max-sm:w-full xl:w-[403] ">
               <p className="font-regular  flex    text-2xl  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">Our Models</p>
               <p className=" font-regular text-xl  leading-none tracking-tight text-white max-sm:mt-3 sm:my-6 md:text-xl xl:text-5xl">
                 ALTIMA Elite
               </p>
               <div>
-                <div className="flex max-w-[522px] items-center justify-between gap-6 bg-[#000000] px-4 py-2 text-black max-sm:hidden">
+                <div className="flex max-w-[522px] items-center justify-between gap-6 bg-[#000000] px-4 py-2 text-black max-xl:hidden">
                   <ul className="list-inside list-disc">
                     <li className=" text-[#FFFFFF] max-sm:text-xs">Ultimate Smart Home Hub </li>
                     <li className=" text-[#FFFFFF] max-sm:text-xs">All Pro features, plus</li>
@@ -732,7 +731,7 @@ export default function Web() {
                   <p className="text-2xl text-[#FF4F45] max-sm:text-lg">₹90,000 + Taxes</p>
                 </div>
               </div>
-              <ul className="mb-6 mt-6 list-inside list-disc pl-2 max-sm:hidden">
+              <ul className="mb-6 mt-6 list-inside list-disc pl-2 max-xl:hidden">
                 <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Security Level: </span> Very High
                 </li>
@@ -786,7 +785,7 @@ export default function Web() {
                 </li>
               </ul> */}
 
-              <div className="flex items-center justify-between bg-[#FFFFFF0D] px-7 py-3 max-sm:hidden">
+              <div className="flex items-center justify-between bg-[#FFFFFF0D] px-7 py-3 max-xl:hidden">
                 <ul className=" list-inside list-disc pl-2">
                   <li className=" text-[#FFFFFF] max-sm:text-xs">Feature Comparison</li>
                 </ul>
@@ -809,20 +808,20 @@ export default function Web() {
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="font-regular gap-2  rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:hidden max-sm:py-2 max-sm:text-sm "
+                  className="font-regular gap-2  rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-xl:hidden max-sm:py-2 max-sm:text-sm "
                   onClick={handlePreOrderClick}
                 >
                   Pre-Order now
                 </motion.button>
               </div>
             </div>
-            <div className=" max-sm:hidden">
+            <div className=" max-xl:hidden">
               <ImageCarousel />
             </div>
-            <div className="md:hidden">
+            <div className="xl:hidden">
               <ImageCarousel />
             </div>
-            <div className="md:hidden md:w-[403]">
+            <div className="md:w-[403] xl:hidden">
               <div>
                 <div className=" w-full items-center justify-center bg-[#000000] px-4 py-4 text-black">
                   <ul className="list-inside list-disc">
@@ -976,7 +975,7 @@ export default function Web() {
         <div className="w-full     py-10">
           <div className="flex flex-col items-center justify-center">
             <p className="text-[#FFFFFF99] max-sm:text-sm">Pre-order Deposit: 30% of the total cost..</p>
-            <p className="custom-text first-word-color my-6 flex text-center text-5xl font-bold text-[#FFFFFF] max-md:text-2xl max-sm:text-2xl md:w-[924px] ">
+            <p className="custom-text first-word-color my-6 flex text-center text-5xl font-bold text-[#FFFFFF] max-xl:text-2xl max-sm:text-2xl xl:w-[924px] ">
               Pre-order Now and Experience the Future of Smart Home Security!
             </p>
 

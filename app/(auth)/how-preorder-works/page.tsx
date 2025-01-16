@@ -9,9 +9,9 @@ export default function Web() {
   return (
     <section className="bg-black">
       <NewNav />
-      <section id="specifications" className="paddings w-full   bg-[#151515] pt-32 max-sm:px-3 ">
-        <div className="  w-full justify-between    md:pt-32">
-          <div className="flex w-full justify-between gap-10  sm:flex">
+      <section id="specifications" className="paddings w-full   bg-[#151515] max-xl:px-3 xl:pt-32 ">
+        <div className="  w-full justify-between    xl:pt-32">
+          <div className="flex w-full justify-between gap-10  xl:flex">
             <div>
               <p className=" my-3 text-center  text-lg font-semibold text-white  max-sm:my-3 md:text-xl md:leading-10 xl:text-3xl">
                 How Pre-orders Work
@@ -28,9 +28,9 @@ export default function Web() {
 
       <section id="how-to-buy" className="paddings  w-full  bg-[#151515]  max-sm:px-3 ">
         <div className="  w-full justify-between    pb-10">
-          <div className="grid-col-2 grid w-full justify-between gap-10  sm:flex">
-            <div className="md:w-full ">
-              <div className="flex  justify-center gap-4 max-sm:grid max-sm:grid-cols-1">
+          <div className="grid-col-2 grid w-full justify-between gap-10  xl:flex">
+            <div className="xl:w-full ">
+              <div className="flex  justify-center gap-4 max-xl:grid max-xl:grid-cols-2 max-sm:grid-cols-1">
                 <div className=" w-full rounded-lg bg-[#080808] p-6   ">
                   <p className="text-6xl font-bold text-[#FF3B30]">1</p>
                   <p className="py-4 text-xl font-semibold text-white max-sm:text-sm">Place Your Order</p>

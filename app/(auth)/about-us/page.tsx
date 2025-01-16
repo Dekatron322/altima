@@ -56,8 +56,8 @@ export default function Web() {
   return (
     <section className="bg-black">
       <NewNav />
-      <section id="specifications" className="paddings w-full   bg-[#151515] pt-32 max-sm:px-3 ">
-        <div className="  w-full justify-between    md:pt-32">
+      <section id="specifications" className="paddings w-full   bg-[#151515] max-sm:px-3 xl:pt-32 ">
+        <div className="  w-full justify-between    xl:pt-32">
           <div className="flex w-full justify-between gap-10  sm:flex">
             <div>
               <p className="font-regular   text-center  text-2xl  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">
@@ -80,10 +80,12 @@ export default function Web() {
 
       <section className="paddings  w-full bg-[#080808] max-sm:px-3 ">
         <div className="  w-full justify-between    md:py-10">
-          <div className="grid grid-cols-2  justify-between gap-20 max-sm:grid-cols-1 max-sm:gap-5 ">
+          <div className="grid grid-cols-2  justify-between max-xl:grid-cols-1 max-xl:gap-5 max-sm:gap-5 xl:gap-20 ">
             <div className="">
-              <p className="font-regular  flex  text-2xl  text-[#FFFFFF99] max-sm:text-lg  lg:text-2xl">Our Vision</p>
-              <p className=" my-6 text-xl   font-bold leading-none tracking-tight text-white md:text-xl 2xl:text-3xl">
+              <p className="font-regular    text-2xl text-[#FFFFFF99] max-xl:text-center max-sm:text-lg  lg:text-2xl">
+                Our Vision
+              </p>
+              <p className=" my-6 text-xl font-bold   leading-none tracking-tight text-white max-xl:text-center md:text-xl 2xl:text-3xl">
                 What we are seeing
               </p>
 
@@ -97,8 +99,7 @@ export default function Web() {
             <div>
               <motion.img
                 src="/Frame 48095432 (5).png"
-                width={633}
-                height={583}
+                className="h-[583px] w-[633px] max-xl:h-full max-xl:w-full"
                 alt=""
                 initial={{ scale: 1.2, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
@@ -110,13 +111,12 @@ export default function Web() {
       </section>
 
       <section className="paddings  w-full bg-[#151515] max-sm:px-3 ">
-        <div className="  w-full justify-between    md:py-10">
-          <div className="grid grid-cols-2  justify-between gap-20 max-sm:grid-cols-1 max-sm:gap-5 ">
+        <div className="  w-full justify-between    xl:py-10">
+          <div className="grid grid-cols-2  justify-between max-xl:flex max-xl:flex-col-reverse max-xl:gap-5 max-sm:gap-5  xl:gap-20 ">
             <div>
               <motion.img
                 src="/Frame 48095432 (3).png"
-                width={633}
-                height={583}
+                className="h-[583px] w-[633px] max-xl:h-full max-xl:w-full"
                 alt=""
                 initial={{ scale: 1.2, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
@@ -143,7 +143,7 @@ export default function Web() {
 
       <section className="paddings  w-full bg-[#080808] max-sm:px-3 ">
         <div className="  w-full justify-between    md:py-10">
-          <div className="grid grid-cols-2  justify-between gap-20 max-sm:grid-cols-1 max-sm:gap-5 ">
+          <div className="grid grid-cols-2  justify-between gap-20 max-xl:grid-cols-1 max-xl:gap-5 ">
             <div className="">
               <p className="font-regular  flex  text-2xl  text-[#FFFFFF99] max-sm:text-lg  lg:text-2xl">Benefits</p>
               <p className=" my-6 text-xl   font-bold leading-none tracking-tight text-white md:text-xl 2xl:text-3xl">
@@ -160,8 +160,7 @@ export default function Web() {
             <div>
               <motion.img
                 src="/Frame 48095432 (4).png"
-                width={633}
-                height={583}
+                className="h-[583px] w-[633px] max-xl:h-full max-xl:w-full"
                 alt=""
                 initial={{ scale: 1.2, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
@@ -190,8 +189,8 @@ export default function Web() {
                   Pre-Order now
                 </motion.button> */}
               </div>
-              <div className="flex items-center justify-center gap-4 max-sm:grid max-sm:grid-cols-1">
-                <div className=" w-full rounded-lg bg-[#080808] p-10  max-sm:p-5 md:h-[379px] md:w-[347px]">
+              <div className="flex items-center justify-center gap-4 max-xl:grid max-xl:grid-cols-1">
+                <div className=" w-full rounded-lg bg-[#080808] p-10  max-sm:p-5 xl:h-[379px] xl:w-[347px]">
                   <Image
                     src="/hugeicons_ai-innovation-01.png"
                     width={50}
@@ -206,7 +205,7 @@ export default function Web() {
                     personalized user experience.
                   </p>
                 </div>
-                <div className=" w-full rounded-lg bg-[#080808] p-10 max-sm:p-5 md:h-[379px] md:w-[347px]">
+                <div className=" w-full rounded-lg bg-[#080808] p-10 max-sm:p-5 xl:h-[379px] xl:w-[347px]">
                   <Image src="/SketchLogo.png" width={50} height={50} alt="" className="max-sm:hidden" />
                   <Image src="/SketchLogo.png" width={40} height={40} alt="" className="sm:hidden" />
                   <p className="py-4 text-lg text-white max-sm:text-sm">2. Relaibility</p>
@@ -215,7 +214,7 @@ export default function Web() {
                     security day in and day out.
                   </p>
                 </div>
-                <div className=" w-full rounded-lg bg-[#080808] p-10 max-sm:p-5 md:h-[379px] md:w-[347px]">
+                <div className=" w-full rounded-lg bg-[#080808] p-10 max-sm:p-5 xl:h-[379px] xl:w-[347px]">
                   <Image
                     src="/icon-park-outline_customer.png"
                     width={50}
