@@ -288,7 +288,7 @@ export default function Web() {
                   <p className="py-4 text-lg text-white max-sm:text-sm">Smart Home Hub</p>
                   <p className=" text-lg text-[#FFFFFF99] max-sm:text-xs">
                     Control your entire smart
-                    <br className="max-sm:hidden" /> home ecosystem directly from <br className="max-sm:hidden" /> your
+                    <br className="max-sm:hidden" /> home ecosystem directly from <br className="max-2xl:hidden" /> your
                     doorway.
                   </p>
                 </div>
