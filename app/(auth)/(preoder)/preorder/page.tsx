@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation"
 import Dropdown from "components/CustomDropdown"
 import NewNav from "components/Navbar/NewNav"
 import { toWords } from "number-to-words"
+import PreorderAgreement from "components/PreorderAgreement"
 
 interface User {
   id: string
@@ -45,6 +46,7 @@ export default function Web() {
   const [isDefaultShipping, setIsDefaultShipping] = useState(true)
   const [subtotal, setSubtotal] = useState(0)
   const [adjustedUnitPrice, setAdjustedUnitPrice] = useState(0)
+  const [isAgreement, setIsAgreement] = useState(false)
 
   // Define unit prices for each option
   const unitPrices: { [key: string]: number } = {
@@ -720,6 +722,16 @@ export default function Web() {
 
   const toggleDropdown = (dropdown: string) => {
     setOpenDropdown((prev) => (prev === dropdown ? null : dropdown))
+  }
+
+  const toggleAggrement = () => {
+    setIsAgreement((prev) => {
+      const newValue = !prev
+      console.log("isHomeAutomation", newValue)
+
+      console.log("formData.home_automation_integration:", newValue)
+      return newValue
+    })
   }
 
   return (
@@ -1926,10 +1938,45 @@ export default function Web() {
                   </p>
                 </div>
                 <div className="border-b border-[#FFFFFF0D]"></div>
+                <div className="px-5 py-3">
+                  <PreorderAgreement />
+                  <div className="my-6 flex w-full items-center justify-center gap-2">
+                    <motion.img
+                      onClick={() => {
+                        toggleAggrement() // Only call the function if not disabled
+                      }}
+                      src={isAgreement ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
+                      width={18}
+                      height={18}
+                      alt=""
+                      initial={{ scale: 1.2, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 1, ease: "easeIn" }}
+                    />
+                    <p className="text-sm text-white opacity-80">
+                      I have read, understood, and agree to the terms and conditions of the Online Preorder Agreement.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-center text-sm text-white opacity-80">
+                      Want to confirm you're making the right choice?{" "}
+                      <a
+                        href="/comparison"
+                        className="font-bold text-white underline opacity-100 transition-all   duration-300 ease-in-out hover:text-[#FF3B30]"
+                      >
+                        Check out the Comparison Table
+                      </a>{" "}
+                      before placing your preorder!
+                    </p>
+                  </div>
+                </div>
+                <div className="border-b border-[#FFFFFF0D]"></div>
                 <div className="mt-5 flex w-full justify-center max-sm:px-3">
                   <button
                     type="submit"
-                    className="font-regular  mb-5 flex w-[60%] items-center justify-center gap-2  rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4 py-3 uppercase text-[#FFFFFF] max-sm:w-full "
+                    className={`font-regular mb-5 flex w-[60%] items-center justify-center gap-2 rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4 py-3 uppercase text-[#FFFFFF] transition-all duration-300 ease-in-out max-sm:w-full ${
+                      isAgreement ? "cursor-pointer opacity-100" : "cursor-not-allowed opacity-50"
+                    }`}
                   >
                     {isSubmitting ? "Submitting..." : "Submit"}
                   </button>
