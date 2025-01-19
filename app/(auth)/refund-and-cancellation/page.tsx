@@ -10,49 +10,101 @@ import ContactUs from "components/ContactUs/Contact"
 export default function Web() {
   const faqData = [
     {
-      title: "1. Information We Collect",
-      content:
-        "We may collect the following types of information ▪️Personal Information: Name, email address, phone number, shipping address, and payment details necessary for processing your pre-order. ▪️Device Information: IP address, browser type, operating system, and other technical data to enhance user experience and improve website performance.▪️Usage Data: Information on how you use our website, such as page views and navigation patterns.",
+      title: "1. Non-Refundable Deposit",
+      content: (
+        <div>
+          <ul className="">
+            <li>1.1. The 30% deposit required at the time of preorder is non-refundable.</li>
+
+            <li>
+              1.2. Exceptions to this policy apply only if the Company is unable to deliver the product within six (6)
+              months after the estimated delivery date.
+            </li>
+          </ul>
+        </div>
+      ),
     },
     {
-      title: "2. How We Use Your Information",
-      content:
-        "To cancel your pre-order, please reach out to our support team at [ *support email* ] or call us at [ *support phone number* ]. Alternatively, you can log in to your account and follow the instructions under the My Orders section to cancel.",
+      title: "2. Cancellation by Customer",
+      content: (
+        <div>
+          <ul className="">
+            <li className="">
+              2.1. Customers may cancel their preorder at any time prior to shipment by contacting our support team at{" "}
+              <a href="mailto:customercare@smarthavensystems.com" className="text-[#FF3B30] hover:underline">
+                customercare@smarthavensystems.com
+              </a>
+              .
+            </li>
+
+            <li>
+              2.2. Cancellations made after the preorder window closes or within thirty (30) days of shipment are not
+              eligible for any refunds.
+            </li>
+          </ul>
+        </div>
+      ),
     },
     {
-      title: "3. Sharing Your Information",
-      content:
-        "The pre-order process is simple. Select your preferred Altima model (Core or Elite), customize your door with the options you need, review the details, and place a 30% deposit to secure your order. We’ll keep you informed as your order progresses toward delivery.",
+      title: "3. Cancellation by the Company",
+      content: (
+        <div>
+          <ul className="">
+            <li className="">
+              3.1. The Company reserves the right to cancel any preorder under the following circumstances:
+            </li>
+            <li className="p-2">- Failure to complete the remaining balance payment within the specified timeline.</li>
+            <li className="px-2 pb-2">
+              - Unforeseen circumstances that prevent the production or delivery of the product.
+            </li>
+
+            <li>3.2. In such cases, the customer will be notified, and the deposit will be refunded in full.</li>
+          </ul>
+        </div>
+      ),
     },
     {
-      title: "4. Data Security",
-      content:
-        "If there are any production delays, we will notify you promptly and provide an updated timeline. You can choose to wait for your order or request a full refund of your deposit if the delay is inconvenient.",
+      title: "4. Refund Process",
+      content: (
+        <div>
+          <ul className="">
+            <li className="">
+              4.1. Refunds for eligible cancellations will be processed within fourteen (14) business days from the date
+              of approval.
+            </li>
+
+            <li>4.2. Refunds will be issued to the original payment method used during the preorder.</li>
+          </ul>
+        </div>
+      ),
     },
     {
-      title: "5. Cookies and Tracking Technologies",
+      title: "5. Changes to this Policy",
       content:
-        "Our smart doors come with a 1-year standard warranty covering any manufacturing defects. We also offer an optional extended warranty for an additional 2 years, providing a total of 3 years of coverage for extra peace of mind.",
+        "We reserve the right to update or modify this Refund and Cancellation Policy at any time. Changes will be effective upon posting on our website. It is your responsibility to review this policy periodically.",
     },
     {
-      title: "6. Your Rights",
-      content:
-        "We provide professional installation support in select areas to ensure your Altima smart door is installed seamlessly. Contact our support team to *discuss installation options in your location and any associated costs.",
-    },
-    {
-      title: "7. Third-Party Links",
-      content:
-        "Yes, we offer flexible financing and payment plans to make your purchase more manageable. Reach out to our finance department at [ *finance contact email/phone* ] for more details and to find a plan that suits your needs.",
-    },
-    {
-      title: "8. Policy Updates",
-      content:
-        "Yes, we offer flexible financing and payment plans to make your purchase more manageable. Reach out to our finance department at [ *finance contact email/phone* ] for more details and to find a plan that suits your needs.",
-    },
-    {
-      title: "9. Contact Us",
-      content:
-        "Yes, we offer flexible financing and payment plans to make your purchase more manageable. Reach out to our finance department at [ *finance contact email/phone* ] for more details and to find a plan that suits your needs.",
+      title: "5. Contact Us",
+      content: (
+        <div>
+          <ul className="">
+            <p className="mb-3">If you have any questions or concerns about this policy, please contact us at:</p>
+            <li>
+              <strong>Email:</strong> customercare@smarthavensystems.com
+            </li>
+            {/* <li className="my-3">
+              <strong>Phone:</strong> 022-6971-8365
+            </li> */}
+            <li>
+              <strong>Address:</strong> <br />
+              SmartHaven Systems Private Limited <br />
+              Sahara CHS, Shop no. 4, Seawoods <br />
+              Sector 40, Opp. Konkan rail Vihar <br />
+              NAVI MUMBAI 400706
+            </li>
+          </ul>
+        </div>
+      ),
     },
   ]
 
@@ -66,7 +118,7 @@ export default function Web() {
     <section className="bg-black">
       <NewNav />
       <section id="specifications" className="paddings w-full   bg-[#151515] max-sm:px-3 xl:pt-32 ">
-        <div className="  w-full justify-between    xl:py-32">
+        <div className="  w-full justify-between">
           <div className="flex w-full justify-between gap-10  xl:flex">
             <div>
               <p className="font-regular   text-center  text-2xl  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">
@@ -99,10 +151,10 @@ export default function Web() {
               </div>
 
               <p className="font-regular mb-6 w-full text-ellipsis text-sm text-[#FFFFFF99] max-sm:leading-7 md:text-center xl:px-64">
-                Thank you for choosing Altima. We understand that situations may arise that require changes to your
-                pre-order, and we strive to be transparent with our policies regarding refunds and cancellations. This
-                Refund and Cancellation Policy outlines our guidelines and provides clarity on pre-order deposits,
-                adjustments, and other specific conditions.
+                This Refund and Cancellation Policy outlines the terms and conditions regarding refunds and
+                cancellations for preorders made through SmartHaven Systems Private Limited (&quot;Company,&quot;
+                &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). By placing a preorder, you acknowledge that you
+                have read and agree to this policy.
               </p>
             </div>
           </div>

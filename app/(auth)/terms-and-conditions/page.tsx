@@ -159,7 +159,7 @@ export default function Web() {
     <section className="bg-black">
       <NewNav />
       <section id="specifications" className="paddings w-full   bg-[#151515] max-sm:px-3 xl:pt-32 ">
-        <div className="  w-full justify-between    xl:py-32">
+        <div className="  w-full justify-between   ">
           <div className="flex w-full justify-between gap-10  sm:flex">
             <div>
               <p className="font-regular   text-center  text-2xl  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">
