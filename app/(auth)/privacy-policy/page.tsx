@@ -14,18 +14,25 @@ export default function Web() {
       title: "1. Information We Collect",
       content: (
         <div>
-          <ul className="grid gap-3">
-            <li>
-              <strong>▪️ Personal Information:</strong> Name, email address, phone number, shipping address, and payment
-              details necessary for processing your pre-order.
+          <p className="text-white">We may collect the following types of information:</p>
+          <ul className="mt-3 grid gap-3">
+            <strong>1.1. Personal Information:</strong>
+            <li className="flex items-center gap-2 px-2">
+              <p className="h-2 w-2 rounded-full bg-[#FFFFFF99]"></p>
+              Name, email address, phone number, and billing/shipping address.
             </li>
-            <li className="px-2">
-              <strong>▪️ Device Information:</strong> IP address, browser type, operating system, and other technical
-              data to enhance user experience and improve website performance.
+            <li className="flex items-center gap-2 px-2">
+              <p className="h-2 w-2 rounded-full bg-[#FFFFFF99]"></p>
+              Payment details, including card information (processed securely through our payment gateway)
             </li>
-            <li className="px-2">
-              <strong>▪️ Usage Data:</strong> Information on how you use our website, such as page views and navigation
-              patterns.
+            <strong>1.2. Non-Personal Information:</strong>
+            <li className="flex items-center gap-2 px-2">
+              <p className="h-2 w-2 rounded-full bg-[#FFFFFF99]"></p>
+              IP address, browser type, and operating system.
+            </li>
+            <li className="flex items-center gap-2 px-2">
+              <p className="h-2 w-2 rounded-full bg-[#FFFFFF99]"></p>
+              Usage data, including pages viewed and actions taken on the website.
             </li>
           </ul>
         </div>
@@ -35,22 +42,17 @@ export default function Web() {
       title: "2. How We Use Your Information",
       content: (
         <div>
-          <ul className="grid gap-3">
-            <li>
-              <strong>▪️ Process Pre-orders:</strong> Manage your pre-order, confirm your purchase, and handle payment
-              transactions.
+          <p className="text-white">We use the information collected for the following purposes:</p>
+          <ul className="mt-3 grid gap-3">
+            <li className="flex items-center gap-2 px-2">2.1. To process and manage your preorder.</li>
+            <li className="flex items-center gap-2 px-2">
+              2.2. To communicate with you regarding your preorder, including updates and confirmations.
             </li>
-            <li className="px-2">
-              <strong>▪️ Customer Support:</strong> Respond to your inquiries, provide updates, and offer support for
-              your order.
+            <li className="flex items-center gap-2 px-2">
+              2.3. To improve our website and services based on user behavior and feedback.
             </li>
-            <li className="px-2">
-              <strong>▪️ Communication:</strong> Send you order-related updates, marketing offers (if opted in), and any
-              necessary information about your pre-order.
-            </li>
-            <li className="px-2">
-              <strong>▪️ Improvement:</strong> Analyze usage data to improve website functionality and enhance the
-              overall user experience.
+            <li className="flex items-center gap-2 px-2">
+              2.4. To comply with legal obligations or respond to lawful requests.
             </li>
           </ul>
         </div>
@@ -60,19 +62,16 @@ export default function Web() {
       title: "3. Sharing Your Information",
       content: (
         <div>
-          <ul className="grid gap-3">
-            <p>We do not sell or rent your personal information. We may share information:</p>
-            <li>
-              <strong>▪️ With Service Providers:</strong> Third-party companies assisting with payment processing,
-              shipping, and data hosting, who adhere to strict confidentiality agreements.
+          <p className="text-white">
+            We do not sell or rent your personal information. However, we may share your information in the following
+            circumstances:
+          </p>
+          <ul className="mt-3 grid gap-3">
+            <li className="flex items-center gap-2 px-2">
+              3.1. With service providers who assist in processing payments, sending emails, or analyzing website data.
             </li>
-            <li className="px-2">
-              <strong>▪️ Customer Support:</strong> Respond to your inquiries, provide updates, and offer support for
-              your order.
-            </li>
-            <li className="px-2">
-              <strong>▪️ For Legal Requirements:</strong> When required by law or in response to valid legal processes,
-              such as a court order, subpoena, or government request.
+            <li className="flex items-center gap-2 px-2">
+              3.2. When required by law or to protect the rights, property, or safety of our company or others.
             </li>
           </ul>
         </div>
@@ -81,63 +80,66 @@ export default function Web() {
     {
       title: "4. Data Security",
       content:
-        "We implement reasonable security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. These measures include secure data encryption, restricted access controls, and regular security audits.",
+        "We implement appropriate technical and organizational measures to safeguard your data. However, no transmission method over the internet is 100% secure. While we strive to protect your information, we cannot guarantee absolute security.",
     },
     {
       title: "5. Cookies and Tracking Technologies",
       content:
-        "Our website uses cookies to enhance your experience, monitor website traffic, and personalize content. You can adjust your browser settings to refuse cookies; however, this may limit certain website functionalities.",
+        "We use cookies and similar technologies to enhance your browsing experience and analyze website traffic. You may disable cookies through your browser settings, but some features of the website may not function properly.",
     },
     {
       title: "6. Your Rights",
       content: (
         <div>
-          <ul className="grid gap-3">
-            <p>You have the right to:</p>
-            <li>
-              <strong>▪️ Access</strong> your personal information.
-            </li>
-            <li className="px-2">
-              <strong>▪️ Correct</strong> any inaccurate or incomplete information.
-            </li>
-            <li className="px-2">
-              <strong>▪️ Request Deletion</strong> of your data, where applicable and in compliance with legal
-              requirements.
-            </li>
-            <li className="px-2">
-              <strong>▪️ Withdraw Consent</strong> for marketing communications at any time by contacting us.
+          <p className="text-white">
+            Depending on your location, you may have the following rights regarding your personal information:
+          </p>
+          <ul className="my-3 grid gap-3">
+            <li className="flex items-center gap-2 px-2">6.1. The right to access, correct, or delete your data.</li>
+            <li className="flex items-center gap-2 px-2">6.2. The right to object to or restrict processing.</li>
+            <li className="flex items-center gap-2 px-2">6.3. The right to data portability.</li>
+            <li className="flex items-center gap-2 px-2">
+              6.4. The right to withdraw consent where processing is based on consent.
             </li>
           </ul>
+          <p className="text-white">
+            To exercise your rights, please contact us at{" "}
+            <a
+              href="mailto:contact@smarthavensystems.com"
+              className="text-[#FF3B30] transition-all duration-200 ease-in-out hover:underline"
+            >
+              contact@smarthavensystems.com
+            </a>
+          </p>
         </div>
       ),
     },
     {
-      title: "7. Third-Party Links",
+      title: "7. Changes to This Privacy Policy",
       content:
-        "Our website may contain links to third-party sites. This Privacy Policy does not apply to these sites, and we encourage you to review their policies regarding data collection and privacy.",
+        "We may update this Privacy Policy from time to time. Changes will be effective upon posting to the website, and we will notify you of any material updates.",
     },
+
     {
-      title: "8. Policy Updates",
-      content:
-        "We may update this Privacy Policy occasionally. Any changes will be posted on this page, and significant updates will be communicated via email or a prominent notice on our website.",
-    },
-    {
-      title: "9. Contact Us",
+      title: "8. Contact Us",
       content: (
         <div>
           <ul className="">
             <p className="mb-3">
-              Our team is here to assist you with any installation-related questions or issues. For assistance, please
-              contact:
+              If you have any questions or concerns about this Privacy Policy, please contact us at:
             </p>
             <li>
               <strong>Email:</strong> warranty@smarthavensystems.com
             </li>
-            <li className="my-3">
+            {/* <li className="my-3">
               <strong>Phone:</strong> 022-6971-8365
-            </li>
+            </li> */}
             <li>
-              <strong>Address:</strong> Seawoods, Navi Mumbai 400706, India
+              <strong>Address:</strong> <br />
+              SmartHaven Systems Private Limited <br />
+              Sahara CHS, Shop no. 4, Seawoods <br />
+              Sector 40, Opp. Konkan rail Vihar <br />
+              NAVI MUMBAI 400706
             </li>
           </ul>
         </div>
@@ -208,9 +210,16 @@ export default function Web() {
               </div>
 
               <p className="font-regular mb-6 w-full text-ellipsis text-sm text-[#FFFFFF99] max-sm:leading-7 md:text-center xl:px-64">
-                At Smart Haven Systems Private Limited, we value your privacy and are committed to safeguarding your
-                personal information. This Privacy Policy outlines how we collect, use, store, and protect your data
-                when you visit our website and place pre-orders for Altima products.
+                SmartHaven Systems Private Limited ("we," "our," or "us") is committed to protecting your privacy. This
+                Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our
+                website,{" "}
+                <a
+                  href="https://www.smarthsvensystems.com"
+                  className="transistion-all duration-300 ease-in-out hover:text-[#FF3B30]"
+                >
+                  www.smarthsvensystems.com
+                </a>
+                , and participate in the preorder process for Altima products
               </p>
             </div>
           </div>

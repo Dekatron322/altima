@@ -1088,8 +1088,8 @@ export default function Web() {
                   </div>
 
                   <p className="mt-6 text-sm text-[#FFFFFF]">Quantity</p>
-                  <div className="sm:flex sm:justify-between">
-                    <div className="mt-1 flex items-center gap-3 rounded-md">
+                  <div className="items-center sm:flex sm:justify-between">
+                    <div className=" flex items-center gap-3 rounded-md">
                       <button
                         type="button"
                         onClick={handleDecrement}
@@ -1131,13 +1131,22 @@ export default function Web() {
                       </button>
                     </div>
 
-                    <p className="font-regular flex  items-center  pt-4 text-2xl text-[#FFFFFF]  max-sm:text-lg lg:text-2xl">
+                    <p className="font-regular  items-center  text-2xl   text-[#FFFFFF] max-sm:mt-3  max-sm:text-lg lg:text-2xl">
                       {quantity === 1 ? (
                         <>
-                          <span className="text-sm">Unit Price : </span> ₹{grossPrice.toLocaleString()}
+                          <p className="text-sm">Unit Price : </p>
+                          <p className="flex items-center justify-center rounded-md border border-dotted border-[#FFFFFF1A] py-2 max-xl:w-[200px] xl:w-[357px]">
+                            {" "}
+                            ₹{grossPrice.toLocaleString()}
+                          </p>
                         </>
                       ) : (
-                        <>Price: ₹{grossPrice.toLocaleString()}</>
+                        <>
+                          <p className="text-sm">Price: </p>
+                          <p className="flex items-center justify-center rounded-md border border-dotted border-[#FFFFFF1A] py-3 2xl:w-[357px]">
+                            ₹{grossPrice.toLocaleString()}
+                          </p>
+                        </>
                       )}
                     </p>
                   </div>
