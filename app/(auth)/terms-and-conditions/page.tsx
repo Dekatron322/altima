@@ -17,231 +17,131 @@ export default function Web() {
         <div>
           <ul className="grid gap-3">
             <li>
-              <strong>▪️ Acceptance of Terms:</strong> By accessing this website or placing a pre-order, you agree to
-              these Terms and Conditions. If you do not agree, please refrain from using our services.
+              1.1. By accessing or using our website, you represent that you are at least 18 years old and capable of
+              entering into a legally binding agreement.
             </li>
-            <li className="px-2">
-              <strong>▪️ Modifications:</strong> Smart Haven Systems Private Limited reserves the right to modify these
-              Terms at any time. We will post updates on this page, and your continued use of the site signifies your
-              acceptance of the modified terms.
+            <li>
+              1.2. If you are using our services on behalf of a company or entity, you represent that you have the
+              authority to bind that entity to these Terms.
             </li>
           </ul>
         </div>
       ),
     },
     {
-      title: "2. Pre-order Terms",
+      title: "2. Pre-order Conditions",
+      content: (
+        <div>
+          <ul className="grid gap-3">
+            <li>2.1. A 30% deposit is required at the time of preorder to secure your Altima product.</li>
+            <li>
+              2.2. The remaining balance must be paid before shipment, as per the final payment notice.provided, but
+              actual delivery dates may vary based on production schedules and supply chain factors.
+            </li>
+            <li>
+              2.3. Preorders are non-binding, and we reserve the right to reject or cancel preorders at our sole
+              discretion.
+            </li>
+            <li>
+              2.4. Estimated delivery timelines are 4-5 months after the preorder window closes, subject to unforeseen
+              delays.
+            </li>
+          </ul>
+        </div>
+      ),
+    },
+    {
+      title: "3. Customer Responsibilities",
+      content: (
+        <div>
+          <ul className="grid gap-3">
+            <li>3.1. You agree to provide accurate and up-to-date information during the preorder process.</li>
+            <li>
+              3.2. You are responsible for ensuring timely payment of all amounts owed, including the deposit and final
+              balance.
+            </li>
+            <li>3.3. You agree not to use our website for any illegal or unauthorized purposes.</li>
+          </ul>
+        </div>
+      ),
+    },
+    {
+      title: "4. Intellectual Property Rights",
       content: (
         <div>
           <ul className="grid gap-3">
             <li>
-              <strong>▪️ Pre-order Process:</strong> By placing a pre-order, you are reserving an Altima product in
-              advance. Pre-ordering requires a deposit payment, which secures your place in our production queue.
+              4.1. All content, trademarks, logos, and materials on our website are owned by SmartHaven Systems Private
+              Limited.
             </li>
-            <li className="px-2">
-              <strong>▪️ Availability:</strong> Pre-ordering does not guarantee immediate availability. Estimated
-              production and delivery timelines are provided, but actual delivery dates may vary based on production
-              schedules and supply chain factors.
-            </li>
-            <li className="px-2">
-              <strong>▪️ Non-Binding Agreement:</strong> Placing a pre-order does not constitute a binding purchase
-              contract. Smart Haven Systems Private Limited reserves the right to cancel or refund pre-orders in
-              specific cases, including but not limited to production delays, technical issues, or unforeseen
-              circumstances.
+            <li>
+              4.2. You are not permitted to reproduce, distribute, or create derivative works from any content without
+              our prior written consent.
             </li>
           </ul>
         </div>
       ),
     },
     {
-      title: "3. Payment Terms",
+      title: "5. Limitations of Liability",
       content: (
         <div>
           <ul className="grid gap-3">
             <li>
-              <strong>▪️ Deposit:</strong> Pre-orders require a 30% non-refundable deposit at the time of booking. This
-              deposit is applied toward the total product price.
+              5.1. SmartHaven Systems Private Limited is not liable for any indirect, incidental, or consequential
+              damages arising from your use of our services.
             </li>
-            <li className="px-2">
-              <strong>▪️ Final Payment:</strong> The remaining balance is due prior to delivery. A final payment notice
-              will be sent to the email address provided at the time of pre-order, with a specified payment deadline.
-            </li>
-            <li className="px-2">
-              <strong>▪️ Accepted Payment Methods:</strong> We accept various payment methods, including credit cards,
-              debit cards, and bank transfers. Specific payment instructions will be provided during the pre-order
-              process.
-            </li>
-            <li className="px-2">
-              <strong>▪️ Non-Refundable Deposit:</strong> Please note that the pre-order deposit is non-refundable.
-              However, in cases where Smart Haven Systems Private Limited initiates a cancellation, the deposit will be
-              refunded in full.
+            <li>5.2. Our total liability is limited to the amount you have paid for the preorder.</li>
+          </ul>
+        </div>
+      ),
+    },
+    {
+      title: "6. Dispute Resolution",
+      content: (
+        <div>
+          <ul className="grid gap-3">
+            <li>6.1. These Terms are governed by the laws of India.</li>
+            <li>
+              6.2. Any disputes arising from these Terms will be subject to the exclusive jurisdiction of the courts in
+              Navi Mumbai, Maharashtra
             </li>
           </ul>
         </div>
       ),
     },
     {
-      title: "4. Pricing and Tax",
+      title: "7. Changes to These Terms",
       content: (
         <div>
           <ul className="grid gap-3">
             <li>
-              <strong>▪️ Pricing:</strong> All prices displayed on our website are exclusive of applicable taxes. Taxes
-              and additional fees will be calculated and added at checkout based on your location.
-            </li>
-            <li className="px-2">
-              <strong>▪️ Price Adjustments:</strong> Prices are subject to change at the discretion of Smart Haven
-              Systems Private Limited. However, pre-order prices at the time of booking will be honored for confirmed
-              orders.
+              We reserve the right to update or modify these Terms at any time. Changes will be effective upon posting
+              on our website. It is your responsibility to review these Terms periodically.
             </li>
           </ul>
         </div>
       ),
     },
+
     {
-      title: "5. Delivery and Shipping",
-      content: (
-        <div>
-          <ul className="grid gap-3">
-            <li>
-              <strong>▪️ Estimated Delivery:</strong> Altima products are estimated to ship within 4-5 months after the
-              pre-order window closes. We will make every effort to meet this timeline; however, delivery dates may vary
-              due to production schedules and external factors.
-            </li>
-            <li className="px-2">
-              <strong>▪️ Shipping Notification:</strong> Once your order is ready for shipment, you will receive a
-              notification email with tracking information and estimated arrival dates.
-            </li>
-            <li className="px-2">
-              <strong>▪️ Shipping Costs:</strong> Shipping charges will be added to your final payment and will be
-              disclosed in advance.
-            </li>
-            <li className="px-2">
-              <strong>▪️ Risk of Loss:</strong> Risk of loss or damage passes to the customer upon shipment. Smart Haven
-              Systems Private Limited is not responsible for items lost or damaged in transit, but we will assist you
-              with any claims to the shipping provider.
-            </li>
-          </ul>
-        </div>
-      ),
-    },
-    {
-      title: "6. Cancellations and Refunds",
-      content: (
-        <div>
-          <ul className="grid gap-3">
-            <li>
-              <strong>▪️ Customer-Initiated Cancellations:</strong> Pre-order deposits are non-refundable, and
-              customer-initiated cancellations will forfeit the deposit.
-            </li>
-            <li className="px-2">
-              <strong>▪️ Company-Initiated Cancellations:</strong> In cases where Smart Haven Systems Private Limited
-              initiates the cancellation of a pre-order due to unforeseen circumstances, we will issue a full refund of
-              the deposit.
-            </li>
-            <li className="px-2">
-              <strong>▪️ Refunds:</strong> All eligible refunds will be processed within 7-10 business days and will be
-              credited back to the original payment method.
-            </li>
-          </ul>
-        </div>
-      ),
-    },
-    {
-      title: "7. Product Warranty and Returns",
-      content: (
-        <div>
-          <ul className="grid gap-3">
-            <li>
-              <strong>▪️ Limited Warranty:</strong> Altima products come with a limited warranty covering manufacturing
-              defects for a specified period from the date of delivery. Warranty details are provided with your product
-              documentation.
-            </li>
-            <li className="px-2">
-              <strong>▪️ Exclusions:</strong> The warranty does not cover damage caused by misuse, modifications, or
-              accidents.
-            </li>
-            <li className="px-2">
-              <strong>▪️ Refunds:</strong> ▪️ Returns: Returns are not accepted on pre-order products except in cases
-              covered under the warranty for manufacturing defects.
-            </li>
-          </ul>
-        </div>
-      ),
-    },
-    {
-      title: "8. Limitation of Liability",
-      content: (
-        <div>
-          <ul className="grid gap-3">
-            <li>
-              <strong>▪️ Disclaimer of Warranties:</strong> While we strive to provide accurate information, Smart Haven
-              Systems Private Limited does not guarantee that the website or its content is free of errors. We do not
-              warrant that our products or services will meet your specific expectations.
-            </li>
-            <li className="px-2">
-              <strong>▪️ Limitation of Liability:</strong> To the fullest extent permitted by law, Smart Haven Systems
-              Private Limited and its affiliates, officers, employees, and agents shall not be liable for any indirect,
-              incidental, special, or consequential damages resulting from the use of our website, products, or
-              services.
-            </li>
-          </ul>
-        </div>
-      ),
-    },
-    {
-      title: "9. Intellectual Property",
-      content: (
-        <div>
-          <ul className="grid gap-3">
-            <li>
-              <strong>▪️ Ownership:</strong> All website content, including text, images, graphics, logos, and software,
-              is the property of Smart Haven Systems Private Limited and is protected by applicable copyright and
-              intellectual property laws.
-            </li>
-            <li className="px-2">
-              <strong>▪️ Restrictions:</strong> You are prohibited from reproducing, distributing, or using any content
-              on this website without explicit written permission from Smart Haven Systems Private Limited.
-            </li>
-          </ul>
-        </div>
-      ),
-    },
-    {
-      title: "10. Governing Law and Dispute Resolution",
-      content: (
-        <div>
-          <ul className="grid gap-3">
-            <li>
-              <strong>▪️ Governing Law:</strong> These Terms and Conditions are governed by and construed in accordance
-              with the laws of India.
-            </li>
-            <li className="px-2">
-              <strong>▪️ Dispute Resolution:</strong> Any disputes arising out of or related to these Terms shall be
-              resolved through arbitration in Mumbai, India, in accordance with the Arbitration and Conciliation Act,
-              1996.
-            </li>
-          </ul>
-        </div>
-      ),
-    },
-    {
-      title: "11. Contact Information",
+      title: "8. Contact Us",
       content: (
         <div>
           <ul className="">
-            <p className="mb-3">
-              Our team is here to assist you with any installation-related questions or issues. For assistance, please
-              contact:
-            </p>
+            <p className="mb-3">If you have any questions or concerns about these Terms, please contact us at:</p>
             <li>
-              <strong>Email:</strong> warranty@smarthavensystems.com
+              <strong>Email:</strong> customercare@smarthavensystems.com
             </li>
-            <li className="my-3">
+            {/* <li className="my-3">
               <strong>Phone:</strong> 022-6971-8365
-            </li>
+            </li> */}
             <li>
-              <strong>Address:</strong> Seawoods, Navi Mumbai 400706, India
+              <strong>Address:</strong> <br />
+              SmartHaven Systems Private Limited <br />
+              Sahara CHS, Shop no. 4, Seawoods <br />
+              Sector 40, Opp. Konkan rail Vihar <br />
+              NAVI MUMBAI 400706
             </li>
           </ul>
         </div>
@@ -266,7 +166,7 @@ export default function Web() {
                 Resources & Policies
               </p>
               <p className=" font-regular my-3  text-center text-lg text-white  max-sm:my-3 md:text-xl md:leading-10 xl:text-3xl">
-                Terms and Conditions
+                Terms of Service
               </p>
 
               <div className="mt-4 flex w-full items-center justify-center gap-5 max-sm:gap-2 ">
