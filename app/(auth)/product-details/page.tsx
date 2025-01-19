@@ -21,7 +21,7 @@ export default function Web() {
     <section className="bg-black">
       <NewNav />
       <section id="specifications" className="paddings w-full   bg-[#151515] max-xl:px-3 xl:pt-32 ">
-        <div className="  w-full justify-between    pb-10 xl:pt-32">
+        <div className="  w-full justify-between    pb-10 ">
           <div className="flex w-full justify-between gap-10  sm:flex">
             <div>
               <p className=" my-3 text-center  text-lg font-semibold text-white  max-sm:my-3 md:text-xl md:leading-10 xl:text-3xl">

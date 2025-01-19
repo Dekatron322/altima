@@ -60,13 +60,10 @@ export default function Web() {
     setSelectedDoorSpec(option)
   }
 
-  const toggleShipping = () => setIsDefaultShipping(!isDefaultShipping)
+  const toggleShipping = () => {
+    setIsDefaultShipping(!isDefaultShipping)
 
-  const grossPrice = quantity * (unitPrices[selectedRadio] ?? 0)
-  const toggleBillingTwo = () => {
-    setIsDefaultBillingTwo(!isDefaultBillingTwo)
-
-    if (!isDefaultBillingTwo) {
+    if (!isDefaultShipping) {
       setFormData((prev) => ({
         ...prev,
         shipping_address_street: prev.billing_address_street,
@@ -83,6 +80,31 @@ export default function Web() {
         shipping_address_state: "",
         shipping_address_postal_code: "",
         shipping_address_country: "",
+      }))
+    }
+  }
+
+  const grossPrice = quantity * (unitPrices[selectedRadio] ?? 0)
+  const toggleBillingTwo = () => {
+    setIsDefaultBillingTwo(!isDefaultBillingTwo)
+
+    if (!isDefaultBillingTwo) {
+      setFormData((prev) => ({
+        ...prev,
+        billing_address_street: prev.shipping_address_street,
+        billing_address_city: prev.shipping_address_city,
+        billing_address_state: prev.shipping_address_state,
+        billing_address_postal_code: prev.shipping_address_postal_code,
+        billing_address_country: prev.shipping_address_country,
+      }))
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        billing_address_street: "",
+        billing_address_city: "",
+        billing_address_state: "",
+        billing_address_postal_code: "",
+        billing_address_country: "",
       }))
     }
   }
@@ -349,7 +371,7 @@ export default function Web() {
     door_spec_manual_size: false,
     door_spec_manual_size_width: "",
     door_spec_manual_size_height: "",
-    door_spec_manual_size_unit: "",
+    // door_spec_manual_size_unit: "",
     door_spec_frame_type: "",
     door_spec_material_type: "",
 
@@ -403,7 +425,7 @@ export default function Web() {
     Glass: ["Frosted", "Tinted", "Transparent"],
     Metal: ["Brushed", "Polished", "Matte"],
   }
-  const handlePlacementOptions = ["Left", "Right", "Center"]
+  const handlePlacementOptions = ["Right-Hinged", "Left-Hinged"]
 
   const handleFrameTypeSelect = (option: string) => {
     setFormData((prev) => ({
@@ -709,12 +731,34 @@ export default function Web() {
           <div className="ms:p-10 flex w-full flex-col  items-center justify-center  rounded-3xl max-sm:rounded-lg  max-sm:p-2">
             <p className="text-center text-xl text-[#FFFFFF]">Pre-Order form</p>
             <p className="py-5 text-center text-xs text-[#FFFFFF80]">
-              ✓Estimated delivery date: 4-5 months after the pre-order window closes
+              ✓Estimated delivery date: 4-5 months after the preorder window closes
             </p>
             <p className="pb-5 text-center text-xs text-[#FFFFFF80] 2xl:w-[580px]">
-              ✓A note: Pre-orders require a 30% deposit at the time of booking. The remaining balance is due before
-              shipment, with a final payment notice sent prior to delivery. Deposits are non-refundable but can be
-              adjusted against the final payment.
+              ✓A note: Preorders require a 30% deposit at the time of booking. The remaining balance is due before
+              shipment, with a final payment notice sent prior to delivery. Adjustments apply only in case of changes to
+              the final invoice due to shipping or product modifications.
+            </p>
+
+            <p className="pb-5 text-[#FFFFFF80]">
+              Altima is built to outperform!{" "}
+              <a
+                href="/comparison"
+                className="font-bold text-white underline transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
+              >
+                Compare Now
+              </a>{" "}
+              and see why it's the future of smart doors.
+            </p>
+
+            <p className="pb-5 text-[#FFFFFF80]">
+              Experience Altima Core and Elite in action—
+              <a
+                href="/product-details"
+                className="font-bold text-white underline transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
+              >
+                {" "}
+                see their features come to life!
+              </a>
             </p>
 
             <div className="flex h-full w-full flex-col  rounded-lg border border-[#FFFFFF0D]    max-sm:grid max-sm:gap-5  md:gap-5">
@@ -801,6 +845,97 @@ export default function Web() {
                   </div>
 
                   <p className="py-2 text-lg font-medium text-white">
+                    Shipping Address<span className="text-[#FF3B30]">*</span>
+                  </p>
+                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                    <div className="flex h-[46px] items-center">
+                      <input
+                        type="text"
+                        name="shipping_address_street"
+                        value={formData.shipping_address_street}
+                        onChange={handleChange}
+                        placeholder="Street/Apartment/Office Name"
+                        className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
+                        style={{ width: "100%", height: "24px" }}
+                      />
+                    </div>
+                  </div>
+                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                    <div className="flex h-[46px] items-center">
+                      <input
+                        type="text"
+                        name="shipping_address_city"
+                        value={formData.shipping_address_city}
+                        onChange={handleChange}
+                        placeholder="City"
+                        className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
+                        style={{ width: "100%", height: "24px" }}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                    <div className="flex h-[46px] items-center">
+                      <input
+                        type="text"
+                        name="shipping_address_state"
+                        value={formData.shipping_address_state}
+                        onChange={handleChange}
+                        placeholder="State/Province:"
+                        className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
+                        style={{ width: "100%", height: "24px" }}
+                      />
+                    </div>
+                  </div>
+                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                    <div className="flex h-[46px] items-center">
+                      <input
+                        type="text"
+                        name="shipping_address_postal_code"
+                        value={formData.shipping_address_postal_code}
+                        onChange={handleChange}
+                        placeholder="Postal/ZIP Code:"
+                        className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
+                        style={{ width: "100%", height: "24px" }}
+                      />
+                    </div>
+                  </div>
+                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                    <div className="flex h-[46px] items-center">
+                      <input
+                        type="text"
+                        name="shipping_address_country"
+                        value={formData.shipping_address_country}
+                        onChange={handleChange}
+                        placeholder="Country"
+                        className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
+                        style={{ width: "100%", height: "24px" }}
+                      />
+                    </div>
+                  </div>
+                  <p className="text-sm text-[#878787]">
+                    Final shipping charges for domestic delivery will be calculated at dispatch and added to the invoice
+                    based on your delivery address. Packaging and handling fees are not charged. By preordering, you
+                    agree to pay the shipping charges with the remaining balance.
+                  </p>
+
+                  <div className=" flex w-full items-center gap-2 " onClick={toggleBillingTwo}>
+                    <motion.img
+                      src={isDefaultBillingTwo ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
+                      width={18}
+                      height={18}
+                      alt=""
+                      initial={{ scale: 1.2, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 1, ease: "easeIn" }}
+                    />
+
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">
+                      Billing Address is the same as the Shipping Address
+                    </p>
+                  </div>
+
+                  <p className="py-2 text-lg font-medium text-white">
                     Billing Address<span className="text-[#FF3B30]">*</span>
                   </p>
                   <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
@@ -870,9 +1005,9 @@ export default function Web() {
                       />
                     </div>
                   </div>
-                  <div className=" flex w-full items-center gap-2 " onClick={toggleBillingTwo}>
+                  <div className=" flex w-full items-center gap-2 " onClick={toggleShipping}>
                     <motion.img
-                      src={isDefaultBillingTwo ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
+                      src={isDefaultShipping ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
                       width={18}
                       height={18}
                       alt=""
@@ -880,10 +1015,11 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Billing Address Same as Shipping Address</p>
+
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Set as default Billing Address</p>
                   </div>
 
-                  <div className=" flex w-full items-center gap-2 " onClick={toggleShipping}>
+                  {/* <div className=" flex w-full items-center gap-2 " onClick={toggleShipping}>
                     <motion.img
                       src={isDefaultShipping ? "/CheckSquareEmpty.png" : "/CheckSquare.png"}
                       width={18}
@@ -894,77 +1030,7 @@ export default function Web() {
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
                     <p className="text-sm text-[#FFFFFF99] max-sm:text-xs">Set as default Billing Address</p>
-                  </div>
-
-                  <p className="py-2 text-lg font-medium text-white">
-                    Shipping Address<span className="text-[#FF3B30]">*</span>
-                  </p>
-                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
-                    <div className="flex h-[46px] items-center">
-                      <input
-                        type="text"
-                        name="shipping_address_street"
-                        value={formData.shipping_address_street}
-                        onChange={handleChange}
-                        placeholder="Street/Apartment/Office Name"
-                        className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
-                        style={{ width: "100%", height: "24px" }}
-                      />
-                    </div>
-                  </div>
-                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
-                    <div className="flex h-[46px] items-center">
-                      <input
-                        type="text"
-                        name="shipping_address_city"
-                        value={formData.shipping_address_city}
-                        onChange={handleChange}
-                        placeholder="City"
-                        className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
-                        style={{ width: "100%", height: "24px" }}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
-                    <div className="flex h-[46px] items-center">
-                      <input
-                        type="text"
-                        name="shipping_address_state"
-                        value={formData.shipping_address_state}
-                        onChange={handleChange}
-                        placeholder="State/Province:"
-                        className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
-                        style={{ width: "100%", height: "24px" }}
-                      />
-                    </div>
-                  </div>
-                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
-                    <div className="flex h-[46px] items-center">
-                      <input
-                        type="text"
-                        name="shipping_address_postal_code"
-                        value={formData.shipping_address_postal_code}
-                        onChange={handleChange}
-                        placeholder="Postal/ZIP Code:"
-                        className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
-                        style={{ width: "100%", height: "24px" }}
-                      />
-                    </div>
-                  </div>
-                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
-                    <div className="flex h-[46px] items-center">
-                      <input
-                        type="text"
-                        name="shipping_address_country"
-                        value={formData.shipping_address_country}
-                        onChange={handleChange}
-                        placeholder="Country"
-                        className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
-                        style={{ width: "100%", height: "24px" }}
-                      />
-                    </div>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="my-5 border-b border-[#FFFFFF0D]"></div>
                 <div className="grid gap-5 px-5">
@@ -1156,7 +1222,7 @@ export default function Web() {
 
                 <div className="px-5">
                   <p className="pb-5 text-lg font-medium text-white">
-                    Door Specifications<span className="text-[#FF3B30]">*</span>
+                    Customize Your Door<span className="text-[#FF3B30]">*</span>
                   </p>
 
                   {/* Altima Core Radio */}
@@ -1170,11 +1236,11 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Standard Size</p>
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Size(s) in inches</p>
                   </div>
 
                   <Dropdown
-                    label="Size"
+                    label=""
                     options={standardSizeOptions}
                     value={formData.door_spec_default_size || ""}
                     onSelect={handleStandardSizeSelect}
@@ -1206,7 +1272,7 @@ export default function Web() {
                     <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Custom Size</p>
                   </div>
 
-                  <div className="mb-4 grid gap-3 lg:grid-cols-3">
+                  <div className="mb-4 grid gap-3 lg:grid-cols-2">
                     <div className="mt-3">
                       <label className=" text-sm text-white">Width in Inches</label>
                       <div
@@ -1253,7 +1319,7 @@ export default function Web() {
                         </div>
                       </div>
                     </div>{" "}
-                    <Dropdown
+                    {/* <Dropdown
                       label="Unit"
                       options={unitOptions}
                       value={formData.door_spec_manual_size_unit || ""}
@@ -1261,7 +1327,7 @@ export default function Web() {
                       isOpen={openDropdown === "unit"}
                       toggleDropdown={() => toggleDropdown("unit")}
                       disabled={selectedDoorSpec === "Standard Size"}
-                    />
+                    /> */}
                   </div>
 
                   <Dropdown
@@ -1297,7 +1363,7 @@ export default function Web() {
                   </div>
                   <div className="mt-3">
                     <Dropdown
-                      label="Handle Placement"
+                      label="Door Hinge Orientation"
                       options={handlePlacementOptions}
                       value={formData.handle_placement || ""}
                       onSelect={handlePlacementSelect}
@@ -1309,9 +1375,7 @@ export default function Web() {
 
                 <div className="my-5 border-b border-[#FFFFFF0D]"></div>
                 <div className="grid gap-5 px-5">
-                  <p className="ext-lg font-medium text-white">
-                    Core Security<span className="text-[#FF3B30]">*</span>
-                  </p>
+                  <p className="ext-lg font-medium text-white">Security</p>
 
                   <div
                     className={`} flex w-full cursor-not-allowed items-center
@@ -1326,7 +1390,7 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Re enforced lock</p>
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Reinforced Lock (Included in Base Price)</p>
                   </div>
 
                   <div
@@ -1342,7 +1406,7 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Anti Theft</p>
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Anti-Theft System (Included in Base Price)</p>
                   </div>
 
                   <div
@@ -1358,7 +1422,7 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs ">Motion sensor</p>
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs ">Motion Sensor (Included in Base Price)</p>
                   </div>
                 </div>
 
@@ -1611,7 +1675,7 @@ export default function Web() {
                 <div className="mt-5 border-b border-[#FFFFFF0D]"></div>
                 <div className="p-5">
                   <Dropdown
-                    label="Connectivity"
+                    label="Your Network Type"
                     options={connectivityOptions}
                     value={formData.connectivity || ""}
                     onSelect={handleConnectivitySelect}
@@ -1622,7 +1686,7 @@ export default function Web() {
                 <div className="border-b border-[#FFFFFF0D]"></div>
                 <div className="p-5">
                   <Dropdown
-                    label="Power Source"
+                    label="Your Power Source"
                     options={powerOptions}
                     value={formData.power_source || ""}
                     onSelect={handlePowerSelect}
@@ -1633,7 +1697,7 @@ export default function Web() {
                 <div className="border-b border-[#FFFFFF0D]"></div>
                 <div className="p-5">
                   <Dropdown
-                    label="Type of Installation"
+                    label="Your Installation Environment *"
                     options={installationOptions}
                     value={formData.type_installation || ""}
                     onSelect={handleInstallationSelect}
@@ -1644,7 +1708,7 @@ export default function Web() {
                 <div className="border-b border-[#FFFFFF0D]"></div>
 
                 <div className="p-5">
-                  <label className="text-sm text-white">Preferred Installation Date</label>
+                  <label className="text-sm text-white">Your Preferred Installation Date</label>
 
                   <input
                     type="date"
@@ -1658,7 +1722,7 @@ export default function Web() {
 
                 <div className="border-b border-[#FFFFFF0D]"></div>
                 <div className="p-5">
-                  <label className=" text-sm text-white">Special Installation Instructions</label>
+                  <label className=" text-sm text-white">Your Special Installation Instructions </label>
                   <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
                     <div className="flex h-[46px] items-center">
                       <input
@@ -1694,13 +1758,21 @@ export default function Web() {
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
                     <p className="text-sm text-[#FFFFFF] max-sm:text-xs">
-                      Yes, I want extended warranty for an additional fee
+                      Yes, I want an extended warranty for an additional fee.
                     </p>
                   </div>
                 </div>
                 <div className="my-5 border-b border-[#FFFFFF0D]"></div>
                 <div className="grid gap-5 px-5">
                   <p className="text-lg font-medium text-white">Installation Support:</p>
+                  <p className="text-sm text-white">
+                    On-site installation: Free within 100 km.
+                    <br />
+                    Additional fees apply: 5% (100+ to 400 km), <br />
+                    10% (400+ to 800 km), 
+                    <br />
+                    20% (800+ km).
+                  </p>
 
                   <div
                     className="flex w-full cursor-pointer items-center gap-2"
@@ -1717,9 +1789,7 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">
-                      I would like on-site support for installation
-                    </p>
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Yes, I agree.</p>
                   </div>
                 </div>
                 <div className="my-5 border-b border-[#FFFFFF0D]"></div>
@@ -1742,7 +1812,7 @@ export default function Web() {
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
                     <p className="text-sm text-[#FFFFFF] max-sm:text-xs">
-                      Pre-order Deposit:* (30% of product price to be collected upfront)
+                      I agree to the Pre-order Deposit, requiring 30% of the product price as an upfront payment.
                     </p>
                   </div>
                 </div>
