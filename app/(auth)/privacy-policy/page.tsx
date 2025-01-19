@@ -210,9 +210,9 @@ export default function Web() {
               </div>
 
               <p className="font-regular mb-6 w-full text-ellipsis text-sm text-[#FFFFFF99] max-sm:leading-7 md:text-center xl:px-64">
-                SmartHaven Systems Private Limited ("we," "our," or "us") is committed to protecting your privacy. This
-                Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our
-                website,{" "}
+                SmartHaven Systems Private Limited (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to
+                protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your
+                information when you visit our website,{" "}
                 <a
                   href="https://www.smarthsvensystems.com"
                   className="transistion-all duration-300 ease-in-out hover:text-[#FF3B30]"

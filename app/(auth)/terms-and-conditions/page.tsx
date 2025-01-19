@@ -312,9 +312,10 @@ export default function Web() {
               </div>
 
               <p className="font-regular mb-6 w-full text-ellipsis text-sm text-[#FFFFFF99] max-sm:leading-7 md:text-center xl:px-64">
-                Welcome to the Altima Pre-order Website, operated by Smart Haven Systems Private Limited. By accessing
-                or using this website, you agree to be bound by these Terms and Conditions. Please read them carefully
-                before placing a pre-order or making any transactions on our website.
+                Welcome to SmartHaven Systems Private Limited (&quot;Company,&quot; &quot;we,&quot; &quot;our,&quot; or
+                &quot;us&quot;). These Terms of Service (&quot;Terms&quot;) govern your use of our website, services,
+                and participation in our preorder process for Altima products. By accessing or using our website, you
+                agree to comply with these Terms. If you do not agree, please refrain from using our services.
               </p>
             </div>
           </div>
