@@ -759,7 +759,7 @@ export default function Web() {
               >
                 Compare Now
               </a>{" "}
-              and see why it's the future of smart doors.
+              and see why it&apos;s the future of smart doors.
             </p>
 
             <p className="pb-5 text-[#FFFFFF80]">
@@ -1959,7 +1959,7 @@ export default function Web() {
                   </div>
                   <div>
                     <p className="text-center text-sm text-white opacity-80">
-                      Want to confirm you're making the right choice?{" "}
+                      Want to confirm you&apos;re making the right choice?{" "}
                       <a
                         href="/comparison"
                         className="font-bold text-white underline opacity-100 transition-all   duration-300 ease-in-out hover:text-[#FF3B30]"
