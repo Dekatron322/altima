@@ -10,54 +10,98 @@ const MainFooter = () => {
           <div className="grid grid-cols-4 justify-center gap-5 max-xl:grid-cols-2  max-sm:grid-cols-1">
             <div className="flex flex-col gap-3 max-sm:mb-7">
               <p className="text-[#FFFFFF]">Contact Us</p>
-              <Link href="mailto:mail@altimaaccess.com" className="text-sm text-[#FFFFFF99]">
+              <Link
+                href="mailto:mail@altimaaccess.com"
+                className="text-sm text-[#FFFFFF99] transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
+              >
                 Email: mail@altimaaccess.com
               </Link>
-              <Link href="tel:02269718365" className="text-sm text-[#FFFFFF99]">
+              <Link
+                href="tel:02269718365"
+                className="text-sm text-[#FFFFFF99] transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
+              >
                 Phone: 02269718365
               </Link>
               <p className="text-sm text-[#FFFFFF99]">Address: Seawoods, Navi Mumbai 400706, India</p>
             </div>
             <div className="flex flex-col gap-3 max-sm:mb-7">
               <p className="text-[#FFFFFF]">Altima</p>
-              <p className="text-sm text-[#FFFFFF99] underline">Home</p>
-              <Link href="product-details" className="text-sm text-[#FFFFFF99] underline">
+              <p className="text-sm text-[#FFFFFF99] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30]">
+                Home
+              </p>
+              <Link
+                href="product-details"
+                className="text-sm text-[#FFFFFF99] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
+              >
                 Product Details
               </Link>
-              <Link href="how-preorder-works" className="text-sm text-[#FFFFFF99] underline">
+              <Link
+                href="how-preorder-works"
+                className="text-sm text-[#FFFFFF99] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
+              >
                 How Pre-orders Work
               </Link>
-              <Link href="faqs" className="text-sm text-[#FFFFFF99] underline">
+              <Link
+                href="faqs"
+                className="text-sm text-[#FFFFFF99] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
+              >
                 FAQs
               </Link>
-              <Link href="contact-us" className="text-sm text-[#FFFFFF99] underline">
+              <Link
+                href="contact-us"
+                className="text-sm text-[#FFFFFF99] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
+              >
                 Contact Us
               </Link>
             </div>
             <div className="flex flex-col gap-3 max-sm:mb-7">
               <p className="text-[#FFFFFF]">Resources and Policies</p>
-              <Link href="/about-us" className="text-sm text-[#FFFFFF99] underline">
+              <Link
+                href="/about-us"
+                className="text-sm text-[#FFFFFF99] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
+              >
                 About Us
               </Link>
-              <Link href="/comparison" className="text-sm text-[#FFFFFF99] underline">
+              <Link
+                href="/comparison"
+                className="text-sm text-[#FFFFFF99] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
+              >
                 Altima Comparisons
               </Link>
-              <Link href="/warranty-policy" className="text-sm text-[#FFFFFF99] underline">
+              <Link
+                href="/warranty-policy"
+                className="text-sm text-[#FFFFFF99] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
+              >
                 Altima Warranty Policy
               </Link>
-              <Link href="/installation-policy" className="text-sm text-[#FFFFFF99] underline">
+              <Link
+                href="/installation-policy"
+                className="text-sm text-[#FFFFFF99] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
+              >
                 Altima Installation Policy
               </Link>
-              <Link href="/shipping-policy" className="text-sm text-[#FFFFFF99] underline">
+              <Link
+                href="/shipping-policy"
+                className="text-sm text-[#FFFFFF99] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
+              >
                 Altima Shipping Policy
               </Link>
-              <Link href="/privacy-policy" className="text-sm text-[#FFFFFF99] underline">
+              <Link
+                href="/privacy-policy"
+                className="text-sm text-[#FFFFFF99] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
+              >
                 Privacy Policy
               </Link>
-              <Link href="/terms-and-conditions" className="text-sm text-[#FFFFFF99] underline">
+              <Link
+                href="/terms-and-conditions"
+                className="text-sm text-[#FFFFFF99] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
+              >
                 Terms and Conditions
               </Link>
-              <Link href="/refund-and-cancellation" className="text-sm text-[#FFFFFF99] underline">
+              <Link
+                href="/refund-and-cancellation"
+                className="text-sm text-[#FFFFFF99] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
+              >
                 Refund and Cancellation Policy
               </Link>
             </div>

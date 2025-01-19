@@ -72,7 +72,9 @@ const Navbar = () => {
             <a
               href="#about"
               className={
-                activeLink === "about" ? "font-regular border-b-3 border-[#FF3B30]  text-white" : "  text-white"
+                activeLink === "about"
+                  ? "font-regular border-b-3 border-[#FF3B30]  text-white"
+                  : "  text-white transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
               }
             >
               Home
@@ -80,7 +82,9 @@ const Navbar = () => {
             <a
               href="#how-to-buy"
               className={
-                activeLink === "how-to-buy" ? "font-regular border-b-3 border-[#FF3B30]  text-white" : "  text-white"
+                activeLink === "how-to-buy"
+                  ? "font-regular border-b-3 border-[#FF3B30]  text-white"
+                  : "  text-white transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
               }
             >
               Product Info
@@ -90,7 +94,7 @@ const Navbar = () => {
               className={
                 activeLink === "specifications"
                   ? "font-regular border-b-3 border-[#FF3B30]  text-white"
-                  : "  text-white"
+                  : "text-white transition-all duration-300 ease-in-out  hover:text-[#FF3B30]"
               }
             >
               Specifications
@@ -101,7 +105,7 @@ const Navbar = () => {
               className={
                 activeLink === "other-products"
                   ? "font-regular border-b-3 border-[#FF3B30]  text-white"
-                  : "  text-white"
+                  : "text-white transition-all duration-300 ease-in-out  hover:text-[#FF3B30]"
               }
             >
               Other Products
@@ -109,7 +113,9 @@ const Navbar = () => {
             <a
               href="#contact"
               className={
-                activeLink === "contact" ? "font-regular border-b-3 border-[#FF3B30]  text-white" : "  text-white"
+                activeLink === "contact"
+                  ? "font-regular border-b-3 border-[#FF3B30]  text-white"
+                  : "text-white transition-all duration-300 ease-in-out  hover:text-[#FF3B30]"
               }
             >
               Contact
@@ -117,7 +123,9 @@ const Navbar = () => {
           </ul>
           <a
             onClick={handleAccountClick}
-            className={" cursor-pointer rounded-lg bg-[#FFFFFF1A] p-2 uppercase text-white"}
+            className={
+              "cursor-pointer rounded-lg bg-[#FFFFFF1A] p-2 uppercase text-white transition-all duration-300 ease-in-out hover:bg-[#FF3B30]"
+            }
           >
             My Account
           </a>
