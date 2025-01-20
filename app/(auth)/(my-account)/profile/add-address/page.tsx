@@ -80,7 +80,7 @@ export default function Web() {
 
             <div className="flex h-full w-full flex-col  rounded-lg    ">
               <div className="grid w-full grid-cols-2 justify-between max-md:grid-cols-1 md:gap-5">
-                <div className="search-bg  h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                <div className="search-bg  h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                   <div className="flex">
                     <input
                       type="text"
@@ -91,7 +91,7 @@ export default function Web() {
                     />
                   </div>
                 </div>
-                <div className="search-bg mb-2 h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                <div className="search-bg mb-2 h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                   <div className="flex">
                     <input
                       type="text"
@@ -103,7 +103,7 @@ export default function Web() {
                   </div>
                 </div>
               </div>
-              <div className="search-bg mb-2 h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+              <div className="search-bg mb-2 h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                 <div className="flex">
                   <input
                     type="text"
@@ -114,7 +114,7 @@ export default function Web() {
                   />
                 </div>
               </div>
-              <div className="search-bg mb-2 h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+              <div className="search-bg mb-2 h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                 <div className="flex">
                   <input
                     type="text"
@@ -126,7 +126,7 @@ export default function Web() {
                 </div>
               </div>
               <div className="grid w-full grid-cols-2 justify-between max-md:grid-cols-1 md:gap-5">
-                <div className="search-bg mb-2 h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                <div className="search-bg mb-2 h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                   <div className="flex">
                     <input
                       type="text"
@@ -137,7 +137,7 @@ export default function Web() {
                     />
                   </div>
                 </div>
-                <div className="search-bg mb-2 h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                <div className="search-bg mb-2 h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                   <div className="flex">
                     <input
                       type="text"
@@ -167,7 +167,7 @@ export default function Web() {
 
             <div className="flex h-full w-full flex-col  rounded-lg    ">
               <div className="grid w-full grid-cols-2 justify-between max-md:grid-cols-1 md:gap-5">
-                <div className="search-bg mb-2 h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                <div className="search-bg mb-2 h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                   <div className="flex">
                     <input
                       type="text"
@@ -178,7 +178,7 @@ export default function Web() {
                     />
                   </div>
                 </div>
-                <div className="search-bg mb-2 h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                <div className="search-bg mb-2 h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                   <div className="flex">
                     <input
                       type="text"
@@ -190,7 +190,7 @@ export default function Web() {
                   </div>
                 </div>
               </div>
-              <div className="search-bg mb-2 h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+              <div className="search-bg mb-2 h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                 <div className="flex">
                   <input
                     type="text"
@@ -201,7 +201,7 @@ export default function Web() {
                   />
                 </div>
               </div>
-              <div className="search-bg mb-2 h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+              <div className="search-bg mb-2 h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                 <div className="flex">
                   <input
                     type="text"
@@ -213,7 +213,7 @@ export default function Web() {
                 </div>
               </div>
               <div className="grid w-full grid-cols-2 justify-between max-md:grid-cols-1 md:gap-5">
-                <div className="search-bg mb-2 h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                <div className="search-bg mb-2 h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                   <div className="flex">
                     <input
                       type="text"
@@ -224,7 +224,7 @@ export default function Web() {
                     />
                   </div>
                 </div>
-                <div className="search-bg mb-2 h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                <div className="search-bg mb-2 h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                   <div className="flex">
                     <input
                       type="text"

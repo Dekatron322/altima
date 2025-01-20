@@ -191,7 +191,7 @@ export default function Web() {
               <h2 className=" w-full text-center text-[#FFFFFF99]">Enter Amount</h2>
               <LiaTimesSolid onClick={closeModal} className="cursor-pointer" />
             </div>
-            <div className="search-bg  h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+            <div className="search-bg  h-[54.37px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 py-4 hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
               <div className="flex">
                 <input
                   type="text"

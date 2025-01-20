@@ -814,7 +814,7 @@ export default function Web() {
                     User Information <span className="text-[#FF3B30]">*</span>
                   </p>
 
-                  <div className=" w-full   justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className=" w-full   justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -828,7 +828,7 @@ export default function Web() {
                     </div>
                   </div>
 
-                  <div className=" w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className=" w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="tel"
@@ -842,7 +842,7 @@ export default function Web() {
                     </div>
                   </div>
 
-                  <div className=" w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className=" w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="email"
@@ -859,7 +859,7 @@ export default function Web() {
                   <p className="py-2 text-lg font-medium text-white">
                     Shipping Address<span className="text-[#FF3B30]">*</span>
                   </p>
-                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -872,7 +872,7 @@ export default function Web() {
                       />
                     </div>
                   </div>
-                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -886,7 +886,7 @@ export default function Web() {
                     </div>
                   </div>
 
-                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -899,7 +899,7 @@ export default function Web() {
                       />
                     </div>
                   </div>
-                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -912,7 +912,7 @@ export default function Web() {
                       />
                     </div>
                   </div>
-                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -950,7 +950,7 @@ export default function Web() {
                   <p className="py-2 text-lg font-medium text-white">
                     Billing Address<span className="text-[#FF3B30]">*</span>
                   </p>
-                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -964,7 +964,7 @@ export default function Web() {
                     </div>
                   </div>
 
-                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -978,7 +978,7 @@ export default function Web() {
                     </div>
                   </div>
 
-                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -991,7 +991,7 @@ export default function Web() {
                       />
                     </div>
                   </div>
-                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -1004,7 +1004,7 @@ export default function Web() {
                       />
                     </div>
                   </div>
-                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -1291,7 +1291,7 @@ export default function Web() {
                         className={`h-[46px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 max-sm:mb-2 ${
                           selectedDoorSpec === "Standard Size"
                             ? "cursor-not-allowed bg-[#282828] opacity-45" // Background color for disabled state
-                            : "bg-[#282828] hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC]"
+                            : "bg-[#282828] hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC]"
                         }`}
                       >
                         <div className="flex h-[46px] items-center">
@@ -1314,7 +1314,7 @@ export default function Web() {
                         className={`h-[46px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 max-sm:mb-2 ${
                           selectedDoorSpec === "Standard Size"
                             ? "cursor-not-allowed bg-[#282828] opacity-45" // Background color for disabled state
-                            : "bg-[#282828] hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC]"
+                            : "bg-[#282828] hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC]"
                         }`}
                       >
                         <div className="flex h-[46px] items-center">
@@ -1735,7 +1735,7 @@ export default function Web() {
                 <div className="border-b border-[#FFFFFF0D]"></div>
                 <div className="p-5">
                   <label className=" text-sm text-white">Your Special Installation Instructions </label>
-                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -1982,6 +1982,17 @@ export default function Web() {
                   </button>
                 </div>
               </form>
+              <div className="border-b border-[#FFFFFF0D]"></div>
+              <div className="flex w-full items-center justify-center gap-2">
+                <img src="/mingcute_alert-fill.png" />
+                <p className="text-sm text-white opacity-80">
+                  Disclaimer: Final shipping charges will be included in your invoice at dispatch, based on your
+                  location.
+                </p>
+              </div>
+              <p className="mb-5 text-center text-sm text-white opacity-80">
+                Shipping Policy • Installation Policy • Warranty Policy • Refund Policy
+              </p>
             </div>
           </div>
         </div>

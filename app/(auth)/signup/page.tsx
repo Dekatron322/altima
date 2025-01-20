@@ -73,7 +73,7 @@ const Page: React.FC = () => {
                 {Object.keys(formData).map((field) => (
                   <div
                     key={field}
-                    className="search-bg mb-2 h-[54.37px]  items-center justify-between rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3 py-4 hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-xl:mb-3 max-xl:w-[430px] max-sm:w-[320px] xl:w-[536px]"
+                    className="search-bg mb-2 h-[54.37px]  items-center justify-between rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3 py-4 hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-xl:mb-3 max-xl:w-[430px] max-sm:w-[320px] xl:w-[536px]"
                   >
                     <div className="flex">
                       <input

@@ -208,7 +208,7 @@ export default function Web() {
               <form onSubmit={handleSubmit}>
                 <div className="mt-4 flex h-full w-full  flex-col   rounded-lg xl:px-10 ">
                   <div className="flex w-full  flex-col justify-between  md:gap-5">
-                    <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                    <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                       <div className="flex h-[46px] items-center">
                         <input
                           type="text"
@@ -221,7 +221,7 @@ export default function Web() {
                         />
                       </div>
                     </div>
-                    <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                    <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                       <div className="flex h-[46px] items-center">
                         <input
                           type="text"
@@ -234,7 +234,7 @@ export default function Web() {
                         />
                       </div>
                     </div>
-                    <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                    <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                       <div className="flex h-[46px] items-center">
                         <input
                           type="email"
@@ -252,7 +252,7 @@ export default function Web() {
                     Billing Address <span className="text-[#FF3B30]">*</span>
                   </p>
                   <div className="flex w-full  flex-col justify-between  md:gap-5">
-                    <div className="h-[46px] w-full   items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                    <div className="h-[46px] w-full   items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                       <div className="flex h-[46px] items-center">
                         <input
                           type="text"
@@ -265,7 +265,7 @@ export default function Web() {
                         />
                       </div>
                     </div>
-                    <div className="h-[46px] w-full   items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                    <div className="h-[46px] w-full   items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                       <div className="flex h-[46px] items-center">
                         <input
                           type="text"
@@ -279,7 +279,7 @@ export default function Web() {
                       </div>
                     </div>
 
-                    <div className="h-[46px] w-full   items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                    <div className="h-[46px] w-full   items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                       <div className="flex h-[46px] items-center">
                         <input
                           type="text"
@@ -292,7 +292,7 @@ export default function Web() {
                         />
                       </div>
                     </div>
-                    <div className="h-[46px] w-full   items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                    <div className="h-[46px] w-full   items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                       <div className="flex h-[46px] items-center">
                         <input
                           type="text"
@@ -305,7 +305,7 @@ export default function Web() {
                         />
                       </div>
                     </div>
-                    <div className="h-[46px] w-full   items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                    <div className="h-[46px] w-full   items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                       <div className="flex h-[46px] items-center">
                         <input
                           type="text"
@@ -337,7 +337,7 @@ export default function Web() {
                   Shipping Address <span className="text-[#FF3B30]">*</span>
                 </p>
                 <div className="flex w-full  flex-col justify-between  md:gap-5 xl:px-10">
-                  <div className="h-[46px] w-full   items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className="h-[46px] w-full   items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -350,7 +350,7 @@ export default function Web() {
                       />
                     </div>
                   </div>
-                  <div className="h-[46px] w-full   items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className="h-[46px] w-full   items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -364,7 +364,7 @@ export default function Web() {
                     </div>
                   </div>
 
-                  <div className="h-[46px] w-full   items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className="h-[46px] w-full   items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -377,7 +377,7 @@ export default function Web() {
                       />
                     </div>
                   </div>
-                  <div className="h-[46px] w-full   items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className="h-[46px] w-full   items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -390,7 +390,7 @@ export default function Web() {
                       />
                     </div>
                   </div>
-                  <div className="h-[46px] w-full   items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#1B5EED4D] focus:border-[#1B5EED4D] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className="h-[46px] w-full   items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
