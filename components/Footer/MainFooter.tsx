@@ -131,9 +131,15 @@ const MainFooter = () => {
                 adjusted against the final payment.
               </p>
               <div className="flex gap-2">
-                <p className="text-sm text-[#FFFFFF99] underline">LinkedIn</p>
-                <p className="text-sm text-[#FFFFFF99] underline">Facebook</p>
-                <p className="text-sm text-[#FFFFFF99] underline">Instagram</p>
+                <p className="text-sm text-[#FFFFFF99] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30]">
+                  LinkedIn
+                </p>
+                <p className="text-sm text-[#FFFFFF99] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30]">
+                  Facebook
+                </p>
+                <p className="text-sm text-[#FFFFFF99] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30]">
+                  Instagram
+                </p>
               </div>
             </div>
           </div>

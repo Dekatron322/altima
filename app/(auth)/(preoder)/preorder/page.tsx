@@ -423,9 +423,9 @@ export default function Web() {
   const installationOptions = ["Residential", "Commercial", "Other"]
   const unitOptions = ["Centimeters", "Inches"]
   const materialToFinishMap: Record<string, string[]> = {
-    Wood: ["Mahogany", "Maple", "Teak", "Oak"],
-    Glass: ["Frosted", "Tinted", "Transparent"],
-    Metal: ["Brushed", "Polished", "Matte"],
+    Wood: ["Teak", "Rosewood", "Walnut"],
+    Glass: ["Frosted", "Tinted", "Etched"],
+    Metal: ["Wood Grain", "Brushed Steel", "Textured Sand"],
   }
   const handlePlacementOptions = ["Right-Hinged", "Left-Hinged"]
 
