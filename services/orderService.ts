@@ -59,6 +59,11 @@ export interface OrderPayload {
   email_address?: string
   deposit_amount?: string
   pub_date?: string
+  zigbee?: boolean
+  bluetooth?: boolean
+  wifi?: boolean
+  solar_ready?: boolean
+  mains_power?: boolean
 }
 
 export interface UserInformationPayload {

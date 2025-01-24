@@ -18,6 +18,11 @@ interface User {
 
 export default function Web() {
   const [isDefaultBillingTwo, setIsDefaultBillingTwo] = useState(false)
+  const [isZigbee, setIsZigbee] = useState(false)
+  const [isBluetooth, setIsBluetooth] = useState(false)
+  const [isWifi, setIsWifi] = useState(false)
+  const [isMainsPower, setIsMainsPower] = useState(false)
+  const [isSolarReady, setIsSolarReady] = useState(false)
   const [isEnforcedLock, setIsEnforcedLock] = useState(true)
   const [isSmartKeypadAccess, setIsSmartKeypadAccess] = useState(false)
   const [isSmartLightingIntegration, setIsSmartLightingIntegration] = useState(false)
@@ -177,15 +182,67 @@ export default function Web() {
     })
   }
 
-  const toggleEnforced = () => {
-    setIsEnforcedLock((prev) => {
+  const toggleZigbee = () => {
+    setIsZigbee((prev) => {
       const newValue = !prev
-      console.log("isEnforcedLock:", newValue)
+      console.log("Zigbee:", newValue)
       setFormData((prevFormData) => ({
         ...prevFormData,
-        re_enforced_lock: newValue,
+        zigbee: newValue,
       }))
-      console.log("formData.re_enforced_lock:", newValue)
+      console.log("formData.zigbee:", newValue)
+      return newValue
+    })
+  }
+
+  const toggleBluetooth = () => {
+    setIsBluetooth((prev) => {
+      const newValue = !prev
+      console.log("Bluetooth:", newValue)
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        bluetooth: newValue,
+      }))
+      console.log("formData.bluetooth:", newValue)
+      return newValue
+    })
+  }
+
+  const toggleWifi = () => {
+    setIsWifi((prev) => {
+      const newValue = !prev
+      console.log("Wifi:", newValue)
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        wifi: newValue,
+      }))
+      console.log("formData.wifi:", newValue)
+      return newValue
+    })
+  }
+
+  const toggleMainsPower = () => {
+    setIsMainsPower((prev) => {
+      const newValue = !prev
+      console.log("Mains Power:", newValue)
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        mains_power: newValue,
+      }))
+      console.log("formData.mains_power:", newValue)
+      return newValue
+    })
+  }
+
+  const toggleSolar = () => {
+    setIsSolarReady((prev) => {
+      const newValue = !prev
+      console.log("Solar Ready:", newValue)
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        solar_ready: newValue,
+      }))
+      console.log("formData.solar_reay:", newValue)
       return newValue
     })
   }
@@ -389,6 +446,11 @@ export default function Web() {
     smart_lighting_integration: false,
     home_automation_integration: false,
     advance_motion_detection: false,
+    zigbee: false,
+    bluetooth: false,
+    wifi: false,
+    solar_ready: false,
+    mains_power: false,
 
     alarm: false,
     motion_sensor: true,
@@ -1684,7 +1746,68 @@ export default function Web() {
                     <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Voice assistant integration</p>
                   </div>
                 </div>
-                <div className="mt-5 border-b border-[#FFFFFF0D]"></div>
+
+                <div className="my-5 border-b border-[#FFFFFF0D]"></div>
+                <div className="grid gap-5 px-5">
+                  <p className=" text-lg font-medium text-white">
+                    Your Network Type<span className="text-[#FF3B30]">*</span>
+                  </p>
+
+                  <div
+                    className="flex w-full cursor-pointer items-center  gap-2"
+                    onClick={() => {
+                      toggleZigbee() // Only call the function if not disabled
+                    }}
+                  >
+                    <motion.img
+                      src={isZigbee ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
+                      width={18}
+                      height={18}
+                      alt=""
+                      initial={{ scale: 1.2, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 1, ease: "easeIn" }}
+                    />
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Zigbee</p>
+                  </div>
+
+                  <div
+                    className="flex w-full cursor-pointer items-center  gap-2"
+                    onClick={() => {
+                      toggleBluetooth() // Only call the function if not disabled
+                    }}
+                  >
+                    <motion.img
+                      src={isBluetooth ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
+                      width={18}
+                      height={18}
+                      alt=""
+                      initial={{ scale: 1.2, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 1, ease: "easeIn" }}
+                    />
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Bluetooth</p>
+                  </div>
+
+                  <div
+                    className="flex w-full cursor-pointer items-center  gap-2"
+                    onClick={() => {
+                      toggleWifi() // Only call the function if not disabled
+                    }}
+                  >
+                    <motion.img
+                      src={isWifi ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
+                      width={18}
+                      height={18}
+                      alt=""
+                      initial={{ scale: 1.2, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 1, ease: "easeIn" }}
+                    />
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Wifi</p>
+                  </div>
+                </div>
+                {/* <div className="mt-5 border-b border-[#FFFFFF0D]"></div>
                 <div className="p-5">
                   <Dropdown
                     label="Your Network Type"
@@ -1694,8 +1817,68 @@ export default function Web() {
                     isOpen={openDropdown === "connectivity"}
                     toggleDropdown={() => toggleDropdown("connectivity")}
                   />
+                </div> */}
+                <div className="my-5 border-b border-[#FFFFFF0D]"></div>
+                <div className="grid gap-5 px-5">
+                  <p className=" text-lg font-medium text-white">
+                    Your Power Source<span className="text-[#FF3B30]">*</span>
+                  </p>
+
+                  <div
+                    className="flex w-full cursor-pointer items-center  gap-2"
+                    onClick={() => {
+                      toggleMainsPower() // Only call the function if not disabled
+                    }}
+                  >
+                    <motion.img
+                      src={isMainsPower ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
+                      width={18}
+                      height={18}
+                      alt=""
+                      initial={{ scale: 1.2, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 1, ease: "easeIn" }}
+                    />
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Mains Power</p>
+                  </div>
+
+                  <div
+                    className="flex w-full cursor-pointer items-center  gap-2"
+                    onClick={() => {
+                      toggleBatteryBackUp() // Only call the function if not disabled
+                    }}
+                  >
+                    <motion.img
+                      src={isBatteryBackUp ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
+                      width={18}
+                      height={18}
+                      alt=""
+                      initial={{ scale: 1.2, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 1, ease: "easeIn" }}
+                    />
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Battery Backup</p>
+                  </div>
+
+                  <div
+                    className="flex w-full cursor-pointer items-center  gap-2"
+                    onClick={() => {
+                      toggleSolar() // Only call the function if not disabled
+                    }}
+                  >
+                    <motion.img
+                      src={isSolarReady ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
+                      width={18}
+                      height={18}
+                      alt=""
+                      initial={{ scale: 1.2, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 1, ease: "easeIn" }}
+                    />
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Solar Ready</p>
+                  </div>
                 </div>
-                <div className="border-b border-[#FFFFFF0D]"></div>
+                {/* <div className="mt-5 border-b border-[#FFFFFF0D]"></div>
                 <div className="p-5">
                   <Dropdown
                     label="Your Power Source"
@@ -1705,8 +1888,8 @@ export default function Web() {
                     isOpen={openDropdown === "power"}
                     toggleDropdown={() => toggleDropdown("power")}
                   />
-                </div>
-                <div className="border-b border-[#FFFFFF0D]"></div>
+                </div> */}
+                <div className="mt-5 border-b border-[#FFFFFF0D]"></div>
                 <div className="p-5">
                   <Dropdown
                     label="Your Installation Environment *"
