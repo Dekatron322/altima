@@ -485,7 +485,7 @@ export default function Web() {
   const installationOptions = ["Residential", "Commercial", "Other"]
   const unitOptions = ["Centimeters", "Inches"]
   const materialToFinishMap: Record<string, string[]> = {
-    Wood: ["Teak", "Rosewood", "Walnut"],
+    Wood: ["Teak Veneer", "Rosewood Veneer", "Walnut Veneer"],
     Glass: ["Frosted", "Tinted", "Etched"],
     Metal: ["Wood Grain", "Brushed Steel", "Textured Sand"],
   }
