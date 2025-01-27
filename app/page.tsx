@@ -689,35 +689,38 @@ export default function Web() {
       <section id="other-products" className="paddings  w-full bg-[#282828] max-sm:px-3 ">
         <div className="w-full     py-10">
           <div className="flex flex-col items-center justify-center">
-            <p className="text-[#FFFFFF99] max-sm:text-sm">Pre-order Now – Limited Units Available.</p>
-            <p className="font-regular custom-text first-word-color my-6 flex text-center text-5xl text-[#FFFFFF] max-md:text-2xl max-sm:text-xl md:w-[642px]">
-              5,000 units available in the first pre-order batch.
+            <p className="text-[#FFFFFF99] max-sm:text-sm">Pre-order Now - Limited Units Available.</p>
+            <p className="font-regular custom-text first-word-color my-6 flex text-center text-3xl text-[#FFFFFF] max-md:text-2xl max-sm:text-xl md:w-[642px]">
+              5,000 units available in the first pre-order batch.
             </p>
 
             <div className=" w-full justify-between py-10 md:flex">
               <div className="flex items-start justify-center gap-3 border-[#FFFFFF99] max-sm:border-b max-sm:pb-3 md:border-r md:pr-6">
-                <Image src="/SealPercent.png" width={64} height={64} alt="" />
+                <Image src="/SealPercent.png" width={50} height={50} alt="" />
                 <div>
-                  <p className="text-[#FFFFFF] max-sm:text-sm">20% Discount on Next Model Upgrade:</p>
+                  <p className="text-[#FFFFFF] max-sm:text-sm">
+                    Additional Discounts on Second & Third Model Upgrades:
+                  </p>
                   <p className="text-[#FFFFFF99] max-sm:text-xs">
-                    Pre-order customers can enjoy a 20% discount when upgrading to the next model tier.
+                    Pre-order customers will enjoy a 10% discount when upgrading to the second model tier & a 5%
+                    discount on the third model tier upgrade respectively
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start justify-center gap-3 border-[#FFFFFF99] max-sm:border-b max-sm:py-3 md:border-r md:pl-6 md:pr-6">
-                <Image src="/Upload.png" width={64} height={64} alt="" />
+                <Image src="/Upload.png" width={50} height={50} alt="" />
                 <div>
-                  <p className="text-[#FFFFFF]  max-sm:text-sm">Free Software Upgrade:</p>
+                  <p className="text-[#FFFFFF]  max-sm:text-sm">Free Extended Warranty Upgrade:</p>
                   <p className="text-[#FFFFFF99] max-sm:text-xs">
-                    All pre-orders include lifetime free software upgrades, ensuring your device stays updated with the
-                    latest smart features.
+                    All pre-orders come with a lifetime free software upgrade, ensuring your device remains updated with
+                    the latest smart features.
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start justify-center gap-3 max-sm:pt-3 md:pl-6">
-                <Image src="/ShieldCheckered.png" width={64} height={64} alt="" />
+                <Image src="/ShieldCheckered.png" width={50} height={50} alt="" />
                 <div>
                   <p className="text-[#FFFFFF]  max-sm:text-sm">Free Extended Warranty Upgrade:</p>
                   <p className="text-[#FFFFFF99] max-sm:text-xs">
