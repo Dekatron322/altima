@@ -1172,59 +1172,69 @@ export default function Web() {
                   <p className="pb-5 text-lg font-medium text-white">
                     Product Selection<span className="text-[#FF3B30]">*</span>
                   </p>
-
-                  <div
-                    className="flex w-full items-center gap-2"
-                    onClick={() => {
-                      toggleRadio("Altima Core")
-                      setFormData((prevData) => {
-                        const updatedData = {
-                          ...prevData,
-                          product_selection_altima_core: true,
-                          product_selection_altima_elite: false, // Ensure the other is false
-                        }
-                        console.log("Updated State (Core Selected):", updatedData)
-                        return updatedData
-                      })
-                    }}
-                  >
-                    <motion.img
-                      src={selectedRadio === "Altima Core" ? "/fluent_radio-button-24-filled.png" : "/radio.png"}
-                      width={18}
-                      height={18}
-                      alt="Altima Core"
-                      initial={{ scale: 1.2, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ duration: 1, ease: "easeIn" }}
-                    />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Altima Core</p>
+                  <div className="flex items-center justify-between">
+                    <div
+                      className="flex w-full items-center gap-2"
+                      onClick={() => {
+                        toggleRadio("Altima Core")
+                        setFormData((prevData) => {
+                          const updatedData = {
+                            ...prevData,
+                            product_selection_altima_core: true,
+                            product_selection_altima_elite: false, // Ensure the other is false
+                          }
+                          console.log("Updated State (Core Selected):", updatedData)
+                          return updatedData
+                        })
+                      }}
+                    >
+                      <motion.img
+                        src={selectedRadio === "Altima Core" ? "/fluent_radio-button-24-filled.png" : "/radio.png"}
+                        width={18}
+                        height={18}
+                        alt="Altima Core"
+                        initial={{ scale: 1.2, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 1, ease: "easeIn" }}
+                      />
+                      <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Altima Core</p>
+                    </div>
+                    <div className="flex gap-[10px]">
+                      <p className="stroke-slate-50 text-xl text-[#FFFFFF80] line-through">₹90,000</p>
+                      <p className="text-xl font-bold text-white">₹49,500</p>
+                    </div>
                   </div>
-
-                  <div
-                    className="my-4 flex w-full items-center gap-2"
-                    onClick={() => {
-                      toggleRadio("Altima Elite")
-                      setFormData((prevData) => {
-                        const updatedData = {
-                          ...prevData,
-                          product_selection_altima_elite: true,
-                          product_selection_altima_core: false, // Ensure the other is false
-                        }
-                        console.log("Updated State (Elite Selected):", updatedData)
-                        return updatedData
-                      })
-                    }}
-                  >
-                    <motion.img
-                      src={selectedRadio === "Altima Elite" ? "/fluent_radio-button-24-filled.png" : "/radio.png"}
-                      width={18}
-                      height={18}
-                      alt="Altima Elite"
-                      initial={{ scale: 1.2, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ duration: 1, ease: "easeIn" }}
-                    />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Altima Elite</p>
+                  <div className="flex items-center justify-between">
+                    <div
+                      className="my-4 flex w-full items-center gap-2"
+                      onClick={() => {
+                        toggleRadio("Altima Elite")
+                        setFormData((prevData) => {
+                          const updatedData = {
+                            ...prevData,
+                            product_selection_altima_elite: true,
+                            product_selection_altima_core: false, // Ensure the other is false
+                          }
+                          console.log("Updated State (Elite Selected):", updatedData)
+                          return updatedData
+                        })
+                      }}
+                    >
+                      <motion.img
+                        src={selectedRadio === "Altima Elite" ? "/fluent_radio-button-24-filled.png" : "/radio.png"}
+                        width={18}
+                        height={18}
+                        alt="Altima Elite"
+                        initial={{ scale: 1.2, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 1, ease: "easeIn" }}
+                      />
+                      <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Altima Elite</p>
+                    </div>
+                    <div className="flex gap-[10px]">
+                      <p className="stroke-slate-50 text-xl text-[#FFFFFF80] line-through">₹199,000</p>
+                      <p className="text-xl font-bold text-white">₹99,500</p>
+                    </div>
                   </div>
 
                   <p className="mt-6 text-sm text-[#FFFFFF]">Quantity</p>
@@ -1275,7 +1285,7 @@ export default function Web() {
                       {quantity === 1 ? (
                         <>
                           <p className="text-sm">Unit Price : </p>
-                          <p className="flex items-center justify-center rounded-md border border-dotted border-[#FFFFFF1A] py-2 max-xl:w-[200px] xl:w-[357px]">
+                          <p className="flex items-center justify-center rounded-md border border-dashed border-[#FFFFFF1A] py-2 max-xl:w-[200px] xl:w-[205px]">
                             {" "}
                             ₹{grossPrice.toLocaleString()}
                           </p>
@@ -1283,7 +1293,7 @@ export default function Web() {
                       ) : (
                         <>
                           <p className="text-sm">Price: </p>
-                          <p className="flex items-center justify-center rounded-md border border-dotted border-[#FFFFFF1A] py-3 2xl:w-[357px]">
+                          <p className="flex items-center justify-center rounded-md border border-dotted border-[#FFFFFF1A] py-3 2xl:w-[205px]">
                             ₹{grossPrice.toLocaleString()}
                           </p>
                         </>
@@ -1449,7 +1459,9 @@ export default function Web() {
 
                 <div className="my-5 border-b border-[#FFFFFF0D]"></div>
                 <div className="grid gap-5 px-5">
-                  <p className="ext-lg font-medium text-white">Security</p>
+                  <p className="text-lg font-medium text-white">Security</p>
+
+                  <p className="text-lg  text-white">Core Security</p>
 
                   <div
                     className={`} flex w-full cursor-not-allowed items-center
@@ -1498,11 +1510,42 @@ export default function Web() {
                     />
                     <p className="text-sm text-[#FFFFFF] max-sm:text-xs ">Motion Sensor (Included in Base Price)</p>
                   </div>
+
+                  <div
+                    className={`} flex w-full cursor-not-allowed items-center gap-2
+                    `}
+                  >
+                    <motion.img
+                      src={isMotionSensor ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
+                      width={18}
+                      height={18}
+                      alt=""
+                      initial={{ scale: 1.2, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 1, ease: "easeIn" }}
+                    />
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs ">Smoke Detector (Included in Base Price)</p>
+                  </div>
+
+                  <div
+                    className={`} flex w-full cursor-not-allowed items-center gap-2
+                    `}
+                  >
+                    <motion.img
+                      src={isMotionSensor ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
+                      width={18}
+                      height={18}
+                      alt=""
+                      initial={{ scale: 1.2, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 1, ease: "easeIn" }}
+                    />
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs ">Gas leak Detector (Included in Base Price)</p>
+                  </div>
                 </div>
 
-                <div className="my-5 border-b border-[#FFFFFF0D]"></div>
-                <div className="grid gap-5 px-5">
-                  <p className="ext-lg font-medium text-white">
+                <div className="mt-7 grid gap-5 px-5">
+                  <p className="text-lg  text-white">
                     Additional Security<span className="text-[#FF3B30]">*</span>
                   </p>
 
@@ -1581,11 +1624,10 @@ export default function Web() {
 
                 <div className="my-5 border-b border-[#FFFFFF0D]"></div>
                 <div className="grid gap-5 px-5">
-                  <p className=" text-lg font-medium text-white">
-                    Integrated Smart Hub<span className="text-[#FF3B30]">*</span>
-                  </p>
+                  <p className=" text-lg font-medium text-white">Integrated Smart Hub</p>
+                  <p className=" text-lg  text-white">Core Integrated Smart Hub Features</p>
 
-                  <div
+                  {/* <div
                     className={`flex w-full items-center gap-2 ${
                       selectedRadio === "Altima Core" ? "cursor-not-allowed opacity-50" : "cursor-pointer"
                     }`}
@@ -1605,9 +1647,9 @@ export default function Web() {
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
                     <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Video door Bell</p>
-                  </div>
+                  </div> */}
 
-                  <div
+                  {/* <div
                     className={`flex w-full items-center gap-2 ${
                       selectedRadio === "Altima Core" ? "cursor-not-allowed opacity-50" : "cursor-pointer"
                     }`}
@@ -1627,7 +1669,7 @@ export default function Web() {
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
                     <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Intercom System</p>
-                  </div>
+                  </div> */}
 
                   <div
                     className={`flex w-full items-center gap-2 ${
@@ -1651,12 +1693,9 @@ export default function Web() {
                     <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Camera</p>
                   </div>
                 </div>
-                <div className="my-5 border-b border-[#FFFFFF0D]"></div>
 
-                <div className="grid gap-5 px-5">
-                  <p className=" text-lg font-medium text-white">
-                    Additional Integrated Smart Hub<span className="text-[#FF3B30]">*</span>
-                  </p>
+                <div className="mt-7 grid gap-5 px-5">
+                  <p className=" text-lg  text-white">Additional Integrated Smart Hub Features</p>
 
                   <div
                     className={`flex w-full items-center gap-2 ${
