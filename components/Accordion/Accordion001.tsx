@@ -1,4 +1,5 @@
 import React from "react"
+import { motion } from "framer-motion"
 
 interface AccordionProps {
   title: string
@@ -17,11 +18,15 @@ const AccordionTwo: React.FC<AccordionProps> = ({ title, content, isOpen, onTogg
           <span>{isOpen ? <img src="/Minus.png" /> : <img src="/Plus.png" />}</span>
         </div>
       </button>
-      {isOpen && (
-        <div className="bg-[#282828] py-2 text-[#FFFFFF99]">
-          <div className="p-4 max-sm:text-xs ">{content}</div>
-        </div>
-      )}
+
+      <motion.div
+        initial={false}
+        animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+        transition={{ duration: 0.3 }}
+        className="overflow-hidden bg-[#282828] text-[#FFFFFF99]"
+      >
+        {isOpen && <div className="p-4 max-sm:text-xs ">{content}</div>}
+      </motion.div>
     </div>
   )
 }
