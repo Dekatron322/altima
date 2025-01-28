@@ -14,7 +14,7 @@ const AccordionTwo: React.FC<AccordionProps> = ({ title, content, isOpen, onTogg
         <div className="flex items-center justify-between">
           <span className="max-sm:text-sm"></span>
           <span className="max-sm:text-sm">{title}</span>
-          <span>{isOpen ? "-" : "+"}</span>
+          <span>{isOpen ? <img src="/Minus.png" /> : <img src="/Plus.png" />}</span>
         </div>
       </button>
       {isOpen && (
