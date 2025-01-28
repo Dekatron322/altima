@@ -311,11 +311,19 @@ body {
 }
 
 .input-field {
-  @apply flex h-12 items-center rounded-lg border border-[#282828] bg-[#282828]  p-3 hover:border-[#1B5EED] focus:border-[#1B5EED] active:border-[#1B5EED] max-2xl:w-[70%] max-sm:w-[100%] md:w-[60%];
+  @apply flex h-12 items-center rounded-lg border border-[#282828] bg-[#282828]  p-3 hover:border-[#FF3B30] focus:border-[#FF3B30] active:border-[#FF3B30] max-2xl:w-[70%] max-sm:w-[100%] md:w-[60%];
+}
+
+.input-field-two {
+  @apply flex h-12 items-center rounded-lg border border-[#FFFFFF1A] bg-[#FFFFFF1A]  p-3 hover:border-[#FF3B30] focus:border-[#FF3B30] active:border-[#FF3B30] max-2xl:w-[70%] max-sm:w-[100%] md:w-[682px];
+}
+
+.text-area-two {
+  @apply flex min-h-[200px]  rounded-lg border border-[#FFFFFF1A] bg-[#FFFFFF1A]  p-3 hover:border-[#FF3B30] focus:border-[#FF3B30] active:border-[#FF3B30] max-2xl:w-[70%] max-sm:w-[100%] md:w-[682px];
 }
 
 .text-area {
-  @apply flex min-h-[200px]  rounded-lg border border-[#282828] bg-[#282828]  p-3 hover:border-[#1B5EED] focus:border-[#1B5EED] active:border-[#1B5EED] max-2xl:w-[70%] max-sm:w-[100%] md:w-[60%];
+  @apply flex min-h-[200px]  rounded-lg border border-[#282828] bg-[#282828]  p-3 hover:border-[#FF3B30] focus:border-[#FF3B30] active:border-[#FF3B30] max-2xl:w-[70%] max-sm:w-[100%] md:w-[60%];
 }
 
 /* Hide the default icon */

@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { useState } from "react"
 
-export default function ContactUs() {
+export default function NewContact() {
   const [formData, setFormData] = useState({
     full_name: "",
     email: "",
@@ -51,13 +51,10 @@ export default function ContactUs() {
   }
 
   return (
-    <section className="paddings w-full bg-[#080808] max-sm:px-3" id="contact">
-      <div className="w-full xl:py-10">
+    <section className="paddings w-full  max-sm:px-0" id="contact">
+      <div className="w-full xl:py-2">
         <div className="flex flex-col items-center justify-center">
-          <p className="text-center text-[#FFFFFF99]">Contact us</p>
-          <p className="my-6 flex text-center text-[32px] text-[#FFFFFF] max-md:text-2xl">Have Questions?</p>
-
-          <div className="input-field">
+          <div className="input-field-two ">
             <input
               type="text"
               id="full_name"
@@ -69,7 +66,7 @@ export default function ContactUs() {
             />
           </div>
 
-          <div className="input-field my-7">
+          <div className="input-field-two my-7">
             <input
               type="email"
               id="email"
@@ -81,7 +78,7 @@ export default function ContactUs() {
             />
           </div>
 
-          <div className="text-area">
+          <div className="text-area-two">
             <textarea
               id="message"
               placeholder="Enter Message"
@@ -95,11 +92,11 @@ export default function ContactUs() {
           <button
             onClick={handleSubmit}
             disabled={loading}
-            className={`font-regular mt-7 flex w-[60%] items-center justify-center gap-2 rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4 py-4 uppercase text-[#FFFFFF] max-sm:w-full ${
+            className={`font-regular mt-7 flex items-center justify-center gap-2 rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4 py-4 uppercase text-[#FFFFFF] max-sm:w-full md:w-[682px] ${
               loading ? "opacity-50" : ""
             }`}
           >
-            {loading ? "Submitting..." : "Submit"}
+            {loading ? "Sending..." : "Send"}
           </button>
         </div>
       </div>

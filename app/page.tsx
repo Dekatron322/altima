@@ -11,6 +11,8 @@ import { useRouter } from "next/navigation"
 import { LiaTimesSolid } from "react-icons/lia"
 import ContactUs from "components/ContactUs/Contact"
 import ImageCarousel from "components/ImageModal/ImageModal"
+import AccordionTwo from "components/Accordion/Accordion001"
+import NewContact from "components/ContactUs/ContactUs"
 
 export default function Web() {
   const faqData = [
@@ -78,10 +80,196 @@ export default function Web() {
     },
   ]
 
-  const boxVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1 },
-  }
+  const BenefitsData = [
+    {
+      title: "1. Discover Altima: Redefining Security",
+      content: (
+        <div className="text-center">
+          <p className="text-white">
+            Altima Core and Elite combine advanced technology with elegant design to safeguard your spaces. Featuring
+            biometric access, retractable handles, and premium materials, Altima is the ultimate solution for homes and
+            offices. Choose Core for essential features or Elite for enhanced functionality tailored to your needs.
+          </p>
+        </div>
+      ),
+    },
+
+    {
+      title: "2. Why Preorder?",
+      content: (
+        <div className="text-center">
+          <p className="text-white">Preordering Altima comes with exclusive benefits:</p>
+          <ul className="grid gap-3">
+            <li className="mt-3">
+              <b>- Priority Access:</b> Be among the first to receive your Altima.
+            </li>
+            <li>
+              <b>- Exclusive Pricing:</b> Enjoy special preorder rates
+            </li>
+            <li>
+              <b>- Flexible Cancellations:</b> Cancel before shipment with clear terms.
+            </li>
+          </ul>
+          <p className="mt-5 text-white">Reserve your Altima today and embrace smarter living!</p>
+        </div>
+      ),
+    },
+    {
+      title: "3. How to Preorder",
+      content: (
+        <div className="text-center">
+          <p className="text-white">Preordering is quick and simple:</p>
+          <ul className="grid gap-3">
+            <li className="mt-3">
+              <b>1. Choose Your Model: </b> Select Altima Core or Elite.
+            </li>
+            <li>
+              <b>2. Reserve Your Spot:</b> Secure your order with a 30% deposit.
+            </li>
+            <li>
+              <b>3. Stay Updated:</b> Receive notifications about production and delivery.
+            </li>
+            <li>
+              <b>4. Complete Payment:</b> Pay the remaining balance before shipment.
+            </li>
+          </ul>
+          <p className="mt-5 text-white">Your smart door journey starts here—preorder now!</p>
+        </div>
+      ),
+    },
+    {
+      title: "4. Flexible Payment Options",
+      content: (
+        <div className="text-center">
+          <p className="text-white">We ensure your payment experience is smooth:</p>
+          <ul className="grid gap-3">
+            <li className="mt-3">
+              <b>- Deposit: </b> A 30% deposit secures your order and is non-refundable, except for delays exceeding 6
+              months.
+            </li>
+            <li>
+              <b>- Final Payment:</b> Balance due before shipment, including optional add-ons.
+            </li>
+            <li>
+              <b>- Transparency:</b> Receive detailed invoices with no hidden charges.
+            </li>
+          </ul>
+          <p className="mt-5 text-white">For delivery inquiries, contact our support team.</p>
+        </div>
+      ),
+    },
+    {
+      title: "5. Reliable Shipping",
+      content: (
+        <div className="text-center">
+          <p className="text-white">Your Altima smart door will reach you securely and on time:</p>
+          <ul className="grid gap-3">
+            <li className="mt-3">
+              <b>- Estimated Delivery: </b> 4–5 months after the preorder window closes.
+            </li>
+            <li>
+              <b>- Real-Time Updates:</b> Track your shipment every step of the way.
+            </li>
+            <li>
+              <b>- Safe Packaging:</b> Designed to arrive in perfect condition.
+            </li>
+          </ul>
+        </div>
+      ),
+    },
+    {
+      title: "6. Warranty & Support",
+      content: (
+        <div className="text-center">
+          <p className="text-white">Altima products come with dependable coverage and assistance:</p>
+          <ul className="grid gap-3">
+            <li className="mt-3">
+              <b>- 1-Year Warranty: </b> Covers manufacturing defects.
+            </li>
+            <li>
+              <b>- Extended Warranty:</b> Available on request for added peace of mind.
+            </li>
+            <li>
+              <b>- Expert Guidance:</b> Support for installation and troubleshooting.
+            </li>
+            <li>
+              <b>- 24/7 Assistance:</b> Our team is always here for you.
+            </li>
+          </ul>
+        </div>
+      ),
+    },
+    {
+      title: "7. Refund & Cancellation Policy",
+      content: (
+        <div className="text-center">
+          <p>We’ve created a clear policy for your convenience:</p>
+          <ul className="grid gap-3">
+            <li className="mt-3">
+              <b>- Deposit Policy:</b> The 30% deposit is non-refundable unless delays exceed 6 months.
+            </li>
+            <li>
+              <b>- Cancellations:</b> Cancel before shipment if needed.
+            </li>
+            <li>
+              <b>- Refund Timeline:</b> Refunds (where applicable) are processed within 14 business days.
+            </li>
+          </ul>
+          <p className="mt-5 text-white">For detailed terms, refer to our Refund Policy.</p>
+        </div>
+      ),
+    },
+    {
+      title: "8. Ask a Question",
+      content: (
+        <div className="flex w-full flex-col  justify-center 2xl:px-[20%]">
+          <p className="w-full  border-b border-[#FFFFFF1A] pb-2 font-bold text-white">
+            Find answers to common questions:
+          </p>
+          <ul className="grid gap-3">
+            <li className="mt-3">
+              <b className="text-white">-What if my Altima is delayed?</b> If delays exceed 6 months, we’ll issue a full
+              refund of your deposit.
+            </li>
+            <li>
+              <b className="text-white">- Can I customize my Altima?</b> Yes, customization options can be discussed
+              during the preorder process.
+            </li>
+            <li>
+              <b>- How do I track my order?</b> You’ll receive email updates and tracking details once shipped.
+            </li>
+          </ul>
+          <p className="mt-5 border-b border-[#FFFFFF1A] pb-2 text-white">
+            For detailed terms, refer to our Refund Policy.
+          </p>
+
+          <NewContact />
+        </div>
+      ),
+    },
+    {
+      title: "9. Contact Us",
+      content: (
+        <div className="text-center">
+          <p className="text-white">We’re here to help:</p>
+          <ul className="grid gap-3">
+            <li className="mt-3">
+              <b>- Email:</b> contact@smarthavensystems.com
+            </li>
+            <li>
+              <b>- Phone:</b> 022-6971-8365
+            </li>
+            <li>
+              <b>- Address:</b> SmartHaven Systems, Sahara CHS, Shop no. 4, Sector 40, Seawoods, Navi Mumbai, 400706
+            </li>
+          </ul>
+          <p className="mt-5 text-white">
+            Our team is committed to making your Altima experience seamless and exceptional.
+          </p>
+        </div>
+      ),
+    },
+  ]
 
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -139,27 +327,29 @@ export default function Web() {
                 <Image src="/Vector.png" width={24} height={24} alt="" />
                 <p className="text-sm text-[#FFFFFF] max-sm:text-[9px]">POWERED BY INNOVATION FROM csPILLAI®</p>
               </div>
-              <p className="   text-7xl font-bold text-[#FFFFFF] max-xl:text-center max-lg:mt-10 max-lg:text-4xl max-sm:text-2xl">
-                ALTIMA: THE SMART{" "}
+              <p className="   text-5xl font-bold text-[#FFFFFF] max-xl:text-center max-lg:mt-10 max-lg:text-4xl max-sm:text-2xl">
+                Altima: Core and Elite
               </p>
-              <p className="  gap-1  text-7xl font-bold text-[#FFFFFF] max-xl:py-4 max-xl:text-4xl max-sm:text-2xl">
-                DOOR & HOME HUB –{" "}
+              <p className="  gap-1  text-5xl font-bold text-[#FFFFFF] max-xl:py-4 max-xl:text-4xl max-sm:text-2xl">
+                Smart Doors for Every Space
               </p>
               <p
-                className="   cursor-pointer text-7xl font-bold text-[#FF3B30]   max-xl:block max-xl:text-4xl lg:block"
+                className="   cursor-pointer text-5xl font-bold text-[#FF3B30]   max-xl:block max-xl:text-2xl lg:block"
                 onClick={handlePreOrderClick}
               >
                 PRE-ORDER NOW!
               </p>
 
               <p className="mt-10 text-xl text-white max-sm:mt-3  max-sm:text-base md:w-[600px]">
-                Experience the next level of convenience and security with Altima – a revolutionary smart door and home
-                hub in one. Featuring a{" "}
-                <b onClick={openVideoModal} className="cursor-pointer text-[#FF3B30]">
-                  disappearing handle
-                </b>{" "}
-                and cutting-edge technology, Altima seamlessly integrates security and smart home functions, perfect for
-                any space – be it home, office, or beyond.
+                Experience the next level of security and innovation with Altima—offering two distinct models to suit
+                your needs: Altima Core, the perfect smart door for unparalleled safety, and Altima Elite, which takes
+                it further by integrating smart home hub functionality. <br />
+                <br />
+                Featuring a disappearing handle and cutting-edge technology, both models deliver seamless integration of
+                security and style, perfect for any space—whether it's your home, office, or beyond. Choose Altima Core
+                for an advanced smart door experience, or Altima Elite for the same smart door experience with the added
+                benefit of complete control over your home gadgets. Experience the next level of convenience and
+                security with Altima – a revolutionary smart door and home hub in one. Featuring a{" "}
               </p>
               <div className="max-2xl:my-5 xl:hidden">
                 <motion.img
@@ -199,7 +389,30 @@ export default function Web() {
         </motion.div>
       </section>
 
-      <section id="how-to-buy" className="paddings  w-full bg-[#151515] max-sm:px-3 ">
+      <section className="paddings  w-full bg-[#151515] max-sm:px-3 ">
+        <div className="  w-full     py-10">
+          <div className="flex w-full flex-col items-center justify-center">
+            <p className=" text-[#FFFFFF99]">Benefits</p>
+            <p className="font-regular mb-4 mt-2  text-xl tracking-tight  text-white max-sm:my-2   md:text-xl md:leading-10 xl:text-3xl">
+              Why Pre-Order?
+            </p>
+          </div>
+
+          <div className=" w-full rounded-md border border-[#FFFFFF1A]  ">
+            {BenefitsData.map((benefits, id) => (
+              <AccordionTwo
+                key={id}
+                title={benefits.title}
+                content={benefits.content}
+                isOpen={openIndex === id}
+                onToggle={() => handleToggle(id)}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* <section id="how-to-buy" className="paddings  w-full bg-[#151515] max-sm:px-3 ">
         <motion.div
           className="  w-full justify-between py-10"
           variants={boxVariants}
@@ -258,51 +471,32 @@ export default function Web() {
             </div>
           </div>
         </motion.div>
-      </section>
+      </section> */}
 
       <section id="how-to-buy" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
         <div className="  w-full justify-between    md:py-10">
           <div className="grid-col-2 grid w-full justify-between gap-10  sm:flex">
             <div className="md:w-full ">
               <div className="flex flex-col items-center">
-                <p className="font-regular  flex    text-2xl  text-[#FFFFFF99] max-sm:text-lg lg:text-2xl">
-                  Our Features
+                <p className="font-regular flex text-lg  text-[#FFFFFF99] max-sm:text-lg lg:text-2xl">
+                  Innovative Features
                 </p>
                 <p className=" font-regular mb-2 mt-2  text-xl tracking-tight  text-white max-sm:my-2   md:text-xl md:leading-10 xl:text-3xl">
-                  COMPACT AND FUNCTIONAL
+                  SMART AND VERSATILE
                 </p>
 
                 <p className="font-regular mb-6 flex text-center text-base   text-[#FFFFFF99]  max-sm:text-center  max-sm:text-sm lg:text-base">
-                  Transform your room with Altima into a minimalist, <br className="max-sm:hidden" /> modern space with
-                  ease and speed.
+                  Revolutionize your space with Altima. Designed for
+                  <br className="max-sm:hidden" /> convenience, security, and innovation, it offers
+                  <br className="max-sm:hidden" /> features tailored to your needs:
                 </p>
               </div>
-              <div className="flex items-center justify-center gap-4 max-sm:grid max-sm:grid-cols-1">
-                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10  max-sm:p-5 md:h-[263px] md:w-[347px]">
-                  <Image src="/HouseLine.png" width={50} height={50} alt="" className="max-sm:hidden" />
-                  <Image src="/HouseLine.png" width={40} height={40} alt="" className="sm:hidden" />
-                  <p className="py-4 text-lg text-white max-sm:text-sm">Smart Home Hub</p>
-                  <p className=" text-lg text-[#FFFFFF99] max-sm:text-xs">
-                    Control your entire smart
-                    <br className="max-sm:hidden" /> home ecosystem directly from <br className="max-2xl:hidden" /> your
-                    doorway.
-                  </p>
-                </div>
-                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:p-5 md:h-[263px] md:w-[347px]">
-                  <Image src="/BatteryCharging.png" width={50} height={50} alt="" className="max-sm:hidden" />
-                  <Image src="/BatteryCharging.png" width={40} height={40} alt="" className="sm:hidden" />
-                  <p className="py-4 text-lg text-white max-sm:text-sm">ENERGY MANAGEMENT</p>
-                  <p className="text-lg text-[#FFFFFF99] max-sm:text-xs">
-                    Optimize your home&apos;s climate
-                    <br className="max-sm:hidden" /> control for maximum <br className="max-sm:hidden" /> efficiency.
-                  </p>
-                </div>
-              </div>
+
               <div className="flex items-center justify-center gap-4 max-sm:mt-4 max-sm:grid max-sm:grid-cols-1 md:my-4">
-                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:p-5 md:h-[263px] md:w-[347px]">
+                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:p-5 md:h-[300px] md:w-[347px]">
                   <Image src="/Fingerprint.png" width={50} height={50} alt="" className="max-sm:hidden" />
                   <Image src="/Fingerprint.png" width={40} height={40} alt="" className="sm:hidden" />
-                  <p className="py-4 text-lg text-white max-sm:text-sm">ADVANCED SECURITY</p>
+                  <p className="py-4 text-lg text-white max-sm:text-sm">Advanced Security</p>
                   <p className="text-lg text-[#FFFFFF99] max-sm:text-xs">
                     Multi-factor authentication
                     <br className="max-sm:hidden" /> and real-time monitoring for <br className="max-sm:hidden" />{" "}
@@ -310,14 +504,45 @@ export default function Web() {
                   </p>
                 </div>
 
-                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:p-5 md:h-[263px] md:w-[347px]">
+                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:p-5 md:h-[300px] md:w-[347px]">
                   <Image src="/Aperture.png" width={50} height={50} alt="" className="max-sm:hidden" />
                   <Image src="/Aperture.png" width={40} height={40} alt="" className="sm:hidden" />
-                  <p className="py-4 text-lg text-white max-sm:text-sm">SLEEK DESIGN</p>
+                  <p className="py-4 text-lg text-white max-sm:text-sm">Sleek Design</p>
                   <p className="text-lg text-[#FFFFFF99] max-sm:text-xs">
                     Elevate your home aesthetic,
                     <br className="max-sm:hidden" /> with our minimalist <br className="max-sm:hidden" /> customizable
                     design.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center justify-center gap-4 max-sm:grid max-sm:grid-cols-1">
+                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10  max-sm:p-5 md:h-[300px] md:w-[347px]">
+                  <Image src="/HouseLine.png" width={50} height={50} alt="" className="max-sm:hidden" />
+                  <Image src="/HouseLine.png" width={40} height={40} alt="" className="sm:hidden" />
+                  <p className="py-4 text-lg text-white max-sm:text-sm">Smart Home Hub (Elite Only)</p>
+                  <p className=" text-lg text-[#FFFFFF99] max-sm:text-xs">
+                    Seamlessly control your entire
+                    <br className="max-xl:hidden" /> smart home ecosystem directly
+                    <br className="max-sm:hidden" /> from your doorway.
+                  </p>
+                </div>
+                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:p-5 md:h-[300px] md:w-[347px]">
+                  <Image src="/BatteryCharging.png" width={50} height={50} alt="" className="max-sm:hidden" />
+                  <Image src="/BatteryCharging.png" width={40} height={40} alt="" className="sm:hidden" />
+                  <p className="py-4 text-lg text-white max-sm:text-sm">Energy Efficiency (Elite Only)</p>
+                  <p className="text-lg text-[#FFFFFF99] max-sm:text-xs">
+                    Optimize energy use with
+                    <br className="max-sm:hidden" /> automation and real-time
+                    <br className="max-sm:hidden" /> insights for sustainability.
+                  </p>
+                </div>
+                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:p-5 md:h-[300px] md:w-[347px]">
+                  <Image src="/LockLaminated.png" width={50} height={50} alt="" className="max-sm:hidden" />
+                  <Image src="/LockLaminated.png" width={40} height={40} alt="" className="sm:hidden" />
+                  <p className="py-4 text-lg text-white max-sm:text-sm">Enhanced Safety Features (Elite Only)</p>
+                  <p className="text-lg text-[#FFFFFF99] max-sm:text-xs">
+                    Systems detect hazards, <br className="max-sm:hidden" /> alert, unlock doors, and notify{" "}
+                    <br className="max-xl:hidden" /> emergency contacts.
                   </p>
                 </div>
               </div>
@@ -333,19 +558,16 @@ export default function Web() {
         <div className="  w-full justify-between    md:py-10">
           <div className="flex w-full justify-between gap-10  sm:flex">
             <div className="flex w-full flex-col justify-center">
-              <p className="font-regular   text-center  text-2xl  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">
-                Specifications
-              </p>
               <p className=" font-regular my-3  text-center text-lg text-white  max-sm:my-3 md:text-xl md:leading-10 xl:text-3xl">
-                Comprehensive Product Specification
+                Our Models
               </p>
 
               <p className="font-regular mb-3 w-full text-[#FFFFFF99] max-sm:leading-7 md:text-center">
-                Altima Door is a state-of-the-art smart door system that integrates advanced
-                <br className="max-sm:hidden" />
-                technology with home entry. It functions as both a secure entry point and a smart home{" "}
-                <br className="max-sm:hidden" />
-                hub, offering unmatched control, security, and energy management capabilities.
+                At Altima, we bring innovation and security together through our range of advanced smart doors designed
+                for a connected lifestyle. Each model combines cutting-edge technology with sleek aesthetics, offering
+                intelligent solutions for modern living. From robust security features to elegant design, Altima models
+                redefine how homes and businesses safeguard their spaces, ensuring a seamless blend of safety, style,
+                and convenience.
               </p>
               {/* <div className="grid w-full rounded-2xl bg-[#080808] p-3 max-sm:p-1">
                 <Image src="/video.png" width={1312} height={60} alt="" className="p-2 max-sm:hidden" />
@@ -360,7 +582,7 @@ export default function Web() {
         <div className="  w-full justify-between md:py-10">
           <div className="flex w-full flex-col items-center justify-center sm:hidden">
             <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:text-sm lg:text-2xl">Our Models</p>
-            <p className=" font-regular mb-6 mt-3    text-xl leading-none tracking-tight text-white md:text-xl xl:text-5xl">
+            <p className=" font-regular mb-6 mt-3    text-xl leading-none tracking-tight text-white md:text-xl xl:text-3xl">
               ALTIMA Core
             </p>
           </div>
@@ -381,7 +603,7 @@ export default function Web() {
               <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-xl:hidden max-sm:text-lg xl:text-2xl">
                 Our Models
               </p>
-              <p className=" font-regular my-6    text-xl leading-none tracking-tight text-white max-xl:hidden md:text-xl xl:text-5xl">
+              <p className=" font-regular my-6    text-xl leading-none tracking-tight text-white max-xl:hidden md:text-xl xl:text-3xl">
                 ALTIMA Core
               </p>
               <div>
@@ -401,7 +623,7 @@ export default function Web() {
                   <span className="text-[#FFFFFF80]">Security Level:</span> Very High
                 </li>
                 <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
-                  <span className="text-[#FFFFFF80]">Smart Lock Type: </span> Biometric Lock
+                  <span className="text-[#FFFFFF80]">Smart Lock Type: </span> Biometric Lock with Numeric Keypad
                 </li>
                 <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Home Integration:</span> Limited
@@ -440,7 +662,8 @@ export default function Web() {
                   <span className="text-[#FFFFFF80]">Security Level:</span> Very High
                 </li>
                 <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
-                  <span className="text-[#FFFFFF80]">Embedded in Door Types: </span> Metal Only
+                  <span className="text-[#FFFFFF80]">Embedded in Door Types: </span> Compatible with Metal, Wood,
+                  and Glass Doors
                 </li>
               </ul>
 
@@ -483,7 +706,7 @@ export default function Web() {
           <div className="grid-col-2 grid w-full justify-between  max-xl:gap-5 xl:flex xl:gap-20">
             <div className="max-xl:flex max-xl:w-full max-xl:flex-col max-xl:items-center max-xl:justify-center  ">
               <p className="font-regular  flex    text-2xl  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">Our Models</p>
-              <p className=" font-regular text-xl  leading-none tracking-tight text-white max-xl:mt-3 md:text-xl xl:my-6 xl:text-5xl">
+              <p className=" font-regular text-xl  leading-none tracking-tight text-white max-xl:mt-3 md:text-xl xl:my-6 xl:text-3xl">
                 ALTIMA Elite
               </p>
               <div>
@@ -501,7 +724,7 @@ export default function Web() {
                   <span className="text-[#FFFFFF80]">Security Level: </span> Very High
                 </li>
                 <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
-                  <span className="text-[#FFFFFF80]">Smart Lock Type: </span> Biometric Lock, Smart Hub
+                  <span className="text-[#FFFFFF80]">Smart Lock Type: </span> Biometric Lock with Numeric Keypad
                 </li>
                 <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Home Integration: </span> Extensive
@@ -540,7 +763,8 @@ export default function Web() {
                   <span className="text-[#FFFFFF80]">Intercom Functionality: </span> Built-in Intercom System
                 </li>
                 <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
-                  <span className="text-[#FFFFFF80]">Embedded in Door Types: </span> Metal, Glass, Wood
+                  <span className="text-[#FFFFFF80]">Embedded in Door Types: </span> Compatible with Metal, Wood,
+                  and Glass Doors
                 </li>
               </ul>
 
@@ -698,12 +922,10 @@ export default function Web() {
               <div className="flex items-start justify-center gap-3 border-[#FFFFFF99] max-sm:border-b max-sm:pb-3 md:border-r md:pr-6">
                 <Image src="/SealPercent.png" width={50} height={50} alt="" />
                 <div>
-                  <p className="text-[#FFFFFF] max-sm:text-sm">
-                    Additional Discounts on Second & Third Model Upgrades:
-                  </p>
+                  <p className="text-[#FFFFFF] max-sm:text-sm">50% Discount for Preorders:</p>
                   <p className="text-[#FFFFFF99] max-sm:text-xs">
-                    Pre-order customers will enjoy a 10% discount when upgrading to the second model tier & a 5%
-                    discount on the third model tier upgrade respectively
+                    Pre-order customers can enjoy a 50% discount exclusively for placing preorders on the
+                    first batch of units.
                   </p>
                 </div>
               </div>
@@ -744,42 +966,21 @@ export default function Web() {
 
       <section className="paddings  w-full bg-[#151515] max-sm:px-3 ">
         <div className="  w-full justify-between    md:py-10">
-          <div className="grid grid-cols-2  justify-between gap-20 max-xl:grid-cols-1 max-xl:gap-5 ">
+          <div className=" flex flex-col items-center justify-center gap-20  max-xl:gap-5">
             <div className="">
-              <p className="font-regular  flex  text-2xl  text-[#FFFFFF99] max-sm:text-lg  lg:text-2xl">Our Vision</p>
-              <p className=" font-regular my-6   text-xl leading-none tracking-tight text-white md:text-xl 2xl:text-3xl">
-                The Vision Behind Altima Disappearing Handle Smart Doors
+              <p className=" font-regular my-6  text-center text-xl leading-none tracking-tight text-[#FFFFFF99] md:text-lg 2xl:text-3xl">
+                Our Vision
+              </p>
+              <p className=" font-regular my-6  text-center text-xl leading-none tracking-tight text-white md:text-xl 2xl:text-3xl">
+                Altima’s Vision
               </p>
 
-              <p className="text-base leading-9 text-[#FFFFFF99] max-sm:hidden  max-sm:text-xs 2xl:text-[18px]">
-                Altima entryways are more than just doors—they serve as gateways to a smarter, more secure, and
-                connected lifestyle. Our disappearing handle smart doors are crafted to seamlessly blend into modern
-                spaces, offering cutting-edge technology while maintaining sleek aesthetics. With features like
-                biometric security, energy efficiency, and smart home integration, Altima Disappearing Handle Smart
-                Doors redefine secure and convenient entryways. Developed by expert engineers and designers, these doors
-                meet the highest standards of functionality and design, ensuring safety, style, and innovation for
-                every space.
+              <p className="text-center text-base leading-9 text-[#FFFFFF99]   max-sm:text-xs 2xl:text-[18px]">
+                To make every entryway smart, secure, and seamlessly connected, <br className="max-sm:hidden" />{" "}
+                redefining the future of safety and convenience for homes <br className="max-sm:hidden" />
+                and businesses worldwide.
               </p>
             </div>
-            <div>
-              <motion.img
-                src="/update.png"
-                className="h-[555px] w-[732px] max-xl:h-full max-xl:w-full"
-                alt=""
-                initial={{ scale: 1.2, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1, ease: "easeIn" }}
-              />
-            </div>
-
-            <p className="leading-7  text-[#FFFFFF99] max-sm:text-[14px] sm:hidden">
-              Altima entryways are more than just doors—they serve as gateways to a smarter, more secure, and connected
-              lifestyle. Our disappearing handle smart doors are crafted to seamlessly blend into modern spaces,
-              offering cutting-edge technology while maintaining sleek aesthetics. With features like biometric
-              security, energy efficiency, and smart home integration, Altima Disappearing Handle Smart Doors redefine
-              secure and convenient entryways. Developed by expert engineers and designers, these doors meet the highest
-              standards of functionality and design, ensuring safety, style, and innovation for every space.
-            </p>
           </div>
         </div>
       </section>
@@ -788,12 +989,12 @@ export default function Web() {
         <div className="  w-full     py-10">
           <div className="flex flex-col items-center justify-center">
             <p className=" text-[#FFFFFF99]">Timeline</p>
-            <p className="font-regular my-6 flex text-center text-5xl  text-[#FFFFFF]  max-md:text-2xl md:w-[642px]">
+            <p className="font-regular my-6 flex text-center text-3xl  text-[#FFFFFF]  max-md:text-2xl">
               Production Timeline
             </p>
 
-            <Image src="/changed.png" width={549} height={64} alt="" className="py-10 md:hidden" />
-            <Image src="/Frame 48095442 (1).png" width={1216} height={64} alt="" className="py-10 max-sm:hidden" />
+            <Image src="/Frame 48095551.png" width={549} height={64} alt="" className="py-10 md:hidden" />
+            <Image src="/Frame 48095442.png" width={1216} height={64} alt="" className="py-10 max-sm:hidden" />
           </div>
         </div>
       </section>
@@ -801,9 +1002,9 @@ export default function Web() {
       <section className="paddings  w-full bg-[#151515] max-sm:px-3 ">
         <div className="  w-full     py-10">
           <div className="flex flex-col">
-            <p className=" text-[#FFFFFF99]">Faqs</p>
-            <p className="my-5 flex text-center text-[32px] font-bold  text-[#FFFFFF]  max-md:text-2xl md:w-[642px]">
-              what people are Asking.
+            <p className=" text-[#FFFFFF99]">FAQs</p>
+            <p className="my-5 flex text-center text-[32px]  text-[#FFFFFF]  max-md:text-2xl md:w-[642px]">
+              Community Q&A
             </p>
           </div>
 

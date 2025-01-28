@@ -25,14 +25,15 @@ export default function Web() {
           <div className="flex w-full justify-between gap-10  sm:flex">
             <div>
               <p className=" my-3 text-center  text-lg font-semibold text-white  max-sm:my-3 md:text-xl md:leading-10 xl:text-3xl">
-                Our Model
+                Our Models
               </p>
 
               <p className="font-regular md:text-cente w-full text-ellipsis text-center text-lg text-[#FFFFFF99] max-sm:leading-7 ">
-                Welcome to Altima, where innovation meets security in a smarter, more connected way. We are passionate
-                about crafting intelligent solutions for modern living, blending advanced technology with elegant design
-                to transform how you experience safety and convenience. Altima is more than just a product—it&lsquo;s a
-                step forward in redefining how homes and businesses safeguard their spaces.
+                At Altima, we bring innovation and security together through our range of advanced smart doors designed
+                for a connected lifestyle. Each model combines cutting-edge technology with sleek aesthetics, offering
+                intelligent solutions for modern living. From robust security features to elegant design, Altima models
+                redefine how homes and businesses safeguard their spaces, ensuring a seamless blend of safety, style,
+                and convenience.
               </p>
             </div>
           </div>
@@ -59,7 +60,7 @@ export default function Web() {
         <div className="  w-full justify-between md:py-10">
           <div className="flex w-full flex-col items-center justify-center xl:hidden">
             <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:text-sm lg:text-2xl">Our Models</p>
-            <p className=" font-regular mb-6 mt-3    text-xl leading-none tracking-tight text-white md:text-xl xl:text-5xl">
+            <p className="font-regular mb-6 mt-3    text-xl leading-none tracking-tight text-white md:text-xl xl:text-3xl">
               ALTIMA Core
             </p>
           </div>
@@ -77,10 +78,10 @@ export default function Web() {
               />
             </div>
             <div className="">
-              <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-xl:hidden max-sm:text-lg lg:text-2xl">
+              <p className="font-regular  flex  text-lg  text-[#FFFFFF99] max-xl:hidden max-sm:text-lg lg:text-lg">
                 Our Models
               </p>
-              <p className=" font-regular my-6    text-xl leading-none tracking-tight text-white max-xl:hidden md:text-xl xl:text-5xl">
+              <p className=" font-regular my-6  text-xl leading-none tracking-tight text-white max-xl:hidden md:text-xl xl:text-3xl">
                 ALTIMA Core
               </p>
               <div>
@@ -180,8 +181,8 @@ export default function Web() {
         <div className="  w-full justify-between    xl:py-10">
           <div className="grid-col-2 grid w-full justify-between max-xl:gap-5 xl:flex  xl:gap-20">
             <div className="max-xl:flex max-xl:flex-col max-xl:items-center max-xl:justify-center max-sm:w-full xl:w-[403] ">
-              <p className="font-regular  flex    text-2xl  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">Our Models</p>
-              <p className=" font-regular text-xl  leading-none tracking-tight text-white max-xl:mt-3 md:text-xl xl:my-6 xl:text-5xl">
+              <p className="font-regular  flex    text-lg  text-[#FFFFFF99] max-sm:text-sm lg:text-lg">Our Models</p>
+              <p className=" font-regular text-xl  leading-none tracking-tight text-white max-xl:mt-3 md:text-xl xl:my-6 xl:text-3xl">
                 ALTIMA Elite
               </p>
               <div>
