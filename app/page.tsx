@@ -346,9 +346,9 @@ export default function Web() {
                 it further by integrating smart home hub functionality. <br />
                 <br />
                 Featuring a disappearing handle and cutting-edge technology, both models deliver seamless integration of
-                security and style, perfect for any space—whether it's your home, office, or beyond. Choose Altima Core
-                for an advanced smart door experience, or Altima Elite for the same smart door experience with the added
-                benefit of complete control over your home gadgets. Experience the next level of convenience and
+                security and style, perfect for any space—whether it&apos;s your home, office, or beyond. Choose Altima
+                Core for an advanced smart door experience, or Altima Elite for the same smart door experience with the
+                added benefit of complete control over your home gadgets. Experience the next level of convenience and
                 security with Altima – a revolutionary smart door and home hub in one. Featuring a{" "}
               </p>
               <div className="max-2xl:my-5 xl:hidden">
