@@ -685,25 +685,31 @@ export default function Web() {
     const { name, value } = e.target
 
     setFormData((prev) => {
-      // Handle numeric fields
       if (name === "quantity") {
         const numericValue = parseInt(value, 10)
-        if (!isNaN(numericValue) && numericValue > 0) {
-          setQuantity(numericValue) // Update quantity state
+
+        // Ensure value is numeric and greater than 0
+        if (numericValue > 0) {
+          setQuantity(numericValue) // Update the quantity state
           return {
             ...prev,
-            [name]: numericValue.toString(), // Update numeric field in formData
+            [name]: numericValue.toString(), // Update formData with valid number
           }
-        }
-      } else {
-        // Handle text fields
-        return {
-          ...prev,
-          [name]: value, // Update text field in formData
+        } else if (value === "") {
+          // Allow clearing the input temporarily
+          setQuantity(0) // Optional: Update state with default or temporary value
+          return {
+            ...prev,
+            [name]: "",
+          }
         }
       }
 
-      return prev // Return previous state if no updates are made
+      // For other fields, update directly
+      return {
+        ...prev,
+        [name]: value,
+      }
     })
   }
 
@@ -1258,6 +1264,7 @@ export default function Web() {
 
                       <input
                         type="number"
+                        name="quantity"
                         value={quantity}
                         onChange={handleChange}
                         className="flex h-[48px] w-[107px] items-center justify-center rounded-md border bg-[#282828] px-2 py-1 text-center text-[#FFFFFF] max-sm:w-full"
@@ -1977,25 +1984,30 @@ export default function Web() {
                   <p className="text-lg font-medium text-white">Extended Warranty:</p>
 
                   <div
-                    className="flex w-full cursor-pointer items-center  gap-2"
+                    className="flex w-full cursor-pointer items-center gap-2"
                     onClick={() => {
-                      toggleWarranty() // Only call the function if not disabled
+                      toggleWarranty() // Toggle warranty state
                     }}
                   >
                     <motion.img
                       src={isExtendedWarranty ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
                       width={18}
                       height={18}
-                      alt=""
+                      alt="Warranty Checkbox"
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
                     <p className="text-sm text-[#FFFFFF] max-sm:text-xs">
-                      Yes, I want an extended warranty for an additional fee.
+                      {isExtendedWarranty
+                        ? `Yes, I want an extended warranty for an additional fee. (3 additional years) – ₹${
+                            selectedRadio === "Altima Core" ? "5,000" : "8,000"
+                          }`
+                        : "Yes, I want an extended warranty for an additional fee."}
                     </p>
                   </div>
                 </div>
+
                 <div className="my-5 border-b border-[#FFFFFF0D]"></div>
                 <div className="grid gap-5 px-5">
                   <p className="text-lg font-medium text-white">Installation Support:</p>
