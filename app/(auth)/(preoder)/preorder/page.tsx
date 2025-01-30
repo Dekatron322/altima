@@ -2225,7 +2225,7 @@ export default function Web() {
                 </p>
               </div>
               <p className="mb-5 text-center text-sm text-white opacity-80">
-                Shipping Policy • Installation Policy • Warranty Policy • Refund Policy
+                Shipping Policy • Installation Policy • Warranty Policy • Refund Policy
               </p>
             </div>
           </div>
