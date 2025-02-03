@@ -461,7 +461,7 @@ export default function Web() {
                 </div>
               </div>
               <div className="flex items-center justify-center gap-4 max-sm:grid max-sm:grid-cols-1">
-                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10  max-sm:p-5 md:h-[300px] md:w-[347px]">
+                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10  max-sm:p-6 md:h-[300px] md:w-[347px]">
                   <Image src="/HouseLine copy.png" width={50} height={50} alt="" className="max-sm:hidden" />
                   <Image src="/HouseLine copy.png" width={32} height={32} alt="" className="sm:hidden" />
                   <p className="py-4 text-lg font-bold text-white opacity-80 max-sm:text-base">
@@ -471,7 +471,7 @@ export default function Web() {
                     Easily manage your entire smart home ecosystem from one central hub, located at your doorway.
                   </p>
                 </div>
-                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:p-5 md:h-[300px] md:w-[347px]">
+                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:p-6 md:h-[300px] md:w-[347px]">
                   <Image src="/BatteryCharging copy.png" width={50} height={50} alt="" className="max-sm:hidden" />
                   <Image src="/BatteryCharging copy.png" width={32} height={32} alt="" className="sm:hidden" />
                   <p className="py-4 text-lg font-bold text-white opacity-80 max-sm:text-base">
@@ -506,16 +506,18 @@ export default function Web() {
         <div className="  w-full justify-between    md:py-10">
           <div className="flex w-full justify-between gap-10  sm:flex">
             <div className="flex w-full flex-col justify-center">
-              <p className=" font-regular my-3  text-center text-lg text-white  max-sm:my-3 md:text-xl md:leading-10 xl:text-3xl">
+              <p className=" my-3 text-center text-lg  font-bold text-white max-sm:my-3  max-sm:text-base md:text-xl md:leading-10 xl:text-3xl">
                 Our Models
               </p>
 
-              <p className="font-regular mb-3 w-full text-[#FFFFFF99] max-sm:leading-7 md:text-center">
+              <p className="font-regular w-full text-[#FFFFFF99] max-sm:text-center max-sm:text-xs max-sm:leading-[19px] md:text-center">
                 At Altima, we bring innovation and security together through our range of advanced smart doors designed
                 for a connected lifestyle. Each model combines cutting-edge technology with sleek aesthetics, offering
-                intelligent solutions for modern living. From robust security features to elegant design, Altima models
-                redefine how homes and businesses safeguard their spaces, ensuring a seamless blend of safety, style,
-                and convenience.
+                intelligent solutions for modern living.
+              </p>
+              <p className="font-regular mb-3 w-full text-[#FFFFFF99] max-sm:text-center max-sm:text-xs max-sm:leading-[19px] md:text-center">
+                From robust security features to elegant design, Altima models redefine how homes and businesses
+                safeguard their spaces, ensuring a seamless blend of safety, style, and convenience.
               </p>
               {/* <div className="grid w-full rounded-2xl bg-[#080808] p-3 max-sm:p-1">
                 <Image src="/video.png" width={1312} height={60} alt="" className="p-2 max-sm:hidden" />
@@ -548,80 +550,80 @@ export default function Web() {
               />
             </div>
             <div className="">
-              <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-xl:hidden max-sm:text-lg xl:text-2xl">
+              <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-xl:hidden max-sm:text-sm xl:text-2xl">
                 Our Models
               </p>
-              <p className=" font-regular my-6    text-xl leading-none tracking-tight text-white max-xl:hidden md:text-xl xl:text-3xl">
+              <p className=" font-regular my-6  text-base  font-bold leading-none tracking-tight text-white max-xl:hidden md:text-xl xl:text-3xl">
                 ALTIMA Core
               </p>
               <div>
                 <div className="items-center justify-between bg-[#151515] px-4 py-2 text-black max-xl:w-full max-xl:justify-center xl:flex xl:max-w-[522px]">
-                  <ul className="list-inside list-disc">
-                    <li className="py-2 text-[#FFFFFF] max-xl:text-center max-sm:text-xs">Advanced Home Control </li>
-                    <li className=" text-[#FFFFFF] max-xl:text-center max-sm:text-xs">All Pro features, plus:</li>
+                  <ul className="list-inside ">
+                    <li className="py-2 text-[#FFFFFF] opacity-80  max-sm:text-sm">Advanced Home Control </li>
+                    <li className=" text-[#FFFFFF] opacity-80  max-sm:text-sm">All Pro features, plus:</li>
                   </ul>
 
-                  <p className="text-2xl text-[#FF4F45] max-xl:mt-3 max-xl:text-center max-xl:text-lg">
-                    ₹49,500 + Taxes
+                  <p className="text-2xl font-semibold text-[#FF4F45]  max-xl:mt-3 max-xl:text-xl">
+                    ₹49,500 + <span className="font-regular text-base">Taxes</span>
                   </p>
                 </div>
               </div>
-              <ul className="mt-6 list-inside list-disc pl-2 md:mb-4">
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+              <ul className="mt-6 list-inside  pl-2 max-xl:text-sm md:mb-4">
+                <li className="pb-3 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Security Level:</span> Very High
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Smart Lock Type: </span> Biometric Lock with Numeric Keypad
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Home Integration:</span> Limited
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">User Profiles: </span> Multiple
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Remote Access: </span> Yes
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Design: </span> Sleek and Modern
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Special Features: </span> Emergency Key Override, Auto-Locking
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">External Power Option: </span> Backup Battery
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Voice Assistant Control: </span> No
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Smart Home Automation: </span> No
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Energy Management: </span> No
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Security Alerts: </span> Basic Alerts
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Intercom Functionality: </span> No
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Security Level:</span> Very High
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Embedded in Door Types: </span> Compatible with Metal, Wood,
                   and Glass Doors
                 </li>
               </ul>
 
               <div className="flex items-center justify-between bg-[#FFFFFF0D] px-7 py-3">
-                <ul className=" list-inside list-disc pl-2">
-                  <li className=" text-[#FFFFFF] max-sm:text-xs">Feature Comparison</li>
+                <ul className=" list-inside  pl-2">
+                  <li className=" text-[#FFFFFF] max-sm:text-sm">Feature Comparison</li>
                 </ul>
                 <div>
-                  <ul className=" flex list-inside list-disc items-center gap-2 pl-2">
-                    <li className=" text-[#FFFFFF] underline max-sm:text-xs">Download</li>
+                  <ul className=" flex list-inside  items-center gap-2 pl-2">
+                    <li className=" text-[#FFFFFF] underline max-sm:text-sm">Download</li>
                     <motion.img
                       src="/FileArrowDown.png"
                       width={32}
@@ -639,7 +641,7 @@ export default function Web() {
                   onClick={handlePreOrderClick}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="font-regular   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm "
+                  className="font-regular   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:px-10 max-sm:py-2 max-sm:text-sm "
                 >
                   Pre-Order now
                 </motion.button>
