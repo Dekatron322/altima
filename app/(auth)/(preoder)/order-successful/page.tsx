@@ -211,7 +211,7 @@ export default function Web() {
                 Manage Order
               </Link>
               <button
-                className="font-regular flex  w-full items-center justify-center gap-2 rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4 py-3 uppercase text-[#FFFFFF] max-sm:w-full"
+                className="flex w-full  items-center justify-center gap-2 rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4 py-3 font-normal uppercase text-[#FFFFFF] max-sm:w-full"
                 onClick={downloadPDF}
               >
                 Download Invoice

@@ -96,7 +96,7 @@ const Page: React.FC = () => {
                 ))}
 
                 <div className="mt-5 flex w-full justify-center gap-6 md:px-6">
-                  <button className="font-regular flex w-[60%] items-center justify-center gap-2  rounded-lg border  bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:w-full ">
+                  <button className="flex w-[60%] items-center justify-center gap-2 rounded-lg  border bg-[#FFFFFF26]  px-4 py-4 font-normal uppercase text-[#FFFFFF] max-sm:w-full ">
                     {loading ? "Loading..." : "Reset password"}
                   </button>
                 </div>

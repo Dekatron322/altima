@@ -343,14 +343,14 @@ export default function Web() {
                   href="/my-account/track-order"
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.9 }}
-                  className="font-regular w-full gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm  text-[#FFFFFF] max-sm:py-2 "
+                  className="w-full gap-2 rounded-lg   border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
                 >
                   Change Address
                 </motion.a>
                 <motion.button
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.9 }}
-                  className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
+                  className="w-full gap-2   rounded-lg border border-[#FFFFFF99] px-4  py-2 text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
                   onClick={opeCancelModal}
                 >
                   Cancel Order
@@ -359,7 +359,7 @@ export default function Web() {
                   href="/my-account/track-order"
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.9 }}
-                  className="font-regular w-full gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm  text-[#FFFFFF] max-sm:py-2 "
+                  className="w-full gap-2 rounded-lg   border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
                 >
                   Track Order
                 </motion.a>
@@ -367,7 +367,7 @@ export default function Web() {
                 <motion.button
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.9 }}
-                  className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
+                  className="w-full gap-2   rounded-lg border border-[#FFFFFF99] px-4  py-2 text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
                 >
                   View Details
                 </motion.button>
@@ -425,7 +425,7 @@ export default function Web() {
               </div>
               <div className="my-7 border border-[#FFFFFF0D]"></div>
               <div className=" flex w-full justify-center">
-                <button className="font-regular  mb-5 flex  items-center justify-center gap-2  rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-7 py-2 uppercase text-[#FFFFFF] max-sm:w-full ">
+                <button className="mb-5  flex items-center  justify-center gap-2 rounded-lg  border border-[#FFFFFF99] bg-[#FFFFFF26] px-7 py-2 font-normal uppercase text-[#FFFFFF] max-sm:w-full ">
                   View Invoice
                 </button>
               </div>

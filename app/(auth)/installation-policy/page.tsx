@@ -211,17 +211,17 @@ export default function Web() {
         <div className="  w-full justify-between    xl:py-16">
           <div className="flex w-full items-center justify-center  gap-10 sm:flex">
             <div>
-              <p className="font-regular   text-center  text-2xl  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">
+              <p className="text-center   text-2xl  font-normal  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">
                 Resources & Policies
               </p>
-              <p className=" font-regular my-3  text-center text-lg text-white  max-sm:my-3 md:text-xl md:leading-10 xl:text-3xl">
+              <p className=" my-3 text-center  text-lg font-normal text-white  max-sm:my-3 md:text-xl md:leading-10 xl:text-3xl">
                 Installation Policy
               </p>
 
               <div className="mt-4 flex w-full items-center justify-center gap-5 max-sm:gap-2 ">
                 <motion.a
                   href="/Altima Installation Guide & Policy.pdf"
-                  className="font-regular whitespace-nowrap rounded-lg   bg-[#FFFFFF0D] px-4 py-3 uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
+                  className="whitespace-nowrap rounded-lg bg-[#FFFFFF0D]   px-4 py-3 font-normal uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   target="_blank"
@@ -232,7 +232,7 @@ export default function Web() {
                 </motion.a>
 
                 <motion.button
-                  className="font-regular whitespace-nowrap rounded-lg   bg-[#FFFFFF0D] px-8 py-3 uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
+                  className="whitespace-nowrap rounded-lg bg-[#FFFFFF0D]   px-8 py-3 font-normal uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={() => {
@@ -256,7 +256,7 @@ export default function Web() {
                 </motion.button>
               </div>
 
-              <p className="font-regular my-6 w-full text-ellipsis text-sm text-[#FFFFFF99] max-sm:leading-7  md:text-center">
+              <p className="my-6 w-full text-ellipsis text-sm font-normal text-[#FFFFFF99] max-sm:leading-7  md:text-center">
                 Smart Haven Systems Private Limited <br />
                 Effective Date: [Date]
               </p>

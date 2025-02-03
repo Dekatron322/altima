@@ -28,7 +28,7 @@ export default function Web() {
                 Our Models
               </p>
 
-              <p className="font-regular md:text-cente w-full text-ellipsis text-center text-lg text-[#FFFFFF99] max-sm:leading-7 ">
+              <p className="md:text-cente w-full text-ellipsis text-center text-lg font-normal text-[#FFFFFF99] max-sm:leading-7 ">
                 At Altima, we bring innovation and security together through our range of advanced smart doors designed
                 for a connected lifestyle. Each model combines cutting-edge technology with sleek aesthetics, offering
                 intelligent solutions for modern living. From robust security features to elegant design, Altima models
@@ -43,12 +43,12 @@ export default function Web() {
       {/* <section id="specifications" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
         <div className="  w-full     py-10">
           <div className="flex flex-col items-center justify-center">
-            <p className="font-regular  mb-6 flex  text-5xl  text-[#FFFFFF] max-md:text-lg">Modern, Stylish, Unique</p>
+            <p className="font-normal  mb-6 flex  text-5xl  text-[#FFFFFF] max-md:text-lg">Modern, Stylish, Unique</p>
             <motion.a
               href="/preorder"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="font-regular flex  gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-xs "
+              className="font-normal flex  gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-xs "
             >
               Pre-Order now
             </motion.a>
@@ -59,8 +59,8 @@ export default function Web() {
       <section id="other-products" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
         <div className="  w-full justify-between md:py-10">
           <div className="flex w-full flex-col items-center justify-center xl:hidden">
-            <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:text-sm lg:text-2xl">Our Models</p>
-            <p className="font-regular mb-6 mt-3    text-xl leading-none tracking-tight text-white md:text-xl xl:text-3xl">
+            <p className="flex  text-2xl  font-normal  text-[#FFFFFF99]  max-sm:text-sm lg:text-2xl">Our Models</p>
+            <p className="mb-6 mt-3 text-xl    font-normal leading-none tracking-tight text-white md:text-xl xl:text-3xl">
               ALTIMA Core
             </p>
           </div>
@@ -78,10 +78,10 @@ export default function Web() {
               />
             </div>
             <div className="">
-              <p className="font-regular  flex  text-lg  text-[#FFFFFF99] max-xl:hidden max-sm:text-lg lg:text-lg">
+              <p className="flex  text-lg  font-normal  text-[#FFFFFF99] max-xl:hidden max-sm:text-lg lg:text-lg">
                 Our Models
               </p>
-              <p className=" font-regular my-6  text-xl leading-none tracking-tight text-white max-xl:hidden md:text-xl xl:text-3xl">
+              <p className=" my-6 text-xl  font-normal leading-none tracking-tight text-white max-xl:hidden md:text-xl xl:text-3xl">
                 ALTIMA Core
               </p>
               <div>
@@ -167,7 +167,7 @@ export default function Web() {
                   href="/preorder"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="font-regular   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm "
+                  className="gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 font-normal uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm "
                 >
                   Pre-Order now
                 </motion.a>
@@ -181,8 +181,8 @@ export default function Web() {
         <div className="  w-full justify-between    xl:py-10">
           <div className="grid-col-2 grid w-full justify-between max-xl:gap-5 xl:flex  xl:gap-20">
             <div className="max-xl:flex max-xl:flex-col max-xl:items-center max-xl:justify-center max-sm:w-full xl:w-[403] ">
-              <p className="font-regular  flex    text-lg  text-[#FFFFFF99] max-sm:text-sm lg:text-lg">Our Models</p>
-              <p className=" font-regular text-xl  leading-none tracking-tight text-white max-xl:mt-3 md:text-xl xl:my-6 xl:text-3xl">
+              <p className="flex  text-lg    font-normal  text-[#FFFFFF99] max-sm:text-sm lg:text-lg">Our Models</p>
+              <p className=" text-xl font-normal  leading-none tracking-tight text-white max-xl:mt-3 md:text-xl xl:my-6 xl:text-3xl">
                 ALTIMA Elite
               </p>
               <div>
@@ -272,7 +272,7 @@ export default function Web() {
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="font-regular gap-2  rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-xl:hidden max-sm:py-2 max-sm:text-sm "
+                  className="gap-2 rounded-lg  border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 font-normal uppercase text-[#FFFFFF] max-xl:hidden max-sm:py-2 max-sm:text-sm "
                   onClick={handlePreOrderClick}
                 >
                   Pre-Order now
@@ -375,7 +375,7 @@ export default function Web() {
                   onClick={handlePreOrderClick}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="font-regular   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm "
+                  className="gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 font-normal uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm "
                 >
                   Pre-Order now
                 </motion.button>
@@ -389,8 +389,8 @@ export default function Web() {
         <div className="  w-full justify-between md:py-10">
           <div className="grid-col-2 grid w-full justify-between gap-20 max-sm:gap-5 sm:flex">
             <div className="w-[403]">
-              <p className="font-regular flex text-2xl  text-[#FFFFFF99] max-sm:text-lg lg:text-2xl">our Models</p>
-              <p className=" font-regular my-6 text-xl leading-none tracking-tight text-white max-sm:my-3 md:text-xl xl:text-5xl">
+              <p className="font-normal flex text-2xl  text-[#FFFFFF99] max-sm:text-lg lg:text-2xl">our Models</p>
+              <p className=" font-normal my-6 text-xl leading-none tracking-tight text-white max-sm:my-3 md:text-xl xl:text-5xl">
                 ALTIMA Elite
               </p>
               <div>
@@ -414,7 +414,7 @@ export default function Web() {
               <motion.a
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="font-regular   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm "
+                className="font-normal   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm "
                 href="/preorder"
               >
                 Pre-Order now

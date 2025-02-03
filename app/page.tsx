@@ -373,7 +373,7 @@ export default function Web() {
               <div className="mt-8 flex w-full gap-5 max-xl:items-center max-xl:justify-center max-sm:gap-2 ">
                 <motion.button
                   onClick={handlePreOrderClick}
-                  className="font-regular whitespace-nowrap rounded-lg border border-[#FF3B30] bg-[#FFFFFF26] px-4 py-3 uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-sm "
+                  className="whitespace-nowrap rounded-lg border border-[#FF3B30] bg-[#FFFFFF26] px-4 py-3 font-normal uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-sm "
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -381,7 +381,7 @@ export default function Web() {
                 </motion.button>
 
                 <motion.button
-                  className="font-regular flex items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-[#FFFFFF99] bg-transparent px-4 py-3 uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-2 max-sm:text-sm "
+                  className="flex items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-[#FFFFFF99] bg-transparent px-4 py-3 font-normal uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-2 max-sm:text-sm "
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={openVideoModal} // Open modal
@@ -401,7 +401,7 @@ export default function Web() {
         <div className="w-full xl:py-10">
           <div className="flex w-full flex-col items-center justify-center">
             <p className="text-[#FFFFFF99] max-sm:text-sm lg:text-sm">Benefits</p>
-            <p className="font-regular mb-4 mt-2  text-xl tracking-tight  text-white max-sm:my-2   md:text-xl md:leading-10 xl:text-3xl">
+            <p className="mb-4 mt-2 text-xl  font-normal tracking-tight  text-white max-sm:my-2   md:text-xl md:leading-10 xl:text-3xl">
               Why Pre-Order?
             </p>
           </div>
@@ -425,14 +425,14 @@ export default function Web() {
           <div className="grid-col-2 grid w-full justify-between gap-10  sm:flex">
             <div className="md:w-full ">
               <div className="flex flex-col items-center">
-                <p className="font-regular flex text-lg  text-[#FFFFFF99] max-sm:text-xs lg:text-2xl">
+                <p className="flex text-lg font-normal  text-[#FFFFFF99] max-sm:text-xs lg:text-2xl">
                   Innovative Features
                 </p>
                 <p className=" mb-2 mt-2 text-xl  font-bold tracking-tight  text-white max-sm:my-2 max-sm:text-base   md:text-xl md:leading-10 xl:text-3xl">
                   SMART AND VERSATILE
                 </p>
 
-                <p className="font-regular mb-6 flex text-center text-base text-[#FFFFFF99]   max-sm:text-center  max-sm:text-sm  max-sm:leading-6 lg:text-base">
+                <p className="mb-6 flex text-center text-base font-normal text-[#FFFFFF99]   max-sm:text-center  max-sm:text-sm  max-sm:leading-6 lg:text-base">
                   Revolutionize your space with Altima. Designed for
                   <br className="max-sm:hidden" /> convenience, security, and innovation, it offers
                   <br className="max-sm:hidden" /> features tailored to your needs:
@@ -510,12 +510,12 @@ export default function Web() {
                 Our Models
               </p>
 
-              <p className="font-regular w-full text-[#FFFFFF99] max-sm:text-center max-sm:text-xs max-sm:leading-[19px] md:text-center">
+              <p className="w-full font-normal text-[#FFFFFF99] max-sm:text-center max-sm:text-xs max-sm:leading-[19px] md:text-center">
                 At Altima, we bring innovation and security together through our range of advanced smart doors designed
                 for a connected lifestyle. Each model combines cutting-edge technology with sleek aesthetics, offering
                 intelligent solutions for modern living.
               </p>
-              <p className="font-regular mb-3 w-full text-[#FFFFFF99] max-sm:text-center max-sm:text-xs max-sm:leading-[19px] md:text-center">
+              <p className="mb-3 w-full font-normal text-[#FFFFFF99] max-sm:text-center max-sm:text-xs max-sm:leading-[19px] md:text-center">
                 From robust security features to elegant design, Altima models redefine how homes and businesses
                 safeguard their spaces, ensuring a seamless blend of safety, style, and convenience.
               </p>
@@ -531,8 +531,8 @@ export default function Web() {
       <section id="other-products" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
         <div className="  w-full justify-between md:py-10">
           <div className="flex w-full flex-col items-center justify-center sm:hidden">
-            <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:text-sm lg:text-2xl">Our Models</p>
-            <p className=" font-regular mb-6 mt-3    text-xl leading-none tracking-tight text-white md:text-xl xl:text-3xl">
+            <p className="flex  text-2xl  font-normal  text-[#FFFFFF99]  max-sm:text-sm lg:text-2xl">Our Models</p>
+            <p className=" mb-6 mt-3 text-xl    font-normal leading-none tracking-tight text-white md:text-xl xl:text-3xl">
               ALTIMA Core
             </p>
           </div>
@@ -550,10 +550,10 @@ export default function Web() {
               />
             </div>
             <div className="">
-              <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-xl:hidden max-sm:text-sm xl:text-2xl">
+              <p className="flex  text-2xl  font-normal  text-[#FFFFFF99]  max-xl:hidden max-sm:text-sm xl:text-2xl">
                 Our Models
               </p>
-              <p className=" font-regular my-6  text-base  font-bold leading-none tracking-tight text-white max-xl:hidden md:text-xl xl:text-3xl">
+              <p className=" my-6 text-base  font-bold  font-normal  leading-none tracking-tight text-white opacity-80 max-xl:hidden md:text-xl xl:text-3xl">
                 ALTIMA Core
               </p>
               <div>
@@ -564,7 +564,7 @@ export default function Web() {
                   </ul>
 
                   <p className="text-2xl font-semibold text-[#FF4F45]  max-xl:mt-3 max-xl:text-xl">
-                    ₹49,500 + <span className="font-regular text-base">Taxes</span>
+                    ₹49,500 + <span className="text-base font-normal">Taxes</span>
                   </p>
                 </div>
               </div>
@@ -641,7 +641,7 @@ export default function Web() {
                   onClick={handlePreOrderClick}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="font-regular   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:px-10 max-sm:py-2 max-sm:text-sm "
+                  className="gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 font-normal uppercase text-[#FFFFFF] max-sm:px-10 max-sm:py-2 max-sm:text-sm "
                 >
                   Pre-Order now
                 </motion.button>
@@ -655,13 +655,13 @@ export default function Web() {
         <div className="  w-full justify-between    xl:py-10">
           <div className="grid-col-2 grid w-full justify-between  max-xl:gap-5 xl:flex xl:gap-20">
             <div className="max-xl:flex max-xl:w-full max-xl:flex-col max-xl:items-center max-xl:justify-center  ">
-              <p className="font-regular  flex    text-2xl  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">Our Models</p>
-              <p className=" font-regular text-xl  leading-none tracking-tight text-white max-xl:mt-3 md:text-xl xl:my-6 xl:text-3xl">
+              <p className="flex  text-2xl    font-normal  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">Our Models</p>
+              <p className=" text-xl font-normal  leading-none tracking-tight text-white max-xl:mt-3 md:text-xl xl:my-6 xl:text-3xl">
                 ALTIMA Elite
               </p>
               <div>
                 <div className="flex items-center justify-between gap-6 bg-[#000000] px-4 py-2 text-black max-xl:hidden xl:max-w-[522px]">
-                  <ul className="list-inside list-disc">
+                  <ul className="list-inside ">
                     <li className=" text-[#FFFFFF] max-sm:text-xs">Ultimate Smart Home Hub </li>
                     <li className=" text-[#FFFFFF] max-sm:text-xs">All Pro features, plus</li>
                   </ul>
@@ -669,50 +669,50 @@ export default function Web() {
                   <p className="text-2xl text-[#FF4F45] max-sm:text-lg">₹90,000 + Taxes</p>
                 </div>
               </div>
-              <ul className="mb-6 mt-6 list-inside list-disc pl-2 max-xl:hidden">
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+              <ul className="mb-6 mt-6 list-inside  pl-2 max-xl:hidden">
+                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Security Level: </span> Very High
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Smart Lock Type: </span> Biometric Lock with Numeric Keypad
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Home Integration: </span> Extensive
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">User Profiles: </span> Extensive Customization
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Remote Access: </span> Yes
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Design: </span> Sleek and Modern
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Special Features: </span> Smart Home Hub, Analytics
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Target Audience: </span> Smart Home Enthusiasts
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">External Power Option: </span> Smart Home Backup Integration
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Voice Assistant Control: </span> Yes, Alexa & Google Assistant
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Smart Home Automation: </span> Full Integration
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Energy Management: </span> Yes, Smart Energy Monitoring
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Security Alerts: </span> Real-Time Mobile Alerts
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Intercom Functionality: </span> Built-in Intercom System
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Embedded in Door Types: </span> Compatible with Metal, Wood,
                   and Glass Doors
                 </li>
@@ -725,12 +725,12 @@ export default function Web() {
               </ul> */}
 
               <div className="flex items-center justify-between bg-[#FFFFFF0D] px-7 py-3 max-xl:hidden">
-                <ul className=" list-inside list-disc pl-2">
-                  <li className=" text-[#FFFFFF] max-sm:text-xs">Feature Comparison</li>
+                <ul className=" list-inside  pl-2">
+                  <li className=" text-[#FFFFFF] opacity-80 max-sm:text-xs">Feature Comparison</li>
                 </ul>
                 <div>
-                  <ul className=" flex list-inside list-disc items-center gap-2 pl-2">
-                    <li className=" text-[#FFFFFF] underline max-sm:text-xs">Download</li>
+                  <ul className=" flex list-inside items-center gap-2 pl-2">
+                    <li className=" text-[#FFFFFF] underline opacity-80 max-sm:text-xs">Download</li>
                     <motion.img
                       src="/FileArrowDown.png"
                       width={32}
@@ -747,7 +747,7 @@ export default function Web() {
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="font-regular gap-2  rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-xl:hidden max-xl:py-2 max-xl:text-sm "
+                  className="gap-2 rounded-lg  border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 font-normal uppercase text-[#FFFFFF] max-xl:hidden max-xl:py-2 max-xl:text-sm "
                   onClick={handlePreOrderClick}
                 >
                   Pre-Order now
@@ -763,69 +763,71 @@ export default function Web() {
             <div className="xl:hidden xl:w-[403]">
               <div>
                 <div className=" w-full items-center justify-center bg-[#000000] px-4 py-4 text-black">
-                  <ul className="list-inside list-disc">
-                    <li className=" text-center text-[#FFFFFF] max-sm:text-xs">Ultimate Smart Home Hub </li>
-                    <li className=" mt-2 text-center text-[#FFFFFF] max-sm:text-xs">All Pro features, plus</li>
+                  <ul className="list-inside text-[#FFFFFF] opacity-80 max-sm:text-sm">
+                    <li className=" ">Ultimate Smart Home Hub </li>
+                    <li className=" mt-2 ">All Pro features, plus</li>
                   </ul>
 
-                  <p className="mt-3 text-center text-2xl text-[#FF4F45] max-sm:text-lg">₹90,000 + Taxes</p>
+                  <p className="mt-3 text-2xl font-bold text-[#FF4F45] opacity-80 max-sm:text-xl">
+                    ₹99,000 + <span className="text-sm font-normal">Taxes</span>
+                  </p>
                 </div>
               </div>
-              <ul className="mb-6 mt-6 list-inside list-disc pl-2">
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+              <ul className="mb-6 mt-6 list-inside  pl-2 max-sm:text-sm">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Security Level: </span> Very High
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Smart Lock Type: </span> Biometric Lock, Smart Hub
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Home Integration: </span> Extensive
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">User Profiles: </span> Extensive Customization
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Remote Access: </span> Yes
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Design: </span> Sleek and Modern
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Special Features: </span> Smart Home Hub, Analytics
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Target Audience: </span> Smart Home Enthusiasts
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">External Power Option: </span> Smart Home Backup Integration
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Voice Assistant Control: </span> Yes, Alexa & Google Assistant
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Smart Home Automation: </span> Full Integration
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Energy Management: </span> Yes, Smart Energy Monitoring
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Security Alerts: </span> Real-Time Mobile Alerts
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Intercom Functionality: </span> Built-in Intercom System
                 </li>
-                <li className="pb-2 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Embedded in Door Types: </span> Metal, Glass, Wood
                 </li>
               </ul>
 
               <div className="mb-5 flex items-center justify-between bg-[#FFFFFF0D] px-7 py-3 sm:hidden">
-                <ul className=" list-inside list-disc pl-2">
-                  <li className=" text-[#FFFFFF] max-sm:text-xs">Feature Comparison</li>
+                <ul className=" list-inside  pl-2">
+                  <li className=" text-[#FFFFFF] opacity-80 max-sm:text-sm">Feature Comparison</li>
                 </ul>
                 <div>
-                  <ul className=" flex list-inside list-disc items-center gap-2 pl-2">
-                    <li className=" text-[#FFFFFF] underline max-sm:text-xs">Download</li>
+                  <ul className=" flex list-inside  items-center gap-2 pl-2">
+                    <li className=" text-[#FFFFFF] underline opacity-80 max-sm:text-sm">Download</li>
                     <motion.img
                       src="/FileArrowDown.png"
                       width={32}
@@ -850,7 +852,7 @@ export default function Web() {
                   onClick={handlePreOrderClick}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="font-regular   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm "
+                  className="gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 font-normal uppercase text-[#FFFFFF] max-sm:px-10 max-sm:py-2 max-sm:text-sm "
                 >
                   Pre-Order now
                 </motion.button>
@@ -861,41 +863,43 @@ export default function Web() {
       </section>
 
       <section id="other-products" className="paddings  w-full bg-[#282828] max-sm:px-3 ">
-        <div className="w-full     py-10">
+        <div className="w-full     xl:py-10">
           <div className="flex flex-col items-center justify-center">
             <p className="text-[#FFFFFF99] max-sm:text-sm">Pre-order Now - Limited Units Available.</p>
-            <p className="font-regular custom-text first-word-color my-6 flex text-center text-3xl text-[#FFFFFF] max-md:text-2xl max-sm:text-xl md:w-[642px]">
+            <p className="custom-text first-word-color my-4 flex border-b border-[#FFFFFF1A] pb-4 text-center text-3xl font-bold text-[#FFFFFF] opacity-80 max-xl:text-2xl md:w-[642px]">
               5,000 units available in the first pre-order batch.
             </p>
 
-            <div className=" w-full justify-between py-10 md:flex">
-              <div className="flex items-start justify-center gap-3 border-[#FFFFFF99] max-sm:border-b max-sm:pb-3 md:border-r md:pr-6">
+            <div className=" w-full justify-between max-xl:px-6 md:flex xl:py-10">
+              <div className="flex items-start justify-center gap-3 border-[#FFFFFF1A]  max-xl:pb-2 max-sm:border-b md:border-r md:pr-6">
                 <Image src="/SealPercent.png" width={50} height={50} alt="" />
                 <div>
-                  <p className="text-[#FFFFFF] max-sm:text-sm">50% Discount for Preorders:</p>
-                  <p className="text-[#FFFFFF99] max-sm:text-xs">
+                  <p className="mb-2 font-bold text-[#FFFFFF] max-xl:text-sm">50% Discount for Preorders:</p>
+                  <p className="text-[#FFFFFF99] max-xl:text-sm max-xl:leading-[22.4px]">
                     Pre-order customers can enjoy a 50% discount exclusively for placing preorders on the
                     first batch of units.
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start justify-center gap-3 border-[#FFFFFF99] max-sm:border-b max-sm:py-3 md:border-r md:pl-6 md:pr-6">
+              <div className="my-4 flex items-start justify-center gap-3 border-[#FFFFFF1A]  max-sm:border-b max-sm:pb-2 md:border-r md:pr-6">
                 <Image src="/Upload.png" width={50} height={50} alt="" />
                 <div>
-                  <p className="text-[#FFFFFF]  max-sm:text-sm">Free Extended Warranty Upgrade:</p>
-                  <p className="text-[#FFFFFF99] max-sm:text-xs">
+                  <p className=" font-bold text-[#FFFFFF] max-xl:pb-2 max-xl:text-sm">
+                    Free Extended Warranty Upgrade:
+                  </p>
+                  <p className="text-[#FFFFFF99] max-xl:leading-[22.4px]  max-sm:text-sm">
                     All pre-orders come with a lifetime free software upgrade, ensuring your device remains updated with
                     the latest smart features.
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start justify-center gap-3 max-sm:pt-3 md:pl-6">
+              <div className="flex items-start justify-center gap-3 max-xl:mb-6 max-sm:pt-3 md:pl-6">
                 <Image src="/ShieldCheckered.png" width={50} height={50} alt="" />
                 <div>
-                  <p className="text-[#FFFFFF]  max-sm:text-sm">Free Extended Warranty Upgrade:</p>
-                  <p className="text-[#FFFFFF99] max-sm:text-xs">
+                  <p className="mb-2 font-bold text-[#FFFFFF] max-sm:text-sm">Free Extended Warranty Upgrade:</p>
+                  <p className="text-[#FFFFFF99] max-xl:leading-[22.4px] max-sm:text-sm">
                     Pre-order now and get an extended warranty upgrade for additional peace of mind, free of charge.
                   </p>
                 </div>
@@ -905,7 +909,7 @@ export default function Web() {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="font-regular flex  gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm"
+              className="flex gap-2  rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 font-normal uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm"
               onClick={handlePreOrderClick}
             >
               Pre-Order now
@@ -918,10 +922,10 @@ export default function Web() {
         <div className="  w-full justify-between    md:py-10">
           <div className=" flex flex-col items-center justify-center gap-20  max-xl:gap-5">
             <div className="">
-              <p className=" font-regular my-6  text-center text-xl leading-none tracking-tight text-[#FFFFFF99] md:text-lg 2xl:text-3xl">
+              <p className=" my-6 text-center  text-xl font-normal leading-none tracking-tight text-[#FFFFFF99] md:text-lg 2xl:text-3xl">
                 Our Vision
               </p>
-              <p className=" font-regular my-6  text-center text-xl leading-none tracking-tight text-white md:text-xl 2xl:text-3xl">
+              <p className=" my-6 text-center  text-xl font-normal leading-none tracking-tight text-white md:text-xl 2xl:text-3xl">
                 Altima’s Vision
               </p>
 
@@ -939,17 +943,17 @@ export default function Web() {
         <div className="  w-full     py-10">
           <div className="flex flex-col items-center justify-center">
             <p className=" text-[#FFFFFF99]">Timeline</p>
-            <p className="font-regular my-6 flex text-center text-3xl  text-[#FFFFFF]  max-md:text-2xl">
+            <p className="my-6 flex text-center text-3xl font-normal  text-[#FFFFFF]  max-md:text-2xl">
               Production Timeline
             </p>
 
-            <Image src="/Frame 48095551.png" width={549} height={64} alt="" className="py-10 md:hidden" />
+            <Image src="/Frame 48095551 copy.png" width={549} height={64} alt="" className="py-10 md:hidden" />
             <Image src="/Frame 48095442.png" width={1216} height={64} alt="" className="py-10 max-sm:hidden" />
           </div>
         </div>
       </section>
 
-      <section className="paddings  w-full bg-[#151515] max-sm:px-3 ">
+      {/* <section className="paddings  w-full bg-[#151515] max-sm:px-3 ">
         <div className="  w-full     py-10">
           <div className="flex flex-col">
             <p className=" text-[#FFFFFF99]">FAQs</p>
@@ -970,9 +974,9 @@ export default function Web() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <ContactUs />
+      {/* <ContactUs /> */}
 
       {isVideoModalOpen && (
         <motion.div

@@ -376,13 +376,13 @@ export default function Web() {
                         )}
                       </div>
                       {preorder.product_selection_altima_elite === true && (
-                        <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:text-lg lg:text-2xl">
+                        <p className="flex  text-2xl  font-normal  text-[#FFFFFF99]  max-sm:text-lg lg:text-2xl">
                           Altima Elite
                         </p>
                       )}
 
                       {preorder.product_selection_altima_elite === false && (
-                        <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:text-lg lg:text-2xl">
+                        <p className="flex  text-2xl  font-normal  text-[#FFFFFF99]  max-sm:text-lg lg:text-2xl">
                           Altima Core
                         </p>
                       )}
@@ -402,14 +402,14 @@ export default function Web() {
                             href="/my-account/track-order"
                             whileHover={{ scale: 1.01 }}
                             whileTap={{ scale: 0.9 }}
-                            className="font-regular w-full gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm  text-[#FFFFFF] max-sm:py-2 "
+                            className="w-full gap-2 rounded-lg   border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
                           >
                             Change Address
                           </motion.a>
                           <motion.button
                             whileHover={{ scale: 1.01 }}
                             whileTap={{ scale: 0.9 }}
-                            className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
+                            className="w-full gap-2   rounded-lg border border-[#FFFFFF99] px-4  py-2 text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
                             onClick={() => handleOpenModal(preorder.id)}
                           >
                             Cancel Order
@@ -418,7 +418,7 @@ export default function Web() {
                             onClick={() => handleTrackOrder(preorder.id)}
                             whileHover={{ scale: 1.01 }}
                             whileTap={{ scale: 0.9 }}
-                            className="font-regular w-full gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm  text-[#FFFFFF] max-sm:py-2 "
+                            className="w-full gap-2 rounded-lg   border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
                           >
                             Track Order
                           </motion.button>
@@ -426,7 +426,7 @@ export default function Web() {
                           <motion.button
                             whileHover={{ scale: 1.01 }}
                             whileTap={{ scale: 0.9 }}
-                            className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
+                            className="w-full gap-2   rounded-lg border border-[#FFFFFF99] px-4  py-2 text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
                             onClick={opeCancelModal}
                           >
                             View Details
@@ -440,14 +440,14 @@ export default function Web() {
                             href="/my-account/track-order"
                             whileHover={{ scale: 1.01 }}
                             whileTap={{ scale: 0.9 }}
-                            className="font-regular w-full gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm  text-[#FFFFFF] max-sm:py-2 "
+                            className="w-full gap-2 rounded-lg   border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
                           >
                             Change Address
                           </motion.a>
                           <motion.button
                             whileHover={{ scale: 1.01 }}
                             whileTap={{ scale: 0.9 }}
-                            className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
+                            className="w-full gap-2   rounded-lg border border-[#FFFFFF99] px-4  py-2 text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
                             onClick={() => handleOpenModal(preorder.id)}
                           >
                             Cancel Order
@@ -456,7 +456,7 @@ export default function Web() {
                             href="/my-account/track-order"
                             whileHover={{ scale: 1.01 }}
                             whileTap={{ scale: 0.9 }}
-                            className="font-regular w-full gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm  text-[#FFFFFF] max-sm:py-2 "
+                            className="w-full gap-2 rounded-lg   border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
                           >
                             Track Order
                           </motion.a>
@@ -464,7 +464,7 @@ export default function Web() {
                           <motion.button
                             whileHover={{ scale: 1.01 }}
                             whileTap={{ scale: 0.9 }}
-                            className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
+                            className="w-full gap-2   rounded-lg border border-[#FFFFFF99] px-4  py-2 text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
                             onClick={opeCancelModal}
                           >
                             View Details
@@ -477,7 +477,7 @@ export default function Web() {
                             onClick={() => handleTrackOrder(preorder.id)}
                             whileHover={{ scale: 1.01 }}
                             whileTap={{ scale: 0.9 }}
-                            className="font-regular w-full gap-2   rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-center text-sm  text-[#FFFFFF] max-sm:py-2 "
+                            className="w-full gap-2 rounded-lg   border border-[#FFFFFF99] px-4  py-2 text-center text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
                           >
                             Track Order
                           </motion.button>
@@ -485,7 +485,7 @@ export default function Web() {
                           <motion.button
                             whileHover={{ scale: 1.01 }}
                             whileTap={{ scale: 0.9 }}
-                            className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
+                            className="w-full gap-2   rounded-lg border border-[#FFFFFF99] px-4  py-2 text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
                             onClick={opeCancelModal}
                           >
                             View Details
@@ -497,7 +497,7 @@ export default function Web() {
                           <motion.button
                             whileHover={{ scale: 1.01 }}
                             whileTap={{ scale: 0.9 }}
-                            className="font-regular w-full   gap-2 rounded-lg border border-[#FFFFFF99]  px-4 py-2 text-sm  text-[#FFFFFF] max-sm:py-2 "
+                            className="w-full gap-2   rounded-lg border border-[#FFFFFF99] px-4  py-2 text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
                             onClick={opeCancelModal}
                           >
                             View Details

@@ -359,7 +359,7 @@ const EditAddress = () => {
                     type="submit"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    className="font-regular mb-3  gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF80] px-20 py-2 text-xs uppercase text-[#FFFFFF] max-sm:py-2 "
+                    className="mb-3 gap-2  rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF80] px-20 py-2 text-xs font-normal uppercase text-[#FFFFFF] max-sm:py-2 "
                   >
                     {loading ? "Updating..." : "Update Address"}
                   </motion.button>

@@ -292,7 +292,7 @@ export default function Web() {
               <div className="mx-4  flex justify-center">
                 <button
                   onClick={handleSubmit}
-                  className="font-regular mb-5 flex w-[60%] items-center justify-center gap-2 rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4 py-3 uppercase text-[#FFFFFF] max-sm:w-full"
+                  className="mb-5 flex w-[60%] items-center justify-center gap-2 rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4 py-3 font-normal uppercase text-[#FFFFFF] max-sm:w-full"
                 >
                   {loading ? "Processing Payment..." : "Pay Now"}
                 </button>
@@ -306,7 +306,7 @@ export default function Web() {
         <div className="  w-full     py-10">
           <div className="flex flex-col items-center justify-center">
             <p className=" text-[#FFFFFF99]">Timeline</p>
-            <p className="font-regular my-6 flex text-center text-5xl  text-[#FFFFFF]  max-md:text-2xl ">
+            <p className="my-6 flex text-center text-5xl font-normal  text-[#FFFFFF]  max-md:text-2xl ">
               Production Timeline
             </p>
 

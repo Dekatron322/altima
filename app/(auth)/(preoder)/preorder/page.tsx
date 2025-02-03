@@ -1288,7 +1288,7 @@ export default function Web() {
                       </button>
                     </div>
 
-                    <p className="font-regular  items-center  text-2xl   text-[#FFFFFF] max-sm:mt-3  max-sm:text-lg lg:text-2xl">
+                    <p className="items-center  text-2xl  font-normal   text-[#FFFFFF] max-sm:mt-3  max-sm:text-lg lg:text-2xl">
                       {quantity === 1 ? (
                         <>
                           <p className="text-sm">Unit Price : </p>
@@ -2208,7 +2208,7 @@ export default function Web() {
                 <div className="mt-5 flex w-full justify-center max-sm:px-3">
                   <button
                     type="submit"
-                    className={`font-regular mb-5 flex w-[60%] items-center justify-center gap-2 rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4 py-3 uppercase text-[#FFFFFF] transition-all duration-300 ease-in-out max-sm:w-full ${
+                    className={`mb-5 flex w-[60%] items-center justify-center gap-2 rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4 py-3 font-normal uppercase text-[#FFFFFF] transition-all duration-300 ease-in-out max-sm:w-full ${
                       isAgreement ? "cursor-pointer opacity-100" : "cursor-not-allowed opacity-50"
                     }`}
                   >
@@ -2236,7 +2236,7 @@ export default function Web() {
         <div className="  w-full     py-10">
           <div className="flex flex-col items-center justify-center">
             <p className=" text-[#FFFFFF99]">Timeline</p>
-            <p className="font-regular my-6 flex text-center text-5xl  text-[#FFFFFF]  max-md:text-2xl ">
+            <p className="my-6 flex text-center text-5xl font-normal  text-[#FFFFFF]  max-md:text-2xl ">
               Production Timeline
             </p>
 

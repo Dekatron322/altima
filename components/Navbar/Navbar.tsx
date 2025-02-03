@@ -73,7 +73,7 @@ const Navbar = () => {
               href="#about"
               className={
                 activeLink === "about"
-                  ? "font-regular border-b-3 border-[#FF3B30]  text-white"
+                  ? "border-b-3 border-[#FF3B30] font-normal  text-white"
                   : "  text-white transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
               }
             >
@@ -83,7 +83,7 @@ const Navbar = () => {
               href="#how-to-buy"
               className={
                 activeLink === "how-to-buy"
-                  ? "font-regular border-b-3 border-[#FF3B30]  text-white"
+                  ? "border-b-3 border-[#FF3B30] font-normal  text-white"
                   : "  text-white transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
               }
             >
@@ -93,7 +93,7 @@ const Navbar = () => {
               href="#specifications"
               className={
                 activeLink === "specifications"
-                  ? "font-regular border-b-3 border-[#FF3B30]  text-white"
+                  ? "border-b-3 border-[#FF3B30] font-normal  text-white"
                   : "text-white transition-all duration-300 ease-in-out  hover:text-[#FF3B30]"
               }
             >
@@ -104,7 +104,7 @@ const Navbar = () => {
               href="#other-products"
               className={
                 activeLink === "other-products"
-                  ? "font-regular border-b-3 border-[#FF3B30]  text-white"
+                  ? "border-b-3 border-[#FF3B30] font-normal  text-white"
                   : "text-white transition-all duration-300 ease-in-out  hover:text-[#FF3B30]"
               }
             >
@@ -114,7 +114,7 @@ const Navbar = () => {
               href="#contact"
               className={
                 activeLink === "contact"
-                  ? "font-regular border-b-3 border-[#FF3B30]  text-white"
+                  ? "border-b-3 border-[#FF3B30] font-normal  text-white"
                   : "text-white transition-all duration-300 ease-in-out  hover:text-[#FF3B30]"
               }
             >
@@ -153,9 +153,7 @@ const Navbar = () => {
             <a
               onClick={toggleNav}
               href="#about"
-              className={
-                activeLink === "about" ? "font-regular border-b-3 border-[#FF3B30] text-white" : "  text-white"
-              }
+              className={activeLink === "about" ? "border-b-3 border-[#FF3B30] font-normal text-white" : "  text-white"}
             >
               Home
             </a>
@@ -164,7 +162,7 @@ const Navbar = () => {
               onClick={toggleNav}
               href="#how-to-buy"
               className={
-                activeLink === "how-to-buy" ? "font-regular  border-b-3 border-[#FF3B30]  text-white" : "  text-white"
+                activeLink === "how-to-buy" ? "border-b-3  border-[#FF3B30] font-normal  text-white" : "  text-white"
               }
             >
               Product Info
@@ -174,7 +172,7 @@ const Navbar = () => {
               href="#specifications"
               className={
                 activeLink === "specifications"
-                  ? "font-regular  border-b-3 border-[#FF3B30]  text-white"
+                  ? "border-b-3  border-[#FF3B30] font-normal  text-white"
                   : "  text-white"
               }
             >
@@ -186,7 +184,7 @@ const Navbar = () => {
               href="#other-products"
               className={
                 activeLink === "other-products"
-                  ? "font-regular  border-b-3 border-[#FF3B30]  text-white"
+                  ? "border-b-3  border-[#FF3B30] font-normal  text-white"
                   : "e text-white"
               }
             >
@@ -196,7 +194,7 @@ const Navbar = () => {
               href="#contact"
               onClick={toggleNav}
               className={
-                activeLink === "contact" ? "font-regular  border-b-3 border-[#FF3B30]  text-white" : "  text-white"
+                activeLink === "contact" ? "border-b-3  border-[#FF3B30] font-normal  text-white" : "  text-white"
               }
             >
               Contact

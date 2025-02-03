@@ -228,7 +228,7 @@ export default function Web() {
                   href="#"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="font-regular rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF80] px-20 py-2 text-xs uppercase text-[#FFFFFF] max-sm:py-2"
+                  className="rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF80] px-20 py-2 text-xs font-normal uppercase text-[#FFFFFF] max-sm:py-2"
                 >
                   Save
                 </motion.a>

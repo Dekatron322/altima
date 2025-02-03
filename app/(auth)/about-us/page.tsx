@@ -60,14 +60,14 @@ export default function Web() {
         <div className="  w-full justify-between    xl:pt-32">
           <div className="flex w-full justify-between gap-10  sm:flex">
             <div>
-              <p className="font-regular   text-center  text-2xl  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">
+              <p className="text-center   text-2xl  font-normal  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">
                 Resources & Policies
               </p>
               <p className=" my-3 text-center  text-lg font-semibold text-white  max-sm:my-3 md:text-xl md:leading-10 xl:text-3xl">
                 About Us
               </p>
 
-              <p className="font-regular mb-6 w-full text-ellipsis text-lg text-[#FFFFFF99] max-sm:leading-7 md:text-center">
+              <p className="mb-6 w-full text-ellipsis text-lg font-normal text-[#FFFFFF99] max-sm:leading-7 md:text-center">
                 Welcome to Altima, where innovation meets security in a smarter, more connected way. We are passionate
                 about crafting intelligent solutions for modern living, blending advanced technology with elegant design
                 to transform how you experience safety and convenience. Altima is more than just a product—it&lsquo;s a
@@ -82,7 +82,7 @@ export default function Web() {
         <div className="  w-full justify-between    md:py-10">
           <div className="grid grid-cols-2  justify-between max-xl:grid-cols-1 max-xl:gap-5 max-sm:gap-5 xl:gap-20 ">
             <div className="">
-              <p className="font-regular    text-2xl text-[#FFFFFF99] max-xl:text-center max-sm:text-lg  lg:text-2xl">
+              <p className="text-2xl    font-normal text-[#FFFFFF99] max-xl:text-center max-sm:text-lg  lg:text-2xl">
                 Our Vision
               </p>
               <p className=" my-6 text-xl font-bold   leading-none tracking-tight text-white max-xl:text-center md:text-xl 2xl:text-3xl">
@@ -124,7 +124,7 @@ export default function Web() {
               />
             </div>
             <div className="">
-              <p className="font-regular  flex  text-2xl  text-[#FFFFFF99] max-sm:text-lg  lg:text-2xl">Our Journey</p>
+              <p className="flex  text-2xl  font-normal  text-[#FFFFFF99] max-sm:text-lg  lg:text-2xl">Our Journey</p>
               <p className=" my-6 text-xl   font-bold leading-none tracking-tight text-white md:text-xl 2xl:text-3xl">
                 where we are heading to.
               </p>
@@ -145,7 +145,7 @@ export default function Web() {
         <div className="  w-full justify-between    md:py-10">
           <div className="grid grid-cols-2  justify-between gap-20 max-xl:grid-cols-1 max-xl:gap-5 ">
             <div className="">
-              <p className="font-regular  flex  text-2xl  text-[#FFFFFF99] max-sm:text-lg  lg:text-2xl">Benefits</p>
+              <p className="flex  text-2xl  font-normal  text-[#FFFFFF99] max-sm:text-lg  lg:text-2xl">Benefits</p>
               <p className=" my-6 text-xl   font-bold leading-none tracking-tight text-white md:text-xl 2xl:text-3xl">
                 Why Choose Altima?
               </p>
@@ -176,13 +176,13 @@ export default function Web() {
           <div className="grid-col-2 grid w-full justify-between gap-10  sm:flex">
             <div className="md:w-full ">
               <div className="flex flex-col items-center">
-                <p className="font-regular  flex    text-2xl  text-[#FFFFFF99] max-sm:text-lg lg:text-2xl">Altima</p>
+                <p className="flex  text-2xl    font-normal  text-[#FFFFFF99] max-sm:text-lg lg:text-2xl">Altima</p>
                 <p className=" mb-4 mt-2 text-xl  font-bold tracking-tight  text-white max-sm:my-2   md:text-xl md:leading-10 xl:text-3xl">
                   The Altima Difference
                 </p>
 
                 {/* <motion.button
-                  className="font-regular rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-3 max-sm:text-sm"
+                  className="font-normal rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-3 max-sm:text-sm"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -243,13 +243,13 @@ export default function Web() {
                 Our Promise
               </p>
 
-              <p className="font-regular mb-3 w-full text-[#FFFFFF99] max-sm:leading-7 md:text-center 2xl:text-lg">
+              <p className="mb-3 w-full font-normal text-[#FFFFFF99] max-sm:leading-7 md:text-center 2xl:text-lg">
                 At Altima, we are committed to pushing the boundaries of security while maintaining the trust of our
                 customers. We promise you transparency, quality, and constant innovation, so that you can feel confident
                 in every Altima solution.
               </p>
 
-              <p className="font-regular mt-3 w-full text-[#FFFFFF99] max-sm:leading-7 md:text-center 2xl:text-lg">
+              <p className="mt-3 w-full font-normal text-[#FFFFFF99] max-sm:leading-7 md:text-center 2xl:text-lg">
                 Thank you for choosing Altima—where your peace of mind is our top priority.
               </p>
             </div>
@@ -260,12 +260,12 @@ export default function Web() {
       {/* <section id="specifications" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
         <div className="  w-full     py-10">
           <div className="flex flex-col items-center justify-center">
-            <p className="font-regular  mb-6 flex  text-5xl  text-[#FFFFFF] max-md:text-lg">Modern, Stylish, Unique</p>
+            <p className="font-normal  mb-6 flex  text-5xl  text-[#FFFFFF] max-md:text-lg">Modern, Stylish, Unique</p>
             <motion.a
               href="/preorder"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="font-regular flex  gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-xs "
+              className="font-normal flex  gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-xs "
             >
               Pre-Order now
             </motion.a>
@@ -277,8 +277,8 @@ export default function Web() {
         <div className="  w-full justify-between md:py-10">
           <div className="grid-col-2 grid w-full justify-between gap-20 max-sm:gap-5 sm:flex">
             <div className="w-[403]">
-              <p className="font-regular flex text-2xl  text-[#FFFFFF99] max-sm:text-lg lg:text-2xl">our Models</p>
-              <p className=" font-regular my-6 text-xl leading-none tracking-tight text-white max-sm:my-3 md:text-xl xl:text-5xl">
+              <p className="font-normal flex text-2xl  text-[#FFFFFF99] max-sm:text-lg lg:text-2xl">our Models</p>
+              <p className=" font-normal my-6 text-xl leading-none tracking-tight text-white max-sm:my-3 md:text-xl xl:text-5xl">
                 ALTIMA Elite
               </p>
               <div>
@@ -302,7 +302,7 @@ export default function Web() {
               <motion.a
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="font-regular   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm "
+                className="font-normal   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm "
                 href="/preorder"
               >
                 Pre-Order now

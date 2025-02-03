@@ -118,7 +118,7 @@ const MainFooter = () => {
                   />
                 </div>
 
-                <button className="font-regular flex items-center justify-center  gap-2 rounded-lg border  border-[#FF3B30] bg-[#FF3B30] px-4 text-sm uppercase  text-[#FFFFFF]  max-sm:text-[10px] ">
+                <button className="flex items-center justify-center gap-2  rounded-lg border border-[#FF3B30]  bg-[#FF3B30] px-4 text-sm font-normal uppercase  text-[#FFFFFF]  max-sm:text-[10px] ">
                   Subscribe
                 </button>
               </div>

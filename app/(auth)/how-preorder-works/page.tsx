@@ -17,7 +17,7 @@ export default function Web() {
                 How Pre-orders Work
               </p>
 
-              <p className="font-regular md:text-cente w-full text-ellipsis text-center text-lg text-[#FFFFFF99] max-sm:leading-7 2xl:px-60">
+              <p className="md:text-cente w-full text-ellipsis text-center text-lg font-normal text-[#FFFFFF99] max-sm:leading-7 2xl:px-60">
                 Pre-ordering with Altima is simple and secure. Follow these steps to reserve your Altima product and be
                 among the first to experience the future of smart home security.
               </p>
@@ -82,12 +82,12 @@ export default function Web() {
                 Important Note on Pre-orders
               </p>
 
-              <p className="font-regular mb-3  mt-3 w-full text-[#FFFFFF99] max-sm:leading-7 md:text-center 2xl:text-lg">
+              <p className="mb-3 mt-3  w-full font-normal text-[#FFFFFF99] max-sm:leading-7 md:text-center 2xl:text-lg">
                 <span className="text-white">Non-refundable Deposit: </span>
                 The 30% deposit is non-refundable but will be applied to your total purchase amount.
               </p>
 
-              <p className="font-regular  w-full text-[#FFFFFF99] max-sm:leading-7 md:text-center 2xl:text-lg">
+              <p className="w-full  font-normal text-[#FFFFFF99] max-sm:leading-7 md:text-center 2xl:text-lg">
                 <span className="text-white">Estimated Delivery: </span> Altima products are estimated to ship within
                 4-5 months after the pre-order window closes.
               </p>

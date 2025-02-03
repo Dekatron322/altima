@@ -520,7 +520,7 @@ export default function Web() {
             <div className="my-4 flex w-full items-center justify-center gap-5 max-sm:gap-2 ">
               <motion.a
                 href="/Altima Warranty_ Ext. Warranty _ Claim form .pdf"
-                className="font-regular whitespace-nowrap rounded-lg   bg-[#FFFFFF0D] px-4 py-3 uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
+                className="whitespace-nowrap rounded-lg bg-[#FFFFFF0D]   px-4 py-3 font-normal uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 target="_blank"
@@ -531,7 +531,7 @@ export default function Web() {
               </motion.a>
 
               <motion.button
-                className="font-regular whitespace-nowrap rounded-lg   bg-[#FFFFFF0D] px-8 py-3 uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
+                className="whitespace-nowrap rounded-lg bg-[#FFFFFF0D]   px-8 py-3 font-normal uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => {

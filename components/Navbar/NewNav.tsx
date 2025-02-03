@@ -73,7 +73,7 @@ const NewNav = () => {
               href="/"
               className={
                 activeLink === "about"
-                  ? "font-regular border-b-3 border-[#FF3B30]  text-white"
+                  ? "border-b-3 border-[#FF3B30] font-normal  text-white"
                   : "text-white transition-all duration-300 ease-in-out  hover:text-[#FF3B30]"
               }
             >
@@ -83,7 +83,7 @@ const NewNav = () => {
               href="/"
               className={
                 activeLink === "how-to-buy"
-                  ? "font-regular border-b-3 border-[#FF3B30]  text-white"
+                  ? "border-b-3 border-[#FF3B30] font-normal  text-white"
                   : "text-white transition-all duration-300 ease-in-out  hover:text-[#FF3B30]"
               }
             >
@@ -93,7 +93,7 @@ const NewNav = () => {
               href="/"
               className={
                 activeLink === "specifications"
-                  ? "font-regular border-b-3 border-[#FF3B30]  text-white"
+                  ? "border-b-3 border-[#FF3B30] font-normal  text-white"
                   : "text-white transition-all duration-300 ease-in-out  hover:text-[#FF3B30]"
               }
             >
@@ -104,7 +104,7 @@ const NewNav = () => {
               href="/"
               className={
                 activeLink === "other-products"
-                  ? "font-regular border-b-3 border-[#FF3B30]  text-white"
+                  ? "border-b-3 border-[#FF3B30] font-normal  text-white"
                   : "text-white transition-all duration-300 ease-in-out  hover:text-[#FF3B30]"
               }
             >
@@ -114,7 +114,7 @@ const NewNav = () => {
               href="/"
               className={
                 activeLink === "contact"
-                  ? "font-regular border-b-3 border-[#FF3B30]  text-white"
+                  ? "border-b-3 border-[#FF3B30] font-normal  text-white"
                   : "  text-white transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
               }
             >
@@ -154,7 +154,7 @@ const NewNav = () => {
               onClick={toggleNav}
               href="/"
               className={
-                activeLink === "about" ? "font-regular  border-b-3 border-[#FF3B30]  text-white" : "  text-white"
+                activeLink === "about" ? "border-b-3  border-[#FF3B30] font-normal  text-white" : "  text-white"
               }
             >
               Home
@@ -164,7 +164,7 @@ const NewNav = () => {
               onClick={toggleNav}
               href="#how-to-buy"
               className={
-                activeLink === "how-to-buy" ? "font-regular  border-b-3 border-[#FF3B30]  text-white" : "  text-white"
+                activeLink === "how-to-buy" ? "border-b-3  border-[#FF3B30] font-normal  text-white" : "  text-white"
               }
             >
               Product Info
@@ -174,7 +174,7 @@ const NewNav = () => {
               href="/"
               className={
                 activeLink === "specifications"
-                  ? "font-regular  border-b-3 border-[#FF3B30]  text-white"
+                  ? "border-b-3  border-[#FF3B30] font-normal  text-white"
                   : "  text-white"
               }
             >
@@ -186,7 +186,7 @@ const NewNav = () => {
               href="/"
               className={
                 activeLink === "other-products"
-                  ? "font-regular  border-b-3 border-[#FF3B30]  text-white"
+                  ? "border-b-3  border-[#FF3B30] font-normal  text-white"
                   : "e text-white"
               }
             >
@@ -196,7 +196,7 @@ const NewNav = () => {
               href="/"
               onClick={toggleNav}
               className={
-                activeLink === "contact" ? "font-regular  border-b-3 border-[#FF3B30]  text-white" : "  text-white"
+                activeLink === "contact" ? "border-b-3  border-[#FF3B30] font-normal  text-white" : "  text-white"
               }
             >
               Contact

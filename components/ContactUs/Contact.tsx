@@ -95,7 +95,7 @@ export default function ContactUs() {
           <button
             onClick={handleSubmit}
             disabled={loading}
-            className={`font-regular mt-7 flex w-[60%] items-center justify-center gap-2 rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4 py-4 uppercase text-[#FFFFFF] max-sm:w-full ${
+            className={`mt-7 flex w-[60%] items-center justify-center gap-2 rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4 py-4 font-normal uppercase text-[#FFFFFF] max-sm:w-full ${
               loading ? "opacity-50" : ""
             }`}
           >

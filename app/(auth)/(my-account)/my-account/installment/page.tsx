@@ -95,9 +95,7 @@ export default function Web() {
                 />
               </div>
               <div className="">
-                <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:text-lg lg:text-2xl">
-                  Altima Core
-                </p>
+                <p className="flex  text-2xl  font-normal  text-[#FFFFFF99]  max-sm:text-lg lg:text-2xl">Altima Core</p>
 
                 <ul className="mt-6 list-inside ">
                   <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
@@ -114,7 +112,7 @@ export default function Web() {
                   <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Date : 26 Aug, 2024 09:40am</li>
                 </ul>
 
-                <p className="font-regular flex  items-center  py-4 text-2xl text-[#FFFFFF]  max-sm:text-lg lg:text-2xl">
+                <p className="flex items-center  py-4  text-2xl font-normal text-[#FFFFFF]  max-sm:text-lg lg:text-2xl">
                   <span className="text-sm">Total: </span> ₹{total.toLocaleString()}
                 </p>
 
@@ -123,7 +121,7 @@ export default function Web() {
                     onClick={openModal}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    className="font-regular   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-sm uppercase text-[#FFFFFF] max-sm:py-2 "
+                    className="gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-sm font-normal uppercase text-[#FFFFFF] max-sm:py-2 "
                   >
                     Make Payment
                   </motion.button>
@@ -144,9 +142,7 @@ export default function Web() {
                 />
               </div>
               <div className="">
-                <p className="font-regular  flex  text-2xl  text-[#FFFFFF99]  max-sm:text-lg lg:text-2xl">
-                  Altima Core
-                </p>
+                <p className="flex  text-2xl  font-normal  text-[#FFFFFF99]  max-sm:text-lg lg:text-2xl">Altima Core</p>
 
                 <ul className="mt-6 list-inside ">
                   <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
@@ -163,7 +159,7 @@ export default function Web() {
                   <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">Date : 26 Aug, 2024 09:40am</li>
                 </ul>
 
-                <p className="font-regular flex  items-center  py-4 text-2xl text-[#FFFFFF]  max-sm:text-lg lg:text-2xl">
+                <p className="flex items-center  py-4  text-2xl font-normal text-[#FFFFFF]  max-sm:text-lg lg:text-2xl">
                   <span className="text-sm">Total: </span> ₹{total.toLocaleString()}
                 </p>
 
@@ -171,7 +167,7 @@ export default function Web() {
                   <motion.button
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    className="font-regular   gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-sm uppercase text-[#FFFFFF] max-sm:py-2 "
+                    className="gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-sm font-normal uppercase text-[#FFFFFF] max-sm:py-2 "
                   >
                     Make Payment
                   </motion.button>

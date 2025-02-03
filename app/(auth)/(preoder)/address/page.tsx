@@ -280,7 +280,7 @@ export default function Web() {
             </div>
           </div>
           <div className="flex w-full flex-col items-center  justify-center  bg-[#151515] pt-3 max-sm:rounded-lg max-sm:p-2  md:p-10">
-            <p className="font-regular gap-2     text-3xl uppercase text-[#FFFFFF] max-sm:py-2 ">My Address</p>
+            <p className="gap-2 text-3xl     font-normal uppercase text-[#FFFFFF] max-sm:py-2 ">My Address</p>
             <div className="my-3 w-full border-b border-[#FFFFFF1A]"></div>
 
             <div className=" flex h-full w-full  flex-col   rounded-lg   max-sm:grid max-sm:gap-5  md:gap-6">
@@ -381,7 +381,7 @@ export default function Web() {
               href="/address/add-address"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="font-regular mt-7 gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF80] px-4 py-2 text-xs uppercase text-[#FFFFFF] max-sm:py-2 "
+              className="mt-7 gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF80] px-4 py-2 text-xs font-normal uppercase text-[#FFFFFF] max-sm:py-2 "
             >
               Add New Address
             </motion.a>
