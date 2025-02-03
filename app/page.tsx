@@ -510,7 +510,7 @@ export default function Web() {
                 Our Models
               </p>
 
-              <p className="w-full font-normal text-[#FFFFFF99] max-sm:text-center max-sm:text-xs max-sm:leading-[19px] md:text-center">
+              <p className="w-full font-normal text-[#FFFFFF99] max-xl:text-sm max-xl:leading-[19px] max-sm:text-center md:text-center">
                 At Altima, we bring innovation and security together through our range of advanced smart doors designed
                 for a connected lifestyle. Each model combines cutting-edge technology with sleek aesthetics, offering
                 intelligent solutions for modern living.
