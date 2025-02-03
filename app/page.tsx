@@ -919,17 +919,17 @@ export default function Web() {
       </section>
 
       <section className="paddings  w-full bg-[#151515] max-sm:px-3 ">
-        <div className="  w-full justify-between    md:py-10">
+        <div className="  w-full justify-between    xl:py-10">
           <div className=" flex flex-col items-center justify-center gap-20  max-xl:gap-5">
             <div className="">
-              <p className=" my-6 text-center  text-xl font-normal leading-none tracking-tight text-[#FFFFFF99] md:text-lg 2xl:text-3xl">
+              <p className=" text-center text-xl font-normal  leading-none tracking-tight text-[#FFFFFF99] max-xl:text-xs md:text-lg xl:my-6 2xl:text-3xl">
                 Our Vision
               </p>
-              <p className=" my-6 text-center  text-xl font-normal leading-none tracking-tight text-white md:text-xl 2xl:text-3xl">
+              <p className="text-center text-xl font-normal  leading-none tracking-tight text-white max-xl:text-base max-sm:my-2 md:text-xl xl:my-6 2xl:text-3xl">
                 Altima’s Vision
               </p>
 
-              <p className="text-center text-base leading-9 text-[#FFFFFF99]   max-sm:text-xs 2xl:text-[18px]">
+              <p className="text-center text-base  leading-[22.4px] text-[#FFFFFF99]  max-sm:text-sm 2xl:text-[18px]">
                 To make every entryway smart, secure, and seamlessly connected, <br className="max-sm:hidden" />{" "}
                 redefining the future of safety and convenience for homes <br className="max-sm:hidden" />
                 and businesses worldwide.
@@ -940,14 +940,14 @@ export default function Web() {
       </section>
 
       <section className="paddings  w-full bg-[#080808] max-sm:px-3 ">
-        <div className="  w-full     py-10">
+        <div className="  w-full     xl:py-10">
           <div className="flex flex-col items-center justify-center">
-            <p className=" text-[#FFFFFF99]">Timeline</p>
-            <p className="my-6 flex text-center text-3xl font-normal  text-[#FFFFFF]  max-md:text-2xl">
+            <p className=" text-[#FFFFFF99] max-xl:text-xs">Timeline</p>
+            <p className="flex text-center text-3xl font-semibold text-[#FFFFFF] max-xl:my-2  max-xl:text-base  xl:my-6">
               Production Timeline
             </p>
 
-            <Image src="/Frame 48095551 copy.png" width={549} height={64} alt="" className="py-10 md:hidden" />
+            <Image src="/Frame 48095551 copy.png" width={549} height={64} alt="" className="py-4 md:hidden" />
             <Image src="/Frame 48095442.png" width={1216} height={64} alt="" className="py-10 max-sm:hidden" />
           </div>
         </div>
