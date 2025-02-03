@@ -355,7 +355,7 @@ export default function Web() {
                   disappearing handle
                 </span>{" "}
                 and cutting-edge technology, both models deliver seamless integration of security and style, perfect for
-                any space—whether it's your home, office, or beyond. Choose Altima Core for an advanced smart door
+                any space—whether it&apos;s your home, office, or beyond. Choose Altima Core for an advanced smart door
                 experience, or Altima Elite for the same smart door experience with the added benefit of complete
                 control over your home gadgets.
               </p>
@@ -553,7 +553,7 @@ export default function Web() {
               <p className="flex  text-2xl  font-normal  text-[#FFFFFF99]  max-xl:hidden max-sm:text-sm xl:text-2xl">
                 Our Models
               </p>
-              <p className=" my-6 text-base  font-bold  font-normal  leading-none tracking-tight text-white opacity-80 max-xl:hidden md:text-xl xl:text-3xl">
+              <p className=" my-6 text-base  font-bold   leading-none tracking-tight text-white opacity-80 max-xl:hidden md:text-xl xl:text-3xl">
                 ALTIMA Core
               </p>
               <div>
