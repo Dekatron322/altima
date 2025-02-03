@@ -136,12 +136,12 @@ const Navbar = () => {
           <Link href="/" className=" content-center">
             <Image src="/Altima.svg" width={80} height={80} alt="dekalo" />
           </Link>
-          <RiMenuLine className="h-5 w-5 text-white" onClick={toggleNav} style={{ cursor: "pointer" }} />
+          <RiMenuLine className="h-6 w-6 text-white" onClick={toggleNav} style={{ cursor: "pointer" }} />
         </div>
 
         <div
           ref={navRef}
-          className={`fixed left-0 top-0 z-50 h-full w-1/2  bg-[#151515] transition-transform duration-300 ${
+          className={`fixed left-0 top-0 z-50 h-full bg-[#151515] transition-transform  duration-300 max-xl:w-1/2 max-sm:w-2/3 ${
             isNavOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
@@ -154,7 +154,7 @@ const Navbar = () => {
               onClick={toggleNav}
               href="#about"
               className={
-                activeLink === "about" ? "font-regular  border-b-3 border-[#FF3B30]  text-white" : "  text-white"
+                activeLink === "about" ? "font-regular border-b-3 border-[#FF3B30] text-white" : "  text-white"
               }
             >
               Home

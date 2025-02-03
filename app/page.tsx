@@ -85,7 +85,7 @@ export default function Web() {
       title: "1. Discover Altima: Redefining Security",
       content: (
         <div className="text-center">
-          <p className="text-white">
+          <p className="text-sm leading-6 text-[#FFFFFF99]">
             Altima Core and Elite combine advanced technology with elegant design to safeguard your spaces. Featuring
             biometric access, retractable handles, and premium materials, Altima is the ultimate solution for homes and
             offices. Choose Core for essential features or Elite for enhanced functionality tailored to your needs.
@@ -98,16 +98,16 @@ export default function Web() {
       title: "2. Why Preorder?",
       content: (
         <div className="text-center">
-          <p className="text-white">Preordering Altima comes with exclusive benefits:</p>
-          <ul className="grid gap-3">
+          <p className="text-sm text-white">Preordering Altima comes with exclusive benefits:</p>
+          <ul className="grid gap-3 text-sm">
             <li className="mt-3">
-              <b>- Priority Access:</b> Be among the first to receive your Altima.
+              <b className="text-white">- Priority Access:</b> Be among the first to receive your Altima.
             </li>
             <li>
-              <b>- Exclusive Pricing:</b> Enjoy special preorder rates
+              <b className="text-white">- Exclusive Pricing:</b> Enjoy special preorder rates
             </li>
             <li>
-              <b>- Flexible Cancellations:</b> Cancel before shipment with clear terms.
+              <b className="text-white">- Flexible Cancellations:</b> Cancel before shipment with clear terms.
             </li>
           </ul>
           <p className="mt-5 text-white">Reserve your Altima today and embrace smarter living!</p>
@@ -118,19 +118,19 @@ export default function Web() {
       title: "3. How to Preorder",
       content: (
         <div className="text-center">
-          <p className="text-white">Preordering is quick and simple:</p>
-          <ul className="grid gap-3">
+          <p className="text-sm text-white">Preordering is quick and simple:</p>
+          <ul className="grid gap-3 text-sm">
             <li className="mt-3">
-              <b>1. Choose Your Model: </b> Select Altima Core or Elite.
+              <b className="text-[#ffffff]">1. Choose Your Model: </b> Select Altima Core or Elite.
             </li>
             <li>
-              <b>2. Reserve Your Spot:</b> Secure your order with a 30% deposit.
+              <b className="text-[#ffffff]">2. Reserve Your Spot:</b> Secure your order with a 30% deposit.
             </li>
             <li>
-              <b>3. Stay Updated:</b> Receive notifications about production and delivery.
+              <b className="text-[#ffffff]">3. Stay Updated:</b> Receive notifications about production and delivery.
             </li>
             <li>
-              <b>4. Complete Payment:</b> Pay the remaining balance before shipment.
+              <b className="text-[#ffffff]">4. Complete Payment:</b> Pay the remaining balance before shipment.
             </li>
           </ul>
           <p className="mt-5 text-white">Your smart door journey starts here—preorder now!</p>
@@ -140,18 +140,19 @@ export default function Web() {
     {
       title: "4. Flexible Payment Options",
       content: (
-        <div className="text-center">
+        <div className="text-center text-sm">
           <p className="text-white">We ensure your payment experience is smooth:</p>
           <ul className="grid gap-3">
             <li className="mt-3">
-              <b>- Deposit: </b> A 30% deposit secures your order and is non-refundable, except for delays exceeding 6
-              months.
+              <b className="text-[#ffffff]">- Deposit: </b> A 30% deposit secures your order and is non-refundable,
+              except for delays exceeding 6 months.
             </li>
             <li>
-              <b>- Final Payment:</b> Balance due before shipment, including optional add-ons.
+              <b className="text-[#ffffff]">- Final Payment:</b> Balance due before shipment, including optional
+              add-ons.
             </li>
             <li>
-              <b>- Transparency:</b> Receive detailed invoices with no hidden charges.
+              <b className="text-[#ffffff]">- Transparency:</b> Receive detailed invoices with no hidden charges.
             </li>
           </ul>
           <p className="mt-5 text-white">For delivery inquiries, contact our support team.</p>
@@ -161,17 +162,17 @@ export default function Web() {
     {
       title: "5. Reliable Shipping",
       content: (
-        <div className="text-center">
+        <div className="text-center text-sm">
           <p className="text-white">Your Altima smart door will reach you securely and on time:</p>
           <ul className="grid gap-3">
             <li className="mt-3">
-              <b>- Estimated Delivery: </b> 4–5 months after the preorder window closes.
+              <b className="text-white">- Estimated Delivery: </b> 4–5 months after the preorder window closes.
             </li>
             <li>
-              <b>- Real-Time Updates:</b> Track your shipment every step of the way.
+              <b className="text-white">- Real-Time Updates:</b> Track your shipment every step of the way.
             </li>
             <li>
-              <b>- Safe Packaging:</b> Designed to arrive in perfect condition.
+              <b className="text-white">- Safe Packaging:</b> Designed to arrive in perfect condition.
             </li>
           </ul>
         </div>
@@ -182,18 +183,18 @@ export default function Web() {
       content: (
         <div className="text-center">
           <p className="text-white">Altima products come with dependable coverage and assistance:</p>
-          <ul className="grid gap-3">
-            <li className="mt-3">
-              <b>- 1-Year Warranty: </b> Covers manufacturing defects.
+          <ul className="grid gap-3 text-sm">
+            <li className="mt-3 ">
+              <b className="text-white">- 1-Year Warranty: </b> Covers manufacturing defects.
             </li>
             <li>
-              <b>- Extended Warranty:</b> Available on request for added peace of mind.
+              <b className="text-white">- Extended Warranty:</b> Available on request for added peace of mind.
             </li>
             <li>
-              <b>- Expert Guidance:</b> Support for installation and troubleshooting.
+              <b className="text-white">- Expert Guidance:</b> Support for installation and troubleshooting.
             </li>
             <li>
-              <b>- 24/7 Assistance:</b> Our team is always here for you.
+              <b className="text-white">- 24/7 Assistance:</b> Our team is always here for you.
             </li>
           </ul>
         </div>
@@ -202,17 +203,19 @@ export default function Web() {
     {
       title: "7. Refund & Cancellation Policy",
       content: (
-        <div className="text-center">
+        <div className="text-center text-sm">
           <p>We’ve created a clear policy for your convenience:</p>
           <ul className="grid gap-3">
             <li className="mt-3">
-              <b>- Deposit Policy:</b> The 30% deposit is non-refundable unless delays exceed 6 months.
+              <b className="text-white">- Deposit Policy:</b> The 30% deposit is non-refundable unless delays exceed 6
+              months.
             </li>
             <li>
-              <b>- Cancellations:</b> Cancel before shipment if needed.
+              <b className="text-white">- Cancellations:</b> Cancel before shipment if needed.
             </li>
             <li>
-              <b>- Refund Timeline:</b> Refunds (where applicable) are processed within 14 business days.
+              <b className="text-white">- Refund Timeline:</b> Refunds (where applicable) are processed within 14
+              business days.
             </li>
           </ul>
           <p className="mt-5 text-white">For detailed terms, refer to our Refund Policy.</p>
@@ -222,8 +225,8 @@ export default function Web() {
     {
       title: "8. Ask a Question",
       content: (
-        <div className="flex w-full flex-col  justify-center 2xl:px-[20%]">
-          <p className="w-full  border-b border-[#FFFFFF1A] pb-2 font-bold text-white">
+        <div className="flex w-full flex-col  justify-center text-sm 2xl:px-[20%]">
+          <p className="w-full border-b border-[#FFFFFF1A]  pb-2 text-center text-base font-bold text-white">
             Find answers to common questions:
           </p>
           <ul className="grid gap-3">
@@ -250,14 +253,14 @@ export default function Web() {
     {
       title: "9. Contact Us",
       content: (
-        <div className="text-center">
-          <p className="text-white">We’re here to help:</p>
+        <div className="text-center text-sm">
+          <p className="border-b border-[#FFFFFF1A] pb-3 text-center text-base text-white">We’re here to help:</p>
           <ul className="grid gap-3">
             <li className="mt-3">
               <b>- Email:</b> contact@smarthavensystems.com
             </li>
             <li>
-              <b>- Phone:</b> 022-6971-8365
+              <b>- Phone:</b> 08047360770
             </li>
             <li>
               <b>- Address:</b> SmartHaven Systems, Sahara CHS, Shop no. 4, Sector 40, Seawoods, Navi Mumbai, 400706
@@ -321,35 +324,40 @@ export default function Web() {
           exit={{ opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className=" flex h-full w-full max-xl:mt-10 max-xl:justify-center max-xl:text-center max-sm:justify-center lg:mt-0   lg:items-center ">
+          <div className=" flex h-full w-full max-xl:mt-2 max-xl:justify-center max-xl:text-center max-sm:justify-center lg:mt-0   lg:items-center ">
             <div>
-              <div className="mb-4 flex items-center justify-center gap-2 rounded-lg bg-[#FFFFFF1A] p-2 max-2xl:w-full xl:max-w-[519px]">
-                <Image src="/Vector.png" width={24} height={24} alt="" />
-                <p className="text-sm text-[#FFFFFF] max-sm:text-[9px]">POWERED BY INNOVATION FROM csPILLAI®</p>
+              <div className="mb-4 flex items-center justify-center gap-2 rounded-lg bg-[#FFFFFF08] p-2 max-2xl:w-full xl:max-w-[519px]">
+                <Image src="/Group 1037.png" width={24} height={24} alt="" className="sm:hidden" />
+                <Image src="/Group 1037.png" width={20} height={20} alt="" className="max-sm:hidden" />
+                <p className="text-sm text-[#FFFFFF] opacity-80 max-sm:text-[9px]">
+                  POWERED BY INNOVATION FROM SUSMO AND OTHER DRIVES
+                </p>
               </div>
-              <p className="   text-5xl font-bold text-[#FFFFFF] max-xl:text-center max-lg:mt-10 max-lg:text-4xl max-sm:text-2xl">
-                Altima: Core and Elite
+              <p className="text-5xl font-bold text-[#FFFFFF] max-xl:text-center max-lg:mt-5 max-lg:text-4xl max-sm:text-4xl">
+                Altima: Core and Elite <br className="max-sm:hidden" />
+                Smart Doors for Every <br className="max-sm:hidden" /> Space
               </p>
-              <p className="  gap-1  text-5xl font-bold text-[#FFFFFF] max-xl:py-4 max-xl:text-4xl max-sm:text-2xl">
-                Smart Doors for Every Space
-              </p>
+
               <p
-                className="   cursor-pointer text-5xl font-bold text-[#FF3B30]   max-xl:block max-xl:text-2xl lg:block"
+                className=" mt-2  cursor-pointer text-5xl font-bold text-[#FF3B30]   max-xl:block max-xl:text-4xl lg:block"
                 onClick={handlePreOrderClick}
               >
                 PRE-ORDER NOW!
               </p>
 
-              <p className="mt-10 text-xl text-white max-sm:mt-3  max-sm:text-base md:w-[600px]">
+              <p className="mt-10 text-xl text-white opacity-80 max-sm:mt-3 max-sm:text-sm md:w-[600px]">
                 Experience the next level of security and innovation with Altima—offering two distinct models to suit
                 your needs: Altima Core, the perfect smart door for unparalleled safety, and Altima Elite, which takes
                 it further by integrating smart home hub functionality. <br />
                 <br />
-                Featuring a disappearing handle and cutting-edge technology, both models deliver seamless integration of
-                security and style, perfect for any space—whether it&apos;s your home, office, or beyond. Choose Altima
-                Core for an advanced smart door experience, or Altima Elite for the same smart door experience with the
-                added benefit of complete control over your home gadgets. Experience the next level of convenience and
-                security with Altima – a revolutionary smart door and home hub in one. Featuring a{" "}
+                Featuring a{" "}
+                <span onClick={openVideoModal} className="cursor-pointer text-[#FF3B30]">
+                  disappearing handle
+                </span>{" "}
+                and cutting-edge technology, both models deliver seamless integration of security and style, perfect for
+                any space—whether it's your home, office, or beyond. Choose Altima Core for an advanced smart door
+                experience, or Altima Elite for the same smart door experience with the added benefit of complete
+                control over your home gadgets.
               </p>
               <div className="max-2xl:my-5 xl:hidden">
                 <motion.img
@@ -362,10 +370,10 @@ export default function Web() {
                   height={583}
                 />
               </div>
-              <div className="mt-4 flex w-full gap-5 max-xl:items-center max-xl:justify-center max-sm:gap-2 ">
+              <div className="mt-8 flex w-full gap-5 max-xl:items-center max-xl:justify-center max-sm:gap-2 ">
                 <motion.button
                   onClick={handlePreOrderClick}
-                  className="font-regular whitespace-nowrap rounded-lg border border-[#FF3B30] bg-[#FFFFFF26] px-4 py-3 uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
+                  className="font-regular whitespace-nowrap rounded-lg border border-[#FF3B30] bg-[#FFFFFF26] px-4 py-3 uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-sm "
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -373,13 +381,13 @@ export default function Web() {
                 </motion.button>
 
                 <motion.button
-                  className="font-regular flex items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-[#FFFFFF99] bg-transparent px-4 py-3 uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-2 max-sm:text-xs "
+                  className="font-regular flex items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-[#FFFFFF99] bg-transparent px-4 py-3 uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-2 max-sm:text-sm "
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={openVideoModal} // Open modal
                 >
                   Watch Video
-                  <Image src="/youtube.png" width={24} height={24} alt="" />
+                  <Image src="/Frame 48095395.png" width={26} height={26} alt="" />
                 </motion.button>
               </div>
             </div>
@@ -390,15 +398,15 @@ export default function Web() {
       </section>
 
       <section className="paddings  w-full bg-[#151515] max-sm:px-3 ">
-        <div className="  w-full     py-10">
+        <div className="w-full xl:py-10">
           <div className="flex w-full flex-col items-center justify-center">
-            <p className=" text-[#FFFFFF99]">Benefits</p>
+            <p className="text-[#FFFFFF99] max-sm:text-sm lg:text-sm">Benefits</p>
             <p className="font-regular mb-4 mt-2  text-xl tracking-tight  text-white max-sm:my-2   md:text-xl md:leading-10 xl:text-3xl">
               Why Pre-Order?
             </p>
           </div>
 
-          <div className=" w-full rounded-md border border-[#FFFFFF1A]  ">
+          <div className=" w-full rounded-md border border-[#FFFFFF1A]">
             {BenefitsData.map((benefits, id) => (
               <AccordionTwo
                 key={id}
@@ -412,137 +420,77 @@ export default function Web() {
         </div>
       </section>
 
-      {/* <section id="how-to-buy" className="paddings  w-full bg-[#151515] max-sm:px-3 ">
-        <motion.div
-          className="  w-full justify-between py-10"
-          variants={boxVariants}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 0.5 }}
-        >
-          <div className="flex w-full justify-between  sm:flex">
-            <div className="w-full items-center justify-center max-sm:w-full">
-              <p className="font-regular  text-center  text-2xl  text-[#FFFFFF99]  lg:text-2xl">Benefits</p>
-              <p className=" font-regular mb-4  mt-2  text-center   text-xl leading-none tracking-tight text-white max-sm:my-4 md:text-xl xl:text-3xl">
-                Why Pre-Order?
-              </p>
-              <div className="grid grid-cols-4 gap-6 max-xl:grid-cols-2 max-xl:gap-4 max-sm:grid-cols-1">
-                <div className=" w-full rounded-lg bg-[#080808] p-5">
-                  <Image src="/SketchLogo.png" width={48} height={48} alt="" className="max-sm:hidden" />
-                  <Image src="/SketchLogo.png" width={35} height={35} alt="" className="sm:hidden" />
-                  <p className="py-2 text-lg text-white max-md:text-sm">BE FIRST</p>
-                  <p className=" text-lg text-[#FFFFFF99] max-sm:text-xs">
-                    Be the first to experience
-                    <br className="max-sm:hidden" /> this groundbreaking
-                    <br className="max-sm:hidden" /> innovation.
-                  </p>
-                </div>
-                <div className=" w-full rounded-lg bg-[#080808] p-5">
-                  <Image src="/CurrencyInr.png" width={48} height={48} alt="" className="max-sm:hidden" />
-                  <Image src="/CurrencyInr.png" width={35} height={35} alt="" className="sm:hidden" />
-                  <p className="py-2 text-lg text-white max-md:text-sm">EXCLUSIVE PRICING</p>
-                  <p className=" text-lg text-[#FFFFFF99] max-sm:text-xs">
-                    Secure special <br className="max-sm:hidden" /> introductory pricing
-                    <br className="max-sm:hidden" />
-                    exclusively for pre-order
-                    <br className="max-sm:hidden" /> customers.
-                  </p>
-                </div>
-                <div className=" w-full rounded-lg bg-[#080808] p-5 ">
-                  <Image src="/Wrench.png" width={48} height={48} alt="" className="max-sm:hidden" />
-                  <Image src="/Wrench.png" width={35} height={35} alt="" className="sm:hidden" />
-                  <p className="py-2 text-lg text-white max-md:text-sm">PRIORITY INSTALLATION</p>
-                  <p className=" text-lg text-[#FFFFFF99] max-sm:text-xs">
-                    Enjoy priority installation <br className="max-sm:hidden" /> and be among the first to
-                    <br className="max-sm:hidden" />
-                    have it set up.
-                  </p>
-                </div>
-                <div className=" w-full rounded-lg bg-[#080808] p-5">
-                  <Image src="/DiamondsFour.png" width={48} height={48} alt="" className="max-sm:hidden" />
-                  <Image src="/DiamondsFour.png" width={35} height={35} alt="" className="sm:hidden" />
-                  <p className="py-2 text-lg text-white max-md:text-sm">LIMITED EDITION</p>
-                  <p className=" text-lg text-[#FFFFFF99] max-sm:text-xs">
-                    The first 100 pre-orders &ldquo; <br className="max-sm:hidden" /> receive a limited-edition
-                    <br className="max-sm:hidden" /> Founder&apos;s Edition&ldquo; Altima.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </section> */}
-
       <section id="how-to-buy" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
         <div className="  w-full justify-between    md:py-10">
           <div className="grid-col-2 grid w-full justify-between gap-10  sm:flex">
             <div className="md:w-full ">
               <div className="flex flex-col items-center">
-                <p className="font-regular flex text-lg  text-[#FFFFFF99] max-sm:text-lg lg:text-2xl">
+                <p className="font-regular flex text-lg  text-[#FFFFFF99] max-sm:text-xs lg:text-2xl">
                   Innovative Features
                 </p>
-                <p className=" font-regular mb-2 mt-2  text-xl tracking-tight  text-white max-sm:my-2   md:text-xl md:leading-10 xl:text-3xl">
+                <p className=" mb-2 mt-2 text-xl  font-bold tracking-tight  text-white max-sm:my-2 max-sm:text-base   md:text-xl md:leading-10 xl:text-3xl">
                   SMART AND VERSATILE
                 </p>
 
-                <p className="font-regular mb-6 flex text-center text-base   text-[#FFFFFF99]  max-sm:text-center  max-sm:text-sm lg:text-base">
+                <p className="font-regular mb-6 flex text-center text-base text-[#FFFFFF99]   max-sm:text-center  max-sm:text-sm  max-sm:leading-6 lg:text-base">
                   Revolutionize your space with Altima. Designed for
                   <br className="max-sm:hidden" /> convenience, security, and innovation, it offers
                   <br className="max-sm:hidden" /> features tailored to your needs:
                 </p>
               </div>
 
-              <div className="flex items-center justify-center gap-4 max-sm:mt-4 max-sm:grid max-sm:grid-cols-1 md:my-4">
-                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:p-5 md:h-[300px] md:w-[347px]">
-                  <Image src="/Fingerprint.png" width={50} height={50} alt="" className="max-sm:hidden" />
-                  <Image src="/Fingerprint.png" width={40} height={40} alt="" className="sm:hidden" />
-                  <p className="py-4 text-lg text-white max-sm:text-sm">Advanced Security</p>
-                  <p className="text-lg text-[#FFFFFF99] max-sm:text-xs">
-                    Multi-factor authentication
-                    <br className="max-sm:hidden" /> and real-time monitoring for <br className="max-sm:hidden" />{" "}
-                    unmatched safety.
+              <div className="flex items-center justify-center gap-4 max-sm:my-4 max-sm:grid max-sm:grid-cols-1 md:my-4">
+                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:p-6 md:h-[300px] md:w-[347px]">
+                  <Image src="/Fingerprint copy.png" width={50} height={50} alt="" className="max-sm:hidden" />
+                  <Image src="/Fingerprint copy.png" width={32} height={32} alt="" className="sm:hidden" />
+                  <p className="py-4 text-lg font-bold text-white max-sm:text-base">Advanced Security</p>
+                  <p className="text-base text-[#FFFFFF99] max-sm:text-sm max-sm:leading-[22.4px]">
+                    Multi-factor authentication and real-time monitoring ensure the highest level of protection for your
+                    home.
                   </p>
                 </div>
 
-                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:p-5 md:h-[300px] md:w-[347px]">
-                  <Image src="/Aperture.png" width={50} height={50} alt="" className="max-sm:hidden" />
-                  <Image src="/Aperture.png" width={40} height={40} alt="" className="sm:hidden" />
-                  <p className="py-4 text-lg text-white max-sm:text-sm">Sleek Design</p>
-                  <p className="text-lg text-[#FFFFFF99] max-sm:text-xs">
-                    Elevate your home aesthetic,
-                    <br className="max-sm:hidden" /> with our minimalist <br className="max-sm:hidden" /> customizable
-                    design.
+                <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:p-6 md:h-[300px] md:w-[347px]">
+                  <Image src="/Aperture copy.png" width={50} height={50} alt="" className="max-sm:hidden" />
+                  <Image src="/Aperture copy.png" width={32} height={32} alt="" className="sm:hidden" />
+                  <p className="py-4 text-lg font-bold text-white opacity-80 max-sm:text-base">Sleek Design</p>
+                  <p className="text-base leading-[22.4px] text-[#FFFFFF99] max-sm:text-sm">
+                    A minimalist and customizable design seamlessly integrates into any space while enhancing visual
+                    appeal.
                   </p>
                 </div>
               </div>
               <div className="flex items-center justify-center gap-4 max-sm:grid max-sm:grid-cols-1">
                 <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10  max-sm:p-5 md:h-[300px] md:w-[347px]">
-                  <Image src="/HouseLine.png" width={50} height={50} alt="" className="max-sm:hidden" />
-                  <Image src="/HouseLine.png" width={40} height={40} alt="" className="sm:hidden" />
-                  <p className="py-4 text-lg text-white max-sm:text-sm">Smart Home Hub (Elite Only)</p>
-                  <p className=" text-lg text-[#FFFFFF99] max-sm:text-xs">
-                    Seamlessly control your entire
-                    <br className="max-xl:hidden" /> smart home ecosystem directly
-                    <br className="max-sm:hidden" /> from your doorway.
+                  <Image src="/HouseLine copy.png" width={50} height={50} alt="" className="max-sm:hidden" />
+                  <Image src="/HouseLine copy.png" width={32} height={32} alt="" className="sm:hidden" />
+                  <p className="py-4 text-lg font-bold text-white opacity-80 max-sm:text-base">
+                    Smart Home Hub (Elite Only)
+                  </p>
+                  <p className=" text-base leading-[22.4px] text-[#FFFFFF99] max-sm:text-sm">
+                    Easily manage your entire smart home ecosystem from one central hub, located at your doorway.
                   </p>
                 </div>
                 <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:p-5 md:h-[300px] md:w-[347px]">
-                  <Image src="/BatteryCharging.png" width={50} height={50} alt="" className="max-sm:hidden" />
-                  <Image src="/BatteryCharging.png" width={40} height={40} alt="" className="sm:hidden" />
-                  <p className="py-4 text-lg text-white max-sm:text-sm">Energy Efficiency (Elite Only)</p>
-                  <p className="text-lg text-[#FFFFFF99] max-sm:text-xs">
-                    Optimize energy use with
-                    <br className="max-sm:hidden" /> automation and real-time
-                    <br className="max-sm:hidden" /> insights for sustainability.
+                  <Image src="/BatteryCharging copy.png" width={50} height={50} alt="" className="max-sm:hidden" />
+                  <Image src="/BatteryCharging copy.png" width={32} height={32} alt="" className="sm:hidden" />
+                  <p className="py-4 text-lg font-bold text-white opacity-80 max-sm:text-base">
+                    Energy Efficiency (Elite Only)
+                  </p>
+                  <p className="text-base leading-[22.4px] text-[#FFFFFF99] max-sm:text-sm">
+                    Advanced automation optimizes energy usage, reducing waste and promoting sustainability in your
+                    everyday life.
                   </p>
                 </div>
                 <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:p-5 md:h-[300px] md:w-[347px]">
-                  <Image src="/LockLaminated.png" width={50} height={50} alt="" className="max-sm:hidden" />
-                  <Image src="/LockLaminated.png" width={40} height={40} alt="" className="sm:hidden" />
-                  <p className="py-4 text-lg text-white max-sm:text-sm">Enhanced Safety Features (Elite Only)</p>
-                  <p className="text-lg text-[#FFFFFF99] max-sm:text-xs">
-                    Systems detect hazards, <br className="max-sm:hidden" /> alert, unlock doors, and notify{" "}
-                    <br className="max-xl:hidden" /> emergency contacts.
+                  <Image src="/LockLaminated copy.png" width={50} height={50} alt="" className="max-sm:hidden" />
+                  <Image src="/LockLaminated copy.png" width={32} height={32} alt="" className="sm:hidden" />
+                  <p className="py-4 text-lg font-bold text-white opacity-80 max-sm:text-base">
+                    Enhanced Safety Features
+                  </p>
+                  <p className="text-base leading-[22.4px] text-[#FFFFFF99] max-sm:text-sm">
+                    Integrated systems detect hazards like gas leaks or smoke, sending alerts and unlocking doors
+                    safely.
                   </p>
                 </div>
               </div>
