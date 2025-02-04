@@ -225,26 +225,28 @@ export default function Web() {
     {
       title: "8. Ask a Question",
       content: (
-        <div className="flex w-full flex-col  justify-center text-sm 2xl:px-[20%]">
-          <p className="w-full border-b border-[#FFFFFF1A]  pb-2 text-center text-base font-bold text-white">
-            Find answers to common questions:
-          </p>
-          <ul className="grid gap-3">
-            <li className="mt-3">
-              <b className="text-white">-What if my Altima is delayed?</b> If delays exceed 6 months, we’ll issue a full
-              refund of your deposit.
-            </li>
-            <li>
-              <b className="text-white">- Can I customize my Altima?</b> Yes, customization options can be discussed
-              during the preorder process.
-            </li>
-            <li>
-              <b>- How do I track my order?</b> You’ll receive email updates and tracking details once shipped.
-            </li>
-          </ul>
-          <p className="mt-5 border-b border-[#FFFFFF1A] pb-2 text-white">
-            For detailed terms, refer to our Refund Policy.
-          </p>
+        <div className="flex w-full flex-col  items-center justify-center text-sm">
+          <div className="max-2xl:w-[70%] max-sm:w-[100%] md:w-[682px] ">
+            <p className="w-full border-b border-[#FFFFFF1A]  pb-2 text-center text-base font-bold text-white">
+              Find answers to common questions:
+            </p>
+            <ul className="grid  gap-3">
+              <li className="mt-3">
+                <b className="text-white">-What if my Altima is delayed?</b> If delays exceed 6 months, we’ll issue a
+                full refund of your deposit.
+              </li>
+              <li>
+                <b className="text-white">- Can I customize my Altima?</b> Yes, customization options can be discussed
+                during the preorder process.
+              </li>
+              <li>
+                <b>- How do I track my order?</b> You’ll receive email updates and tracking details once shipped.
+              </li>
+            </ul>
+            <p className="mt-5 border-b border-[#FFFFFF1A] pb-2 text-white">
+              For detailed terms, refer to our Refund Policy.
+            </p>
+          </div>
 
           <NewContact />
         </div>
