@@ -400,8 +400,8 @@ export default function Web() {
       <section className="paddings  w-full bg-[#151515] max-sm:px-3 ">
         <div className="w-full xl:py-10">
           <div className="flex w-full flex-col items-center justify-center">
-            <p className="text-[#FFFFFF99] max-sm:text-sm lg:text-sm">Benefits</p>
-            <p className="mb-4 mt-2 text-xl  font-normal tracking-tight  text-white max-sm:my-2   md:text-xl md:leading-10 xl:text-3xl">
+            <p className="text-[#FFFFFF99] max-xl:text-xs lg:text-sm">Benefits</p>
+            <p className="mb-4 mt-2 text-xl font-semibold uppercase  tracking-tight text-white opacity-80 max-xl:text-base max-sm:my-2  md:text-xl md:leading-10 xl:text-3xl">
               Why Pre-Order?
             </p>
           </div>
@@ -425,21 +425,21 @@ export default function Web() {
           <div className="grid-col-2 grid w-full justify-between gap-10  sm:flex">
             <div className="md:w-full ">
               <div className="flex flex-col items-center">
-                <p className="flex text-lg font-normal  text-[#FFFFFF99] max-sm:text-xs lg:text-2xl">
+                <p className="flex text-lg font-normal  text-[#FFFFFF99] max-xl:text-xs lg:text-2xl">
                   Innovative Features
                 </p>
-                <p className=" mb-2 mt-2 text-xl  font-bold tracking-tight  text-white max-sm:my-2 max-sm:text-base   md:text-xl md:leading-10 xl:text-3xl">
+                <p className=" mb-2 mt-2 text-xl font-bold  tracking-tight text-white  opacity-80 max-xl:text-base max-sm:my-2   md:text-xl md:leading-10 xl:text-3xl">
                   SMART AND VERSATILE
                 </p>
 
-                <p className="mb-6 flex text-center text-base font-normal text-[#FFFFFF99]   max-sm:text-center  max-sm:text-sm  max-sm:leading-6 lg:text-base">
+                <p className="mb-4 flex text-center text-base font-normal text-[#FFFFFF99]   max-sm:text-center  max-sm:text-sm  max-sm:leading-6 lg:text-base">
                   Revolutionize your space with Altima. Designed for
                   <br className="max-sm:hidden" /> convenience, security, and innovation, it offers
                   <br className="max-sm:hidden" /> features tailored to your needs:
                 </p>
               </div>
 
-              <div className="flex items-center justify-center gap-4 max-sm:my-4 max-sm:grid max-sm:grid-cols-1 md:my-4">
+              <div className="flex items-center justify-center gap-4 max-xl:my-4 max-sm:grid max-sm:grid-cols-1 md:my-4">
                 <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:p-6 md:h-[300px] md:w-[347px]">
                   <Image src="/Fingerprint copy.png" width={50} height={50} alt="" className="max-sm:hidden" />
                   <Image src="/Fingerprint copy.png" width={32} height={32} alt="" className="sm:hidden" />
@@ -506,16 +506,16 @@ export default function Web() {
         <div className="  w-full justify-between    md:py-10">
           <div className="flex w-full justify-between gap-10  sm:flex">
             <div className="flex w-full flex-col justify-center">
-              <p className=" my-3 text-center text-lg  font-bold text-white max-sm:my-3  max-sm:text-base md:text-xl md:leading-10 xl:text-3xl">
-                Our Models
+              <p className=" my-3 text-center text-lg font-bold capitalize  text-white opacity-80 max-sm:mb-3  max-sm:text-base md:text-xl md:leading-10 xl:text-3xl">
+                OUR MODELS
               </p>
 
-              <p className="w-full font-normal text-[#FFFFFF99] max-xl:text-sm max-xl:leading-[19px] max-sm:text-center md:text-center">
+              <p className="w-full font-normal leading-6 text-[#FFFFFF99] max-xl:text-sm max-xl:leading-[19px] max-sm:text-center md:text-center">
                 At Altima, we bring innovation and security together through our range of advanced smart doors designed
                 for a connected lifestyle. Each model combines cutting-edge technology with sleek aesthetics, offering
                 intelligent solutions for modern living.
               </p>
-              <p className="mb-3 w-full font-normal text-[#FFFFFF99] max-sm:text-center max-sm:text-xs max-sm:leading-[19px] md:text-center">
+              <p className="mb-3 w-full font-normal leading-6 text-[#FFFFFF99] max-xl:text-sm max-sm:text-center  md:text-center">
                 From robust security features to elegant design, Altima models redefine how homes and businesses
                 safeguard their spaces, ensuring a seamless blend of safety, style, and convenience.
               </p>
@@ -531,8 +531,8 @@ export default function Web() {
       <section id="other-products" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
         <div className="  w-full justify-between md:py-10">
           <div className="flex w-full flex-col items-center justify-center sm:hidden">
-            <p className="flex  text-2xl  font-normal  text-[#FFFFFF99]  max-sm:text-sm lg:text-2xl">Our Models</p>
-            <p className=" mb-6 mt-3 text-xl    font-normal leading-none tracking-tight text-white md:text-xl xl:text-3xl">
+            <p className="flex  text-2xl  font-normal  text-[#FFFFFF99]  max-xl:text-xs lg:text-2xl">Our Models</p>
+            <p className=" mb-6 mt-3 text-xl font-bold leading-none  tracking-tight text-white opacity-80 max-xl:text-base md:text-xl xl:text-3xl">
               ALTIMA Core
             </p>
           </div>
@@ -655,8 +655,8 @@ export default function Web() {
         <div className="  w-full justify-between    xl:py-10">
           <div className="grid-col-2 grid w-full justify-between  max-xl:gap-5 xl:flex xl:gap-20">
             <div className="max-xl:flex max-xl:w-full max-xl:flex-col max-xl:items-center max-xl:justify-center  ">
-              <p className="flex  text-2xl    font-normal  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">Our Models</p>
-              <p className=" text-xl font-normal  leading-none tracking-tight text-white max-xl:mt-3 md:text-xl xl:my-6 xl:text-3xl">
+              <p className="flex  text-2xl    font-normal  text-[#FFFFFF99] max-xl:text-xs lg:text-2xl">Our Models</p>
+              <p className=" text-base font-bold leading-none tracking-tight text-white opacity-80 max-xl:mt-3 md:text-xl xl:my-6 xl:text-3xl">
                 ALTIMA Elite
               </p>
               <div>
@@ -918,7 +918,7 @@ export default function Web() {
         </div>
       </section>
 
-      <section className="paddings  w-full bg-[#151515] max-sm:px-3 ">
+      {/* <section className="paddings  w-full bg-[#151515] max-sm:px-3 ">
         <div className="  w-full justify-between    xl:py-10">
           <div className=" flex flex-col items-center justify-center gap-20  max-xl:gap-5">
             <div className="">
@@ -937,7 +937,7 @@ export default function Web() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="paddings  w-full bg-[#080808] max-sm:px-3 ">
         <div className="  w-full     xl:py-10">
