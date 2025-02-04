@@ -447,7 +447,7 @@ export default function Web() {
                 <div className=" w-full rounded-lg bg-[#FFFFFF0D] px-6 py-10 max-sm:p-6 md:h-[300px] md:w-[347px]">
                   <Image src="/Fingerprint copy.png" width={50} height={50} alt="" className="max-sm:hidden" />
                   <Image src="/Fingerprint copy.png" width={32} height={32} alt="" className="sm:hidden" />
-                  <p className="py-4 text-lg font-bold text-white max-sm:text-base">Advanced Security</p>
+                  <p className="py-4 text-lg font-bold text-[#FFFFFFcc] max-sm:text-base">Advanced Security</p>
                   <p className="text-base text-[#FFFFFF99] max-sm:text-sm max-sm:leading-[22.4px]">
                     Multi-factor authentication and real-time monitoring ensure the highest level of protection for your
                     home.
@@ -573,52 +573,52 @@ export default function Web() {
                 </div>
               </div>
               <ul className="mt-6 list-inside  pl-2 max-xl:text-sm md:mb-4">
-                <li className="pb-3 text-[#FFFFFF] ">
+                <li className="pb-3 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Security Level:</span> Very High
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Smart Lock Type: </span> Biometric Lock with Numeric Keypad
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Home Integration:</span> Limited
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">User Profiles: </span> Multiple
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Remote Access: </span> Yes
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Design: </span> Sleek and Modern
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Special Features: </span> Emergency Key Override, Auto-Locking
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Target Audience: </span> Homeowners
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">External Power Option: </span> Backup Battery
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Voice Assistant Control: </span> No
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Smart Home Automation: </span> No
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Energy Management: </span> No
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Security Alerts: </span> Basic Alerts
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Intercom Functionality: </span> No
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Security Level:</span> Very High
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Embedded in Door Types: </span> Compatible with Metal, and Wood
                   Doors
                 </li>
@@ -626,11 +626,11 @@ export default function Web() {
 
               <div className="flex items-center justify-between bg-[#FFFFFF0D] px-7 py-3">
                 <ul className=" list-inside  pl-2">
-                  <li className=" text-[#FFFFFF] max-sm:text-sm">Feature Comparison</li>
+                  <li className=" text-[#FFFFFFcc] max-sm:text-sm">Feature Comparison</li>
                 </ul>
                 <div>
                   <ul className=" flex list-inside  items-center gap-2 pl-2">
-                    <li className=" text-[#FFFFFF] underline max-sm:text-sm">Download</li>
+                    <li className=" text-[#FFFFFFcc] underline max-sm:text-sm">Download</li>
                     <motion.img
                       src="/FileArrowDown.png"
                       width={32}
@@ -669,8 +669,8 @@ export default function Web() {
               <div>
                 <div className="flex items-center justify-between gap-6 bg-[#000000] px-4 py-2 text-black max-xl:hidden xl:max-w-[522px]">
                   <ul className="list-inside ">
-                    <li className=" text-[#FFFFFF] max-sm:text-xs">Ultimate Smart Home Hub </li>
-                    <li className=" text-[#FFFFFF] max-sm:text-xs">All Pro features, plus</li>
+                    <li className=" text-[#FFFFFFcc] max-sm:text-xs">Ultimate Smart Home Hub </li>
+                    <li className=" text-[#FFFFFFcc] max-sm:text-xs">All Pro features, plus</li>
                   </ul>
 
                   <p className="text-2xl font-bold text-[#FF4F45] max-sm:text-lg">
@@ -679,49 +679,49 @@ export default function Web() {
                 </div>
               </div>
               <ul className="mb-6 mt-6 list-inside  pl-2 max-xl:hidden">
-                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFFcc] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Security Level: </span> Very High
                 </li>
-                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFFcc] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Smart Lock Type: </span> Biometric Lock with Numeric Keypad
                 </li>
-                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFFcc] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Home Integration: </span> Extensive
                 </li>
-                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFFcc] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">User Profiles: </span> Extensive Customization
                 </li>
-                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFFcc] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Remote Access: </span> Yes
                 </li>
-                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFFcc] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Design: </span> Sleek and Modern
                 </li>
-                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFFcc] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Special Features: </span> Smart Home Hub, Analytics
                 </li>
-                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFFcc] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Target Audience: </span> Smart Home Enthusiasts
                 </li>
-                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFFcc] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">External Power Option: </span> Smart Home Backup Integration
                 </li>
-                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFFcc] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Voice Assistant Control: </span> Yes, Alexa & Google Assistant
                 </li>
-                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFFcc] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Smart Home Automation: </span> Full Integration
                 </li>
-                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFFcc] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Energy Management: </span> Yes, Smart Energy Monitoring
                 </li>
-                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFFcc] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Security Alerts: </span> Real-Time Mobile Alerts
                 </li>
-                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFFcc] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Intercom Functionality: </span> Built-in Intercom System
                 </li>
-                <li className="pb-4 text-[#FFFFFF] max-sm:text-xs">
+                <li className="pb-4 text-[#FFFFFFcc] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Embedded in Door Types: </span> Compatible with Metal, Wood,
                   and Glass Doors
                 </li>
@@ -783,49 +783,49 @@ export default function Web() {
                 </div>
               </div>
               <ul className="mb-6 mt-6 list-inside  pl-2 max-sm:text-sm">
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Security Level: </span> Very High
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Smart Lock Type: </span> Biometric Lock with Numeric Keypad
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Home Integration: </span> Extensive
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">User Profiles: </span> Extensive Customization
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Remote Access: </span> Yes
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Design: </span> Sleek and Modern
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Special Features: </span> Smart Home Hub, Analytics
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Target Audience: </span> Smart Home Enthusiasts
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">External Power Option: </span> Smart Home Backup Integration
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Voice Assistant Control: </span> Yes, Alexa & Google Assistant
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Smart Home Automation: </span> Full Integration
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Energy Management: </span> Yes, Smart Energy Monitoring
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Security Alerts: </span> Real-Time Mobile Alerts
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Intercom Functionality: </span> Built-in Intercom System
                 </li>
-                <li className="pb-4 text-[#FFFFFF] ">
+                <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Embedded in Door Types: </span> Compatible with Metal, Wood,
                   and Glass Doors
                 </li>
