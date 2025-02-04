@@ -240,7 +240,8 @@ export default function Web() {
                 during the preorder process.
               </li>
               <li>
-                <b>- How do I track my order?</b> You’ll receive email updates and tracking details once shipped.
+                <b className="text-white">- How do I track my order?</b> You’ll receive email updates and tracking
+                details once shipped.
               </li>
             </ul>
             <p className="mt-5 border-b border-[#FFFFFF1A] pb-2 text-white">
@@ -259,13 +260,14 @@ export default function Web() {
           <p className="border-b border-[#FFFFFF1A] pb-3 text-center text-base text-white">We’re here to help:</p>
           <ul className="grid gap-3">
             <li className="mt-3">
-              <b>- Email:</b> contact@smarthavensystems.com
+              <b className="text-white">- Email:</b> contact@smarthavensystems.com
             </li>
             <li>
-              <b>- Phone:</b> 08047360770
+              <b className="text-white">- Phone:</b> 08047360770
             </li>
             <li>
-              <b>- Address:</b> SmartHaven Systems, Sahara CHS, Shop no. 4, Sector 40, Seawoods, Navi Mumbai, 400706
+              <b className="text-white">- Address:</b> SmartHaven Systems, Sahara CHS, Shop no. 4, Sector 40, Seawoods,
+              Navi Mumbai, 400706
             </li>
           </ul>
           <p className="mt-5 text-white">

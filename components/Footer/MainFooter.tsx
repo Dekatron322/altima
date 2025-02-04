@@ -8,24 +8,27 @@ const MainFooter = () => {
       <section id="contact" className="paddings w-full  bg-[#151515]  max-sm:px-3 ">
         <div className="w-full  pt-8">
           <div className="grid grid-cols-4 justify-center gap-5 max-xl:grid-cols-2  max-sm:grid-cols-1">
-            <div className="flex flex-col gap-3 max-sm:mb-7">
-              <p className="text-[#FFFFFF]">Contact Us</p>
+            <div className="flex flex-col gap-4 max-sm:mb-7">
+              <p className="font-bold text-[#FFFFFF] opacity-80">Contact Us</p>
               <Link
                 href="mailto:mail@altimaaccess.com"
                 className="text-sm text-[#FFFFFF99] transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
               >
-                Email: mail@altimaaccess.com
+                <span className="font-semibold text-white opacity-80">Email:</span> mail@altimaaccess.com
               </Link>
               <Link
                 href="tel:02269718365"
                 className="text-sm text-[#FFFFFF99] transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
               >
-                Phone: 02269718365
+                <span className="font-semibold text-white opacity-80">Phone:</span> 08047360770
               </Link>
-              <p className="text-sm text-[#FFFFFF99]">Address: Seawoods, Navi Mumbai 400706, India</p>
+              <p className="text-sm text-[#FFFFFF99]">
+                <span className="font-semibold text-white opacity-80">Address:</span> Seawoods, Navi Mumbai 400706,
+                India
+              </p>
             </div>
-            <div className="flex flex-col gap-3 max-sm:mb-7">
-              <p className="text-[#FFFFFF]">Altima</p>
+            <div className="flex flex-col gap-4 max-sm:mb-7">
+              <p className="font-bold text-[#FFFFFF] opacity-80">Altima</p>
               <p className="text-sm text-[#FFFFFF99] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30]">
                 Home
               </p>
@@ -54,8 +57,8 @@ const MainFooter = () => {
                 Contact Us
               </Link>
             </div>
-            <div className="flex flex-col gap-3 max-sm:mb-7">
-              <p className="text-[#FFFFFF]">Resources and Policies</p>
+            <div className="flex flex-col gap-4 max-sm:mb-7">
+              <p className="font-bold text-[#FFFFFF] opacity-80">Resources and Policies</p>
               <Link
                 href="/about-us"
                 className="text-sm text-[#FFFFFF99] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
@@ -122,15 +125,15 @@ const MainFooter = () => {
                   Subscribe
                 </button>
               </div>
-              <p className="text-sm text-[#FFFFFF99]">
+              {/* <p className="text-sm text-[#FFFFFF99]">
                 ✓Estimated delivery date: 4-5 months after the pre-order window closes
               </p>
               <p className="text-sm text-[#FFFFFF99]">
                 ✓A note: Pre-orders require a 30% deposit at the time of booking. The remaining balance is due before
                 shipment, with a final payment notice sent prior to delivery. Deposits are non-refundable but can be
                 adjusted against the final payment.
-              </p>
-              <div className="flex gap-2">
+              </p> */}
+              <div className="flex gap-2 max-xl:justify-center">
                 <p className="text-sm text-[#FFFFFF99] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30]">
                   LinkedIn
                 </p>
