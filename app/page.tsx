@@ -355,7 +355,7 @@ export default function Web() {
                 it further by integrating smart home hub functionality. <br />
                 <br />
                 Featuring a{" "}
-                <span onClick={openVideoModal} className="cursor-pointer text-[#FF3B30]">
+                <span onClick={openVideoModal} className="cursor-pointer text-[#FF3B30] underline">
                   disappearing handle
                 </span>{" "}
                 and cutting-edge technology, both models deliver seamless integration of security and style, perfect for
@@ -595,6 +595,9 @@ export default function Web() {
                   <span className="text-[#FFFFFF80]">Special Features: </span> Emergency Key Override, Auto-Locking
                 </li>
                 <li className="pb-4 text-[#FFFFFF] ">
+                  <span className="text-[#FFFFFF80]">Target Audience: </span> Homeowners
+                </li>
+                <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">External Power Option: </span> Backup Battery
                 </li>
                 <li className="pb-4 text-[#FFFFFF] ">
@@ -616,8 +619,8 @@ export default function Web() {
                   <span className="text-[#FFFFFF80]">Security Level:</span> Very High
                 </li>
                 <li className="pb-4 text-[#FFFFFF] ">
-                  <span className="text-[#FFFFFF80]">Embedded in Door Types: </span> Compatible with Metal, Wood,
-                  and Glass Doors
+                  <span className="text-[#FFFFFF80]">Embedded in Door Types: </span> Compatible with Metal, and Wood
+                  Doors
                 </li>
               </ul>
 
@@ -784,7 +787,7 @@ export default function Web() {
                   <span className="text-[#FFFFFF80]">Security Level: </span> Very High
                 </li>
                 <li className="pb-4 text-[#FFFFFF] ">
-                  <span className="text-[#FFFFFF80]">Smart Lock Type: </span> Biometric Lock, Smart Hub
+                  <span className="text-[#FFFFFF80]">Smart Lock Type: </span> Biometric Lock with Numeric Keypad
                 </li>
                 <li className="pb-4 text-[#FFFFFF] ">
                   <span className="text-[#FFFFFF80]">Home Integration: </span> Extensive
@@ -823,7 +826,8 @@ export default function Web() {
                   <span className="text-[#FFFFFF80]">Intercom Functionality: </span> Built-in Intercom System
                 </li>
                 <li className="pb-4 text-[#FFFFFF] ">
-                  <span className="text-[#FFFFFF80]">Embedded in Door Types: </span> Metal, Glass, Wood
+                  <span className="text-[#FFFFFF80]">Embedded in Door Types: </span> Compatible with Metal, Wood,
+                  and Glass Doors
                 </li>
               </ul>
 
