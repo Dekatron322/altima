@@ -666,7 +666,9 @@ export default function Web() {
                     <li className=" text-[#FFFFFF] max-sm:text-xs">All Pro features, plus</li>
                   </ul>
 
-                  <p className="text-2xl text-[#FF4F45] max-sm:text-lg">₹90,000 + Taxes</p>
+                  <p className="text-2xl font-bold text-[#FF4F45] max-sm:text-lg">
+                    ₹99,000 + <span className="text-sm font-normal">Taxes</span>
+                  </p>
                 </div>
               </div>
               <ul className="mb-6 mt-6 list-inside  pl-2 max-xl:hidden">
@@ -866,7 +868,7 @@ export default function Web() {
         <div className="w-full     xl:py-10">
           <div className="flex flex-col items-center justify-center">
             <p className="text-[#FFFFFF99] max-sm:text-sm">Pre-order Now - Limited Units Available.</p>
-            <p className="custom-text first-word-color my-4 flex border-b border-[#FFFFFF1A] pb-4 text-center text-3xl font-bold text-[#FFFFFF] opacity-80 max-xl:text-2xl md:w-[642px]">
+            <p className="custom-text first-word-color my-4 flex border-[#FFFFFF1A] pb-4 text-center text-3xl font-bold text-[#FFFFFF] opacity-80 max-xl:border-b max-xl:text-2xl md:w-[642px]">
               5,000 units available in the first pre-order batch.
             </p>
 
@@ -882,7 +884,7 @@ export default function Web() {
                 </div>
               </div>
 
-              <div className="my-4 flex items-start justify-center gap-3 border-[#FFFFFF1A]  max-sm:border-b max-sm:pb-2 md:border-r md:pr-6">
+              <div className="my-4 flex items-start justify-center gap-3 border-[#FFFFFF1A]  max-sm:border-b max-sm:pb-2 md:border-r md:px-6">
                 <Image src="/Upload.png" width={50} height={50} alt="" />
                 <div>
                   <p className=" font-bold text-[#FFFFFF] max-xl:pb-2 max-xl:text-sm">
