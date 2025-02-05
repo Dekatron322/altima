@@ -1,11 +1,7 @@
 "use client"
 import Footer from "components/Footer/Footer"
-
-import Image from "next/image"
-import Navbar from "components/Navbar/Navbar"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Accordion from "components/Accordion/Accordion"
-import { motion } from "framer-motion"
 import MainFooter from "components/Footer/MainFooter"
 import NewNav from "components/Navbar/NewNav"
 import ContactUs from "../../../components/ContactUs/Contact"
@@ -89,8 +85,8 @@ export default function Web() {
       <section className="paddings  w-full bg-[#151515] max-xl:px-3 ">
         <div className="  w-full     xl:py-20">
           <div className="flex w-full flex-col items-center">
-            <p className=" text-center text-[#FFFFFF99]">Faqs</p>
-            <p className="my-5 flex text-center text-[32px] font-bold   text-[#FFFFFF]  max-xl:text-2xl ">
+            <p className=" text-center text-[#FFFFFF99] max-xl:text-xs">Faqs</p>
+            <p className="flex text-center text-[32px] font-bold text-[#FFFFFFcc]  max-xl:mb-4 max-xl:mt-2  max-xl:text-base xl:my-5 ">
               what people are Asking.
             </p>
           </div>

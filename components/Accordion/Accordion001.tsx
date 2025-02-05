@@ -11,10 +11,10 @@ interface AccordionProps {
 const AccordionTwo: React.FC<AccordionProps> = ({ title, content, isOpen, onToggle }) => {
   return (
     <div className="border-b border-[#FFFFFF1A]">
-      <button className="w-full p-4 text-left text-[#FFFFFF] focus:outline-none" onClick={onToggle}>
+      <button className="w-full p-4 text-left text-[#FFFFFFcc] focus:outline-none" onClick={onToggle}>
         <div className="flex items-center justify-between">
-          <span className="max-sm:text-sm"></span>
-          <span className="max-sm:text-sm">{title}</span>
+          <span className="max-xl:text-sm"></span>
+          <span className="max-xl:text-sm">{title}</span>
           <span>
             {isOpen ? <img className="h-4 w-4" src="/Minus.png" /> : <img src="/Plus.png" className="h-4 w-4" />}
           </span>
