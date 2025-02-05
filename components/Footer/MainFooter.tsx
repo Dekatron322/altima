@@ -11,13 +11,13 @@ const MainFooter = () => {
             <div className="flex flex-col gap-4 max-sm:mb-7">
               <p className="font-bold text-[#FFFFFF] opacity-80">Contact Us</p>
               <Link
-                href="mailto:mail@altimaaccess.com"
+                href="mailto:contact@smarthavensystems.com"
                 className="text-sm text-[#FFFFFF99] transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
               >
-                <span className="font-semibold text-white opacity-80">Email:</span> mail@altimaaccess.com
+                <span className="font-semibold text-white opacity-80">Email:</span> contact@smarthavensystems.com
               </Link>
               <Link
-                href="tel:02269718365"
+                href="tel:08047360770"
                 className="text-sm text-[#FFFFFF99] transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
               >
                 <span className="font-semibold text-white opacity-80">Phone:</span> 08047360770
