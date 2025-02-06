@@ -121,16 +121,16 @@ export default function Web() {
         <div className="  w-full justify-between">
           <div className="flex w-full justify-between gap-10  xl:flex">
             <div>
-              <p className="text-center   text-2xl  font-normal  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">
+              <p className="text-center   text-2xl  font-normal  text-[#FFFFFF99] max-xl:text-xs lg:text-2xl">
                 Resources & Policies
               </p>
-              <p className=" my-3 text-center  text-lg font-normal text-white  max-sm:my-3 md:text-xl md:leading-10 xl:text-3xl">
+              <p className=" max-xl:text-bass my-3  text-center text-lg font-normal  text-[#ffffffcc] max-sm:my-2 md:text-xl md:leading-10 xl:text-3xl">
                 Refund and Cancellation Policy
               </p>
 
               <div className="mt-4 flex w-full items-center justify-center gap-5 max-sm:gap-2 ">
                 <motion.button
-                  className="whitespace-nowrap rounded-lg bg-[#FFFFFF0D]   px-4 py-3 font-normal uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
+                  className="whitespace-nowrap rounded-lg bg-[#FFFFFF0D] px-4   py-3 text-center font-normal uppercase text-[#FFFFFFcc] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -138,7 +138,7 @@ export default function Web() {
                 </motion.button>
 
                 <motion.button
-                  className="whitespace-nowrap rounded-lg bg-[#FFFFFF0D]   px-8 py-3 font-normal uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
+                  className="whitespace-nowrap rounded-lg bg-[#FFFFFF0D]   px-8 py-3 font-normal uppercase text-[#FFFFFFcc] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -150,7 +150,7 @@ export default function Web() {
                 <p className="text-lg">Last Updated: [Insert Date]</p>
               </div>
 
-              <p className="mb-6 w-full text-ellipsis text-sm font-normal text-[#FFFFFF99] max-sm:leading-7 md:text-center xl:px-64">
+              <p className="mb-6 w-full text-ellipsis text-sm font-normal text-[#FFFFFF99] max-xl:text-center max-sm:leading-7 md:text-center xl:px-64">
                 This Refund and Cancellation Policy outlines the terms and conditions regarding refunds and
                 cancellations for preorders made through SmartHaven Systems Private Limited (&quot;Company,&quot;
                 &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). By placing a preorder, you acknowledge that you
