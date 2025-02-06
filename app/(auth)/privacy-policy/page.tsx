@@ -14,7 +14,7 @@ export default function Web() {
       title: "1. Information We Collect",
       content: (
         <div>
-          <p className="text-white">We may collect the following types of information:</p>
+          <p className="text-[#ffffffcc]">We may collect the following types of information:</p>
           <ul className="mt-3 grid gap-3">
             <strong>1.1. Personal Information:</strong>
             <li className="flex items-center gap-2 px-2">
@@ -42,7 +42,7 @@ export default function Web() {
       title: "2. How We Use Your Information",
       content: (
         <div>
-          <p className="text-white">We use the information collected for the following purposes:</p>
+          <p className="text-[#ffffffcc]">We use the information collected for the following purposes:</p>
           <ul className="mt-3 grid gap-3">
             <li className="flex items-center gap-2 px-2">2.1. To process and manage your preorder.</li>
             <li className="flex items-center gap-2 px-2">
@@ -62,7 +62,7 @@ export default function Web() {
       title: "3. Sharing Your Information",
       content: (
         <div>
-          <p className="text-white">
+          <p className="text-[#ffffffcc]">
             We do not sell or rent your personal information. However, we may share your information in the following
             circumstances:
           </p>
@@ -91,7 +91,7 @@ export default function Web() {
       title: "6. Your Rights",
       content: (
         <div>
-          <p className="text-white">
+          <p className="text-[#ffffffcc]">
             Depending on your location, you may have the following rights regarding your personal information:
           </p>
           <ul className="my-3 grid gap-3">
@@ -102,7 +102,7 @@ export default function Web() {
               6.4. The right to withdraw consent where processing is based on consent.
             </li>
           </ul>
-          <p className="text-white">
+          <p className="text-[#ffffffcc]">
             To exercise your rights, please contact us at{" "}
             <a
               href="mailto:contact@smarthavensystems.com"
@@ -160,17 +160,17 @@ export default function Web() {
         <div className="  xl::py-32 w-full    justify-between">
           <div className="flex w-full justify-between gap-10  sm:flex">
             <div>
-              <p className="text-center   text-2xl  font-normal  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">
+              <p className="text-center   text-2xl  font-normal  text-[#FFFFFF99] max-xl:text-xs lg:text-2xl">
                 Resources & Policies
               </p>
-              <p className=" my-3 text-center  text-lg font-normal text-white  max-sm:my-3 md:text-xl md:leading-10 xl:text-3xl">
+              <p className=" my-3 text-center  text-lg font-normal text-[#ffffffcc]  max-xl:text-base max-sm:my-3 md:text-xl md:leading-10 xl:text-3xl">
                 Privacy Policy
               </p>
 
               <div className="mt-4 flex w-full items-center justify-center gap-5 max-sm:gap-2 ">
                 <motion.a
                   href="/Privacy Policy_Altima.pdf"
-                  className="whitespace-nowrap rounded-lg bg-[#FFFFFF0D]   px-4 py-3 font-normal uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
+                  className="whitespace-nowrap rounded-lg bg-[#FFFFFF0D] px-4   py-3 text-center font-normal uppercase text-[#FFFFFFcc] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   target="_blank"
@@ -181,7 +181,7 @@ export default function Web() {
                 </motion.a>
 
                 <motion.button
-                  className="whitespace-nowrap rounded-lg bg-[#FFFFFF0D]   px-8 py-3 font-normal uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
+                  className="whitespace-nowrap rounded-lg bg-[#FFFFFF0D]   px-8 py-3 font-normal uppercase text-[#FFFFFFcc] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={() => {
@@ -209,7 +209,7 @@ export default function Web() {
                 <p className="text-lg">Last Updated: [Insert Date]</p>
               </div>
 
-              <p className="mb-6 w-full text-ellipsis text-sm font-normal text-[#FFFFFF99] max-sm:leading-7 md:text-center xl:px-64">
+              <p className="mb-6 w-full text-ellipsis text-sm font-normal text-[#FFFFFF99] max-xl:text-center max-sm:leading-7 md:text-center xl:px-64">
                 SmartHaven Systems Private Limited (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to
                 protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your
                 information when you visit our website,
