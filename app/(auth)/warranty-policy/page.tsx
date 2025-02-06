@@ -515,12 +515,14 @@ export default function Web() {
       <section className="paddings w-full bg-[#151515] max-xl:px-3 ">
         <div className="w-full xl:py-20">
           <div className="flex w-full flex-col items-center">
-            <p className="text-center text-[#FFFFFF99]">Resources & Policies</p>
-            <p className=" text-center text-[32px] font-bold text-[#FFFFFF] max-md:text-2xl">Altima Warranty Policy</p>
+            <p className="text-center text-[#FFFFFF99] max-xl:text-xs">Resources & Policies</p>
+            <p className=" text-center text-[32px] font-bold text-[#FFFFFFcc] max-xl:text-base ">
+              Altima Warranty Policy
+            </p>
             <div className="my-4 flex w-full items-center justify-center gap-5 max-sm:gap-2 ">
               <motion.a
                 href="/Altima Warranty_ Ext. Warranty _ Claim form .pdf"
-                className="whitespace-nowrap rounded-lg bg-[#FFFFFF0D]   px-4 py-3 font-normal uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
+                className="whitespace-nowrap rounded-lg bg-[#FFFFFF0D] px-4  py-3 text-center font-normal uppercase text-[#FFFFFFcc] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 target="_blank"
@@ -531,7 +533,7 @@ export default function Web() {
               </motion.a>
 
               <motion.button
-                className="whitespace-nowrap rounded-lg bg-[#FFFFFF0D]   px-8 py-3 font-normal uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
+                className="whitespace-nowrap rounded-lg bg-[#FFFFFF0D]   px-8 py-3 font-normal uppercase text-[#FFFFFFcc] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-xs "
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => {
@@ -557,12 +559,12 @@ export default function Web() {
           </div>
 
           {/* Tabs for accordion selection */}
-          <div className="justify-centerp mb-8 flex w-full">
+          <div className="mb-8 flex w-full justify-center">
             {tabs.map((tab, index) => (
               <button
                 key={index}
-                className={`w-full overflow-hidden whitespace-nowrap border border-[#FFFFFF33] px-4 py-2  ${
-                  activeTab === index ? "bg-[#FFFFFF26] text-white" : "bg-[#FFFFFF0D] text-[#FFFFFF99]"
+                className={`overflow-hidden whitespace-nowrap border border-[#FFFFFF33] px-4 py-2 max-xl:text-xs xl:w-full  ${
+                  activeTab === index ? "bg-[#FFFFFF26] text-white" : "bg-[#FFFFFF0D] text-[#FFFFFF99] max-xl:text-xs"
                 }`}
                 onClick={() => setActiveTab(index)}
               >
@@ -571,7 +573,7 @@ export default function Web() {
             ))}
           </div>
 
-          <div className="mb-4 w-full items-center text-center text-[#FFFFFF99]">
+          <div className="mb-4 w-full items-center text-center text-[#FFFFFF99] max-xl:text-sm max-xl:leading-[22.4px]">
             <p>Issued By: Smart Haven Systems Private Limited Effective </p>
             <p>Date: [Insert Date] Warranty Coverage for: Altima</p>
             <p>Core and Altima Elite Products</p>
@@ -590,11 +592,11 @@ export default function Web() {
                 />
               ))
             ) : (
-              <form className="space-y-4  text-white">
-                <div className="grid gap-5 p-6">
-                  <p className="py-2 text-xl text-white">1. Buyer Information</p>
+              <form className="space-y-4  text-[#ffffffcc]">
+                <div className="grid gap-2 max-xl:p-4 xl:gap-5 xl:p-6">
+                  <p className="py-2 text-xl font-medium text-[#ffffffcc] max-xl:text-sm">1. Buyer Information</p>
 
-                  <div className=" mx-2 w-full  justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className=" w-full justify-between  rounded-lg  border border-[#FFFFFF1A] bg-[#282828] px-3 hover:border-[#FF3B30]  focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2 xl:mx-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -605,7 +607,7 @@ export default function Web() {
                       />
                     </div>
                   </div>
-                  <div className=" mx-2 w-full  justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className=" w-full justify-between  rounded-lg  border border-[#FFFFFF1A] bg-[#282828] px-3 hover:border-[#FF3B30]  focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2 xl:mx-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -616,7 +618,7 @@ export default function Web() {
                       />
                     </div>
                   </div>
-                  <div className=" mx-2 w-full  justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className=" w-full justify-between  rounded-lg  border border-[#FFFFFF1A] bg-[#282828] px-3 hover:border-[#FF3B30]  focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2 xl:mx-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -629,10 +631,10 @@ export default function Web() {
                   </div>
                 </div>
 
-                <p className="mx-2 px-6 text-lg font-medium text-white">Address</p>
+                <p className="px-6 text-lg font-medium text-[#ffffffcc] max-xl:px-4 max-xl:text-sm xl:mx-2">Address</p>
 
-                <div className="mx-2 grid gap-5 px-6">
-                  <div className=" w-full   justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
+                <div className=" grid gap-5 max-xl:gap-2 max-xl:px-4 xl:px-6">
+                  <div className=" w-full justify-between  rounded-lg  border border-[#FFFFFF1A] bg-[#282828] px-3 hover:border-[#FF3B30]  focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2 xl:mx-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -643,7 +645,7 @@ export default function Web() {
                       />
                     </div>
                   </div>
-                  <div className=" w-full   justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className=" w-full justify-between  rounded-lg  border border-[#FFFFFF1A] bg-[#282828] px-3 hover:border-[#FF3B30]  focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2 xl:mx-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -654,7 +656,7 @@ export default function Web() {
                       />
                     </div>
                   </div>
-                  <div className=" w-full   justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className=" w-full justify-between  rounded-lg  border border-[#FFFFFF1A] bg-[#282828] px-3 hover:border-[#FF3B30]  focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2 xl:mx-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -666,7 +668,7 @@ export default function Web() {
                     </div>
                   </div>
 
-                  <div className=" w-full   justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className=" w-full justify-between  rounded-lg  border border-[#FFFFFF1A] bg-[#282828] px-3 hover:border-[#FF3B30]  focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2 xl:mx-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -677,7 +679,7 @@ export default function Web() {
                       />
                     </div>
                   </div>
-                  <div className=" w-full   justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className=" w-full justify-between  rounded-lg  border border-[#FFFFFF1A] bg-[#282828] px-3 hover:border-[#FF3B30]  focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2 xl:mx-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -688,7 +690,7 @@ export default function Web() {
                       />
                     </div>
                   </div>
-                  <div className=" w-full   justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className=" w-full justify-between  rounded-lg  border border-[#FFFFFF1A] bg-[#282828] px-3 hover:border-[#FF3B30]  focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2 xl:mx-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -699,7 +701,7 @@ export default function Web() {
                       />
                     </div>
                   </div>
-                  <div className=" w-full   justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className=" w-full justify-between  rounded-lg  border border-[#FFFFFF1A] bg-[#282828] px-3 hover:border-[#FF3B30]  focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2 xl:mx-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -713,8 +715,8 @@ export default function Web() {
                 </div>
                 <div className="border border-[#FFFFFF0D]"></div>
 
-                <div className="grid gap-5 p-6">
-                  <p className="py-2 text-xl  text-white">2. Product Details</p>
+                <div className="grid gap-5 max-xl:gap-2 max-xl:px-4 xl:p-6">
+                  <p className="py-2 text-xl font-medium text-[#ffffffcc] max-xl:text-sm">2. Product Details</p>
                   <div className="flex w-full items-center gap-2 px-2" onClick={() => toggleRadio("Altima Core")}>
                     <motion.img
                       src={selectedRadio === "Altima Core" ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
@@ -725,7 +727,7 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Altima Core</p>
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-sm">Altima Core</p>
                   </div>
 
                   {/* Altima Elite Radio */}
@@ -739,9 +741,9 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Altima Elite</p>
+                    <p className="text-sm text-[#FFFFFF] max-sm:text-sm">Altima Elite</p>
                   </div>
-                  <div className=" w-full   justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className=" w-full justify-between  rounded-lg  border border-[#FFFFFF1A] bg-[#282828] px-3 hover:border-[#FF3B30]  focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2 xl:mx-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -752,7 +754,7 @@ export default function Web() {
                       />
                     </div>
                   </div>
-                  <div className=" w-full   justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className=" w-full justify-between  rounded-lg  border border-[#FFFFFF1A] bg-[#282828] px-3 hover:border-[#FF3B30]  focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2 xl:mx-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -763,7 +765,7 @@ export default function Web() {
                       />
                     </div>
                   </div>
-                  <div className=" w-full   justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className=" w-full justify-between  rounded-lg  border border-[#FFFFFF1A] bg-[#282828] px-3 hover:border-[#FF3B30]  focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2 xl:mx-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -778,10 +780,10 @@ export default function Web() {
 
                 <div className="border border-[#FFFFFF0D]"></div>
 
-                <div className="grid gap-5 p-6">
-                  <p className="py-2 text-xl  text-white">3. Warranty Details</p>
+                <div className="grid gap-5 max-xl:gap-2 max-xl:px-4 xl:p-6">
+                  <p className="py-2 text-xl font-medium text-[#ffffffcc] max-xl:text-sm">3. Warranty Details</p>
 
-                  <div className=" w-full   justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className=" w-full justify-between  rounded-lg  border border-[#FFFFFF1A] bg-[#282828] px-3 hover:border-[#FF3B30]  focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2 xl:mx-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -792,7 +794,7 @@ export default function Web() {
                       />
                     </div>
                   </div>
-                  <div className=" w-full   justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className=" w-full justify-between  rounded-lg  border border-[#FFFFFF1A] bg-[#282828] px-3 hover:border-[#FF3B30]  focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2 xl:mx-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="text"
@@ -806,10 +808,10 @@ export default function Web() {
                 </div>
                 <div className="border border-[#FFFFFF0D]"></div>
 
-                <div className="grid gap-5 p-6">
-                  <p className="py-2 text-xl  text-white">4. Issue Description</p>
+                <div className="grid gap-5 max-xl:gap-2 max-xl:px-4 xl:p-6">
+                  <p className="py-2 text-xl font-medium text-[#ffffffcc] max-xl:text-sm">4. Issue Description</p>
 
-                  <div className=" w-full   justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
+                  <div className=" w-full justify-between  rounded-lg  border border-[#FFFFFF1A] bg-[#282828] px-3 hover:border-[#FF3B30]  focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2 xl:mx-2">
                     <div className="flex h-[46px] items-center">
                       <input
                         type="date"
@@ -831,8 +833,8 @@ export default function Web() {
 
                 <div className="border border-[#FFFFFF0D]"></div>
 
-                <div className="grid gap-5 p-6">
-                  <p className="py-2 text-xl  text-white">5. Issue Category</p>
+                <div className="grid gap-5 max-xl:gap-2 max-xl:px-4 xl:p-6">
+                  <p className="py-2 text-xl font-medium text-[#ffffffcc] max-xl:text-sm">5. Issue Category</p>
 
                   <div className=" flex w-full items-center gap-2 " onClick={togglePhone}>
                     <motion.img
@@ -895,8 +897,10 @@ export default function Web() {
 
                 <div className="border border-[#FFFFFF0D]"></div>
 
-                <div className="grid gap-5 p-6">
-                  <p className="py-2 text-xl  text-white">6. Troubleshooting Steps Taken</p>
+                <div className="grid gap-5 max-xl:gap-2 max-xl:px-4 xl:p-6">
+                  <p className="py-2 text-xl font-medium text-[#ffffffcc] max-xl:text-sm">
+                    6. Troubleshooting Steps Taken
+                  </p>
 
                   <textarea
                     id="details"
@@ -906,8 +910,8 @@ export default function Web() {
                   />
                 </div>
                 <div className="border border-[#FFFFFF0D]"></div>
-                <div className="grid gap-5 p-6">
-                  <p className="py-2 text-xl  text-white">7. Attachments</p>
+                <div className="grid gap-5 max-xl:gap-2 max-xl:px-4 xl:p-6">
+                  <p className="py-2 text-xl font-medium text-[#ffffffcc] max-xl:text-sm">7. Attachments</p>
 
                   <div className="flex w-full gap-3 max-sm:flex-col">
                     <div className="flex w-full flex-col items-center justify-center rounded-md bg-[#282828] p-4">
@@ -951,8 +955,10 @@ export default function Web() {
                   </div>
                 </div>
                 <div className="border border-[#FFFFFF0D]"></div>
-                <div className="grid gap-5 p-6">
-                  <p className="py-2 text-xl  text-white">8. Preferred Resolution Method</p>
+                <div className="grid gap-5 max-xl:gap-2 max-xl:px-4 xl:p-6">
+                  <p className="py-2 text-xl font-medium text-[#ffffffcc] max-xl:text-sm">
+                    8. Preferred Resolution Method
+                  </p>
 
                   <div className="flex w-full items-center gap-2 px-2" onClick={() => toggleReplacement("Replacement")}>
                     <motion.img
