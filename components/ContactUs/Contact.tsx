@@ -54,8 +54,10 @@ export default function ContactUs() {
     <section className="paddings w-full bg-[#080808] max-sm:px-3" id="contact">
       <div className="w-full xl:py-10">
         <div className="flex flex-col items-center justify-center">
-          <p className="text-center text-[#FFFFFF99]">Contact us</p>
-          <p className="my-6 flex text-center text-[32px] text-[#FFFFFF] max-md:text-2xl">Have Questions?</p>
+          <p className="text-center text-[#FFFFFF99] max-xl:text-xs">Contact us</p>
+          <p className="flex text-center text-[32px] text-[#FFFFFFcc] max-xl:mb-4 max-xl:mt-2 max-xl:text-base max-md:text-2xl xl:my-5">
+            Have Questions?
+          </p>
 
           <div className="input-field">
             <input
