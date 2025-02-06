@@ -57,17 +57,17 @@ export default function Web() {
     <section className="bg-black">
       <NewNav />
       <section id="specifications" className="paddings w-full   bg-[#151515] max-sm:px-3 xl:pt-32 ">
-        <div className="  w-full justify-between    xl:pt-32">
+        <div className="  w-full justify-between">
           <div className="flex w-full justify-between gap-10  sm:flex">
             <div>
-              <p className="text-center   text-2xl  font-normal  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">
+              <p className="text-center   text-2xl  font-normal  text-[#FFFFFF99] max-xl:text-xs lg:text-2xl">
                 Resources & Policies
               </p>
-              <p className=" my-3 text-center  text-lg font-semibold text-white  max-sm:my-3 md:text-xl md:leading-10 xl:text-3xl">
+              <p className=" my-3 text-center  text-lg font-semibold text-[#ffffffcc]  max-xl:text-base max-sm:my-3 md:text-xl md:leading-10 xl:text-3xl">
                 About Us
               </p>
 
-              <p className="mb-6 w-full text-ellipsis text-lg font-normal text-[#FFFFFF99] max-sm:leading-7 md:text-center">
+              <p className="mb-6 w-full text-ellipsis text-center text-lg font-normal text-[#FFFFFF99] max-xl:text-sm max-sm:leading-7">
                 Welcome to Altima, where innovation meets security in a smarter, more connected way. We are passionate
                 about crafting intelligent solutions for modern living, blending advanced technology with elegant design
                 to transform how you experience safety and convenience. Altima is more than just a product—it&lsquo;s a
@@ -82,14 +82,14 @@ export default function Web() {
         <div className="  w-full justify-between    md:py-10">
           <div className="grid grid-cols-2  justify-between max-xl:grid-cols-1 max-xl:gap-5 max-sm:gap-5 xl:gap-20 ">
             <div className="">
-              <p className="text-2xl    font-normal text-[#FFFFFF99] max-xl:text-center max-sm:text-lg  lg:text-2xl">
+              <p className="text-2xl    font-normal text-[#FFFFFF99] max-xl:text-center max-xl:text-xs lg:text-2xl">
                 Our Vision
               </p>
-              <p className=" my-6 text-xl font-bold   leading-none tracking-tight text-white max-xl:text-center md:text-xl 2xl:text-3xl">
+              <p className=" text-xl font-bold leading-none tracking-tight text-[#ffffffcc] max-xl:mb-4   max-xl:mt-2 max-xl:text-center max-xl:text-base md:text-xl xl:my-6 2xl:text-3xl">
                 What we are seeing
               </p>
 
-              <p className="text-base leading-9 text-[#FFFFFF99]   max-sm:text-xs 2xl:text-[18px]">
+              <p className="text-base leading-9 text-[#FFFFFF99] max-xl:text-center   max-xl:text-sm 2xl:text-[18px]">
                 At Altima, our vision is to empower people to feel safe, secure, and in control of their environments.
                 We envision a world where homes and commercial spaces operate seamlessly, with security that’s as
                 intuitive as it is sophisticated. Through our smart doors and home systems, we bring this vision to
@@ -124,12 +124,14 @@ export default function Web() {
               />
             </div>
             <div className="">
-              <p className="flex  text-2xl  font-normal  text-[#FFFFFF99] max-sm:text-lg  lg:text-2xl">Our Journey</p>
-              <p className=" my-6 text-xl   font-bold leading-none tracking-tight text-white md:text-xl 2xl:text-3xl">
+              <p className="text-2xl    font-normal text-[#FFFFFF99] max-xl:text-center max-xl:text-xs lg:text-2xl">
+                Our Journey
+              </p>
+              <p className=" text-xl font-bold leading-none tracking-tight text-[#ffffffcc] max-xl:mb-4   max-xl:mt-2 max-xl:text-center max-xl:text-base md:text-xl xl:my-6 2xl:text-3xl">
                 where we are heading to.
               </p>
 
-              <p className="text-base leading-9 text-[#FFFFFF99]   max-sm:text-xs 2xl:text-[18px]">
+              <p className="text-base leading-9 text-[#FFFFFF99] max-xl:text-center   max-xl:text-sm 2xl:text-[18px]">
                 Founded as a csPILLAI® startup, Altima grew from a desire to revolutionize the way we interact with our
                 surroundings. Built on a foundation of innovation and user-centered design, Altima is proud to be at the
                 forefront of security technology. Our journey has been defined by our commitment to creating products
@@ -145,12 +147,14 @@ export default function Web() {
         <div className="  w-full justify-between    md:py-10">
           <div className="grid grid-cols-2  justify-between gap-20 max-xl:grid-cols-1 max-xl:gap-5 ">
             <div className="">
-              <p className="flex  text-2xl  font-normal  text-[#FFFFFF99] max-sm:text-lg  lg:text-2xl">Benefits</p>
-              <p className=" my-6 text-xl   font-bold leading-none tracking-tight text-white md:text-xl 2xl:text-3xl">
+              <p className="text-2xl    font-normal text-[#FFFFFF99] max-xl:text-center max-xl:text-xs lg:text-2xl">
+                Benefits
+              </p>
+              <p className=" text-xl font-bold leading-none tracking-tight text-[#ffffffcc] max-xl:mb-4   max-xl:mt-2 max-xl:text-center max-xl:text-base md:text-xl xl:my-6 2xl:text-3xl">
                 Why Choose Altima?
               </p>
 
-              <p className="text-base leading-9 text-[#FFFFFF99]   max-sm:text-xs 2xl:text-[18px]">
+              <p className="text-base leading-9 text-[#FFFFFF99] max-xl:text-center   max-xl:text-sm 2xl:text-[18px]">
                 Our commitment to quality, security, and customer satisfaction is unwavering. Each Altima product is
                 crafted with meticulous attention to detail, incorporating cutting-edge features that bring a new level
                 of convenience and peace of mind to our customers. With Altima, you’re not just getting a security
@@ -176,8 +180,8 @@ export default function Web() {
           <div className="grid-col-2 grid w-full justify-between gap-10  sm:flex">
             <div className="md:w-full ">
               <div className="flex flex-col items-center">
-                <p className="flex  text-2xl    font-normal  text-[#FFFFFF99] max-sm:text-lg lg:text-2xl">Altima</p>
-                <p className=" mb-4 mt-2 text-xl  font-bold tracking-tight  text-white max-sm:my-2   md:text-xl md:leading-10 xl:text-3xl">
+                <p className="flex  text-2xl    font-normal  text-[#FFFFFF99] max-xl:text-xs lg:text-2xl">Altima</p>
+                <p className=" mb-4 mt-2 text-xl font-bold  tracking-tight text-[#ffffffcc]  max-xl:text-base    md:text-xl md:leading-10 xl:text-3xl">
                   The Altima Difference
                 </p>
 
@@ -199,8 +203,8 @@ export default function Web() {
                     className="max-sm:hidden"
                   />
                   <Image src="/hugeicons_ai-innovation-01.png" width={40} height={40} alt="" className="sm:hidden" />
-                  <p className="py-4 text-lg text-white max-sm:text-sm">1. Innovation Driven</p>
-                  <p className=" text-lg text-[#FFFFFF99] max-sm:text-xs">
+                  <p className="text-semibold py-4 text-lg text-[#ffffffcc] max-sm:text-base">1. Innovation Driven</p>
+                  <p className=" text-lg text-[#FFFFFF99] max-xl:text-sm">
                     Altima products integrate the latest in smart home technology, offering seamless control and a
                     personalized user experience.
                   </p>
@@ -208,8 +212,8 @@ export default function Web() {
                 <div className=" w-full rounded-lg bg-[#080808] p-10 max-sm:p-5 xl:h-[379px] xl:w-[347px]">
                   <Image src="/SketchLogo.png" width={50} height={50} alt="" className="max-sm:hidden" />
                   <Image src="/SketchLogo.png" width={40} height={40} alt="" className="sm:hidden" />
-                  <p className="py-4 text-lg text-white max-sm:text-sm">2. Relaibility</p>
-                  <p className="text-lg text-[#FFFFFF99] max-sm:text-xs">
+                  <p className="text-semibold py-4 text-lg text-[#ffffffcc] max-sm:text-base">2. Relaibility</p>
+                  <p className="text-lg text-[#FFFFFF99] max-xl:text-sm">
                     Built to the highest standards, Altima systems are robust, durable, and dependable, ensuring your
                     security day in and day out.
                   </p>
@@ -223,8 +227,8 @@ export default function Web() {
                     className="max-sm:hidden"
                   />
                   <Image src="/icon-park-outline_customer.png" width={40} height={40} alt="" className="sm:hidden" />
-                  <p className="py-4 text-lg text-white max-sm:text-sm">3. Customer Centric</p>
-                  <p className="text-lg text-[#FFFFFF99] max-sm:text-xs">
+                  <p className="text-semibold py-4 text-lg text-[#ffffffcc] max-sm:text-base">3. Customer Centric</p>
+                  <p className="text-lg text-[#FFFFFF99] max-xl:text-sm">
                     Our customers are at the heart of everything we do. From intuitive designs to responsive support, we
                     prioritize your needs.
                   </p>
@@ -239,17 +243,17 @@ export default function Web() {
         <div className="  w-full justify-between    md:py-10">
           <div className="flex w-full justify-between gap-10  sm:flex">
             <div>
-              <p className=" my-3 text-center  text-lg font-bold text-white  max-sm:my-3 md:text-xl md:leading-10 xl:text-3xl">
+              <p className=" my-3 text-center  text-lg font-bold text-[#ffffffcc]  max-sm:my-3 md:text-xl md:leading-10 xl:text-3xl">
                 Our Promise
               </p>
 
-              <p className="mb-3 w-full font-normal text-[#FFFFFF99] max-sm:leading-7 md:text-center 2xl:text-lg">
+              <p className="mb-3 w-full font-normal text-[#FFFFFF99] max-xl:text-center max-xl:text-sm max-xl:leading-7 md:text-center 2xl:text-lg">
                 At Altima, we are committed to pushing the boundaries of security while maintaining the trust of our
                 customers. We promise you transparency, quality, and constant innovation, so that you can feel confident
                 in every Altima solution.
               </p>
 
-              <p className="mt-3 w-full font-normal text-[#FFFFFF99] max-sm:leading-7 md:text-center 2xl:text-lg">
+              <p className="mt-3 w-full font-normal text-[#FFFFFF99] max-xl:text-center max-xl:text-sm max-sm:leading-7  md:text-center 2xl:text-lg">
                 Thank you for choosing Altima—where your peace of mind is our top priority.
               </p>
             </div>
