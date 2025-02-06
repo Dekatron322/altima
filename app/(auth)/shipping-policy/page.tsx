@@ -202,14 +202,14 @@ export default function Web() {
   return (
     <section className="bg-black">
       <NewNav />
-      <section id="specifications" className="paddings w-full   bg-[#151515] pt-32 max-sm:px-3 ">
-        <div className="  w-full justify-between    md:py-32">
+      <section id="specifications" className="paddings w-full   bg-[#151515]  max-sm:px-3 ">
+        <div className="  w-full justify-between xl:pt-32">
           <div className="flex w-full items-center justify-center  gap-10 sm:flex">
             <div>
-              <p className="text-center   text-2xl  font-normal  text-[#FFFFFF99] max-sm:text-sm lg:text-2xl">
+              <p className="text-center   text-2xl  font-normal  text-[#FFFFFF99] max-xl:text-xs lg:text-2xl">
                 Resources & Policies
               </p>
-              <p className=" my-3 text-center  text-lg font-normal text-white  max-sm:my-3 md:text-xl md:leading-10 xl:text-3xl">
+              <p className=" my-3 text-center  text-lg font-normal text-[#ffffffcc] max-xl:text-base  max-sm:my-3 md:text-xl md:leading-10 xl:text-3xl">
                 Altima Shipping Policy
               </p>
 
@@ -251,7 +251,7 @@ export default function Web() {
                 </motion.button>
               </div>
 
-              <p className="my-6 w-full text-ellipsis text-sm font-normal text-[#FFFFFF99] max-sm:leading-7  md:text-center">
+              <p className="w-full text-ellipsis text-sm font-normal text-[#FFFFFF99] max-xl:text-center max-sm:leading-7 md:text-center  xl:my-6">
                 Smart Haven Systems Private Limited
                 <br />
                 Effective Date: [Date]
