@@ -328,8 +328,7 @@ export default function Web() {
         {/* Video Background */}
         <video
           autoPlay
-          muted
-          // muted={false}
+          muted={false}
           loop
           className="absolute inset-0 h-full w-full object-cover opacity-80" // Adjust opacity as needed
         >
