@@ -9,7 +9,6 @@ import { motion } from "framer-motion"
 import MainFooter from "components/Footer/MainFooter"
 import { useRouter } from "next/navigation"
 import { LiaTimesSolid } from "react-icons/lia"
-import ContactUs from "components/ContactUs/Contact"
 import ImageCarousel from "components/ImageModal/ImageModal"
 import AccordionTwo from "components/Accordion/Accordion001"
 import NewContact from "components/ContactUs/ContactUs"
@@ -644,7 +643,7 @@ export default function Web() {
                   onClick={handlePreOrderClick}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 font-normal uppercase text-[#FFFFFF] max-sm:px-10 max-sm:py-2 max-sm:text-sm "
+                  className="gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-5 py-2 font-normal uppercase text-[#FFFFFF] max-sm:px-10 max-sm:py-2 max-sm:text-sm "
                 >
                   Pre-Order now
                 </motion.button>
@@ -760,7 +759,7 @@ export default function Web() {
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="gap-2 rounded-lg  border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 font-normal uppercase text-[#FFFFFF] max-xl:hidden max-xl:py-2 max-xl:text-sm "
+                  className="gap-2 rounded-lg  border border-[#FFFFFF99] bg-[#FFFFFF26] px-5 py-2 font-normal uppercase text-[#FFFFFF] max-xl:hidden max-xl:py-2 max-xl:text-sm "
                   onClick={handlePreOrderClick}
                 >
                   Pre-Order now
@@ -874,7 +873,7 @@ export default function Web() {
                   onClick={handlePreOrderClick}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 font-normal uppercase text-[#FFFFFF] max-sm:px-10 max-sm:py-2 max-sm:text-sm "
+                  className="gap-2   rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-5 py-2 font-normal uppercase text-[#FFFFFF] max-sm:px-10 max-sm:py-2 max-sm:text-sm "
                 >
                   Pre-Order now
                 </motion.button>
@@ -932,26 +931,26 @@ export default function Web() {
               </div>
             </div>
 
-            <motion.button
+            {/* <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className="flex gap-2  rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-4 font-normal uppercase text-[#FFFFFF] max-sm:py-2 max-sm:text-sm"
               onClick={handlePreOrderClick}
             >
               Pre-Order now
-            </motion.button>
+            </motion.button> */}
           </div>
         </div>
       </section>
 
       <section className="paddings  w-full bg-[#080808] max-sm:px-3 ">
-        <div className="  w-full justify-between    xl:py-10">
-          <div className=" flex flex-col items-center justify-center gap-20  max-xl:gap-5">
+        <div className="  w-full justify-between    xl:py-4">
+          <div className=" flex flex-col items-center justify-center   max-xl:gap-5">
             <div className="">
-              <p className=" text-center text-xl font-normal  leading-none tracking-tight text-[#FFFFFF99] max-xl:text-xs md:text-lg xl:my-6 2xl:text-3xl">
+              <p className=" text-center text-lg font-normal  leading-none tracking-tight text-[#FFFFFF99] max-xl:text-xs md:text-lg xl:mb-2 2xl:text-lg">
                 Our Vision
               </p>
-              <p className="text-center text-xl font-normal  leading-none tracking-tight text-white max-xl:text-base max-sm:my-2 md:text-xl xl:my-6 2xl:text-3xl">
+              <p className="text-center text-xl font-bold  leading-none tracking-tight text-[#ffffffcc] max-xl:text-base max-sm:my-2 md:text-xl xl:mb-6 xl:mt-2 2xl:text-3xl">
                 Altima’s Vision
               </p>
 
