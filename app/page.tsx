@@ -84,7 +84,7 @@ export default function Web() {
     {
       title: "1. Discover Altima: Redefining Security",
       content: (
-        <div className="text-center">
+        <div className="text-center max-sm:text-left">
           <p className=" text-sm leading-6 text-[#FFFFFF99] 2xl:px-60">
             Altima Core and Elite combine advanced technology with elegant design to safeguard your spaces. Featuring
             biometric access, retractable handles, and premium materials, Altima is the ultimate solution for homes and
@@ -97,7 +97,7 @@ export default function Web() {
     {
       title: "2. Why Preorder?",
       content: (
-        <div className="text-center">
+        <div className="text-center max-sm:text-left">
           <p className="text-sm text-white">Preordering Altima comes with exclusive benefits:</p>
           <ul className="grid gap-3 text-sm">
             <li className="mt-3">
@@ -117,7 +117,7 @@ export default function Web() {
     {
       title: "3. How to Preorder",
       content: (
-        <div className="text-center">
+        <div className="text-center max-sm:text-left">
           <p className="text-sm text-white">Preordering is quick and simple:</p>
           <ul className="grid gap-3 text-sm">
             <li className="mt-3">
@@ -140,7 +140,7 @@ export default function Web() {
     {
       title: "4. Flexible Payment Options",
       content: (
-        <div className="text-center text-sm">
+        <div className="text-center text-sm max-sm:text-left">
           <p className="text-white">We ensure your payment experience is smooth:</p>
           <ul className="grid gap-3">
             <li className="mt-3">
@@ -162,7 +162,7 @@ export default function Web() {
     {
       title: "5. Reliable Shipping",
       content: (
-        <div className="text-center text-sm">
+        <div className="text-center text-sm max-sm:text-left">
           <p className="text-white">Your Altima smart door will reach you securely and on time:</p>
           <ul className="grid gap-3">
             <li className="mt-3">
@@ -181,7 +181,7 @@ export default function Web() {
     {
       title: "6. Warranty & Support",
       content: (
-        <div className="text-center">
+        <div className="text-center max-sm:text-left">
           <p className="text-white">Altima products come with dependable coverage and assistance:</p>
           <ul className="grid gap-3 text-sm">
             <li className="mt-3 ">
@@ -203,7 +203,7 @@ export default function Web() {
     {
       title: "7. Refund & Cancellation Policy",
       content: (
-        <div className="text-center text-sm">
+        <div className="text-center text-sm max-sm:text-left">
           <p>We’ve created a clear policy for your convenience:</p>
           <ul className="grid gap-3">
             <li className="mt-3">
@@ -256,7 +256,7 @@ export default function Web() {
     {
       title: "9. Contact Us",
       content: (
-        <div className="text-center text-sm">
+        <div className="text-center text-sm max-sm:text-left">
           <p className="border-b border-[#FFFFFF1A] pb-3 text-center text-base text-white">We’re here to help:</p>
           <ul className="grid gap-3">
             <li className="mt-3">
