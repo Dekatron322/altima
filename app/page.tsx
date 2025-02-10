@@ -401,12 +401,12 @@ export default function Web() {
 
       <section className="paddings  w-full bg-[#151515] max-sm:px-3 ">
         <div className="w-full xl:py-10">
-          <div className="flex w-full flex-col items-center justify-center">
+          {/* <div className="flex w-full flex-col items-center justify-center">
             <p className="text-[#FFFFFF99] max-xl:text-xs lg:text-sm">Benefits</p>
             <p className="mb-4 mt-2 text-xl font-semibold uppercase  tracking-tight text-white opacity-80 max-xl:text-base max-sm:my-2  md:text-xl md:leading-10 xl:text-3xl">
               Why Pre-Order?
             </p>
-          </div>
+          </div> */}
 
           <div className=" w-full rounded-md border border-[#FFFFFF1A]">
             {BenefitsData.map((benefits, id) => (
@@ -427,7 +427,7 @@ export default function Web() {
           <div className="grid-col-2 grid w-full justify-between gap-10  sm:flex">
             <div className="md:w-full ">
               <div className="flex flex-col items-center">
-                <p className="flex text-lg font-normal  text-[#FFFFFF99] max-xl:text-xs lg:text-2xl">
+                <p className="flex text-lg font-normal  text-[#FFFFFF99] max-xl:text-xs lg:text-lg">
                   Innovative Features
                 </p>
                 <p className=" mb-2 mt-2 text-xl font-bold  tracking-tight text-white  opacity-80 max-xl:text-base max-sm:my-2   md:text-xl md:leading-10 xl:text-3xl">
@@ -512,7 +512,7 @@ export default function Web() {
                 OUR MODELS
               </p>
 
-              <p className="w-[1118px] font-normal leading-6 text-[#FFFFFF99] max-xl:text-sm max-xl:leading-[19px] max-sm:text-center md:text-center">
+              <p className="font-normal leading-6 text-[#FFFFFF99] max-xl:text-sm max-xl:leading-[19px] max-sm:text-center md:text-center xl:w-[1118px]">
                 At Altima, we bring innovation and security together through our range of advanced smart doors designed
                 for a connected lifestyle. Each model combines cutting-edge technology with sleek aesthetics, offering
                 intelligent solutions for modern living. From robust security features to elegant design, Altima models
@@ -529,11 +529,11 @@ export default function Web() {
         </div>
       </section>
 
-      <section id="other-products" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
+      <section id="other-products" className="paddings  w-full bg-[#151515] max-sm:px-3 ">
         <div className="  w-full justify-between md:py-10">
           <div className="flex w-full flex-col items-center justify-center sm:hidden">
-            <p className="flex  text-2xl  font-normal  text-[#FFFFFF99]  max-xl:text-xs lg:text-2xl">Our Models</p>
-            <p className=" mb-6 mt-3 text-xl font-bold leading-none  tracking-tight text-white opacity-80 max-xl:text-base md:text-xl xl:text-3xl">
+            <p className="flex  text-2xl  font-normal  text-[#FFFFFF99]  max-xl:text-xs lg:text-lg">Our Models</p>
+            <p className=" mb-6 mt-3 text-xl font-bold leading-none  tracking-tight text-[#ffffffcc] opacity-80 max-xl:text-base md:text-xl xl:text-3xl">
               ALTIMA Core
             </p>
           </div>
@@ -542,13 +542,13 @@ export default function Web() {
               <ImageCarousel />
             </div>
             <div className="">
-              <p className="flex  text-2xl  font-normal  text-[#FFFFFF99]  max-xl:hidden max-sm:text-sm xl:text-2xl">
+              <p className="flex  text-lg  font-normal  text-[#FFFFFF99]  max-xl:hidden max-sm:text-sm xl:text-lg">
                 Our Models
               </p>
-              <p className=" my-6 text-base  font-bold   leading-none tracking-tight text-white opacity-80 max-xl:hidden md:text-xl xl:text-3xl">
+              <p className="mb-6 mt-2 text-base font-bold leading-none tracking-tight text-white opacity-80 max-xl:hidden md:text-xl xl:text-3xl">
                 ALTIMA Core
               </p>
-              <div>
+              {/* <div>
                 <div className="items-center justify-between bg-[#151515] px-4 py-2 text-black max-xl:w-full max-xl:justify-center xl:flex xl:max-w-[522px]">
                   <ul className="list-inside ">
                     <li className="py-2 text-[#FFFFFF] opacity-80  max-sm:text-sm">Advanced Home Control </li>
@@ -559,7 +559,7 @@ export default function Web() {
                     ₹49,500 + <span className="text-base font-normal">Taxes</span>
                   </p>
                 </div>
-              </div>
+              </div> */}
               <ul className="mt-6 list-inside  pl-2 max-xl:text-sm md:mb-4">
                 <li className="pb-3 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Security Level:</span> Very High
@@ -612,17 +612,25 @@ export default function Web() {
                 </li>
               </ul>
 
-              <div className="flex items-center justify-between bg-[#FFFFFF0D] px-7 py-3">
-                <ul className=" list-inside  pl-2">
-                  <li className=" text-[#FFFFFFcc] max-sm:text-sm">Feature Comparison</li>
+              <div className="flex w-full justify-between  gap-4 bg-[#FFFFFF0D] px-4 py-3 max-sm:flex-col xl:items-center">
+                <ul className=" flex list-inside  items-center gap-2 pl-2">
+                  <li className=" text-[#FFFFFFcc] max-sm:text-sm">Core vs. Elite</li>
+                  <motion.img
+                    src="/FileArrowDown.png"
+                    className="h-8 w-8 max-sm:h-6 max-sm:w-6"
+                    height={32}
+                    alt=""
+                    initial={{ scale: 1.2, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 1, ease: "easeIn" }}
+                  />
                 </ul>
                 <div>
                   <ul className=" flex list-inside  items-center gap-2 pl-2">
-                    <li className=" text-[#FFFFFFcc] underline max-sm:text-sm">Download</li>
+                    <li className=" text-[#FFFFFFcc] underline max-sm:text-sm">Altima: 10 Must-Knows!</li>
                     <motion.img
                       src="/FileArrowDown.png"
-                      width={32}
-                      height={32}
+                      className="h-8 w-8 max-sm:h-6 max-sm:w-6"
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -646,15 +654,15 @@ export default function Web() {
         </div>
       </section>
 
-      <section id="other-products" className="paddings  w-full bg-[#151515] max-sm:px-3 ">
+      <section id="other-products" className="paddings  w-full bg-[#080808] max-sm:px-3 ">
         <div className="  w-full justify-between    xl:py-10">
           <div className="grid-col-2 grid w-full justify-between  max-xl:gap-5 xl:flex xl:gap-20">
             <div className="max-xl:flex max-xl:w-full max-xl:flex-col max-xl:items-center max-xl:justify-center  ">
-              <p className="flex  text-2xl    font-normal  text-[#FFFFFF99] max-xl:text-xs lg:text-2xl">Our Models</p>
-              <p className=" text-base font-bold leading-none tracking-tight text-white opacity-80 max-xl:mt-3 md:text-xl xl:my-6 xl:text-3xl">
+              <p className="flex  text-lg    font-normal  text-[#FFFFFF99] max-xl:text-xs lg:text-lg">Our Models</p>
+              <p className=" mb-6 mt-2 text-base font-bold leading-none tracking-tight text-white opacity-80 max-xl:mt-3 md:text-xl xl:text-3xl">
                 ALTIMA Elite
               </p>
-              <div>
+              {/* <div>
                 <div className="flex items-center justify-between gap-6 bg-[#000000] px-4 py-2 text-black max-xl:hidden xl:max-w-[522px]">
                   <ul className="list-inside ">
                     <li className=" text-[#FFFFFFcc] max-sm:text-xs">Ultimate Smart Home Hub </li>
@@ -665,7 +673,7 @@ export default function Web() {
                     ₹99,000 + <span className="text-sm font-normal">Taxes</span>
                   </p>
                 </div>
-              </div>
+              </div> */}
               <ul className="mb-6 mt-6 list-inside  pl-2 max-xl:hidden">
                 <li className="pb-4 text-[#FFFFFFcc] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Security Level: </span> Very High
@@ -721,17 +729,25 @@ export default function Web() {
                 </li>
               </ul> */}
 
-              <div className="flex items-center justify-between bg-[#FFFFFF0D] px-7 py-3 max-xl:hidden">
-                <ul className=" list-inside  pl-2">
-                  <li className=" text-[#FFFFFF] opacity-80 max-sm:text-xs">Feature Comparison</li>
+              <div className="flex w-full justify-between gap-4 bg-[#FFFFFF0D] px-4 py-3 max-sm:hidden max-sm:flex-col xl:items-center">
+                <ul className=" flex list-inside  items-center gap-2 pl-2">
+                  <li className=" text-[#FFFFFFcc] max-sm:text-sm">Core vs. Elite</li>
+                  <motion.img
+                    src="/FileArrowDown.png"
+                    className="h-8 w-8 max-sm:h-6 max-sm:w-6"
+                    height={32}
+                    alt=""
+                    initial={{ scale: 1.2, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 1, ease: "easeIn" }}
+                  />
                 </ul>
                 <div>
-                  <ul className=" flex list-inside items-center gap-2 pl-2">
-                    <li className=" text-[#FFFFFF] underline opacity-80 max-sm:text-xs">Download</li>
+                  <ul className=" flex list-inside  items-center gap-2 pl-2">
+                    <li className=" text-[#FFFFFFcc] underline max-sm:text-sm">Altima: 10 Must-Knows!</li>
                     <motion.img
                       src="/FileArrowDown.png"
-                      width={32}
-                      height={32}
+                      className="h-8 w-8 max-sm:h-6 max-sm:w-6"
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -758,7 +774,7 @@ export default function Web() {
               <VideoCarousel />
             </div>
             <div className="xl:hidden xl:w-[403]">
-              <div>
+              {/* <div>
                 <div className=" w-full items-center justify-center bg-[#000000] px-4 py-4 text-black">
                   <ul className="list-inside text-[#FFFFFF] opacity-80 max-sm:text-sm">
                     <li className=" ">Ultimate Smart Home Hub </li>
@@ -769,7 +785,7 @@ export default function Web() {
                     ₹99,000 + <span className="text-sm font-normal">Taxes</span>
                   </p>
                 </div>
-              </div>
+              </div> */}
               <ul className="mb-6 mt-6 list-inside  pl-2 max-sm:text-sm">
                 <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Security Level: </span> Very High
@@ -819,17 +835,25 @@ export default function Web() {
                 </li>
               </ul>
 
-              <div className="mb-5 flex items-center justify-between bg-[#FFFFFF0D] px-7 py-3 sm:hidden">
-                <ul className=" list-inside  pl-2">
-                  <li className=" text-[#FFFFFF] opacity-80 max-sm:text-sm">Feature Comparison</li>
+              <div className="flex w-full justify-between gap-4  bg-[#FFFFFF0D] px-4 py-3 max-sm:mb-6 max-sm:flex-col xl:items-center">
+                <ul className=" flex list-inside  items-center gap-2 pl-2">
+                  <li className=" text-[#FFFFFFcc] max-sm:text-sm">Core vs. Elite</li>
+                  <motion.img
+                    src="/FileArrowDown.png"
+                    className="h-8 w-8 max-sm:h-6 max-sm:w-6"
+                    height={32}
+                    alt=""
+                    initial={{ scale: 1.2, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 1, ease: "easeIn" }}
+                  />
                 </ul>
                 <div>
                   <ul className=" flex list-inside  items-center gap-2 pl-2">
-                    <li className=" text-[#FFFFFF] underline opacity-80 max-sm:text-sm">Download</li>
+                    <li className=" text-[#FFFFFFcc] underline max-sm:text-sm">Altima: 10 Must-Knows!</li>
                     <motion.img
                       src="/FileArrowDown.png"
-                      width={32}
-                      height={32}
+                      className="h-8 w-8 max-sm:h-6 max-sm:w-6"
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -860,10 +884,10 @@ export default function Web() {
         </div>
       </section>
 
-      <section id="other-products" className="paddings  w-full bg-[#282828] max-sm:px-3 ">
+      <section id="other-products" className="paddings  w-full bg-[#151515] max-sm:px-3 ">
         <div className="w-full     xl:py-10">
           <div className="flex flex-col items-center justify-center">
-            <p className="text-[#FFFFFF99] max-sm:text-sm">Pre-order Now - Limited Units Available.</p>
+            <p className="text-lg text-[#FFFFFF99] max-sm:text-sm">Pre-order Now - Limited Units Available.</p>
             <p className="custom-text first-word-color my-4 flex border-[#FFFFFF1A] pb-4 text-center text-3xl font-bold text-[#FFFFFF] opacity-80 max-xl:border-b max-xl:text-2xl md:w-[642px]">
               5,000 units available in the first pre-order batch.
             </p>
@@ -872,7 +896,9 @@ export default function Web() {
               <div className="flex items-start justify-center gap-3 border-[#FFFFFF1A]  max-xl:pb-2 max-sm:border-b md:border-r md:pr-6">
                 <Image src="/SealPercent.png" width={50} height={50} alt="" />
                 <div>
-                  <p className="mb-2 font-bold text-[#FFFFFF] max-xl:text-sm">50% Discount for Preorders:</p>
+                  <p className="mb-2 text-[22px] font-semibold text-[#FFFFFFcc] max-xl:text-sm xl:w-[223px]">
+                    50% Discount for Preorders:
+                  </p>
                   <p className="text-[#FFFFFF99] max-xl:text-sm max-xl:leading-[22.4px]">
                     Pre-order customers can enjoy a 50% discount exclusively for placing preorders on the
                     first batch of units.
@@ -880,10 +906,10 @@ export default function Web() {
                 </div>
               </div>
 
-              <div className="my-4 flex items-start justify-center gap-3 border-[#FFFFFF1A]  max-sm:border-b max-sm:pb-2 md:border-r md:px-6">
+              <div className=" flex items-start justify-center gap-3 border-[#FFFFFF1A]  max-sm:border-b max-sm:pb-2 md:border-r md:px-6">
                 <Image src="/Upload.png" width={50} height={50} alt="" />
                 <div>
-                  <p className=" font-bold text-[#FFFFFF] max-xl:pb-2 max-xl:text-sm">
+                  <p className="mb-2 text-[22px] font-semibold  text-[#FFFFFFcc] max-xl:text-sm xl:w-[223px]">
                     Free Extended Warranty Upgrade:
                   </p>
                   <p className="text-[#FFFFFF99] max-xl:leading-[22.4px]  max-sm:text-sm">
@@ -896,7 +922,9 @@ export default function Web() {
               <div className="flex items-start justify-center gap-3 max-xl:mb-6 max-sm:pt-3 md:pl-6">
                 <Image src="/ShieldCheckered.png" width={50} height={50} alt="" />
                 <div>
-                  <p className="mb-2 font-bold text-[#FFFFFF] max-sm:text-sm">Free Extended Warranty Upgrade:</p>
+                  <p className="mb-2 text-[22px] font-semibold text-[#FFFFFFcc] max-xl:text-sm xl:w-[223px]">
+                    Free Extended Warranty Upgrade:
+                  </p>
                   <p className="text-[#FFFFFF99] max-xl:leading-[22.4px] max-sm:text-sm">
                     Pre-order now and get an extended warranty upgrade for additional peace of mind, free of charge.
                   </p>
@@ -916,7 +944,7 @@ export default function Web() {
         </div>
       </section>
 
-      {/* <section className="paddings  w-full bg-[#151515] max-sm:px-3 ">
+      <section className="paddings  w-full bg-[#080808] max-sm:px-3 ">
         <div className="  w-full justify-between    xl:py-10">
           <div className=" flex flex-col items-center justify-center gap-20  max-xl:gap-5">
             <div className="">
@@ -935,9 +963,9 @@ export default function Web() {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
-      <section className="paddings  w-full bg-[#080808] max-sm:px-3 ">
+      <section className="paddings  w-full bg-[#151515] max-sm:px-3 ">
         <div className="  w-full     xl:py-10">
           <div className="flex flex-col items-center justify-center">
             <p className=" text-[#FFFFFF99] max-xl:text-xs">Timeline</p>
@@ -951,7 +979,7 @@ export default function Web() {
         </div>
       </section>
 
-      {/* <section className="paddings  w-full bg-[#151515] max-sm:px-3 ">
+      <section className="paddings  w-full bg-[#080808] max-sm:px-3 ">
         <div className="  w-full     py-10">
           <div className="flex flex-col">
             <p className=" text-[#FFFFFF99]">FAQs</p>
@@ -972,7 +1000,7 @@ export default function Web() {
             ))}
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* <ContactUs /> */}
 
