@@ -13,6 +13,7 @@ import ContactUs from "components/ContactUs/Contact"
 import ImageCarousel from "components/ImageModal/ImageModal"
 import AccordionTwo from "components/Accordion/Accordion001"
 import NewContact from "components/ContactUs/ContactUs"
+import VideoCarousel from "components/ImageModal/VideoCarousel"
 
 export default function Web() {
   const faqData = [
@@ -85,7 +86,7 @@ export default function Web() {
       title: "1. Discover Altima: Redefining Security",
       content: (
         <div className="text-center">
-          <p className="text-sm leading-6 text-[#FFFFFF99]">
+          <p className=" text-sm leading-6 text-[#FFFFFF99] 2xl:px-60">
             Altima Core and Elite combine advanced technology with elegant design to safeguard your spaces. Featuring
             biometric access, retractable handles, and premium materials, Altima is the ultimate solution for homes and
             offices. Choose Core for essential features or Elite for enhanced functionality tailored to your needs.
@@ -320,16 +321,36 @@ export default function Web() {
   return (
     <section className="bg-black">
       <Navbar />
-      <section id="about" className="about-section  grid w-full  bg-black   lg:h-screen lg:py-16">
+      <section
+        id="about"
+        className="about-section relative grid w-full items-center justify-center bg-black lg:h-screen lg:py-16"
+      >
+        {/* Video Background */}
+        <video
+          autoPlay
+          muted
+          // muted={false}
+          loop
+          className="absolute inset-0 h-full w-full object-cover opacity-80" // Adjust opacity as needed
+        >
+          <source src="/ALTIMA.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
+        {/* Gradient overlay for better contrast */}
+
+        {/* Content */}
         <motion.div
-          className="paddings pb-10 max-sm:px-3"
+          className="paddings relative z-10 pb-10 max-sm:px-3" // Add z-10 to ensure content is above the video and overlay
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className=" flex h-full w-full max-xl:mt-2 max-xl:justify-center max-xl:text-center max-sm:justify-center lg:mt-0   lg:items-center ">
-            <div>
+          <div className="flex h-full w-full items-center max-xl:mt-2 max-xl:justify-center max-xl:text-center max-sm:justify-center lg:mt-0 lg:items-center">
+            <div className="flex w-full flex-col items-center justify-center">
               <div className="mb-4 flex items-center justify-center gap-2 rounded-lg bg-[#FFFFFF08] p-2 max-2xl:w-full xl:max-w-[519px]">
                 <Image src="/Group 1037.png" width={24} height={24} alt="" className="sm:hidden" />
                 <Image src="/Group 1037.png" width={20} height={20} alt="" className="max-sm:hidden" />
@@ -337,47 +358,25 @@ export default function Web() {
                   POWERED BY INNOVATION FROM SUSMO AND OTHER DRIVES
                 </p>
               </div>
-              <p className="text-5xl font-bold text-[#FFFFFF] max-xl:text-center max-lg:mt-5 max-lg:text-4xl max-sm:text-4xl">
-                Altima: Core and Elite <br className="max-sm:hidden" />
-                Smart Doors for Every <br className="max-sm:hidden" /> Space
+              <p className="text-6xl font-bold text-[#FFFFFF] max-xl:text-center max-xl:text-3xl max-lg:mt-5 max-lg:text-4xl">
+                Altima Smart Doors
               </p>
 
               <p
-                className=" mt-2  cursor-pointer text-5xl font-bold text-[#FF3B30]   max-xl:block max-xl:text-4xl lg:block"
+                className="mt-2 cursor-pointer text-center text-6xl font-bold text-[#FF3B30] max-xl:block max-xl:text-3xl lg:block"
                 onClick={handlePreOrderClick}
               >
                 PRE-ORDER NOW!
               </p>
-
-              <p className="mt-10 text-xl text-white opacity-80 max-sm:mt-3 max-sm:text-sm md:w-[600px]">
-                Experience the next level of security and innovation with Altima—offering two distinct models to suit
-                your needs: Altima Core, the perfect smart door for unparalleled safety, and Altima Elite, which takes
-                it further by integrating smart home hub functionality. <br />
-                <br />
-                Featuring a{" "}
-                <span onClick={openVideoModal} className="cursor-pointer text-[#FF3B30] underline">
-                  disappearing handle
-                </span>{" "}
-                and cutting-edge technology, both models deliver seamless integration of security and style, perfect for
-                any space—whether it&apos;s your home, office, or beyond. Choose Altima Core for an advanced smart door
-                experience, or Altima Elite for the same smart door experience with the added benefit of complete
-                control over your home gadgets.
+              <p className="mt-4 text-center text-lg leading-7 text-[#ffffffcc] max-xl:text-sm xl:max-w-[643px]">
+                Experience next-level security with Altima Core for unmatched safety or Altima Elite with smart home hub
+                functionality.
               </p>
-              <div className="max-2xl:my-5 xl:hidden">
-                <motion.img
-                  src="/Web.1889 (1).png"
-                  alt=""
-                  initial={{ scale: 1.2, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 1, ease: "easeOut" }}
-                  width={633}
-                  height={583}
-                />
-              </div>
-              <div className="mt-8 flex w-full gap-5 max-xl:items-center max-xl:justify-center max-sm:gap-2 ">
+
+              <div className="-center mt-8 flex w-full justify-center gap-5 max-sm:gap-2">
                 <motion.button
                   onClick={handlePreOrderClick}
-                  className="whitespace-nowrap rounded-lg border border-[#FF3B30] bg-[#FFFFFF26] px-4 py-3 font-normal uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-3 max-sm:text-sm "
+                  className="whitespace-nowrap rounded-lg border border-[#FF3B30] bg-[#FFFFFF26] px-4 py-3 font-normal uppercase text-[#FFFFFF] max-sm:mb-3 max-sm:w-full max-sm:py-3 max-sm:text-sm"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -385,7 +384,7 @@ export default function Web() {
                 </motion.button>
 
                 <motion.button
-                  className="flex items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-[#FFFFFF99] bg-transparent px-4 py-3 font-normal uppercase text-[#FFFFFF] max-sm:mb-3  max-sm:w-full max-sm:py-2 max-sm:text-sm "
+                  className="flex items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-[#FFFFFF99] bg-transparent px-4 py-3 font-normal uppercase text-[#FFFFFF] max-sm:mb-3 max-sm:w-full max-sm:py-2 max-sm:text-sm"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={openVideoModal} // Open modal
@@ -396,7 +395,7 @@ export default function Web() {
               </div>
             </div>
 
-            <div className="">{/* You can remove the Image component as it will be used as background */}</div>
+            <div>{/* You can remove the Image component as it will be used as background */}</div>
           </div>
         </motion.div>
       </section>
@@ -509,20 +508,19 @@ export default function Web() {
       >
         <div className="  w-full justify-between    md:py-10">
           <div className="flex w-full justify-between gap-10  sm:flex">
-            <div className="flex w-full flex-col justify-center">
+            <div className="flex w-full flex-col items-center justify-center">
               <p className=" my-3 text-center text-lg font-bold capitalize  text-white opacity-80 max-sm:mb-3  max-sm:text-base md:text-xl md:leading-10 xl:text-3xl">
                 OUR MODELS
               </p>
 
-              <p className="w-full font-normal leading-6 text-[#FFFFFF99] max-xl:text-sm max-xl:leading-[19px] max-sm:text-center md:text-center">
+              <p className="w-[1118px] font-normal leading-6 text-[#FFFFFF99] max-xl:text-sm max-xl:leading-[19px] max-sm:text-center md:text-center">
                 At Altima, we bring innovation and security together through our range of advanced smart doors designed
                 for a connected lifestyle. Each model combines cutting-edge technology with sleek aesthetics, offering
-                intelligent solutions for modern living.
+                intelligent solutions for modern living. From robust security features to elegant design, Altima models
+                redefine how homes and businesses safeguard their spaces, ensuring a seamless blend of safety, style,
+                and convenience.
               </p>
-              <p className="mb-3 w-full font-normal leading-6 text-[#FFFFFF99] max-xl:text-sm max-sm:text-center  md:text-center">
-                From robust security features to elegant design, Altima models redefine how homes and businesses
-                safeguard their spaces, ensuring a seamless blend of safety, style, and convenience.
-              </p>
+
               {/* <div className="grid w-full rounded-2xl bg-[#080808] p-3 max-sm:p-1">
                 <Image src="/video.png" width={1312} height={60} alt="" className="p-2 max-sm:hidden" />
                 <Image src="/doorVid.png" width={1312} height={60} alt="" className="p-1 md:hidden" />
@@ -542,16 +540,7 @@ export default function Web() {
           </div>
           <div className="flex w-full justify-between max-xl:grid max-sm:grid max-sm:gap-5  md:gap-20">
             <div className="overflow-hidden rounded-md sm:h-[620px]">
-              <motion.video
-                src="/WhatsApp Video 2024-12-12 at 15.04.29.mp4"
-                className="w-[645px] max-xl:w-full"
-                autoPlay
-                loop
-                muted
-                initial={{ scale: 1.2, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1, ease: "easeIn" }}
-              />
+              <ImageCarousel />
             </div>
             <div className="">
               <p className="flex  text-2xl  font-normal  text-[#FFFFFF99]  max-xl:hidden max-sm:text-sm xl:text-2xl">
@@ -764,10 +753,10 @@ export default function Web() {
               </div>
             </div>
             <div className=" max-xl:hidden">
-              <ImageCarousel />
+              <VideoCarousel />
             </div>
             <div className="xl:hidden">
-              <ImageCarousel />
+              <VideoCarousel />
             </div>
             <div className="xl:hidden xl:w-[403]">
               <div>

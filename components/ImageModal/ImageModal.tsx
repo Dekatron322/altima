@@ -4,7 +4,7 @@ import { GoChevronLeft, GoChevronRight } from "react-icons/go"
 
 const ImageCarousel = () => {
   const images = [
-    "/Frame 48095435.png",
+    "/Web.1901.png",
     "/4.png",
     "/3.png",
     "/2.png",
@@ -41,7 +41,7 @@ const ImageCarousel = () => {
           <motion.img
             key={index}
             src={image}
-            width={732}
+            width={645}
             height={555}
             alt={`Image ${index + 1}`}
             initial={{ opacity: 0 }}
