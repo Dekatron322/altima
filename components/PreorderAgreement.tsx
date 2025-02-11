@@ -145,8 +145,8 @@ const PreorderAgreement = () => {
               toggleAggrement() // Only call the function if not disabled
             }}
             src={isAgreement ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-            width={18}
-            height={18}
+            width={24}
+            height={24}
             alt=""
             initial={{ scale: 1.2, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}

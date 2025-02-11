@@ -861,8 +861,8 @@ export default function Web() {
                   <div className=" flex w-full items-center gap-2 " onClick={() => toggleAddress("Use New Address")}>
                     <motion.img
                       src={selectedAddress === "Use New Address" ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -877,8 +877,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={selectedAddress === "Use Default Address" ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -1010,11 +1010,11 @@ export default function Web() {
                     agree to pay the shipping charges with the remaining balance.
                   </p>
 
-                  <div className=" flex w-full items-center gap-2 " onClick={toggleBillingTwo}>
+                  <div className=" flex w-full items-start gap-2 " onClick={toggleBillingTwo}>
                     <motion.img
                       src={isDefaultBillingTwo ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -1097,8 +1097,8 @@ export default function Web() {
                   <div className=" flex w-full items-center gap-2 " onClick={toggleShipping}>
                     <motion.img
                       src={isDefaultShipping ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -1135,8 +1135,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isDefaultEmail ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -1153,8 +1153,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isDefaultPhone ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -1171,8 +1171,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isDefaultWhatsapp ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -1205,8 +1205,8 @@ export default function Web() {
                     >
                       <motion.img
                         src={selectedRadio === "Altima Core" ? "/fluent_radio-button-24-filled.png" : "/radio.png"}
-                        width={18}
-                        height={18}
+                        width={24}
+                        height={24}
                         alt="Altima Core"
                         initial={{ scale: 1.2, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
@@ -1237,8 +1237,8 @@ export default function Web() {
                     >
                       <motion.img
                         src={selectedRadio === "Altima Elite" ? "/fluent_radio-button-24-filled.png" : "/radio.png"}
-                        width={18}
-                        height={18}
+                        width={24}
+                        height={24}
                         alt="Altima Elite"
                         initial={{ scale: 1.2, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
@@ -1573,8 +1573,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isEnforcedLock ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -1589,8 +1589,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isAntiTheft ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt="Anti Theft"
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -1607,8 +1607,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isMotionSensor ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -1623,8 +1623,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isMotionSensor ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -1639,8 +1639,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isMotionSensor ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -1665,8 +1665,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isSmartKeypadAccess ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -1683,8 +1683,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isBatteryBackUp ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt="Battery Backup"
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -1701,8 +1701,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isFireDetection ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -1719,8 +1719,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isRemoteLockUnlock ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -1749,8 +1749,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isVideoDoorBell ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -1793,8 +1793,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isCamera ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -1819,8 +1819,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isSmartLightingIntegration ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -1841,8 +1841,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isHomeAutomation ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -1863,8 +1863,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isAdvanceMotionDetection ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -1885,8 +1885,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isVoiceAssistant ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -1910,8 +1910,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isZigbee ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -1928,8 +1928,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isBluetooth ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -1946,8 +1946,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isWifi ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -1981,8 +1981,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isMainsPower ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -1999,8 +1999,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isBatteryBackUp ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -2017,8 +2017,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isSolarReady ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -2094,8 +2094,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isExtendedWarranty ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt="Warranty Checkbox"
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -2131,8 +2131,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isDefaultSupport ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -2153,8 +2153,8 @@ export default function Web() {
                   >
                     <motion.img
                       src={isPayment ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
@@ -2283,8 +2283,8 @@ export default function Web() {
                         toggleAggrement() // Only call the function if not disabled
                       }}
                       src={isAgreement ? "/CheckSquare.png" : "/CheckSquareEmpty.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt=""
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
