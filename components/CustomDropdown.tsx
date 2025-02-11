@@ -21,7 +21,7 @@ const Dropdown: React.FC<DropdownProps> = ({
 }) => {
   return (
     <div className="mt-3">
-      <label className={`text-sm ${disabled ? "text-gray-500" : "text-white"}`}>{label}</label>
+      <label className={`text-sm ${disabled ? "text-gray-500" : "text-[#ffffffcc]"}`}>{label}</label>
       <div
         className={`relative h-[46px] w-full cursor-pointer rounded-lg border border-[#FFFFFF1A] px-3 max-sm:mb-2 ${
           disabled

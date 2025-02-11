@@ -854,7 +854,7 @@ export default function Web() {
 
             <div className="flex h-full w-full flex-col  rounded-lg max-sm:grid max-sm:gap-5    lg:gap-5 lg:border  lg:border-[#FFFFFF0D]">
               <form onSubmit={handleSubmit}>
-                <div className="grid gap-5 lg:px-5 lg:pt-5">
+                <div className="grid gap-5 max-sm:gap-3 lg:px-5 lg:pt-5">
                   <p className="py-2 font-medium text-[#ffffffcc] lg:text-lg">
                     Address Preferences <span className="text-[#FF3B30]">*</span>
                   </p>
@@ -868,7 +868,7 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Use new Address</p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm">Use new Address</p>
                   </div>
 
                   <div
@@ -884,7 +884,7 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Use Default Address</p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm">Use Default Address</p>
                   </div>
                 </div>
                 <div className="my-5 flex w-full border-b border-[#FFFFFF0D]"></div>
@@ -1021,12 +1021,10 @@ export default function Web() {
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
 
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">
-                      Billing Address is the same as the Shipping Address
-                    </p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm">Billing Address Same as shipping Address</p>
                   </div>
 
-                  <p className="py-2 text-lg font-medium text-white">
+                  <p className="py-2 font-medium text-[#ffffffcc] lg:text-lg">
                     Billing Address<span className="text-[#FF3B30]">*</span>
                   </p>
                   <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
@@ -1107,7 +1105,7 @@ export default function Web() {
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
 
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Set as default Billing Address</p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm">Set as default Billing Address</p>
                   </div>
 
                   {/* <div className=" flex w-full items-center gap-2 " onClick={toggleShipping}>
@@ -1144,7 +1142,7 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Email</p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm">Email</p>
                   </div>
 
                   <div
@@ -1162,7 +1160,7 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Phone</p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm">Phone</p>
                   </div>
 
                   <div
@@ -1180,7 +1178,7 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Whatsapp</p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm">Whatsapp</p>
                   </div>
                 </div>
                 <div className="my-5 border-b border-[#FFFFFF0D]"></div>
@@ -1254,7 +1252,7 @@ export default function Web() {
                     </div>
                   </div>
 
-                  <p className="mt-6 text-sm text-[#FFFFFF]">Quantity</p>
+                  <p className="mt-6 text-sm text-[#FFFFFFcc]">Quantity</p>
                   <div className="items-center sm:flex sm:justify-between">
                     <div className=" flex items-center gap-3 rounded-md">
                       <button
@@ -1331,16 +1329,16 @@ export default function Web() {
                   <div className="flex w-full items-center gap-2 " onClick={() => toggleDoorSpec("Standard Size")}>
                     <motion.img
                       src={selectedDoorSpec === "Standard Size" ? "/fluent_radio-button-24-filled.png" : "/radio.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt="Standard Size"
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Size(s) in inches</p>
+                    <p className="text-base text-[#FFFFFFcc] max-sm:text-sm">Standard Size(s)</p>
                   </div>
-
+                  <p className="mb-2 mt-4 text-sm text-[#FFFFFFcc] max-sm:text-sm">Height × Width (in inches)</p>
                   <Dropdown
                     label=""
                     options={standardSizeOptions}
@@ -1364,14 +1362,14 @@ export default function Web() {
                   >
                     <motion.img
                       src={selectedDoorSpec === "Input Dimension" ? "/fluent_radio-button-24-filled.png" : "/radio.png"}
-                      width={18}
-                      height={18}
+                      width={24}
+                      height={24}
                       alt="Input Dimension"
                       initial={{ scale: 1.2, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Custom Size</p>
+                    <p className="text-base text-[#FFFFFF] max-sm:text-sm">Custom Size</p>
                   </div>
 
                   <div className="mb-4 grid gap-8 lg:grid-cols-2">
@@ -1400,7 +1398,7 @@ export default function Web() {
                     </div> */}
                     <div className="lg:mt-3">
                       <div className="mb-3 flex w-full items-center justify-between">
-                        <label className="text-sm text-white">Width in Inches</label>
+                        <label className="mb-2 mt-4 text-sm text-[#FFFFFF] max-sm:text-sm">Width in Inches</label>
                         <div className="flex h-[26px] w-16  items-center justify-center rounded border border-[#FFFFFF1A]">
                           <input
                             type="text"
@@ -1441,7 +1439,7 @@ export default function Web() {
                     </div>
                     <div className="lg:mt-3">
                       <div className="mb-3 flex w-full items-center justify-between">
-                        <label className="text-sm text-white">Height in Inches</label>
+                        <label className="text-sm text-[#ffffffcc]">Height in Inches</label>
                         <div className="flex h-[26px] w-16  items-center justify-center rounded border border-[#FFFFFF1A]">
                           <input
                             type="text"
@@ -1564,10 +1562,10 @@ export default function Web() {
                 </div>
 
                 <div className="my-5 border-b border-[#FFFFFF0D]"></div>
-                <div className="grid gap-5 px-5">
-                  <p className="text-lg font-medium text-white">Security</p>
+                <div className="grid gap-5 lg:px-5">
+                  <p className="py-2 font-medium text-[#ffffffcc] lg:text-lg">Security</p>
 
-                  <p className="text-lg  text-white">Core Security</p>
+                  <p className="text-base text-[#ffffffcc]  max-sm:text-sm">Core Security</p>
 
                   <div
                     className={`} flex w-full cursor-not-allowed items-center
@@ -1582,11 +1580,11 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Reinforced Lock (Included in Base Price)</p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm">Reinforced Lock (Included in Base Price)</p>
                   </div>
 
                   <div
-                    className={`} flex w-full cursor-not-allowed items-center 
+                    className={`} flex w-full cursor-not-allowed items-start 
                     gap-2`}
                   >
                     <motion.img
@@ -1598,11 +1596,13 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Anti-Theft System (Included in Base Price)</p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm">
+                      Anti-Theft System (Included in Base Price)
+                    </p>
                   </div>
 
                   <div
-                    className={`} flex w-full cursor-not-allowed items-center gap-2
+                    className={`} flex w-full cursor-not-allowed items-start gap-2
                     `}
                   >
                     <motion.img
@@ -1614,11 +1614,11 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs ">Motion Sensor (Included in Base Price)</p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm ">Motion Sensor (Included in Base Price)</p>
                   </div>
 
                   <div
-                    className={`} flex w-full cursor-not-allowed items-center gap-2
+                    className={`} flex w-full cursor-not-allowed items-start gap-2
                     `}
                   >
                     <motion.img
@@ -1630,11 +1630,11 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs ">Smoke Detector (Included in Base Price)</p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm ">Smoke Detector (Included in Base Price)</p>
                   </div>
 
                   <div
-                    className={`} flex w-full cursor-not-allowed items-center gap-2
+                    className={`} flex w-full cursor-not-allowed items-start gap-2
                     `}
                   >
                     <motion.img
@@ -1646,12 +1646,14 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs ">Gas leak Detector (Included in Base Price)</p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm ">
+                      Gas leak Detector (Included in Base Price)
+                    </p>
                   </div>
                 </div>
 
-                <div className="mt-7 grid gap-5 px-5">
-                  <p className="text-lg  text-white">
+                <div className="mt-7 grid gap-5 lg:px-5">
+                  <p className="text-base text-[#ffffffcc]  max-sm:text-sm">
                     Additional Security<span className="text-[#FF3B30]">*</span>
                   </p>
 
@@ -1670,7 +1672,7 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Smart Keypad Access (₹3,000)</p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm">Smart Keypad Access (₹3,000)</p>
                   </div>
 
                   <div
@@ -1688,7 +1690,7 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Battery Backup(₹2,500)</p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm">Battery Backup(₹2,500)</p>
                   </div>
 
                   <div
@@ -1706,7 +1708,7 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Fire Detection(₹5,000)</p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm">Fire Detection(₹5,000)</p>
                   </div>
 
                   <div
@@ -1724,14 +1726,16 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs ">Remote Lock/Unlock(₹3,500)</p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm ">Remote Lock/Unlock(₹3,500)</p>
                   </div>
                 </div>
 
                 <div className="my-5 border-b border-[#FFFFFF0D]"></div>
-                <div className="grid gap-5 px-5">
-                  <p className=" text-lg font-medium text-white">Integrated Smart Hub</p>
-                  <p className=" text-lg  text-white">Core Integrated Smart Hub Features</p>
+                <div className="grid gap-3 lg:px-5 xl:gap-5">
+                  <p className=" text-lg font-medium text-[#ffffffcc] max-sm:text-base">
+                    Integrated Smart Hub Features
+                  </p>
+                  <p className=" text-base  text-[#ffffffcc]">Standard Integrated Smart Hub Features </p>
 
                   {/* <div
                     className={`flex w-full items-center gap-2 ${
@@ -1796,12 +1800,12 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Camera</p>
+                    <p className="text-sm text-[#FFFFFFcc] ">All Altima Core features + Camera</p>
                   </div>
                 </div>
 
-                <div className="mt-7 grid gap-5 px-5">
-                  <p className=" text-lg  text-white">Additional Integrated Smart Hub Features</p>
+                <div className="lg;px-5 mt-5 grid max-sm:gap-3 lg:mt-7 lg:gap-5">
+                  <p className=" text-base  text-[#ffffffcc]">Additional Integrated Smart Hub Features</p>
 
                   <div
                     className={`flex w-full items-center gap-2 ${
@@ -1822,7 +1826,7 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Smart Lighting Integration (₹2,000)</p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm">Smart Lighting Integration (₹2,000)</p>
                   </div>
 
                   <div
@@ -1844,7 +1848,7 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Home Automation Integration (₹3,500)</p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm">Home Automation Integration (₹3,500)</p>
                   </div>
 
                   <div
@@ -1866,7 +1870,7 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Advanced Motion Detection(₹4,000)</p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm">Advanced Motion Detection(₹4,000)</p>
                   </div>
 
                   <div
@@ -1888,13 +1892,13 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Voice assistant integration</p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm">Voice assistant integration</p>
                   </div>
                 </div>
 
                 <div className="my-5 border-b border-[#FFFFFF0D]"></div>
-                <div className="grid gap-5 px-5">
-                  <p className=" text-lg font-medium text-white">
+                <div className="grid gap-5 lg:px-5">
+                  <p className=" text-lg font-medium text-[#ffffffcc] max-sm:text-base">
                     Your Network Type<span className="text-[#FF3B30]">*</span>
                   </p>
 
@@ -1913,7 +1917,7 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Zigbee</p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm">Zigbee</p>
                   </div>
 
                   <div
@@ -1931,7 +1935,7 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Bluetooth</p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm">Bluetooth</p>
                   </div>
 
                   <div
@@ -1949,7 +1953,7 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Wifi</p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm">Wifi</p>
                   </div>
                 </div>
                 {/* <div className="mt-5 border-b border-[#FFFFFF0D]"></div>
@@ -1964,8 +1968,8 @@ export default function Web() {
                   />
                 </div> */}
                 <div className="my-5 border-b border-[#FFFFFF0D]"></div>
-                <div className="grid gap-5 px-5">
-                  <p className=" text-lg font-medium text-white">
+                <div className="grid gap-5 lg:px-5">
+                  <p className=" text-lg font-medium text-[#ffffffcc] max-sm:text-base">
                     Your Power Source<span className="text-[#FF3B30]">*</span>
                   </p>
 
@@ -1984,7 +1988,7 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Mains Power</p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm">Mains Power</p>
                   </div>
 
                   <div
@@ -2002,7 +2006,7 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Battery Backup</p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm">Battery Backup</p>
                   </div>
 
                   <div
@@ -2020,7 +2024,7 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Solar Ready</p>
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm">Solar Ready</p>
                   </div>
                 </div>
                 {/* <div className="mt-5 border-b border-[#FFFFFF0D]"></div>
@@ -2035,7 +2039,7 @@ export default function Web() {
                   />
                 </div> */}
                 <div className="mt-5 border-b border-[#FFFFFF0D]"></div>
-                <div className="p-5">
+                <div className="max-xl:pb-3 lg:p-5">
                   <Dropdown
                     label="Your Installation Environment *"
                     options={installationOptions}
@@ -2047,8 +2051,8 @@ export default function Web() {
                 </div>
                 <div className="border-b border-[#FFFFFF0D]"></div>
 
-                <div className="p-5">
-                  <label className="text-sm text-white">Your Preferred Installation Date</label>
+                <div className="max-xl:py-3 lg:p-5">
+                  <label className="text-sm text-[#FFFFFFCC]">Your Preferred Installation Date</label>
 
                   <input
                     type="date"
@@ -2061,8 +2065,8 @@ export default function Web() {
                 </div>
 
                 <div className="border-b border-[#FFFFFF0D]"></div>
-                <div className="p-5">
-                  <label className=" text-sm text-white">Your Special Installation Instructions </label>
+                <div className="max-xl:py-3 lg:p-5">
+                  <label className=" text-sm text-[#FFFFFFCC]">Your Special Installation Instructions </label>
                   <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                     <div className="flex h-[46px] items-center">
                       <input
@@ -2071,7 +2075,7 @@ export default function Web() {
                         value={formData.special_installation_instruction}
                         onChange={handleChange}
                         placeholder="Enter Instruction"
-                        className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
+                        className="item-center flex h-[24px] w-full bg-transparent text-sm text-[#FFFFFFCC] outline-none focus:outline-none"
                         style={{ width: "100%", height: "24px" }}
                         // disabled={selectedRadio === "Altima Core"}
                       />
@@ -2079,11 +2083,11 @@ export default function Web() {
                   </div>
                 </div>
                 <div className="my-5 border-b border-[#FFFFFF0D]"></div>
-                <div className="grid gap-5 px-5">
-                  <p className="text-lg font-medium text-white">Extended Warranty:</p>
+                <div className="grid gap-5 lg:px-5">
+                  <p className=" text-lg font-medium text-[#ffffffcc] max-sm:text-base">Extended Warranty:</p>
 
                   <div
-                    className="flex w-full cursor-pointer items-center gap-2"
+                    className="flex w-full cursor-pointer items-start gap-2"
                     onClick={() => {
                       toggleWarranty() // Toggle warranty state
                     }}
@@ -2097,7 +2101,7 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm">
                       {isExtendedWarranty
                         ? `Yes, I want an extended warranty for an additional fee. (3 additional years) – ₹${
                             selectedRadio === "Altima Core" ? "5,000" : "8,000"
@@ -2108,9 +2112,9 @@ export default function Web() {
                 </div>
 
                 <div className="my-5 border-b border-[#FFFFFF0D]"></div>
-                <div className="grid gap-5 px-5">
-                  <p className="text-lg font-medium text-white">Installation Support:</p>
-                  <p className="text-sm text-white">
+                <div className="grid gap-5 lg:px-5">
+                  <p className=" text-lg font-medium text-[#ffffffcc] max-sm:text-base">Installation Support:</p>
+                  <p className="text-sm text-[#ffffffcc]">
                     On-site installation: Free within 100 km.
                     <br />
                     Additional fees apply: 5% (100+ to 400 km), <br />
@@ -2134,15 +2138,15 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Yes, I agree.</p>
+                    <p className="text-sm text-[#FFFFFFcc]">Yes, I agree.</p>
                   </div>
                 </div>
                 <div className="my-5 border-b border-[#FFFFFF0D]"></div>
-                <div className="grid gap-5 px-5">
-                  <p className="text-lg font-medium text-white">Payment and Confirmation:</p>
+                <div className="grid gap-5 lg:px-5">
+                  <p className=" text-lg font-medium text-[#ffffffcc] max-sm:text-base">Payment and Confirmation:</p>
 
                   <div
-                    className="flex w-full cursor-pointer items-center  gap-2"
+                    className="flex w-full cursor-pointer items-start  gap-2"
                     onClick={() => {
                       togglePayment() // Only call the function if not disabled
                     }}
@@ -2156,15 +2160,15 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-[#FFFFFF] max-sm:text-xs">
+                    <p className="text-sm text-[#FFFFFFcc] max-sm:text-sm">
                       I agree to the Pre-order Deposit, requiring 30% of the product price as an upfront payment.
                     </p>
                   </div>
                 </div>
                 <div className="my-5 border-b border-[#FFFFFF0D]"></div>
 
-                <p className="px-5  text-lg font-medium text-white">Payment Information</p>
-                <p className="px-5  pb-3 text-sm text-white">Total Cost Calculation:</p>
+                <p className=" text-lg font-medium text-[#ffffffcc] max-sm:text-base">Payment Information</p>
+                <p className="pb-3  text-sm text-[#ffffffcc] lg:px-5">Total Cost Calculation:</p>
 
                 <table className="w-full table-fixed border-separate border-spacing-0 text-left text-white sm:hidden">
                   <thead></thead>
@@ -2266,14 +2270,14 @@ export default function Web() {
                   </tbody>
                 </table>
                 <div className="flex w-full justify-end">
-                  <p className="flex  w-72 justify-end px-5 py-3 text-end text-sm capitalize text-[#FFFFFF]">
+                  <p className="flex w-72  justify-end py-3 text-end text-sm capitalize text-[#FFFFFFcc] max-sm:w-40 lg:px-5">
                     {`(${depositAmountInWords.replace(/,/g, "")})`}
                   </p>
                 </div>
                 <div className="border-b border-[#FFFFFF0D]"></div>
-                <div className="px-5 py-3">
+                <div className="py-3 lg:px-5">
                   <PreorderAgreement />
-                  <div className="my-6 flex w-full items-center justify-center gap-2">
+                  <div className="my-6 flex w-full items-center justify-center gap-2 border-b border-[#FFFFFF0D] pb-4">
                     <motion.img
                       onClick={() => {
                         toggleAggrement() // Only call the function if not disabled
@@ -2286,12 +2290,16 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-sm text-white opacity-80">
-                      I have read, understood, and agree to the terms and conditions of the Online Preorder Agreement.
+                    <p className="text-sm text-[#ffffffcc] opacity-80 max-sm:text-xs">
+                      I agree to the preorder{" "}
+                      <a href="" className="underline">
+                        terms and conditions
+                      </a>
+                      .
                     </p>
                   </div>
                   <div>
-                    <p className="text-center text-sm text-white opacity-80">
+                    <p className="text-center text-sm text-white opacity-80 max-sm:text-xs">
                       Want to confirm you&apos;re making the right choice?{" "}
                       <a
                         href="/comparison"
@@ -2316,14 +2324,14 @@ export default function Web() {
                 </div>
               </form>
               <div className="border-b border-[#FFFFFF0D]"></div>
-              <div className="flex w-full items-center justify-center gap-2">
+              <div className="flex w-full items-start justify-center gap-2">
                 <img src="/mingcute_alert-fill.png" />
-                <p className="text-sm text-white opacity-80">
+                <p className="text-sm text-[#ffffffcc]  max-sm:text-center max-sm:text-xs">
                   Disclaimer: Final shipping charges will be included in your invoice at dispatch, based on your
                   location.
                 </p>
               </div>
-              <p className="mb-5 text-center text-sm text-white opacity-80">
+              <p className="text-center text-sm text-[#ffffffcc] max-sm:text-xs lg:mb-5">
                 Shipping Policy • Installation Policy • Warranty Policy • Refund Policy
               </p>
             </div>
@@ -2334,13 +2342,13 @@ export default function Web() {
       <section className="paddings  w-full bg-[#080808] max-sm:px-3 ">
         <div className="  w-full     py-10">
           <div className="flex flex-col items-center justify-center">
-            <p className=" text-[#FFFFFF99]">Timeline</p>
-            <p className="my-6 flex text-center text-5xl font-normal  text-[#FFFFFF]  max-md:text-2xl ">
+            <p className=" text-sm text-[#FFFFFF99] max-xl:text-xs">Timeline</p>
+            <p className="mb-6 mt-2 flex text-center text-4xl font-normal  text-[#FFFFFF]  max-xl:text-base ">
               Production Timeline
             </p>
 
-            <Image src="/changed.png" width={549} height={64} alt="" className="py-10 md:hidden" />
-            <Image src="/timelinee.png" width={1216} height={64} alt="" className="py-10 max-sm:hidden" />
+            <Image src="/Frame 48095551 copy.png" width={549} height={64} alt="" className="py-4 md:hidden" />
+            <Image src="/Frame 48095442.png" width={1216} height={64} alt="" className="py-10 max-sm:hidden" />
           </div>
         </div>
         {message && (
@@ -2360,7 +2368,7 @@ export default function Web() {
           onClick={closeVideoModal}
         >
           <motion.div
-            className="relative w-full max-w-xl items-center rounded-lg bg-[#151515] bg-opacity-90 p-6 shadow-lg"
+            className="relative w-full max-w-xl items-center rounded-lg bg-[#151515] bg-opacity-90 p-6 shadow-lg max-xl:p-4"
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0.8 }}
@@ -2369,45 +2377,45 @@ export default function Web() {
           >
             <div className="flex w-full border-b border-[#FFFFFF1A] pb-4">
               <p className="text-base font-bold text-[#ffffffcc] max-sm:text-xs">Material Finish</p>
-              <button className="absolute right-2 top-4 p-3 text-xs text-[#ffffffcc]" onClick={closeVideoModal}>
+              <button className="absolute right-2 top-4 px-3 text-xs text-[#ffffffcc] xl:p-3" onClick={closeVideoModal}>
                 Close
               </button>
             </div>
             <p className="my-4 text-sm text-[#ffffffcc] max-sm:text-xs">Wood Finish</p>
-            <div className="flex w-full gap-6 border-b border-[#FFFFFF1A] pb-6">
+            <div className="flex w-full gap-4 border-b border-[#FFFFFF1A] pb-6 xl:gap-6">
               <div className="flex flex-col items-center gap-3">
                 <img src="/Group 4198 (1).png" className="h-40 w-40 max-sm:h-[72px] max-sm:w-[72px]" />
-                <p className="text-sm text-[#ffffffcc]">Teak Veneer</p>
+                <p className="text-center text-sm text-[#ffffffcc]">Teak Veneer</p>
               </div>
               <div className="flex flex-col items-center justify-between gap-3">
                 <img src="/Rosewood-Santos-FC.png" className="h-40 w-40 max-sm:h-[72px] max-sm:w-[72px]" />
-                <p className="text-sm text-[#ffffffcc]">Rosewood Veneer</p>
+                <p className="text-center text-sm text-[#ffffffcc]">Rosewood Veneer</p>
               </div>
               <div className="flex flex-col items-center gap-3">
                 <img
                   src="/reconstituted-walnut-veneer-quarter-cut-01-300x300.png"
                   className="h-40 w-40 max-sm:h-[72px] max-sm:w-[72px]"
                 />
-                <p className="text-sm text-[#ffffffcc]">Walnut Veneer</p>
+                <p className="text-center text-sm text-[#ffffffcc]">Walnut Veneer</p>
               </div>
             </div>
 
             <p className="my-4 text-sm text-[#ffffffcc] max-sm:text-xs">Metal Finish</p>
-            <div className="flex w-full gap-6 border-b border-[#FFFFFF1A] pb-6">
+            <div className="flex w-full justify-between gap-6 border-b border-[#FFFFFF1A] pb-6">
               <div className="flex flex-col items-center gap-3">
                 <img src="/Group 4198 (2).png" className="h-40 w-40 max-sm:h-[72px] max-sm:w-[72px]" />
-                <p className="text-sm text-[#ffffffcc]">Wood Grain</p>
+                <p className="text-center text-sm text-[#ffffffcc]">Wood Grain</p>
               </div>
               <div className="flex flex-col items-center justify-between gap-3">
                 <img src="/istockphoto-1159017936-612x612.png" className="h-40 w-40 max-sm:h-[72px] max-sm:w-[72px]" />
-                <p className="text-sm text-[#ffffffcc]">Brushed Steel</p>
+                <p className="text-center text-sm text-[#ffffffcc]">Brushed Steel</p>
               </div>
               <div className="flex flex-col items-center gap-3">
                 <img
                   src="/360_F_524092028_01pwqth13PyqJQk1fiTGtkCXYdz5UDaR.png"
                   className="h-40 w-40 max-sm:h-[72px] max-sm:w-[72px]"
                 />
-                <p className="text-sm text-[#ffffffcc]">Textured Sand</p>
+                <p className="text-center text-sm text-[#ffffffcc]">Textured Sand</p>
               </div>
             </div>
 
@@ -2415,21 +2423,21 @@ export default function Web() {
               <p className="my-4 text-sm text-[#ffffffcc] max-sm:text-xs">Glass finish</p>
               <p className="my-4 text-xs text-[#ffffffcc] max-sm:text-[10px]">( Available on Elite Only )</p>
             </div>
-            <div className="flex w-full gap-6 pb-6">
+            <div className="flex w-full justify-between gap-4 pb-6 xl:gap-6">
               <div className="flex flex-col items-center gap-3">
                 <img src="/Group 4198 (3).png" className="h-40 w-40 max-sm:h-[72px] max-sm:w-[72px]" />
-                <p className="text-sm text-[#ffffffcc]">Frosted</p>
+                <p className="text-center text-sm text-[#ffffffcc]">Frosted</p>
               </div>
               <div className="flex flex-col items-center justify-between gap-3">
                 <img
                   src="/4mm-dark-grey-color-tinted-float-glass-for-windows-and-doors_3.jpg.png"
                   className="h-40 w-40 max-sm:h-[72px] max-sm:w-[72px]"
                 />
-                <p className="text-sm text-[#ffffffcc]">Tinted</p>
+                <p className="text-center text-sm text-[#ffffffcc]">Tinted</p>
               </div>
               <div className="flex flex-col items-center gap-3">
                 <img src="/ET001-Fleur-Etched-Glass-Panel.png" className="h-40 w-40 max-sm:h-[72px] max-sm:w-[72px]" />
-                <p className="text-sm text-[#ffffffcc]">Etched</p>
+                <p className="text-center text-sm text-[#ffffffcc]">Etched</p>
               </div>
             </div>
           </motion.div>
