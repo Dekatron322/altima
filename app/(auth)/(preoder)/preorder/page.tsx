@@ -10,6 +10,7 @@ import Dropdown from "components/CustomDropdown"
 import NewNav from "components/Navbar/NewNav"
 import { toWords } from "number-to-words"
 import PreorderAgreement from "components/PreorderAgreement"
+import { LiaTimesSolid } from "react-icons/lia"
 
 interface User {
   id: string
@@ -136,6 +137,16 @@ export default function Web() {
       }))
       return newValue
     })
+  }
+
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false)
+
+  const openVideoModal = () => {
+    setIsVideoModalOpen(true)
+  }
+
+  const closeVideoModal = () => {
+    setIsVideoModalOpen(false)
   }
 
   const toggleSupport = () => {
@@ -809,17 +820,17 @@ export default function Web() {
       <section className="paddings  w-full  max-sm:px-3 max-sm:py-10 lg:h-auto lg:py-32">
         <div className=" w-auto  items-center justify-between  md:px-10">
           <div className="ms:p-10 flex w-full flex-col  items-center justify-center  rounded-3xl max-sm:rounded-lg  max-sm:p-2">
-            <p className="text-center text-xl text-[#FFFFFF]">Pre-Order form</p>
-            <p className="py-5 text-center text-xs text-[#FFFFFF80]">
+            <p className="text-center text-xl font-bold text-[#FFFFFFcc]">Pre-Order form</p>
+            <p className="py-5 text-center text-sm text-[#FFFFFF80] max-xl:text-xs">
               ✓Estimated delivery date: 4-5 months after the preorder window closes
             </p>
-            <p className="pb-5 text-center text-xs text-[#FFFFFF80] 2xl:w-[580px]">
+            <p className="pb-5 text-center text-sm text-[#FFFFFF80] max-xl:text-xs 2xl:w-[580px]">
               ✓A note: Preorders require a 30% deposit at the time of booking. The remaining balance is due before
               shipment, with a final payment notice sent prior to delivery. Adjustments apply only in case of changes to
               the final invoice due to shipping or product modifications.
             </p>
 
-            <p className="pb-5 text-[#FFFFFF80]">
+            <p className="py-5 text-center text-sm text-[#FFFFFF80] max-xl:text-xs">
               Altima is built to outperform!{" "}
               <a
                 href="/comparison"
@@ -830,7 +841,7 @@ export default function Web() {
               and see why it&apos;s the future of smart doors.
             </p>
 
-            <p className="pb-5 text-[#FFFFFF80]">
+            <p className="py-5 text-center text-sm text-[#FFFFFF80] max-xl:text-xs">
               Experience Altima Core and Elite in action—
               <a
                 href="/product-details"
@@ -841,11 +852,11 @@ export default function Web() {
               </a>
             </p>
 
-            <div className="flex h-full w-full flex-col  rounded-lg border border-[#FFFFFF0D]    max-sm:grid max-sm:gap-5  md:gap-5">
+            <div className="flex h-full w-full flex-col  rounded-lg max-sm:grid max-sm:gap-5    lg:gap-5 lg:border  lg:border-[#FFFFFF0D]">
               <form onSubmit={handleSubmit}>
-                <div className="grid gap-5 px-5 pt-5">
-                  <p className="py-2 text-xl font-medium text-white">
-                    User Information/Address <span className="text-[#FF3B30]">*</span>
+                <div className="grid gap-5 lg:px-5 lg:pt-5">
+                  <p className="py-2 font-medium text-[#ffffffcc] lg:text-lg">
+                    Address Preferences <span className="text-[#FF3B30]">*</span>
                   </p>
                   <div className=" flex w-full items-center gap-2 " onClick={() => toggleAddress("Use New Address")}>
                     <motion.img
@@ -877,9 +888,9 @@ export default function Web() {
                   </div>
                 </div>
                 <div className="my-5 flex w-full border-b border-[#FFFFFF0D]"></div>
-                <div className="grid gap-5 px-5 ">
-                  <p className=" text-xl font-medium text-white">
-                    User Information <span className="text-[#FF3B30]">*</span>
+                <div className="grid gap-5 lg:px-5 ">
+                  <p className=" font-medium text-[#ffffffcc] lg:text-lg">
+                    Your Details <span className="text-[#FF3B30]">*</span>
                   </p>
 
                   <div className=" w-full   justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
@@ -924,8 +935,8 @@ export default function Web() {
                     </div>
                   </div>
 
-                  <p className="py-2 text-lg font-medium text-white">
-                    Shipping Address<span className="text-[#FF3B30]">*</span>
+                  <p className=" font-medium text-[#ffffffcc] lg:text-lg">
+                    Shipping Address <span className="text-[#FF3B30]">*</span>
                   </p>
                   <div className="h-[46px] w-full  items-center justify-between  rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3  hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC] max-sm:mb-2">
                     <div className="flex h-[46px] items-center">
@@ -1113,9 +1124,9 @@ export default function Web() {
                   </div> */}
                 </div>
                 <div className="my-5 border-b border-[#FFFFFF0D]"></div>
-                <div className="grid gap-5 px-5">
-                  <p className="py-2 text-lg font-medium text-white">
-                    Preferred Contact Info<span className="text-[#FF3B30]">*</span>
+                <div className="grid gap-5 lg:px-5">
+                  <p className="py-2 font-medium text-[#ffffffcc] lg:text-lg">
+                    Preferred Contact Info <span className="text-[#FF3B30]">*</span>
                   </p>
 
                   <div
@@ -1174,9 +1185,9 @@ export default function Web() {
                 </div>
                 <div className="my-5 border-b border-[#FFFFFF0D]"></div>
 
-                <div className="px-5">
-                  <p className="pb-5 text-lg font-medium text-white">
-                    Product Selection<span className="text-[#FF3B30]">*</span>
+                <div className="lg:px-5">
+                  <p className="pb-5 text-lg font-medium text-[#ffffffcc]">
+                    Product Selection <span className="text-[#FF3B30]">*</span>
                   </p>
                   <div className="flex items-center justify-between">
                     <div
@@ -1203,11 +1214,11 @@ export default function Web() {
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ duration: 1, ease: "easeIn" }}
                       />
-                      <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Altima Core</p>
+                      <p className="text-sm text-[#FFFFFFcc] max-sm:text-base">Altima Core</p>
                     </div>
                     <div className="flex gap-[10px]">
-                      <p className="stroke-slate-50 text-xl text-[#FFFFFF80] line-through">₹90,000</p>
-                      <p className="text-xl font-bold text-white">₹49,500</p>
+                      <p className="stroke-slate-50 text-[#FFFFFF80] line-through lg:text-xl">₹90,000</p>
+                      <p className="font-bold text-[#ffffffcc] lg:text-xl">₹49,500</p>
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
@@ -1235,11 +1246,11 @@ export default function Web() {
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ duration: 1, ease: "easeIn" }}
                       />
-                      <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Altima Elite</p>
+                      <p className="text-sm text-[#FFFFFFcc] max-sm:text-base">Altima Elite</p>
                     </div>
                     <div className="flex gap-[10px]">
-                      <p className="stroke-slate-50 text-xl text-[#FFFFFF80] line-through">₹199,000</p>
-                      <p className="text-xl font-bold text-white">₹99,500</p>
+                      <p className="stroke-slate-50 text-[#FFFFFF80] line-through lg:text-xl">₹199,000</p>
+                      <p className="font-bold text-[#ffffffcc] lg:text-xl">₹99,500</p>
                     </div>
                   </div>
 
@@ -1288,11 +1299,11 @@ export default function Web() {
                       </button>
                     </div>
 
-                    <p className="items-center  text-2xl  font-normal   text-[#FFFFFF] max-sm:mt-3  max-sm:text-lg lg:text-2xl">
+                    <p className="items-center  text-2xl  font-normal   text-[#FFFFFFcc] max-sm:mt-6  max-sm:text-lg lg:text-2xl">
                       {quantity === 1 ? (
                         <>
                           <p className="text-sm">Unit Price : </p>
-                          <p className="flex items-center justify-center rounded-md border border-dashed border-[#FFFFFF1A] py-2 max-xl:w-[200px] xl:w-[205px]">
+                          <p className="flex items-center justify-center rounded-md border border-dashed border-[#FFFFFF1A] py-2 max-xl:w-full xl:w-[205px]">
                             {" "}
                             ₹{grossPrice.toLocaleString()}
                           </p>
@@ -1311,9 +1322,9 @@ export default function Web() {
 
                 <div className="my-5 border-b border-[#FFFFFF0D]"></div>
 
-                <div className="px-5">
-                  <p className="pb-5 text-lg font-medium text-white">
-                    Customize Your Door<span className="text-[#FF3B30]">*</span>
+                <div className="lg:px-5">
+                  <p className="pb-5 font-medium text-[#ffffffcc] lg:text-lg">
+                    Customize Your Door <span className="text-[#FF3B30]">*</span>
                   </p>
 
                   {/* Altima Core Radio */}
@@ -1363,8 +1374,8 @@ export default function Web() {
                     <p className="text-sm text-[#FFFFFF] max-sm:text-xs">Custom Size</p>
                   </div>
 
-                  <div className="mb-4 grid gap-3 lg:grid-cols-2">
-                    <div className="mt-3">
+                  <div className="mb-4 grid gap-8 lg:grid-cols-2">
+                    {/* <div className="mt-3">
                       <label className=" text-sm text-white">Width in Inches</label>
                       <div
                         className={`h-[46px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 max-sm:mb-2 ${
@@ -1386,9 +1397,91 @@ export default function Web() {
                           />
                         </div>
                       </div>{" "}
+                    </div> */}
+                    <div className="lg:mt-3">
+                      <div className="mb-3 flex w-full items-center justify-between">
+                        <label className="text-sm text-white">Width in Inches</label>
+                        <div className="flex h-[26px] w-16  items-center justify-center rounded border border-[#FFFFFF1A]">
+                          <input
+                            type="text"
+                            name="door_spec_manual_size_width"
+                            value={formData.door_spec_manual_size_width}
+                            onChange={handleChange}
+                            placeholder="Width"
+                            className="item-center flex h-[24px] w-full bg-transparent text-center text-sm text-white outline-none focus:outline-none"
+                            style={{ width: "100%", height: "24px" }}
+                            disabled={selectedDoorSpec === "Standard Size"}
+                          />
+                        </div>
+                      </div>
+                      <div
+                        className={`h-[46px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 max-sm:mb-2 ${
+                          selectedDoorSpec === "Standard Size"
+                            ? "cursor-not-allowed bg-[#282828] opacity-45" // Background color for disabled state
+                            : "bg-[#282828] hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC]"
+                        }`}
+                      >
+                        <div className="flex h-[46px] items-center gap-5">
+                          <p className="text-[#ffffffcc]">30”</p>
+                          <input
+                            type="range"
+                            name="door_spec_manual_size_width"
+                            value={formData.door_spec_manual_size_width}
+                            onChange={handleChange}
+                            min="30"
+                            max="50"
+                            placeholder="Width"
+                            className="item-center flex h-[24px] w-full bg-transparent text-center text-sm text-white outline-none focus:outline-none"
+                            style={{ width: "100%", height: "24px" }}
+                            disabled={selectedDoorSpec === "Standard Size"}
+                          />
+                          <p className="text-[#ffffffcc]">50”</p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="mt-3">
+                    <div className="lg:mt-3">
+                      <div className="mb-3 flex w-full items-center justify-between">
+                        <label className="text-sm text-white">Height in Inches</label>
+                        <div className="flex h-[26px] w-16  items-center justify-center rounded border border-[#FFFFFF1A]">
+                          <input
+                            type="text"
+                            name="door_spec_manual_size_height"
+                            value={formData.door_spec_manual_size_height}
+                            onChange={handleChange}
+                            placeholder="Height"
+                            className="item-center flex h-[24px] w-full bg-transparent text-center text-sm text-white outline-none focus:outline-none"
+                            style={{ width: "100%", height: "24px" }}
+                            disabled={selectedDoorSpec === "Standard Size"}
+                          />
+                        </div>
+                      </div>
+                      <div
+                        className={`h-[46px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 max-sm:mb-2 ${
+                          selectedDoorSpec === "Standard Size"
+                            ? "cursor-not-allowed bg-[#282828] opacity-45" // Background color for disabled state
+                            : "bg-[#282828] hover:border-[#FF3B30] focus:border-[#FF3B30] focus:bg-[#FBFAFC]"
+                        }`}
+                      >
+                        <div className="flex h-[46px] items-center gap-5">
+                          <p className="text-[#ffffffcc]">70”</p>
+                          <input
+                            type="range"
+                            name="door_spec_manual_size_height"
+                            value={formData.door_spec_manual_size_height}
+                            onChange={handleChange}
+                            min="70"
+                            max="110"
+                            className="item-center flex h-[24px] w-full bg-transparent text-sm text-white outline-none focus:outline-none"
+                            style={{ width: "100%", height: "24px" }}
+                            disabled={selectedDoorSpec === "Standard Size"}
+                          />
+                          <p className="text-[#ffffffcc]">110”</p>
+                        </div>
+                      </div>
+                    </div>
+                    {/* <div className="lg:mt-3">
                       <label className=" text-sm text-white">Height in Inches</label>
+
                       <div
                         className={`h-[46px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 max-sm:mb-2 ${
                           selectedDoorSpec === "Standard Size"
@@ -1409,7 +1502,7 @@ export default function Web() {
                           />
                         </div>
                       </div>
-                    </div>{" "}
+                    </div>{" "} */}
                     {/* <Dropdown
                       label="Unit"
                       options={unitOptions}
@@ -1451,6 +1544,12 @@ export default function Web() {
                       toggleDropdown={() => toggleDropdown("finish")}
                       disabled={!formData.door_spec_material_type} // Disable if no material is selected
                     />
+                    <div
+                      onClick={openVideoModal}
+                      className="mt-2 flex w-full cursor-pointer justify-end text-sm text-[#ffffffcc] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30] max-xl:text-xs"
+                    >
+                      <p>View Material finish images</p>
+                    </div>
                   </div>
                   <div className="mt-3">
                     <Dropdown
@@ -2251,6 +2350,91 @@ export default function Web() {
           </div>
         )}
       </section>
+
+      {isVideoModalOpen && (
+        <motion.div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#282828] bg-opacity-90"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={closeVideoModal}
+        >
+          <motion.div
+            className="relative w-full max-w-xl items-center rounded-lg bg-[#151515] bg-opacity-90 p-6 shadow-lg"
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0.8 }}
+            onClick={(e) => e.stopPropagation()} // Prevent modal close on inner click
+            style={{ maxHeight: "92vh", overflowY: "auto" }} // Fixed height and scrollable
+          >
+            <div className="flex w-full border-b border-[#FFFFFF1A] pb-4">
+              <p className="text-base font-bold text-[#ffffffcc] max-sm:text-xs">Material Finish</p>
+              <button className="absolute right-2 top-4 p-3 text-xs text-[#ffffffcc]" onClick={closeVideoModal}>
+                Close
+              </button>
+            </div>
+            <p className="my-4 text-sm text-[#ffffffcc] max-sm:text-xs">Wood Finish</p>
+            <div className="flex w-full gap-6 border-b border-[#FFFFFF1A] pb-6">
+              <div className="flex flex-col items-center gap-3">
+                <img src="/Group 4198 (1).png" className="h-40 w-40 max-sm:h-[72px] max-sm:w-[72px]" />
+                <p className="text-sm text-[#ffffffcc]">Teak Veneer</p>
+              </div>
+              <div className="flex flex-col items-center justify-between gap-3">
+                <img src="/Rosewood-Santos-FC.png" className="h-40 w-40 max-sm:h-[72px] max-sm:w-[72px]" />
+                <p className="text-sm text-[#ffffffcc]">Rosewood Veneer</p>
+              </div>
+              <div className="flex flex-col items-center gap-3">
+                <img
+                  src="/reconstituted-walnut-veneer-quarter-cut-01-300x300.png"
+                  className="h-40 w-40 max-sm:h-[72px] max-sm:w-[72px]"
+                />
+                <p className="text-sm text-[#ffffffcc]">Walnut Veneer</p>
+              </div>
+            </div>
+
+            <p className="my-4 text-sm text-[#ffffffcc] max-sm:text-xs">Metal Finish</p>
+            <div className="flex w-full gap-6 border-b border-[#FFFFFF1A] pb-6">
+              <div className="flex flex-col items-center gap-3">
+                <img src="/Group 4198 (2).png" className="h-40 w-40 max-sm:h-[72px] max-sm:w-[72px]" />
+                <p className="text-sm text-[#ffffffcc]">Wood Grain</p>
+              </div>
+              <div className="flex flex-col items-center justify-between gap-3">
+                <img src="/istockphoto-1159017936-612x612.png" className="h-40 w-40 max-sm:h-[72px] max-sm:w-[72px]" />
+                <p className="text-sm text-[#ffffffcc]">Brushed Steel</p>
+              </div>
+              <div className="flex flex-col items-center gap-3">
+                <img
+                  src="/360_F_524092028_01pwqth13PyqJQk1fiTGtkCXYdz5UDaR.png"
+                  className="h-40 w-40 max-sm:h-[72px] max-sm:w-[72px]"
+                />
+                <p className="text-sm text-[#ffffffcc]">Textured Sand</p>
+              </div>
+            </div>
+
+            <div className="flex w-full items-center justify-between">
+              <p className="my-4 text-sm text-[#ffffffcc] max-sm:text-xs">Glass finish</p>
+              <p className="my-4 text-xs text-[#ffffffcc] max-sm:text-[10px]">( Available on Elite Only )</p>
+            </div>
+            <div className="flex w-full gap-6 pb-6">
+              <div className="flex flex-col items-center gap-3">
+                <img src="/Group 4198 (3).png" className="h-40 w-40 max-sm:h-[72px] max-sm:w-[72px]" />
+                <p className="text-sm text-[#ffffffcc]">Frosted</p>
+              </div>
+              <div className="flex flex-col items-center justify-between gap-3">
+                <img
+                  src="/4mm-dark-grey-color-tinted-float-glass-for-windows-and-doors_3.jpg.png"
+                  className="h-40 w-40 max-sm:h-[72px] max-sm:w-[72px]"
+                />
+                <p className="text-sm text-[#ffffffcc]">Tinted</p>
+              </div>
+              <div className="flex flex-col items-center gap-3">
+                <img src="/ET001-Fleur-Etched-Glass-Panel.png" className="h-40 w-40 max-sm:h-[72px] max-sm:w-[72px]" />
+                <p className="text-sm text-[#ffffffcc]">Etched</p>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
 
       <MainFooter />
 
