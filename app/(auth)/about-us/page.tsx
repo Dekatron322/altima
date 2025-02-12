@@ -99,7 +99,7 @@ export default function Web() {
             <div>
               <motion.img
                 src="/Frame 48095432 (5).png"
-                className="h-[583px] w-[633px] max-xl:h-full max-xl:w-full"
+                className=" max-xl:h-full max-xl:w-full"
                 alt=""
                 initial={{ scale: 1.2, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
@@ -116,7 +116,7 @@ export default function Web() {
             <div>
               <motion.img
                 src="/Frame 48095432 (3).png"
-                className="h-[583px] w-[633px] max-xl:h-full max-xl:w-full"
+                className=" max-xl:h-full max-xl:w-full"
                 alt=""
                 initial={{ scale: 1.2, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
@@ -164,7 +164,7 @@ export default function Web() {
             <div>
               <motion.img
                 src="/Frame 48095432 (4).png"
-                className="h-[583px] w-[633px] max-xl:h-full max-xl:w-full"
+                className=" max-xl:h-full max-xl:w-full"
                 alt=""
                 initial={{ scale: 1.2, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}

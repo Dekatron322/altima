@@ -353,7 +353,7 @@ export default function Web() {
                 <Image src="/Group 1037.png" width={24} height={24} alt="" className="sm:hidden" />
                 <Image src="/Group 1037.png" width={20} height={20} alt="" className="max-sm:hidden" />
                 <p className="text-sm text-[#FFFFFF] opacity-80 max-sm:text-[9px]">
-                  POWERED BY INNOVATION FROM SUSMO AND OTHER DRIVES
+                  POWERED BY INNOVATION FROM cs PILLAI®
                 </p>
               </div>
               <p className="text-6xl font-bold text-[#FFFFFF] max-xl:text-center max-xl:text-3xl max-lg:mt-5 max-lg:text-4xl">
@@ -559,7 +559,7 @@ export default function Web() {
                   </p>
                 </div>
               </div> */}
-              <ul className="mt-6 list-inside  pl-2 max-xl:text-sm md:mb-4">
+              <ul className="mt-6   max-xl:text-sm md:mb-4">
                 <li className="pb-3 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Security Level:</span> Very High
                 </li>
@@ -613,7 +613,7 @@ export default function Web() {
 
               <div className="flex w-full justify-between  gap-4 bg-[#FFFFFF0D] px-4 py-3 max-sm:flex-col xl:items-center">
                 <ul className=" flex list-inside  items-center gap-2 pl-2">
-                  <li className=" text-[#FFFFFFcc] max-sm:text-sm">Core vs. Elite</li>
+                  <li className=" text-[#FFFFFFcc] underline max-sm:text-sm">Core vs. Elite</li>
                   <motion.img
                     src="/FileArrowDown.png"
                     className="h-8 w-8 max-sm:h-6 max-sm:w-6"
@@ -673,7 +673,7 @@ export default function Web() {
                   </p>
                 </div>
               </div> */}
-              <ul className="mb-6 mt-6 list-inside  pl-2 max-xl:hidden">
+              <ul className="mb-6 mt-6 list-inside   max-xl:hidden">
                 <li className="pb-4 text-[#FFFFFFcc] max-sm:text-xs">
                   <span className="text-[#FFFFFF80]">Security Level: </span> Very High
                 </li>
@@ -730,7 +730,7 @@ export default function Web() {
 
               <div className="flex w-full justify-between gap-4 bg-[#FFFFFF0D] px-4 py-3 max-sm:hidden max-sm:flex-col xl:items-center">
                 <ul className=" flex list-inside  items-center gap-2 pl-2">
-                  <li className=" text-[#FFFFFFcc] max-sm:text-sm">Core vs. Elite</li>
+                  <li className=" text-[#FFFFFFcc] underline max-sm:text-sm">Core vs. Elite</li>
                   <motion.img
                     src="/FileArrowDown.png"
                     className="h-8 w-8 max-sm:h-6 max-sm:w-6"
@@ -785,7 +785,7 @@ export default function Web() {
                   </p>
                 </div>
               </div> */}
-              <ul className="mb-6 mt-6 list-inside  pl-2 max-sm:text-sm">
+              <ul className="mb-6 mt-6 list-inside max-sm:text-sm">
                 <li className="pb-4 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Security Level: </span> Very High
                 </li>
@@ -836,7 +836,7 @@ export default function Web() {
 
               <div className="flex w-full justify-between gap-4  bg-[#FFFFFF0D] px-4 py-3 max-sm:mb-6 max-sm:flex-col xl:items-center">
                 <ul className=" flex list-inside  items-center gap-2 pl-2">
-                  <li className=" text-[#FFFFFFcc] max-sm:text-sm">Core vs. Elite</li>
+                  <li className=" text-[#FFFFFFcc] underline max-sm:text-sm">Core vs. Elite</li>
                   <motion.img
                     src="/FileArrowDown.png"
                     className="h-8 w-8 max-sm:h-6 max-sm:w-6"
@@ -947,7 +947,7 @@ export default function Web() {
         <div className="  w-full justify-between    xl:py-4">
           <div className=" flex flex-col items-center justify-center   max-xl:gap-5">
             <div className="">
-              <p className=" text-center text-lg font-normal  leading-none tracking-tight text-[#FFFFFF99] max-xl:text-xs md:text-lg xl:mb-2 2xl:text-lg">
+              <p className=" text-center text-lg font-normal  leading-none tracking-tight text-[#FFFFFF99] max-xl:text-xs md:text-lg xl:mb-4 2xl:text-lg">
                 Our Vision
               </p>
               <p className="text-center text-xl font-bold  leading-none tracking-tight text-[#ffffffcc] max-xl:text-base max-sm:my-2 md:text-xl xl:mb-6 xl:mt-2 2xl:text-3xl">
@@ -982,7 +982,7 @@ export default function Web() {
         <div className="  w-full     py-10">
           <div className="flex flex-col">
             <p className=" text-[#FFFFFF99]">FAQs</p>
-            <p className="my-5 flex text-center text-[32px]  text-[#FFFFFF]  max-md:text-2xl md:w-[642px]">
+            <p className="my-4 flex text-center text-[32px]  font-bold text-[#FFFFFFcc] max-md:text-2xl md:w-[642px]">
               Community Q&A
             </p>
           </div>

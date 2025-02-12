@@ -1369,8 +1369,12 @@ export default function Web() {
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 1, ease: "easeIn" }}
                     />
-                    <p className="text-base text-[#FFFFFF] max-sm:text-sm">Custom Size</p>
+                    <p className="text-base text-[#FFFFFF] max-sm:text-sm">Custom Size(s)</p>
                   </div>
+                  <p className="my-4 text-[#ffffffcc] max-sm:text-xs">
+                    If your size isn't listed, Enter custom dimensions. ensure it matches standard frame sizes for best
+                    fit.
+                  </p>
 
                   <div className="mb-4 grid gap-8 lg:grid-cols-2">
                     {/* <div className="mt-3">
@@ -1429,7 +1433,7 @@ export default function Web() {
                             min="30"
                             max="50"
                             placeholder="Width"
-                            className="item-center flex h-[24px] w-full bg-transparent text-center text-sm text-white outline-none focus:outline-none"
+                            className="custom-range" // Add the custom class
                             style={{ width: "100%", height: "24px" }}
                             disabled={selectedDoorSpec === "Standard Size"}
                           />
@@ -1439,7 +1443,7 @@ export default function Web() {
                     </div>
                     <div className="lg:mt-3">
                       <div className="mb-3 flex w-full items-center justify-between">
-                        <label className="text-sm text-[#ffffffcc]">Height in Inches</label>
+                        <label className="mb-2 mt-4 text-sm text-[#FFFFFF] max-sm:text-sm">Height in Inches</label>
                         <div className="flex h-[26px] w-16  items-center justify-center rounded border border-[#FFFFFF1A]">
                           <input
                             type="text"
@@ -1453,6 +1457,7 @@ export default function Web() {
                           />
                         </div>
                       </div>
+
                       <div
                         className={`h-[46px] w-full items-center justify-between rounded-lg border border-[#FFFFFF1A] px-3 max-sm:mb-2 ${
                           selectedDoorSpec === "Standard Size"
