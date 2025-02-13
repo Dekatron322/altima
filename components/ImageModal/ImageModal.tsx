@@ -17,7 +17,7 @@ const ImageCarousel = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0)
   const [thumbStartIndex, setThumbStartIndex] = useState(0) // Track the starting index of visible thumbnails
-  const visibleThumbnails = 8 // Number of thumbnails to show at once
+  const visibleThumbnails = 6 // Number of thumbnails to show at once
 
   useEffect(() => {
     const interval = setInterval(() => {

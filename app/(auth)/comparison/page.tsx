@@ -554,7 +554,7 @@ export default function Web() {
                   </p>
                 </div>
               </div> */}
-              <ul className="mt-6 list-inside  pl-2 max-xl:text-sm md:mb-4">
+              <ul className="mt-6 list-inside   max-xl:text-sm md:mb-4">
                 <li className="pb-3 text-[#FFFFFFcc] ">
                   <span className="text-[#FFFFFF80]">Security Level:</span> Very High
                 </li>
@@ -608,7 +608,13 @@ export default function Web() {
 
               <div className="flex w-full justify-between  gap-4 bg-[#FFFFFF0D] px-4 py-3 max-sm:flex-col xl:items-center">
                 <ul className=" flex list-inside  items-center gap-2 pl-2">
-                  <li className=" text-[#FFFFFFcc] max-sm:text-sm">Core vs. Elite</li>
+                  <a
+                    href="A4 - 1.pdf"
+                    className=" text-[#FFFFFFcc] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30] max-sm:text-sm"
+                    download
+                  >
+                    Core vs. Elite
+                  </a>
                   <motion.img
                     src="/FileArrowDown.png"
                     className="h-8 w-8 max-sm:h-6 max-sm:w-6"
@@ -621,7 +627,14 @@ export default function Web() {
                 </ul>
                 <div>
                   <ul className=" flex list-inside  items-center gap-2 pl-2">
-                    <li className=" text-[#FFFFFFcc] underline max-sm:text-sm">Altima: 10 Must-Knows!</li>
+                    <a
+                      href="Altima_ 10 Must-Knows!_.pdf"
+                      className=" text-[#FFFFFFcc] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30] max-sm:text-sm"
+                      download
+                      target="_blank"
+                    >
+                      Altima: 10 Must-Knows!
+                    </a>
                     <motion.img
                       src="/FileArrowDown.png"
                       className="h-8 w-8 max-sm:h-6 max-sm:w-6"
@@ -723,9 +736,15 @@ export default function Web() {
                 </li>
               </ul> */}
 
-              <div className="flex w-full justify-between gap-4 bg-[#FFFFFF0D] px-4 py-3 max-sm:hidden max-sm:flex-col xl:items-center">
+              <div className="flex w-full justify-between  gap-4 bg-[#FFFFFF0D] px-4 py-3 max-sm:flex-col xl:items-center">
                 <ul className=" flex list-inside  items-center gap-2 pl-2">
-                  <li className=" text-[#FFFFFFcc] max-sm:text-sm">Core vs. Elite</li>
+                  <a
+                    href="A4 - 1.pdf"
+                    className=" text-[#FFFFFFcc] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30] max-sm:text-sm"
+                    download
+                  >
+                    Core vs. Elite
+                  </a>
                   <motion.img
                     src="/FileArrowDown.png"
                     className="h-8 w-8 max-sm:h-6 max-sm:w-6"
@@ -738,7 +757,14 @@ export default function Web() {
                 </ul>
                 <div>
                   <ul className=" flex list-inside  items-center gap-2 pl-2">
-                    <li className=" text-[#FFFFFFcc] underline max-sm:text-sm">Altima: 10 Must-Knows!</li>
+                    <a
+                      href="Altima_ 10 Must-Knows!_.pdf"
+                      className=" text-[#FFFFFFcc] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30] max-sm:text-sm"
+                      download
+                      target="_blank"
+                    >
+                      Altima: 10 Must-Knows!
+                    </a>
                     <motion.img
                       src="/FileArrowDown.png"
                       className="h-8 w-8 max-sm:h-6 max-sm:w-6"
@@ -829,9 +855,15 @@ export default function Web() {
                 </li>
               </ul>
 
-              <div className="flex w-full justify-between gap-4  bg-[#FFFFFF0D] px-4 py-3 max-sm:mb-6 max-sm:flex-col xl:items-center">
+              <div className="flex w-full justify-between  gap-4 bg-[#FFFFFF0D] px-4 py-3 max-sm:flex-col xl:items-center">
                 <ul className=" flex list-inside  items-center gap-2 pl-2">
-                  <li className=" text-[#FFFFFFcc] max-sm:text-sm">Core vs. Elite</li>
+                  <a
+                    href="A4 - 1.pdf"
+                    className=" text-[#FFFFFFcc] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30] max-sm:text-sm"
+                    download
+                  >
+                    Core vs. Elite
+                  </a>
                   <motion.img
                     src="/FileArrowDown.png"
                     className="h-8 w-8 max-sm:h-6 max-sm:w-6"
@@ -844,7 +876,14 @@ export default function Web() {
                 </ul>
                 <div>
                   <ul className=" flex list-inside  items-center gap-2 pl-2">
-                    <li className=" text-[#FFFFFFcc] underline max-sm:text-sm">Altima: 10 Must-Knows!</li>
+                    <a
+                      href="Altima_ 10 Must-Knows!_.pdf"
+                      className=" text-[#FFFFFFcc] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30] max-sm:text-sm"
+                      download
+                      target="_blank"
+                    >
+                      Altima: 10 Must-Knows!
+                    </a>
                     <motion.img
                       src="/FileArrowDown.png"
                       className="h-8 w-8 max-sm:h-6 max-sm:w-6"
