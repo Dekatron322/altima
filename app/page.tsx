@@ -944,7 +944,7 @@ export default function Web() {
                 </div>
               </div>
 
-              <div className=" flex items-start justify-center gap-3 border-[#FFFFFF1A]  max-sm:border-b max-sm:pb-2 md:border-r md:px-6">
+              <div className="flex items-start justify-center gap-3 border-[#FFFFFF1A] max-sm:border-b  max-sm:pb-2 max-sm:pt-3 md:border-r md:px-6">
                 <Image src="/Upload.png" width={50} height={50} alt="" />
                 <div>
                   <p className="mb-2 text-[22px] font-semibold  text-[#FFFFFFcc] max-xl:text-sm xl:w-[223px]">
