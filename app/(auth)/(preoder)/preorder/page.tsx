@@ -1372,8 +1372,8 @@ export default function Web() {
                     <p className="text-base text-[#FFFFFF] max-sm:text-sm">Custom Size(s)</p>
                   </div>
                   <p className="my-4 text-[#ffffffcc] max-sm:text-xs">
-                    If your size isn't listed, Enter custom dimensions. ensure it matches standard frame sizes for best
-                    fit.
+                    If your size isn&apos;t listed, Enter custom dimensions. ensure it matches standard frame sizes for
+                    best fit.
                   </p>
 
                   <div className="mb-4 grid gap-8 lg:grid-cols-2">
