@@ -55,7 +55,7 @@ export default function ContactUs() {
       <div className="w-full xl:py-20">
         <div className="flex flex-col items-center justify-center">
           <p className="text-center text-[#FFFFFF99] max-xl:text-xs">Contact us</p>
-          <p className="flex text-center text-[32px] text-[#FFFFFFcc] max-xl:mb-4 max-xl:mt-2 max-xl:text-base max-md:text-2xl xl:my-5">
+          <p className="flex text-center text-[32px] font-bold text-[#FFFFFFcc] max-xl:mb-4 max-xl:mt-2 max-xl:text-base max-md:text-2xl xl:my-5">
             Have Questions?
           </p>
 
