@@ -178,79 +178,107 @@ export default function Web() {
         </div>
       )}
 
-      <section className="paddings flex w-full flex-col items-center  justify-center  max-sm:px-3 max-sm:py-20 lg:h-auto lg:py-32">
-        <p className="mb-6 text-xl font-bold text-white">Order Summary</p>
+      <section className="paddings flex w-full flex-col items-center  justify-center  max-sm:px-3 max-sm:py-10 lg:h-auto lg:py-32">
         <div className="flex w-full   items-center justify-center md:px-10">
-          <div className="flex  w-full  flex-col   rounded-md border border-[#FFFFFF0D]  max-sm:rounded-lg max-sm:p-2  md:p-5">
+          <div className="flex  w-full flex-col  rounded-md   border border-[#FFFFFF0D]   max-sm:rounded-lg max-sm:p-0  md:p-5">
+            <p className="text-xl  text-[#ffffffcc] max-sm:p-3 xl:pb-4">Pre-Order Summary</p>
             <div className="grid h-full items-center  rounded-md  bg-[#FFFFFF1A]   max-sm:grid max-sm:gap-5  md:gap-10">
-              <div className="px-5">
-                <ul className="mt-6 list-inside ">
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    Product: {orderData?.product_selection_altima_elite ? "Altima Elite" : "Altima Core"}
+              <div className="px-5 max-sm:px-3">
+                <ul className="mt-6 list-inside text-base max-sm:text-sm">
+                  <li className="pb-3  text-[#FFFFFF99] ">
+                    <span className="text-white">Product:</span>{" "}
+                    {orderData?.product_selection_altima_elite ? "Altima Elite" : "Altima Core"}
                   </li>
                   {orderData?.door_spec_default_size ? (
-                    <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                      Size: {orderData.door_spec_default_size}
+                    <li className="pb-3  text-[#FFFFFF99] max-sm:text-xs">
+                      Size(s) in Inches: {orderData.door_spec_default_size}
                     </li>
                   ) : (
-                    <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                      Size: {orderData?.door_spec_manual_size_height} x {orderData?.door_spec_manual_size_width}{" "}
-                      {orderData?.door_spec_manual_size_unit}
+                    <li className="pb-3  text-[#FFFFFF99] ">
+                      <span className="text-white">Size(s) in Inches:</span> {orderData?.door_spec_manual_size_height} x{" "}
+                      {orderData?.door_spec_manual_size_width} {orderData?.door_spec_manual_size_unit}
                     </li>
                   )}
 
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    Frame Type: {orderData?.door_spec_frame_type}
+                  <li className="pb-3  text-[#FFFFFF99] ">
+                    <span className="text-white">Frame Type:</span> {orderData?.door_spec_frame_type}
                   </li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    Finish: {orderData?.door_spec_finish_type}
+                  <li className="pb-3  text-[#FFFFFF99] ">
+                    <span className="text-white">Meterial:</span> {orderData?.door_spec_material_type}
                   </li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    Handle Placement: {orderData?.handle_placement}
+
+                  <li className="pb-3  text-[#FFFFFF99] ">
+                    <span className="text-white">Finish:</span> {orderData?.door_spec_finish_type}
                   </li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">Smart Features:</li>
-                  <li className="px-3 pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    - {orderData?.video_door_bell ? "Video Doorbell, " : ""}
-                    {orderData?.intercom_sys ? "Intercom System, " : ""}
-                    {orderData?.camera ? "Camera, " : ""}
-                    {orderData?.voice_assisted ? "Alexa Integration, " : ""}
+
+                  <li className="pb-3  text-[#FFFFFF99] ">
+                    <span className="text-white">Door Hinge Orientation:</span> {orderData?.handle_placement}
+                  </li>
+                  <li className="pb-3  text-[#FFFFFF99] ">
+                    <span className="text-white">Standard Security:</span> Reinforced Lock, Anti-Theft System, Motion
+                    Sensor, Smoke Detector, Gas leak Detector, Smart Keypad Access
+                  </li>
+                  <li className="pb-2  text-[#FFFFFF99] ">
+                    <span className="text-white">Addition Security:</span>
+                    {orderData?.battery_backup ? " Battery Backup, " : ""}
+                    {orderData?.fire_detection ? "Fire Detection, " : ""}
+                    {orderData?.remote_lock_unlock ? "Remote Lock/Unlock" : ""}
+                  </li>
+
+                  <li className=" pb-2  text-[#FFFFFF99] ">
+                    <span className="text-white">Integrated Smart Hub Features:</span> All Altima Core features +
+                    Camera, {orderData?.smart_lighting_integration ? "Smart Lighting Integration, " : ""}
+                    {orderData?.home_automation_integration ? "Home Automation Integration, " : ""}
+                    {orderData?.advance_motion_detection ? "Advanced Motion Detection, " : ""}
+                    {orderData?.voice_assisted ? "Voice assistant integration " : ""}
                     {orderData?.connectivity}, {orderData?.power_source}
                   </li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    Security Features:
-                    {orderData?.re_enforced_lock ? " Reinforced Lock, " : ""}
-                    {orderData?.anti_theft ? "Anti-theft, " : ""}
-                    {orderData?.alarm ? "Alarm, " : ""}
-                    {orderData?.motion_sensor ? "Motion Sensor" : ""}
+
+                  <li className=" pb-2  text-[#FFFFFF99] ">
+                    <span className="text-white">Network Type:</span>
+                    {orderData?.wifi ? " Wifi, " : ""}
+                    {orderData?.zigbee ? "Zigbee, " : ""}
+                    {orderData?.bluetooth ? "Bluetooth" : ""}
                   </li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    Installation Type: {orderData?.type_installation}
+
+                  <li className=" pb-2  text-[#FFFFFF99] ">
+                    <span className="text-white">Power Source:</span>
+                    {orderData?.mains_power ? " Mains Power, " : ""}
+                    {orderData?.solar_ready ? "Solar Ready, " : ""}
+                    {orderData?.battery_backup ? "Battery Backup" : ""}
                   </li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    Preferred Date: {orderData?.prefered_installation}
+
+                  <li className="pb-3  text-[#FFFFFF99] ">
+                    <span className="text-white">Installation Environment:</span> {orderData?.type_installation}
                   </li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    Special Instructions: {orderData?.special_installation_instruction}
+                  <li className="pb-3  text-[#FFFFFF99] ">
+                    <span className="text-white">Preferred Installation Date:</span> {orderData?.prefered_installation}
                   </li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    Extended Warranty: {orderData?.extended_warranty ? "Yes" : "No"}
+                  <li className="pb-3  text-[#FFFFFF99] ">
+                    <span className="text-white">Special Installation Instructions:</span>{" "}
+                    {orderData?.special_installation_instruction}
                   </li>
-                  <li className="pb-3 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    On-Site Support: {orderData?.installation_support ? "Yes" : "No"}
+                  <li className="pb-3  text-[#FFFFFF99] ">
+                    <span className="text-white">Extended Warranty: </span>{" "}
+                    {orderData?.extended_warranty ? "Yes" : "No"}
                   </li>
-                  <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
+                  <li className="pb-3  text-[#FFFFFF99] ">
+                    <span className="text-white">On-Site Support: </span>{" "}
+                    {orderData?.installation_support ? "Yes" : "No"}
+                  </li>
+                  {/* <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
                     Payment Method: Stripe {orderData?.payment_confirmation ? "Yes" : "No"}
-                  </li>
+                  </li> */}
                 </ul>
               </div>
-              <table className="table-fixed border-separate border-spacing-0  text-left text-white 2xl:w-full">
+              <table className="table-fixed border-separate border-spacing-0 px-3 text-left text-white xl:px-4 2xl:w-full">
                 <thead>
                   <tr className="border">
                     <th className="border-b border-l border-t border-[#FFFFFF33] bg-[#282828] px-4 py-4 text-sm font-normal">
-                      Total Price
+                      <span className="text-white">Total Price</span>
                     </th>
-                    <th className="border-b border-l border-t border-[#FFFFFF33]  bg-[#282828] px-4 py-4 text-sm font-normal">
-                      Deposit Amount
+                    <th className="border-b border-l border-r border-t border-[#FFFFFF33]  bg-[#282828] px-4 py-4 text-sm font-normal">
+                      <span className="text-white">Deposit Amount</span>
                     </th>
                   </tr>
                 </thead>
@@ -259,7 +287,7 @@ export default function Web() {
                     <td className="border-b border-l border-[#FFFFFF33]  bg-[#282828] px-4 py-2 text-sm">
                       ₹{orderData?.total}
                     </td>
-                    <td className="border-b border-l border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">
+                    <td className="border-b border-l border-r border-[#FFFFFF33] bg-[#282828] px-4 py-2 text-sm">
                       ₹{orderData?.deposit_amount}
                     </td>
                   </tr>
@@ -279,12 +307,14 @@ export default function Web() {
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 1, ease: "easeIn" }}
                   />
-                  <p className="text-sm text-[#FFFFFF] max-sm:text-xs">I agree to the pre-order terms and conditions</p>
+                  <p className="text-sm text-[#FFFFFFcc] max-sm:text-xs">
+                    I agree to the pre-order terms and conditions
+                  </p>
                 </div>
 
-                <p className="text-center text-white max-sm:text-xs">
-                  <span className="font-medium ">Note :</span> You will receive a confirmation email once your pre-order
-                  is complete
+                <p className="px-4  text-[#FFFFFFcc] max-sm:text-sm">
+                  <span className="font-medium text-[#FFFFFF]">Note :</span> You will receive a confirmation email once
+                  your pre-order is complete
                 </p>
               </div>
 
@@ -292,9 +322,9 @@ export default function Web() {
               <div className="mx-4  flex justify-center">
                 <button
                   onClick={handleSubmit}
-                  className="mb-5 flex w-[60%] items-center justify-center gap-2 rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4 py-3 font-normal uppercase text-[#FFFFFF] max-sm:w-full"
+                  className="mb-5 flex h-[45px] w-[60%] items-center justify-center gap-2 rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4  font-normal uppercase text-[#FFFFFFcc] max-sm:w-full max-sm:text-sm"
                 >
-                  {loading ? "Processing Payment..." : "Pay Now"}
+                  {loading ? "Processing Payment..." : "PROCEED TO PAYMENT"}
                 </button>
               </div>
             </div>
@@ -303,15 +333,15 @@ export default function Web() {
       </section>
 
       <section className="paddings  w-full bg-[#080808] max-sm:px-3 ">
-        <div className="  w-full     py-10">
+        <div className="  w-full     xl:py-10">
           <div className="flex flex-col items-center justify-center">
-            <p className=" text-[#FFFFFF99]">Timeline</p>
-            <p className="my-6 flex text-center text-5xl font-normal  text-[#FFFFFF]  max-md:text-2xl ">
+            <p className=" text-[#FFFFFF99] max-xl:text-xs">Timeline</p>
+            <p className="flex text-center text-3xl font-semibold text-[#FFFFFF] max-xl:my-2  max-xl:text-base  xl:my-6">
               Production Timeline
             </p>
 
-            <Image src="/changed.png" width={549} height={64} alt="" className="py-10 md:hidden" />
-            <Image src="/timelinee.png" width={1216} height={64} alt="" className="py-10 max-sm:hidden" />
+            <Image src="/Frame 48095551 copy.png" width={549} height={64} alt="" className="py-4 md:hidden" />
+            <Image src="/Frame 48095442.png" width={1216} height={64} alt="" className="py-10 max-sm:hidden" />
           </div>
         </div>
       </section>

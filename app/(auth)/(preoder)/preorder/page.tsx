@@ -253,7 +253,7 @@ export default function Web() {
         ...prevFormData,
         solar_ready: newValue,
       }))
-      console.log("formData.solar_reay:", newValue)
+      console.log("formData.solar_ready:", newValue)
       return newValue
     })
   }
@@ -536,6 +536,7 @@ export default function Web() {
   }
 
   const handleFinishSelect = (option: string) => {
+    console.log("Finish selected:", option)
     setFormData((prev) => ({
       ...prev,
       door_spec_finish_type: option,
@@ -1809,7 +1810,7 @@ export default function Web() {
                   </div>
                 </div>
 
-                <div className="lg;px-5 mt-5 grid max-sm:gap-3 lg:mt-7 lg:gap-5">
+                <div className="mt-5 grid max-sm:gap-3 lg:mt-7 lg:gap-5 lg:px-5">
                   <p className=" text-base  text-[#ffffffcc]">Additional Integrated Smart Hub Features</p>
 
                   <div

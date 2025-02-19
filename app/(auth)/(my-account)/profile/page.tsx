@@ -6,6 +6,7 @@ import { HiChevronDown } from "react-icons/hi2"
 import { LiaTimesSolid } from "react-icons/lia"
 import MainFooter from "components/Footer/MainFooter"
 import NewNav from "components/Navbar/NewNav"
+import { useRouter } from "next/navigation"
 
 interface UserDetails {
   id: string
@@ -63,6 +64,10 @@ export default function Web() {
       alert("User email is missing.")
       return
     }
+    const router = useRouter()
+    const handleGoBack = () => {
+      router.back()
+    }
 
     try {
       const response = await fetch("https://altima.fyber.site/custom-user/sign-out/", {
@@ -92,24 +97,30 @@ export default function Web() {
     fetchUserDetails()
   }, [])
 
+  const router = useRouter()
+
+  const handleGoBack = () => {
+    router.back()
+  }
+
   return (
     <section className="bg-black">
       <NewNav />
-      <section className="paddings w-full gap-5 bg-[#080808] max-xl:min-h-[500px] max-sm:px-3 max-sm:py-10 md:flex lg:py-32 xl:min-h-screen">
+      <section className="paddings w-full gap-5 bg-[#080808] max-xl:min-h-[500px] max-sm:px-3 max-sm:py-10 md:flex lg:py-32 ">
         <div className="relative mb-5 max-sm:block md:hidden">
           <button
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             className="flex w-[160px] items-center justify-between whitespace-nowrap border border-[#FFFFFF0D] p-2 text-sm text-[#FFFFFF80]"
           >
-            Address
+            My Account
             <HiChevronDown className="ml-2 h-5 w-5 text-white" />
           </button>
           {isDropdownOpen && (
-            <div className="absolute z-10 mt-1 w-[160px] rounded-lg bg-[#262626] text-sm text-[#FFFFFF80]">
-              <a href="/profile" className="block px-4 py-2   hover:bg-[#FFFFFF1A]">
+            <div className="absolute z-10 mt-1 w-[160px] overflow-hidden  rounded-lg bg-[#262626] text-sm text-[#FFFFFF80]">
+              <a href="/profile" className="block bg-[#FFFFFF1A] px-4  py-2  hover:bg-[#FFFFFF1A]">
                 My Account
               </a>
-              <a href="/my-account/order" className="block bg-[#FFFFFF1A] px-4 py-2 hover:bg-[#FFFFFF1A]">
+              <a href="/my-account/order" className="262626 block  px-4 py-2 hover:bg-[#FFFFFF1A]">
                 Orders
               </a>
               <a href="/address" className="block px-4 py-2 hover:bg-[#FFFFFF1A]">
@@ -126,7 +137,7 @@ export default function Web() {
           <div className="flex max-md:hidden">
             <a
               href="/profile"
-              className="mt-[0.5px] flex h-auto cursor-pointer items-center gap-2 border-r border-black bg-[#FFFFFF1A]  px-4 "
+              className="mt-[0.5px] flex h-auto cursor-pointer items-center gap-2 border-r border-black bg-[#FFFFFF1A] px-4 "
             >
               <motion.img
                 src="/GearSix.png"
@@ -141,7 +152,7 @@ export default function Web() {
             </a>
             <a
               href="/my-account/order"
-              className="mt-[0.5px] flex h-auto items-center gap-2 border-r border-black bg-[#FFFFFF0D]  px-4 "
+              className="mt-[0.5px] flex h-auto items-center gap-2 border-r border-black bg-[#FFFFFF0D] px-4 "
             >
               <motion.img
                 src="/ListDashes.png"
@@ -171,7 +182,7 @@ export default function Web() {
             </a>
             <div
               onClick={opeDeletenModal}
-              className="mt-[0.5px] flex h-auto cursor-pointer items-center gap-2 border-r border-black bg-[#FFFFFF0D]  px-4 "
+              className="mt-[0.5px] flex h-auto cursor-pointer items-center gap-2 border-r border-black bg-[#FFFFFF0D]  px-6 "
             >
               <motion.img
                 src="/SignOut.png"
@@ -185,12 +196,15 @@ export default function Web() {
               <p className="whitespace-nowrap p-2 text-white">Log out</p>
             </div>
           </div>
-          <div className="flex w-full flex-col items-center justify-center  bg-[#151515] max-sm:rounded-lg max-sm:p-2 md:p-10">
-            <p className="mb-10 text-center text-xl text-[#FFFFFF]">My Account</p>
+          <div className="flex w-full flex-col  justify-center  max-sm:rounded-lg  md:p-10 lg:bg-[#151515]">
+            <div className="mb-4 flex items-center gap-2 border-b border-[#FFFFFF1A] pb-2">
+              <img src="CaretUp copy.png" alt="" className="h-4 w-4 cursor-pointer" onClick={handleGoBack} />
+              <p className="   text-xl text-[#FFFFFFcc] max-sm:text-base">My Account</p>
+            </div>
 
             <div className="flex h-full w-full flex-col rounded-lg">
-              <div className="grid w-full grid-cols-2 justify-between max-md:grid-cols-1 md:gap-5">
-                <div className="search-bg h-[54.37px] w-full rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3 py-4">
+              <div className="grid w-full grid-cols-2 justify-between gap-4 max-md:grid-cols-1 md:gap-5">
+                <div className="search-bg flex h-[46px] w-full items-center rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3 ">
                   <input
                     type="text"
                     value={userDetails?.first_name}
@@ -198,7 +212,7 @@ export default function Web() {
                     className="w-full bg-transparent text-base text-white outline-none"
                   />
                 </div>
-                <div className="search-bg h-[54.37px] w-full rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3 py-4">
+                <div className="search-bg flex h-[46px] w-full items-center rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3">
                   <input
                     type="text"
                     value={userDetails?.last_name}
@@ -207,7 +221,7 @@ export default function Web() {
                   />
                 </div>
               </div>
-              <div className="search-bg mt-2 h-[54.37px] w-full rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3 py-4">
+              <div className="search-bg mt-4 flex h-[46px] w-full items-center rounded-lg border border-[#FFFFFF1A] bg-[#282828] px-3">
                 <input
                   type="text"
                   value={userDetails?.email}
@@ -223,14 +237,14 @@ export default function Web() {
                 />
               </div> */}
 
-              <div className="mt-8 flex w-full items-center justify-center">
+              <div className="mt-4 flex w-full items-center justify-center">
                 <motion.a
                   href="#"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF80] px-20 py-2 text-xs font-normal uppercase text-[#FFFFFF] max-sm:py-2"
+                  className="flex w-full items-center justify-center rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26]  py-3 text-xs font-normal uppercase text-[#FFFFFF] max-sm:py-3"
                 >
-                  Save
+                  Save / Update changes
                 </motion.a>
               </div>
             </div>
@@ -238,7 +252,6 @@ export default function Web() {
         </div>
       </section>
 
-      <MainFooter />
       {isDeleteModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#000000] bg-opacity-95">
           <div className="w-full max-w-sm rounded-lg bg-[#151515] p-4 text-white">
@@ -264,6 +277,7 @@ export default function Web() {
           </div>
         </div>
       )}
+      <MainFooter />
       <Footer />
     </section>
   )

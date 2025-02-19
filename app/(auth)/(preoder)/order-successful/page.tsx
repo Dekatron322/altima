@@ -239,7 +239,7 @@ export default function Web() {
             <div className="grid gap-2 ">
               <div className="grid gap-1">
                 <p className="text-[10px] text-[#0000004D]">ACCOUNT NUMBER</p>
-                <p className="text-xs">Stripe Checkout</p>
+                <p className="text-xs">Razorpay</p>
               </div>
               <div className="grid gap-1">
                 <p className="text-[10px] text-[#0000004D]">Issued To:</p>

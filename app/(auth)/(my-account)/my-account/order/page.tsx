@@ -34,6 +34,7 @@ export default function Web() {
   const [successMessage, setSuccessMessage] = useState<string | null>(null)
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
   const [isCancelModalOpen, setIsCancelModalOpen] = useState(false)
+  const [activeDropdownId, setActiveDropdownId] = useState<string | null>(null) // Track which dropdown is open
   const opeDeletenModal = () => setIsDeleteModalOpen(true)
   const closeDeleteModal = () => setIsDeleteModalOpen(false)
   const opeCancelModal = () => setIsCancelModalOpen(true)
@@ -195,6 +196,11 @@ export default function Web() {
     fetchUserDetails()
   }, [])
 
+  // Toggle dropdown for a specific order
+  const toggleDropdown = (orderId: string) => {
+    setActiveDropdownId(activeDropdownId === orderId ? null : orderId)
+  }
+
   return (
     <section className="bg-black">
       <NewNav />
@@ -275,7 +281,7 @@ export default function Web() {
             </a>
             <div
               onClick={opeDeletenModal}
-              className="mt-[0.5px] flex h-auto items-center gap-2 border-r border-black bg-[#FFFFFF0D]  px-4 "
+              className="mt-[0.5px] flex h-auto items-center gap-2 border-r border-black bg-[#FFFFFF0D]  px-4"
             >
               <motion.img
                 src="/SignOut.png"
@@ -290,227 +296,111 @@ export default function Web() {
             </div>
           </div>
           <div className="flex w-full flex-col  justify-center bg-[#151515] max-sm:rounded-lg max-sm:p-2  md:p-10">
-            <p className="text-center text-xl text-[#FFFFFF]">Orders</p>
-            <p className="pb-5 text-center text-xs text-[#FFFFFF80]">
+            <p className="text-center text-xl text-[#FFFFFFcc] max-sm:text-sm">Orders</p>
+            <p className="pb-5 text-center text-sm text-[#FFFFFF80]">
               Check your order and verify your shipping for better experience
             </p>
             <div className="mb-5 border-b border-[#FFFFFF1A]"></div>
 
             {addressData ? (
               addressData.map((preorder, index) => (
-                <div key={preorder.id} className="mb-5 flex h-full flex-col  rounded-lg  bg-[#FFFFFF1A]  p-5">
-                  <p className="mb-2 text-lg text-white">
-                    {" "}
-                    Date Placed:{" "}
-                    {new Date(preorder.pub_date).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}{" "}
-                    | Smartheaven Order #1234567890
-                  </p>
-                  <div className="border-b border-[#FFFFFF1A]"></div>
-                  <div className="flex h-full pt-4  max-sm:grid max-sm:gap-5  md:gap-10">
+                <div key={preorder.id} className="mb-5 flex h-full flex-col  rounded-lg  bg-[#FFFFFF1A]  p-2 xl:p-4">
+                  <div className="flex h-full gap-2 max-sm:flex-col  xl:gap-5 ">
                     <div>
                       <motion.img
                         src="/renew.png"
-                        className="max-sm:w-full  sm:w-[253px]"
+                        className="w-[130px] max-sm:w-full"
                         alt=""
                         initial={{ scale: 1.2, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ duration: 1, ease: "easeIn" }}
                       />
                     </div>
-                    <div className="w-full ">
-                      <div className="mb-5 flex gap-2 max-sm:w-full max-sm:flex-col max-sm:items-center max-sm:justify-center">
-                        {preorder.status === "processing order" && (
-                          <motion.img
-                            src="/SpinnerGap.png"
-                            width={32}
-                            height={32}
-                            alt="Loading spinner"
-                            initial={{ scale: 1.2, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            transition={{ duration: 1, ease: "easeIn" }}
-                          />
-                        )}
-
-                        {preorder.status === "pending" && (
-                          <motion.img
-                            src="/SpinnerGap.png"
-                            width={32}
-                            height={32}
-                            alt="Loading spinner"
-                            initial={{ scale: 1.2, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            transition={{ duration: 1, ease: "easeIn" }}
-                          />
-                        )}
-
-                        {preorder.status === "completed" && (
-                          <motion.img
-                            src="/CheckCircle8.png"
-                            width={32}
-                            height={32}
-                            alt="Completed"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 1 }}
-                          />
-                        )}
-
-                        {preorder.status === "cancelled" && (
-                          <motion.img
-                            src="/Prohibit.png"
-                            width={32}
-                            height={32}
-                            alt="Completed"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 1 }}
-                          />
-                        )}
-                        <p className=" text-lg capitalize text-[#FFFFFF] max-sm:text-center">{preorder.status}</p>
-                        {preorder.status === "processing order" && (
-                          <p className="text-center text-sm text-[#FFFFFF99]">Estimated delivery: Sat, August 26</p>
-                        )}
+                    <div className="flex w-full flex-col gap-1 ">
+                      <div className=" flex gap-2 max-sm:w-full max-sm:flex-col ">
+                        <div className="flex w-full justify-between">
+                          <p className="text-sm text-[#FFFFFF99] max-sm:text-xs">
+                            {" "}
+                            Order Date:{" "}
+                            {new Date(preorder.pub_date).toLocaleDateString("en-US", {
+                              year: "numeric",
+                              month: "long",
+                              day: "numeric",
+                            })}{" "}
+                            |{" "}
+                            <span
+                              className={`text-sm capitalize  max-sm:text-xs ${
+                                preorder.status === "processing"
+                                  ? "text-[#FFD700] "
+                                  : preorder.status === "pending"
+                                  ? "text-[#A68500]"
+                                  : preorder.status === "Delivered"
+                                  ? "text-[#00BB00]"
+                                  : preorder.status === "cancelled"
+                                  ? "text-[#FF3B30] "
+                                  : "text-gray-500 "
+                              }`}
+                            >
+                              {preorder.status}
+                            </span>
+                            {preorder.status === "processing order" && (
+                              <span className="text-center text-sm  text-[#FFFFFF99]">
+                                {" "}
+                                | Estimated delivery: Sat, August 26
+                              </span>
+                            )}
+                          </p>
+                          <div className="relative">
+                            <img
+                              src="/mingcute_more-2-fill.png"
+                              alt=""
+                              className="w-[15px] cursor-pointer object-contain"
+                              onClick={() => toggleDropdown(preorder.id)}
+                            />
+                            {activeDropdownId === preorder.id && (
+                              <div className="absolute right-0 z-10 mt-2 w-48 overflow-hidden rounded-lg bg-[#262626] text-sm text-[#FFFFFF80]">
+                                <button
+                                  className="block w-full overflow-hidden px-4 py-2 text-left hover:bg-[#FFFFFF1A]"
+                                  onClick={() => handleTrackOrder(preorder.id)}
+                                >
+                                  View Details
+                                </button>
+                                <button
+                                  className="block w-full px-4 py-2 text-left hover:bg-[#FFFFFF1A]"
+                                  onClick={() => handleOpenModal(preorder.id)}
+                                >
+                                  Cancel Order
+                                </button>
+                              </div>
+                            )}
+                          </div>
+                        </div>
                       </div>
                       {preorder.product_selection_altima_elite === true && (
-                        <p className="flex  text-2xl  font-normal  text-[#FFFFFF99]  max-sm:text-lg lg:text-2xl">
+                        <p className="flex  text-base  font-normal  text-[#FFFFFF]  max-sm:text-sm lg:text-lg">
                           Altima Elite
                         </p>
                       )}
 
                       {preorder.product_selection_altima_elite === false && (
-                        <p className="flex  text-2xl  font-normal  text-[#FFFFFF99]  max-sm:text-lg lg:text-2xl">
+                        <p className="flex  text-base  font-normal  text-[#FFFFFF]  max-sm:text-sm lg:text-lg">
                           Altima Core
                         </p>
                       )}
 
-                      <ul className="mt-22 list-inside ">
-                        <li className="pb-1 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                          Address : {preorder.shipping_address_street} , {preorder.email_address}
-                        </li>
-                        <li className="pb-2 text-sm capitalize text-[#FFFFFF99] max-sm:text-xs">
-                          Status: {preorder.status}
-                        </li>
-                      </ul>
-
-                      {preorder.status === "processing order" && (
-                        <div className="flex w-full gap-4 max-xl:flex-col">
-                          <motion.a
-                            href="/my-account/track-order"
-                            whileHover={{ scale: 1.01 }}
-                            whileTap={{ scale: 0.9 }}
-                            className="w-full gap-2 rounded-lg   border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
-                          >
-                            Change Address
-                          </motion.a>
-                          <motion.button
-                            whileHover={{ scale: 1.01 }}
-                            whileTap={{ scale: 0.9 }}
-                            className="w-full gap-2   rounded-lg border border-[#FFFFFF99] px-4  py-2 text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
-                            onClick={() => handleOpenModal(preorder.id)}
-                          >
-                            Cancel Order
-                          </motion.button>
-                          <motion.button
-                            onClick={() => handleTrackOrder(preorder.id)}
-                            whileHover={{ scale: 1.01 }}
-                            whileTap={{ scale: 0.9 }}
-                            className="w-full gap-2 rounded-lg   border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
-                          >
-                            Track Order
-                          </motion.button>
-
-                          <motion.button
-                            whileHover={{ scale: 1.01 }}
-                            whileTap={{ scale: 0.9 }}
-                            className="w-full gap-2   rounded-lg border border-[#FFFFFF99] px-4  py-2 text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
-                            onClick={opeCancelModal}
-                          >
-                            View Details
-                          </motion.button>
-                        </div>
-                      )}
-
-                      {preorder.status === "pending" && (
-                        <div className="flex w-full gap-4 max-xl:flex-col">
-                          <motion.a
-                            href="/my-account/track-order"
-                            whileHover={{ scale: 1.01 }}
-                            whileTap={{ scale: 0.9 }}
-                            className="w-full gap-2 rounded-lg   border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
-                          >
-                            Change Address
-                          </motion.a>
-                          <motion.button
-                            whileHover={{ scale: 1.01 }}
-                            whileTap={{ scale: 0.9 }}
-                            className="w-full gap-2   rounded-lg border border-[#FFFFFF99] px-4  py-2 text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
-                            onClick={() => handleOpenModal(preorder.id)}
-                          >
-                            Cancel Order
-                          </motion.button>
-                          <motion.a
-                            href="/my-account/track-order"
-                            whileHover={{ scale: 1.01 }}
-                            whileTap={{ scale: 0.9 }}
-                            className="w-full gap-2 rounded-lg   border border-[#FFFFFF99] bg-[#FFFFFF26] px-4 py-2 text-center text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
-                          >
-                            Track Order
-                          </motion.a>
-
-                          <motion.button
-                            whileHover={{ scale: 1.01 }}
-                            whileTap={{ scale: 0.9 }}
-                            className="w-full gap-2   rounded-lg border border-[#FFFFFF99] px-4  py-2 text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
-                            onClick={opeCancelModal}
-                          >
-                            View Details
-                          </motion.button>
-                        </div>
-                      )}
-                      {preorder.status === "cancelled" && (
-                        <div className="flex w-full gap-4 max-xl:flex-col">
-                          <motion.button
-                            onClick={() => handleTrackOrder(preorder.id)}
-                            whileHover={{ scale: 1.01 }}
-                            whileTap={{ scale: 0.9 }}
-                            className="w-full gap-2 rounded-lg   border border-[#FFFFFF99] px-4  py-2 text-center text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
-                          >
-                            Track Order
-                          </motion.button>
-
-                          <motion.button
-                            whileHover={{ scale: 1.01 }}
-                            whileTap={{ scale: 0.9 }}
-                            className="w-full gap-2   rounded-lg border border-[#FFFFFF99] px-4  py-2 text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
-                            onClick={opeCancelModal}
-                          >
-                            View Details
-                          </motion.button>
-                        </div>
-                      )}
-                      {preorder.status === "completed" && (
-                        <div className="flex w-full gap-4">
-                          <motion.button
-                            whileHover={{ scale: 1.01 }}
-                            whileTap={{ scale: 0.9 }}
-                            className="w-full gap-2   rounded-lg border border-[#FFFFFF99] px-4  py-2 text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
-                            onClick={opeCancelModal}
-                          >
-                            View Details
-                          </motion.button>
-                        </div>
-                      )}
-                      <div className="my-3 border-b border-[#FFFFFF1A]"></div>
                       <div className="flex items-center gap-3">
-                        <p className="text-white">
-                          Total Price ( {preorder.quantity} Item ) :
-                          <span className="font-bold"> ₹{preorder.total}</span>| Download Receipt
+                        <p className="text-[#FFFFFFcc] max-sm:text-sm">
+                          Total:
+                          <span className="font-semibold"> ₹ {preorder.total}</span>
                         </p>
                       </div>
+
+                      <ul className="mt-22 list-inside">
+                        <li className="pb-1 text-sm text-[#FFFFFF99] max-sm:text-xs">
+                          Address : {preorder.shipping_address_street}, {preorder.shipping_address_city},{" "}
+                          {preorder.shipping_address_state}, {preorder.shipping_address_country}
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
