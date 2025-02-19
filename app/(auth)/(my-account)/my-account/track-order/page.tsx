@@ -533,7 +533,7 @@ export default function Web() {
                 <motion.button
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.9 }}
-                  className="w-full gap-2   rounded-lg border border-[#FFFFFF99] px-4  py-2 text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
+                  className="h-[46px] w-full  gap-2 rounded-lg border border-[#FFFFFF99] bg-[#FF3B30] px-4  py-2 text-sm font-normal  text-[#FFFFFF] max-sm:py-2 "
                   onClick={opeCancelModal}
                 >
                   Cancel Order
