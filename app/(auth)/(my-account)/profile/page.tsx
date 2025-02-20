@@ -64,10 +64,6 @@ export default function Web() {
       alert("User email is missing.")
       return
     }
-    const router = useRouter()
-    const handleGoBack = () => {
-      router.back()
-    }
 
     try {
       const response = await fetch("https://altima.fyber.site/custom-user/sign-out/", {
