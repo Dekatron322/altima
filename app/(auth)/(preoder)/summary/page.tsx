@@ -266,9 +266,6 @@ export default function Web() {
                     <span className="text-white">On-Site Support: </span>{" "}
                     {orderData?.installation_support ? "Yes" : "No"}
                   </li>
-                  {/* <li className="pb-2 text-sm text-[#FFFFFF99] max-sm:text-xs">
-                    Payment Method: Stripe {orderData?.payment_confirmation ? "Yes" : "No"}
-                  </li> */}
                 </ul>
               </div>
               <table className="table-fixed border-separate border-spacing-0 px-3 text-left text-white xl:px-4 2xl:w-full">
