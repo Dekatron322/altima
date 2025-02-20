@@ -204,10 +204,10 @@ export default function Web() {
               <a href="/profile" className="block px-4 py-2   hover:bg-[#FFFFFF1A]">
                 My Account
               </a>
-              <a href="/my-account/order" className="block bg-[#FFFFFF1A] px-4 py-2 hover:bg-[#FFFFFF1A]">
+              <a href="/my-account/order" className="block  px-4 py-2 hover:bg-[#FFFFFF1A]">
                 Orders
               </a>
-              <a href="/address" className="block px-4 py-2 hover:bg-[#FFFFFF1A]">
+              <a href="/address" className="block bg-[#FFFFFF1A] px-4 py-2 hover:bg-[#FFFFFF1A]">
                 Address
               </a>
               <p onClick={openLogoutModal} className="block cursor-pointer px-4 py-2 hover:bg-[#FFFFFF1A]">

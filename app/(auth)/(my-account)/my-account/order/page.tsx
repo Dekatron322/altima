@@ -222,7 +222,7 @@ export default function Web() {
               <a href="/my-account/order" className="block bg-[#FFFFFF1A] px-4 py-2 hover:bg-[#FFFFFF1A]">
                 Orders
               </a>
-              <a href="/my-account/installment" className="block px-4 py-2 hover:bg-[#FFFFFF1A]">
+              <a href="/address" className="block px-4 py-2 hover:bg-[#FFFFFF1A]">
                 Address
               </a>
               <p onClick={opeDeletenModal} className="block px-4 py-2 hover:bg-[#FFFFFF1A]">
