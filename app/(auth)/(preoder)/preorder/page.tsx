@@ -133,7 +133,7 @@ export default function Web() {
       const newValue = !prev
       setFormData((prevFormData) => ({
         ...prevFormData,
-        extended_warranty: newValue, // Update formData with the new value
+        extended_warranty: newValue,
       }))
       return newValue
     })
@@ -154,7 +154,7 @@ export default function Web() {
       const newValue = !prev
       setFormData((prevFormData) => ({
         ...prevFormData,
-        installation_support: newValue, // Update formData with the new value
+        installation_support: newValue,
       }))
       return newValue
     })
@@ -165,7 +165,7 @@ export default function Web() {
       const newValue = !prev
       setFormData((prevFormData) => ({
         ...prevFormData,
-        phone: newValue, // Update formData with the new value
+        phone: newValue,
       }))
       return newValue
     })
@@ -176,7 +176,7 @@ export default function Web() {
       const newValue = !prev
       setFormData((prevFormData) => ({
         ...prevFormData,
-        payment_confirmation: newValue, // Update formData with the new value
+        payment_confirmation: newValue,
       }))
       return newValue
     })
@@ -187,7 +187,7 @@ export default function Web() {
       const newValue = !prev
       setFormData((prevFormData) => ({
         ...prevFormData,
-        whatsapp: newValue, // Update formData with the new value
+        whatsapp: newValue,
       }))
       return newValue
     })
@@ -481,6 +481,7 @@ export default function Web() {
     status: "pending",
     email_address: "",
     deposit_amount: "",
+    door_swing_direction: "",
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -501,6 +502,7 @@ export default function Web() {
     Metal: ["Wood Grain", "Brushed Steel", "Textured Sand"],
   }
   const handlePlacementOptions = ["Right-Hinged", "Left-Hinged"]
+  const handleSwingOptions = ["Inward-opening door", "Outward-opening door"]
 
   const handleFrameTypeSelect = (option: string) => {
     setFormData((prev) => ({
@@ -556,6 +558,14 @@ export default function Web() {
     setFormData((prev) => ({
       ...prev,
       handle_placement: option,
+    }))
+    setOpenDropdown(null)
+  }
+
+  const handleSwingSelect = (option: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      door_swing_direction: option,
     }))
     setOpenDropdown(null)
   }
@@ -780,6 +790,9 @@ export default function Web() {
 
         // Save form data as order summary
         localStorage.setItem("order_summary", JSON.stringify(formData))
+
+        // Save order ID to local storage
+        localStorage.setItem("order_id", orderId)
 
         setMessage("Order placed successfully!")
 
@@ -1565,6 +1578,17 @@ export default function Web() {
                       toggleDropdown={() => toggleDropdown("handle")}
                     />
                   </div>
+
+                  <div className="mt-3">
+                    <Dropdown
+                      label="Door Swing Direction"
+                      options={handleSwingOptions}
+                      value={formData.door_swing_direction || ""}
+                      onSelect={handleSwingSelect}
+                      isOpen={openDropdown === "swing"}
+                      toggleDropdown={() => toggleDropdown("swing")}
+                    />
+                  </div>
                 </div>
 
                 <div className="my-5 border-b border-[#FFFFFF0D]"></div>
@@ -2173,7 +2197,7 @@ export default function Web() {
                 </div>
                 <div className="my-5 border-b border-[#FFFFFF0D]"></div>
 
-                <p className=" text-lg font-medium text-[#ffffffcc] max-sm:text-base">Payment Information</p>
+                <p className=" text-lg font-medium text-[#ffffffcc] max-sm:text-base lg:px-5">Payment Information</p>
                 <p className="pb-3  text-sm text-[#ffffffcc] lg:px-5">Total Cost Calculation:</p>
 
                 <table className="w-full table-fixed border-separate border-spacing-0 text-left text-white sm:hidden">

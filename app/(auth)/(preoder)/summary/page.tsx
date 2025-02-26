@@ -215,6 +215,9 @@ export default function Web() {
                     <span className="text-white">Door Hinge Orientation:</span> {orderData?.handle_placement}
                   </li>
                   <li className="pb-3  text-[#FFFFFF99] ">
+                    <span className="text-white">Door Swing Direction:</span> {orderData?.door_swing_direction}
+                  </li>
+                  <li className="pb-3  text-[#FFFFFF99] ">
                     <span className="text-white">Standard Security:</span> Reinforced Lock, Anti-Theft System, Motion
                     Sensor, Smoke Detector, Gas leak Detector, Smart Keypad Access
                   </li>
@@ -309,7 +312,7 @@ export default function Web() {
                   </p>
                 </div>
 
-                <p className="px-4  text-[#FFFFFFcc] max-sm:text-sm">
+                <p className="px-4 text-center  text-[#FFFFFFcc] max-sm:text-sm">
                   <span className="font-medium text-[#FFFFFF]">Note :</span> You will receive a confirmation email once
                   your pre-order is complete
                 </p>

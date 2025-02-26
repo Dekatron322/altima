@@ -64,6 +64,7 @@ export interface OrderPayload {
   wifi?: boolean
   solar_ready?: boolean
   mains_power?: boolean
+  door_swing_direction?: string
 }
 
 export interface UserInformationPayload {
