@@ -331,7 +331,7 @@ export default function Web() {
           loop
           className="absolute inset-0 h-full w-full object-cover opacity-80" // Adjust opacity as needed
         >
-          <source src="/ALTIMA.mp4" type="video/mp4" />
+          <source src="/WhatsApp Video 2025-02-26 at 15.05.10.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
@@ -1058,22 +1058,12 @@ export default function Web() {
             onClick={(e) => e.stopPropagation()} // Prevent modal close on inner click
           >
             <button
-              className="absolute right-2 top-2 rounded-full bg-[#FF3B30] p-3 text-white"
+              className="absolute right-2 top-2 z-50 rounded-full bg-[#FF3B30] p-3 text-white"
               onClick={closeVideoModal}
             >
               <LiaTimesSolid onClick={closeVideoModal} className="z-50 cursor-pointer" />
             </button>
-            <motion.video
-              src="/WhatsApp Video 2024-12-12 at 15.04.29.mp4"
-              width={645}
-              height={555}
-              autoPlay
-              loop
-              muted
-              initial={{ scale: 1.2, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1, ease: "easeIn" }}
-            />
+            <VideoCarousel />
           </motion.div>
         </motion.div>
       )}
