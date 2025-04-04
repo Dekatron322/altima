@@ -55,7 +55,7 @@ const Page: React.FC = () => {
     setError(null)
 
     try {
-      const response = await fetch(`https://altima.fyber.site/custom-user/reset-password/${otpCode}/`, {
+      const response = await fetch(`https://api.smarthavensystems.com/custom-user/reset-password/${otpCode}/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

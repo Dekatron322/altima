@@ -44,7 +44,7 @@ export default function Web() {
   useEffect(() => {
     const fetchOrderInfo = async (id: string) => {
       try {
-        const response = await fetch(`https://altima.fyber.site/preorder/preorder/${id}/`)
+        const response = await fetch(`https://api.smarthavensystems.com/preorder/preorder/${id}/`)
         if (!response.ok) {
           throw new Error("Failed to fetch order details")
         }

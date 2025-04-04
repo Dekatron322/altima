@@ -56,7 +56,7 @@ export default function Web() {
       if (!orderId) return
 
       try {
-        const response = await fetch(`https://altima.fyber.site/preorder/preorder/${orderId}/`, {
+        const response = await fetch(`https://api.smarthavensystems.com/preorder/preorder/${orderId}/`, {
           method: "GET",
         })
 
@@ -83,7 +83,7 @@ export default function Web() {
     }
 
     try {
-      const response = await fetch(`https://altima.fyber.site/order/api/verify-payment/${sessionId}/`, {
+      const response = await fetch(`https://api.smarthavensystems.com/order/api/verify-payment/${sessionId}/`, {
         method: "GET",
       })
 
@@ -113,7 +113,7 @@ export default function Web() {
       if (!orderId) return
 
       try {
-        const response = await fetch(`https://altima.fyber.site/preorder/preorder/${orderId}/update-status/`, {
+        const response = await fetch(`https://api.smarthavensystems.com/preorder/preorder/${orderId}/update-status/`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",

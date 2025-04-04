@@ -93,7 +93,7 @@ export default function Web() {
 
       console.log("Razorpay Payload:", razorpayPayload)
 
-      const response = await fetch("https://altima.fyber.site/order/api/create-checkout-session/", {
+      const response = await fetch("https://api.smarthavensystems.com/order/api/create-checkout-session/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

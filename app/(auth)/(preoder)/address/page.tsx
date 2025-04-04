@@ -116,7 +116,7 @@ export default function Web() {
       const parsedData = JSON.parse(userData) as { id: string }
       const { id } = parsedData
 
-      const response = await fetch(`https://altima.fyber.site/custom-user/get-user-detail/${id}/`, {
+      const response = await fetch(`https://api.smarthavensystems.com/custom-user/get-user-detail/${id}/`, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -142,7 +142,7 @@ export default function Web() {
     }
 
     try {
-      const response = await fetch("https://altima.fyber.site/custom-user/sign-out/", {
+      const response = await fetch("https://api.smarthavensystems.com/custom-user/sign-out/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

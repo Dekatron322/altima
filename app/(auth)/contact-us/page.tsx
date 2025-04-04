@@ -27,7 +27,7 @@ export default function Contact() {
     setResponseMessage("")
 
     try {
-      const response = await fetch("https://altima.fyber.site/contact/contact/", {
+      const response = await fetch("https://api.smarthavensystems.com/contact/contact/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

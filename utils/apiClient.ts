@@ -2,7 +2,7 @@
 import axios from "axios"
 
 const apiClient = axios.create({
-  baseURL: "https://altima.fyber.site/",
+  baseURL: "https://api.smarthavensystems.com/",
   headers: {
     "Content-Type": "application/json",
   },
