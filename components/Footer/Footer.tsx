@@ -12,7 +12,9 @@ const Footer = () => {
     <>
       {/* Footer */}
       <div className="paddings flex w-full flex-col items-center justify-center bg-[#080808] max-sm:text-[10px]">
-        <p className=" text-center uppercase text-[#ffffffcc] max-sm:text-sm">2025 Altima, Inc. All rights reserved.</p>
+        <p className=" text-center uppercase text-[#ffffffcc] max-sm:text-sm">
+          2025 Smarthaven Systems, Inc. All rights reserved.
+        </p>
       </div>
 
       {/* Floating Action Button */}
@@ -38,7 +40,7 @@ const Footer = () => {
                 className="flex h-16 w-16 items-center justify-center rounded-full bg-[#FF3B30] uppercase text-white shadow-lg hover:bg-[#1976D2]"
                 title="Link 2"
               >
-                <img src="/warranty.png" width={26} height={26} alt="" />
+                <img src="/iconamoon_certificate-badge-fill.png" width={26} height={26} alt="" />
               </a>
               <span className="absolute right-full top-1/2 mr-2 hidden w-max -translate-y-1/2 rounded bg-[#FF3B30] px-2 py-1 text-xs uppercase text-white shadow-lg group-hover:block">
                 Warranty policy

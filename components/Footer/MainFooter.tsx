@@ -17,10 +17,10 @@ const MainFooter = () => {
                 <span className="font-semibold text-white opacity-80">Email:</span> contact@smarthavensystems.com
               </Link>
               <Link
-                href="tel:08047360770"
+                href="tel:080-473-60604"
                 className="text-sm text-[#FFFFFF99] transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
               >
-                <span className="font-semibold text-white opacity-80">Phone:</span> 08047360770
+                <span className="font-semibold text-white opacity-80">Phone:</span> 080-473-60604
               </Link>
               <p className="text-sm text-[#FFFFFF99]">
                 <span className="font-semibold text-white opacity-80">Address:</span> Seawoods, Navi Mumbai 400706,

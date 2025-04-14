@@ -87,7 +87,7 @@ const Navbar = () => {
                   : "  text-white transition-all duration-300 ease-in-out hover:text-[#FF3B30]"
               }
             >
-              Product Info
+              Features
             </a>
             <a
               href="#specifications"
@@ -97,7 +97,7 @@ const Navbar = () => {
                   : "text-white transition-all duration-300 ease-in-out  hover:text-[#FF3B30]"
               }
             >
-              Specifications
+              Models
             </a>
 
             <a
@@ -124,7 +124,7 @@ const Navbar = () => {
           <a
             onClick={handleAccountClick}
             className={
-              "cursor-pointer rounded-lg bg-[#FFFFFF1A] p-2 uppercase text-white transition-all duration-300 ease-in-out hover:bg-[#FF3B30]"
+              "cursor-pointer rounded-lg bg-[#FFFFFF1A] px-4 py-2 uppercase text-white transition-all duration-300 ease-in-out hover:bg-[#FF3B30]"
             }
           >
             My Account
