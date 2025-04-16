@@ -111,7 +111,7 @@ const Navbar = () => {
               Other Products
             </a>
             <a
-              href="#contact"
+              href="/contact-us"
               className={
                 activeLink === "contact"
                   ? "border-b-3 border-[#FF3B30] font-normal  text-white"

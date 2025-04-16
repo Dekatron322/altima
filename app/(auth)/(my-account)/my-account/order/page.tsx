@@ -216,14 +216,14 @@ export default function Web() {
           </button>
           {isDropdownOpen && (
             <div className="absolute z-10 mt-1 w-[160px] rounded-lg bg-[#262626] text-sm text-[#FFFFFF80]">
-              <a href="/profile" className="block px-4 py-2   hover:bg-[#FFFFFF1A]">
-                My Account
-              </a>
               <a href="/my-account/order" className="block bg-[#FFFFFF1A] px-4 py-2 hover:bg-[#FFFFFF1A]">
                 Orders
               </a>
               <a href="/address" className="block px-4 py-2 hover:bg-[#FFFFFF1A]">
                 Address
+              </a>
+              <a href="/profile" className="block px-4 py-2   hover:bg-[#FFFFFF1A]">
+                My Account
               </a>
               <p onClick={opeDeletenModal} className="block px-4 py-2 hover:bg-[#FFFFFF1A]">
                 Log out
@@ -234,21 +234,6 @@ export default function Web() {
 
         <div className=" w-full  items-center justify-between">
           <div className="flex max-md:hidden">
-            <a
-              href="/profile"
-              className="mt-[0.5px] flex h-auto items-center gap-2 border-r border-black bg-[#FFFFFF0D]  px-4 "
-            >
-              <motion.img
-                src="/GearSix.png"
-                width={20}
-                height={20}
-                alt=""
-                initial={{ scale: 1.2, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1, ease: "easeIn" }}
-              />
-              <p className="whitespace-nowrap p-2 text-white">My Account</p>
-            </a>
             <a
               href="/my-account/order"
               className="mt-[0.5px] flex h-auto items-center gap-2 border-r border-black bg-[#FFFFFF1A]  px-4 "
@@ -279,6 +264,22 @@ export default function Web() {
               />
               <p className="whitespace-nowrap p-2 text-white">My Address</p>
             </a>
+            <a
+              href="/profile"
+              className="mt-[0.5px] flex h-auto items-center gap-2 border-r border-black bg-[#FFFFFF0D]  px-4 "
+            >
+              <motion.img
+                src="/GearSix.png"
+                width={20}
+                height={20}
+                alt=""
+                initial={{ scale: 1.2, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 1, ease: "easeIn" }}
+              />
+              <p className="whitespace-nowrap p-2 text-white">My Account</p>
+            </a>
+
             <div
               onClick={opeDeletenModal}
               className="mt-[0.5px] flex h-auto items-center gap-2 border-r border-black bg-[#FFFFFF0D]  px-4"
