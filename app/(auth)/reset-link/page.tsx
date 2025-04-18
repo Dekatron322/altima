@@ -46,7 +46,7 @@ const Page: React.FC = () => {
 
           <div className="my-4 flex justify-center gap-1 px-6">
             <p className="text-sm text-[#4F4F4F]">Don&apos;t Have an Account Yet?</p>
-            <Link href="/signup" className="text-xs text-[#FF3B30]">
+            <Link href="/signup" className="text-sm text-[#FF3B30]">
               Sign Up
             </Link>
           </div>
