@@ -1,8 +1,48 @@
 "use client"
+
 import Link from "next/link"
-import React from "react"
+import React, { useState } from "react"
 
 const MainFooter = () => {
+  const [email, setEmail] = useState("")
+  const [loading, setLoading] = useState(false)
+  const [message, setMessage] = useState({ text: "", type: "" })
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    if (!email) {
+      setMessage({ text: "Please enter your email", type: "error" })
+      return
+    }
+
+    setLoading(true)
+    setMessage({ text: "", type: "" })
+
+    try {
+      const response = await fetch("https://api.smarthavensystems.com/custom-user/subscribe/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setMessage({ text: "Subscription successful! Thank you.", type: "success" })
+        setEmail("")
+      } else {
+        setMessage({ text: "Subscription failed. Please try again.", type: "error" })
+      }
+    } catch (error) {
+      setMessage({ text: "An error occurred. Please try again later.", type: "error" })
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <>
       <section id="contact" className="paddings w-full  bg-[#151515]  max-sm:px-3 ">
@@ -110,29 +150,37 @@ const MainFooter = () => {
             </div>
 
             <div className="flex flex-col gap-3 max-sm:mb-7">
-              <div className="flex gap-2">
-                <div className="input-field ">
-                  <input
-                    type="text"
-                    id="placement"
-                    placeholder="Email"
-                    className="bg-transparent text-sm  text-white outline-none focus:outline-none"
-                    style={{ width: "100%" }}
-                  />
+              <form onSubmit={handleSubscribe} className="flex flex-col gap-3">
+                <div className="flex gap-2">
+                  <div className="input-field">
+                    <input
+                      type="email"
+                      id="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Email"
+                      className="bg-transparent text-sm text-white outline-none focus:outline-none"
+                      style={{ width: "100%" }}
+                      required
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="flex items-center justify-center gap-2 rounded-lg border border-[#FF3B30] bg-[#FF3B30] px-4 text-sm font-normal uppercase text-[#FFFFFF] disabled:opacity-50 max-sm:text-[10px]"
+                  >
+                    {loading ? "Subscribing..." : "Subscribe"}
+                  </button>
                 </div>
 
-                <button className="flex items-center justify-center gap-2  rounded-lg border border-[#FF3B30]  bg-[#FF3B30] px-4 text-sm font-normal uppercase  text-[#FFFFFF]  max-sm:text-[10px] ">
-                  Subscribe
-                </button>
-              </div>
-              {/* <p className="text-sm text-[#FFFFFF99]">
-                ✓Estimated delivery date: 4-5 months after the pre-order window closes
-              </p>
-              <p className="text-sm text-[#FFFFFF99]">
-                ✓A note: Pre-orders require a 30% deposit at the time of booking. The remaining balance is due before
-                shipment, with a final payment notice sent prior to delivery. Deposits are non-refundable but can be
-                adjusted against the final payment.
-              </p> */}
+                {message.text && (
+                  <p className={`text-sm ${message.type === "success" ? "text-green-400" : "text-red-400"}`}>
+                    {message.text}
+                  </p>
+                )}
+              </form>
+
               <div className="flex gap-2 max-xl:justify-center">
                 <p className="text-sm text-[#FFFFFF99] underline transition-all duration-300 ease-in-out hover:text-[#FF3B30]">
                   LinkedIn
