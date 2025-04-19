@@ -20,7 +20,7 @@ const MainFooter = () => {
     setMessage({ text: "", type: "" })
 
     try {
-      const response = await fetch("https://api.smarthavensystems.com/custom-user/subscribe/", {
+      const response = await fetch("https://api.smarthavensystems.com/custom-user/subscribe", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
