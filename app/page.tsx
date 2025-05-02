@@ -317,63 +317,49 @@ export default function Web() {
     setIsVideoModalOpen(false)
   }
 
-  const audioRef = useRef<HTMLAudioElement>(null)
-  const [showPlayButton, setShowPlayButton] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [isPlaying, setIsPlaying] = useState(false)
   const [hasInteracted, setHasInteracted] = useState(false)
 
-  // Try to autoplay when component mounts
-  useEffect(() => {
-    const attemptAutoplay = async () => {
-      try {
-        if (audioRef.current) {
-          await audioRef.current.play()
-          setShowPlayButton(false) // Success: Hide button
-        }
-      } catch (err) {
-        setShowPlayButton(true) // Autoplay blocked: Show button
+  const handleWatchVideo = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause()
+      } else {
+        videoRef.current.muted = false
+        videoRef.current.play()
       }
-    }
-
-    attemptAutoplay()
-  }, [])
-
-  // Auto-resume audio after first user interaction (if previously blocked)
-  useEffect(() => {
-    if (hasInteracted && audioRef.current && showPlayButton) {
-      audioRef.current
-        .play()
-        .then(() => setShowPlayButton(false))
-        .catch((err) => console.error("Playback failed:", err))
-    }
-  }, [hasInteracted, showPlayButton])
-
-  // Track any user interaction (click, scroll, touch, etc.)
-  useEffect(() => {
-    const handleUserInteraction = () => {
-      if (!hasInteracted) {
-        setHasInteracted(true)
-      }
-    }
-
-    window.addEventListener("click", handleUserInteraction)
-    window.addEventListener("scroll", handleUserInteraction)
-    window.addEventListener("touchstart", handleUserInteraction)
-
-    return () => {
-      window.removeEventListener("click", handleUserInteraction)
-      window.removeEventListener("scroll", handleUserInteraction)
-      window.removeEventListener("touchstart", handleUserInteraction)
-    }
-  }, [hasInteracted])
-
-  const handlePlayClick = () => {
-    if (audioRef.current) {
-      audioRef.current
-        .play()
-        .then(() => setShowPlayButton(false))
-        .catch((err) => console.error("Playback failed:", err))
+      setIsPlaying(!isPlaying)
+      setHasInteracted(true)
     }
   }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!hasInteracted) return
+
+      if (videoRef.current) {
+        const videoElement = videoRef.current
+        const videoRect = videoElement.getBoundingClientRect()
+        const isVideoVisible =
+          videoRect.top >= -videoRect.height * 0.5 && videoRect.bottom <= window.innerHeight + videoRect.height * 0.5
+
+        if (!isVideoVisible && isPlaying) {
+          videoElement.pause()
+          setIsPlaying(false)
+        } else if (isVideoVisible && !isPlaying && hasInteracted) {
+          videoElement.muted = false
+          videoElement
+            .play()
+            .then(() => setIsPlaying(true))
+            .catch((error) => console.error("Video play failed:", error))
+        }
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [isPlaying, hasInteracted])
 
   return (
     <section className="bg-black">
@@ -384,7 +370,7 @@ export default function Web() {
       >
         {/* Video Background */}
         <video
-          autoPlay
+          ref={videoRef}
           muted
           loop
           playsInline
@@ -393,19 +379,6 @@ export default function Web() {
         >
           <source src="/WhatsApp Video 2025-05-02 at 09.33.52.mp4" type="video/mp4" />
         </video>
-
-        {/* Audio Element (tries to autoplay) */}
-        <audio ref={audioRef} src="/ALTIMA_3.mp3" loop preload="auto" className="hidden" />
-
-        {/* Fallback Play Button (only appears if autoplay fails) */}
-        {showPlayButton && (
-          <button
-            onClick={handlePlayClick}
-            className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 transform rounded-full bg-white/20 px-6 py-3 text-white backdrop-blur-sm transition-all hover:bg-white/30"
-          >
-            🔇 Unmute
-          </button>
-        )}
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
@@ -457,9 +430,9 @@ export default function Web() {
                   className="flex items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-[#FFFFFF99] bg-transparent px-4 py-3 font-normal uppercase text-[#FFFFFF] max-sm:mb-3 max-sm:w-full max-sm:py-2 max-sm:text-sm"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  onClick={openVideoModal} // Open modal
+                  onClick={handleWatchVideo}
                 >
-                  Watch Video
+                  {isPlaying ? "Pause Video" : "Watch Video"}
                   <Image src="/Frame 48095395.png" width={26} height={26} alt="" />
                 </motion.button>
               </div>
