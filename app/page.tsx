@@ -3,7 +3,7 @@ import Footer from "components/Footer/Footer"
 
 import Image from "next/image"
 import Navbar from "components/Navbar/Navbar"
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Accordion from "components/Accordion/Accordion"
 import { motion } from "framer-motion"
 import MainFooter from "components/Footer/MainFooter"
@@ -317,6 +317,64 @@ export default function Web() {
     setIsVideoModalOpen(false)
   }
 
+  const audioRef = useRef<HTMLAudioElement>(null)
+  const [showPlayButton, setShowPlayButton] = useState(false)
+  const [hasInteracted, setHasInteracted] = useState(false)
+
+  // Try to autoplay when component mounts
+  useEffect(() => {
+    const attemptAutoplay = async () => {
+      try {
+        if (audioRef.current) {
+          await audioRef.current.play()
+          setShowPlayButton(false) // Success: Hide button
+        }
+      } catch (err) {
+        setShowPlayButton(true) // Autoplay blocked: Show button
+      }
+    }
+
+    attemptAutoplay()
+  }, [])
+
+  // Auto-resume audio after first user interaction (if previously blocked)
+  useEffect(() => {
+    if (hasInteracted && audioRef.current && showPlayButton) {
+      audioRef.current
+        .play()
+        .then(() => setShowPlayButton(false))
+        .catch((err) => console.error("Playback failed:", err))
+    }
+  }, [hasInteracted, showPlayButton])
+
+  // Track any user interaction (click, scroll, touch, etc.)
+  useEffect(() => {
+    const handleUserInteraction = () => {
+      if (!hasInteracted) {
+        setHasInteracted(true)
+      }
+    }
+
+    window.addEventListener("click", handleUserInteraction)
+    window.addEventListener("scroll", handleUserInteraction)
+    window.addEventListener("touchstart", handleUserInteraction)
+
+    return () => {
+      window.removeEventListener("click", handleUserInteraction)
+      window.removeEventListener("scroll", handleUserInteraction)
+      window.removeEventListener("touchstart", handleUserInteraction)
+    }
+  }, [hasInteracted])
+
+  const handlePlayClick = () => {
+    if (audioRef.current) {
+      audioRef.current
+        .play()
+        .then(() => setShowPlayButton(false))
+        .catch((err) => console.error("Playback failed:", err))
+    }
+  }
+
   return (
     <section className="bg-black">
       <Navbar />
@@ -327,15 +385,27 @@ export default function Web() {
         {/* Video Background */}
         <video
           autoPlay
-          muted // must be true for autoplay to work
+          muted
           loop
-          playsInline // allows inline playback (esp. on iOS)
+          playsInline
           preload="auto"
           className="absolute inset-0 h-full w-full object-cover opacity-80"
         >
           <source src="/WhatsApp Video 2025-05-02 at 09.33.52.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
         </video>
+
+        {/* Audio Element (tries to autoplay) */}
+        <audio ref={audioRef} src="/ALTIMA_3.mp3" loop preload="auto" className="hidden" />
+
+        {/* Fallback Play Button (only appears if autoplay fails) */}
+        {showPlayButton && (
+          <button
+            onClick={handlePlayClick}
+            className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 transform rounded-full bg-white/20 px-6 py-3 text-white backdrop-blur-sm transition-all hover:bg-white/30"
+          >
+            🔇 Unmute
+          </button>
+        )}
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
