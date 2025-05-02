@@ -380,7 +380,7 @@ export default function Web() {
       <Navbar />
       <section
         id="about"
-        className="about-section relative grid w-full items-center justify-center bg-black lg:h-screen lg:py-16"
+        className="about-section relative grid w-full items-center justify-center bg-black py-16 lg:h-screen"
       >
         {/* Video Background */}
         <video
