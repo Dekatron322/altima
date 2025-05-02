@@ -327,9 +327,11 @@ export default function Web() {
         {/* Video Background */}
         <video
           autoPlay
-          muted={false}
+          muted // must be true for autoplay to work
           loop
-          className="absolute inset-0 h-full w-full object-cover opacity-80" // Adjust opacity as needed
+          playsInline // allows inline playback (esp. on iOS)
+          preload="auto"
+          className="absolute inset-0 h-full w-full object-cover opacity-80"
         >
           <source src="/WhatsApp Video 2025-05-02 at 09.33.52.mp4" type="video/mp4" />
           Your browser does not support the video tag.
