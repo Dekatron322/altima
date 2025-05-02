@@ -1111,9 +1111,13 @@ export default function Web() {
               className="absolute right-2 top-2 z-50 rounded-full bg-[#FF3B30] p-3 text-white"
               onClick={closeVideoModal}
             >
-              <LiaTimesSolid onClick={closeVideoModal} className="z-50 cursor-pointer" />
+              <LiaTimesSolid className="z-50 cursor-pointer" />
             </button>
-            <VideoCarousel />
+
+            {/* Single video element replacing VideoCarousel */}
+            <video src="/WhatsApp Video 2025-05-02 at 09.33.52.mp4" controls autoPlay className="w-full rounded-lg">
+              Your browser does not support the video tag.
+            </video>
           </motion.div>
         </motion.div>
       )}
