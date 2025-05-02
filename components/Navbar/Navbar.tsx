@@ -101,14 +101,24 @@ const Navbar = () => {
             </a>
 
             <a
-              href="#other-products"
+              href="#tech-specs"
               className={
-                activeLink === "other-products"
+                activeLink === "tech-specs"
                   ? "border-b-3 border-[#FF3B30] font-normal  text-white"
                   : "text-white transition-all duration-300 ease-in-out  hover:text-[#FF3B30]"
               }
             >
-              Other Products
+              Tech. Specs
+            </a>
+            <a
+              href="#tech-specs"
+              className={
+                activeLink === "tech-specs"
+                  ? "border-b-3 border-[#FF3B30] font-normal  text-white"
+                  : "text-white transition-all duration-300 ease-in-out  hover:text-[#FF3B30]"
+              }
+            >
+              Manual
             </a>
             <a
               href="/contact-us"
@@ -165,7 +175,7 @@ const Navbar = () => {
                 activeLink === "how-to-buy" ? "border-b-3  border-[#FF3B30] font-normal  text-white" : "  text-white"
               }
             >
-              Product Info
+              Features
             </a>
             <Link
               onClick={toggleNav}
@@ -176,19 +186,26 @@ const Navbar = () => {
                   : "  text-white"
               }
             >
-              Specifications
+              Models
             </Link>
 
             <Link
               onClick={toggleNav}
-              href="#other-products"
+              href="#tech-specs"
               className={
-                activeLink === "other-products"
-                  ? "border-b-3  border-[#FF3B30] font-normal  text-white"
-                  : "e text-white"
+                activeLink === "tech-specs" ? "border-b-3  border-[#FF3B30] font-normal  text-white" : "e text-white"
               }
             >
-              Other Products
+              Tech. Specs
+            </Link>
+            <Link
+              onClick={toggleNav}
+              href="#tech-specs"
+              className={
+                activeLink === "tech-specs" ? "border-b-3  border-[#FF3B30] font-normal  text-white" : "e text-white"
+              }
+            >
+              Manual
             </Link>
             <a
               href="#contact"

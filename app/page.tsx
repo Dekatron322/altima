@@ -907,7 +907,7 @@ export default function Web() {
                 </li>
               </ul> */}
 
-              <div className="max-xl:flex  max-xl:w-full max-sm:justify-center">
+              <div className="max-xl:mt-4  max-xl:flex max-xl:w-full max-sm:justify-center">
                 <motion.button
                   onClick={handlePreOrderClick}
                   whileHover={{ scale: 1.1 }}
@@ -922,7 +922,57 @@ export default function Web() {
         </div>
       </section>
 
-      <section id="other-products" className="paddings  w-full bg-[#151515] max-sm:px-3 ">
+      <section id="tech-specs" className="paddings  w-full bg-[#151515] max-sm:px-3 ">
+        <div className="w-full     xl:py-10">
+          <div className="flex flex-col items-center justify-center">
+            <div className="w-full gap-4 md:flex md:items-stretch md:justify-between xl:py-10">
+              {/* Technical Specifications Card */}
+              <div className="flex w-full flex-col items-start justify-between rounded-lg border border-[#FFFFFF1A] p-6">
+                <div>
+                  <p className="mb-2 text-[32px] font-semibold text-[#FFFFFF] max-xl:text-base">
+                    Technical Specifications
+                  </p>
+                  <p className="mb-2 text-[#FFFFFF80] xl:text-xl">
+                    This document contains all the major information you need concerning the technical specifications of
+                    both Altima core and Altima elite.
+                  </p>
+                </div>
+                <motion.button
+                  onClick={handlePreOrderClick}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="flex items-center gap-2 self-start rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-5 py-2 font-normal uppercase text-[#FFFFFF] max-sm:px-4 max-sm:py-2 max-sm:text-sm"
+                >
+                  Download Tech. Specs
+                  <img src="/basil_document-solid.png" height="24" width="24" alt="Document icon" />
+                </motion.button>
+              </div>
+
+              {/* Product Manual Card */}
+              <div className="flex w-full flex-col items-start justify-between rounded-lg border border-[#FFFFFF1A] p-6 max-sm:mt-4">
+                <div>
+                  <p className="mb-2 text-[32px] font-semibold text-[#FFFFFF] max-xl:text-base">Product Manual</p>
+                  <p className="mb-2 text-[#FFFFFF80] xl:text-xl">
+                    This document contains all the major information you need concerning the manual of both Altima core
+                    and Altima elite.
+                  </p>
+                </div>
+                <motion.button
+                  onClick={handlePreOrderClick}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="flex items-center gap-2 self-start rounded-lg border border-[#FFFFFF99] bg-[#FFFFFF26] px-5 py-2 font-normal uppercase text-[#FFFFFF] max-sm:px-4 max-sm:py-2 max-sm:text-sm"
+                >
+                  Download Product Manual
+                  <img src="/basil_document-solid.png" height="24" width="24" alt="Document icon" />
+                </motion.button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="other-products" className="paddings  w-full bg-[#030303] max-sm:px-3 ">
         <div className="w-full     xl:py-10">
           <div className="flex flex-col items-center justify-center">
             <p className="text-lg text-[#FFFFFF99] max-sm:text-sm">Pre-order Now - Limited Units Available.</p>
