@@ -326,11 +326,10 @@ export default function Web() {
       if (isPlaying) {
         videoRef.current.pause()
       } else {
-        videoRef.current.muted = false
-        videoRef.current.play()
+        videoRef.current.muted = false // Unmute when user interacts
+        videoRef.current.play().catch((e) => console.error("Playback failed:", e))
       }
       setIsPlaying(!isPlaying)
-      setHasInteracted(true)
     }
   }
 
@@ -362,23 +361,25 @@ export default function Web() {
   }, [isPlaying, hasInteracted])
 
   return (
-    <section className="bg-black">
+    <section className="">
       <Navbar />
-      <section
-        id="about"
-        className="about-section relative grid w-full items-center justify-center bg-black py-16 lg:h-screen"
-      >
-        {/* Video Background */}
-        <video
-          ref={videoRef}
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className="absolute inset-0 h-full w-full object-cover opacity-80"
-        >
-          <source src="/WhatsApp Video 2025-05-02 at 09.33.52.mp4" type="video/mp4" />
-        </video>
+      <section id="about" className="relative grid w-full items-center bg-[#151515] py-16 lg:h-screen">
+        {/* Gradient image in top corner */}
+        <div className="absolute left-0 top-0 z-10 max-sm:hidden">
+          <Image src="/gradient.svg" width={625} height={625} alt="" className="opacity-70" />
+        </div>
+
+        <div className="absolute right-0 top-0 z-10 xl:hidden">
+          <Image src="/gradient3.svg" width={207} height={207} alt="" className="opacity-70" />
+        </div>
+
+        <div className="absolute bottom-10 right-0 z-10 max-sm:hidden">
+          <Image src="/gradient2.svg" width={345} height={351} alt="" className="opacity-70" />
+        </div>
+
+        <div className="absolute bottom-0 left-0 z-10 xl:hidden">
+          <Image src="/gradient4.svg" width={345} height={351} alt="" className="opacity-70" />
+        </div>
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
@@ -392,53 +393,72 @@ export default function Web() {
           exit={{ opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="flex h-full w-full items-center max-xl:mt-2 max-xl:justify-center max-xl:text-center max-sm:justify-center lg:mt-0 lg:items-center">
-            <div className="flex w-full flex-col items-center justify-center">
-              <div className="mb-4 flex items-center justify-center gap-2 rounded-lg bg-[#FFFFFF08] p-2 max-2xl:w-full xl:max-w-[519px]">
+          <div className="flex h-full w-full items-center  max-xl:mt-0 max-xl:justify-center max-xl:text-center max-sm:justify-center lg:mt-10 ">
+            <div className="flex w-full flex-col ">
+              <div className="flex items-center justify-center gap-2 rounded-lg bg-[#FFFFFF08] p-2 max-2xl:w-full lg:mb-4 xl:max-w-[519px]">
                 <Image src="/Group 1037.png" width={24} height={24} alt="" className="sm:hidden" />
                 <Image src="/Group 1037.png" width={20} height={20} alt="" className="max-sm:hidden" />
                 <p className="text-sm text-[#FFFFFF] opacity-80 max-sm:text-[9px]">
                   POWERED BY INNOVATION FROM cs PILLAI®
                 </p>
               </div>
-              <p className="text-6xl font-bold text-[#FFFFFF] max-xl:text-center max-xl:text-3xl max-lg:mt-5 max-lg:text-4xl">
+              <p className="text-5xl font-semibold text-[#FFFFFF] max-xl:text-center max-xl:text-3xl max-lg:mt-5 max-lg:text-4xl">
                 Altima Smart Doors
               </p>
 
               <p
-                className="mt-2 cursor-pointer text-center text-6xl font-bold text-[#FF3B30] max-xl:block max-xl:text-3xl lg:block"
+                className="mt-2 cursor-pointer  text-5xl font-semibold text-[#FF3B30] max-xl:block max-xl:text-3xl lg:block"
                 onClick={handlePreOrderClick}
               >
                 PRE-ORDER NOW!
               </p>
-              <p className="mt-4 text-center text-lg leading-7 text-[#ffffffcc] max-xl:text-sm xl:max-w-[643px]">
+            </div>
+
+            <div className="w-[420px] max-xl:hidden">
+              <p className="items-end text-end  text-[#FFFFFF] xl:text-lg">
                 Experience next-level security with Altima Core for unmatched safety or Altima Elite with smart home hub
                 functionality.
               </p>
-
-              <div className="-center mt-8 flex w-full justify-center gap-5 max-sm:gap-2">
-                <motion.button
-                  onClick={handlePreOrderClick}
-                  className="whitespace-nowrap rounded-lg border border-[#FF3B30] bg-[#FFFFFF26] px-4 py-3 font-normal uppercase text-[#FFFFFF] max-sm:mb-3 max-sm:w-full max-sm:py-3 max-sm:text-sm"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  Pre-Order now
-                </motion.button>
-
-                <motion.button
-                  className="flex items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-[#FFFFFF99] bg-transparent px-4 py-3 font-normal uppercase text-[#FFFFFF] max-sm:mb-3 max-sm:w-full max-sm:py-2 max-sm:text-sm"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  onClick={handleWatchVideo}
-                >
-                  {isPlaying ? "Pause Video" : "Watch Video"}
-                  <Image src="/Frame 48095395.png" width={26} height={26} alt="" />
-                </motion.button>
-              </div>
             </div>
+          </div>
+          <video
+            ref={videoRef}
+            loop
+            preload="auto"
+            autoPlay
+            muted
+            playsInline
+            className="my-10 h-[504px] w-full rounded-xl object-cover max-sm:h-[215px]"
+            onClick={handleWatchVideo}
+          >
+            <source src="/video.webm" type="video/webm" />
+            <source src="/WhatsApp Video 2025-05-02 at 09.33.52.mp4" type="video/mp4" />
+          </video>
+          <div className=" xl:hidden">
+            <p className="items-center text-center text-[#FFFFFF] xl:text-lg">
+              Experience next-level security with Altima Core for unmatched safety or Altima Elite with smart home hub
+              functionality.
+            </p>
+          </div>
+          <div className="mt-8 flex w-full justify-center  gap-5 max-sm:gap-2">
+            <motion.button
+              onClick={handlePreOrderClick}
+              className="whitespace-nowrap rounded-lg border border-[#FF3B30] bg-[#FFFFFF26] px-4 py-3 font-normal uppercase text-[#FFFFFF] max-sm:mb-3 max-sm:w-full max-sm:py-3 max-sm:text-sm"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              Pre-Order now
+            </motion.button>
 
-            <div>{/* You can remove the Image component as it will be used as background */}</div>
+            <motion.button
+              className="flex items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-[#FFFFFF99] bg-transparent px-4 py-3 font-normal uppercase text-[#FFFFFF] max-sm:mb-3 max-sm:w-full max-sm:py-2 max-sm:text-sm"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={handleWatchVideo}
+            >
+              {isPlaying ? "Pause Video" : "Watch Video"}
+              <Image src="/Frame 48095395.png" width={26} height={26} alt="" />
+            </motion.button>
           </div>
         </motion.div>
       </section>

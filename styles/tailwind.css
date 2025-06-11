@@ -157,7 +157,7 @@ body {
 }
 
 .paddings {
-  @apply px-5 py-6 lg:px-20 xl:px-24 3xl:px-72;
+  @apply px-5 py-6 lg:px-20 xl:px-24 2xl:px-40 3xl:px-64;
 }
 
 .navbar {
